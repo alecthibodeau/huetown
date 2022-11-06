@@ -1,0 +1,239 @@
+@use './_variables' as *;
+
+// Sub-mixins need to be outside the primary mixin
+@mixin nav-text {
+  padding: 0; // Overrides default value in form
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.25rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.25s linear;
+  color: $ninety-percent-gray;
+  cursor: pointer;
+
+  @media only screen and (max-width: 650px) {
+    color: $white;
+    font-weight: 600;;
+  }
+
+  // Only show the underside bar effect at larger widths
+  @media only screen and (min-width: 651px) {
+
+    &::after { // The bar underneath when it's hidden
+      width: 100%;
+      display: block;
+      position: relative;
+      top: 0.5rem;
+      border-bottom: 3px solid transparent;
+      content: "";
+      transition: 0.25s;
+    }
+
+    &:hover::after { // The bar underneath when it's shown
+      top: 0.25rem;
+      border-bottom: 3px solid $huetown-green;
+    }
+  }
+}
+
+@mixin nav-responsive-text {
+
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+    padding: 1.5rem 0;
+
+    &.nav-element-lunar-calendar {
+      border-top: 1px solid $huetown-green;
+      border-bottom: 1px solid $huetown-yellow;
+    }
+
+    &.nav-element-prints {
+      border-bottom: 1px solid $nav-accent-purple;
+    }
+
+    &.nav-element-postcards {
+      border-bottom: 1px solid $huetown-blue;
+    }
+
+    &.nav-element-about {
+      border-bottom: 1px solid $red-muted;
+    }
+
+    &.paypal-link {
+      border-bottom: 1px solid $orange-muted;
+    }
+  }
+}
+
+/**
+ * Selector for for header tag
+ */
+
+@mixin header-content {
+  max-width: 600px;
+  margin: .5rem auto;
+
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    z-index: 100;
+  }
+
+  .nav-top {
+    display: flex;
+    justify-content: center;
+
+    @media only screen and (max-width: 650px) {
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: flex-end;
+      padding: 10px 12px 14px 18px;
+      background: $eighty-percent-gray;
+    }
+
+    @media only screen and (max-width: 450px) {
+      align-items: flex-start;
+      padding: 14px;
+    }
+  }
+
+  .huetown-logo-gray {
+    width: 300px;
+  }
+
+  .huetown-logo-white {
+    width: 80%;
+  }
+
+  button.burger-button {
+    display: none;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+
+    &.closing-x {
+      padding: 5px 2px;
+    }
+
+    div.burger-bars-container {
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      div.bar {
+        position: relative;
+        width: 25px;
+        height: 4px;
+        background: $white;
+        transition: transform .125s;
+
+        &.closing-x {
+          width: 30px;
+
+          // &.bar-1 {
+          //   top: 9px;
+          //   transform: rotate(45deg);
+          // }
+
+          // &.bar-2 {
+          //   display: none;
+          // }
+
+          // &.bar-3 {
+          //   bottom: 12px;
+          //   transform: rotate(-45deg);
+          // }
+          &:nth-child(1) {
+            top: 9px;
+            transform: rotate(45deg);
+          }
+
+          &:nth-child(2) {
+            display: none;
+          }
+
+          &:nth-child(3) {
+            bottom: 12px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 650px) {
+      display: block;
+    }
+  }
+
+  nav { // nav is a row at larger widths, a column at smaller ones
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem auto 2rem;
+
+    a.nav-element {
+      @include nav-text;
+      @include nav-responsive-text;
+    }
+
+    // Both the form and the form's input are specified for the underline effect to work
+    form {
+
+      @include nav-text;
+
+      input[value="view cart"] {
+        background-color: transparent;
+
+        @include nav-text;
+        @include nav-responsive-text;
+      }
+    }
+
+    @media only screen and (max-width: 650px) {
+      display: none; // By default the drawer is hidden: before any burger button clicks
+      flex-direction: column;
+
+      &.nav-drawer-is-open {
+        display: flex;
+        margin: 0 auto;
+        background: $dark-film;
+        backdrop-filter: blur(5px);
+      }
+    }
+  }
+
+  .nav-menu-icons {
+    display: none;
+    justify-content: center;
+    border-bottom: 1.5px solid $fifty-percent-gray;
+
+    section {
+      margin: 1rem 2rem;
+
+      a {
+        width: 32px;
+        height: 32px;
+        display: block;
+
+        img {
+          width: 32px;
+          height: 32px;
+          display: block;
+          position: relative;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 650px) {
+      display: flex;
+    }
+  }
+}

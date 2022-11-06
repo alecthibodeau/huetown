@@ -1,0 +1,416 @@
+@use './_variables' as *;
+
+/* Sub-mixins need to be outside the primary mixin */
+
+@mixin crisp-scaled-down {
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
+/* Selector for .item-page */
+@mixin item-page-content {
+  width: $page-width;
+  margin-bottom: 20px;
+
+  &.item-title-abundance .container-1 {
+    .feature-image-block a img {
+      width: 600px;
+
+      @media only screen and (max-width: 650px) {
+        width: 80vw;
+      }
+    }
+
+    .item-info-block {
+      justify-content: center;
+    }
+  }
+
+  .content-container {
+    display: flex;
+
+    &.lunar-calendar {
+      @media only screen and (max-width: 1050px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature-image {
+        width: 700px;
+        height: auto;
+
+        @media only screen and (max-width: 768px) {
+          width: 520px;
+        }
+
+        @media only screen and (max-width: 576px) {
+          width: 300px;
+        }
+      }
+    }
+
+    &:not(.lunar-calendar) {
+      .feature-image-link {
+        pointer-events: none;
+      }
+    }
+
+    &.print,
+    &.postcard {
+      justify-content: center;
+    }
+
+    @media only screen and (max-width: 850px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .container-2 {
+    display: none;
+    border-top: 1px solid $light-gray;
+    margin-top: 20px;
+
+    &.shown {
+      display: block;
+    }
+
+    .photo-pair {
+      display: flex;
+      justify-content: center;
+
+      .local-pick-up {
+        max-width: 80ch;
+      }
+
+      img {
+        margin: 10px 5px 0;
+        width: 450px;
+        height: 450px;
+
+        @media only screen and (max-width: 1050px) {
+          &.large-detail-image {
+            width: 700px;
+            height: 700px;
+          }
+        }
+
+        @media only screen and (max-width: 760px) {
+          &.large-detail-image {
+            width: 90vw;
+            height: 90vw;
+          }
+        }
+
+        @media only screen and (max-width: 500px) {
+          width: 90vw;
+          height: 90vw;
+        }
+      }
+
+      @media only screen and (max-width: 1050px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .item-more-info {
+      max-width: 80ch;
+      margin: 0 auto;
+      padding-top: 15px;
+
+      .info-block:not(:first-of-type) {
+        margin: 15px auto 0;
+      }
+
+      .lunar-phases {
+        display: flex;
+        justify-content: center;
+        width: 250px;
+        margin: 25px auto;
+      }
+
+      [class^="phase-info"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 5px;
+      }
+
+      [class^="phase-text"] {
+        margin-top: 4px;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+      }
+
+      .protective-tube {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5px auto 35px;
+
+        .tube-text {
+          margin-bottom: 5px;
+        }
+
+        @media only screen and (max-width: 500px) {
+          img {
+            width: 220px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .container-3 {
+    display: none;
+
+    a.available-calendar {
+      max-width: 200px;
+
+      img {
+        max-width: 200px;
+      }
+    }
+
+    &.shown {
+      display: block;
+    }
+
+    .available,
+    .previous {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+
+      &.previous {
+        margin-top: 10px;
+      }
+
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+
+        &.title {
+          margin: 0 auto 10px;
+          text-transform: capitalize;
+          color: $sixty-percent-gray;
+          font-weight: 700;
+        }
+
+        &[class^="lunar-calendar-links"] {
+          div {
+            flex-direction: column;
+            margin: 0 5px;
+
+            .text {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  img.feature-image {
+    @include crisp-scaled-down;
+
+    &.postcard {
+      border: 1px solid $sixty-percent-gray;
+
+      @media only screen and (max-width: 650px) {
+        width: 550px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: 90vw;
+      }
+    }
+
+    &.print {
+      @media only screen and (max-width: 500px) {
+        width: 80vw;
+      }
+    }
+  }
+
+  .item-info-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 15px;
+
+    &.lunar-calendar {
+      @media only screen and (max-width: 1050px) {
+        max-width: 600px;
+        flex-direction: column-reverse;
+        padding-left: 0;
+        // flex-direction: column; // OPTIONAL SETTING
+      }
+    }
+
+    @media only screen and (max-width: 850px) {
+      max-width: 600px;
+      flex-direction: column-reverse;
+      padding-left: 0;
+      // flex-direction: column; // OPTIONAL SETTING
+    }
+
+    &.postcard {
+      @media only screen and (max-width: 650px) {
+        width: 550px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: 90vw;
+      }
+    }
+  }
+
+  .item-preorder {
+    display: none;
+
+    &.visible {
+      display: inline;
+      text-transform: uppercase;
+      color: $calendar-coral;
+    }
+  }
+
+  .item-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 5px;
+    margin-bottom: 5px;
+
+    span.normal {
+      font-weight: 400;
+    }
+  }
+
+  .item-info-container {
+    padding-inline-start: 20px;
+  }
+
+  .item-info-text {
+    @media only screen and (max-width: 850px) {
+      margin: 5px 0 0 5px;
+    }
+  }
+
+  .payment-info {
+    display: flex;
+    flex-direction: column;
+
+    &.lunar-calendar {
+      @media only screen and (max-width: 1050px) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 0;
+      }
+    }
+
+    @media only screen and (max-width: 850px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 5px 0;
+    }
+
+    @media only screen and (max-width: 650px) {
+      // justify-content: left; // OPTIONAL SETTING
+    }
+  }
+
+  .item-price-container {
+    position: relative;
+    margin: 10px 0;
+    font-size: 2rem;
+    font-weight: 600;
+
+    &.lunar-calendar {
+      @media only screen and (max-width: 1050px) {
+        margin: 0 10px 0 0;
+        top: 12px;
+      }
+    }
+
+    @media only screen and (max-width: 850px) {
+      margin: 0 10px 0 0;
+      top: 12px;
+    }
+  }
+
+  .quantity-label {
+    margin-left: 0.75rem;
+    font-size: 1.4rem;
+  }
+
+  .additional-info {
+    margin-bottom: 24px;
+
+    .follow-text {
+      margin-bottom: 8px;
+    }
+
+    .item-accompanying {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+
+      img,
+      a img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    align-items: stretch;
+    height: 4rem;
+    min-height: 4rem;
+
+    input[name="quantity"] {
+      width: 4rem;
+      height: 3.8rem;
+      padding: 0;
+      border: 0.1rem solid $fifty-percent-gray;
+      margin: 0 8px 5px 0;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    input[value="Add to cart"] {
+      width: 160px;
+      border: none;
+      border-radius: 6px;
+      background: $sixty-seven-percent-gray;
+      color: $white;
+      font-family: "Raleway", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.3125rem;
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid $sixty-seven-percent-gray;
+        color: $black;
+        background: $rainbow-yellow;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@use './_variables' as *;
+
+// Sub-mixins need to be outside the primary mixin
+@mixin about-page-button-styles {
+  border: none;
+  border-radius: 6px;
+  color: $white;
+  letter-spacing: 0.3125rem;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+// Selector for .about-page
+@mixin about-content {
+  width: $page-width;
+
+  .about-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    div {
+      margin: 0 25px;
+      position: relative;
+
+      span.bold {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .section-title {
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  ul {
+    padding-left: 24px;
+    margin-top: 8px;
+  }
+
+  .about-state {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  .subscribe-button {
+    @include about-page-button-styles;
+
+    // Override MailChimp button styling defaults
+    width: 160px;
+    min-height: 40px;
+    border: 2px solid transparent !important;
+    background: $sixty-seven-percent-gray !important;
+    font-family: "Raleway", sans-serif !important;
+    font-size: 1.4rem;
+    font-weight: 600 !important;
+    color: $white;
+
+    &:hover {
+      border: 2px solid $sixty-seven-percent-gray !important;
+      background: $rainbow-yellow !important;
+      color: $black !important;
+    }
+  }
+}
+
+/**
+ * Media Queries
+ */
+
+@media only screen and (max-width: 700px) {
+  .huetown-h-logo,
+  .self-portrait {
+    width: 11vw;
+    height: 11vw;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .about-top {
+    display: block !important;
+
+    div {
+      margin: 0 !important;
+      bottom: 5px;
+    }
+
+    .huetown-h-logo,
+    .self-portrait {
+      &.self-portrait {
+        min-width: 75px;
+        min-height: 75px;
+        margin: 0 10px 10px 0;
+        float: left;
+      }
+
+      &.huetown-h-logo {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@use './_variables' as *;
+
+// Variables need to be outside the primary mixin
+$icon-size: 4rem;
+
+/**
+ * Selector for footer tag
+ */
+
+@mixin footer-content {
+  width: $page-width;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+
+  &.hide-icons section {
+    display: none;
+  }
+
+  section {
+    margin: 2rem $icon-size;
+
+    a {
+      width: $icon-size;
+      height: $icon-size;
+      display: block;
+
+      img {
+        width: $icon-size;
+        height: $icon-size;
+        display: block;
+        position: relative;
+        z-index: 10;
+      }
+
+      // Show background div on parent anchor's hover
+      &:hover div {
+        background: $rainbow-yellow;
+      }
+
+      /**
+       * The dimensions are a percentage (of the parent anchor) to keep from bleeding
+       * The positions are (100 - dimension)/2 for centering
+       */
+      div {
+        width: 93%;
+        height: 93%;
+        position: relative;
+        bottom: calc(#{$icon-size} - 3.5%); // Interpolation
+        left: 3.5%;
+        border-radius: 1rem;
+        background: transparent;
+      }
+    }
+
+    // Make the second anchor's background div a circle
+    &:nth-of-type(2) div {
+    border-radius: 50%;
+    }
+
+    // Modify the third anchor's background's border-radius
+    &:nth-of-type(3) div {
+    border-radius: .5rem;
+    }
+  }
+
+  /**
+   * Media Queries
+   */
+
+  @media only screen and (max-width: 650px) {
+    position: relative;
+    top: 75px;
+
+    section {
+      margin: 1rem 2rem;
+    }
+  }
+}
