@@ -1,98 +1,71 @@
 @use './_variables' as *;
 @use './header' as *;
 @use './footer' as *;
-@use './home' as *;
 @use './collection' as *;
 @use './about' as *;
 @use './item' as *;
 
-.App div {
-  color: blue;
+html {
+  margin: 0 auto;
 }
 
-/************
-HTML & BODY
-************/
-
-/**
- * 16px is the typical default browser font-size.
- * Setting the font-size to 62.5% means setting it to 10px.
- * So 1rem = 10px.
- */
- html {
+body {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
-  // font-size: 62.5%;
+}
 
-  body {
-    width: 100%;
-    // max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    background: $white;
+main {
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
 
-    main {
-      position: relative;
-      display: flex;
-      // align-items: center;
-      justify-content: center;
-      // width: 90%;
-      margin: 0 auto;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
+  .text-link {
+    text-decoration: none;
+    color: $violet;
 
-      .text-link {
-        text-decoration: none;
-        color: $violet;
-
-        &:link,
-        &:visited,
-        &:active {
-          color: $violet;
-          font-weight: 600;
-        }
-
-        &:hover {
-          color: $dark-green;
-          text-decoration: underline;
-          cursor: pointer;
-        }
-      }
-
-      .ital {
-        font-style: italic;
-      }
-
-      .bold {
-        font-weight: 700;
-      }
-
-      .not-found {
-        text-align: center;
-
-        h1 {
-          font-size: 48px;
-        }
-      }
-
-      @media only screen and (max-width: 650px) {
-        top: 85px;
-      }
-
-      @media only screen and (max-width: 450px) {
-        top: 75px;
-      }
+    &:link,
+    &:visited,
+    &:active {
+      color: $violet;
+      font-weight: 600;
     }
+
+    &:hover {
+      color: $dark-green;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .ital {
+    font-style: italic;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+
+  .not-found-error {
+    text-align: center;
   }
 }
 
-/************
-PAGES
-************/
+/* Media Queries */
 
-// .home-page {
-//   @include home-content
-// }
+@media (min-width: $breakpoint-sm) {
+
+  main {
+    top: initial;
+  }
+}
+
+/* Pages */
 
 .lunar-calendars-page {
   @include collection-content
@@ -104,10 +77,6 @@ PAGES
 
 .postcards-page {
   @include collection-content
-}
-
-.about-page {
-  @include about-content
 }
 
 .item-page {

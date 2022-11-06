@@ -5,23 +5,20 @@
   padding: 0; // Overrides default value in form
   border: none;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 600;
   letter-spacing: 0.25rem;
   text-align: center;
   text-decoration: none;
   text-transform: capitalize;
   transition: all 0.25s linear;
-  color: $ninety-percent-gray;
+  color: $white;
   cursor: pointer;
 
-  @media only screen and (max-width: 650px) {
-    color: $white;
-    font-weight: 600;
-  }
-
   // Only show the underside bar effect at larger widths
-  @media only screen and (min-width: 651px) {
+  @media (min-width: $breakpoint-sm) {
+    font-weight: 500;
+    color: $ninety-percent-gray;
 
     &::after { // The bar underneath when it's hidden
       width: 100%;
@@ -42,7 +39,7 @@
 
 @mixin nav-responsive-text {
 
-  @media only screen and (max-width: 650px) {
+  @media (max-width: $breakpoint-sm) {
     width: 100%;
     padding: 1.5rem 0;
 
@@ -69,143 +66,126 @@
   }
 }
 
-/**
- * Selector for for header tag
- */
-
 header {
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 14px 18px;
+  background: $eighty-percent-gray;
+}
+
+.huetown-logo-gray {
+  width: 300px;
+}
+
+.huetown-logo-white {
+  width: 80%;
+}
+
+button.burger-button {
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+
+  &.closing-x {
+    padding: 5px 2px;
+  }
+}
+
+button.burger-button div.burger-bars-container {
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button.burger-button div.burger-bars-container div.bar {
+  position: relative;
+  width: 25px;
+  height: 4px;
+  background: $white;
+  transition: transform .125s;
+
+  &.closing-x {
+    width: 30px;
+
+    &:nth-child(1) {
+      top: 9px;
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    &:nth-child(3) {
+      bottom: 12px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+nav { // nav is a row at larger widths, a column at smaller ones
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
   max-width: 600px;
-  margin: .5rem auto;
+  margin: 0 auto;
 
-  @media only screen and (max-width: 650px) {
-    width: 100%;
-    position: fixed;
-    margin: 0;
-    z-index: 100;
+  a.nav-element {
+    @include nav-text;
+    @include nav-responsive-text;
   }
 
-  .nav-top {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    padding: 14px 18px;
-    background: $eighty-percent-gray;
-  }
+  // Both the form and the form's input are specified for the underline effect to work
+  form {
 
-  .huetown-logo-gray {
-    width: 300px;
-  }
+    @include nav-text;
 
-  .huetown-logo-white {
-    width: 80%;
-  }
+    input[value="view cart"] {
+      background-color: transparent;
 
-  button.burger-button {
-    display: none;
-    position: relative;
-    cursor: pointer;
-    padding: 5px;
-    border: none;
-    background-color: transparent;
-
-    &.closing-x {
-      padding: 5px 2px;
-    }
-
-    div.burger-bars-container {
-      height: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      div.bar {
-        position: relative;
-        width: 25px;
-        height: 4px;
-        background: $white;
-        transition: transform .125s;
-
-        &.closing-x {
-          width: 30px;
-
-          &:nth-child(1) {
-            top: 9px;
-            transform: rotate(45deg);
-          }
-
-          &:nth-child(2) {
-            display: none;
-          }
-
-          &:nth-child(3) {
-            bottom: 12px;
-            transform: rotate(-45deg);
-          }
-        }
-      }
-    }
-
-    @media only screen and (max-width: 650px) {
-      display: block;
-    }
-  }
-
-  nav { // nav is a row at larger widths, a column at smaller ones
-    max-width: 1000px;
-    display: flex;
-    justify-content: space-around;
-    margin: 1.5rem auto 2rem;
-
-    a.nav-element {
       @include nav-text;
       @include nav-responsive-text;
     }
-
-    // Both the form and the form's input are specified for the underline effect to work
-    form {
-
-      @include nav-text;
-
-      input[value="view cart"] {
-        background-color: transparent;
-
-        @include nav-text;
-        @include nav-responsive-text;
-      }
-    }
-
-    @media only screen and (max-width: 650px) {
-      display: none; // By default the drawer is hidden: before any burger button clicks
-      flex-direction: column;
-
-      &.nav-drawer-is-open {
-        display: flex;
-        margin: 0 auto;
-        background: $dark-film;
-        backdrop-filter: blur(5px);
-      }
-    }
   }
 
-  .nav-menu-icons {
+  &.nav-drawer-is-open {
     display: flex;
-    justify-content: center;
-    border-bottom: 1.5px solid $fifty-percent-gray;
+    margin: 0 auto;
+    background: $dark-film;
+    backdrop-filter: blur(5px);
+  }
+}
 
-    section {
-      margin: 1rem 2rem;
+.nav-menu-icons {
+  display: flex;
+  justify-content: center;
+  padding: .25rem;
+  border-bottom: 1.5px solid $fifty-percent-gray;
 
-      a {
+  section {
+    margin: 1rem 2rem;
+
+    a {
+      width: 32px;
+      height: 32px;
+      display: block;
+
+      img {
         width: 32px;
         height: 32px;
         display: block;
-
-        img {
-          width: 32px;
-          height: 32px;
-          display: block;
-          position: relative;
-        }
+        position: relative;
       }
     }
   }
@@ -216,6 +196,9 @@ header {
 @media (min-width: $breakpoint-sm) {
 
   header {
+    position: relative;
+    padding-bottom: 1rem;
+    background-color: $white;
 
     .nav-top {
       justify-content: center;
@@ -224,6 +207,22 @@ header {
 
     .nav-menu-icons {
       display: none;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    background: $white;
+  }
+
+  nav a.nav-element,
+  nav form {
+    width: initial;
+    padding: initial;
+
+    &.paypal-link {
+      border-bottom: none;
     }
   }
 }

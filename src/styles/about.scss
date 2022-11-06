@@ -1,17 +1,6 @@
 @use './_variables' as *;
 
-// Sub-mixins need to be outside the primary mixin
-@mixin about-page-button-styles {
-  border: none;
-  border-radius: 6px;
-  color: $white;
-  letter-spacing: 0.3125rem;
-  text-transform: capitalize;
-  cursor: pointer;
-}
-
-// Selector for .about-page
-@mixin about-content {
+.about-content {
   width: $page-width;
 
   .about-top {
@@ -46,7 +35,12 @@
   }
 
   .subscribe-button {
-    @include about-page-button-styles;
+    border: none;
+    border-radius: 6px;
+    color: $white;
+    letter-spacing: 0.3125rem;
+    text-transform: capitalize;
+    cursor: pointer;
 
     // Override MailChimp button styling defaults
     width: 160px;

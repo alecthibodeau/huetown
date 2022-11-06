@@ -3,12 +3,12 @@ import IconLink from '../interfaces/IconLink';
 import IconLinksProps from '../interfaces/IconLinkProps';
 
 /* Images */
-import iconWhiteEmail from '../assets/images/icon_email_white.svg';
-import iconWhiteInstagram from '../assets/images/icon_instagram_white.svg';
-import iconWhiteTwitter from '../assets/images/icon_twitter_white.svg';
-import iconGrayEmail from '../assets/images/icon_email_fifty_percent_gray.svg';
-import iconGrayInstagram from '../assets/images/icon_instagram_fifty_percent_gray.svg';
-import iconGrayTwitter from '../assets/images/icon_twitter_fifty_percent_gray.svg';
+import iconWhiteEmail from '../assets/images/icon-email-white.svg';
+import iconWhiteInstagram from '../assets/images/icon-instagram-white.svg';
+import iconWhiteTwitter from '../assets/images/icon-twitter-white.svg';
+import iconGrayEmail from '../assets/images/icon-email-fifty-percent-gray.svg';
+import iconGrayInstagram from '../assets/images/icon-instagram-fifty-percent-gray.svg';
+import iconGrayTwitter from '../assets/images/icon-twitter-fifty-percent-gray.svg';
 
 function IconLinks(props: IconLinksProps) {
   const iconLinks: IconLink[] = [
