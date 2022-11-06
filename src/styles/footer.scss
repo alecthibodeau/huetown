@@ -1,13 +1,10 @@
 @use './_variables' as *;
 
-// Variables need to be outside the primary mixin
-$icon-size: 4rem;
+$icon-size: 3rem;
 
-/**
- * Selector for footer tag
- */
-
-@mixin footer-content {
+footer {
+  position: relative;
+  top: 75px;
   width: $page-width;
   display: flex;
   justify-content: center;
@@ -46,7 +43,7 @@ $icon-size: 4rem;
         width: 93%;
         height: 93%;
         position: relative;
-        bottom: calc(#{$icon-size} - 3.5%); // Interpolation
+        bottom: calc(#{$icon-size} - 3.5%);
         left: 3.5%;
         border-radius: 1rem;
         background: transparent;
@@ -55,25 +52,12 @@ $icon-size: 4rem;
 
     // Make the second anchor's background div a circle
     &:nth-of-type(2) div {
-    border-radius: 50%;
+      border-radius: 50%;
     }
 
     // Modify the third anchor's background's border-radius
     &:nth-of-type(3) div {
-    border-radius: .5rem;
-    }
-  }
-
-  /**
-   * Media Queries
-   */
-
-  @media only screen and (max-width: 650px) {
-    position: relative;
-    top: 75px;
-
-    section {
-      margin: 1rem 2rem;
+      border-radius: .5rem;
     }
   }
 }

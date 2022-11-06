@@ -5,7 +5,7 @@
   padding: 0; // Overrides default value in form
   border: none;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 0.25rem;
   text-align: center;
@@ -17,7 +17,7 @@
 
   @media only screen and (max-width: 650px) {
     color: $white;
-    font-weight: 600;;
+    font-weight: 600;
   }
 
   // Only show the underside bar effect at larger widths
@@ -73,7 +73,7 @@
  * Selector for for header tag
  */
 
-@mixin header-content {
+header {
   max-width: 600px;
   margin: .5rem auto;
 
@@ -86,20 +86,10 @@
 
   .nav-top {
     display: flex;
-    justify-content: center;
-
-    @media only screen and (max-width: 650px) {
-      justify-content: space-between;
-      flex-direction: row;
-      align-items: flex-end;
-      padding: 10px 12px 14px 18px;
-      background: $eighty-percent-gray;
-    }
-
-    @media only screen and (max-width: 450px) {
-      align-items: flex-start;
-      padding: 14px;
-    }
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 14px 18px;
+    background: $eighty-percent-gray;
   }
 
   .huetown-logo-gray {
@@ -138,19 +128,6 @@
         &.closing-x {
           width: 30px;
 
-          // &.bar-1 {
-          //   top: 9px;
-          //   transform: rotate(45deg);
-          // }
-
-          // &.bar-2 {
-          //   display: none;
-          // }
-
-          // &.bar-3 {
-          //   bottom: 12px;
-          //   transform: rotate(-45deg);
-          // }
           &:nth-child(1) {
             top: 9px;
             transform: rotate(45deg);
@@ -211,7 +188,7 @@
   }
 
   .nav-menu-icons {
-    display: none;
+    display: flex;
     justify-content: center;
     border-bottom: 1.5px solid $fifty-percent-gray;
 
@@ -231,9 +208,22 @@
         }
       }
     }
+  }
+}
 
-    @media only screen and (max-width: 650px) {
-      display: flex;
+/* Media Queries */
+
+@media (min-width: $breakpoint-sm) {
+
+  header {
+
+    .nav-top {
+      justify-content: center;
+      background: $white;
+    }
+
+    .nav-menu-icons {
+      display: none;
     }
   }
 }

@@ -5,27 +5,19 @@ import { Link } from 'react-router-dom';
 /* Images */
 import huetownGrayLogo from '../assets/images/huetown-script-logo-fifty-percent-gray.svg';
 import huetownWhiteLogo from '../assets/images/huetown-script-logo-white.svg';
+import HeaderProps from '../interfaces/HeaderProps';
+
+/* Interfaces */
 import IconLinks from './IconLinks';
 
-const breakpointSm = 576;
-
-function Header() {
-  const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
+function Header(props: HeaderProps) {
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState<boolean>(false);
-  const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
 
   useEffect(() => {
-    window.addEventListener('resize', getViewportWidth);
-    setIsBreakpointXs(viewportWidth < breakpointSm ? true : false);
-    if (!isBreakpointXs && isNavDrawerOpen) {
+    if (!props.isBreakpointXs && isNavDrawerOpen) {
       setIsNavDrawerOpen(false);
     }
-    return(() => window.removeEventListener('resize', getViewportWidth));
-  }, [viewportWidth]);
-
-  function getViewportWidth(): void {
-    setViewportWidth(window.innerWidth);
-  }
+  }, [props.isBreakpointXs]);
 
   function renderBurgerBar(bar: string, index: number) {
     return (
@@ -41,8 +33,8 @@ function Header() {
       <div className="nav-top">
         <Link to="/">
           <img
-            className={isBreakpointXs ? 'huetown-logo-white' : 'huetown-logo-gray'}
-            src={isBreakpointXs ? huetownWhiteLogo : huetownGrayLogo}
+            className={props.isBreakpointXs ? 'huetown-logo-white' : 'huetown-logo-gray'}
+            src={props.isBreakpointXs ? huetownWhiteLogo : huetownGrayLogo}
             alt="Huetown logo" />
         </Link>
         <button

@@ -10,11 +10,6 @@
   color: blue;
 }
 
-// header {
-//   display: flex;
-//   justify-content: center;
-// }
-
 /************
 HTML & BODY
 ************/
@@ -26,7 +21,7 @@ HTML & BODY
  */
  html {
   margin: 0 auto;
-  font-size: 62.5%;
+  // font-size: 62.5%;
 
   body {
     width: 100%;
@@ -34,12 +29,6 @@ HTML & BODY
     height: 100%;
     margin: 0 auto;
     background: $white;
-
-    header {
-      @include header-content;
-      // display: flex;
-      // justify-content: center;
-    }
 
     main {
       position: relative;
@@ -94,10 +83,6 @@ HTML & BODY
         top: 75px;
       }
     }
-
-    footer {
-      @include footer-content
-    }
   }
 }
 
@@ -105,9 +90,9 @@ HTML & BODY
 PAGES
 ************/
 
-.home-page {
-  @include home-content
-}
+// .home-page {
+//   @include home-content
+// }
 
 .lunar-calendars-page {
   @include collection-content
