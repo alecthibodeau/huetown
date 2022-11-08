@@ -37,35 +37,6 @@
   }
 }
 
-@mixin nav-responsive-text {
-
-  @media (max-width: $breakpoint-sm) {
-    width: 100%;
-    padding: 1.5rem 0;
-
-    &.nav-element-lunar-calendar {
-      border-top: 1px solid $huetown-green;
-      border-bottom: 1px solid $huetown-yellow;
-    }
-
-    &.nav-element-prints {
-      border-bottom: 1px solid $nav-accent-purple;
-    }
-
-    &.nav-element-postcards {
-      border-bottom: 1px solid $huetown-blue;
-    }
-
-    &.nav-element-about {
-      border-bottom: 1px solid $red-muted;
-    }
-
-    &.paypal-link {
-      border-bottom: 1px solid $orange-muted;
-    }
-  }
-}
-
 header {
   position: fixed;
   width: 100%;
@@ -134,7 +105,7 @@ button.burger-button div.burger-bars-container div.bar {
   }
 }
 
-nav { // nav is a row at larger widths, a column at smaller ones
+nav {
   display: none;
   flex-direction: column;
   justify-content: space-around;
@@ -143,19 +114,49 @@ nav { // nav is a row at larger widths, a column at smaller ones
 
   a.nav-element {
     @include nav-text;
-    @include nav-responsive-text;
+
+    width: 100%;
+    padding: 1.5rem 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+
+    &.nav-element-lunar-calendar {
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-top-color: $huetown-green;
+      border-bottom-color: $huetown-yellow;
+    }
+
+    &.nav-element-prints {
+      border-bottom-color: $nav-accent-purple;
+    }
+
+    &.nav-element-postcards {
+      border-bottom-color: $huetown-blue;
+    }
+
+    &.nav-element-about {
+      border-bottom-color: $red-muted;
+    }
   }
 
-  // Both the form and the form's input are specified for the underline effect to work
+  // Styling is needed on both the form and the form's input for the underline effect to work
   form {
 
     @include nav-text;
 
     input[value="view cart"] {
-      background-color: transparent;
-
       @include nav-text;
-      @include nav-responsive-text;
+
+      background-color: transparent;
+      width: 100%;
+      padding: 1.5rem 0;
+
+      &.paypal-link {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: $orange-muted;
+      }
     }
   }
 
@@ -214,15 +215,24 @@ nav { // nav is a row at larger widths, a column at smaller ones
     display: flex;
     flex-direction: row;
     background: $white;
+
+    a.nav-element,
+    form input[value="view cart"] {
+      width: initial;
+      padding: initial;
+    }
   }
 
-  nav a.nav-element,
-  nav form {
-    width: initial;
-    padding: initial;
-
-    &.paypal-link {
-      border-bottom: none;
+  nav a.nav-element {
+    &.nav-element-lunar-calendar,
+    &.nav-element-prints,
+    &.nav-element-postcards,
+    &.nav-element-about {
+      border: none;
     }
+  }
+
+  nav form input[value="view cart"].paypal-link {
+    border: none;
   }
 }
