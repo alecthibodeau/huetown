@@ -1,5 +1,7 @@
 @use './_variables' as *;
 
+$nav-icon-size: 2rem;
+
 // Sub-mixins need to be outside the primary mixin
 @mixin nav-text {
   padding: 0; // Overrides default value in form
@@ -178,13 +180,13 @@ nav {
     margin: 1rem 2rem;
 
     a {
-      width: 32px;
-      height: 32px;
+      width: $nav-icon-size;
+      height: $nav-icon-size;
       display: block;
 
       img {
-        width: 32px;
-        height: 32px;
+        width: $nav-icon-size;
+        height: $nav-icon-size;
         display: block;
         position: relative;
       }
@@ -198,7 +200,7 @@ nav {
 
   header {
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 1.25rem;
     background-color: $white;
 
     .nav-top {

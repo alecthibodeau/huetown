@@ -1,6 +1,6 @@
 @use './_variables' as *;
 
-$icon-size: 2.5rem;
+$footer-icon-size: 2.5rem;
 
 footer {
   display: flex;
@@ -12,16 +12,16 @@ footer {
   }
 
   section {
-    margin: 1rem $icon-size;
+    margin: 1rem $footer-icon-size;
 
     a {
-      width: $icon-size;
-      height: $icon-size;
+      width: $footer-icon-size;
+      height: $footer-icon-size;
       display: block;
 
       img {
-        width: $icon-size;
-        height: $icon-size;
+        width: $footer-icon-size;
+        height: $footer-icon-size;
         display: block;
         position: relative;
         z-index: 10;
@@ -40,7 +40,7 @@ footer {
         width: 93%;
         height: 93%;
         position: relative;
-        bottom: calc(#{$icon-size} - 3.5%);
+        bottom: calc(#{$footer-icon-size} - 3.5%);
         left: 3.5%;
         border-radius: .5rem;
         background: transparent;
