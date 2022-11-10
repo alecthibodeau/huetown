@@ -2,7 +2,7 @@ import logo from '../assets/images/huetown-h-logo.jpg';
 import selfPortrait from '../assets/images/thibodeau-self-portrait.jpg';
 
 /* Components */
-import MailchimpForm from './MailChimpForm';
+import MailchimpFormContainer from './MailChimpFormContainer';
 import SectionTitle from './SectionTitle';
 
 /* Interfaces */
@@ -62,7 +62,7 @@ function About() {
           </ul>
         </div>
       </div>
-      <MailchimpForm />
+      <MailchimpFormContainer />
     </div>
   );
 }

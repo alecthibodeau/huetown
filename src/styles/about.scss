@@ -32,28 +32,33 @@
   text-transform: capitalize;
 }
 
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .subscribe-button {
-  border: none;
+  width: 160px;
+  min-height: 40px;
+  border: 2px solid transparent;
   border-radius: 6px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  background: $sixty-seven-percent-gray;
   color: $white;
   letter-spacing: 0.3125rem;
   text-transform: capitalize;
   cursor: pointer;
 
-  // Override MailChimp button styling defaults
-  width: 160px;
-  min-height: 40px;
-  border: 2px solid transparent !important;
-  background: $sixty-seven-percent-gray !important;
-  font-family: "Raleway", sans-serif !important;
-  font-size: 1.4rem;
-  font-weight: 600 !important;
-  color: $white;
+  &:disabled {
+    background: $thirty-percent-gray;
+  }
 
-  &:hover {
-    border: 2px solid $sixty-seven-percent-gray !important;
-    background: $rainbow-yellow !important;
-    color: $black !important;
+  &:hover:not(:disabled) {
+    border-color: $sixty-seven-percent-gray;
+    background: $rainbow-yellow;
+    color: $black;
   }
 }
 
