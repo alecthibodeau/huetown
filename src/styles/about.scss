@@ -54,16 +54,17 @@ form {
   margin-bottom: 1rem;
 }
 
+.form-status {
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+
 .form-status-success {
-  color: $html-green;
+  color: $dark-green;
 }
 
 .form-status-error {
   color: $red;
-}
-
-.form-status {
-  margin-bottom: .5rem;
 }
 
 .subscribe-button {

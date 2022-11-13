@@ -44,7 +44,17 @@ function CustomForm(props: CustomFormProps) {
     setIsFormValid(validEmailAddress);
   }, [email]);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    if (props.formStatus === 'success') clearFields();
+  }, [props.formStatus])
+
+  function clearFields(): void {
+    setEmail('');
+    setFirstName('');
+    setLastName('');
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     if (isFormValid) {
       props.onValidated({
