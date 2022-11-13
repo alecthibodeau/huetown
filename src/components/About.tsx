@@ -51,7 +51,7 @@ function About() {
         </div>
         <div>
           <SectionTitle title="follow" />
-          Check out Huetown on <a className="text-link" href="https://www.instagram.com/huetown">Instagram</a> or <a className="text-link" href="https://www.twitter.com/huetown">Twitter</a>. Or sign up below for Huetown's email list, with monthly-ish notices.
+          Check out Huetown on <a className="text-link" href="https://www.instagram.com/huetown">Instagram</a>. Or sign up below for Huetown's email list.
           Your information won't be shared with miscreants.
         </div>
         <div>

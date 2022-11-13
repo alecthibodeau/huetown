@@ -32,9 +32,38 @@
   text-transform: capitalize;
 }
 
-.inputs-container {
-  display: flex;
-  flex-direction: column;
+form {
+  padding-bottom: 1.5rem;
+}
+
+.subscribe-prompt {
+  margin: 1.5rem auto 1rem;
+
+  div:first-child {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.required {
+  color: $red;
+}
+
+.form-input {
+  width: 96%;
+  margin-bottom: 1rem;
+}
+
+.form-status {
+  margin-bottom: .5rem;
+}
+
+.form-status-success {
+  color: $html-green;
+}
+
+.form-status-error {
+  color: $red;
 }
 
 .subscribe-button {
@@ -51,11 +80,7 @@
   text-transform: capitalize;
   cursor: pointer;
 
-  &:disabled {
-    background: $thirty-percent-gray;
-  }
-
-  &:hover:not(:disabled) {
+  &:hover {
     border-color: $sixty-seven-percent-gray;
     background: $rainbow-yellow;
     color: $black;

@@ -1,19 +1,19 @@
 import React from 'react';
 import InputFieldProps from '../interfaces/InputFieldProps';
-// import './inputFieldStyles.scss';
 
 function InputField(props: InputFieldProps) {
 
   return (
-    <label className="inputField__label">
-      {props.label}
+    <label>
+      <div>
+        <span>{props.label}</span>{props.isRequired && <span className='required'> *</span>}
+      </div>
       <input
+        className="form-input"
         type={props.type}
         onChange={(event) => props.onUpdateValue?.(event.target.value)}
-        placeholder={props.placeholder}
         value={props.value}
         required={props.isRequired}
-        // className="inputField__field"
         name={props.label}
       />
     </label>

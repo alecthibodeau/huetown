@@ -5,7 +5,6 @@ interface InputFieldProps {
   onUpdateValue: Dispatch<SetStateAction<string>>;
   type: string;
   value: string;
-  placeholder: string;
   isRequired: boolean;
 }
 
