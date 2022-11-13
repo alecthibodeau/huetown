@@ -21,6 +21,7 @@ main {
   top: 100px;
   display: flex;
   justify-content: center;
+  padding: .5rem;
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -54,6 +55,14 @@ main {
   .not-found-error {
     text-align: center;
   }
+
+  .home-content {
+    text-align: left;
+
+    div {
+      margin: 1rem;
+    }
+  }
 }
 
 /* Media Queries */
@@ -62,6 +71,10 @@ main {
 
   main {
     top: initial;
+
+    .home-content {
+      text-align: center;
+    }
   }
 }
 

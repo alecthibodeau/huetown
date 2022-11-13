@@ -27,7 +27,7 @@ function About() {
         <img className="self-portrait" src={selfPortrait} alt="Self portrait drawing" />
         <div>
           <span className="bold">Huetown</span> is the web shop for artist Alec Thibodeau (me!).
-          I make drawings and prints, including lunar calendars. Select work is available here. Past work can be found at my portfolio site: <a className="text-link" href="https://alecthibodeau.com">alecthibodeau.com</a>.
+          I make drawings, prints and more. Select work is available here. Past work can be found at my portfolio site: <a className="text-link" href="https://alecthibodeau.com">alecthibodeau.com</a>.
         </div>
         <img className="huetown-h-logo" src={logo} alt="Huetown H logo"/>
       </div>

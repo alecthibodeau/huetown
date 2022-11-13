@@ -13,6 +13,6 @@ export const shops = [
   },
   {
     name: 'Like No Udder',
-    url: 'http://www.like-no-udder.com'
+    url: 'https://www.like-no-udder.com'
   }
 ];

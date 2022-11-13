@@ -54,10 +54,6 @@ form {
   margin-bottom: 1rem;
 }
 
-.form-status {
-  margin-bottom: .5rem;
-}
-
 .form-status-success {
   color: $html-green;
 }
@@ -66,11 +62,15 @@ form {
   color: $red;
 }
 
+.form-status {
+  margin-bottom: .5rem;
+}
+
 .subscribe-button {
-  width: 160px;
-  min-height: 40px;
   border: 2px solid transparent;
   border-radius: 6px;
+  padding: .5rem 1rem;
+  margin-top: .5rem;
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -78,7 +78,6 @@ form {
   color: $white;
   letter-spacing: 0.3125rem;
   text-transform: capitalize;
-  cursor: pointer;
 
   &:hover {
     border-color: $sixty-seven-percent-gray;
