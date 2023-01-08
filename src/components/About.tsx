@@ -46,7 +46,7 @@ function About() {
           Regardless of item quantity all orders ship for a flat rate in sturdy packaging via USPS Priority Mail from Providence, Rhode Island, USA.
           Flat rates are $8 for domestic shipments within the USA or $29 for international delivery to any other country.
           Packages generally ship within a couple business days of an order being placed, with domestic deliveries usually arriving a few days after that.
-          Once shipping is underway you'll receive a confirmation email directly from PayPal, which includes tracking information.
+          Once shipping is underway you'll receive confirmation directly from PayPal with tracking information.
           Please allow approximately one week for domestic delivery and 2-3 weeks for international delivery.
         </div>
         <div>

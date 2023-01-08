@@ -4,12 +4,8 @@ export const shops = [
     url: 'https://shop.craftlandshop.com'
   },
   {
-    name: 'White Buffalo',
-    url: 'https://www.instagram.com/whitebuffalori'
-  },
-  {
-    name: 'Simple Pleasures',
-    url: 'https://www.simplepleasuresprovidence.com'
+    name: 'Frog & Toad',
+    url: 'https://https://www.frogandtoadstore.com'
   },
   {
     name: 'Like No Udder',

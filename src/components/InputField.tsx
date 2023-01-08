@@ -6,7 +6,8 @@ function InputField(props: InputFieldProps) {
   return (
     <label>
       <div>
-        <span>{props.label}</span>{props.isRequired && <span className='required'> *</span>}
+        <span>{props.label}</span>
+        {props.isRequired && <span className='required'> *</span>}
       </div>
       <input
         className="form-input"

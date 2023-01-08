@@ -2,7 +2,7 @@
 
 $nav-icon-size: 2rem;
 
-// Sub-mixins need to be outside the primary mixin
+/* Sub-mixins need to be outside the primary mixin */
 @mixin nav-text {
   padding: 0; // Overrides default value in form
   border: none;
@@ -17,7 +17,7 @@ $nav-icon-size: 2rem;
   color: $white;
   cursor: pointer;
 
-  // Only show the underside bar effect at larger widths
+  /* Only show the underside bar effect at larger viewport widths */
   @media (min-width: $breakpoint-sm) {
     font-weight: 500;
     color: $ninety-percent-gray;
@@ -122,27 +122,27 @@ nav {
     border-bottom-width: 1px;
     border-bottom-style: solid;
 
-    &.nav-element-lunar-calendar {
+    &:nth-of-type(1) {
       border-top-width: 1px;
       border-top-style: solid;
       border-top-color: $huetown-green;
       border-bottom-color: $huetown-yellow;
     }
 
-    &.nav-element-prints {
+    &:nth-of-type(2) {
       border-bottom-color: $nav-accent-purple;
     }
 
-    &.nav-element-postcards {
+    &:nth-of-type(3) {
       border-bottom-color: $huetown-blue;
     }
 
-    &.nav-element-about {
+    &:nth-of-type(4) {
       border-bottom-color: $red-muted;
     }
   }
 
-  // Styling is needed on both the form and the form's input for the underline effect to work
+  /* Styling is needed on both the form and the form's input for the underline effect to work */
   form {
 
     @include nav-text;
@@ -226,10 +226,10 @@ nav {
   }
 
   nav a.nav-element {
-    &.nav-element-lunar-calendar,
-    &.nav-element-prints,
-    &.nav-element-postcards,
-    &.nav-element-about {
+    &:nth-of-type(1),
+    &:nth-of-type(2),
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
       border: none;
     }
   }

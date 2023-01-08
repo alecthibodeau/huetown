@@ -1,17 +1,14 @@
 @use './_variables' as *;
 
 /* Sub-mixins need to be outside the primary mixin */
-
 @mixin crisp-scaled-down {
-  image-rendering: -moz-crisp-edges; /* Firefox */
-  image-rendering: -o-crisp-edges; /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: -moz-crisp-edges; // Firefox
+  image-rendering: -o-crisp-edges; // Opera
+  image-rendering: -webkit-optimize-contrast; // Webkit (non-standard naming)
   image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 }
 
-/* Selector for .item-page */
-@mixin item-page-content {
+.item-page {
   width: $page-width;
   margin-bottom: 20px;
 
@@ -26,6 +23,21 @@
 
     .item-info-block {
       justify-content: center;
+    }
+  }
+
+  .item-press {
+    max-width: 650px;
+    margin: 0 auto .75rem;
+
+    span:last-of-type {
+      white-space: nowrap;
+
+      a img {
+        max-height: 1.5rem;
+        position: relative;
+        top: .375rem;
+      }
     }
   }
 
@@ -144,7 +156,6 @@
         margin-top: 4px;
         text-align: center;
         text-transform: capitalize;
-        font-size: 1.4rem;
         line-height: 1.8rem;
       }
 
@@ -288,7 +299,7 @@
   }
 
   .item-name {
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 700;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -336,7 +347,7 @@
   .item-price-container {
     position: relative;
     margin: 10px 0;
-    font-size: 2rem;
+    font-size: 1.375rem;
     font-weight: 600;
 
     &.lunar-calendar {
@@ -353,8 +364,8 @@
   }
 
   .quantity-label {
-    margin-left: 0.75rem;
-    font-size: 1.4rem;
+    margin-left: .5rem;
+    font-size: .875rem;
   }
 
   .additional-info {
@@ -381,16 +392,14 @@
   form {
     display: flex;
     align-items: stretch;
-    height: 4rem;
-    min-height: 4rem;
 
     input[name="quantity"] {
-      width: 4rem;
-      height: 3.8rem;
+      width: 2.5rem;
+      height: 2.25rem;
       padding: 0;
       border: 0.1rem solid $fifty-percent-gray;
-      margin: 0 8px 5px 0;
-      font-size: 1.25rem;
+      margin-right: .5rem;
+      font-size: .75rem;
       text-align: center;
     }
 
@@ -401,9 +410,9 @@
       background: $sixty-seven-percent-gray;
       color: $white;
       font-family: "Raleway", sans-serif;
-      font-size: 1.4rem;
+      font-size: .875rem;
       font-weight: 600;
-      letter-spacing: 0.3125rem;
+      letter-spacing: .125rem;
       cursor: pointer;
 
       &:hover {
