@@ -1,15 +1,14 @@
 import { useState } from 'react';
 
+/* Constants */
 import itemsConstants from '../constants/items-constants';
-
-import lunarCalendarTwentyThreeMain from '../assets/images/items/thibodeau_lunar_calendar_2023_photo_main_1000px.jpg';
-import colossalLogo from '../assets/images/colossal-logo-small.jpg';
+import itemsImages from '../constants/items-images';
 
 interface ItemProps {
   itemId: string;
   itemCategory: string;
-  itemName?: string;
-  itemSubname: string;
+  itemTitle: string;
+  itemSubtitle: string;
   itemImageFront: string;
   itemInfoOne: string;
   itemInfoTwo: string;
@@ -17,10 +16,10 @@ interface ItemProps {
   itemInfoFour: string;
   itemPrice: number;
   itemPrintEdition?: number;
-  itemLunarCalendarTitle?: string;
   itemLunarCalendarYear?: number;
   itemLunarCalendarPaperInfo?: string;
   itemLunarCalendarLocation?: string;
+  itemDetailPhotos: string[];
 }
 
 function Item(props: ItemProps) {
@@ -30,7 +29,41 @@ function Item(props: ItemProps) {
   const isLunarCalendar = props.itemCategory === 'lunar calendar';
   const isPrintEdition = props.itemCategory === 'lunar calendar' || 'print';
 
-  return(
+  const itemInfoListItems = [
+    props.itemInfoOne,
+    props.itemInfoTwo,
+    props.itemInfoThree,
+    props.itemInfoFour
+  ];
+
+  function renderListItem(listItem: string, index: number) {
+    return (
+      <li key={`${index}${listItem}`}>
+        {
+          isPrintEdition && index === 2
+            ?
+            <span>
+              <span>Hand numbered and signed by the artist in an edition of </span>
+              <span>{props.itemPrintEdition} </span> <span>prints </span>
+              <a className="text-link" href="#itemDetails">(more info)</a>
+            </span>
+            : listItem
+        }
+      </li>
+    )
+  }
+
+  function renderDetailsImages(image: string, index: number, elements: string[]) {
+    return (
+      /* Render a <div> element containing a pair of <img> elements for every other element */
+      index % 2 === 0 ? <div key={`photoPair${index}`} className="photo-pair">
+        <img className="large-detail-image" src={image} alt={`${props.itemCategory} detail #${index + 1}`}></img>
+        <img className="large-detail-image" src={elements[index + 1]} alt={`${props.itemCategory} detail #${index + 2}`}></img>
+      </div> : null
+    )
+  }
+
+  return (
     <div className="item-page">
       {props.itemLunarCalendarYear === 2023 ?
         <div className="item-press">
@@ -39,51 +72,40 @@ function Item(props: ItemProps) {
           </span>
           <span> &mdash;
             <a className="text-link" href="https://www.thisiscolossal.com/2022/12/calendars-2023">
-              <img src={colossalLogo} alt="Colossal logo" />
+              <img src={itemsImages.colossalLogo} alt="Colossal website logo" />
             </a>
           </span>
         </div>
-      : null}
+        : null}
       <div className={`content-container container-1 ${categoryClass}`}>
         <div className="content-block feature-image-block">
-          <a className="feature-image-link" href="">
+          <a className="feature-image-link" href="#itemDetails">
             <img
               id="featureImage"
               className={`feature-image ${categoryClass}`}
-              src={lunarCalendarTwentyThreeMain}
-              alt={props.itemCategory}
+              src={props.itemImageFront}
+              alt={`${props.itemCategory} ${props.itemTitle}`}
             />
           </a>
         </div>
         <div className={`content-block item-info-block ${categoryClass}`}>
           <div className="item-info-text" id="orderItem">
             <div>
-              <div className="item-name">
-                {!isLunarCalendar ? <div>{props.itemName}</div> :
+              <div className="item-title">
+                {!isLunarCalendar ? <div>{props.itemTitle}</div> :
                   <div>
-                    <span className="lunar-calendar-title">{props.itemLunarCalendarTitle}</span><br />
-                    <span className="lunar-calendar-year normal">{props.itemLunarCalendarYear}</span> <span className="normal">{props.itemCategory}</span>
+                    <span className="lunar-calendar-title">{props.itemTitle}</span><br />
+                    <span className="lunar-calendar-year normal">{props.itemLunarCalendarYear} </span>
+                    <span className="normal">{props.itemCategory}</span>
                   </div>
                 }
               </div>
-              <div className="item-subname">
-                {props.itemSubname}
+              <div>
+                {props.itemSubtitle}
               </div>
             </div>
             <ul className="item-info-container">
-              <li className="item-info-1">{props.itemInfoOne}</li>
-              <li className="item-info-2">{props.itemInfoTwo}</li>
-              <li className="item-info-3">
-                {
-                  isPrintEdition
-                  ?
-                  <span>
-                    Hand numbered and signed by the artist in an edition of ${props.itemPrintEdition} prints <a className="text-link" href="#itemDetails">(more info)</a>
-                  </span>
-                  : props.itemInfoThree
-                }
-              </li>
-              <li className="item-info-4">{props.itemInfoFour}</li>
+              {itemInfoListItems.map(renderListItem)}
             </ul>
           </div>
           <div className={`payment-info ${categoryClass}`}>
@@ -106,7 +128,19 @@ function Item(props: ItemProps) {
           </div>
         </div>
       </div>
-      <div className="content-container container-2"></div>
+      <div className="content-container container-2">
+        {props.itemDetailPhotos.map(renderDetailsImages)}
+        <div className="item-more-info">
+          <div className="info-block"></div>
+          <div className="info-block"></div>
+          <div className="info-block"></div>
+          <div className="info-block"></div>
+          <div className="lunar-phases"></div>
+          <div className="protective-tube"></div>
+          <div></div>
+        </div>
+        <div className="additional-info"></div>
+      </div>
       <div className="content-container container-3"></div>
     </div>
   );

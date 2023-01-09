@@ -1,3 +1,6 @@
+/* Images */
+import images from './items-images';
+
 /* Routes */
 const imagesDirectory = '../assets/images/';
 const itemsDirectory = `${imagesDirectory}items/`;
@@ -13,9 +16,7 @@ const creditScreenPrint = 'Screen print, printed by the artist';
 const dimensionsFiveAndAHalfInches = '5.5 x 5.5 inches';
 const lunarCalendarLocationProvidence = 'The calendar is designed and printed in Providence, Rhode Island, which is identified as a representative location within the artwork.';
 const lunarCalendarLocationNewYork = 'New York City is identified as a representative location within the artwork.';
-const moreInfo = `<a class="text-link" href="#itemDetails">(more info)</a>`;
 const orderNow = `<a class="text-link" href="#featureImage">Order now.</a>`;
-const printEdition = `Hand numbered and signed by the artist in an edition of <span class="print-edition"></span> prints`;
 const shipsFlat = 'Ships flat';
 
 const itemInfoUniversals = {
@@ -23,11 +24,11 @@ const itemInfoUniversals = {
   drawingInfoPenAndInk: 'pen and ink on Bristol board',
   drawingInfoThreeAndQuarterInches: '3.25 x 3.25 inches',
   drawingInfoSignedOnBack: 'signed on the back',
-  lunarCalendarItemSubname: byAlecThibodeau,
+  lunarCalendaritemSubtitle: byAlecThibodeau,
   lunarCalendarPrice: 45,
   lunarCalendarInfoOne: '19 x 11.75 inches',
   lunarCalendarInfoTwo: creditLetterpressPrint,
-  lunarCalendarInfoThree: `${printEdition} ${moreInfo}`,
+  lunarCalendarInfoThree: '', // To be rendered dynamically
   lunarCalendarInfoFour: 'Ships rolled and triple-packaged: archival wrap, eco-friendly protective tube and outer shipping container',
   lunarCalendarBlocks: `
     <div class=info-block>
@@ -67,36 +68,46 @@ const itemInfoUniversals = {
 
 const itemsInfo = {
   lunarCalendarTwentyThree: {
+    itemId: '5QXP4DDGN7P2J',
     itemCategory: categoryLunarCalendar,
-    itemLunarCalendarTitle: 'Thoughts Operator',
-    itemLunarCalendarYear: 2023,
-    itemPrintEdition: 500,
-    itemLunarCalendarPaperInfo: 'Gmund Papers acid-free 300gsm Cyan 111# cover paper',
-    itemSubname: itemInfoUniversals.lunarCalendarItemSubname,
-    itemImageFront: `${itemsDirectory}thibodeau_lunar_calendar_2023_photo_main_1000px.jpg`,
+    itemTitle: 'Thoughts Operator',
+    itemSubtitle: itemInfoUniversals.lunarCalendaritemSubtitle,
+    itemImageFront: images.lunarCalendarTwentyThreeMain,
     itemInfoOne: itemInfoUniversals.lunarCalendarInfoOne,
     itemInfoTwo: itemInfoUniversals.lunarCalendarInfoTwo,
     itemInfoThree: itemInfoUniversals.lunarCalendarInfoThree,
     itemInfoFour: itemInfoUniversals.lunarCalendarInfoFour,
     itemPrice: itemInfoUniversals.lunarCalendarPrice,
+    itemPrintEdition: 500,
+    itemLunarCalendarYear: 2023,
+    itemLunarCalendarPaperInfo: 'Gmund Papers acid-free 300gsm Cyan 111# cover paper',
     itemLunarCalendarLocation: lunarCalendarLocationProvidence,
-    itemId: '5QXP4DDGN7P2J',
-    itemMorePhotoPairOne: `
-      <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_01_700px.jpg" alt="Lunar Calendar 2022 detail #1" />
-      <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_03_700px.jpg" alt="Lunar Calendar 2022 detail #3" />
-    `,
-    itemMorePhotoPairTwo: `
-      <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_05_700px.jpg" alt="Lunar Calendar 2023 detail #5" />
-      <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_07_700px.jpg" alt="Lunar Calendar 2023 detail #7" />
-    `,
-    itemMorePhotoPairThree: `
-      <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_04_700px.jpg" alt="Lunar Calendar 2023 detail #4" />
-      <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_06_700px.jpg" alt="Lunar Calendar 2023 detail #6" />
-    `,
-    itemMorePhotoPairFour: `
-      <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_02_700px.jpg" alt="Lunar Calendar 2022 detail #2" />
-      <img id="itemDetails" class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_08_700px.jpg" alt="Lunar Calendar 2022 detail #8" />
-    `,
+    // itemMorePhotoPairOne: `
+    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_01_700px.jpg" alt="Lunar Calendar 2022 detail #1" />
+    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_03_700px.jpg" alt="Lunar Calendar 2022 detail #3" />
+    // `,
+    // itemMorePhotoPairTwo: `
+    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_05_700px.jpg" alt="Lunar Calendar 2023 detail #5" />
+    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_07_700px.jpg" alt="Lunar Calendar 2023 detail #7" />
+    // `,
+    // itemMorePhotoPairThree: `
+    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_04_700px.jpg" alt="Lunar Calendar 2023 detail #4" />
+    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_06_700px.jpg" alt="Lunar Calendar 2023 detail #6" />
+    // `,
+    // itemMorePhotoPairFour: `
+    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_02_700px.jpg" alt="Lunar Calendar 2022 detail #2" />
+    //   <img id="itemDetails" class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_08_700px.jpg" alt="Lunar Calendar 2022 detail #8" />
+    // `,
+    itemDetailPhotos: [
+      images.lunarCalendarTwentyThreeDetail01,
+      images.lunarCalendarTwentyThreeDetail02,
+      images.lunarCalendarTwentyThreeDetail03,
+      images.lunarCalendarTwentyThreeDetail04,
+      images.lunarCalendarTwentyThreeDetail05,
+      images.lunarCalendarTwentyThreeDetail06,
+      images.lunarCalendarTwentyThreeDetail07,
+      images.lunarCalendarTwentyThreeDetail08
+    ],
     itemMoreInfo: `
     ${itemInfoUniversals.lunarCalendarBlocks}
     <div>

@@ -27,12 +27,12 @@ main {
 
   .text-link {
     text-decoration: none;
-    color: $violet;
+    color: $dark-green;
 
     &:link,
     &:visited,
     &:active {
-      color: $violet;
+      color: $dark-green;
       font-weight: 600;
     }
 
