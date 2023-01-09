@@ -55,6 +55,11 @@ main {
     text-align: center;
   }
 
+  .validation-message {
+    color: $red;
+    font-size: .875rem;
+  }
+
   .home-content {
     text-align: left;
 

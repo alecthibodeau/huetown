@@ -6,6 +6,7 @@ const imagesDirectory = '../assets/images/';
 const itemsDirectory = `${imagesDirectory}items/`;
 
 /* Strings */
+const addToCart = 'Add to cart';
 const colossalBlurb = 'Ornate renderings of natural life frame the elegant letterpress print, which expertly melds artful illustration with timely information.';
 const byAlecThibodeau = 'by Alec Thibodeau';
 const categoryLunarCalendar = 'lunar calendar';
@@ -105,6 +106,7 @@ const itemsInfo = {
 };
 
 export default {
+  addToCart,
   colossalBlurb,
   lunarPhases,
   itemsInfo

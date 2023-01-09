@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /* Constants */
 import itemsConstants from '../constants/items-constants';
@@ -6,14 +6,30 @@ import itemsImages from '../constants/items-images';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import PhaseProps from '../interfaces/PhaseProps';
+import Phase from '../interfaces/Phase';
 
 function Item(props: ItemProps) {
   const [quantity, setQuantity] = useState<string>('1');
+  const [isInputValid, setIsInputValid] = useState<boolean>(true);
+  const [keyPressed, setKeyPressed] = useState<string>('');
+  const [validationdMessage, setValidationdMessage] = useState<string>('');
 
+  const digitsValidation = new RegExp(/^\d+$/);
   const categoryClass = props.itemCategory.replace(/\ /g, '-');
   const isLunarCalendar = props.itemCategory === 'lunar calendar';
   const isPrintEdition = props.itemCategory === 'lunar calendar' || 'print';
+
+  useEffect(() => {
+    const keydown = 'keydown';
+    window.addEventListener(keydown, keyDownHandler);
+    return function cleanupEventListener() {
+      window.removeEventListener(keydown, keyDownHandler);
+    };
+  }, []);
+
+  function keyDownHandler({ key }: KeyboardEvent): void {
+    setKeyPressed(key);
+  }
 
   function renderListItem(listItem: string, index: number) {
     return (
@@ -51,15 +67,26 @@ function Item(props: ItemProps) {
     )
   }
 
-  function renderlunarPhase(phase: PhaseProps) {
+  function renderlunarPhase(phase: Phase, index: number) {
     return (
-      <div className="phase-info">
+      <div key={index  + phase.name + 'moon'}  className="phase-info">
         <img src={phase.image} alt={phase.name + ' moon'}/>
         <div className="phase-text">
           {phase.name + ' moon'}
         </div>
       </div>
     )
+  }
+
+  function onQuantityChange(event: React.BaseSyntheticEvent) {
+    const input = event.target.value;
+    if (!digitsValidation.test(input) && keyPressed !== 'Backspace' && keyPressed !== 'Delete') {
+      setIsInputValid(false);
+      setValidationdMessage('Numbers only, please.')
+    } else {
+      setIsInputValid(true);
+      setQuantity(input);
+    }
   }
 
   return (
@@ -118,11 +145,30 @@ function Item(props: ItemProps) {
                 </span>
               </div>
               <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input type="hidden" name="cmd" value="_s-xclick" />
-                <input className="item-id" type="hidden" name="hosted_button_id" value={props.itemId} />
-                <input onChange={(event) => setQuantity(event.target.value)} type="text" name="quantity" value={quantity} />
-                <input type="submit" value="Add to cart" alt="Add to cart" />
+                <input
+                  name="cmd"
+                  type="hidden"
+                  value="_s-xclick"
+                />
+                <input
+                  name="hosted_button_id"
+                  type="hidden"
+                  value={props.itemId}
+                />
+                <input
+                  name="quantity"
+                  type="text"
+                  value={quantity}
+                  maxLength={3}
+                  onChange={(event) => onQuantityChange(event)}
+                />
+                <input
+                  type="submit"
+                  value={itemsConstants.addToCart}
+                  alt={itemsConstants.addToCart}
+                />
               </form>
+              {!isInputValid ? <div className="validation-message">{validationdMessage}</div> : null}
             </div>
           </div>
         </div>
