@@ -17,13 +17,10 @@ function Home() {
       itemTitle={lunarCalendarTwentyThree.itemTitle}
       itemSubtitle={lunarCalendarTwentyThree.itemSubtitle}
       itemImageFront={lunarCalendarTwentyThree.itemImageFront}
-      itemInfoOne={lunarCalendarTwentyThree.itemInfoOne}
-      itemInfoTwo={lunarCalendarTwentyThree.itemInfoTwo}
-      itemInfoThree={lunarCalendarTwentyThree.itemInfoThree}
-      itemInfoFour={lunarCalendarTwentyThree.itemInfoFour}
+      itemInfo={lunarCalendarTwentyThree.itemInfo}
       itemPrice={lunarCalendarTwentyThree.itemPrice}
       itemPrintEdition={lunarCalendarTwentyThree.itemPrintEdition}
-      itemDetailPhotos={lunarCalendarTwentyThree.itemDetailPhotos}
+      itemDetailImages={lunarCalendarTwentyThree.itemDetailImages}
       itemLunarCalendarYear={lunarCalendarTwentyThree.itemLunarCalendarYear}
       itemLunarCalendarPaperInfo={lunarCalendarTwentyThree.itemLunarCalendarPaperInfo}
       itemLunarCalendarLocation={lunarCalendarTwentyThree.itemLunarCalendarLocation}

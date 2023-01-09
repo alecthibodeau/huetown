@@ -135,7 +135,7 @@
       margin: 0 auto;
       padding-top: 15px;
 
-      .info-block:not(:first-of-type) {
+      .more-info-block:not(:first-of-type) {
         margin: 15px auto 0;
       }
 
@@ -146,18 +146,19 @@
         margin: 25px auto;
       }
 
-      [class^="phase-info"] {
+      .phase-info {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0 5px;
       }
 
-      [class^="phase-text"] {
+      .phase-text {
         margin-top: 4px;
         text-align: center;
         text-transform: capitalize;
-        line-height: 1.8rem;
+        font-size: .875rem;
+        line-height: 1.125rem;
       }
 
       .protective-tube {

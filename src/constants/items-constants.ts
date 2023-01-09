@@ -1,12 +1,12 @@
 /* Images */
-import images from './items-images';
+import itemsImages from './items-images';
 
 /* Routes */
 const imagesDirectory = '../assets/images/';
 const itemsDirectory = `${imagesDirectory}items/`;
 
+/* Strings */
 const colossalBlurb = 'Ornate renderings of natural life frame the elegant letterpress print, which expertly melds artful illustration with timely information.';
-
 const byAlecThibodeau = 'by Alec Thibodeau';
 const categoryLunarCalendar = 'lunar calendar';
 const categoryPostcard = 'postcard';
@@ -16,7 +16,6 @@ const creditScreenPrint = 'Screen print, printed by the artist';
 const dimensionsFiveAndAHalfInches = '5.5 x 5.5 inches';
 const lunarCalendarLocationProvidence = 'The calendar is designed and printed in Providence, Rhode Island, which is identified as a representative location within the artwork.';
 const lunarCalendarLocationNewYork = 'New York City is identified as a representative location within the artwork.';
-const orderNow = `<a class="text-link" href="#featureImage">Order now.</a>`;
 const shipsFlat = 'Ships flat';
 
 const itemInfoUniversals = {
@@ -30,41 +29,30 @@ const itemInfoUniversals = {
   lunarCalendarInfoTwo: creditLetterpressPrint,
   lunarCalendarInfoThree: '', // To be rendered dynamically
   lunarCalendarInfoFour: 'Ships rolled and triple-packaged: archival wrap, eco-friendly protective tube and outer shipping container',
-  lunarCalendarBlocks: `
-    <div class=info-block>
-      <span class="lunar-calendar-title ital"></span> is a letterpress-printed lunar calendar designed and drawn by Alec Thibodeau (me!),
-      chronicling all phases of the moon for <span class="lunar-calendar-year"></span>.
-      From an edition of <span class="print-edition"></span> prints <span class="lunar-calendar-title ital"></span> continues Alec's ongoing lunar calendar series,
-      which features ornate illustrations framing an annual cycle of moon shapes.
-      As with each of Alec's previous lunar calendars this piece measures 19" x 11.75" (a golden rectangle) and is expertly printed by Dan Wood
-      and his team at <a class="text-link" href="https://www.dwriletterpress.net" target="_blank">DWRI&nbsp;Letterpress</a>.
-    </div>
-    <div class=info-block>
-      The <span class="lunar-calendar-year"></span> lunar calendar comprises new drawings and year-specific lunar phase information.
-      Each calendar is printed on <span class="lunar-calendar-paper-info"></span>, blind-debossed with Alec's name and the print shop's name &mdash; and hand numbered and signed by Alec. Each calendar ships in archival wrap with an accompanying information sheet inside an eco-friendly fiberboard protective tube (reusable, recycled, recyclable) with crimped ends.
-    </div>
-    <div class=info-block>
-      The calendar's lunar phase chart is calibrated for any location in the Eastern Time Zone and is accurate to within a day for anywhere in the Northern Hemisphere. The chart also matches lunar cycles in the Southern Hemisphere: but with inverted shapes. <span class="lunar-calendar-location"></span>
-    </div>
-    <div class=info-block>
-      Custom moon illustrations portray all principal lunar phases (New Moon, First Quarter Moon, Full Moon and Third Quarter Moon) plus all intermediate crescent and gibbous phases. For months with less than 31 days, drawings of clouds occupy the extra spaces.
-      ${orderNow}
-    </div>
-
-    <div class="lunar-phases" id="lunarPhases">
-      <!-- phases here -->
-    </div>
-
-    <div class="protective-tube" id="tube">
-      <div class="tube-text">eco-friendly protective tube:</div>
-      <img src="${itemsDirectory}protective_tube.png" alt="Protective tube for storing lunar calendar"/>
-    </div>
-  `,
   postcardInfoOne: '6 x 4 inches',
   postcardInfoTwo: 'Mellow, satin finish',
   postcardInfoThree: 'Full-color front / single-color back',
   postcardPrice: 1
 }
+
+const lunarPhases = [
+  {
+    name: 'new',
+    image: itemsImages.phaseNew
+  },
+  {
+    name: 'first quarter',
+    image: itemsImages.phaseFirstQuarter
+  },
+  {
+    name: 'full',
+    image: itemsImages.phaseFull
+  },
+  {
+    name: 'third quarter',
+    image: itemsImages.phaseThirdQuarter
+  }
+];
 
 const itemsInfo = {
   lunarCalendarTwentyThree: {
@@ -72,44 +60,29 @@ const itemsInfo = {
     itemCategory: categoryLunarCalendar,
     itemTitle: 'Thoughts Operator',
     itemSubtitle: itemInfoUniversals.lunarCalendaritemSubtitle,
-    itemImageFront: images.lunarCalendarTwentyThreeMain,
-    itemInfoOne: itemInfoUniversals.lunarCalendarInfoOne,
-    itemInfoTwo: itemInfoUniversals.lunarCalendarInfoTwo,
-    itemInfoThree: itemInfoUniversals.lunarCalendarInfoThree,
-    itemInfoFour: itemInfoUniversals.lunarCalendarInfoFour,
+    itemImageFront: itemsImages.lunarCalendarTwentyThreeMain,
+    itemInfo: [
+      itemInfoUniversals.lunarCalendarInfoOne,
+      itemInfoUniversals.lunarCalendarInfoTwo,
+      itemInfoUniversals.lunarCalendarInfoThree,
+      itemInfoUniversals.lunarCalendarInfoFour
+    ],
     itemPrice: itemInfoUniversals.lunarCalendarPrice,
     itemPrintEdition: 500,
     itemLunarCalendarYear: 2023,
     itemLunarCalendarPaperInfo: 'Gmund Papers acid-free 300gsm Cyan 111# cover paper',
     itemLunarCalendarLocation: lunarCalendarLocationProvidence,
-    // itemMorePhotoPairOne: `
-    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_01_700px.jpg" alt="Lunar Calendar 2022 detail #1" />
-    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_03_700px.jpg" alt="Lunar Calendar 2022 detail #3" />
-    // `,
-    // itemMorePhotoPairTwo: `
-    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_05_700px.jpg" alt="Lunar Calendar 2023 detail #5" />
-    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_07_700px.jpg" alt="Lunar Calendar 2023 detail #7" />
-    // `,
-    // itemMorePhotoPairThree: `
-    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_04_700px.jpg" alt="Lunar Calendar 2023 detail #4" />
-    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_06_700px.jpg" alt="Lunar Calendar 2023 detail #6" />
-    // `,
-    // itemMorePhotoPairFour: `
-    //   <img class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_02_700px.jpg" alt="Lunar Calendar 2022 detail #2" />
-    //   <img id="itemDetails" class="large-detail-image" src="${itemsDirectory}thibodeau_lunar_calendar_2023_photo_08_700px.jpg" alt="Lunar Calendar 2022 detail #8" />
-    // `,
-    itemDetailPhotos: [
-      images.lunarCalendarTwentyThreeDetail01,
-      images.lunarCalendarTwentyThreeDetail02,
-      images.lunarCalendarTwentyThreeDetail03,
-      images.lunarCalendarTwentyThreeDetail04,
-      images.lunarCalendarTwentyThreeDetail05,
-      images.lunarCalendarTwentyThreeDetail06,
-      images.lunarCalendarTwentyThreeDetail07,
-      images.lunarCalendarTwentyThreeDetail08
+    itemDetailImages: [
+      itemsImages.lunarCalendarTwentyThreeDetail01,
+      itemsImages.lunarCalendarTwentyThreeDetail02,
+      itemsImages.lunarCalendarTwentyThreeDetail03,
+      itemsImages.lunarCalendarTwentyThreeDetail04,
+      itemsImages.lunarCalendarTwentyThreeDetail05,
+      itemsImages.lunarCalendarTwentyThreeDetail06,
+      itemsImages.lunarCalendarTwentyThreeDetail07,
+      itemsImages.lunarCalendarTwentyThreeDetail08
     ],
     itemMoreInfo: `
-    ${itemInfoUniversals.lunarCalendarBlocks}
     <div>
       <p>
         Follow <a class="text-link" href="https://www.instagram.com/huetown/" target="_blank">@huetown</a> on Instagram to see this print's letterpress production in action.
@@ -133,5 +106,6 @@ const itemsInfo = {
 
 export default {
   colossalBlurb,
+  lunarPhases,
   itemsInfo
 };
