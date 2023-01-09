@@ -1,5 +1,4 @@
 import colossalLogo from '../assets/images/colossal-logo-small.jpg';
-import protectiveTube from '../assets/images/items/protective-tube.png';
 import phaseFirstQuarter from '../assets/images/items/phase-first-quarter.png';
 import phaseFull from '../assets/images/items/phase-full.png';
 import phaseNew from '../assets/images/items/phase-new.png';
@@ -17,7 +16,6 @@ import lunarCalendarTwentyThreeDetail08 from '../assets/images/items/thibodeau-l
 
 export default {
   colossalLogo,
-  protectiveTube,
   phaseFirstQuarter,
   phaseFull,
   phaseNew,
