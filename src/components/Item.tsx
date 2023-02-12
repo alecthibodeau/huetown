@@ -72,13 +72,11 @@ function Item(props: ItemProps) {
 
   function renderThumbnail(thumbnail: ThumbnailProps, index: number) {
     return (
-      <div key={`thumbnail${thumbnail.label}${index}`}>
-        <div>
-          <a href={thumbnail.link}>
-            <img src={thumbnail.image} />
-          </a>
-        </div>
-        <div className="text">{thumbnail.label}</div>
+      <div key={`thumbnail${thumbnail.label}${index}`} className="thumbnail">
+        <a href={thumbnail.link}>
+          <img src={thumbnail.image} />
+        </a>
+        <div className="label">{thumbnail.label}</div>
       </div>
     )
   }
@@ -213,24 +211,24 @@ function Item(props: ItemProps) {
           </div>
         : null}
       </div>
-      <div className="content-container container-3">
-        <div className="thumbnails-container">
-          <div className="title">
-            available alec thibodeau lunar&nbsp;calendars
-          </div>
-          <div className="lunar-calendar-links">
-            {itemsLunarCalendarsConstants.lunarCalendarsAvailable.map(renderThumbnail)}
-          </div>
+      {isLunarCalendar ?
+        <div className="content-container container-3">
+          {itemsLunarCalendarsConstants.thumbnailsLunarCalendars.map(
+            (set, index) => {
+              return (
+                <div key={`status${set.status}${index}`} className="thumbnails-set">
+                  <div className="title">
+                    {set.status} alec thibodeau lunar&nbsp;calendars
+                  </div>
+                  <div className="thumbnails">
+                    {set.thumbnails.map(renderThumbnail)}
+                  </div>
+                </div>
+              )
+            }
+          )}
         </div>
-        <div className="thumbnails-container">
-          <div className="title">
-            previous alec thibodeau lunar&nbsp;calendars
-          </div>
-          <div className="lunar-calendar-links">
-            {itemsLunarCalendarsConstants.lunarCalendarsPrevious.map(renderThumbnail)}
-          </div>
-        </div>
-      </div>
+      : null}
     </div>
   );
 }

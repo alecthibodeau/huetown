@@ -64,7 +64,17 @@ const lunarCalendarsPrevious = [
   }
 ];
 
+const thumbnailsLunarCalendars = [
+  {
+    status: 'available',
+    thumbnails: lunarCalendarsAvailable
+  },
+  {
+    status: 'previous',
+    thumbnails: lunarCalendarsPrevious
+  }
+]
+
 export default {
-  lunarCalendarsAvailable,
-  lunarCalendarsPrevious
+  thumbnailsLunarCalendars
 };

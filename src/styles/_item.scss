@@ -34,9 +34,9 @@
       white-space: nowrap;
 
       a img {
-        max-height: 1.5rem;
         position: relative;
         top: .375rem;
+        max-height: 1.5rem;
       }
     }
   }
@@ -82,14 +82,9 @@
   }
 
   .container-2 {
-    // display: none;
     display: block;
     border-top: 1px solid $light-gray;
     margin-top: 20px;
-
-    // &.shown {
-    //   display: block;
-    // }
 
     .photo-pair {
       display: flex;
@@ -132,18 +127,16 @@
 
     .item-more-info {
       max-width: $character-width;
-      margin: 0 auto;
-      padding-top: 15px;
+      margin: 2rem auto;
 
-      .more-info-block:not(:first-of-type) {
-        margin: 15px auto 0;
+      .more-info-block {
+        margin: 1rem auto .5rem;
       }
 
       .lunar-phases {
         display: flex;
-        justify-content: center;
         width: 250px;
-        margin: 25px auto;
+        margin: 2rem auto;
       }
 
       .phase-info {
@@ -154,55 +147,30 @@
       }
 
       .phase-text {
-        margin-top: 4px;
+        margin-top: .25rem;
         text-align: center;
         text-transform: capitalize;
         font-size: .875rem;
         line-height: 1.125rem;
       }
-
-      .protective-tube {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 5px auto 35px;
-
-        .tube-text {
-          margin-bottom: 5px;
-        }
-
-        @media only screen and (max-width: 500px) {
-          img {
-            width: 220px;
-            height: auto;
-          }
-        }
-      }
     }
   }
 
   .container-3 {
-    // display: none;
     flex-direction: column;
 
-    a {
-      max-width: 200px;
-
-      img {
-        max-width: 200px;
-      }
-    }
-
-    // &.shown {
-    //   display: block;
-    // }
-
-    .thumbnails-container {
-      display: flex;
-      flex-direction: column;
+    .thumbnails-set {
       margin: 0 auto;
 
-      div {
+      .title {
+        margin: 1rem auto .5rem;
+        text-transform: capitalize;
+        color: $sixty-percent-gray;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .thumbnails {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -210,21 +178,14 @@
         margin: 0 auto;
         text-align: center;
 
-        &.title {
-          margin: 0 auto 10px;
-          text-transform: capitalize;
-          color: $sixty-percent-gray;
-          font-weight: 700;
-        }
+        .thumbnail {
+          margin: .5rem .75rem;
 
-        &.lunar-calendar-links {
-          div {
-            flex-direction: column;
-            margin: 0 5px;
-
-            .text {
-              margin-bottom: 10px;
-            }
+          a,
+          a img {
+            display: block;
+            width: 200px;
+            height: 123px;
           }
         }
       }
@@ -367,24 +328,11 @@
   }
 
   .additional-info {
-    margin: 0 auto 24px;
+    margin: .25rem auto 1.5rem;
     max-width: $character-width;
 
-    .follow-text {
-      margin-bottom: 8px;
-    }
-
     .item-accompanying {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 auto;
-
-      img,
-      a img {
-        width: 300px;
-        height: 300px;
-      }
+      text-align: center;
     }
   }
 
