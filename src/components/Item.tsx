@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 
+/* Components */
+import LunarCalendarInfo from './LunarCalendarInfo';
+
 /* Constants */
 import itemsConstants from '../constants/items-constants';
 import itemsImages from '../constants/items-images';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import ItemMoreInfo from './ItemMoreInfo';
 
 function Item(props: ItemProps) {
   const [quantity, setQuantity] = useState<string>('1');
@@ -18,6 +20,8 @@ function Item(props: ItemProps) {
   const categoryClass = props.itemCategory.replace(/\ /g, '-');
   const isLunarCalendar = props.itemCategory === 'lunar calendar';
   const isPrintEdition = props.itemCategory === 'lunar calendar' || 'print';
+
+  const isCurrentLunarCalendar = props.itemLunarCalendarYear === 2023;
 
   useEffect(() => {
     const keydown = 'keydown';
@@ -35,12 +39,9 @@ function Item(props: ItemProps) {
     return (
       <li key={`${index}${listItem}`}>
         {
-          isPrintEdition && index === 2
-            ?
+          isPrintEdition && index === 2 ?
             <span>
-              <span>Hand numbered and signed by the artist in an edition of </span>
-              <span>{props.itemPrintEdition} </span> <span>prints </span>
-              <a className="text-link" href="#itemDetails">(more info)</a>
+              Numbered and signed <a className="text-link" href="#itemDetails">(more info)</a>
             </span>
             : listItem
         }
@@ -80,7 +81,7 @@ function Item(props: ItemProps) {
 
   return (
     <div className="item-page">
-      {props.itemLunarCalendarYear === 2023 ?
+      {isCurrentLunarCalendar ?
         <div className="item-press">
           <span className="ital">
             {itemsConstants.colossalBlurb}
@@ -91,7 +92,7 @@ function Item(props: ItemProps) {
             </a>
           </span>
         </div>
-        : null}
+      : null}
       <div className={`content-container container-1 ${categoryClass}`}>
         <div className="content-block feature-image-block">
           <a className="feature-image-link" href="#itemDetails">
@@ -165,7 +166,7 @@ function Item(props: ItemProps) {
       <div className="content-container container-2">
         {props.itemDetailImages.map(renderDetailImagePair)}
         {isLunarCalendar ?
-          <ItemMoreInfo
+          <LunarCalendarInfo
             itemId={props.itemId}
             itemCategory={props.itemCategory}
             itemTitle={props.itemTitle}
@@ -180,7 +181,22 @@ function Item(props: ItemProps) {
             itemLunarCalendarLocation={props.itemLunarCalendarLocation}
           />
         : null}
-        <div className="additional-info"></div>
+        {isCurrentLunarCalendar ?
+          <div className="additional-info">
+            <div>
+              <p>
+                Follow <a className="text-link" href="https://www.instagram.com/huetown/" target="_blank">@huetown</a> on Instagram to see this print's letterpress production in action.
+                And join the <a className="text-link" href="about.html">email list</a> to learn when other works are available.
+              </p>
+              <p>
+                Each lunar calendar preordered by November 25th, 2022 included a <span className="ital">Space Pony</span> letterpress print:
+              </p>
+            </div>
+            <div className="item-accompanying">
+              <img src={itemsImages.spacePony} />
+            </div>
+          </div>
+        : null}
       </div>
       <div className="content-container container-3"></div>
     </div>

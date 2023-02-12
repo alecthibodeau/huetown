@@ -3,28 +3,30 @@ import Item from './Item';
 import itemsConstants from '../constants/items-constants';
 
 function Home() {
-  const lunarCalendarTwentyThree = itemsConstants.itemsInfo.lunarCalendarTwentyThree;
+  const featured = itemsConstants.itemsInfo.lunarCalendarTwentyThree;
+  const isFeatured = true;
 
   return (
-    // <div className="home-content">
-    //   <div>
-    //     <span className="bold">Event:</span> <span>Catch Huetown at the <a className="text-link" href="https://www.rivegfest.com">2023 Rhode Island VegFest</a> on February 4th and 5th in Providence, Rhode Island.</span>
-    //   </div>
-    // </div>
-    <Item
-      itemId={lunarCalendarTwentyThree.itemId}
-      itemCategory={lunarCalendarTwentyThree.itemCategory}
-      itemTitle={lunarCalendarTwentyThree.itemTitle}
-      itemSubtitle={lunarCalendarTwentyThree.itemSubtitle}
-      itemImageFront={lunarCalendarTwentyThree.itemImageFront}
-      itemInfo={lunarCalendarTwentyThree.itemInfo}
-      itemPrice={lunarCalendarTwentyThree.itemPrice}
-      itemPrintEdition={lunarCalendarTwentyThree.itemPrintEdition}
-      itemDetailImages={lunarCalendarTwentyThree.itemDetailImages}
-      itemLunarCalendarYear={lunarCalendarTwentyThree.itemLunarCalendarYear}
-      itemLunarCalendarPaperInfo={lunarCalendarTwentyThree.itemLunarCalendarPaperInfo}
-      itemLunarCalendarLocation={lunarCalendarTwentyThree.itemLunarCalendarLocation}
-    />
+    <>
+      {isFeatured ?
+        <Item
+          itemId={featured.itemId}
+          itemCategory={featured.itemCategory}
+          itemTitle={featured.itemTitle}
+          itemSubtitle={featured.itemSubtitle}
+          itemImageFront={featured.itemImageFront}
+          itemInfo={featured.itemInfo}
+          itemPrice={featured.itemPrice}
+          itemPrintEdition={featured.itemPrintEdition}
+          itemDetailImages={featured.itemDetailImages}
+          itemLunarCalendarYear={featured.itemLunarCalendarYear}
+          itemLunarCalendarPaperInfo={featured.itemLunarCalendarPaperInfo}
+          itemLunarCalendarLocation={featured.itemLunarCalendarLocation}
+        />
+      : <div className="home-content">
+          <span className="bold">Event:</span> <span>Catch Huetown at the <a className="text-link" href="https://unbound.risd.edu">2023 Unbound RISD Art Book Fair</a> on Saturday, April 15, from 11am-5pm in Providence, Rhode Island.</span>
+        </div>}
+    </>
   );
 }
 

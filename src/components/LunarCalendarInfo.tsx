@@ -5,11 +5,11 @@ import itemsConstants from '../constants/items-constants';
 import ItemProps from '../interfaces/ItemProps';
 import Phase from '../interfaces/Phase';
 
-function ItemMoreInfo(props: ItemProps) {
+function LunarCalendarInfo(props: ItemProps) {
 
   function renderlunarPhase(phase: Phase, index: number) {
     return (
-      <div key={index  + phase.name + 'moon'}  className="phase-info">
+      <div key={index + phase.name + 'moon'}  className="phase-info">
         <img src={phase.image} alt={phase.name + ' moon'}/>
         <div className="phase-text">
           {phase.name + ' moon'}
@@ -41,9 +41,8 @@ function ItemMoreInfo(props: ItemProps) {
       <div className="lunar-phases" id="lunarPhases">
         {itemsConstants.lunarPhases.map(renderlunarPhase)}
       </div>
-      <div></div>
     </div>
   );
 };
 
-export default ItemMoreInfo;
+export default LunarCalendarInfo;

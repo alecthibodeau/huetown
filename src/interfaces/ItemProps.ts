@@ -4,10 +4,6 @@ interface ItemProps {
   itemTitle: string;
   itemSubtitle: string;
   itemImageFront: string;
-  // itemInfoOne: string;
-  // itemInfoTwo: string;
-  // itemInfoThree: string;
-  // itemInfoFour: string;
   itemInfo: string[];
   itemPrice: number;
   itemPrintEdition?: number;

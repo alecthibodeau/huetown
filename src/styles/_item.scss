@@ -96,7 +96,7 @@
       justify-content: center;
 
       .local-pick-up {
-        max-width: 80ch;
+        max-width: $character-width;
       }
 
       img {
@@ -131,7 +131,7 @@
     }
 
     .item-more-info {
-      max-width: 80ch;
+      max-width: $character-width;
       margin: 0 auto;
       padding-top: 15px;
 
@@ -371,7 +371,8 @@
   }
 
   .additional-info {
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
+    max-width: $character-width;
 
     .follow-text {
       margin-bottom: 8px;

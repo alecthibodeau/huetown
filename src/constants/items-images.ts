@@ -3,7 +3,6 @@ import phaseFirstQuarter from '../assets/images/items/phase-first-quarter.png';
 import phaseFull from '../assets/images/items/phase-full.png';
 import phaseNew from '../assets/images/items/phase-new.png';
 import phaseThirdQuarter from '../assets/images/items/phase-third-quarter.png';
-
 import lunarCalendarTwentyThreeMain from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-main-1000px.jpg';
 import lunarCalendarTwentyThreeDetail01 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-01-700px.jpg';
 import lunarCalendarTwentyThreeDetail02 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-02-700px.jpg';
@@ -13,6 +12,7 @@ import lunarCalendarTwentyThreeDetail05 from '../assets/images/items/thibodeau-l
 import lunarCalendarTwentyThreeDetail06 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-06-700px.jpg';
 import lunarCalendarTwentyThreeDetail07 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-07-700px.jpg';
 import lunarCalendarTwentyThreeDetail08 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-08-700px.jpg';
+import spacePony from '../assets/images/items/space-pony-300px.jpg';
 
 export default {
   colossalLogo,
@@ -28,5 +28,6 @@ export default {
   lunarCalendarTwentyThreeDetail05,
   lunarCalendarTwentyThreeDetail06,
   lunarCalendarTwentyThreeDetail07,
-  lunarCalendarTwentyThreeDetail08
+  lunarCalendarTwentyThreeDetail08,
+  spacePony
 }
