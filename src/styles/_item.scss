@@ -182,9 +182,10 @@
   }
 
   .container-3 {
-    display: none;
+    // display: none;
+    flex-direction: column;
 
-    a.available-calendar {
+    a {
       max-width: 200px;
 
       img {
@@ -192,19 +193,14 @@
       }
     }
 
-    &.shown {
-      display: block;
-    }
+    // &.shown {
+    //   display: block;
+    // }
 
-    .available,
-    .previous {
+    .thumbnails-container {
       display: flex;
       flex-direction: column;
       margin: 0 auto;
-
-      &.previous {
-        margin-top: 10px;
-      }
 
       div {
         display: flex;
@@ -221,7 +217,7 @@
           font-weight: 700;
         }
 
-        &[class^="lunar-calendar-links"] {
+        &.lunar-calendar-links {
           div {
             flex-direction: column;
             margin: 0 5px;

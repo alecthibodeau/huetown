@@ -1,3 +1,4 @@
+/* Interfaces */
 import SectionTitleProps from '../interfaces/SectionTitleProps';
 
 function SectionTitle(props: SectionTitleProps) {
