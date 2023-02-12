@@ -10,21 +10,7 @@
 
 .item-page {
   width: $page-width;
-  margin-bottom: 20px;
-
-  &.item-title-abundance .container-1 {
-    .feature-image-block a img {
-      width: 600px;
-
-      @media only screen and (max-width: 650px) {
-        width: 80vw;
-      }
-    }
-
-    .item-info-block {
-      justify-content: center;
-    }
-  }
+  margin-bottom: 1rem;
 
   .item-press {
     max-width: 650px;
@@ -41,44 +27,19 @@
     }
   }
 
-  .content-container {
+  .container-1 {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    &.lunar-calendar {
-      @media only screen and (max-width: 1050px) {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .feature-image {
-        width: 700px;
-        height: auto;
-
-        @media only screen and (max-width: 768px) {
-          width: 520px;
-        }
-
-        @media only screen and (max-width: 576px) {
-          width: 300px;
-        }
-      }
+    &:not(.lunar-calendar) .feature-image-link {
+      pointer-events: none;
     }
 
-    &:not(.lunar-calendar) {
-      .feature-image-link {
-        pointer-events: none;
-      }
-    }
-
-    &.print,
-    &.postcard {
-      justify-content: center;
-    }
-
-    @media only screen and (max-width: 850px) {
-      flex-direction: column;
-      align-items: center;
-    }
+    // &.print,
+    // &.postcard {
+    //   justify-content: center;
+    // }
   }
 
   .container-2 {
@@ -89,10 +50,6 @@
     .photo-pair {
       display: flex;
       justify-content: center;
-
-      .local-pick-up {
-        max-width: $character-width;
-      }
 
       img {
         margin: 10px 5px 0;
@@ -157,6 +114,7 @@
   }
 
   .container-3 {
+    display: flex;
     flex-direction: column;
 
     .thumbnails-set {
@@ -195,16 +153,20 @@
   img.feature-image {
     @include crisp-scaled-down;
 
+    width: 300px;
+    max-width: 700px;
+    height: auto;
+
     &.postcard {
       border: 1px solid $sixty-percent-gray;
 
-      @media only screen and (max-width: 650px) {
-        width: 550px;
-      }
+      // @media only screen and (max-width: 650px) {
+      //   width: 550px;
+      // }
 
-      @media only screen and (max-width: 600px) {
-        width: 90vw;
-      }
+      // @media only screen and (max-width: 600px) {
+      //   width: 90vw;
+      // }
     }
 
     &.print {
@@ -218,43 +180,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-left: 15px;
+    max-width: 600px;
 
-    &.lunar-calendar {
-      @media only screen and (max-width: 1050px) {
-        max-width: 600px;
-        flex-direction: column-reverse;
-        padding-left: 0;
-        // flex-direction: column; // OPTIONAL SETTING
-      }
-    }
+    // &.postcard {
+    //   @media only screen and (max-width: 650px) {
+    //     width: 550px;
+    //   }
 
-    @media only screen and (max-width: 850px) {
-      max-width: 600px;
-      flex-direction: column-reverse;
-      padding-left: 0;
-      // flex-direction: column; // OPTIONAL SETTING
-    }
-
-    &.postcard {
-      @media only screen and (max-width: 650px) {
-        width: 550px;
-      }
-
-      @media only screen and (max-width: 600px) {
-        width: 90vw;
-      }
-    }
-  }
-
-  .item-preorder {
-    display: none;
-
-    &.visible {
-      display: inline;
-      text-transform: uppercase;
-      color: $calendar-coral;
-    }
+    //   @media only screen and (max-width: 600px) {
+    //     width: 90vw;
+    //   }
+    // }
   }
 
   .item-title {
@@ -272,68 +208,24 @@
     padding-inline-start: 20px;
   }
 
-  .item-info-text {
-    @media only screen and (max-width: 850px) {
-      margin: 5px 0 0 5px;
-    }
-  }
-
   .payment-info {
     display: flex;
-    flex-direction: column;
-
-    &.lunar-calendar {
-      @media only screen and (max-width: 1050px) {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 5px 0;
-      }
-    }
-
-    @media only screen and (max-width: 850px) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      margin: 5px 0;
-    }
-
-    @media only screen and (max-width: 650px) {
-      // justify-content: left; // OPTIONAL SETTING
-    }
+    align-items: center;
+    justify-content: center;
+    margin: .5rem;
   }
 
   .item-price-container {
     position: relative;
-    margin: 10px 0;
+    top: .75rem;
+    margin-right: .5rem;
     font-size: 1.375rem;
     font-weight: 600;
-
-    &.lunar-calendar {
-      @media only screen and (max-width: 1050px) {
-        margin: 0 10px 0 0;
-        top: 12px;
-      }
-    }
-
-    @media only screen and (max-width: 850px) {
-      margin: 0 10px 0 0;
-      top: 12px;
-    }
   }
 
   .quantity-label {
     margin-left: .5rem;
     font-size: .875rem;
-  }
-
-  .additional-info {
-    margin: .25rem auto 1.5rem;
-    max-width: $character-width;
-
-    .item-accompanying {
-      text-align: center;
-    }
   }
 
   form {
@@ -367,6 +259,52 @@
         color: $black;
         background: $rainbow-yellow;
       }
+    }
+  }
+
+  .additional-info {
+    margin: .25rem auto 1.5rem;
+    max-width: $character-width;
+
+    .item-accompanying {
+      text-align: center;
+    }
+  }
+}
+
+/* Media Queries */
+
+@media (min-width: $breakpoint-sm) {
+  .item-page {
+
+    img.feature-image {
+      width: 90vw;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+
+  .item-page {
+
+    .container-1 {
+      flex-direction: row;
+      align-items: initial;
+    }
+
+    .item-info-block {
+      flex-direction: column-reverse;
+      padding-left: 15px;
+    }
+
+    .payment-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .item-price-container {
+      top: initial;
+      margin-bottom: 1rem;
     }
   }
 }

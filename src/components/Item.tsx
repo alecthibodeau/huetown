@@ -106,8 +106,8 @@ function Item(props: ItemProps) {
           </span>
         </div>
       : null}
-      <div className={`content-container container-1 ${categoryClass}`}>
-        <div className="content-block feature-image-block">
+      <div className={`container-1 ${categoryClass}`}>
+        <div className="feature-image-block">
           <a className="feature-image-link" href="#itemDetails">
             <img
               id="featureImage"
@@ -117,26 +117,7 @@ function Item(props: ItemProps) {
             />
           </a>
         </div>
-        <div className={`content-block item-info-block ${categoryClass}`}>
-          <div className="item-info-text" id="orderItem">
-            <div>
-              <div className="item-title">
-                {!isLunarCalendar ? <div>{props.itemTitle}</div> :
-                  <div>
-                    <span className="lunar-calendar-title">{props.itemTitle}</span><br />
-                    <span className="lunar-calendar-year normal">{props.itemLunarCalendarYear} </span>
-                    <span className="normal">{props.itemCategory}</span>
-                  </div>
-                }
-              </div>
-              <div>
-                {props.itemSubtitle}
-              </div>
-            </div>
-            <ul className="item-info-container">
-              {props.itemInfo.map(renderListItem)}
-            </ul>
-          </div>
+        <div className={`item-info-block ${categoryClass}`}>
           <div className={`payment-info ${categoryClass}`}>
             <div className={`item-price-container ${categoryClass}`}>
               $<span className="item-price">{props.itemPrice}</span>
@@ -174,9 +155,28 @@ function Item(props: ItemProps) {
               {!isInputValid ? <div className="validation-message">{validationdMessage}</div> : null}
             </div>
           </div>
+          <div className="item-info-text" id="orderItem">
+            <div>
+              <div className="item-title">
+                {!isLunarCalendar ? <div>{props.itemTitle}</div> :
+                  <div>
+                    <span className="lunar-calendar-title">{props.itemTitle}</span><br />
+                    <span className="lunar-calendar-year normal">{props.itemLunarCalendarYear} </span>
+                    <span className="normal">{props.itemCategory}</span>
+                  </div>
+                }
+              </div>
+              <div>
+                {props.itemSubtitle}
+              </div>
+            </div>
+            <ul className="item-info-container">
+              {props.itemInfo.map(renderListItem)}
+            </ul>
+          </div>
         </div>
       </div>
-      <div className="content-container container-2">
+      <div className="container-2">
         {props.itemDetailImages.map(renderDetailImagePair)}
         {isLunarCalendar ?
           <LunarCalendarInfo
@@ -212,7 +212,7 @@ function Item(props: ItemProps) {
         : null}
       </div>
       {isLunarCalendar ?
-        <div className="content-container container-3">
+        <div className="container-3">
           {itemsLunarCalendarsConstants.thumbnailsLunarCalendars.map(
             (set, index) => {
               return (
