@@ -159,9 +159,8 @@ function Item(props: ItemProps) {
               <div className="item-title">
                 {!isLunarCalendar ? <div>{props.itemTitle}</div> :
                   <div>
-                    <span className="lunar-calendar-title">{props.itemTitle}</span><br />
-                    <span className="lunar-calendar-year normal">{props.itemLunarCalendarYear} </span>
-                    <span className="normal">{props.itemCategory}</span>
+                    <span>{props.itemTitle}</span><br />
+                    <span className="normal">{props.itemLunarCalendarYear} {props.itemCategory}</span>
                   </div>
                 }
               </div>
@@ -216,7 +215,7 @@ function Item(props: ItemProps) {
             (set, index) => {
               return (
                 <div key={`status${set.status}${index}`} className="thumbnails-set">
-                  <div className="title">
+                  <div className="thumbnails-title">
                     {set.status} alec thibodeau lunar&nbsp;calendars
                   </div>
                   <div className="thumbnails">

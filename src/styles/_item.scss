@@ -27,12 +27,16 @@
     }
   }
 
+  .feature-image-link {
+    display: block;
+  }
+
   .feature-image {
     @include crisp-scaled-down;
 
+    display: block;
     width: 300px;
     max-width: 700px;
-    height: auto;
 
     // &.postcard {
     //   border: 1px solid $sixty-percent-gray;
@@ -81,7 +85,8 @@
   }
 
   .item-info-container {
-    padding-inline-start: 1.25rem;
+    padding-inline-start: .75rem;
+    margin: .5rem;
   }
 
   .payment-info {
@@ -207,7 +212,7 @@
 
     .thumbnails-set {
 
-      .title {
+      .thumbnails-title {
         margin: 1rem auto .5rem;
         text-transform: capitalize;
         color: $sixty-percent-gray;
