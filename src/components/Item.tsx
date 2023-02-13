@@ -19,11 +19,12 @@ function Item(props: ItemProps) {
   const [validationdMessage, setValidationdMessage] = useState<string>('');
 
   const digitsValidation = new RegExp(/^\d+$/);
+
   const categoryClass = props.itemCategory.replace(/\ /g, '-');
+  const isCurrentLunarCalendar = props.itemLunarCalendarYear === 2023;
   const isLunarCalendar = props.itemCategory === 'lunar calendar';
   const isPrintEdition = props.itemCategory === 'lunar calendar' || 'print';
 
-  const isCurrentLunarCalendar = props.itemLunarCalendarYear === 2023;
 
   useEffect(() => {
     const keydown = 'keydown';
@@ -40,13 +41,11 @@ function Item(props: ItemProps) {
   function renderListItem(listItem: string, index: number) {
     return (
       <li key={`${index}${listItem}`}>
-        {
-          isPrintEdition && index === 2 ?
-            <span>
-              Numbered and signed <a className="text-link" href="#itemDetails">(more info)</a>
-            </span>
-            : listItem
-        }
+        {isPrintEdition && index === 2 ?
+          <span>
+            Numbered and signed <a className="text-link" href="#itemDetails">(more info)</a>
+          </span>
+        : listItem}
       </li>
     )
   }

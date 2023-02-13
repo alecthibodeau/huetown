@@ -5,20 +5,14 @@
 @use './about' as *;
 @use './item' as *;
 
-html {
-  margin: 0 auto;
-}
-
 body {
-  width: 100%;
   max-width: 1200px;
-  height: 100%;
-  margin: 0 auto;
+  margin: auto;
 }
 
 main {
   position: relative;
-  top: 100px;
+  top: 75px;
   display: flex;
   justify-content: center;
   padding: .5rem auto;

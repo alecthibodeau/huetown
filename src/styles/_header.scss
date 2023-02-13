@@ -42,7 +42,7 @@ $nav-icon-size: 2rem;
 header {
   position: fixed;
   width: 100%;
-  margin: 0 auto;
+  margin: auto;
   z-index: 100;
 }
 
@@ -59,7 +59,7 @@ header {
 }
 
 .huetown-logo-white {
-  width: 80%;
+  width: 175px;
 }
 
 button.burger-button {
@@ -112,7 +112,7 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   max-width: 600px;
-  margin: 0 auto;
+  margin: auto;
 
   a.nav-element {
     @include nav-text;
@@ -164,7 +164,7 @@ nav {
 
   &.nav-drawer-is-open {
     display: flex;
-    margin: 0 auto;
+    margin: auto;
     background: $dark-film;
     backdrop-filter: blur(5px);
   }

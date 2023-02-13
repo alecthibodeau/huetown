@@ -14,7 +14,7 @@
 
   .item-press {
     max-width: 650px;
-    margin: 0 auto .75rem;
+    margin: auto auto .75rem;
 
     span:last-of-type {
       white-space: nowrap;
@@ -27,153 +27,30 @@
     }
   }
 
-  .container-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &:not(.lunar-calendar) .feature-image-link {
-      pointer-events: none;
-    }
-
-    // &.print,
-    // &.postcard {
-    //   justify-content: center;
-    // }
-  }
-
-  .container-2 {
-    display: block;
-    border-top: 1px solid $light-gray;
-    margin-top: 20px;
-
-    .photo-pair {
-      display: flex;
-      justify-content: center;
-
-      img {
-        margin: 10px 5px 0;
-        width: 450px;
-        height: 450px;
-
-        @media only screen and (max-width: 1050px) {
-          &.large-detail-image {
-            width: 700px;
-            height: 700px;
-          }
-        }
-
-        @media only screen and (max-width: 760px) {
-          &.large-detail-image {
-            width: 90vw;
-            height: 90vw;
-          }
-        }
-
-        @media only screen and (max-width: 500px) {
-          width: 90vw;
-          height: 90vw;
-        }
-      }
-
-      @media only screen and (max-width: 1050px) {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    .item-more-info {
-      max-width: $character-width;
-      margin: 2rem auto;
-
-      .more-info-block {
-        margin: 1rem auto .5rem;
-      }
-
-      .lunar-phases {
-        display: flex;
-        width: 250px;
-        margin: 2rem auto;
-      }
-
-      .phase-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 5px;
-      }
-
-      .phase-text {
-        margin-top: .25rem;
-        text-align: center;
-        text-transform: capitalize;
-        font-size: .875rem;
-        line-height: 1.125rem;
-      }
-    }
-  }
-
-  .container-3 {
-    display: flex;
-    flex-direction: column;
-
-    .thumbnails-set {
-      margin: 0 auto;
-
-      .title {
-        margin: 1rem auto .5rem;
-        text-transform: capitalize;
-        color: $sixty-percent-gray;
-        font-weight: 700;
-        text-align: center;
-      }
-
-      .thumbnails {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        text-align: center;
-
-        .thumbnail {
-          margin: .5rem .75rem;
-
-          a,
-          a img {
-            display: block;
-            width: 200px;
-            height: 123px;
-          }
-        }
-      }
-    }
-  }
-
-  img.feature-image {
+  .feature-image {
     @include crisp-scaled-down;
 
     width: 300px;
     max-width: 700px;
     height: auto;
 
-    &.postcard {
-      border: 1px solid $sixty-percent-gray;
+    // &.postcard {
+    //   border: 1px solid $sixty-percent-gray;
 
-      // @media only screen and (max-width: 650px) {
-      //   width: 550px;
-      // }
+    //   @media only screen and (max-width: 650px) {
+    //     width: 550px;
+    //   }
 
-      // @media only screen and (max-width: 600px) {
-      //   width: 90vw;
-      // }
-    }
+    //   @media only screen and (max-width: 600px) {
+    //     width: 90vw;
+    //   }
+    // }
 
-    &.print {
-      @media only screen and (max-width: 500px) {
-        width: 80vw;
-      }
-    }
+    // &.print {
+    //   @media only screen and (max-width: 500px) {
+    //     width: 80vw;
+    //   }
+    // }
   }
 
   .item-info-block {
@@ -196,8 +73,7 @@
   .item-title {
     font-size: 1.25rem;
     font-weight: 700;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin: .5rem auto;
 
     span.normal {
       font-weight: 400;
@@ -205,14 +81,14 @@
   }
 
   .item-info-container {
-    padding-inline-start: 20px;
+    padding-inline-start: 1.25rem;
   }
 
   .payment-info {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: .5rem;
+    margin: .125rem auto .5rem;
   }
 
   .item-price-container {
@@ -262,6 +138,103 @@
     }
   }
 
+  .container-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:not(.lunar-calendar) .feature-image-link {
+      pointer-events: none;
+    }
+
+    // &.print,
+    // &.postcard {
+    //   justify-content: center;
+    // }
+  }
+
+  .container-2 {
+    border-top: 1px solid $light-gray;
+    margin-top: 1.25rem;
+
+    .photo-pair {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        margin: 1rem .5rem auto;
+        max-width: 700px;
+        width: 90vw;
+        max-height: 700px;
+        height: 90vw;
+      }
+    }
+
+    .item-more-info {
+      max-width: $character-width;
+      margin: 2rem auto;
+
+      .more-info-block {
+        margin: 1rem auto .5rem;
+      }
+
+      .lunar-phases {
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto;
+      }
+
+      .phase-info {
+        width: 60px;
+        margin: .125rem;
+        text-align: center;
+      }
+
+      .phase-text {
+        text-align: center;
+        text-transform: capitalize;
+        font-size: .875rem;
+        line-height: 1.125rem;
+      }
+    }
+  }
+
+  .container-3 {
+    display: flex;
+    flex-direction: column;
+
+    .thumbnails-set {
+
+      .title {
+        margin: 1rem auto .5rem;
+        text-transform: capitalize;
+        color: $sixty-percent-gray;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .thumbnails {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+
+        .thumbnail {
+          margin: .5rem .75rem;
+
+          a,
+          a img {
+            display: block;
+            width: 200px;
+            height: 123px;
+          }
+        }
+      }
+    }
+  }
+
   .additional-info {
     margin: .25rem auto 1.5rem;
     max-width: $character-width;
@@ -275,11 +248,16 @@
 /* Media Queries */
 
 @media (min-width: $breakpoint-sm) {
-  .item-page {
 
-    img.feature-image {
-      width: 90vw;
-    }
+  .item-page .feature-image {
+    width: 90vw;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+
+  .item-page .container-2 .photo-pair img {
+    width: 700px;
   }
 }
 
@@ -287,24 +265,42 @@
 
   .item-page {
 
-    .container-1 {
-      flex-direction: row;
-      align-items: initial;
-    }
-
     .item-info-block {
       flex-direction: column-reverse;
-      padding-left: 15px;
+      padding-left: 1rem;
     }
 
     .payment-info {
       flex-direction: column;
       align-items: flex-start;
+      margin: initial;
     }
 
     .item-price-container {
       top: initial;
       margin-bottom: 1rem;
     }
+
+    .container-1 {
+      flex-direction: row;
+      align-items: initial;
+    }
+
+    .container-2 .photo-pair {
+      flex-direction: row;
+
+      img {
+        width: 450px;
+        height: 450px;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+
+  .item-page .container-2 .photo-pair img {
+    width: 38vw;
+    height: 38vw;
   }
 }
