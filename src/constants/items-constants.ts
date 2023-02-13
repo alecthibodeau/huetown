@@ -33,7 +33,7 @@ const itemInfoUniversals = {
 }
 
 const itemsInfo = {
-  lunarCalendarTwentyThree: {
+  lunarCalendar2023: {
     itemId: '5QXP4DDGN7P2J',
     itemCategory: categoryLunarCalendar,
     itemTitle: 'Thoughts Operator',
@@ -51,14 +51,14 @@ const itemsInfo = {
     itemLunarCalendarPaperInfo: 'Gmund Papers acid-free 300gsm Cyan 111# cover paper',
     itemLunarCalendarLocation: lunarCalendarLocationProvidence,
     itemDetailImages: [
-      itemsImages.lunarCalendarTwentyThreeDetail01,
-      itemsImages.lunarCalendarTwentyThreeDetail02,
-      itemsImages.lunarCalendarTwentyThreeDetail03,
-      itemsImages.lunarCalendarTwentyThreeDetail04,
-      itemsImages.lunarCalendarTwentyThreeDetail05,
-      itemsImages.lunarCalendarTwentyThreeDetail06,
-      itemsImages.lunarCalendarTwentyThreeDetail07,
-      itemsImages.lunarCalendarTwentyThreeDetail08
+      itemsImages.lunarCalendar2023Detail01,
+      itemsImages.lunarCalendar2023Detail02,
+      itemsImages.lunarCalendar2023Detail03,
+      itemsImages.lunarCalendar2023Detail04,
+      itemsImages.lunarCalendar2023Detail05,
+      itemsImages.lunarCalendar2023Detail06,
+      itemsImages.lunarCalendar2023Detail07,
+      itemsImages.lunarCalendar2023Detail08
     ]
   },
 };

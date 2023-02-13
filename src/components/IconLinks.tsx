@@ -1,6 +1,6 @@
 /* Interfaces */
 import IconLink from '../interfaces/IconLink';
-import IconLinksProps from '../interfaces/IconLinkProps';
+import IconLinksProps from '../interfaces/IconLinksProps';
 
 /* Images */
 import iconWhiteEmail from '../assets/images/icon-email-white.svg';

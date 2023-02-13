@@ -1,3 +1,4 @@
+/* Components */
 import IconLinks from './IconLinks';
 
 function Footer() {

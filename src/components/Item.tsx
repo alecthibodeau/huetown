@@ -10,7 +10,7 @@ import itemsLunarCalendarsConstants from '../constants/items-lunar-calendars-con
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import ThumbnailProps from '../interfaces/ThumbnailProps';
+import Thumbnail from '../interfaces/Thumbnail';
 
 function Item(props: ItemProps) {
   const [quantity, setQuantity] = useState<string>('1');
@@ -69,7 +69,7 @@ function Item(props: ItemProps) {
     )
   }
 
-  function renderThumbnail(thumbnail: ThumbnailProps, index: number) {
+  function renderThumbnail(thumbnail: Thumbnail, index: number) {
     return (
       <div key={`thumbnail${thumbnail.label}${index}`} className="thumbnail">
         <a href={thumbnail.link}>

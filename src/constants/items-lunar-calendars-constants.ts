@@ -1,7 +1,26 @@
 import itemsConstants from './items-constants';
 import itemsImages from './items-images';
 
-const category = itemsConstants.categoryLunarCalendar
+const category = itemsConstants.categoryLunarCalendar;
+
+const lunarPhases = [
+  {
+    name: 'new',
+    image: itemsImages.phaseNew
+  },
+  {
+    name: 'first quarter',
+    image: itemsImages.phaseFirstQuarter
+  },
+  {
+    name: 'full',
+    image: itemsImages.phaseFull
+  },
+  {
+    name: 'third quarter',
+    image: itemsImages.phaseThirdQuarter
+  }
+];
 
 const lunarCalendarsAvailable = [
   {
@@ -45,22 +64,22 @@ const lunarCalendarsPrevious = [
   {
     label: `2011 ${category}`,
     image: itemsImages.lunarCalendar2011Main,
-    link: '/'
+    link: 'https://alecthibodeau.com/prints/pineal-grigio'
   },
   {
     label: `2010 ${category}`,
     image: itemsImages.lunarCalendar2010Main,
-    link: '/'
+    link: 'https://alecthibodeau.com/prints/probably-the-earths-core-really-is-the-sky'
   },
   {
     label: `2009 ${category}`,
     image: itemsImages.lunarCalendar2009Main,
-    link: '/'
+    link: 'https://alecthibodeau.com/prints/goes-to-show-you-what-a-moon-can-do'
   },
   {
     label: `2008 ${category}`,
     image: itemsImages.lunarCalendar2008Main,
-    link: '/'
+    link: 'https://alecthibodeau.com/prints/good-librations'
   }
 ];
 
@@ -73,8 +92,9 @@ const thumbnailsLunarCalendars = [
     status: 'previous',
     thumbnails: lunarCalendarsPrevious
   }
-]
+];
 
 export default {
+  lunarPhases,
   thumbnailsLunarCalendars
 };

@@ -1,9 +1,11 @@
+/* Components */
 import Item from './Item';
 
+/* Constants */
 import itemsConstants from '../constants/items-constants';
 
 function Home() {
-  const featured = itemsConstants.itemsInfo.lunarCalendarTwentyThree;
+  const featured = itemsConstants.itemsInfo.lunarCalendar2023;
   const isFeatured = true;
 
   return (

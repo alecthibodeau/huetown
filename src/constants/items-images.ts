@@ -4,14 +4,14 @@ import phaseFull from '../assets/images/items/phase-full.png';
 import phaseNew from '../assets/images/items/phase-new.png';
 import phaseThirdQuarter from '../assets/images/items/phase-third-quarter.png';
 import lunarCalendar2023Main from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-main-1000px.jpg';
-import lunarCalendarTwentyThreeDetail01 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-01-700px.jpg';
-import lunarCalendarTwentyThreeDetail02 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-02-700px.jpg';
-import lunarCalendarTwentyThreeDetail03 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-03-700px.jpg';
-import lunarCalendarTwentyThreeDetail04 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-04-700px.jpg';
-import lunarCalendarTwentyThreeDetail05 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-05-700px.jpg';
-import lunarCalendarTwentyThreeDetail06 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-06-700px.jpg';
-import lunarCalendarTwentyThreeDetail07 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-07-700px.jpg';
-import lunarCalendarTwentyThreeDetail08 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-08-700px.jpg';
+import lunarCalendar2023Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-01-700px.jpg';
+import lunarCalendar2023Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-02-700px.jpg';
+import lunarCalendar2023Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-03-700px.jpg';
+import lunarCalendar2023Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-04-700px.jpg';
+import lunarCalendar2023Detail05 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-05-700px.jpg';
+import lunarCalendar2023Detail06 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-06-700px.jpg';
+import lunarCalendar2023Detail07 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-07-700px.jpg';
+import lunarCalendar2023Detail08 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-08-700px.jpg';
 import spacePony from '../assets/images/items/space-pony-300px.jpg';
 
 import lunarCalendar2008Main from '../assets/images/items/thibodeau-lunar-calendar-2008-photo-main-200px.jpg';
@@ -31,14 +31,14 @@ export default {
   phaseFull,
   phaseNew,
   phaseThirdQuarter,
-  lunarCalendarTwentyThreeDetail01,
-  lunarCalendarTwentyThreeDetail02,
-  lunarCalendarTwentyThreeDetail03,
-  lunarCalendarTwentyThreeDetail04,
-  lunarCalendarTwentyThreeDetail05,
-  lunarCalendarTwentyThreeDetail06,
-  lunarCalendarTwentyThreeDetail07,
-  lunarCalendarTwentyThreeDetail08,
+  lunarCalendar2023Detail01,
+  lunarCalendar2023Detail02,
+  lunarCalendar2023Detail03,
+  lunarCalendar2023Detail04,
+  lunarCalendar2023Detail05,
+  lunarCalendar2023Detail06,
+  lunarCalendar2023Detail07,
+  lunarCalendar2023Detail08,
   lunarCalendar2023Main,
   lunarCalendar2022Main,
   lunarCalendar2021Main,
