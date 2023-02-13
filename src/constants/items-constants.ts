@@ -11,7 +11,7 @@ const categoryPrint = 'print';
 const creditLetterpressPrint = 'Letterpress print';
 const creditScreenPrint = 'Screen print, printed by the artist';
 const dimensionsFiveAndAHalfInches = '5.5 x 5.5 inches';
-const lunarCalendarLocationProvidence = 'The calendar is designed and printed in Providence, Rhode Island, which is identified as a representative location within the artwork.';
+const lunarCalendarLocationProvidence = 'The calendar is printed in Providence, Rhode Island, which is identified as a representative location within the artwork.';
 const lunarCalendarLocationNewYork = 'New York City is identified as a representative location within the artwork.';
 const shipsFlat = 'Ships flat';
 
