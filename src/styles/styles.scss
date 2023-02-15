@@ -24,15 +24,24 @@ main {
   .text-link {
     text-decoration: none;
     color: $twenty-three-dark-blue;
+    font-weight: 600;
 
     &:link,
     &:visited,
     &:active {
       color: $twenty-three-dark-blue;
-      font-weight: 600;
     }
 
-    &:hover {
+    &.item-preview {
+      color: $ninety-percent-gray;
+      &:link,
+      &:visited,
+      &:active {
+        color: $ninety-percent-gray;
+      }
+    }
+
+    &:hover:not(.item-preview) {
       color: $dark-green;
       text-decoration: underline;
       cursor: pointer;

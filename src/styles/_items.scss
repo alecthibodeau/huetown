@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   width: $item-preview-dimension;
+  border-radius: $border-radius-standard;
   margin: $size-medium;
 }
 

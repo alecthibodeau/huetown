@@ -1,7 +1,7 @@
 import itemsConstants from './items-constants';
 import itemsImages from './items-images';
 
-const category = itemsConstants.categoryLunarCalendar;
+const category = itemsConstants.textStrings.categoryLunarCalendar;
 
 const lunarPhases = [
   {

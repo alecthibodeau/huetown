@@ -11,18 +11,22 @@ function Items() {
   function renderItemPreview(props: ItemProps, index: number) {
 
     return (
-      <Link key={props.itemTitle + index} className="item-preview" to="/">
+      <Link key={props.itemTitle + index} className="item-preview text-link" to="/">
         <img className="item-preview-image" src={props.itemImageFront} />
         <div className="item-preview-info">
           <div className="item-preview-title">
             {props.itemTitle}
           </div>
           <div className="item-preview-category">
-            {props.itemCategory}
+            {
+              props.itemCategory === itemsConstants.textStrings.categoryLunarCalendar
+                ? `${props.itemLunarCalendarYear} ${itemsConstants.textStrings.categoryLunarCalendar} ${itemsConstants.textStrings.categoryPrint}`
+                : props.itemCategory
+            }
           </div>
-          <div className="item-preview-description">
+          {/* <div className="item-preview-description">
             {props.itemInfo[1].toLowerCase()}
-          </div>
+          </div> */}
           <div className="item-preview-price">
             {`$${props.itemPrice}`}
           </div>

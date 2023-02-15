@@ -96,7 +96,7 @@ function Item(props: ItemProps) {
       {isCurrentLunarCalendar ?
         <div className="item-press">
           <span className="ital">
-            {itemsConstants.colossalBlurb}
+            {itemsConstants.textStrings.colossalBlurb}
           </span>
           <span> &mdash;
             <a className="text-link" href="https://www.thisiscolossal.com/2022/12/calendars-2023">
@@ -147,8 +147,8 @@ function Item(props: ItemProps) {
                 />
                 <input
                   type="submit"
-                  value={itemsConstants.addToCart}
-                  alt={itemsConstants.addToCart}
+                  value={itemsConstants.textStrings.addToCart}
+                  alt={itemsConstants.textStrings.addToCart}
                 />
               </form>
               {!isInputValid ? <div className="validation-message">{validationdMessage}</div> : null}
@@ -174,41 +174,45 @@ function Item(props: ItemProps) {
           </div>
         </div>
       </div>
-      <div className="container-2">
-        {props.itemDetailImages.map(renderDetailImagePair)}
-        {isLunarCalendar ?
-          <LunarCalendarInfo
-            itemId={props.itemId}
-            itemCategory={props.itemCategory}
-            itemTitle={props.itemTitle}
-            itemSubtitle={props.itemSubtitle}
-            itemImageFront={props.itemImageFront}
-            itemInfo={props.itemInfo}
-            itemPrice={props.itemPrice}
-            itemPrintEdition={props.itemPrintEdition}
-            itemDetailImages={props.itemDetailImages}
-            itemLunarCalendarYear={props.itemLunarCalendarYear}
-            itemLunarCalendarPaperInfo={props.itemLunarCalendarPaperInfo}
-            itemLunarCalendarLocation={props.itemLunarCalendarLocation}
-          />
-        : null}
-        {isCurrentLunarCalendar ?
-          <div className="additional-info">
-            <div>
-              <p>
-                Follow <a className="text-link" href="https://www.instagram.com/huetown/" target="_blank">@huetown</a> on Instagram to see this print's letterpress production in action.
-                And join the <a className="text-link" href="about.html">email list</a> to learn when other works are available.
-              </p>
-              <p>
-                Each lunar calendar preordered by November 25th, 2022 included a <span className="ital">Space Pony</span> letterpress print:
-              </p>
+
+      {props.itemDetailImages ?
+        <div className="container-2">
+          {props.itemDetailImages.map(renderDetailImagePair)}
+          {isLunarCalendar ?
+            <LunarCalendarInfo
+              itemId={props.itemId}
+              itemCategory={props.itemCategory}
+              itemTitle={props.itemTitle}
+              itemSubtitle={props.itemSubtitle}
+              itemImageFront={props.itemImageFront}
+              itemInfo={props.itemInfo}
+              itemPrice={props.itemPrice}
+              itemPrintEdition={props.itemPrintEdition}
+              itemDetailImages={props.itemDetailImages}
+              itemLunarCalendarYear={props.itemLunarCalendarYear}
+              itemLunarCalendarPaperInfo={props.itemLunarCalendarPaperInfo}
+              itemLunarCalendarLocation={props.itemLunarCalendarLocation}
+            />
+          : null}
+          {isCurrentLunarCalendar ?
+            <div className="additional-info">
+              <div>
+                <p>
+                  Follow <a className="text-link" href="https://www.instagram.com/huetown/" target="_blank">@huetown</a> on Instagram to see this print's letterpress production in action.
+                  And join the <a className="text-link" href="about.html">email list</a> to learn when other works are available.
+                </p>
+                <p>
+                  Each lunar calendar preordered by November 25th, 2022 included a <span className="ital">Space Pony</span> letterpress print:
+                </p>
+              </div>
+              <div className="item-accompanying">
+                <img src={itemsImages.spacePony} />
+              </div>
             </div>
-            <div className="item-accompanying">
-              <img src={itemsImages.spacePony} />
-            </div>
-          </div>
-        : null}
-      </div>
+          : null}
+        </div>
+      : null}
+
       {isLunarCalendar ?
         <div className="container-3">
           {itemsLunarCalendarsConstants.thumbnailsLunarCalendars.map(
@@ -227,6 +231,7 @@ function Item(props: ItemProps) {
           )}
         </div>
       : null}
+
     </div>
   );
 }

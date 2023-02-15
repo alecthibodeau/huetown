@@ -10,7 +10,7 @@ interface ItemProps {
   itemLunarCalendarYear?: number;
   itemLunarCalendarPaperInfo?: string;
   itemLunarCalendarLocation?: string;
-  itemDetailImages: string[];
+  itemDetailImages?: string[];
 }
 
 export default ItemProps;
