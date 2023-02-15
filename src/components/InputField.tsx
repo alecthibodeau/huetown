@@ -19,6 +19,6 @@ function InputField(props: InputFieldProps) {
       />
     </label>
   );
-};
+}
 
 export default React.memo(InputField);

@@ -43,6 +43,6 @@ function LunarCalendarInfo(props: ItemProps) {
       </div>
     </div>
   );
-};
+}
 
 export default LunarCalendarInfo;

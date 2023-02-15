@@ -1,12 +1,13 @@
-@use './_variables' as *;
-@use './header' as *;
-@use './footer' as *;
-@use './collection' as *;
 @use './about' as *;
+@use './collection' as *;
+@use './footer' as *;
+@use './header' as *;
 @use './item' as *;
+@use './items' as *;
+@use './variables' as *;
 
 body {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   color: $ninety-percent-gray;
 }

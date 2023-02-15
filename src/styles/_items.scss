@@ -1,0 +1,47 @@
+@use './variables' as *;
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-preview {
+  display: flex;
+  flex-direction: column;
+  width: $item-preview-dimension;
+  margin: $size-medium;
+}
+
+.item-preview-image {
+  height: $item-preview-dimension;
+  border: $border-standard;
+  border-top-left-radius: $border-radius-standard;
+  border-top-right-radius: $border-radius-standard;
+  object-fit: cover;
+}
+
+.item-preview-info {
+  padding: $size-medium;
+  border: $border-standard;
+  border-bottom-left-radius: $border-radius-standard;
+  border-bottom-right-radius: $border-radius-standard;
+  border-top-color: transparent;
+  text-align: center;
+}
+
+.item-preview-title {
+  font-weight: 700;
+}
+
+.item-preview-category {
+  margin-bottom: $size-small;
+}
+
+.item-preview-description {
+  margin-bottom: $size-small;
+}
+
+.item-preview-price {
+  font-size: 1.5rem;
+}

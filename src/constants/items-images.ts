@@ -51,4 +51,4 @@ export default {
   lunarCalendar2010Main,
   lunarCalendar2011Main,
   spacePony
-}
+};

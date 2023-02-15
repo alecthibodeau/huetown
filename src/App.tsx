@@ -39,6 +39,6 @@ function App() {
       {!isBreakpointXs && <Footer />}
     </BrowserRouter>
   );
-};
+}
 
 export default App;

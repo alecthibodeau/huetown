@@ -5,7 +5,7 @@ import Item from './Item';
 import itemsConstants from '../constants/items-constants';
 
 function Home() {
-  const featured = itemsConstants.itemsInfo.lunarCalendar2023;
+  const featured = itemsConstants.items.lunarCalendar2023;
   const isFeatured = true;
 
   return (
