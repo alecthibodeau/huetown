@@ -37,14 +37,16 @@ function Header(props: HeaderProps) {
             src={props.isBreakpointXs ? huetownWhiteLogo : huetownGrayLogo}
             alt="Huetown logo" />
         </Link>
-        <button
-          id="burgerButton"
-          className={isNavDrawerOpen ? 'burger-button closing-x' : 'burger-button'}
-          onClick={() => setIsNavDrawerOpen(!isNavDrawerOpen)}>
-          <div className="burger-bars-container">
-            {Array(3).fill('bar').map(renderBurgerBar)}
-          </div>
-        </button>
+        {props.isBreakpointXs ?
+          <button
+            id="burgerButton"
+            className={isNavDrawerOpen ? 'burger-button closing-x' : 'burger-button'}
+            onClick={() => setIsNavDrawerOpen(!isNavDrawerOpen)}>
+            <div className="burger-bars-container">
+              {Array(3).fill('bar').map(renderBurgerBar)}
+            </div>
+          </button>
+        : null}
       </div>
       <nav id="nav" className={isNavDrawerOpen ? 'nav-drawer-is-open' : ''}>
         <Link to="/items" className="nav-element">
