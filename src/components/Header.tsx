@@ -61,7 +61,7 @@ function Header(props: HeaderProps) {
           about
         </Link>
         <div className="nav-menu-icons">
-          <IconLinks isForNavDrawer={true} />
+          <IconLinks isForNavDrawer />
         </div>
       </nav>
     </header>
