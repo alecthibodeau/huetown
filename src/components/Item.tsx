@@ -20,7 +20,7 @@ function Item(props: ItemProps) {
 
   const digitsValidation = new RegExp(/^\d+$/);
 
-  const categoryClass = props.itemCategory.replace(/\ /g, '-');
+  const categoryClass = props.itemCategory.replace(/\s+/g, '-');
   const isCurrentLunarCalendar = props.itemLunarCalendarYear === 2023;
   const isLunarCalendar = props.itemCategory === 'lunar calendar';
   const isPrintEdition = props.itemCategory === 'lunar calendar' || 'print';
@@ -73,7 +73,7 @@ function Item(props: ItemProps) {
     return (
       <div key={`thumbnail${thumbnail.label}${index}`} className="thumbnail">
         <a href={thumbnail.link}>
-          <img src={thumbnail.image} />
+          <img src={thumbnail.image} alt={`${thumbnail.label} thumbnail`} />
         </a>
         <div className="label">{thumbnail.label}</div>
       </div>
@@ -198,7 +198,7 @@ function Item(props: ItemProps) {
             <div className="additional-info">
               <div>
                 <p>
-                  Follow <a className="text-link" href="https://www.instagram.com/huetown/" target="_blank">@huetown</a> on Instagram to see this print's letterpress production in action.
+                  Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on Instagram to see this print's letterpress production in action.
                   And join the <a className="text-link" href="about.html">email list</a> to learn when other works are available.
                 </p>
                 <p>
@@ -206,7 +206,7 @@ function Item(props: ItemProps) {
                 </p>
               </div>
               <div className="item-accompanying">
-                <img src={itemsImages.spacePony} />
+                <img src={itemsImages.spacePony} alt="Space Pony print" />
               </div>
             </div>
           : null}
