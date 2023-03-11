@@ -268,8 +268,10 @@ const itemsForPreview = [
   items.lunarCalendar2017
 ];
 
-export default {
+const itemsConstants = {
   items,
   itemsForPreview,
   textStrings
 };
+
+export default itemsConstants;

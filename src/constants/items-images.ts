@@ -25,7 +25,7 @@ import lunarCalendar2020Main from '../assets/images/items/thibodeau-lunar-calend
 import lunarCalendar2021Main from '../assets/images/items/thibodeau-lunar-calendar-2021-photo-main-1000px.jpg';
 import lunarCalendar2022Main from '../assets/images/items/thibodeau-lunar-calendar-2022-photo-main-1000px.jpg';
 
-export default {
+const itemsImages = {
   colossalLogo,
   phaseFirstQuarter,
   phaseFull,
@@ -52,3 +52,5 @@ export default {
   lunarCalendar2011Main,
   spacePony
 };
+
+export default itemsImages;

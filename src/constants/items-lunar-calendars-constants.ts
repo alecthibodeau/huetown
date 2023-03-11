@@ -94,7 +94,9 @@ const thumbnailsLunarCalendars = [
   }
 ];
 
-export default {
+const itemsLunarCalendarsConstants = {
   lunarPhases,
   thumbnailsLunarCalendars
 };
+
+export default itemsLunarCalendarsConstants;
