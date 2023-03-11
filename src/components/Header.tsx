@@ -17,7 +17,7 @@ function Header(props: HeaderProps) {
     if (!props.isBreakpointXs && isNavDrawerOpen) {
       setIsNavDrawerOpen(false);
     }
-  }, [props.isBreakpointXs]);
+  }, [props.isBreakpointXs, isNavDrawerOpen]);
 
   function renderBurgerBar(bar: string, index: number) {
     return (
