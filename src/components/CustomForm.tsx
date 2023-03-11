@@ -13,8 +13,6 @@ function CustomForm(props: CustomFormProps) {
   const [lastName, setLastName] = useState<string>('');
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
 
-  const emailValidation = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-
   const formInputs = [
     {
       type: 'email',
@@ -40,13 +38,14 @@ function CustomForm(props: CustomFormProps) {
   ];
 
   useEffect(() => {
+    const emailValidation = new RegExp(/^\S+@\S+\.\S+$/);
     const validEmailAddress = emailValidation.test(email);
     setIsFormValid(validEmailAddress);
   }, [email]);
 
   useEffect(() => {
     if (props.formStatus === 'success') clearFields();
-  }, [props.formStatus])
+  }, [props.formStatus]);
 
   function clearFields(): void {
     setEmail('');
