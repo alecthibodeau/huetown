@@ -6,17 +6,27 @@ import itemsConstants from '../constants/items-constants';
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
 
+/* Helpers */
+import formatItemRoutePath from '../helpers/helpers';
+
 function Items() {
 
+  function formatLunarCalendarText(item: ItemProps): string {
+    return `${item.lunarCalendarYear} ${itemsConstants.layoutText.categoryLunarCalendar} ${itemsConstants.layoutText.categoryPrint}`;
+  }
+
   function getItemPreviewCategory(item: ItemProps): string {
-    return item.category === itemsConstants.textStrings.categoryLunarCalendar
-    ? `${item.lunarCalendarYear} ${itemsConstants.textStrings.categoryLunarCalendar} ${itemsConstants.textStrings.categoryPrint}`
-    : item.category
+    const isItemLunarCalendar: boolean = item.category === itemsConstants.layoutText.categoryLunarCalendar;
+    return isItemLunarCalendar ? formatLunarCalendarText(item) : item.category;
   }
 
   function renderItemPreview(item: ItemProps, index: number) {
     return (
-      <Link key={item.title + index} className="item-preview text-link" to="/">
+      <Link
+        key={item.title + index}
+        className="item-preview text-link"
+        to={formatItemRoutePath(item.category, item.title)}
+      >
         <img
           className="item-preview-image"
           src={item.imageFront}
@@ -29,9 +39,6 @@ function Items() {
           <div className="item-preview-category">
             {getItemPreviewCategory(item)}
           </div>
-          {/* <div className="item-preview-description">
-            {item.info[1].toLowerCase()}
-          </div> */}
           <div className="item-preview-price">
             {`$${item.price}`}
           </div>

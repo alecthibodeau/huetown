@@ -2,7 +2,7 @@
 import itemsImages from './items-images';
 
 /* Strings */
-const textStrings = {
+const layoutText = {
   addToCart: 'Add to cart',
   colossalBlurb: 'Ornate renderings of natural life frame the elegant letterpress print, which expertly melds artful illustration with timely information.',
   byAlecThibodeau :'by Alec Thibodeau',
@@ -22,25 +22,37 @@ const infoUniversals = {
   drawingInfoPenAndInk: 'pen and ink on Bristol board',
   drawingInfoThreeAndQuarterInches: '3.25 x 3.25 inches',
   drawingInfoSignedOnBack: 'signed on the back',
-  lunarCalendarsubtitle: textStrings.byAlecThibodeau,
+  lunarCalendarsubtitle: layoutText.byAlecThibodeau,
   lunarCalendarPrice: 45,
-  postcardInfoOne: '6 x 4 inches',
-  postcardInfoTwo: 'Mellow, satin finish',
-  postcardInfoThree: 'Full-color front / single-color back',
   postcardPrice: 1
 };
 
 const lunarCalendarItemInfo = [
   '19 x 11.75 inches',
-  textStrings.creditLetterpressPrint,
+  layoutText.creditLetterpressPrint,
   '', // To be rendered dynamically
-  `${textStrings.shipsFlat}: unrolled in a sturdy box`
+  `${layoutText.shipsFlat}: unrolled in a sturdy box`
+];
+
+const postcardItemInfo = [
+  '6 x 4 inches',
+  'Mellow, satin finish',
+  'Full-color front / single-color back',
 ];
 
 const items = {
+  postcardAssets: {
+    id: '4CL74PH4FSSQ6',
+    category: layoutText.categoryPostcard,
+    title: 'Assets',
+    subtitle: layoutText.categoryPostcard,
+    imageFront: itemsImages.postcardAssets,
+    info: postcardItemInfo.concat('TBD'),
+    price: infoUniversals.postcardPrice
+  },
   lunarCalendar2023: {
     id: '5QXP4DDGN7P2J',
-    category: textStrings.categoryLunarCalendar,
+    category: layoutText.categoryLunarCalendar,
     title: 'Thoughts Operator',
     subtitle: infoUniversals.lunarCalendarsubtitle,
     imageFront: itemsImages.lunarCalendar2023Main,
@@ -49,7 +61,7 @@ const items = {
     printEdition: 500,
     lunarCalendarYear: 2023,
     lunarCalendarPaperInfo: 'Gmund Papers acid-free 300gsm Cyan 111# cover paper',
-    lunarCalendarLocation: textStrings.lunarCalendarLocationProvidence,
+    lunarCalendarLocation: layoutText.lunarCalendarLocationProvidence,
     detailImages: [
       itemsImages.lunarCalendar2023Detail01,
       itemsImages.lunarCalendar2023Detail02,
@@ -63,7 +75,7 @@ const items = {
   },
   lunarCalendar2022: {
     id: '5VWNHRMJQCE7A',
-    category: textStrings.categoryLunarCalendar,
+    category: layoutText.categoryLunarCalendar,
     title: 'Entrancer\'s Medallion',
     subtitle: infoUniversals.lunarCalendarsubtitle,
     imageFront: itemsImages.lunarCalendar2022Main,
@@ -72,7 +84,7 @@ const items = {
     printEdition: 500,
     lunarCalendarYear: 2022,
     lunarCalendarPaperInfo: 'Arjowiggins Creative Papers (distributed by Mohawk) acid-free 300gsm Keaykolour Coral 111# cover paper',
-    lunarCalendarLocation: textStrings.lunarCalendarLocationProvidence,
+    lunarCalendarLocation: layoutText.lunarCalendarLocationProvidence,
     detailImages: [
       // itemsImages.lunarCalendar2022Detail01,
       // itemsImages.lunarCalendar2022Detail02,
@@ -86,7 +98,7 @@ const items = {
   },
   lunarCalendar2021: {
     id: 'XA698W9J6TGEL',
-    category: textStrings.categoryLunarCalendar,
+    category: layoutText.categoryLunarCalendar,
     title: 'Casting Levels',
     subtitle: infoUniversals.lunarCalendarsubtitle,
     imageFront: itemsImages.lunarCalendar2021Main,
@@ -95,7 +107,7 @@ const items = {
     printEdition: 500,
     lunarCalendarYear: 2021,
     lunarCalendarPaperInfo: 'Arjowiggins Creative Papers (distributed by Mohawk) acid-free 300gsm Keaykolour Kiwi 111# cover paper',
-    lunarCalendarLocation: textStrings.lunarCalendarLocationProvidence,
+    lunarCalendarLocation: layoutText.lunarCalendarLocationProvidence,
     detailImages: [
       // itemsImages.lunarCalendar2021Detail01,
       // itemsImages.lunarCalendar2021Detail02,
@@ -109,7 +121,7 @@ const items = {
   },
   lunarCalendar2020: {
     id: 'TGVEUGQD58AX2',
-    category: textStrings.categoryLunarCalendar,
+    category: layoutText.categoryLunarCalendar,
     title: 'The Instruments Agree',
     subtitle: infoUniversals.lunarCalendarsubtitle,
     imageFront: itemsImages.lunarCalendar2020Main,
@@ -118,7 +130,7 @@ const items = {
     printEdition: 500,
     lunarCalendarYear: 2020,
     lunarCalendarPaperInfo: 'Mohawk Fine Papers acid-free 300gsm Keaykolour Caribbean Blue 111# cover paper',
-    lunarCalendarLocation: textStrings.lunarCalendarLocationProvidence,
+    lunarCalendarLocation: layoutText.lunarCalendarLocationProvidence,
     detailImages: [
       // itemsImages.lunarCalendar2020Detail01,
       // itemsImages.lunarCalendar2020Detail02,
@@ -132,7 +144,7 @@ const items = {
   },
   lunarCalendar2019: {
     id: 'T45GH9BL83VQ4',
-    category: textStrings.categoryLunarCalendar,
+    category: layoutText.categoryLunarCalendar,
     title: 'Orchard Quest',
     subtitle: infoUniversals.lunarCalendarsubtitle,
     imageFront: itemsImages.lunarCalendar2019Main,
@@ -141,7 +153,7 @@ const items = {
     printEdition: 500,
     lunarCalendarYear: 2019,
     lunarCalendarPaperInfo: 'French Paper Company acid-free 269gsm Pop-Tone Tangy Orange 100# cover paper',
-    lunarCalendarLocation: textStrings.lunarCalendarLocationProvidence,
+    lunarCalendarLocation: layoutText.lunarCalendarLocationProvidence,
     detailImages: [
       // itemsImages.lunarCalendar2019Detail01,
       // itemsImages.lunarCalendar2019Detail02,
@@ -155,7 +167,7 @@ const items = {
   },
   lunarCalendar2018: {
     id: '4LN49ZLYQLY88',
-    category: textStrings.categoryLunarCalendar,
+    category: layoutText.categoryLunarCalendar,
     title: 'Shimmery Circuit',
     subtitle: infoUniversals.lunarCalendarsubtitle,
     imageFront: itemsImages.lunarCalendar2018Main,
@@ -164,7 +176,7 @@ const items = {
     printEdition: 1000,
     lunarCalendarYear: 2018,
     lunarCalendarPaperInfo: 'French Paper Company acid-free 269gsm Pop-Tone Grape Jelly 100# cover paper',
-    lunarCalendarLocation: textStrings.lunarCalendarLocationNewYork,
+    lunarCalendarLocation: layoutText.lunarCalendarLocationNewYork,
     detailImages: [
       // itemsImages.lunarCalendar2018Detail01,
       // itemsImages.lunarCalendar2018Detail02,
@@ -178,7 +190,7 @@ const items = {
   },
   lunarCalendar2017: {
     id: 'C4RW9LGDQ8NYL',
-    category: textStrings.categoryLunarCalendar,
+    category: layoutText.categoryLunarCalendar,
     title: 'I Still See the X',
     subtitle: infoUniversals.lunarCalendarsubtitle,
     imageFront: itemsImages.lunarCalendar2017Main,
@@ -187,7 +199,7 @@ const items = {
     printEdition: 1000,
     lunarCalendarYear: 2017,
     lunarCalendarPaperInfo: 'French Paper Company acid-free 269gsm Pop-Tone Razzle Berry 100# cover paper',
-    lunarCalendarLocation: textStrings.lunarCalendarLocationProvidence,
+    lunarCalendarLocation: layoutText.lunarCalendarLocationProvidence,
     detailImages: [
       // itemsImages.lunarCalendar2017Detail01,
       // itemsImages.lunarCalendar2017Detail02,
@@ -201,15 +213,15 @@ const items = {
   },
   printAbundance: {
     id: 'B6SBUBH8JRKV6',
-    category: textStrings.categoryPrint,
+    category: layoutText.categoryPrint,
     title: 'Abundance',
-    subtitle: textStrings.byAlecThibodeau,
+    subtitle: layoutText.byAlecThibodeau,
     imageFront: '',
     info: [
-      textStrings.dimensionsFiveAndAHalfInches,
-      textStrings.creditLetterpressPrint,
+      layoutText.dimensionsFiveAndAHalfInches,
+      layoutText.creditLetterpressPrint,
       '', // To be rendered dynamically
-      textStrings.shipsFlat
+      layoutText.shipsFlat
     ],
     price: 25,
     printEdition: 250,
@@ -233,13 +245,14 @@ const itemsForPreview = [
   items.lunarCalendar2020,
   items.lunarCalendar2019,
   items.lunarCalendar2018,
-  items.lunarCalendar2017
+  items.lunarCalendar2017,
+  items.postcardAssets
 ];
 
 const itemsConstants = {
   items,
   itemsForPreview,
-  textStrings
+  layoutText
 };
 
 export default itemsConstants;

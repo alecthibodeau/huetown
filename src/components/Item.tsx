@@ -23,7 +23,7 @@ function Item(props: ItemProps) {
   const categoryClass = props.category.replace(/\s+/g, '-');
   const isCurrentLunarCalendar = props.lunarCalendarYear === 2023;
   const isLunarCalendar = props.category === 'lunar calendar';
-  const isPrintEdition = props.category === 'lunar calendar' || 'print';
+  const isPrintEdition: boolean = props.category === ('lunar calendar' || 'print');
 
 
   useEffect(() => {
@@ -96,7 +96,7 @@ function Item(props: ItemProps) {
       {isCurrentLunarCalendar ?
         <div className="item-press">
           <span className="ital">
-            {itemsConstants.textStrings.colossalBlurb}
+            {itemsConstants.layoutText.colossalBlurb}
           </span>
           <span> &mdash;
             <a className="text-link" href="https://www.thisiscolossal.com/2022/12/calendars-2023">
@@ -147,8 +147,8 @@ function Item(props: ItemProps) {
                 />
                 <input
                   type="submit"
-                  value={itemsConstants.textStrings.addToCart}
-                  alt={itemsConstants.textStrings.addToCart}
+                  value={itemsConstants.layoutText.addToCart}
+                  alt={itemsConstants.layoutText.addToCart}
                 />
               </form>
               {!isInputValid ? <div className="validation-message">{validationdMessage}</div> : null}

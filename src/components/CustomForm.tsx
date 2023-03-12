@@ -13,7 +13,7 @@ function CustomForm(props: CustomFormProps) {
   const [lastName, setLastName] = useState<string>('');
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
 
-  const formInputs = [
+  const formInputs: InputFieldProps[] = [
     {
       type: 'email',
       label: 'Email Address',

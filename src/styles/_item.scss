@@ -35,7 +35,7 @@
     @include crisp-scaled-down;
 
     display: block;
-    width: 300px;
+    width: 90vw;
     max-width: 700px;
 
     // &.postcard {
@@ -255,11 +255,15 @@
 @media (min-width: $breakpoint-sm) {
 
   .item-page .feature-image {
-    width: 90vw;
+    width: 80vw;
   }
 }
 
 @media (min-width: $breakpoint-md) {
+
+  .item-page .feature-image {
+    width: initial;
+  }
 
   .item-page .container-2 .photo-pair img {
     width: 700px;
