@@ -1,16 +1,16 @@
 interface ItemProps {
-  itemId: string;
-  itemCategory: string;
-  itemTitle: string;
-  itemSubtitle: string;
-  itemImageFront: string;
-  itemInfo: string[];
-  itemPrice: number;
-  itemPrintEdition?: number;
-  itemLunarCalendarYear?: number;
-  itemLunarCalendarPaperInfo?: string;
-  itemLunarCalendarLocation?: string;
-  itemDetailImages?: string[];
+  id: string;
+  category: string;
+  title: string;
+  subtitle: string;
+  imageFront: string;
+  info: string[];
+  price: number;
+  printEdition?: number;
+  detailImages?: string[];
+  lunarCalendarYear?: number;
+  lunarCalendarPaperInfo?: string;
+  lunarCalendarLocation?: string;
 }
 
 export default ItemProps;

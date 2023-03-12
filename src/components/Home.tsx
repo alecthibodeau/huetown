@@ -12,18 +12,18 @@ function Home() {
     <>
       {isFeatured ?
         <Item
-          itemId={featured.itemId}
-          itemCategory={featured.itemCategory}
-          itemTitle={featured.itemTitle}
-          itemSubtitle={featured.itemSubtitle}
-          itemImageFront={featured.itemImageFront}
-          itemInfo={featured.itemInfo}
-          itemPrice={featured.itemPrice}
-          itemPrintEdition={featured.itemPrintEdition}
-          itemDetailImages={featured.itemDetailImages}
-          itemLunarCalendarYear={featured.itemLunarCalendarYear}
-          itemLunarCalendarPaperInfo={featured.itemLunarCalendarPaperInfo}
-          itemLunarCalendarLocation={featured.itemLunarCalendarLocation}
+          id={featured.id}
+          category={featured.category}
+          title={featured.title}
+          subtitle={featured.subtitle}
+          imageFront={featured.imageFront}
+          info={featured.info}
+          price={featured.price}
+          printEdition={featured.printEdition}
+          detailImages={featured.detailImages}
+          lunarCalendarYear={featured.lunarCalendarYear}
+          lunarCalendarPaperInfo={featured.lunarCalendarPaperInfo}
+          lunarCalendarLocation={featured.lunarCalendarLocation}
         />
       : <div className="home-content">
           <span className="bold">Event:</span> <span>Catch Huetown at the <a className="text-link" href="https://unbound.risd.edu">2023 Unbound RISD Art Book Fair</a> on Saturday, April 15, from 11am-5pm in Providence, Rhode Island.</span>

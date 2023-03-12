@@ -20,10 +20,10 @@ function Item(props: ItemProps) {
 
   const digitsValidation = new RegExp(/^\d+$/);
 
-  const categoryClass = props.itemCategory.replace(/\s+/g, '-');
-  const isCurrentLunarCalendar = props.itemLunarCalendarYear === 2023;
-  const isLunarCalendar = props.itemCategory === 'lunar calendar';
-  const isPrintEdition = props.itemCategory === 'lunar calendar' || 'print';
+  const categoryClass = props.category.replace(/\s+/g, '-');
+  const isCurrentLunarCalendar = props.lunarCalendarYear === 2023;
+  const isLunarCalendar = props.category === 'lunar calendar';
+  const isPrintEdition = props.category === 'lunar calendar' || 'print';
 
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function Item(props: ItemProps) {
   }
 
   function renderDetailImagePair(image: string, index: number, elements: string[]) {
-    const altTextPrefix = `${props.itemCategory} detail`;
+    const altTextPrefix = `${props.category} detail`;
     return (
       index % 2 === 0 ? <div key={`photoPair${index}`} className="photo-pair">
         <img
@@ -111,15 +111,15 @@ function Item(props: ItemProps) {
             <img
               id="featureImage"
               className={`feature-image ${categoryClass}`}
-              src={props.itemImageFront}
-              alt={`${props.itemCategory} ${props.itemTitle}`}
+              src={props.imageFront}
+              alt={`${props.category} ${props.title}`}
             />
           </a>
         </div>
         <div className={`item-info-block ${categoryClass}`}>
           <div className={`payment-info ${categoryClass}`}>
             <div className={`item-price-container ${categoryClass}`}>
-              $<span className="item-price">{props.itemPrice}</span>
+              $<span className="item-price">{props.price}</span>
             </div>
             <div className="form-container">
               <div className="quantity-label">
@@ -136,7 +136,7 @@ function Item(props: ItemProps) {
                 <input
                   name="hosted_button_id"
                   type="hidden"
-                  value={props.itemId}
+                  value={props.id}
                 />
                 <input
                   name="quantity"
@@ -157,41 +157,41 @@ function Item(props: ItemProps) {
           <div className="item-info-text" id="orderItem">
             <div>
               <div className="item-title">
-                {!isLunarCalendar ? <div>{props.itemTitle}</div> :
+                {!isLunarCalendar ? <div>{props.title}</div> :
                   <div>
-                    <span>{props.itemTitle}</span><br />
-                    <span className="normal">{props.itemLunarCalendarYear} {props.itemCategory}</span>
+                    <span>{props.title}</span><br />
+                    <span className="normal">{props.lunarCalendarYear} {props.category}</span>
                   </div>
                 }
               </div>
               <div>
-                {props.itemSubtitle}
+                {props.subtitle}
               </div>
             </div>
             <ul className="item-info-container">
-              {props.itemInfo.map(renderListItem)}
+              {props.info.map(renderListItem)}
             </ul>
           </div>
         </div>
       </div>
 
-      {props.itemDetailImages ?
+      {props.detailImages ?
         <div className="container-2">
-          {props.itemDetailImages.map(renderDetailImagePair)}
+          {props.detailImages.map(renderDetailImagePair)}
           {isLunarCalendar ?
             <LunarCalendarInfo
-              itemId={props.itemId}
-              itemCategory={props.itemCategory}
-              itemTitle={props.itemTitle}
-              itemSubtitle={props.itemSubtitle}
-              itemImageFront={props.itemImageFront}
-              itemInfo={props.itemInfo}
-              itemPrice={props.itemPrice}
-              itemPrintEdition={props.itemPrintEdition}
-              itemDetailImages={props.itemDetailImages}
-              itemLunarCalendarYear={props.itemLunarCalendarYear}
-              itemLunarCalendarPaperInfo={props.itemLunarCalendarPaperInfo}
-              itemLunarCalendarLocation={props.itemLunarCalendarLocation}
+              id={props.id}
+              category={props.category}
+              title={props.title}
+              subtitle={props.subtitle}
+              imageFront={props.imageFront}
+              info={props.info}
+              price={props.price}
+              printEdition={props.printEdition}
+              detailImages={props.detailImages}
+              lunarCalendarYear={props.lunarCalendarYear}
+              lunarCalendarPaperInfo={props.lunarCalendarPaperInfo}
+              lunarCalendarLocation={props.lunarCalendarLocation}
             />
           : null}
           {isCurrentLunarCalendar ?
