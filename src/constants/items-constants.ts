@@ -24,15 +24,18 @@ const itemInfoUniversals = {
   drawingInfoSignedOnBack: 'signed on the back',
   lunarCalendaritemSubtitle: textStrings.byAlecThibodeau,
   lunarCalendarPrice: 45,
-  lunarCalendarInfoOne: '19 x 11.75 inches',
-  lunarCalendarInfoTwo: textStrings.creditLetterpressPrint,
-  lunarCalendarInfoThree: '', // To be rendered dynamically
-  lunarCalendarInfoFour: `${textStrings.shipsFlat}: unrolled in a sturdy box`,
   postcardInfoOne: '6 x 4 inches',
   postcardInfoTwo: 'Mellow, satin finish',
   postcardInfoThree: 'Full-color front / single-color back',
   postcardPrice: 1
 };
+
+const lunarCalendarItemInfo = [
+  '19 x 11.75 inches',
+  textStrings.creditLetterpressPrint,
+  '', // To be rendered dynamically
+  `${textStrings.shipsFlat}: unrolled in a sturdy box`
+];
 
 const items = {
   lunarCalendar2023: {
@@ -41,12 +44,7 @@ const items = {
     itemTitle: 'Thoughts Operator',
     itemSubtitle: itemInfoUniversals.lunarCalendaritemSubtitle,
     itemImageFront: itemsImages.lunarCalendar2023Main,
-    itemInfo: [
-      itemInfoUniversals.lunarCalendarInfoOne,
-      itemInfoUniversals.lunarCalendarInfoTwo,
-      itemInfoUniversals.lunarCalendarInfoThree,
-      itemInfoUniversals.lunarCalendarInfoFour
-    ],
+    itemInfo: lunarCalendarItemInfo,
     itemPrice: itemInfoUniversals.lunarCalendarPrice,
     itemPrintEdition: 500,
     itemLunarCalendarYear: 2023,
@@ -69,12 +67,7 @@ const items = {
     itemTitle: 'Entrancer\'s Medallion',
     itemSubtitle: itemInfoUniversals.lunarCalendaritemSubtitle,
     itemImageFront: itemsImages.lunarCalendar2022Main,
-    itemInfo: [
-      itemInfoUniversals.lunarCalendarInfoOne,
-      itemInfoUniversals.lunarCalendarInfoTwo,
-      itemInfoUniversals.lunarCalendarInfoThree,
-      itemInfoUniversals.lunarCalendarInfoFour
-    ],
+    itemInfo: lunarCalendarItemInfo,
     itemPrice: itemInfoUniversals.lunarCalendarPrice,
     itemPrintEdition: 500,
     itemLunarCalendarYear: 2022,
@@ -97,12 +90,7 @@ const items = {
     itemTitle: 'Casting Levels',
     itemSubtitle: itemInfoUniversals.lunarCalendaritemSubtitle,
     itemImageFront: itemsImages.lunarCalendar2021Main,
-    itemInfo: [
-      itemInfoUniversals.lunarCalendarInfoOne,
-      itemInfoUniversals.lunarCalendarInfoTwo,
-      itemInfoUniversals.lunarCalendarInfoThree,
-      itemInfoUniversals.lunarCalendarInfoFour
-    ],
+    itemInfo: lunarCalendarItemInfo,
     itemPrice: itemInfoUniversals.lunarCalendarPrice,
     itemPrintEdition: 500,
     itemLunarCalendarYear: 2021,
@@ -125,12 +113,7 @@ const items = {
     itemTitle: 'The Instruments Agree',
     itemSubtitle: itemInfoUniversals.lunarCalendaritemSubtitle,
     itemImageFront: itemsImages.lunarCalendar2020Main,
-    itemInfo: [
-      itemInfoUniversals.lunarCalendarInfoOne,
-      itemInfoUniversals.lunarCalendarInfoTwo,
-      itemInfoUniversals.lunarCalendarInfoThree,
-      itemInfoUniversals.lunarCalendarInfoFour
-    ],
+    itemInfo: lunarCalendarItemInfo,
     itemPrice: itemInfoUniversals.lunarCalendarPrice,
     itemPrintEdition: 500,
     itemLunarCalendarYear: 2020,
@@ -153,12 +136,7 @@ const items = {
     itemTitle: 'Orchard Quest',
     itemSubtitle: itemInfoUniversals.lunarCalendaritemSubtitle,
     itemImageFront: itemsImages.lunarCalendar2019Main,
-    itemInfo: [
-      itemInfoUniversals.lunarCalendarInfoOne,
-      itemInfoUniversals.lunarCalendarInfoTwo,
-      itemInfoUniversals.lunarCalendarInfoThree,
-      itemInfoUniversals.lunarCalendarInfoFour
-    ],
+    itemInfo: lunarCalendarItemInfo,
     itemPrice: itemInfoUniversals.lunarCalendarPrice,
     itemPrintEdition: 500,
     itemLunarCalendarYear: 2019,
@@ -181,12 +159,7 @@ const items = {
     itemTitle: 'Shimmery Circuit',
     itemSubtitle: itemInfoUniversals.lunarCalendaritemSubtitle,
     itemImageFront: itemsImages.lunarCalendar2018Main,
-    itemInfo: [
-      itemInfoUniversals.lunarCalendarInfoOne,
-      itemInfoUniversals.lunarCalendarInfoTwo,
-      itemInfoUniversals.lunarCalendarInfoThree,
-      itemInfoUniversals.lunarCalendarInfoFour
-    ],
+    itemInfo: lunarCalendarItemInfo,
     itemPrice: itemInfoUniversals.lunarCalendarPrice,
     itemPrintEdition: 1000,
     itemLunarCalendarYear: 2018,
@@ -209,12 +182,7 @@ const items = {
     itemTitle: 'I Still See the X',
     itemSubtitle: itemInfoUniversals.lunarCalendaritemSubtitle,
     itemImageFront: itemsImages.lunarCalendar2017Main,
-    itemInfo: [
-      itemInfoUniversals.lunarCalendarInfoOne,
-      itemInfoUniversals.lunarCalendarInfoTwo,
-      itemInfoUniversals.lunarCalendarInfoThree,
-      itemInfoUniversals.lunarCalendarInfoFour
-    ],
+    itemInfo: lunarCalendarItemInfo,
     itemPrice: itemInfoUniversals.lunarCalendarPrice,
     itemPrintEdition: 1000,
     itemLunarCalendarYear: 2017,
