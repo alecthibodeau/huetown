@@ -50,7 +50,11 @@ function Item(props: ItemProps) {
     )
   }
 
-  function renderDetailImagePair(image: string, index: number, elements: string[]) {
+  function setIdForFinalImagePair(detailImages: string[], index: number): string | undefined {
+    return index === detailImages.length - 2 ? 'itemDetails' : undefined;
+  }
+
+  function renderDetailImagePair(image: string, index: number, detailImages: string[]) {
     const altTextPrefix = `${props.category} detail`;
     return (
       index % 2 === 0 ? <div key={`photoPair${index}`} className="photo-pair">
@@ -60,9 +64,9 @@ function Item(props: ItemProps) {
           alt={`${altTextPrefix} #${index + 1}`}
         />
         <img
-          id={index === elements.length - 2 ? 'itemDetails' : undefined}
+          id={setIdForFinalImagePair(detailImages, index)}
           className="large-detail-image"
-          src={elements[index + 1]}
+          src={detailImages[index + 1]}
           alt={`${altTextPrefix} #${index + 2}`}
         />
       </div> : null

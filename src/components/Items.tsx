@@ -12,7 +12,7 @@ import formatItemRoutePath from '../helpers/helpers';
 function Items() {
 
   function formatLunarCalendarText(item: ItemProps): string {
-    return `${item.lunarCalendarYear} ${itemsConstants.layoutText.categoryLunarCalendar} ${itemsConstants.layoutText.categoryPrint}`;
+    return `${item.lunarCalendarYear} ${item.category} ${itemsConstants.layoutText.categoryPrint}`;
   }
 
   function getItemPreviewCategory(item: ItemProps): string {
