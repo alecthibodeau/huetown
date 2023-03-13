@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 /* Components */
 import LunarCalendarInfo from './LunarCalendarInfo';
@@ -50,7 +51,7 @@ function Item(props: ItemProps) {
     )
   }
 
-  function setIdForFinalImagePair(detailImages: string[], index: number): string | undefined {
+  function addIdForFinalDetailImage(detailImages: string[], index: number): string | undefined {
     return index === detailImages.length - 2 ? 'itemDetails' : undefined;
   }
 
@@ -64,7 +65,7 @@ function Item(props: ItemProps) {
           alt={`${altTextPrefix} #${index + 1}`}
         />
         <img
-          id={setIdForFinalImagePair(detailImages, index)}
+          id={addIdForFinalDetailImage(detailImages, index)}
           className="large-detail-image"
           src={detailImages[index + 1]}
           alt={`${altTextPrefix} #${index + 2}`}
@@ -82,6 +83,17 @@ function Item(props: ItemProps) {
         <div className="label">{thumbnail.label}</div>
       </div>
     )
+  }
+
+  function renderFeatureImage(): JSX.Element {
+    return (
+      <img
+        id="featureImage"
+        className={`feature-image ${categoryClass}`}
+        src={props.imageFront}
+        alt={`${props.category} ${props.title}`}
+      />
+    );
   }
 
   function onQuantityChange(event: React.BaseSyntheticEvent) {
@@ -111,14 +123,11 @@ function Item(props: ItemProps) {
       : null}
       <div className={`container-1 ${categoryClass}`}>
         <div className="feature-image-block">
-          <a className="feature-image-link" href="#itemDetails">
-            <img
-              id="featureImage"
-              className={`feature-image ${categoryClass}`}
-              src={props.imageFront}
-              alt={`${props.category} ${props.title}`}
-            />
-          </a>
+          {
+            props.category === itemsConstants.layoutText.categoryLunarCalendar
+            ? <Link to="#itemDetails">{renderFeatureImage()}</Link>
+            : <div>{renderFeatureImage()}</div>
+          }
         </div>
         <div className={`item-info-block ${categoryClass}`}>
           <div className={`payment-info ${categoryClass}`}>

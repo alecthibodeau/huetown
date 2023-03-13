@@ -147,10 +147,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    &:not(.lunar-calendar) .feature-image-link {
-      pointer-events: none;
-    }
+    justify-content: center;
 
     // &.print,
     // &.postcard {
