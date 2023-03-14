@@ -38,6 +38,9 @@
     width: 90vw;
     max-width: 700px;
 
+    &.postcard {
+      border: $border-standard;
+    }
     // &.postcard {
     //   border: 1px solid $sixty-percent-gray;
 

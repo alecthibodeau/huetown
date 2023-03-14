@@ -17,8 +17,6 @@ $size-medium: 1rem;
 
 /* Colors */
 
-$border-gray: rgba(36, 41, 46, 0.4);
-
 $huetown-red: #e78460;
 $huetown-yellow: #edde95;
 $huetown-green: #6abbb6; // darker
@@ -40,6 +38,8 @@ $eighty-percent-gray: #333;
 $eighty-five-percent-gray: #262626;
 $ninety-percent-gray: #191919;
 
+$rgba-border-gray: rgba(36, 41, 46, 0.4);
+$border-gray: $sixty-percent-gray;
 $light-gray: #ccc;
 
 $black: #000;
