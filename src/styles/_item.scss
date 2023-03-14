@@ -8,7 +8,7 @@
   image-rendering: crisp-edges;
 }
 
-.item-page {
+.item {
   width: $page-width;
   margin-bottom: 1rem;
 
@@ -254,25 +254,25 @@
 
 @media (min-width: $breakpoint-sm) {
 
-  .item-page .feature-image {
+  .item .feature-image {
     width: 80vw;
   }
 }
 
 @media (min-width: $breakpoint-md) {
 
-  .item-page .feature-image {
+  .item .feature-image {
     width: initial;
   }
 
-  .item-page .container-2 .photo-pair img {
+  .item .container-2 .photo-pair img {
     width: 700px;
   }
 }
 
 @media (min-width: $breakpoint-lg) {
 
-  .item-page {
+  .item {
 
     .item-info-block {
       flex-direction: column-reverse;
@@ -308,7 +308,7 @@
 
 @media (min-width: $breakpoint-xl) {
 
-  .item-page .container-2 .photo-pair img {
+  .item .container-2 .photo-pair img {
     width: 38vw;
     height: 38vw;
   }

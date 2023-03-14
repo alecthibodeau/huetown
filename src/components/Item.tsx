@@ -108,7 +108,7 @@ function Item(props: ItemProps) {
   }
 
   return (
-    <div className="item-page">
+    <div className="item">
       {isCurrentLunarCalendar ?
         <div className="item-press">
           <span className="ital">
