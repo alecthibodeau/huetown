@@ -1,5 +1,5 @@
 /* Constants */
-import itemsLunarCalendarsConstants from '../constants/items-lunar-calendars-constants';
+import lunarCalendars from '../constants/lunar-calendars';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
@@ -39,7 +39,7 @@ function LunarCalendarInfo(props: ItemProps) {
         Custom moon illustrations portray all principal lunar phases (New Moon, First Quarter Moon, Full Moon and Third Quarter Moon) plus all intermediate crescent and gibbous phases. For months with less than 31 days, drawings of clouds occupy the extra spaces. <a className="text-link" href="#featureImage">Order now.</a>
       </div>
       <div className="lunar-phases" id="lunarPhases">
-        {itemsLunarCalendarsConstants.lunarPhases.map(renderlunarPhase)}
+        {lunarCalendars.lunarPhases.map(renderlunarPhase)}
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ import Items from './components/Items';
 import NotFound from './components/NotFound';
 
 /* Components */
-import itemsConstants from './constants/items-constants';
+import constants from './constants/constants';
 
 /* Interfaces */
 import ItemProps from './interfaces/ItemProps';
@@ -68,7 +68,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/items" element={<Items />} />
-          {itemsConstants.itemsForPreview.map(renderItemRoute)}
+          {constants.itemsForPreview.map(renderItemRoute)}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

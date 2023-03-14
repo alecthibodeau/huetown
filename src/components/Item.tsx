@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import LunarCalendarInfo from './LunarCalendarInfo';
 
 /* Constants */
-import itemsConstants from '../constants/items-constants';
-import itemsImages from '../constants/items-images';
-import itemsLunarCalendarsConstants from '../constants/items-lunar-calendars-constants';
+import constants from '../constants/constants';
+import images from '../constants/images';
+import lunarCalendars from '../constants/lunar-calendars';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
@@ -112,11 +112,11 @@ function Item(props: ItemProps) {
       {isCurrentLunarCalendar ?
         <div className="item-press">
           <span className="ital">
-            {itemsConstants.layoutText.colossalBlurb}
+            {constants.text.colossalBlurb}
           </span>
           <span> &mdash;
             <a className="text-link" href="https://www.thisiscolossal.com/2022/12/calendars-2023">
-              <img src={itemsImages.colossalLogo} alt="Colossal website logo" />
+              <img src={images.colossalLogo} alt="Colossal website logo" />
             </a>
           </span>
         </div>
@@ -124,7 +124,7 @@ function Item(props: ItemProps) {
       <div className={`container-1 ${categoryClass}`}>
         <div className="feature-image-block">
           {
-            props.category === itemsConstants.layoutText.categoryLunarCalendar
+            props.category === constants.text.categoryLunarCalendar
             ? <Link to="#itemDetails">{renderFeatureImage()}</Link>
             : <div>{renderFeatureImage()}</div>
           }
@@ -160,8 +160,8 @@ function Item(props: ItemProps) {
                 />
                 <input
                   type="submit"
-                  value={itemsConstants.layoutText.addToCart}
-                  alt={itemsConstants.layoutText.addToCart}
+                  value={constants.text.addToCart}
+                  alt={constants.text.addToCart}
                 />
               </form>
               {!isInputValid ? <div className="validation-message">{validationdMessage}</div> : null}
@@ -219,7 +219,7 @@ function Item(props: ItemProps) {
                 </p>
               </div>
               <div className="item-accompanying">
-                <img src={itemsImages.spacePony} alt="Space Pony print" />
+                <img src={images.spacePony} alt="Space Pony print" />
               </div>
             </div>
           : null}
@@ -228,7 +228,7 @@ function Item(props: ItemProps) {
 
       {isLunarCalendar ?
         <div className="container-3">
-          {itemsLunarCalendarsConstants.thumbnailsLunarCalendars.map(
+          {lunarCalendars.thumbnails.map(
             (set, index) => {
               return (
                 <div key={`status${set.status}${index}`} className="thumbnails-set">

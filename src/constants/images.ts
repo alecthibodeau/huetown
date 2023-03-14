@@ -27,7 +27,7 @@ import lunarCalendar2022Main from '../assets/images/items/thibodeau-lunar-calend
 
 import postcardAssets from '../assets/images/items/postcard-assets.png';
 
-const itemsImages = {
+const images = {
   colossalLogo,
   phaseFirstQuarter,
   phaseFull,
@@ -56,4 +56,4 @@ const itemsImages = {
   spacePony
 };
 
-export default itemsImages;
+export default images;

@@ -2,10 +2,10 @@
 import Item from './Item';
 
 /* Constants */
-import itemsConstants from '../constants/items-constants';
+import constants from '../constants/constants';
 
 function Home() {
-  const featured = itemsConstants.items.lunarCalendar2023;
+  const featured = constants.items.lunarCalendar2023;
   const isFeatured = true;
 
   return (

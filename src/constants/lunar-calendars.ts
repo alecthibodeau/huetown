@@ -1,61 +1,61 @@
-import itemsConstants from './items-constants';
-import itemsImages from './items-images';
+import constants from './constants';
+import images from './images';
 
-const category = itemsConstants.layoutText.categoryLunarCalendar;
+const category = constants.text.categoryLunarCalendar;
 
 const lunarPhases = [
   {
     name: 'new',
-    image: itemsImages.phaseNew
+    image: images.phaseNew
   },
   {
     name: 'first quarter',
-    image: itemsImages.phaseFirstQuarter
+    image: images.phaseFirstQuarter
   },
   {
     name: 'full',
-    image: itemsImages.phaseFull
+    image: images.phaseFull
   },
   {
     name: 'third quarter',
-    image: itemsImages.phaseThirdQuarter
+    image: images.phaseThirdQuarter
   }
 ];
 
 const lunarCalendarsAvailable = [
   {
     label: `2023 ${category}`,
-    image: itemsImages.lunarCalendar2023Main,
+    image: images.lunarCalendar2023Main,
     link: '/'
   },
   {
     label: `2022 ${category}`,
-    image: itemsImages.lunarCalendar2022Main,
+    image: images.lunarCalendar2022Main,
     link: '/'
   },
   {
     label: `2021 ${category}`,
-    image: itemsImages.lunarCalendar2021Main,
+    image: images.lunarCalendar2021Main,
     link: '/'
   },
   {
     label: `2020 ${category}`,
-    image: itemsImages.lunarCalendar2020Main,
+    image: images.lunarCalendar2020Main,
     link: '/'
   },
   {
     label: `2019 ${category}`,
-    image: itemsImages.lunarCalendar2019Main,
+    image: images.lunarCalendar2019Main,
     link: '/'
   },
   {
     label: `2018 ${category}`,
-    image: itemsImages.lunarCalendar2018Main,
+    image: images.lunarCalendar2018Main,
     link: '/'
   },
   {
     label: `2017 ${category}`,
-    image: itemsImages.lunarCalendar2017Main,
+    image: images.lunarCalendar2017Main,
     link: '/'
   }
 ];
@@ -63,27 +63,27 @@ const lunarCalendarsAvailable = [
 const lunarCalendarsPrevious = [
   {
     label: `2011 ${category}`,
-    image: itemsImages.lunarCalendar2011Main,
+    image: images.lunarCalendar2011Main,
     link: 'https://alecthibodeau.com/prints/pineal-grigio'
   },
   {
     label: `2010 ${category}`,
-    image: itemsImages.lunarCalendar2010Main,
+    image: images.lunarCalendar2010Main,
     link: 'https://alecthibodeau.com/prints/probably-the-earths-core-really-is-the-sky'
   },
   {
     label: `2009 ${category}`,
-    image: itemsImages.lunarCalendar2009Main,
+    image: images.lunarCalendar2009Main,
     link: 'https://alecthibodeau.com/prints/goes-to-show-you-what-a-moon-can-do'
   },
   {
     label: `2008 ${category}`,
-    image: itemsImages.lunarCalendar2008Main,
+    image: images.lunarCalendar2008Main,
     link: 'https://alecthibodeau.com/prints/good-librations'
   }
 ];
 
-const thumbnailsLunarCalendars = [
+const thumbnails = [
   {
     status: 'available',
     thumbnails: lunarCalendarsAvailable
@@ -96,7 +96,7 @@ const thumbnailsLunarCalendars = [
 
 const itemsLunarCalendarsConstants = {
   lunarPhases,
-  thumbnailsLunarCalendars
+  thumbnails
 };
 
 export default itemsLunarCalendarsConstants;
