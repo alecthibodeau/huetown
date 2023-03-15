@@ -9,7 +9,7 @@ $breakpoint-xxl: 1400px;
 /* Dimensions */
 
 $character-width: 80ch;
-$item-preview-dimension: 300px;
+$item-collection-dimension: 300px;
 $page-width: 90%;
 $page-gutter: 5%;
 $size-small: .5rem;
@@ -37,6 +37,8 @@ $seventy-five-percent-gray: #404040;
 $eighty-percent-gray: #333;
 $eighty-five-percent-gray: #262626;
 $ninety-percent-gray: #191919;
+$davys-grey: #555;
+$dark-charcoal: #333;
 
 $rgba-border-gray: rgba(36, 41, 46, 0.4);
 $border-gray: $sixty-percent-gray;
@@ -89,6 +91,8 @@ $text-link-green: #1d8a50;
 $text-link-purple: #731aa5;
 $twenty-three-blue: #008eb2;
 $twenty-three-dark-blue: #005f88;
+
+$application-font-color: $dark-charcoal;
 
 /* Border */
 

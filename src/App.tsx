@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
 import Item from './components/Item';
-import Items from './components/Items';
+import ItemsCollection from './components/ItemsCollection';
 import NotFound from './components/NotFound';
 
 /* Interfaces */
@@ -20,6 +20,7 @@ import itemsCollection from './constants/items-collection';
 /* Helpers */
 import formatItemRoutePath from './helpers/helpers';
 
+const resize: string = 'resize';
 const breakpointSm: number = 576;
 
 function App(): JSX.Element {
@@ -27,9 +28,9 @@ function App(): JSX.Element {
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
 
   useEffect(() => {
-    window.addEventListener('resize', getViewportWidth);
+    window.addEventListener(resize, getViewportWidth);
     setIsBreakpointXs(viewportWidth < breakpointSm ? true : false);
-    return(() => window.removeEventListener('resize', getViewportWidth));
+    return(() => window.removeEventListener(resize, getViewportWidth));
   }, [viewportWidth]);
 
   function getViewportWidth(): void {
@@ -68,7 +69,7 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/items" element={<Items />} />
+          <Route path="/items" element={<ItemsCollection />} />
           {itemsCollection.map(renderItemRoute)}
           <Route path="*" element={<NotFound />} />
         </Routes>

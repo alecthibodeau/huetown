@@ -3,13 +3,13 @@
 @use './footer' as *;
 @use './header' as *;
 @use './item' as *;
-@use './items' as *;
+@use './items-collection' as *;
 @use './variables' as *;
 
 body {
   max-width: 1400px;
   margin: auto;
-  color: $ninety-percent-gray;
+  color: $application-font-color;
 }
 
 main {
@@ -32,16 +32,16 @@ main {
       color: $twenty-three-dark-blue;
     }
 
-    &.item-preview {
-      color: $ninety-percent-gray;
+    &.item-collection-link {
+      color: $application-font-color;
       &:link,
       &:visited,
       &:active {
-        color: $ninety-percent-gray;
+        color: $application-font-color;
       }
     }
 
-    &:hover:not(.item-preview) {
+    &:hover:not(.item-collection-link) {
       color: $dark-green;
       text-decoration: underline;
       cursor: pointer;

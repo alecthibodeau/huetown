@@ -20,7 +20,7 @@ $nav-icon-size: 2rem;
   /* Only show the underside bar effect at larger viewport widths */
   @media (min-width: $breakpoint-sm) {
     font-weight: 500;
-    color: $ninety-percent-gray;
+    color: $application-font-color;
 
     &::after { // The bar underneath when it's hidden
       width: 100%;
