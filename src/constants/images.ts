@@ -1,8 +1,23 @@
 import colossalLogo from '../assets/images/colossal-logo-small.jpg';
-import phaseFirstQuarter from '../assets/images/items/phase-first-quarter.png';
-import phaseFull from '../assets/images/items/phase-full.png';
-import phaseNew from '../assets/images/items/phase-new.png';
-import phaseThirdQuarter from '../assets/images/items/phase-third-quarter.png';
+
+import firstQuarterMoon from '../assets/images/items/phase-first-quarter.png';
+import fullMoon from '../assets/images/items/phase-full.png';
+import newMoon from '../assets/images/items/phase-new.png';
+import thirdQuarterMoon from '../assets/images/items/phase-third-quarter.png';
+
+import logo from '../assets/images/huetown-h-logo.jpg';
+import selfPortrait from '../assets/images/thibodeau-self-portrait.jpg';
+
+import huetownGrayLogo from '../assets/images/huetown-script-logo-fifty-percent-gray.svg';
+import huetownWhiteLogo from '../assets/images/huetown-script-logo-white.svg';
+
+import instagramWhite from '../assets/images/icon-instagram-white.svg';
+import instagramGray from '../assets/images/icon-instagram-fifty-percent-gray.svg';
+import twitterWhite from '../assets/images/icon-twitter-white.svg';
+import twitterGray from '../assets/images/icon-twitter-fifty-percent-gray.svg';
+import emailWhite from '../assets/images/icon-email-white.svg';
+import emailGray from '../assets/images/icon-email-fifty-percent-gray.svg';
+
 import lunarCalendar2023Main from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-main-1000px.jpg';
 import lunarCalendar2023Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-01-700px.jpg';
 import lunarCalendar2023Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2023-photo-02-700px.jpg';
@@ -27,12 +42,49 @@ import lunarCalendar2022Main from '../assets/images/items/thibodeau-lunar-calend
 
 import postcardAssets from '../assets/images/items/postcard-assets.png';
 
+const header = {
+  huetownGrayLogo,
+  huetownWhiteLogo
+}
+
+const phases = {
+  firstQuarterMoon,
+  fullMoon,
+  thirdQuarterMoon,
+  newMoon
+}
+
+const icons = {
+  instagramWhite,
+  instagramGray,
+  twitterWhite,
+  twitterGray,
+  emailWhite,
+  emailGray
+}
+
+// const icons = {
+//   email: {
+//     white: iconEmailWhite,
+//     gray: iconEmailGray
+//   },
+//   instagram: {
+//     white: iconInstagramWhite,
+//     gray: iconInstagramGray
+//   },
+//   twitter: {
+//     white: iconTwitterWhite,
+//     gray: iconTwitterGray
+//   }
+// }
+
 const images = {
+  header,
+  icons,
+  logo,
+  selfPortrait,
   colossalLogo,
-  phaseFirstQuarter,
-  phaseFull,
-  phaseNew,
-  phaseThirdQuarter,
+  phases,
   lunarCalendar2023Detail01,
   lunarCalendar2023Detail02,
   lunarCalendar2023Detail03,

@@ -1,6 +1,3 @@
-import logo from '../assets/images/huetown-h-logo.jpg';
-import selfPortrait from '../assets/images/thibodeau-self-portrait.jpg';
-
 /* Components */
 import MailchimpFormContainer from './MailChimpFormContainer';
 import SectionTitle from './SectionTitle';
@@ -9,11 +6,12 @@ import SectionTitle from './SectionTitle';
 import Shop from '../interfaces/Shop';
 
 /* Constants */
+import images from '../constants/images';
 import { shops } from '../constants/shops';
 
-function About() {
+function About(): JSX.Element {
 
-  function renderShopLink(shop: Shop, index: number) {
+  function renderShopLink(shop: Shop, index: number): JSX.Element {
     return (
       <li key={shop.name + index}>
         <a className="text-link" href={shop.url}>{shop.name}</a>
@@ -24,12 +22,12 @@ function About() {
   return (
     <div className="about-content">
       <div className="about-upper">
-        <img className="self-portrait" src={selfPortrait} alt="Self portrait drawing" />
+        <img className="self-portrait" src={images.selfPortrait} alt="Self portrait drawing" />
         <div>
           <span className="bold">Huetown</span> is the web shop for artist Alec Thibodeau (me!).
           I make drawings, prints and more. Select work is available here. Past work can be found at my portfolio site: <a className="text-link" href="https://alecthibodeau.com">alecthibodeau.com</a>.
         </div>
-        <img className="huetown-h-logo" src={logo} alt="Huetown H logo"/>
+        <img className="huetown-h-logo" src={images.logo} alt="Huetown H logo"/>
       </div>
       <div className="about-lower">
         <div>

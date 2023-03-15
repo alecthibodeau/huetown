@@ -1,4 +1,4 @@
-function NotFound() {
+function NotFound(): JSX.Element {
   return (
     <div className="not-found-error">
       <h1>404 Error</h1>

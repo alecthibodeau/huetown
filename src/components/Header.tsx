@@ -2,18 +2,17 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-/* Images */
-import huetownGrayLogo from '../assets/images/huetown-script-logo-fifty-percent-gray.svg';
-import huetownWhiteLogo from '../assets/images/huetown-script-logo-white.svg';
-import HeaderProps from '../interfaces/HeaderProps';
-
 /* Interfaces */
+import HeaderProps from '../interfaces/HeaderProps';
 import IconLinks from './IconLinks';
 
-function Header(props: HeaderProps) {
+/* Constants */
+import images from '../constants/images';
+
+function Header(props: HeaderProps): JSX.Element {
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState<boolean>(false);
-  const burgerButton = 'burger-button';
-  const viewCart = 'view cart';
+  const burgerButton: string = 'burger-button';
+  const viewCart: string = 'view cart';
 
   useEffect(() => {
     if (!props.isBreakpointXs && isNavDrawerOpen) {
@@ -21,7 +20,7 @@ function Header(props: HeaderProps) {
     }
   }, [props.isBreakpointXs, isNavDrawerOpen]);
 
-  function renderBurgerBar(bar: string, index: number) {
+  function renderBurgerBar(bar: string, index: number): JSX.Element {
     return (
       <div
         key={bar + index}
@@ -36,7 +35,7 @@ function Header(props: HeaderProps) {
         <Link to="/">
           <img
             className={props.isBreakpointXs ? 'huetown-logo-white' : 'huetown-logo-gray'}
-            src={props.isBreakpointXs ? huetownWhiteLogo : huetownGrayLogo}
+            src={props.isBreakpointXs ? images.header.huetownWhiteLogo : images.header.huetownGrayLogo}
             alt="Huetown logo" />
         </Link>
         {props.isBreakpointXs ?

@@ -7,9 +7,9 @@ import CustomForm from './CustomForm';
 import MailchimpFormData from '../interfaces/MailchimpFormData';
 import MailchimpSubscribeProps from '../interfaces/MailchimpSubscribeProps';
 
-function MailchimpFormContainer() {
+function MailchimpFormContainer(): JSX.Element {
 
-  const postUrl = `https://huetown.us13.list-manage.com/subscribe/post?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
+  const postUrl: string = `https://huetown.us13.list-manage.com/subscribe/post?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
 
   return (
     <div className="mailchimp-form-container">

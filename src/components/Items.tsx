@@ -9,18 +9,18 @@ import ItemProps from '../interfaces/ItemProps';
 /* Helpers */
 import formatItemRoutePath from '../helpers/helpers';
 
-function Items() {
+function Items(): JSX.Element {
 
   function formatLunarCalendarText(item: ItemProps): string {
-    return `${item.lunarCalendarYear} ${item.category} ${constants.text.categoryPrint}`;
+    return `${item.lunarCalendarYear} ${item.category} ${constants.text.print}`;
   }
 
   function getItemPreviewCategory(item: ItemProps): string {
-    const isItemLunarCalendar: boolean = item.category === constants.text.categoryLunarCalendar;
+    const isItemLunarCalendar: boolean = item.category === constants.text.lunarCalendar;
     return isItemLunarCalendar ? formatLunarCalendarText(item) : item.category;
   }
 
-  function renderItemPreview(item: ItemProps, index: number) {
+  function renderItemPreview(item: ItemProps, index: number): JSX.Element {
     return (
       <Link
         key={item.title + index}

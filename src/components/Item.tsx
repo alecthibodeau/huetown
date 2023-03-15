@@ -13,19 +13,17 @@ import lunarCalendars from '../constants/lunar-calendars';
 import ItemProps from '../interfaces/ItemProps';
 import Thumbnail from '../interfaces/Thumbnail';
 
-function Item(props: ItemProps) {
+function Item(props: ItemProps): JSX.Element {
   const [quantity, setQuantity] = useState<string>('1');
   const [isInputValid, setIsInputValid] = useState<boolean>(true);
   const [keyPressed, setKeyPressed] = useState<string>('');
   const [validationdMessage, setValidationdMessage] = useState<string>('');
 
-  const digitsValidation = new RegExp(/^\d+$/);
-
-  const categoryClass = props.category.replace(/\s+/g, '-');
-  const isCurrentLunarCalendar = props.lunarCalendarYear === 2023;
-  const isLunarCalendar = props.category === 'lunar calendar';
-  const isPrintEdition: boolean = props.category === ('lunar calendar' || 'print');
-
+  const digitsValidation: RegExp = new RegExp(/^\d+$/);
+  const categoryClass: string = props.category.replace(/\s+/g, '-');
+  const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
+  const isLunarCalendar: boolean = props.category === constants.text.lunarCalendar;
+  const isPrintEdition: boolean = props.category === (constants.text.lunarCalendar || constants.text.print);
 
   useEffect(() => {
     const keydown = 'keydown';
@@ -39,7 +37,7 @@ function Item(props: ItemProps) {
     setKeyPressed(key);
   }
 
-  function renderListItem(listItem: string, index: number) {
+  function renderListItem(listItem: string, index: number): JSX.Element {
     return (
       <li key={`${index}${listItem}`}>
         {isPrintEdition && index === 2 ?
@@ -55,7 +53,7 @@ function Item(props: ItemProps) {
     return index === detailImages.length - 2 ? 'itemDetails' : undefined;
   }
 
-  function renderDetailImagePair(image: string, index: number, detailImages: string[]) {
+  function renderDetailImagePair(image: string, index: number, detailImages: string[]): JSX.Element | null {
     const altTextPrefix = `${props.category} detail`;
     return (
       index % 2 === 0 ? <div key={`photoPair${index}`} className="photo-pair">
@@ -74,7 +72,7 @@ function Item(props: ItemProps) {
     )
   }
 
-  function renderThumbnail(thumbnail: Thumbnail, index: number) {
+  function renderThumbnail(thumbnail: Thumbnail, index: number): JSX.Element {
     return (
       <div key={`thumbnail${thumbnail.label}${index}`} className="thumbnail">
         <a href={thumbnail.link}>
@@ -96,7 +94,7 @@ function Item(props: ItemProps) {
     );
   }
 
-  function onQuantityChange(event: React.BaseSyntheticEvent) {
+  function onQuantityChange(event: React.BaseSyntheticEvent): void {
     const input = event.target.value;
     if (!digitsValidation.test(input) && keyPressed !== 'Backspace' && keyPressed !== 'Delete') {
       setIsInputValid(false);
@@ -124,7 +122,7 @@ function Item(props: ItemProps) {
       <div className={`container-1 ${categoryClass}`}>
         <div className="feature-image-block">
           {
-            props.category === constants.text.categoryLunarCalendar
+            props.category === constants.text.lunarCalendar
             ? <Link to="#itemDetails">{renderFeatureImage()}</Link>
             : <div>{renderFeatureImage()}</div>
           }

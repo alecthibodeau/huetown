@@ -1,7 +1,7 @@
 /* Components */
 import IconLinks from './IconLinks';
 
-function Footer() {
+function Footer(): JSX.Element {
   return (
     <footer id="footer">
       <IconLinks isForNavDrawer={false} />

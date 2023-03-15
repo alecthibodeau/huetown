@@ -1,13 +1,13 @@
-/* Constants */
-import lunarCalendars from '../constants/lunar-calendars';
-
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
 import Phase from '../interfaces/Phase';
 
-function LunarCalendarInfo(props: ItemProps) {
+/* Constants */
+import lunarCalendars from '../constants/lunar-calendars';
 
-  function renderlunarPhase(phase: Phase, index: number) {
+function LunarCalendarInfo(props: ItemProps): JSX.Element {
+
+  function renderlunarPhase(phase: Phase, index: number): JSX.Element {
     return (
       <div key={index + phase.name + 'moon'}  className="phase-info">
         <img src={phase.image} alt={phase.name + ' moon'}/>

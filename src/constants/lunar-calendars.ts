@@ -1,24 +1,24 @@
 import constants from './constants';
 import images from './images';
 
-const category = constants.text.categoryLunarCalendar;
+const category = constants.text.lunarCalendar;
 
 const lunarPhases = [
   {
     name: 'new',
-    image: images.phaseNew
+    image: images.phases.newMoon
   },
   {
     name: 'first quarter',
-    image: images.phaseFirstQuarter
+    image: images.phases.firstQuarterMoon
   },
   {
     name: 'full',
-    image: images.phaseFull
+    image: images.phases.fullMoon
   },
   {
     name: 'third quarter',
-    image: images.phaseThirdQuarter
+    image: images.phases.thirdQuarterMoon
   }
 ];
 

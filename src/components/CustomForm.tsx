@@ -64,7 +64,7 @@ function CustomForm(props: CustomFormProps) {
     }
   }
 
-  function renderInput(props: InputFieldProps, index: number) {
+  function renderInput(props: InputFieldProps, index: number): JSX.Element {
     return (
       <div key={props.label + index}>
         <InputField

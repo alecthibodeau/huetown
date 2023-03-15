@@ -1,7 +1,7 @@
 import React from 'react';
 import InputFieldProps from '../interfaces/InputFieldProps';
 
-function InputField(props: InputFieldProps) {
+function InputField(props: InputFieldProps): JSX.Element {
 
   return (
     <label>

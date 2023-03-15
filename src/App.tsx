@@ -19,9 +19,9 @@ import ItemProps from './interfaces/ItemProps';
 /* Helpers */
 import formatItemRoutePath from './helpers/helpers';
 
-const breakpointSm = 576;
+const breakpointSm: number = 576;
 
-function App() {
+function App(): JSX.Element {
   const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
 
@@ -35,7 +35,7 @@ function App() {
     setViewportWidth(window.innerWidth);
   }
 
-  function renderItemRoute(item: ItemProps) {
+  function renderItemRoute(item: ItemProps): JSX.Element {
     return (
       <Route
         key={item.id}

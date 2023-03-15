@@ -2,34 +2,30 @@
 import IconLink from '../interfaces/IconLink';
 import IconLinksProps from '../interfaces/IconLinksProps';
 
-/* Images */
-import iconWhiteEmail from '../assets/images/icon-email-white.svg';
-import iconWhiteInstagram from '../assets/images/icon-instagram-white.svg';
-import iconWhiteTwitter from '../assets/images/icon-twitter-white.svg';
-import iconGrayEmail from '../assets/images/icon-email-fifty-percent-gray.svg';
-import iconGrayInstagram from '../assets/images/icon-instagram-fifty-percent-gray.svg';
-import iconGrayTwitter from '../assets/images/icon-twitter-fifty-percent-gray.svg';
+/* Constants */
+import images from '../constants/images';
 
-function IconLinks(props: IconLinksProps) {
+function IconLinks(props: IconLinksProps): JSX.Element {
+
   const iconLinks: IconLink[] = [
     {
       title: 'Instagram',
       url: 'https://www.instagram.com/huetown',
-      src: props.isForNavDrawer ? iconWhiteInstagram : iconGrayInstagram
+      src: props.isForNavDrawer ? images.icons.instagramWhite : images.icons.instagramGray
     },
     {
       title: 'Twitter',
       url: 'https://www.twitter.com/huetown',
-      src: props.isForNavDrawer ? iconWhiteTwitter : iconGrayTwitter
+      src: props.isForNavDrawer ? images.icons.twitterWhite : images.icons.twitterGray
     },
     {
       title: 'Email',
       url: 'mailto:info@huetown.com',
-      src: props.isForNavDrawer ? iconWhiteEmail : iconGrayEmail
+      src: props.isForNavDrawer ? images.icons.emailWhite : images.icons.emailGray
     }
   ];
 
-  function renderIconSection(link: IconLink, index: number) {
+  function renderIconSection(link: IconLink, index: number): JSX.Element {
     return (
       <section key={link.title + index}>
         <a data-title={link.title} href={link.url}>

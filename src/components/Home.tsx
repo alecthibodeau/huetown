@@ -1,12 +1,15 @@
 /* Components */
 import Item from './Item';
 
+/* Interfaces */
+import ItemProps from '../interfaces/ItemProps';
+
 /* Constants */
 import constants from '../constants/constants';
 
-function Home() {
-  const featured = constants.items.lunarCalendar2023;
-  const isFeatured = true;
+function Home(): JSX.Element {
+  const featured: ItemProps = constants.items.lunarCalendar2023;
+  const isFeatured: boolean = true;
 
   return (
     <>
