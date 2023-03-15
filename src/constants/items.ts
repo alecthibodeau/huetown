@@ -12,7 +12,7 @@ const lunarCalendarItemInfo = [
 const postcardItemInfo = [
   text.dimensionsSixByFourInches,
   text.postcardFinish,
-  text.postcardColor,
+  text.postcardColor
 ];
 
 const items = {
@@ -213,20 +213,4 @@ const items = {
   },
 };
 
-const itemsCollection = [
-  items.lunarCalendar2023,
-  items.lunarCalendar2022,
-  items.lunarCalendar2021,
-  items.lunarCalendar2020,
-  items.lunarCalendar2019,
-  items.lunarCalendar2018,
-  items.lunarCalendar2017,
-  items.postcardAssets
-];
-
-const constants = {
-  items,
-  itemsCollection
-};
-
-export default constants;
+export default items;

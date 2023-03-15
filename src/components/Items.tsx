@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 /* Constants */
-import items from '../constants/items';
+import itemsCollection from '../constants/items-collection';
 import text from '../constants/text';
 
 /* Interfaces */
@@ -51,7 +51,7 @@ function Items(): JSX.Element {
   return (
     <div>
       <div className="items-container">
-        {items.itemsCollection.map(renderItemPreview)}
+        {itemsCollection.map(renderItemPreview)}
       </div>
     </div>
   );
