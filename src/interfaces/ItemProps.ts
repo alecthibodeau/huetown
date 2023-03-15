@@ -3,13 +3,13 @@ interface ItemProps {
   category: string;
   title: string;
   subtitle: string;
-  imageFront: string;
+  featureImage: string;
   info: string[];
   price: number;
   printEdition?: number;
   detailImages?: string[];
   lunarCalendarYear?: number;
-  lunarCalendarPaperInfo?: string;
+  lunarCalendarPaper?: string;
   lunarCalendarLocation?: string;
 }
 

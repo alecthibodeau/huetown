@@ -30,7 +30,7 @@ function Items(): JSX.Element {
       >
         <img
           className="item-preview-image"
-          src={item.imageFront}
+          src={item.featureImage}
           alt={`${item.title} preview`}
         />
         <div className="item-preview-info">

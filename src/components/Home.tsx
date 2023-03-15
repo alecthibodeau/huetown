@@ -19,13 +19,13 @@ function Home(): JSX.Element {
           category={featured.category}
           title={featured.title}
           subtitle={featured.subtitle}
-          imageFront={featured.imageFront}
+          featureImage={featured.featureImage}
           info={featured.info}
           price={featured.price}
           printEdition={featured.printEdition}
           detailImages={featured.detailImages}
           lunarCalendarYear={featured.lunarCalendarYear}
-          lunarCalendarPaperInfo={featured.lunarCalendarPaperInfo}
+          lunarCalendarPaper={featured.lunarCalendarPaper}
           lunarCalendarLocation={featured.lunarCalendarLocation}
         />
       : <div className="home-content">

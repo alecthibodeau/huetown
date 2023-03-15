@@ -2,7 +2,7 @@
 import images from './images';
 import text from './text';
 
-const lunarPhases = [
+const phases = [
   {
     name: 'new',
     image: images.phases.newMoon
@@ -93,9 +93,9 @@ const thumbnails = [
   }
 ];
 
-const itemsLunarCalendarsConstants = {
-  lunarPhases,
+const lunarCalendars = {
+  phases,
   thumbnails
 };
 
-export default itemsLunarCalendarsConstants;
+export default lunarCalendars;

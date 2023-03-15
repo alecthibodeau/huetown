@@ -89,7 +89,7 @@ function Item(props: ItemProps): JSX.Element {
       <img
         id="featureImage"
         className={`feature-image ${categoryClass}`}
-        src={props.imageFront}
+        src={props.featureImage}
         alt={`${props.category} ${props.title}`}
       />
     );
@@ -196,13 +196,13 @@ function Item(props: ItemProps): JSX.Element {
               category={props.category}
               title={props.title}
               subtitle={props.subtitle}
-              imageFront={props.imageFront}
+              featureImage={props.featureImage}
               info={props.info}
               price={props.price}
               printEdition={props.printEdition}
               detailImages={props.detailImages}
               lunarCalendarYear={props.lunarCalendarYear}
-              lunarCalendarPaperInfo={props.lunarCalendarPaperInfo}
+              lunarCalendarPaper={props.lunarCalendarPaper}
               lunarCalendarLocation={props.lunarCalendarLocation}
             />
           : null}

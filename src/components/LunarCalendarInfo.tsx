@@ -30,7 +30,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
       </div>
       <div className="more-info-block">
         The <span className="lunar-calendar-year">{props.lunarCalendarYear}</span> lunar calendar comprises new drawings and year-specific lunar phase information.
-        Each calendar is printed on <span className="lunar-calendar-paper-info">{props.lunarCalendarPaperInfo}</span>, blind-debossed with Alec's name and the print shop's name &mdash; and hand numbered and signed by Alec. Each calendar ships unrolled with an accompanying information sheet inside a flat, sturdy box.
+        Each calendar is printed on <span className="lunar-calendar-paper-info">{props.lunarCalendarPaper}</span>, blind-debossed with Alec's name and the print shop's name &mdash; and hand numbered and signed by Alec. Each calendar ships unrolled with an accompanying information sheet inside a flat, sturdy box.
       </div>
       <div className="more-info-block">
         The calendar's lunar phase chart is calibrated for any location in the Eastern Time Zone and is accurate to within a day for anywhere in the Northern Hemisphere. The chart also matches lunar cycles in the Southern Hemisphere: but with inverted shapes. <span className="lunar-calendar-location">{props.lunarCalendarLocation}</span>
@@ -39,7 +39,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
         Custom moon illustrations portray all principal lunar phases (New Moon, First Quarter Moon, Full Moon and Third Quarter Moon) plus all intermediate crescent and gibbous phases. For months with less than 31 days, drawings of clouds occupy the extra spaces. <a className="text-link" href="#featureImage">Order now.</a>
       </div>
       <div className="lunar-phases" id="lunarPhases">
-        {lunarCalendars.lunarPhases.map(renderlunarPhase)}
+        {lunarCalendars.phases.map(renderlunarPhase)}
       </div>
     </div>
   );

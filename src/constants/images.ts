@@ -63,21 +63,6 @@ const icons = {
   emailGray
 }
 
-// const icons = {
-//   email: {
-//     white: iconEmailWhite,
-//     gray: iconEmailGray
-//   },
-//   instagram: {
-//     white: iconInstagramWhite,
-//     gray: iconInstagramGray
-//   },
-//   twitter: {
-//     white: iconTwitterWhite,
-//     gray: iconTwitterGray
-//   }
-// }
-
 const images = {
   header,
   icons,
