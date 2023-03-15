@@ -5,10 +5,10 @@ import Item from './Item';
 import ItemProps from '../interfaces/ItemProps';
 
 /* Constants */
-import constants from '../constants/constants';
+import items from '../constants/items';
 
 function Home(): JSX.Element {
-  const featured: ItemProps = constants.items.lunarCalendar2023;
+  const featured: ItemProps = items.items.lunarCalendar2023;
   const isFeatured: boolean = true;
 
   return (

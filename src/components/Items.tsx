@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 
 /* Constants */
-import constants from '../constants/constants';
+import items from '../constants/items';
+import text from '../constants/text';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
@@ -12,11 +13,11 @@ import formatItemRoutePath from '../helpers/helpers';
 function Items(): JSX.Element {
 
   function formatLunarCalendarText(item: ItemProps): string {
-    return `${item.lunarCalendarYear} ${item.category} ${constants.text.print}`;
+    return `${item.lunarCalendarYear} ${item.category} ${text.print}`;
   }
 
   function getItemPreviewCategory(item: ItemProps): string {
-    const isItemLunarCalendar: boolean = item.category === constants.text.lunarCalendar;
+    const isItemLunarCalendar: boolean = item.category === text.lunarCalendar;
     return isItemLunarCalendar ? formatLunarCalendarText(item) : item.category;
   }
 
@@ -50,7 +51,7 @@ function Items(): JSX.Element {
   return (
     <div>
       <div className="items-container">
-        {constants.itemsForPreview.map(renderItemPreview)}
+        {items.itemsCollection.map(renderItemPreview)}
       </div>
     </div>
   );

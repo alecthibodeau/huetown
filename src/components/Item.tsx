@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import LunarCalendarInfo from './LunarCalendarInfo';
 
 /* Constants */
-import constants from '../constants/constants';
+// import items from '../constants/items';
 import images from '../constants/images';
 import lunarCalendars from '../constants/lunar-calendars';
+import text from '../constants/text';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
@@ -22,8 +23,8 @@ function Item(props: ItemProps): JSX.Element {
   const digitsValidation: RegExp = new RegExp(/^\d+$/);
   const categoryClass: string = props.category.replace(/\s+/g, '-');
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
-  const isLunarCalendar: boolean = props.category === constants.text.lunarCalendar;
-  const isPrintEdition: boolean = props.category === (constants.text.lunarCalendar || constants.text.print);
+  const isLunarCalendar: boolean = props.category === text.lunarCalendar;
+  const isPrintEdition: boolean = props.category === (text.lunarCalendar || text.print);
 
   useEffect(() => {
     const keydown = 'keydown';
@@ -110,7 +111,7 @@ function Item(props: ItemProps): JSX.Element {
       {isCurrentLunarCalendar ?
         <div className="item-press">
           <span className="ital">
-            {constants.text.colossalBlurb}
+            {text.colossalBlurb}
           </span>
           <span> &mdash;
             <a className="text-link" href="https://www.thisiscolossal.com/2022/12/calendars-2023">
@@ -122,7 +123,7 @@ function Item(props: ItemProps): JSX.Element {
       <div className={`container-1 ${categoryClass}`}>
         <div className="feature-image-block">
           {
-            props.category === constants.text.lunarCalendar
+            props.category === text.lunarCalendar
             ? <Link to="#itemDetails">{renderFeatureImage()}</Link>
             : <div>{renderFeatureImage()}</div>
           }
@@ -158,8 +159,8 @@ function Item(props: ItemProps): JSX.Element {
                 />
                 <input
                   type="submit"
-                  value={constants.text.addToCart}
-                  alt={constants.text.addToCart}
+                  value={text.addToCart}
+                  alt={text.addToCart}
                 />
               </form>
               {!isInputValid ? <div className="validation-message">{validationdMessage}</div> : null}

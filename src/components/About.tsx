@@ -7,7 +7,7 @@ import Shop from '../interfaces/Shop';
 
 /* Constants */
 import images from '../constants/images';
-import { shops } from '../constants/shops';
+import shops from '../constants/shops';
 
 function About(): JSX.Element {
 

@@ -10,11 +10,11 @@ import Item from './components/Item';
 import Items from './components/Items';
 import NotFound from './components/NotFound';
 
-/* Components */
-import constants from './constants/constants';
-
 /* Interfaces */
 import ItemProps from './interfaces/ItemProps';
+
+/* Constants */
+import items from './constants/items';
 
 /* Helpers */
 import formatItemRoutePath from './helpers/helpers';
@@ -68,7 +68,7 @@ function App(): JSX.Element {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/items" element={<Items />} />
-          {constants.itemsForPreview.map(renderItemRoute)}
+          {items.itemsCollection.map(renderItemRoute)}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -1,4 +1,4 @@
-export const shops = [
+const shops = [
   {
     name: 'Craftland',
     url: 'https://shop.craftlandshop.com'
@@ -12,3 +12,5 @@ export const shops = [
     url: 'https://www.like-no-udder.com'
   }
 ];
+
+export default shops;
