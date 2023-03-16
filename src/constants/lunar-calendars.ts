@@ -5,14 +5,14 @@ import text from './text';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import Phase from '../interfaces/Phase';
+import LunarPhase from '../interfaces/LunarPhase';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
 /* Helpers */
 import formatItemRoutePath from '../helpers/helpers';
 
-const phases: Phase[] = [
+const phases: LunarPhase[] = [
   {
     name: 'new',
     image: images.lunarPhases.newMoon

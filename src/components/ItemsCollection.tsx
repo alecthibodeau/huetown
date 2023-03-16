@@ -25,22 +25,22 @@ function ItemsCollection(): JSX.Element {
     return (
       <Link
         key={item.title + index}
-        className="item-collection-link text-link"
+        className="items-collection-link text-link"
         to={formatItemRoutePath(item.category, item.title)}
       >
         <img
-          className="item-collection-image"
+          className="items-collection-image"
           src={item.featureImage}
           alt={`${item.title} preview`}
         />
-        <div className="item-collection-info">
-          <div className="item-collection-title">
+        <div className="items-collection-info">
+          <div className="items-collection-title">
             {item.title}
           </div>
-          <div className="item-collection-category">
+          <div className="items-collection-category">
             {getItemCategory(item)}
           </div>
-          <div className="item-collection-price">
+          <div className="items-collection-price">
             {`$${item.price}`}
           </div>
         </div>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import Phase from '../interfaces/Phase';
+import LunarPhase from '../interfaces/LunarPhase';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
@@ -13,7 +13,7 @@ import lunarCalendars from '../constants/lunar-calendars';
 function LunarCalendarInfo(props: ItemProps): JSX.Element {
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
 
-  function renderlunarPhase(phase: Phase): JSX.Element {
+  function renderlunarPhase(phase: LunarPhase): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
     return (
       <div key={`${phase.name}Moon`} className="phase-info">
