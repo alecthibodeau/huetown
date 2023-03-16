@@ -1,6 +1,5 @@
 /* Components */
 import MailchimpFormContainer from './MailChimpFormContainer';
-import SectionTitle from './SectionTitle';
 
 /* Interfaces */
 import Shop from '../interfaces/Shop';
@@ -10,6 +9,12 @@ import images from '../constants/images';
 import shops from '../constants/shops';
 
 function About(): JSX.Element {
+
+  function renderSectionTitle(title: string): JSX.Element {
+    return (
+      <span className="section-title">{title} &mdash; </span>
+    );
+  }
 
   function renderShopLink(shop: Shop, index: number): JSX.Element {
     return (
@@ -31,16 +36,16 @@ function About(): JSX.Element {
       </div>
       <div className="about-lower">
         <div>
-          <SectionTitle title="contact" />
+          {renderSectionTitle('contact')}
           Huetown's contact email is <a className="text-link" href="mailto:info@huetown.com">info@huetown.com</a>.
         </div>
         <div>
-          <SectionTitle title="ordering" />
+          {renderSectionTitle('ordering')}
           Buy with confidence! I securely process all credit card payments made at Huetown
           through <a className="text-link" href="https://www.paypal.com">PayPal</a>.
         </div>
         <div>
-          <SectionTitle title="shipping" />
+          {renderSectionTitle('shipping')}
           Regardless of item quantity all orders ship for a flat rate in sturdy packaging via USPS Priority Mail from Providence, Rhode Island, USA.
           Flat rates are $8 for domestic shipments within the USA or $29 for international delivery to any other country.
           Packages generally ship within a couple business days of an order being placed, with domestic deliveries usually arriving a few days after that.
@@ -48,12 +53,12 @@ function About(): JSX.Element {
           Please allow approximately one week for domestic delivery and 2-3 weeks for international delivery.
         </div>
         <div>
-          <SectionTitle title="follow" />
+          {renderSectionTitle('follow')}
           Check out Huetown on <a className="text-link" href="https://www.instagram.com/huetown">Instagram</a>. Or sign up below for Huetown's email list.
           Your information won't be shared with miscreants.
         </div>
         <div>
-          <SectionTitle title="places" />
+          {renderSectionTitle('places')}
           Huetown items are available at these retail spots:
           <ul>
             {shops.map(renderShopLink)}

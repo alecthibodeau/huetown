@@ -146,7 +146,7 @@
     }
   }
 
-  .container-1 {
+  .feature-info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,7 +158,7 @@
     // }
   }
 
-  .container-2 {
+  .detail-images {
     border-top: 1px solid $light-gray;
     margin-top: 1.25rem;
 
@@ -206,7 +206,7 @@
     }
   }
 
-  .container-3 {
+  .lunar-calendar-thumbnails {
     display: flex;
     flex-direction: column;
 
@@ -240,7 +240,7 @@
     }
   }
 
-  .additional-info {
+  .timely-info {
     margin: .25rem auto 1.5rem;
     max-width: $character-width;
 
@@ -265,7 +265,7 @@
     width: initial;
   }
 
-  .item .container-2 .photo-pair img {
+  .item .detail-images .photo-pair img {
     width: 700px;
   }
 }
@@ -290,12 +290,12 @@
       margin-bottom: 1rem;
     }
 
-    .container-1 {
+    .feature-info {
       flex-direction: row;
       align-items: initial;
     }
 
-    .container-2 .photo-pair {
+    .detail-images .photo-pair {
       flex-direction: row;
 
       img {
@@ -308,7 +308,7 @@
 
 @media (min-width: $breakpoint-xl) {
 
-  .item .container-2 .photo-pair img {
+  .item .detail-images .photo-pair img {
     width: 38vw;
     height: 38vw;
   }

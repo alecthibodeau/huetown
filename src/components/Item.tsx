@@ -6,13 +6,10 @@ import LunarCalendarInfo from './LunarCalendarInfo';
 
 /* Constants */
 import images from '../constants/images';
-import lunarCalendars from '../constants/lunar-calendars';
 import text from '../constants/text';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import Thumbnail from '../interfaces/Thumbnail';
-import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
 function Item(props: ItemProps): JSX.Element {
   const [quantity, setQuantity] = useState<string>('1');
@@ -76,10 +73,6 @@ function Item(props: ItemProps): JSX.Element {
     )
   }
 
-  function addIdForFinalDetailImage(detailImages: string[], index: number): string | undefined {
-    return index === detailImages.length - 2 ? 'itemDetails' : undefined;
-  }
-
   function renderDetailImagePair(image: string, index: number, detailImages: string[]): JSX.Element | null {
     const altTextPrefix = `${props.category} detail`;
     return (
@@ -90,29 +83,12 @@ function Item(props: ItemProps): JSX.Element {
           alt={`${altTextPrefix} #${index + 1}`}
         />
         <img
-          id={addIdForFinalDetailImage(detailImages, index)}
+          id={index === detailImages.length - 2 ? 'itemDetails' : undefined}
           className="large-detail-image"
           src={detailImages[index + 1]}
           alt={`${altTextPrefix} #${index + 2}`}
         />
       </div> : null
-    )
-  }
-
-  function renderThumbnailImage(thumbnail: Thumbnail): JSX.Element {
-    return <img src={thumbnail.image} alt={`${thumbnail.label} thumbnail`} />;
-  }
-
-  function renderThumbnail(thumbnail: Thumbnail, index: number): JSX.Element {
-    return (
-      <div key={`thumbnail${thumbnail.label}${index}`} className="thumbnail">
-        {
-          +thumbnail.label.slice(0, 4) > 2016
-          ? <Link to={thumbnail.link}>{renderThumbnailImage(thumbnail)}</Link>
-          : <a href={thumbnail.link}>{renderThumbnailImage(thumbnail)}</a>
-        }
-        <div className="label">{thumbnail.label}</div>
-      </div>
     )
   }
 
@@ -124,13 +100,16 @@ function Item(props: ItemProps): JSX.Element {
             {text.colossalBlurb}
           </span>
           <span> &mdash;
-            <a className="text-link" href="https://www.thisiscolossal.com/2022/12/calendars-2023">
+            <a
+              className="text-link"
+              href="https://www.thisiscolossal.com/2022/12/calendars-2023"
+            >
               <img src={images.colossalLogo} alt="Colossal website logo" />
             </a>
           </span>
         </div>
       : null}
-      <div className={`container-1 ${categoryClass}`}>
+      <div className={`feature-info ${categoryClass}`}>
         <div className="feature-image-block">
           {
             props.category === text.lunarCalendar
@@ -196,9 +175,8 @@ function Item(props: ItemProps): JSX.Element {
           </div>
         </div>
       </div>
-
       {props.detailImages ?
-        <div className="container-2">
+        <div className="detail-images">
           {props.detailImages.map(renderDetailImagePair)}
           {isLunarCalendar ?
             <LunarCalendarInfo
@@ -216,44 +194,8 @@ function Item(props: ItemProps): JSX.Element {
               lunarCalendarLocation={props.lunarCalendarLocation}
             />
           : null}
-          {isCurrentLunarCalendar ?
-            <div className="additional-info">
-              <div>
-                <p>
-                  Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on Instagram to see this print's letterpress production in action.
-                  And join the <a className="text-link" href="about.html">email list</a> to learn when other works are available.
-                </p>
-                <p>
-                  Each lunar calendar preordered by November 25th, 2022 included a <span className="ital">Space Pony</span> letterpress print:
-                </p>
-              </div>
-              <div className="item-accompanying">
-                <img src={images.spacePony} alt="Space Pony print" />
-              </div>
-            </div>
-          : null}
         </div>
       : null}
-
-      {isLunarCalendar ?
-        <div className="container-3">
-          {lunarCalendars.thumbnails.map(
-            (group: ThumbnailsGroup) => {
-              return (
-                <div key={`status${group.status}`} className="thumbnails-group">
-                  <div className="thumbnails-title">
-                    {group.status} alec thibodeau lunar&nbsp;calendars
-                  </div>
-                  <div className="thumbnails">
-                    {group.thumbnails.map(renderThumbnail)}
-                  </div>
-                </div>
-              )
-            }
-          )}
-        </div>
-      : null}
-
     </div>
   );
 }

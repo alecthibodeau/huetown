@@ -9,7 +9,7 @@ import items from '../constants/items';
 
 function Home(): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
-  const isFeatured: boolean = true;
+  const isFeatured: boolean = false;
 
   return (
     <>

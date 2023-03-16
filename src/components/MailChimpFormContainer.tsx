@@ -17,9 +17,9 @@ function MailchimpFormContainer(): JSX.Element {
         url={postUrl}
         render={(props: MailchimpSubscribeProps) => (
           <CustomForm
-              formStatus={props.status}
-              formMessage={props.message}
-              onValidated={(formData: MailchimpFormData) => props.subscribe(formData)}
+            formStatus={props.status}
+            formMessage={props.message}
+            onValidated={(formData: MailchimpFormData) => props.subscribe(formData)}
           />
         )}
       />
