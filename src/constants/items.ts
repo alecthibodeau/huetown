@@ -2,14 +2,14 @@
 import images from './images';
 import text from './text';
 
-const lunarCalendarItemInfo = [
+const lunarCalendarItemInfo: string[] = [
   text.dimensionsLunarCalendar,
   text.letterpressPrint,
   '', // To be rendered dynamically
   `${text.shipsFlat}: unrolled in a sturdy box`
 ];
 
-const postcardItemInfo = [
+const postcardItemInfo: string[] = [
   text.dimensionsSixByFourInches,
   text.postcardFinish,
   text.postcardColor

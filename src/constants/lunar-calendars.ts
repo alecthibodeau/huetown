@@ -5,12 +5,14 @@ import text from './text';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
+import Phase from '../interfaces/Phase';
 import Thumbnail from '../interfaces/Thumbnail';
+import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
 /* Helpers */
 import formatItemRoutePath from '../helpers/helpers';
 
-const phases = [
+const phases: Phase[] = [
   {
     name: 'new',
     image: images.lunarPhases.newMoon
@@ -29,7 +31,7 @@ const phases = [
   }
 ];
 
-const lunarCalendarsAvailable = [
+const lunarCalendarsAvailable: ItemProps[] = [
   items.lunarCalendar2023,
   items.lunarCalendar2022,
   items.lunarCalendar2021,
@@ -39,7 +41,7 @@ const lunarCalendarsAvailable = [
   items.lunarCalendar2017
 ]
 
-const lunarCalendarsPrevious = [
+const lunarCalendarsPrevious: Thumbnail[] = [
   {
     label: `2011 ${text.lunarCalendar}`,
     image: images.lunarCalendar2011Main,
@@ -70,7 +72,7 @@ function formatThumbnail(item: ItemProps): Thumbnail {
   }
 }
 
-const thumbnails = [
+const thumbnails: ThumbnailsGroup[] = [
   {
     status: 'available',
     thumbnails: lunarCalendarsAvailable.map(formatThumbnail)

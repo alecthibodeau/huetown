@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import LunarCalendarInfo from './LunarCalendarInfo';
 
 /* Constants */
-// import items from '../constants/items';
 import images from '../constants/images';
 import lunarCalendars from '../constants/lunar-calendars';
 import text from '../constants/text';
@@ -13,6 +12,7 @@ import text from '../constants/text';
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
 import Thumbnail from '../interfaces/Thumbnail';
+import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
 function Item(props: ItemProps): JSX.Element {
   const [quantity, setQuantity] = useState<string>('1');
@@ -238,7 +238,7 @@ function Item(props: ItemProps): JSX.Element {
       {isLunarCalendar ?
         <div className="container-3">
           {lunarCalendars.thumbnails.map(
-            (group) => {
+            (group: ThumbnailsGroup) => {
               return (
                 <div key={`status${group.status}`} className="thumbnails-group">
                   <div className="thumbnails-title">
