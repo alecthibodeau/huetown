@@ -47,7 +47,7 @@ const header = {
   huetownWhiteLogo
 }
 
-const phases = {
+const lunarPhases = {
   firstQuarterMoon,
   fullMoon,
   thirdQuarterMoon,
@@ -69,7 +69,7 @@ const images = {
   logo,
   selfPortrait,
   colossalLogo,
-  phases,
+  lunarPhases,
   lunarCalendar2023Detail01,
   lunarCalendar2023Detail02,
   lunarCalendar2023Detail03,

@@ -34,8 +34,34 @@ function Item(props: ItemProps): JSX.Element {
     };
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [props]);
+
   function keyDownHandler({ key }: KeyboardEvent): void {
     setKeyPressed(key);
+  }
+
+  function onQuantityChange(event: React.BaseSyntheticEvent): void {
+    const input = event.target.value;
+    if (!digitsValidation.test(input) && keyPressed !== 'Backspace' && keyPressed !== 'Delete') {
+      setIsInputValid(false);
+      setValidationdMessage('Numbers only, please.');
+    } else {
+      setIsInputValid(true);
+      setQuantity(input);
+    }
+  }
+
+  function renderFeatureImage(): JSX.Element {
+    return (
+      <img
+        id="featureImage"
+        className={`feature-image ${categoryClass}`}
+        src={props.featureImage}
+        alt={`${props.category} ${props.title}`}
+      />
+    );
   }
 
   function renderListItem(listItem: string, index: number): JSX.Element {
@@ -73,37 +99,21 @@ function Item(props: ItemProps): JSX.Element {
     )
   }
 
+  function renderThumbnailImage(thumbnail: Thumbnail): JSX.Element {
+    return <img src={thumbnail.image} alt={`${thumbnail.label} thumbnail`} />;
+  }
+
   function renderThumbnail(thumbnail: Thumbnail, index: number): JSX.Element {
     return (
       <div key={`thumbnail${thumbnail.label}${index}`} className="thumbnail">
-        <a href={thumbnail.link}>
-          <img src={thumbnail.image} alt={`${thumbnail.label} thumbnail`} />
-        </a>
+        {
+          +thumbnail.label.slice(0, 4) > 2016
+          ? <Link to={thumbnail.link}>{renderThumbnailImage(thumbnail)}</Link>
+          : <a href={thumbnail.link}>{renderThumbnailImage(thumbnail)}</a>
+        }
         <div className="label">{thumbnail.label}</div>
       </div>
     )
-  }
-
-  function renderFeatureImage(): JSX.Element {
-    return (
-      <img
-        id="featureImage"
-        className={`feature-image ${categoryClass}`}
-        src={props.featureImage}
-        alt={`${props.category} ${props.title}`}
-      />
-    );
-  }
-
-  function onQuantityChange(event: React.BaseSyntheticEvent): void {
-    const input = event.target.value;
-    if (!digitsValidation.test(input) && keyPressed !== 'Backspace' && keyPressed !== 'Delete') {
-      setIsInputValid(false);
-      setValidationdMessage('Numbers only, please.');
-    } else {
-      setIsInputValid(true);
-      setQuantity(input);
-    }
   }
 
   return (
@@ -228,14 +238,14 @@ function Item(props: ItemProps): JSX.Element {
       {isLunarCalendar ?
         <div className="container-3">
           {lunarCalendars.thumbnails.map(
-            (set, index) => {
+            (group) => {
               return (
-                <div key={`status${set.status}${index}`} className="thumbnails-set">
+                <div key={`status${group.status}`} className="thumbnails-group">
                   <div className="thumbnails-title">
-                    {set.status} alec thibodeau lunar&nbsp;calendars
+                    {group.status} alec thibodeau lunar&nbsp;calendars
                   </div>
                   <div className="thumbnails">
-                    {set.thumbnails.map(renderThumbnail)}
+                    {group.thumbnails.map(renderThumbnail)}
                   </div>
                 </div>
               )

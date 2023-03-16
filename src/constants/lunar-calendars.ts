@@ -1,63 +1,43 @@
 /* Constants */
 import images from './images';
+import items from './items';
 import text from './text';
+
+/* Interfaces */
+import ItemProps from '../interfaces/ItemProps';
+import Thumbnail from '../interfaces/Thumbnail';
+
+/* Helpers */
+import formatItemRoutePath from '../helpers/helpers';
 
 const phases = [
   {
     name: 'new',
-    image: images.phases.newMoon
+    image: images.lunarPhases.newMoon
   },
   {
     name: 'first quarter',
-    image: images.phases.firstQuarterMoon
+    image: images.lunarPhases.firstQuarterMoon
   },
   {
     name: 'full',
-    image: images.phases.fullMoon
+    image: images.lunarPhases.fullMoon
   },
   {
     name: 'third quarter',
-    image: images.phases.thirdQuarterMoon
+    image: images.lunarPhases.thirdQuarterMoon
   }
 ];
 
 const lunarCalendarsAvailable = [
-  {
-    label: `2023 ${text.lunarCalendar}`,
-    image: images.lunarCalendar2023Main,
-    link: '/'
-  },
-  {
-    label: `2022 ${text.lunarCalendar}`,
-    image: images.lunarCalendar2022Main,
-    link: '/'
-  },
-  {
-    label: `2021 ${text.lunarCalendar}`,
-    image: images.lunarCalendar2021Main,
-    link: '/'
-  },
-  {
-    label: `2020 ${text.lunarCalendar}`,
-    image: images.lunarCalendar2020Main,
-    link: '/'
-  },
-  {
-    label: `2019 ${text.lunarCalendar}`,
-    image: images.lunarCalendar2019Main,
-    link: '/'
-  },
-  {
-    label: `2018 ${text.lunarCalendar}`,
-    image: images.lunarCalendar2018Main,
-    link: '/'
-  },
-  {
-    label: `2017 ${text.lunarCalendar}`,
-    image: images.lunarCalendar2017Main,
-    link: '/'
-  }
-];
+  items.lunarCalendar2023,
+  items.lunarCalendar2022,
+  items.lunarCalendar2021,
+  items.lunarCalendar2020,
+  items.lunarCalendar2019,
+  items.lunarCalendar2018,
+  items.lunarCalendar2017
+]
 
 const lunarCalendarsPrevious = [
   {
@@ -82,10 +62,18 @@ const lunarCalendarsPrevious = [
   }
 ];
 
+function formatThumbnail(item: ItemProps): Thumbnail {
+  return {
+    label: `${item.lunarCalendarYear} ${item.category}`,
+    image: item.featureImage,
+    link: formatItemRoutePath(item.category, item.title)
+  }
+}
+
 const thumbnails = [
   {
     status: 'available',
-    thumbnails: lunarCalendarsAvailable
+    thumbnails: lunarCalendarsAvailable.map(formatThumbnail)
   },
   {
     status: 'previous',

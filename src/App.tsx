@@ -14,7 +14,6 @@ import NotFound from './components/NotFound';
 import ItemProps from './interfaces/ItemProps';
 
 /* Constants */
-import items from './constants/items';
 import itemsCollection from './constants/items-collection';
 
 /* Helpers */
