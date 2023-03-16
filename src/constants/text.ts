@@ -17,6 +17,6 @@ const text = {
   locationProvidence: 'The calendar is printed in Providence, Rhode Island, which is identified as a representative location within the artwork.',
   locationNewYork: 'New York City is identified as a representative location within the artwork.',
   shipsFlat: 'Ships flat'
-}
+};
 
 export default text;

@@ -8,6 +8,9 @@ import Shop from '../interfaces/Shop';
 import images from '../constants/images';
 import shops from '../constants/shops';
 
+/* Helpers */
+import helpers from '../helpers/helpers';
+
 function About(): JSX.Element {
 
   function renderSectionTitle(title: string): JSX.Element {
@@ -18,7 +21,7 @@ function About(): JSX.Element {
 
   function renderShopLink(shop: Shop, index: number): JSX.Element {
     return (
-      <li key={shop.name + index}>
+      <li key={`${helpers.formatLettersAndNumbers(shop.name)}-${index}`}>
         <a className="text-link" href={shop.url}>{shop.name}</a>
       </li>
     )

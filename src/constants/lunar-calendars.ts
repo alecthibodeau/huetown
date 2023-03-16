@@ -10,7 +10,7 @@ import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
 /* Helpers */
-import formatItemRoutePath from '../helpers/helpers';
+import helpers from '../helpers/helpers';
 
 const phases: LunarPhase[] = [
   {
@@ -39,7 +39,7 @@ const lunarCalendarsAvailable: ItemProps[] = [
   items.lunarCalendar2019,
   items.lunarCalendar2018,
   items.lunarCalendar2017
-]
+];
 
 const lunarCalendarsPrevious: Thumbnail[] = [
   {
@@ -68,7 +68,7 @@ function formatThumbnail(item: ItemProps): Thumbnail {
   return {
     label: `${item.lunarCalendarYear} ${item.category}`,
     image: item.featureImage,
-    link: formatItemRoutePath(item.category, item.title)
+    link: helpers.formatItemRoutePath(item.category, item.title)
   }
 }
 

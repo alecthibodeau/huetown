@@ -23,7 +23,7 @@ function Header(props: HeaderProps): JSX.Element {
   function renderBurgerBar(bar: string, index: number): JSX.Element {
     return (
       <div
-        key={bar + index}
+        key={`${bar}-${index}`}
         className={isNavDrawerOpen ? `${bar} closing-x` : bar}>
       </div>
     )

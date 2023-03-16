@@ -45,14 +45,14 @@ import postcardAssets from '../assets/images/items/postcard-assets.png';
 const header = {
   huetownGrayLogo,
   huetownWhiteLogo
-}
+};
 
 const lunarPhases = {
   firstQuarterMoon,
   fullMoon,
   thirdQuarterMoon,
   newMoon
-}
+};
 
 const icons = {
   instagramWhite,
@@ -61,7 +61,7 @@ const icons = {
   twitterGray,
   emailWhite,
   emailGray
-}
+};
 
 const images = {
   header,

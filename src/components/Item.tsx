@@ -11,6 +11,9 @@ import text from '../constants/text';
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
 
+/* Helpers */
+import helpers from '../helpers/helpers';
+
 function Item(props: ItemProps): JSX.Element {
   const [quantity, setQuantity] = useState<string>('1');
   const [isInputValid, setIsInputValid] = useState<boolean>(true);
@@ -63,7 +66,7 @@ function Item(props: ItemProps): JSX.Element {
 
   function renderListItem(listItem: string, index: number): JSX.Element {
     return (
-      <li key={`${index}${listItem}`}>
+      <li key={`${helpers.formatLettersAndNumbers(listItem.slice(0, 8))}-${index}`}>
         {isPrintEdition && index === 2 ?
           <span>
             Numbered and signed <a className="text-link" href="#itemDetails">(more info)</a>
@@ -76,7 +79,7 @@ function Item(props: ItemProps): JSX.Element {
   function renderDetailImagePair(image: string, index: number, detailImages: string[]): JSX.Element | null {
     const altTextPrefix = `${props.category} detail`;
     return (
-      index % 2 === 0 ? <div key={`photoPair${index}`} className="photo-pair">
+      index % 2 === 0 ? <div key={`photo-pair-${index + 1}`} className="photo-pair">
         <img
           className="large-detail-image"
           src={image}

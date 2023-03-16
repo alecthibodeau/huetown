@@ -17,7 +17,7 @@ import ItemProps from './interfaces/ItemProps';
 import itemsCollection from './constants/items-collection';
 
 /* Helpers */
-import formatItemRoutePath from './helpers/helpers';
+import helpers from './helpers/helpers';
 
 const resize: string = 'resize';
 const breakpointSm: number = 576;
@@ -36,11 +36,11 @@ function App(): JSX.Element {
     setViewportWidth(window.innerWidth);
   }
 
-  function renderItemRoute(item: ItemProps): JSX.Element {
+  function renderItemRoute(item: ItemProps, index: number): JSX.Element {
     return (
       <Route
-        key={item.id}
-        path={formatItemRoutePath(item.category, item.title)}
+        key={`${helpers.formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
+        path={helpers.formatItemRoutePath(item.category, item.title)}
         element={
           <Item
             id={item.id}

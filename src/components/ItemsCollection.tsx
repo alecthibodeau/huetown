@@ -8,7 +8,7 @@ import text from '../constants/text';
 import ItemProps from '../interfaces/ItemProps';
 
 /* Helpers */
-import formatItemRoutePath from '../helpers/helpers';
+import helpers from '../helpers/helpers';
 
 function ItemsCollection(): JSX.Element {
 
@@ -24,9 +24,9 @@ function ItemsCollection(): JSX.Element {
   function renderItem(item: ItemProps, index: number): JSX.Element {
     return (
       <Link
-        key={item.title + index}
+        key={`${helpers.formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
         className="items-collection-link text-link"
-        to={formatItemRoutePath(item.category, item.title)}
+        to={helpers.formatItemRoutePath(item.category, item.title)}
       >
         <img
           className="items-collection-image"

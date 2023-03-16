@@ -9,14 +9,18 @@ import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 /* Constants */
 import images from '../constants/images';
 import lunarCalendars from '../constants/lunar-calendars';
+import helpers from '../helpers/helpers';
 
 function LunarCalendarInfo(props: ItemProps): JSX.Element {
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
 
-  function renderlunarPhase(phase: LunarPhase): JSX.Element {
+  function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
     return (
-      <div key={`${phase.name}Moon`} className="phase-info">
+      <div
+        key={`${helpers.formatLettersAndNumbers(phase.name)}-moon-${index}`}
+        className="phase-info"
+      >
         <img src={phase.image} alt={moonTextFormatted}/>
         <div className="phase-text">
           {moonTextFormatted}
@@ -31,7 +35,10 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
 
   function renderThumbnail(thumbnail: Thumbnail, index: number): JSX.Element {
     return (
-      <div key={`thumbnail${thumbnail.label}${index}`} className="thumbnail">
+      <div
+        key={`thumbnail${thumbnail.label.replace(helpers.allSpaces, '')}-${index}`}
+        className="thumbnail"
+      >
         {
           +thumbnail.label.slice(0, 4) > 2016
           ? <Link to={thumbnail.link}>{renderThumbnailImage(thumbnail)}</Link>
@@ -85,9 +92,9 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
       : null}
       <div className="lunar-calendar-thumbnails">
         {lunarCalendars.thumbnails.map(
-          (group: ThumbnailsGroup) => {
+          (group: ThumbnailsGroup, index: number) => {
             return (
-              <div key={`status${group.status}`} className="thumbnails-group">
+              <div key={`${group.status}-${index}`} className="thumbnails-group">
                 <div className="thumbnails-title">
                   {group.status} alec thibodeau lunar&nbsp;calendars
                 </div>

@@ -27,7 +27,7 @@ function IconLinks(props: IconLinksProps): JSX.Element {
 
   function renderIconSection(link: IconLink, index: number): JSX.Element {
     return (
-      <section key={link.title + index}>
+      <section key={`${link.title}-${index}`}>
         <a data-title={link.title} href={link.url}>
           <img src={link.src} alt={`Huetown ${link.title} icon`} />
           <div></div>
