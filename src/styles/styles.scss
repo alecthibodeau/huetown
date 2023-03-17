@@ -66,12 +66,8 @@ main {
   }
 
   .home-content {
-    padding: 2rem;
-    text-align: left;
-
-    div {
-      margin: 1rem;
-    }
+    margin: 2rem;
+    max-width: 400px;
   }
 }
 
@@ -81,10 +77,6 @@ main {
 
   main {
     top: initial;
-
-    .home-content {
-      text-align: center;
-    }
   }
 }
 
