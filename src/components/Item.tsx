@@ -57,7 +57,7 @@ function Item(props: ItemProps): JSX.Element {
     return (
       <img
         id="featureImage"
-        className={`feature-image ${categoryClass}`}
+        className={`feature-image ${categoryClass} ${helpers.formatDashes(props.title)}`}
         src={props.featureImage}
         alt={`${props.category} ${props.title}`}
       />

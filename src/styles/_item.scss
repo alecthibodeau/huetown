@@ -40,6 +40,11 @@
 
     &.postcard {
       border: $border-standard;
+      max-width: 600px;
+    }
+
+    &.proton-swan {
+      max-width: 450px;
     }
     // &.postcard {
     //   border: 1px solid $sixty-percent-gray;

@@ -11,6 +11,8 @@ const text = {
   print: 'print',
   letterpressPrint: 'Letterpress print',
   screenPrint: 'Screen print, printed by the artist',
+  initialedByTheArtist: 'Initialed by the artist',
+  dimensionsTwoAndAHalfInches: '2.5 x 2.5 inches',
   dimensionsFiveAndAHalfInches: '5.5 x 5.5 inches',
   dimensionsSixByFourInches: '6 x 4 inches',
   dimensionsLunarCalendar: '19 x 11.75 inches',

@@ -40,6 +40,8 @@ import lunarCalendar2020Main from '../assets/images/items/thibodeau-lunar-calend
 import lunarCalendar2021Main from '../assets/images/items/thibodeau-lunar-calendar-2021-photo-main-1000px.jpg';
 import lunarCalendar2022Main from '../assets/images/items/thibodeau-lunar-calendar-2022-photo-main-1000px.jpg';
 
+import printProtonSwan from '../assets/images/items/print-proton-swan-450px.jpg'
+
 import postcardAssets from '../assets/images/items/postcard-assets.png';
 
 const header = {
@@ -90,7 +92,8 @@ const images = {
   lunarCalendar2010Main,
   lunarCalendar2011Main,
   postcardAssets,
-  spacePony
+  spacePony,
+  printProtonSwan
 };
 
 export default images;

@@ -6,7 +6,7 @@ const lunarCalendarItemInfo: string[] = [
   text.dimensionsLunarCalendar,
   text.letterpressPrint,
   '', // To be rendered dynamically
-  `${text.shipsFlat}: unrolled in a sturdy box`
+  `${text.shipsFlat} in a sturdy box`
 ];
 
 const postcardItemInfo: string[] = [
@@ -16,13 +16,27 @@ const postcardItemInfo: string[] = [
 ];
 
 const items = {
+  printProtonSwan: {
+    id: '4SFG8LHK26JZ4',
+    category: text.print,
+    title: 'Proton Swan',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.printProtonSwan,
+    info: [
+      text.dimensionsTwoAndAHalfInches,
+      text.letterpressPrint,
+      text.initialedByTheArtist,
+      text.shipsFlat
+    ],
+    price: 10
+  },
   postcardAssets: {
     id: '4CL74PH4FSSQ6',
     category: text.postcard,
     title: 'Assets',
     subtitle: text.postcard,
     featureImage: images.postcardAssets,
-    info: postcardItemInfo.concat('Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches'),
+    info: postcardItemInfo.concat('Caption on the back: Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches'),
     price: text.postcardPrice
   },
   lunarCalendar2023: {

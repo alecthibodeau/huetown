@@ -9,7 +9,8 @@ const itemsCollection = [
   items.lunarCalendar2019,
   items.lunarCalendar2018,
   items.lunarCalendar2017,
-  items.postcardAssets
+  items.postcardAssets,
+  items.printProtonSwan
 ];
 
 export default itemsCollection;
