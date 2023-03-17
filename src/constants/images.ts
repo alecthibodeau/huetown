@@ -8,8 +8,8 @@ import thirdQuarterMoon from '../assets/images/items/phase-third-quarter.png';
 import logo from '../assets/images/huetown-h-logo.jpg';
 import selfPortrait from '../assets/images/thibodeau-self-portrait.jpg';
 
-import huetownGrayLogo from '../assets/images/huetown-script-logo-fifty-percent-gray.svg';
-import huetownWhiteLogo from '../assets/images/huetown-script-logo-white.svg';
+import huetownLogoGray from '../assets/images/huetown-script-logo-fifty-percent-gray.svg';
+import huetownLogoWhite from '../assets/images/huetown-script-logo-white.svg';
 
 import instagramWhite from '../assets/images/icon-instagram-white.svg';
 import instagramGray from '../assets/images/icon-instagram-fifty-percent-gray.svg';
@@ -45,8 +45,8 @@ import printProtonSwan from '../assets/images/items/print-proton-swan-450px.jpg'
 import postcardAssets from '../assets/images/items/postcard-assets.png';
 
 const header = {
-  huetownGrayLogo,
-  huetownWhiteLogo
+  huetownLogoGray,
+  huetownLogoWhite
 };
 
 const lunarPhases = {

@@ -64,7 +64,7 @@ function App(): JSX.Element {
   return (
     <BrowserRouter>
       <Header isBreakpointXs={isBreakpointXs} />
-      <main>
+      <main id="main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
