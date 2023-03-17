@@ -22,7 +22,8 @@ $nav-icon-size: 2rem;
     font-weight: 500;
     color: $application-font-color;
 
-    &::after { // The bar underneath when it's hidden
+    &::after {
+      // The bar underneath when it's hidden
       width: 100%;
       display: block;
       position: relative;
@@ -32,7 +33,8 @@ $nav-icon-size: 2rem;
       transition: 0.25s;
     }
 
-    &:hover::after { // The bar underneath when it's shown
+    &:hover::after {
+      // The bar underneath when it's shown
       top: 0.25rem;
       border-bottom: 3px solid $twenty-three-blue;
     }
@@ -107,14 +109,17 @@ button.burger-button div.burger-bars-container div.bar {
   }
 }
 
-nav {
-  display: none;
+.nav {
+  display: none; // moble-first: nav drawer is closed on component mount
   flex-direction: column;
-  justify-content: space-around;
-  max-width: 600px;
-  margin: auto;
+  background: $dark-film;
+  backdrop-filter: blur(5px);
 
-  a.nav-element {
+  &.nav-drawer-is-open {
+    display: flex;
+  }
+
+  .nav-link {
     @include nav-text;
 
     width: 100%;
@@ -161,13 +166,6 @@ nav {
       }
     }
   }
-
-  &.nav-drawer-is-open {
-    display: flex;
-    margin: auto;
-    background: $dark-film;
-    backdrop-filter: blur(5px);
-  }
 }
 
 .nav-menu-icons {
@@ -205,27 +203,28 @@ nav {
 
     .nav-top {
       justify-content: center;
-      background: $white;
-    }
-
-    .nav-menu-icons {
-      display: none;
+      background-color: $white;
     }
   }
 
-  nav {
+  .nav {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: auto;
     background: $white;
+    backdrop-filter: initial;
 
-    a.nav-element,
+    .nav-link,
     form input[value="view cart"] {
       width: initial;
       padding: initial;
     }
   }
 
-  nav a.nav-element {
+  .nav .nav-link {
+
     &:nth-of-type(1),
     &:nth-of-type(2),
     &:nth-of-type(3),
@@ -234,7 +233,7 @@ nav {
     }
   }
 
-  nav form input[value="view cart"].paypal-link {
+  .nav form input[value="view cart"].paypal-link {
     border: none;
   }
 }
