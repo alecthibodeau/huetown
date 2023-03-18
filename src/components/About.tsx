@@ -30,12 +30,12 @@ function About(): JSX.Element {
   return (
     <div className="about-content">
       <div className="about-upper">
-        <img className="self-portrait" src={images.selfPortrait} alt="Self portrait drawing" />
+        <img className="self-portrait" src={images.about.selfPortrait} alt="Self portrait drawing" />
         <div>
           <span className="bold">Huetown</span> is the web shop for artist Alec Thibodeau (me!).
           I make drawings, prints and more. Select work is available here. Past work can be found at my portfolio site: <a className="text-link" href="https://alecthibodeau.com">alecthibodeau.com</a>.
         </div>
-        <img className="huetown-h-logo" src={images.logo} alt="Huetown H logo"/>
+        <img className="huetown-h-logo" src={images.about.logo} alt="Huetown H logo"/>
       </div>
       <div className="about-lower">
         <div>
