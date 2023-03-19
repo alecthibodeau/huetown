@@ -44,22 +44,22 @@ const lunarCalendarsAvailable: ItemProps[] = [
 const lunarCalendarsPrevious: Thumbnail[] = [
   {
     label: `2011 ${text.lunarCalendar}`,
-    image: images.items.lunarCalendar2011Main,
+    image: images.items.lunarCalendar2011Previous,
     link: 'https://alecthibodeau.com/prints/pineal-grigio'
   },
   {
     label: `2010 ${text.lunarCalendar}`,
-    image: images.items.lunarCalendar2010Main,
+    image: images.items.lunarCalendar2010Previous,
     link: 'https://alecthibodeau.com/prints/probably-the-earths-core-really-is-the-sky'
   },
   {
     label: `2009 ${text.lunarCalendar}`,
-    image: images.items.lunarCalendar2009Main,
+    image: images.items.lunarCalendar2009Previous,
     link: 'https://alecthibodeau.com/prints/goes-to-show-you-what-a-moon-can-do'
   },
   {
     label: `2008 ${text.lunarCalendar}`,
-    image: images.items.lunarCalendar2008Main,
+    image: images.items.lunarCalendar2008Previous,
     link: 'https://alecthibodeau.com/prints/good-librations'
   }
 ];

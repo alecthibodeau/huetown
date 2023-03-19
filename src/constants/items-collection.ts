@@ -10,6 +10,8 @@ const itemsCollection = [
   items.lunarCalendar2018,
   items.lunarCalendar2017,
   items.postcardAssets,
+  items.printAbundance,
+  items.printOrcaLumina,
   items.printProtonSwan
 ];
 

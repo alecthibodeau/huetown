@@ -43,7 +43,7 @@
       max-width: 600px;
     }
 
-    &.proton-swan {
+    &.print.proton-swan {
       max-width: 450px;
     }
     // &.postcard {
@@ -179,6 +179,11 @@
         width: 90vw;
         max-height: 700px;
         height: 90vw;
+
+        &.abundance {
+          max-width: 450px;
+          max-height: 450px;
+        }
       }
     }
 
@@ -271,7 +276,7 @@
   }
 
   .item .detail-images .photo-pair img {
-    width: 700px;
+    width: initial;
   }
 }
 

@@ -16,15 +16,48 @@ const postcardItemInfo: string[] = [
 ];
 
 const items = {
+  printAbundance: {
+    id: 'B6SBUBH8JRKV6',
+    category: text.print,
+    title: 'Abundance',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.items.printAbundanceFeature,
+    info: [
+      text.dimensionsFiveAndAHalfInches,
+      text.letterpressPrint,
+      '', // To be rendered dynamically
+      text.shipsFlat
+    ],
+    price: 25,
+    printEdition: 250,
+    detailImages: [
+      images.items.printAbundanceDetail01,
+      images.items.printAbundanceDetail02
+    ]
+  },
   printProtonSwan: {
     id: '4SFG8LHK26JZ4',
     category: text.print,
     title: 'Proton Swan',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.printProtonSwan,
+    featureImage: images.items.printProtonSwanFeature,
     info: [
       text.dimensionsTwoAndAHalfInches,
       text.letterpressPrint,
+      text.initialedByTheArtist,
+      text.shipsFlat
+    ],
+    price: 10
+  },
+  printOrcaLumina: {
+    id: '8BY2MK6Y89ZTA',
+    category: text.print,
+    title: 'Orca Lumina',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.items.printOrcaLuminaFeature,
+    info: [
+      text.dimensionsTwoAndAHalfInches,
+      text.screenPrint,
       text.initialedByTheArtist,
       text.shipsFlat
     ],
@@ -35,7 +68,7 @@ const items = {
     category: text.postcard,
     title: 'Assets',
     subtitle: text.postcard,
-    featureImage: images.items.postcardAssets,
+    featureImage: images.items.postcardAssetsFeature,
     info: postcardItemInfo.concat('Caption on the back: Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches'),
     price: text.postcardPrice
   },
@@ -44,7 +77,7 @@ const items = {
     category: text.lunarCalendar,
     title: 'Thoughts Operator',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2023Main,
+    featureImage: images.items.lunarCalendar2023Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
@@ -58,164 +91,85 @@ const items = {
     category: text.lunarCalendar,
     title: 'Entrancer\'s Medallion',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2022Main,
+    featureImage: images.items.lunarCalendar2022Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2022,
     lunarCalendarPaper: 'Arjowiggins Creative Papers (distributed by Mohawk) acid-free 300gsm Keaykolour Coral 111# cover paper',
     lunarCalendarLocation: text.locationProvidence,
-    detailImages: [
-      // images.items.lunarCalendar2022Detail01,
-      // images.items.lunarCalendar2022Detail02,
-      // images.items.lunarCalendar2022Detail03,
-      // images.items.lunarCalendar2022Detail04,
-      // images.items.lunarCalendar2022Detail05,
-      // images.items.lunarCalendar2022Detail06,
-      // images.items.lunarCalendar2022Detail07,
-      // images.items.lunarCalendar2022Detail08
-    ]
+    detailImages: images.items.lunarCalendar2022DetailImages
   },
   lunarCalendar2021: {
     id: 'XA698W9J6TGEL',
     category: text.lunarCalendar,
     title: 'Casting Levels',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2021Main,
+    featureImage: images.items.lunarCalendar2021Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2021,
     lunarCalendarPaper: 'Arjowiggins Creative Papers (distributed by Mohawk) acid-free 300gsm Keaykolour Kiwi 111# cover paper',
     lunarCalendarLocation: text.locationProvidence,
-    detailImages: [
-      // images.items.lunarCalendar2021Detail01,
-      // images.items.lunarCalendar2021Detail02,
-      // images.items.lunarCalendar2021Detail03,
-      // images.items.lunarCalendar2021Detail04,
-      // images.items.lunarCalendar2021Detail05,
-      // images.items.lunarCalendar2021Detail06,
-      // images.items.lunarCalendar2021Detail07,
-      // images.items.lunarCalendar2021Detail08
-    ]
+    detailImages: []
   },
   lunarCalendar2020: {
     id: 'TGVEUGQD58AX2',
     category: text.lunarCalendar,
     title: 'The Instruments Agree',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2020Main,
+    featureImage: images.items.lunarCalendar2020Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2020,
     lunarCalendarPaper: 'Mohawk Fine Papers acid-free 300gsm Keaykolour Caribbean Blue 111# cover paper',
     lunarCalendarLocation: text.locationProvidence,
-    detailImages: [
-      // images.items.lunarCalendar2020Detail01,
-      // images.items.lunarCalendar2020Detail02,
-      // images.items.lunarCalendar2020Detail03,
-      // images.items.lunarCalendar2020Detail04,
-      // images.items.lunarCalendar2020Detail05,
-      // images.items.lunarCalendar2020Detail06,
-      // images.items.lunarCalendar2020Detail07,
-      // images.items.lunarCalendar2020Detail08
-    ]
+    detailImages: []
   },
   lunarCalendar2019: {
     id: 'T45GH9BL83VQ4',
     category: text.lunarCalendar,
     title: 'Orchard Quest',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2019Main,
+    featureImage: images.items.lunarCalendar2019Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2019,
     lunarCalendarPaper: 'French Paper Company acid-free 269gsm Pop-Tone Tangy Orange 100# cover paper',
     lunarCalendarLocation: text.locationProvidence,
-    detailImages: [
-      // images.items.lunarCalendar2019Detail01,
-      // images.items.lunarCalendar2019Detail02,
-      // images.items.lunarCalendar2019Detail03,
-      // images.items.lunarCalendar2019Detail04,
-      // images.items.lunarCalendar2019Detail05,
-      // images.items.lunarCalendar2019Detail06,
-      // images.items.lunarCalendar2019Detail07,
-      // images.items.lunarCalendar2019Detail08
-    ]
+    detailImages: []
   },
   lunarCalendar2018: {
     id: '4LN49ZLYQLY88',
     category: text.lunarCalendar,
     title: 'Shimmery Circuit',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2018Main,
+    featureImage: images.items.lunarCalendar2018Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 1000,
     lunarCalendarYear: 2018,
     lunarCalendarPaper: 'French Paper Company acid-free 269gsm Pop-Tone Grape Jelly 100# cover paper',
     lunarCalendarLocation: text.locationNewYork,
-    detailImages: [
-      // images.items.lunarCalendar2018Detail01,
-      // images.items.lunarCalendar2018Detail02,
-      // images.items.lunarCalendar2018Detail03,
-      // images.items.lunarCalendar2018Detail04,
-      // images.items.lunarCalendar2018Detail05,
-      // images.items.lunarCalendar2018Detail06,
-      // images.items.lunarCalendar2018Detail07,
-      // images.items.lunarCalendar2018Detail08
-    ]
+    detailImages: []
   },
   lunarCalendar2017: {
     id: 'C4RW9LGDQ8NYL',
     category: text.lunarCalendar,
     title: 'I Still See the X',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2017Main,
+    featureImage: images.items.lunarCalendar2017Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 1000,
     lunarCalendarYear: 2017,
     lunarCalendarPaper: 'French Paper Company acid-free 269gsm Pop-Tone Razzle Berry 100# cover paper',
     lunarCalendarLocation: text.locationProvidence,
-    detailImages: [
-      // images.items.lunarCalendar2017Detail01,
-      // images.items.lunarCalendar2017Detail02,
-      // images.items.lunarCalendar2017Detail03,
-      // images.items.lunarCalendar2017Detail04,
-      // images.items.lunarCalendar2017Detail05,
-      // images.items.lunarCalendar2017Detail06,
-      // images.items.lunarCalendar2017Detail07,
-      // images.items.lunarCalendar2017Detail08
-    ]
-  },
-  printAbundance: {
-    id: 'B6SBUBH8JRKV6',
-    category: text.print,
-    title: 'Abundance',
-    subtitle: text.byAlecThibodeau,
-    featureImage: '',
-    info: [
-      text.dimensionsFiveAndAHalfInches,
-      text.letterpressPrint,
-      '', // To be rendered dynamically
-      text.shipsFlat
-    ],
-    price: 25,
-    printEdition: 250,
-    detailImages: [
-      // images.items.lunarCalendar2017Detail01,
-      // images.items.lunarCalendar2017Detail02,
-      // images.items.lunarCalendar2017Detail03,
-      // images.items.lunarCalendar2017Detail04,
-      // images.items.lunarCalendar2017Detail05,
-      // images.items.lunarCalendar2017Detail06,
-      // images.items.lunarCalendar2017Detail07,
-      // images.items.lunarCalendar2017Detail08
-    ]
-  },
+    detailImages: []
+  }
 };
 
 export default items;

@@ -21,10 +21,10 @@ function Item(props: ItemProps): JSX.Element {
   const [validationdMessage, setValidationdMessage] = useState<string>('');
 
   const digitsValidation: RegExp = new RegExp(/^\d+$/);
-  const categoryClass: string = props.category.replace(/\s+/g, '-');
+  const categoryClass: string = helpers.formatDashes(props.category);
+  const titleClass: string = helpers.formatDashes(props.title);
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
-  const isPrintEdition: boolean = props.category === (text.lunarCalendar || text.print);
 
   useEffect(() => {
     const keydown = 'keydown';
@@ -57,7 +57,7 @@ function Item(props: ItemProps): JSX.Element {
     return (
       <img
         id="featureImage"
-        className={`feature-image ${categoryClass} ${helpers.formatDashes(props.title)}`}
+        className={`feature-image ${categoryClass} ${titleClass}`}
         src={props.featureImage}
         alt={`${props.category} ${props.title}`}
       />
@@ -67,7 +67,7 @@ function Item(props: ItemProps): JSX.Element {
   function renderListItem(listItem: string, index: number): JSX.Element {
     return (
       <li key={`${helpers.formatLettersAndNumbers(listItem.slice(0, 8))}-${index}`}>
-        {isPrintEdition && index === 2 ?
+        {listItem === '' ?
           <span>
             Numbered and signed <a className="text-link" href="#itemDetails">(more info)</a>
           </span>
@@ -81,13 +81,13 @@ function Item(props: ItemProps): JSX.Element {
     return (
       index % 2 === 0 ? <div key={`photo-pair-${index + 1}`} className="photo-pair">
         <img
-          className="large-detail-image"
+          className={`${categoryClass} ${titleClass}`}
           src={image}
           alt={`${altTextPrefix} #${index + 1}`}
         />
         <img
           id={index === detailImages.length - 2 ? 'itemDetails' : undefined}
-          className="large-detail-image"
+          className={`${categoryClass} ${titleClass}`}
           src={detailImages[index + 1]}
           alt={`${altTextPrefix} #${index + 2}`}
         />
