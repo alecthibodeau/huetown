@@ -11,6 +11,7 @@ import ItemProps from '../interfaces/ItemProps';
 import helpers from '../helpers/helpers';
 
 function ItemsCollection(): JSX.Element {
+  const formatDashes = helpers.formatDashes;
 
   function formatLunarCalendarText(item: ItemProps): string {
     return `${item.lunarCalendarYear} ${item.category} ${text.print}`;
@@ -29,7 +30,7 @@ function ItemsCollection(): JSX.Element {
         to={helpers.formatItemRoutePath(item.category, item.title)}
       >
         <img
-          className="items-collection-image"
+          className={`items-collection-image ${formatDashes(item.category)} ${formatDashes(item.title)}`}
           src={item.featureImage}
           alt={`${item.title} preview`}
         />

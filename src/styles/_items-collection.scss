@@ -14,7 +14,7 @@
   margin: $size-medium;
 
   &:hover {
-    box-shadow: 5px 5px 15px $border-gray;
+    box-shadow: 5px 5px 15px $html-gray;
   }
 }
 
@@ -24,6 +24,15 @@
   border-top-left-radius: $border-radius-standard;
   border-top-right-radius: $border-radius-standard;
   object-fit: cover;
+
+  &.postcard.hippopotamus,
+  &.postcard.rhode-island-whale {
+    object-position: left;
+  }
+
+  &.postcard.great-white-shark {
+    object-position: right;
+  }
 }
 
 .items-collection-info {

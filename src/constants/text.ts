@@ -5,6 +5,7 @@ const text = {
   lunarCalendar: 'lunar calendar',
   lunarCalendarPrice: 45,
   postcard: 'postcard',
+  postcardTextPrefix: 'Caption on the back:',
   postcardFinish: 'Mellow, satin finish',
   postcardColor: 'Full-color front / single-color back',
   postcardPrice: 1,

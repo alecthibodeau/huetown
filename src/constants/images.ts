@@ -53,6 +53,9 @@ import lunarCalendar2009Previous from '../assets/images/items/thibodeau-lunar-ca
 import lunarCalendar2008Previous from '../assets/images/items/thibodeau-lunar-calendar-2008-previous-200px.jpg';
 
 import postcardAssetsFeature from '../assets/images/items/postcard-assets-feature-600px.png';
+import postcardGreatWhiteSharkFeature from '../assets/images/items/postcard-great-white-shark-feature-600px.png';
+import postcardHippopotamusFeature from '../assets/images/items/postcard-hippopotamus-feature-600px.png';
+import postcardRhodeIslandWhaleFeature from '../assets/images/items/postcard-rhode-island-whale-feature-600px.png';
 
 import printAbundanceFeature from '../assets/images/items/print-abundance-feature-700px.jpg';
 import printAbundanceDetail01 from '../assets/images/items/print-abundance-01-450px.jpg';
@@ -98,7 +101,7 @@ const lunarCalendar2023DetailImages = [
   lunarCalendar2023Detail06,
   lunarCalendar2023Detail07,
   lunarCalendar2023Detail08
-]
+];
 
 const lunarCalendar2022DetailImages = [
   lunarCalendar2022Detail01,
@@ -109,7 +112,7 @@ const lunarCalendar2022DetailImages = [
   lunarCalendar2022Detail06,
   lunarCalendar2022Detail07,
   lunarCalendar2022Detail08
-]
+];
 
 const items = {
   colossalLogo,
@@ -127,6 +130,9 @@ const items = {
   lunarCalendar2010Previous,
   lunarCalendar2011Previous,
   postcardAssetsFeature,
+  postcardGreatWhiteSharkFeature,
+  postcardHippopotamusFeature,
+  postcardRhodeIslandWhaleFeature,
   printAbundanceFeature,
   printAbundanceDetail01,
   printAbundanceDetail02,

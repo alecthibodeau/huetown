@@ -69,7 +69,34 @@ const items = {
     title: 'Assets',
     subtitle: text.postcard,
     featureImage: images.items.postcardAssetsFeature,
-    info: postcardItemInfo.concat('Caption on the back: Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches'),
+    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches"`),
+    price: text.postcardPrice
+  },
+  postcardGreatWhiteShark: {
+    id: 'UP6L2CNKJLSL2',
+    category: text.postcard,
+    title: 'Great White Shark',
+    subtitle: text.postcard,
+    featureImage: images.items.postcardGreatWhiteSharkFeature,
+    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The great white shark inhabits most of the world's oceans and wants to be your friend."`),
+    price: text.postcardPrice
+  },
+  postcardHippopotamus: {
+    id: 'T5XS8HXHARZG4',
+    category: text.postcard,
+    title: 'Hippopotamus',
+    subtitle: text.postcard,
+    featureImage: images.items.postcardHippopotamusFeature,
+    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The hippopotamus has a name which means 'horse of the river' in Ancient Greek."`),
+    price: text.postcardPrice
+  },
+  postcardRhodeIslandWhale: {
+    id: 'WZXP99EBYSU5A',
+    category: text.postcard,
+    title: 'Rhode Island Whale',
+    subtitle: text.postcard,
+    featureImage: images.items.postcardRhodeIslandWhaleFeature,
+    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The North Atlantic humpback whale swims in waters off Rhode Island and can grow to 50 feet in length."`),
     price: text.postcardPrice
   },
   lunarCalendar2023: {
