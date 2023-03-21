@@ -29,7 +29,12 @@ function Home(): JSX.Element {
           lunarCalendarLocation={featured.lunarCalendarLocation}
         />
       : <div className="home-content">
-          <span className="bold">Event:</span> <span>Catch Huetown at the <a className="text-link" href="https://unbound.risd.edu">2023 Unbound RISD Art Book Fair</a> on Saturday, April 15, from 11am-5pm in Providence, Rhode Island.</span>
+          <a href="https://unbound.risd.edu">
+            <img src="https://s33518.pcdn.co/wp-content/uploads/2020/04/risd-unbound-library-2019-1920x1440.jpg" />
+          </a>
+          <div>
+            <span className="bold">Event:</span> <span>Join Huetown at the <a className="text-link" href="https://unbound.risd.edu">2023 Unbound RISD Art Book Fair</a> on Saturday, April 15, from 11am-5pm in Providence, Rhode Island.</span>
+          </div>
         </div>}
     </>
   );

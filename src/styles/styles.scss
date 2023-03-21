@@ -66,8 +66,19 @@ main {
   }
 
   .home-content {
-    margin: 2rem;
-    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: auto 2rem;
+
+    * {
+      width: 80vw;
+      max-width: 900px;
+      vertical-align: top;
+    }
+
+    div {
+      margin-top: 1rem;
+    }
   }
 }
 
