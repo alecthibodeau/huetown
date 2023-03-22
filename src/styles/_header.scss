@@ -1,7 +1,5 @@
 @use './_variables' as *;
 
-$nav-icon-size: 2rem;
-
 /* Sub-mixins need to be outside the primary mixin */
 @mixin nav-text {
   padding: 0; // Overrides default value in form
@@ -177,17 +175,9 @@ button.burger-button div.burger-bars-container div.bar {
   section {
     margin: 1rem 2rem;
 
-    a {
-      width: $nav-icon-size;
-      height: $nav-icon-size;
-      display: block;
-
-      img {
-        width: $nav-icon-size;
-        height: $nav-icon-size;
-        display: block;
-        position: relative;
-      }
+    a img {
+      width: 2rem;
+      vertical-align: top;
     }
   }
 }

@@ -27,16 +27,12 @@
     }
   }
 
-  .feature-image-link {
-    display: block;
-  }
-
   .feature-image {
     @include crisp-scaled-down;
 
-    display: block;
     width: 90vw;
     max-width: 700px;
+    vertical-align: top;
 
     &.postcard {
       border: $border-standard;

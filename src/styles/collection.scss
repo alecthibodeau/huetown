@@ -1,126 +1,126 @@
-@use './_variables' as *;
+// @use './_variables' as *;
 
-// Sub-mixins need to be outside the primary mixin
-@mixin collection-image-border {
-  border: 1px solid $sixty-percent-gray;
-}
+// // Sub-mixins need to be outside the primary mixin
+// @mixin collection-image-border {
+//   border: 1px solid $sixty-percent-gray;
+// }
 
-@mixin crisp-scaled-down {
-  image-rendering: -moz-crisp-edges; /* Firefox */
-  image-rendering: -o-crisp-edges; /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
-}
+// @mixin crisp-scaled-down {
+//   image-rendering: -moz-crisp-edges; /* Firefox */
+//   image-rendering: -o-crisp-edges; /* Opera */
+//   image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+//   image-rendering: crisp-edges;
+//   -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+// }
 
-// Selector for .collection-page
-@mixin collection-content {
-  .content-container {
-    display: flex;
-    justify-content: space-around;
+// // Selector for .collection-page
+// @mixin collection-content {
+//   .content-container {
+//     display: flex;
+//     justify-content: space-around;
 
-    &.lunar-calendar:not(.single-item-row) {
-      justify-content: space-between;
-    }
-  }
+//     &.lunar-calendar:not(.single-item-row) {
+//       justify-content: space-between;
+//     }
+//   }
 
-  .content-block {
-    text-align: center;
-    margin: 0 18px;
+//   .content-block {
+//     text-align: center;
+//     margin: 0 18px;
 
-    a.collection-link,
-    a.collection-link img {
-      display: block;
-    }
+//     a.collection-link,
+//     a.collection-link img {
+//       display: block;
+//     }
 
-    a.lunar-calendars img {
-      max-width: 350px;
-      max-height: 216px;
-    }
+//     a.lunar-calendars img {
+//       max-width: 350px;
+//       max-height: 216px;
+//     }
 
-    a.prints img {
-      max-width: 320px;
-      max-height: 320px;
-    }
+//     a.prints img {
+//       max-width: 320px;
+//       max-height: 320px;
+//     }
 
-    a.postcards img {
-      max-width: 300px;
-      max-height: 200px;
+//     a.postcards img {
+//       max-width: 300px;
+//       max-height: 200px;
 
-      @include collection-image-border;
-    }
+//       @include collection-image-border;
+//     }
 
-    .content-item-name {
-      margin: 3px 0 16px;
+//     .content-item-name {
+//       margin: 3px 0 16px;
 
-      a {
-        text-decoration: none;
-        color: $black;
-      }
-    }
-  }
+//       a {
+//         text-decoration: none;
+//         color: $black;
+//       }
+//     }
+//   }
 
-  .collection-image {
-    @include crisp-scaled-down;
-  }
+//   .collection-image {
+//     @include crisp-scaled-down;
+//   }
 
-  /**
-   * Media Queries
-   */
+//   /**
+//    * Media Queries
+//    */
 
-  @media only screen and (max-width: 810px) {
-    .content-container.lunar-calendar {
-      flex-direction: column;
-      align-items: center;
-    }
+//   @media only screen and (max-width: 810px) {
+//     .content-container.lunar-calendar {
+//       flex-direction: column;
+//       align-items: center;
+//     }
 
-    .content-block a.lunar-calendars img {
-      max-width: 90vw;
-      max-height: 56vw;
-    }
-  }
+//     .content-block a.lunar-calendars img {
+//       max-width: 90vw;
+//       max-height: 56vw;
+//     }
+//   }
 
-  @media only screen and (max-width: 700px) {
-    .content-container {
-      flex-direction: column;
-      align-items: center;
-    }
+//   @media only screen and (max-width: 700px) {
+//     .content-container {
+//       flex-direction: column;
+//       align-items: center;
+//     }
 
-    .content-block {
-      a.lunar-calendars img {
-        max-width: 80vw;
-        max-height: 49vw;
-      }
+//     .content-block {
+//       a.lunar-calendars img {
+//         max-width: 80vw;
+//         max-height: 49vw;
+//       }
 
-      a.postcards img {
-        max-width: 390px;
-        max-height: 230px;
-      }
-    }
-  }
+//       a.postcards img {
+//         max-width: 390px;
+//         max-height: 230px;
+//       }
+//     }
+//   }
 
-  @media only screen and (max-width: 400px) {
-    .content-block {
-      a.prints img {
-        max-width: auto;
-        max-height: auto;
-        width: 85vw;
-        height: 85vw;
-      }
+//   @media only screen and (max-width: 400px) {
+//     .content-block {
+//       a.prints img {
+//         max-width: auto;
+//         max-height: auto;
+//         width: 85vw;
+//         height: 85vw;
+//       }
 
-      a.postcards img {
-        max-width: auto;
-        max-height: auto;
-        width: 90vw;
-        height: 60vw;
-      }
+//       a.postcards img {
+//         max-width: auto;
+//         max-height: auto;
+//         width: 90vw;
+//         height: 60vw;
+//       }
 
-      a.lunar-calendars img {
-        max-width: auto;
-        max-height: auto;
-        width: 90vw;
-        height: 56vw;
-      }
-    }
-  }
-}
+//       a.lunar-calendars img {
+//         max-width: auto;
+//         max-height: auto;
+//         width: 90vw;
+//         height: 56vw;
+//       }
+//     }
+//   }
+// }

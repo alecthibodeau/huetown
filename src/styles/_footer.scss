@@ -11,21 +11,12 @@ footer {
     margin: 1rem $footer-icon-size;
 
     a {
-      width: $footer-icon-size;
-      height: $footer-icon-size;
-      display: block;
 
       img {
         width: $footer-icon-size;
-        height: $footer-icon-size;
-        display: block;
+        vertical-align: top;
         position: relative;
         z-index: 10;
-      }
-
-      // Show background div on parent anchor's hover
-      &:hover div {
-        background: $rainbow-yellow;
       }
 
       /**
@@ -38,8 +29,14 @@ footer {
         position: relative;
         bottom: calc(#{$footer-icon-size} - 3.5%);
         left: 3.5%;
-        border-radius: .5rem;
+        border-radius: $border-radius-standard;
         background: transparent;
+      }
+
+      // Show background div on parent anchor's hover or focus
+      &:hover div,
+      &:focus div {
+        background: $rainbow-yellow;
       }
     }
 
