@@ -240,11 +240,13 @@
         .thumbnail {
           margin: .5rem .75rem;
 
-          a,
           a img {
-            display: block;
             width: 200px;
-            height: 123px;
+            vertical-align: top;
+
+            &:hover {
+              box-shadow: 5px 5px 15px $html-gray;
+            }
           }
         }
       }
