@@ -24,7 +24,10 @@ function Item(props: ItemProps): JSX.Element {
   const categoryClass: string = helpers.formatDashes(props.category);
   const titleClass: string = helpers.formatDashes(props.title);
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
+  const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
+  const detailImageAltTextPrefix: string = `${props.category} detail`;
+  const detailImageClassName: string = `${categoryClass} ${titleClass} ${isRecentLunarCalendar ? 'recent-lunar-calendar' : ''}`
 
   useEffect(() => {
     const keydown = 'keydown';
@@ -77,19 +80,18 @@ function Item(props: ItemProps): JSX.Element {
   }
 
   function renderDetailImagePair(image: string, index: number, detailImages: string[]): JSX.Element | null {
-    const altTextPrefix = `${props.category} detail`;
     return (
-      index % 2 === 0 ? <div key={`photo-pair-${index + 1}`} className="photo-pair">
+      index % 2 === 0 ? <div key={`detail-image-pair-${index + 1}`} className="detail-image-pair">
         <img
-          className={`${categoryClass} ${titleClass}`}
+          className={detailImageClassName}
           src={image}
-          alt={`${altTextPrefix} #${index + 1}`}
+          alt={`${detailImageAltTextPrefix} #${index + 1}`}
         />
         <img
           id={index === detailImages.length - 2 ? 'itemDetails' : undefined}
-          className={`${categoryClass} ${titleClass}`}
+          className={detailImageClassName}
           src={detailImages[index + 1]}
-          alt={`${altTextPrefix} #${index + 2}`}
+          alt={`${detailImageAltTextPrefix} #${index + 2}`}
         />
       </div> : null
     )

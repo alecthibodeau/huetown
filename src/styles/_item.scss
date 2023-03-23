@@ -164,7 +164,7 @@
     border-top: 1px solid $light-gray;
     margin-top: 1.25rem;
 
-    .photo-pair {
+    .detail-image-pair {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -172,14 +172,14 @@
 
       img {
         margin: 1rem .5rem auto;
-        max-width: 700px;
+        max-width: 450px;
         width: 90vw;
-        max-height: 700px;
+        max-height: 450px;
         height: 90vw;
 
-        &.print.abundance {
-          max-width: 450px;
-          max-height: 450px;
+        &.lunar-calendar.recent-lunar-calendar {
+          max-width: 700px;
+          max-height: 700px;
         }
       }
     }
@@ -274,7 +274,7 @@
     width: initial;
   }
 
-  .item .detail-images .photo-pair img {
+  .item .detail-images .detail-image-pair img {
     width: initial;
   }
 }
@@ -304,7 +304,7 @@
       align-items: stretch;
     }
 
-    .detail-images .photo-pair {
+    .detail-images .detail-image-pair {
       flex-direction: row;
 
       img {
@@ -317,7 +317,7 @@
 
 @media (min-width: $breakpoint-xl) {
 
-  .item .detail-images .photo-pair img {
+  .item .detail-images .detail-image-pair img {
     width: 38vw;
     height: 38vw;
   }
