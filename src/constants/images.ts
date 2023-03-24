@@ -61,6 +61,13 @@ import printAbundanceFeature from '../assets/images/items/print-abundance-featur
 import printAbundanceDetail01 from '../assets/images/items/print-abundance-01-450px.jpg';
 import printAbundanceDetail02 from '../assets/images/items/print-abundance-02-450px.jpg';
 
+
+import printStentorianFeature from '../assets/images/items/print-stentorian-01-450px.jpg';
+import printStentorianDetail02 from '../assets/images/items/print-stentorian-02-450px.jpg';
+import printStentorianDetail03 from '../assets/images/items/print-stentorian-03-450px.jpg';
+import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-450px.jpg';
+import printStentorianDetail05 from '../assets/images/items/print-stentorian-05-450px.jpg';
+
 import printProtonSwanFeature from '../assets/images/items/print-proton-swan-feature-450px.jpg';
 import printOrcaLuminaFeature from '../assets/images/items/print-orca-lumina-feature-450px.jpg';
 
@@ -136,6 +143,11 @@ const items = {
   printAbundanceFeature,
   printAbundanceDetail01,
   printAbundanceDetail02,
+  printStentorianFeature,
+  printStentorianDetail02,
+  printStentorianDetail03,
+  printStentorianDetail04,
+  printStentorianDetail05,
   printOrcaLuminaFeature,
   printProtonSwanFeature,
   spacePonyPreorder

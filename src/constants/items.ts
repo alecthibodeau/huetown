@@ -35,6 +35,27 @@ const items = {
       images.items.printAbundanceDetail02
     ]
   },
+  printStentorian: {
+    id: 'AUN3U4NQ52J2W',
+    category: text.print,
+    title: 'Stentorian',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.items.printStentorianFeature,
+    info: [
+      text.dimensionsFiveAndAHalfInches,
+      text.letterpressPrint,
+      '', // To be rendered dynamically
+      text.shipsFlat
+    ],
+    price: 15,
+    printEdition: 250,
+    detailImages: [
+      images.items.printStentorianDetail02,
+      images.items.printStentorianDetail03,
+      images.items.printStentorianDetail04,
+      images.items.printStentorianDetail05
+    ]
+  },
   printProtonSwan: {
     id: '4SFG8LHK26JZ4',
     category: text.print,
