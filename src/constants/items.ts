@@ -188,7 +188,7 @@ const items = {
     lunarCalendarYear: 2019,
     lunarCalendarPaper: 'French Paper Company acid-free 269gsm Pop-Tone Tangy Orange 100# cover paper',
     lunarCalendarLocation: text.locationProvidence,
-    detailImages: []
+    detailImages: images.items.lunarCalendar2019DetailImages
   },
   lunarCalendar2018: {
     id: '4LN49ZLYQLY88',

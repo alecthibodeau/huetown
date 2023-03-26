@@ -43,6 +43,14 @@ import lunarCalendar2021Feature from '../assets/images/items/thibodeau-lunar-cal
 import lunarCalendar2020Feature from '../assets/images/items/thibodeau-lunar-calendar-2020-feature-700px.jpg';
 
 import lunarCalendar2019Feature from '../assets/images/items/thibodeau-lunar-calendar-2019-feature-700px.jpg';
+import lunarCalendar2019Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2019-01-450px.jpg';
+import lunarCalendar2019Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2019-02-450px.jpg';
+import lunarCalendar2019Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2019-03-450px.jpg';
+import lunarCalendar2019Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2019-04-450px.jpg';
+import lunarCalendar2019Detail05 from '../assets/images/items/thibodeau-lunar-calendar-2019-05-450px.jpg';
+import lunarCalendar2019Detail06 from '../assets/images/items/thibodeau-lunar-calendar-2019-06-450px.jpg';
+import lunarCalendar2019Detail07 from '../assets/images/items/thibodeau-lunar-calendar-2019-07-450px.jpg';
+import lunarCalendar2019Detail08 from '../assets/images/items/thibodeau-lunar-calendar-2019-08-450px.jpg';
 
 import lunarCalendar2018Feature from '../assets/images/items/thibodeau-lunar-calendar-2018-feature-700px.jpg';
 import lunarCalendar2017Feature from '../assets/images/items/thibodeau-lunar-calendar-2017-feature-700px.jpg';
@@ -121,6 +129,17 @@ const lunarCalendar2022DetailImages = [
   lunarCalendar2022Detail08
 ];
 
+const lunarCalendar2019DetailImages = [
+  lunarCalendar2019Detail01,
+  lunarCalendar2019Detail02,
+  lunarCalendar2019Detail03,
+  lunarCalendar2019Detail04,
+  lunarCalendar2019Detail05,
+  lunarCalendar2019Detail06,
+  lunarCalendar2019Detail07,
+  lunarCalendar2019Detail08
+];
+
 const items = {
   colossalLogo,
   lunarCalendar2023Feature,
@@ -129,6 +148,7 @@ const items = {
   lunarCalendar2022DetailImages,
   lunarCalendar2021Feature,
   lunarCalendar2020Feature,
+  lunarCalendar2019DetailImages,
   lunarCalendar2019Feature,
   lunarCalendar2018Feature,
   lunarCalendar2017Feature,
