@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 /* Constants */
@@ -11,7 +12,8 @@ import ItemProps from '../interfaces/ItemProps';
 import helpers from '../helpers/helpers';
 
 function ItemsCollection(): JSX.Element {
-  const formatDashes = helpers.formatDashes;
+  const [userSearchInput, setUserSearchInput] = useState('');
+  const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = helpers;
 
   function formatLunarCalendarText(item: ItemProps): string {
     return `${item.lunarCalendarYear} ${item.category} ${text.print}`;
@@ -22,12 +24,32 @@ function ItemsCollection(): JSX.Element {
     return isLunarCalendar ? formatLunarCalendarText(item) : item.category;
   }
 
+  function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>): void {
+    if (event.key === 'Enter') event.currentTarget.blur();
+  }
+
+  function handleSearchInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    setUserSearchInput(event.target.value);
+  }
+
+  const filteredItems = itemsCollection.filter((item) => {
+    const { title, price }: ItemProps = item;
+    const priceWithDollarSign: string = `$${price}`
+    const searchInput: string = userSearchInput.toLowerCase();
+
+    return (
+      title.toLowerCase().includes(searchInput) ||
+      getItemCategory(item).toLowerCase().includes(searchInput) ||
+      priceWithDollarSign.toString().toLowerCase().includes(searchInput)
+    );
+  });
+
   function renderItem(item: ItemProps, index: number): JSX.Element {
     return (
       <Link
-        key={`${helpers.formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
+        key={`${formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
         className="items-collection-link text-link"
-        to={helpers.formatItemRoutePath(item.category, item.title)}
+        to={formatItemRoutePath(item.category, item.title)}
       >
         <img
           className={`items-collection-image ${formatDashes(item.category)} ${formatDashes(item.title)}`}
@@ -51,8 +73,20 @@ function ItemsCollection(): JSX.Element {
 
   return (
     <div>
+      <div className="items-search-results-count">
+        {filteredItems.length} {`item${filteredItems.length === 1 ? '' : 's'}`}
+      </div>
+      <div className="items-search">
+        <span>Search items by title, category or price: </span>
+        <input
+          type="text"
+          value={userSearchInput}
+          onChange={handleSearchInputChange}
+          onKeyDown={handleKeyDown}
+        />
+      </div>
       <div className="items-collection">
-        {itemsCollection.map(renderItem)}
+        {filteredItems.map(renderItem)}
       </div>
     </div>
   );

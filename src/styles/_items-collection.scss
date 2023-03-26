@@ -1,5 +1,21 @@
 @use './variables' as *;
 
+.items-search-results-count {
+  text-align: center;
+}
+
+.items-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 300px;
+
+  span {
+    text-align: center;
+  }
+}
+
 .items-collection {
   display: flex;
   flex-wrap: wrap;
@@ -58,4 +74,19 @@
 
 .items-collection-price {
   font-size: 1.5rem;
+}
+
+
+/* Media Queries */
+
+@media (min-width: $breakpoint-sm) {
+
+  .items-search {
+    flex-direction: row;
+    max-width: initial;
+
+    span {
+      margin-right: .5rem;
+    }
+  }
 }
