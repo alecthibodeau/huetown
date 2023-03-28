@@ -14,6 +14,10 @@
   span {
     text-align: center;
   }
+
+  input {
+    padding: .5rem;
+  }
 }
 
 .items-collection {
@@ -83,6 +87,7 @@
 
   .items-search {
     flex-direction: row;
+    align-items: center;
     max-width: initial;
 
     span {

@@ -10,6 +10,7 @@ import ItemProps from '../interfaces/ItemProps';
 
 /* Helpers */
 import helpers from '../helpers/helpers';
+import items from '../constants/items';
 
 function ItemsCollection(): JSX.Element {
   const [userSearchInput, setUserSearchInput] = useState('');
@@ -74,7 +75,7 @@ function ItemsCollection(): JSX.Element {
   return (
     <div>
       <div className="items-search-results-count">
-        {filteredItems.length} {`item${filteredItems.length === 1 ? '' : 's'}`}
+        {`Items count: ${filteredItems.length}`}
       </div>
       <div className="items-search">
         <span>Search items by title, category or price: </span>
