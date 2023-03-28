@@ -14,6 +14,8 @@ function Header(props: HeaderProps): JSX.Element {
   const burgerButton: string = 'burger-button';
   const viewCart: string = 'view cart';
 
+  const { huetownLogoGray, huetownLogoWhite } = images.header;
+
   useEffect(() => {
     const click = 'click';
     const mainElement = document.getElementById('main');
@@ -48,7 +50,7 @@ function Header(props: HeaderProps): JSX.Element {
         <Link to="/" onClick={closeNavDrawer}>
           <img
             className={props.isBreakpointXs ? 'huetown-logo-white' : 'huetown-logo-gray'}
-            src={props.isBreakpointXs ? images.header.huetownLogoWhite : images.header.huetownLogoGray}
+            src={props.isBreakpointXs ? huetownLogoWhite : huetownLogoGray}
             alt="Huetown logo" />
         </Link>
         {props.isBreakpointXs ?

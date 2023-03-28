@@ -6,22 +6,30 @@ import IconLinksProps from '../interfaces/IconLinksProps';
 import images from '../constants/images';
 
 function IconLinks(props: IconLinksProps): JSX.Element {
+  const {
+    emailGray,
+    emailWhite,
+    instagramGray,
+    instagramWhite,
+    twitterGray,
+    twitterWhite
+  } = images.icons;
 
   const iconLinks: IconLink[] = [
     {
       title: 'Instagram',
       url: 'https://www.instagram.com/huetown',
-      src: props.isForNavDrawer ? images.icons.instagramWhite : images.icons.instagramGray
+      src: props.isForNavDrawer ? instagramWhite : instagramGray
     },
     {
       title: 'Twitter',
       url: 'https://www.twitter.com/huetown',
-      src: props.isForNavDrawer ? images.icons.twitterWhite : images.icons.twitterGray
+      src: props.isForNavDrawer ? twitterWhite : twitterGray
     },
     {
       title: 'Email',
       url: 'mailto:info@huetown.com',
-      src: props.isForNavDrawer ? images.icons.emailWhite : images.icons.emailGray
+      src: props.isForNavDrawer ? emailWhite : emailGray
     }
   ];
 

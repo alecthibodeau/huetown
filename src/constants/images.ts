@@ -87,12 +87,12 @@ const header = {
 };
 
 const icons = {
-  instagramWhite,
-  instagramGray,
-  twitterWhite,
-  twitterGray,
+  emailGray,
   emailWhite,
-  emailGray
+  instagramGray,
+  instagramWhite,
+  twitterGray,
+  twitterWhite
 };
 
 const about = {
