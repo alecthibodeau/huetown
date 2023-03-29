@@ -14,6 +14,7 @@ const itemsCollection = [
   items.postcardHippopotamus,
   items.postcardRhodeIslandWhale,
   items.printAbundance,
+  items.printFunktionslust,
   items.printStentorian,
   items.printOrcaLumina,
   items.printProtonSwan

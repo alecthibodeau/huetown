@@ -56,6 +56,21 @@ const items = {
       images.items.printStentorianDetail05
     ]
   },
+  printFunktionslust: {
+    id: 'VARZ4F5RHAP9Y',
+    category: text.print,
+    title: 'Funktionslust',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.items.printFunktionslustFeature,
+    info: [
+      '5.75 x 5.75 inches',
+      text.screenPrint,
+      'Numbered and signed',
+      text.shipsFlat
+    ],
+    price: 15,
+    printEdition: 50
+  },
   printProtonSwan: {
     id: '4SFG8LHK26JZ4',
     category: text.print,

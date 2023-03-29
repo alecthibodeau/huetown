@@ -69,6 +69,7 @@ import printAbundanceFeature from '../assets/images/items/print-abundance-featur
 import printAbundanceDetail01 from '../assets/images/items/print-abundance-01-450px.jpg';
 import printAbundanceDetail02 from '../assets/images/items/print-abundance-02-450px.jpg';
 
+import printFunktionslustFeature from '../assets/images/items/print-funktionslust-feature-450px.jpg';
 
 import printStentorianFeature from '../assets/images/items/print-stentorian-01-450px.jpg';
 import printStentorianDetail02 from '../assets/images/items/print-stentorian-02-450px.jpg';
@@ -163,6 +164,7 @@ const items = {
   printAbundanceFeature,
   printAbundanceDetail01,
   printAbundanceDetail02,
+  printFunktionslustFeature,
   printStentorianFeature,
   printStentorianDetail02,
   printStentorianDetail03,
