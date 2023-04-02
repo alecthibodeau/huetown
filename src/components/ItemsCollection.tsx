@@ -10,19 +10,18 @@ import ItemProps from '../interfaces/ItemProps';
 
 /* Helpers */
 import helpers from '../helpers/helpers';
-import items from '../constants/items';
 
 function ItemsCollection(): JSX.Element {
   const [userSearchInput, setUserSearchInput] = useState('');
   const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = helpers;
 
-  function formatLunarCalendarText(item: ItemProps): string {
+  function formatLunarCalendarCatergory(item: ItemProps): string {
     return `${item.lunarCalendarYear} ${item.category} ${text.print}`;
   }
 
   function getItemCategory(item: ItemProps): string {
     const isLunarCalendar: boolean = item.category === text.lunarCalendar;
-    return isLunarCalendar ? formatLunarCalendarText(item) : item.category;
+    return isLunarCalendar ? formatLunarCalendarCatergory(item) : item.category;
   }
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>): void {
@@ -33,17 +32,23 @@ function ItemsCollection(): JSX.Element {
     setUserSearchInput(event.target.value);
   }
 
-  const filteredItems = itemsCollection.filter((item) => {
-    const { title, price }: ItemProps = item;
-    const priceWithDollarSign: string = `$${price}`
+  const filteredItems: ItemProps[] = itemsCollection.filter((item) => {
+    const priceWithDollarSign: string = `$${ item.price}`;
     const searchInput: string = userSearchInput.toLowerCase();
-
     return (
-      title.toLowerCase().includes(searchInput) ||
+      item.title.toLowerCase().includes(searchInput) ||
       getItemCategory(item).toLowerCase().includes(searchInput) ||
-      priceWithDollarSign.toString().toLowerCase().includes(searchInput)
+      priceWithDollarSign.includes(searchInput)
     );
   });
+
+  function shuffleItems(items: ItemProps[]) {
+    for (let i = items.length - 1; i > 0; i--) {
+      const randomIndex = Math.floor(Math.random() * (i + 1));
+      [items[i], items[randomIndex]] = [items[randomIndex], items[i]];
+    }
+    return items;
+  }
 
   function renderItem(item: ItemProps, index: number): JSX.Element {
     return (
@@ -87,7 +92,11 @@ function ItemsCollection(): JSX.Element {
         />
       </div>
       <div className="items-collection">
-        {filteredItems.map(renderItem)}
+        {
+          userSearchInput
+          ? filteredItems.map(renderItem)
+          : shuffleItems([...filteredItems]).map(renderItem)
+        }
       </div>
     </div>
   );
