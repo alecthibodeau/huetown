@@ -37,6 +37,10 @@
     &.postcard {
       border: $border-standard;
       max-width: 600px;
+
+      &.cachalot {
+        border-radius: 16px;
+      }
     }
 
     &.print.proton-swan,

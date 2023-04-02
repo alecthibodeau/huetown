@@ -45,6 +45,10 @@
   border-top-right-radius: $border-radius-standard;
   object-fit: cover;
 
+  &.postcard.cachalot {
+    object-position: -10px;
+  }
+
   &.postcard.hippopotamus,
   &.postcard.rhode-island-whale {
     object-position: left;

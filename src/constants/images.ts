@@ -61,6 +61,7 @@ import lunarCalendar2009Previous from '../assets/images/items/thibodeau-lunar-ca
 import lunarCalendar2008Previous from '../assets/images/items/thibodeau-lunar-calendar-2008-previous-200px.jpg';
 
 import postcardAssetsFeature from '../assets/images/items/postcard-assets-feature-600px.png';
+import postcardCachalotFeature from '../assets/images/items/postcard-cachalot-feature-600px.jpg';
 import postcardGreatWhiteSharkFeature from '../assets/images/items/postcard-great-white-shark-feature-600px.png';
 import postcardHippopotamusFeature from '../assets/images/items/postcard-hippopotamus-feature-600px.png';
 import postcardRhodeIslandWhaleFeature from '../assets/images/items/postcard-rhode-island-whale-feature-600px.png';
@@ -158,6 +159,7 @@ const items = {
   lunarCalendar2010Previous,
   lunarCalendar2011Previous,
   postcardAssetsFeature,
+  postcardCachalotFeature,
   postcardGreatWhiteSharkFeature,
   postcardHippopotamusFeature,
   postcardRhodeIslandWhaleFeature,

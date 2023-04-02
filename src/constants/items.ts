@@ -108,6 +108,15 @@ const items = {
     info: postcardItemInfo.concat(`${text.postcardTextPrefix} "Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches"`),
     price: text.postcardPrice
   },
+  postcardCachalot: {
+    id: '7H7ZNZJMAM5S4',
+    category: text.postcard,
+    title: 'Cachalot',
+    subtitle: text.postcard,
+    featureImage: images.items.postcardCachalotFeature,
+    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The cachalot, or sperm whale, swims in the open ocean and has the largest brain of any animal."`),
+    price: text.postcardPrice
+  },
   postcardGreatWhiteShark: {
     id: 'UP6L2CNKJLSL2',
     category: text.postcard,
