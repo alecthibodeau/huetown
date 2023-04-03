@@ -1,14 +1,14 @@
 import huetownLogoGray from '../assets/images/huetown-script-logo-fifty-percent-gray.svg';
 import huetownLogoWhite from '../assets/images/huetown-script-logo-white.svg';
 
-import instagramWhite from '../assets/images/icon-instagram-white.svg';
-import instagramGray from '../assets/images/icon-instagram-fifty-percent-gray.svg';
-import twitterWhite from '../assets/images/icon-twitter-white.svg';
-import twitterGray from '../assets/images/icon-twitter-fifty-percent-gray.svg';
-import emailWhite from '../assets/images/icon-email-white.svg';
 import emailGray from '../assets/images/icon-email-fifty-percent-gray.svg';
+import emailWhite from '../assets/images/icon-email-white.svg';
+import instagramGray from '../assets/images/icon-instagram-fifty-percent-gray.svg';
+import instagramWhite from '../assets/images/icon-instagram-white.svg';
+import twitterGray from '../assets/images/icon-twitter-fifty-percent-gray.svg';
+import twitterWhite from '../assets/images/icon-twitter-white.svg';
 
-import logo from '../assets/images/huetown-h-logo.jpg';
+import hLogo from '../assets/images/huetown-h-logo.jpg';
 import selfPortrait from '../assets/images/thibodeau-self-portrait.jpg';
 
 import firstQuarterMoon from '../assets/images/items/lunar-phase-first-quarter.png';
@@ -17,6 +17,7 @@ import newMoon from '../assets/images/items/lunar-phase-new.png';
 import thirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarter.png';
 
 import colossalLogo from '../assets/images/colossal-logo-small.jpg';
+import spacePonyPreorder from '../assets/images/items/space-pony-300px.jpg';
 
 import lunarCalendar2023Feature from '../assets/images/items/thibodeau-lunar-calendar-2023-feature-1000px.jpg';
 import lunarCalendar2023Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2023-01-700px.jpg';
@@ -72,16 +73,14 @@ import printAbundanceDetail02 from '../assets/images/items/print-abundance-02-45
 
 import printFunktionslustFeature from '../assets/images/items/print-funktionslust-feature-450px.jpg';
 
-import printStentorianFeature from '../assets/images/items/print-stentorian-01-450px.jpg';
+import printStentorianFeature from '../assets/images/items/print-stentorian-feature-450px.jpg';
+import printStentorianDetail01 from '../assets/images/items/print-stentorian-01-450px.jpg';
 import printStentorianDetail02 from '../assets/images/items/print-stentorian-02-450px.jpg';
 import printStentorianDetail03 from '../assets/images/items/print-stentorian-03-450px.jpg';
 import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-450px.jpg';
-import printStentorianDetail05 from '../assets/images/items/print-stentorian-05-450px.jpg';
 
 import printProtonSwanFeature from '../assets/images/items/print-proton-swan-feature-450px.jpg';
 import printOrcaLuminaFeature from '../assets/images/items/print-orca-lumina-feature-450px.jpg';
-
-import spacePonyPreorder from '../assets/images/items/space-pony-300px.jpg';
 
 const header = {
   huetownLogoGray,
@@ -98,7 +97,7 @@ const icons = {
 };
 
 const about = {
-  logo,
+  hLogo,
   selfPortrait
 };
 
@@ -142,8 +141,9 @@ const lunarCalendar2019DetailImages = [
   lunarCalendar2019Detail08
 ];
 
-const items = {
+const lunarCalendars = {
   colossalLogo,
+  spacePonyPreorder,
   lunarCalendar2023Feature,
   lunarCalendar2023DetailImages,
   lunarCalendar2022Feature,
@@ -157,24 +157,29 @@ const items = {
   lunarCalendar2008Previous,
   lunarCalendar2009Previous,
   lunarCalendar2010Previous,
-  lunarCalendar2011Previous,
+  lunarCalendar2011Previous
+};
+
+const postcards = {
   postcardAssetsFeature,
   postcardCachalotFeature,
   postcardGreatWhiteSharkFeature,
   postcardHippopotamusFeature,
-  postcardRhodeIslandWhaleFeature,
+  postcardRhodeIslandWhaleFeature
+};
+
+const prints = {
   printAbundanceFeature,
   printAbundanceDetail01,
   printAbundanceDetail02,
   printFunktionslustFeature,
   printStentorianFeature,
+  printStentorianDetail01,
   printStentorianDetail02,
   printStentorianDetail03,
   printStentorianDetail04,
-  printStentorianDetail05,
   printOrcaLuminaFeature,
-  printProtonSwanFeature,
-  spacePonyPreorder
+  printProtonSwanFeature
 };
 
 const images = {
@@ -182,7 +187,9 @@ const images = {
   icons,
   about,
   lunarPhases,
-  items
+  lunarCalendars,
+  postcards,
+  prints
 };
 
 export default images;

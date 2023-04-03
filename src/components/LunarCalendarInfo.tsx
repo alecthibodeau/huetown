@@ -86,7 +86,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
             </p>
           </div>
           <div className="item-accompanying">
-            <img src={images.items.spacePonyPreorder} alt="Space Pony print" />
+            <img src={images.lunarCalendars.spacePonyPreorder} alt="Space Pony print" />
           </div>
         </div>
       : null}

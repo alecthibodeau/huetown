@@ -72,7 +72,7 @@ function Item(props: ItemProps): JSX.Element {
       <li key={`${helpers.formatLettersAndNumbers(listItem.slice(0, 8))}-${index}`}>
         {listItem === '' ?
           <span>
-            Numbered and signed <a className="text-link" href="#itemDetails">(more info)</a>
+            {text.numberedAndSigned} <a className="text-link" href="#itemDetails">(more info)</a>
           </span>
         : listItem}
       </li>
@@ -109,7 +109,7 @@ function Item(props: ItemProps): JSX.Element {
               className="text-link"
               href="https://www.thisiscolossal.com/2022/12/calendars-2023"
             >
-              <img src={images.items.colossalLogo} alt="Colossal website logo" />
+              <img src={images.lunarCalendars.colossalLogo} alt="Colossal website logo" />
             </a>
           </span>
         </div>

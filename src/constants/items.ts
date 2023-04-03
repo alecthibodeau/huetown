@@ -21,7 +21,7 @@ const items = {
     category: text.print,
     title: 'Abundance',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.printAbundanceFeature,
+    featureImage: images.prints.printAbundanceFeature,
     info: [
       text.dimensionsFiveAndAHalfInches,
       text.letterpressPrint,
@@ -31,8 +31,8 @@ const items = {
     price: 25,
     printEdition: 250,
     detailImages: [
-      images.items.printAbundanceDetail01,
-      images.items.printAbundanceDetail02
+      images.prints.printAbundanceDetail01,
+      images.prints.printAbundanceDetail02
     ]
   },
   printStentorian: {
@@ -40,7 +40,7 @@ const items = {
     category: text.print,
     title: 'Stentorian',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.printStentorianFeature,
+    featureImage: images.prints.printStentorianFeature,
     info: [
       text.dimensionsFiveAndAHalfInches,
       text.letterpressPrint,
@@ -50,10 +50,10 @@ const items = {
     price: 15,
     printEdition: 250,
     detailImages: [
-      images.items.printStentorianDetail02,
-      images.items.printStentorianDetail03,
-      images.items.printStentorianDetail04,
-      images.items.printStentorianDetail05
+      images.prints.printStentorianDetail01,
+      images.prints.printStentorianDetail02,
+      images.prints.printStentorianDetail03,
+      images.prints.printStentorianDetail04
     ]
   },
   printFunktionslust: {
@@ -61,11 +61,11 @@ const items = {
     category: text.print,
     title: 'Funktionslust',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.printFunktionslustFeature,
+    featureImage: images.prints.printFunktionslustFeature,
     info: [
-      '5.75 x 5.75 inches',
+      text.dimensionsFiveAndThreeQuartersInches,
       text.screenPrint,
-      'Numbered and signed',
+      text.numberedAndSigned,
       text.shipsFlat
     ],
     price: 15,
@@ -76,7 +76,7 @@ const items = {
     category: text.print,
     title: 'Proton Swan',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.printProtonSwanFeature,
+    featureImage: images.prints.printProtonSwanFeature,
     info: [
       text.dimensionsTwoAndAHalfInches,
       text.letterpressPrint,
@@ -90,7 +90,7 @@ const items = {
     category: text.print,
     title: 'Orca Lumina',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.printOrcaLuminaFeature,
+    featureImage: images.prints.printOrcaLuminaFeature,
     info: [
       text.dimensionsTwoAndAHalfInches,
       text.screenPrint,
@@ -104,7 +104,7 @@ const items = {
     category: text.postcard,
     title: 'Assets',
     subtitle: text.postcard,
-    featureImage: images.items.postcardAssetsFeature,
+    featureImage: images.postcards.postcardAssetsFeature,
     info: postcardItemInfo.concat(`${text.postcardTextPrefix} "Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches"`),
     price: text.postcardPrice
   },
@@ -113,7 +113,7 @@ const items = {
     category: text.postcard,
     title: 'Cachalot',
     subtitle: text.postcard,
-    featureImage: images.items.postcardCachalotFeature,
+    featureImage: images.postcards.postcardCachalotFeature,
     info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The cachalot, or sperm whale, swims in the open ocean and has the largest brain of any animal."`),
     price: text.postcardPrice
   },
@@ -122,7 +122,7 @@ const items = {
     category: text.postcard,
     title: 'Great White Shark',
     subtitle: text.postcard,
-    featureImage: images.items.postcardGreatWhiteSharkFeature,
+    featureImage: images.postcards.postcardGreatWhiteSharkFeature,
     info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The great white shark inhabits most of the world's oceans and wants to be your friend."`),
     price: text.postcardPrice
   },
@@ -131,7 +131,7 @@ const items = {
     category: text.postcard,
     title: 'Hippopotamus',
     subtitle: text.postcard,
-    featureImage: images.items.postcardHippopotamusFeature,
+    featureImage: images.postcards.postcardHippopotamusFeature,
     info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The hippopotamus has a name which means 'horse of the river' in Ancient Greek."`),
     price: text.postcardPrice
   },
@@ -140,7 +140,7 @@ const items = {
     category: text.postcard,
     title: 'Rhode Island Whale',
     subtitle: text.postcard,
-    featureImage: images.items.postcardRhodeIslandWhaleFeature,
+    featureImage: images.postcards.postcardRhodeIslandWhaleFeature,
     info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The North Atlantic humpback whale swims in waters off Rhode Island and can grow to 50 feet in length."`),
     price: text.postcardPrice
   },
@@ -149,35 +149,35 @@ const items = {
     category: text.lunarCalendar,
     title: 'Thoughts Operator',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2023Feature,
+    featureImage: images.lunarCalendars.lunarCalendar2023Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2023,
     lunarCalendarPaper: 'Gmund Papers acid-free 300gsm Cyan 111# cover paper',
     lunarCalendarLocation: text.locationProvidence,
-    detailImages: images.items.lunarCalendar2023DetailImages
+    detailImages: images.lunarCalendars.lunarCalendar2023DetailImages
   },
   lunarCalendar2022: {
     id: '5VWNHRMJQCE7A',
     category: text.lunarCalendar,
     title: 'Entrancer\'s Medallion',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2022Feature,
+    featureImage: images.lunarCalendars.lunarCalendar2022Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2022,
     lunarCalendarPaper: 'Arjowiggins Creative Papers (distributed by Mohawk) acid-free 300gsm Keaykolour Coral 111# cover paper',
     lunarCalendarLocation: text.locationProvidence,
-    detailImages: images.items.lunarCalendar2022DetailImages
+    detailImages: images.lunarCalendars.lunarCalendar2022DetailImages
   },
   lunarCalendar2021: {
     id: 'XA698W9J6TGEL',
     category: text.lunarCalendar,
     title: 'Casting Levels',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2021Feature,
+    featureImage: images.lunarCalendars.lunarCalendar2021Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
@@ -191,7 +191,7 @@ const items = {
     category: text.lunarCalendar,
     title: 'The Instruments Agree',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2020Feature,
+    featureImage: images.lunarCalendars.lunarCalendar2020Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
@@ -205,21 +205,21 @@ const items = {
     category: text.lunarCalendar,
     title: 'Orchard Quest',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2019Feature,
+    featureImage: images.lunarCalendars.lunarCalendar2019Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2019,
     lunarCalendarPaper: 'French Paper Company acid-free 269gsm Pop-Tone Tangy Orange 100# cover paper',
     lunarCalendarLocation: text.locationProvidence,
-    detailImages: images.items.lunarCalendar2019DetailImages
+    detailImages: images.lunarCalendars.lunarCalendar2019DetailImages
   },
   lunarCalendar2018: {
     id: '4LN49ZLYQLY88',
     category: text.lunarCalendar,
     title: 'Shimmery Circuit',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2018Feature,
+    featureImage: images.lunarCalendars.lunarCalendar2018Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 1000,
@@ -233,7 +233,7 @@ const items = {
     category: text.lunarCalendar,
     title: 'I Still See the X',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.items.lunarCalendar2017Feature,
+    featureImage: images.lunarCalendars.lunarCalendar2017Feature,
     info: lunarCalendarItemInfo,
     price: text.lunarCalendarPrice,
     printEdition: 1000,

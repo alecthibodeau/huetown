@@ -42,13 +42,13 @@ function ItemsCollection(): JSX.Element {
     );
   });
 
-  function shuffleItems(items: ItemProps[]) {
-    for (let i = items.length - 1; i > 0; i--) {
-      const randomIndex = Math.floor(Math.random() * (i + 1));
-      [items[i], items[randomIndex]] = [items[randomIndex], items[i]];
-    }
-    return items;
-  }
+  // function shuffleItems(items: ItemProps[]) {
+  //   for (let i = items.length - 1; i > 0; i--) {
+  //     const randomIndex = Math.floor(Math.random() * (i + 1));
+  //     [items[i], items[randomIndex]] = [items[randomIndex], items[i]];
+  //   }
+  //   return items;
+  // }
 
   function renderItem(item: ItemProps, index: number): JSX.Element {
     return (
@@ -92,11 +92,12 @@ function ItemsCollection(): JSX.Element {
         />
       </div>
       <div className="items-collection">
-        {
+        {/* {
           userSearchInput
           ? filteredItems.map(renderItem)
           : shuffleItems([...filteredItems]).map(renderItem)
-        }
+        } */}
+        {filteredItems.map(renderItem)}
       </div>
     </div>
   );
