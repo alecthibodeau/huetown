@@ -1,4 +1,4 @@
-const allButLettersNumbers = /[^a-zA-Z0-9]/g;
+const allButLettersAndNumbers = /[^a-zA-Z0-9]/g;
 const allButLettersNumbersAndSpaces = /[^a-zA-Z0-9\s]/g;
 const allSpaces = /\s+/g;
 
@@ -7,7 +7,7 @@ function formatDashes(text: string): string {
 }
 
 function formatLettersAndNumbers(text: string): string {
-  return text.replace(allButLettersNumbers, '');
+  return text.replace(allButLettersAndNumbers, '');
 }
 
 function formatItemRoutePath(category: string, title: string): string {
