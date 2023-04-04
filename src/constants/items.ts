@@ -105,7 +105,7 @@ const items = {
     title: 'Assets',
     subtitle: text.postcard,
     featureImage: images.postcards.postcardAssetsFeature,
-    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches"`),
+    info: postcardItemInfo.concat(text.postcardCaptionAssets),
     price: text.postcardPrice
   },
   postcardCachalot: {
@@ -114,7 +114,7 @@ const items = {
     title: 'Cachalot',
     subtitle: text.postcard,
     featureImage: images.postcards.postcardCachalotFeature,
-    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The cachalot, or sperm whale, swims in the open ocean and has the largest brain of any animal."`),
+    info: postcardItemInfo.concat(text.postcardCaptionCachalot),
     price: text.postcardPrice
   },
   postcardGreatWhiteShark: {
@@ -123,7 +123,7 @@ const items = {
     title: 'Great White Shark',
     subtitle: text.postcard,
     featureImage: images.postcards.postcardGreatWhiteSharkFeature,
-    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The great white shark inhabits most of the world's oceans and wants to be your friend."`),
+    info: postcardItemInfo.concat(text.postcardCaptionGreatWhiteShark),
     price: text.postcardPrice
   },
   postcardHippopotamus: {
@@ -132,7 +132,7 @@ const items = {
     title: 'Hippopotamus',
     subtitle: text.postcard,
     featureImage: images.postcards.postcardHippopotamusFeature,
-    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The hippopotamus has a name which means 'horse of the river' in Ancient Greek."`),
+    info: postcardItemInfo.concat(text.postcardCaptionHippopotamus),
     price: text.postcardPrice
   },
   postcardRhodeIslandWhale: {
@@ -141,7 +141,7 @@ const items = {
     title: 'Rhode Island Whale',
     subtitle: text.postcard,
     featureImage: images.postcards.postcardRhodeIslandWhaleFeature,
-    info: postcardItemInfo.concat(`${text.postcardTextPrefix} "The North Atlantic humpback whale swims in waters off Rhode Island and can grow to 50 feet in length."`),
+    info: postcardItemInfo.concat(text.postcardCaptionRhodeIslandWhale),
     price: text.postcardPrice
   },
   lunarCalendar2023: {
@@ -154,8 +154,8 @@ const items = {
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2023,
-    lunarCalendarPaper: 'Gmund Papers acid-free 300gsm Cyan 111# cover paper',
-    lunarCalendarLocation: text.locationProvidence,
+    lunarCalendarPaper: text.lunarCalendarPaper2023,
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
     detailImages: images.lunarCalendars.lunarCalendar2023DetailImages
   },
   lunarCalendar2022: {
@@ -168,8 +168,8 @@ const items = {
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2022,
-    lunarCalendarPaper: 'Arjowiggins Creative Papers (distributed by Mohawk) acid-free 300gsm Keaykolour Coral 111# cover paper',
-    lunarCalendarLocation: text.locationProvidence,
+    lunarCalendarPaper: text.lunarCalendarPaper2022,
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
     detailImages: images.lunarCalendars.lunarCalendar2022DetailImages
   },
   lunarCalendar2021: {
@@ -182,8 +182,8 @@ const items = {
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2021,
-    lunarCalendarPaper: 'Arjowiggins Creative Papers (distributed by Mohawk) acid-free 300gsm Keaykolour Kiwi 111# cover paper',
-    lunarCalendarLocation: text.locationProvidence,
+    lunarCalendarPaper: text.lunarCalendarPaper2021,
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
     detailImages: []
   },
   lunarCalendar2020: {
@@ -196,8 +196,8 @@ const items = {
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2020,
-    lunarCalendarPaper: 'Mohawk Fine Papers acid-free 300gsm Keaykolour Caribbean Blue 111# cover paper',
-    lunarCalendarLocation: text.locationProvidence,
+    lunarCalendarPaper: text.lunarCalendarPaper2020,
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
     detailImages: []
   },
   lunarCalendar2019: {
@@ -210,8 +210,8 @@ const items = {
     price: text.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2019,
-    lunarCalendarPaper: 'French Paper Company acid-free 269gsm Pop-Tone Tangy Orange 100# cover paper',
-    lunarCalendarLocation: text.locationProvidence,
+    lunarCalendarPaper: text.lunarCalendarPaper2019,
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
     detailImages: images.lunarCalendars.lunarCalendar2019DetailImages
   },
   lunarCalendar2018: {
@@ -224,8 +224,8 @@ const items = {
     price: text.lunarCalendarPrice,
     printEdition: 1000,
     lunarCalendarYear: 2018,
-    lunarCalendarPaper: 'French Paper Company acid-free 269gsm Pop-Tone Grape Jelly 100# cover paper',
-    lunarCalendarLocation: text.locationNewYork,
+    lunarCalendarPaper: text.lunarCalendarPaper2018,
+    lunarCalendarLocation: text.lunarCalendarLocationNewYork,
     detailImages: []
   },
   lunarCalendar2017: {
@@ -238,8 +238,8 @@ const items = {
     price: text.lunarCalendarPrice,
     printEdition: 1000,
     lunarCalendarYear: 2017,
-    lunarCalendarPaper: 'French Paper Company acid-free 269gsm Pop-Tone Razzle Berry 100# cover paper',
-    lunarCalendarLocation: text.locationProvidence,
+    lunarCalendarPaper: text.lunarCalendarPaper2017,
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
     detailImages: []
   }
 };
