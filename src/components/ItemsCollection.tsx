@@ -79,9 +79,6 @@ function ItemsCollection(): JSX.Element {
 
   return (
     <div>
-      <div className="items-search-results-count">
-        {`Items count: ${filteredItems.length}`}
-      </div>
       <div className="items-search">
         <span>Search items by title, category or price: </span>
         <input
@@ -90,6 +87,9 @@ function ItemsCollection(): JSX.Element {
           onChange={handleSearchInputChange}
           onKeyDown={handleKeyDown}
         />
+        <span>
+          {`${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'}`}
+        </span>
       </div>
       <div className="items-collection">
         {/* {
