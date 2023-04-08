@@ -72,6 +72,8 @@ import printAbundanceDetail01 from '../assets/images/items/print-abundance-01-45
 import printAbundanceDetail02 from '../assets/images/items/print-abundance-02-450px.jpg';
 
 import printFunktionslustFeature from '../assets/images/items/print-funktionslust-feature-450px.jpg';
+import printFunktionslustDetail01 from '../assets/images/items/print-funktionslust-01-450px.jpg';
+import printFunktionslustDetail02 from '../assets/images/items/print-funktionslust-02-450px.jpg';
 
 import printStentorianFeature from '../assets/images/items/print-stentorian-feature-450px.jpg';
 import printStentorianDetail01 from '../assets/images/items/print-stentorian-01-450px.jpg';
@@ -160,26 +162,28 @@ const lunarCalendars = {
   lunarCalendar2011Previous
 };
 
+const prints = {
+  printAbundanceFeature,
+  printAbundanceDetail01,
+  printAbundanceDetail02,
+  printFunktionslustFeature,
+  printFunktionslustDetail01,
+  printFunktionslustDetail02,
+  printOrcaLuminaFeature,
+  printProtonSwanFeature,
+  printStentorianFeature,
+  printStentorianDetail01,
+  printStentorianDetail02,
+  printStentorianDetail03,
+  printStentorianDetail04
+};
+
 const postcards = {
   postcardAssetsFeature,
   postcardCachalotFeature,
   postcardGreatWhiteSharkFeature,
   postcardHippopotamusFeature,
   postcardRhodeIslandWhaleFeature
-};
-
-const prints = {
-  printAbundanceFeature,
-  printAbundanceDetail01,
-  printAbundanceDetail02,
-  printFunktionslustFeature,
-  printStentorianFeature,
-  printStentorianDetail01,
-  printStentorianDetail02,
-  printStentorianDetail03,
-  printStentorianDetail04,
-  printOrcaLuminaFeature,
-  printProtonSwanFeature
 };
 
 const images = {

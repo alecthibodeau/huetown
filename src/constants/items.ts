@@ -131,7 +131,8 @@ const items = {
     detailImages: [
       images.prints.printAbundanceDetail01,
       images.prints.printAbundanceDetail02
-    ]
+    ],
+    description: text.printDescriptionAbundance
   },
   printFunktionslust: {
     id: 'VARZ4F5RHAP9Y',
@@ -146,7 +147,12 @@ const items = {
       text.shipsFlat
     ],
     price: 15,
-    printEdition: 50
+    printEdition: 50,
+    detailImages: [
+      images.prints.printFunktionslustDetail01,
+      images.prints.printFunktionslustDetail02
+    ],
+    description: text.printDescriptionFunktionslust
   },
   printOrcaLumina: {
     id: '8BY2MK6Y89ZTA',
