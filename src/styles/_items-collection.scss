@@ -28,7 +28,7 @@
   flex-direction: column;
   width: $items-collection-dimension;
   border-radius: $border-radius-standard;
-  margin: $size-medium;
+  margin: 1rem;
 
   &:hover {
     box-shadow: 5px 5px 15px $html-gray;
@@ -57,7 +57,7 @@
 }
 
 .items-collection-info {
-  padding: $size-medium;
+  padding: 1rem;
   border: $border-standard;
   border-bottom-left-radius: $border-radius-standard;
   border-bottom-right-radius: $border-radius-standard;
@@ -70,11 +70,11 @@
 }
 
 .items-collection-category {
-  margin-bottom: $size-small;
+  margin-bottom: .5rem;
 }
 
 .items-collection-description {
-  margin-bottom: $size-small;
+  margin-bottom: .5rem;
 }
 
 .items-collection-price {
