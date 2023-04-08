@@ -202,8 +202,10 @@ function Item(props: ItemProps): JSX.Element {
         </div>
       : null}
       {props.description ?
-        <div>
-          <span className="ital">{props.title}</span> <span>{props.description}</span>
+        <div className="item-description">
+          <span className="ital">{props.title} </span>
+          <span>{props.description} </span>
+          <a className="text-link" href="#featureImage">Order now.</a>
         </div>
       : null}
     </div>

@@ -188,11 +188,11 @@
       }
     }
 
-    .item-more-info {
+    .lunar-calendar-description {
       max-width: $character-width;
       margin: 2rem auto;
 
-      .more-info-block {
+      .lunar-calendar-paragraph {
         margin: 1rem auto .5rem;
       }
 
@@ -253,13 +253,19 @@
     }
   }
 
-  .timely-info {
+  .lunar-calendar-timely-info {
     margin: .25rem auto 1.5rem;
     max-width: $character-width;
 
-    .item-accompanying {
+    .lunar-calendar-accompanying-item {
       text-align: center;
     }
+  }
+
+  .item-description {
+    max-width: $character-width;
+    padding-top: 1rem;
+    margin: auto;
   }
 }
 
