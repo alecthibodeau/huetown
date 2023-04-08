@@ -133,15 +133,11 @@ button.burger-button div.burger-bars-container div.bar {
     }
 
     &:nth-of-type(2) {
-      border-bottom-color: $nav-accent-purple;
+      border-bottom-color: $huetown-purple;
     }
 
     &:nth-of-type(3) {
       border-bottom-color: $huetown-blue;
-    }
-
-    &:nth-of-type(4) {
-      border-bottom-color: $red-muted;
     }
   }
 

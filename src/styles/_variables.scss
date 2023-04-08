@@ -17,83 +17,34 @@ $size-medium: 1rem;
 
 /* Colors */
 
-$huetown-red: #e78460;
-$huetown-yellow: #edde95;
-$huetown-green: #6abbb6; // darker
-$huetown-green-intense: #00cccc; // more intense
-$huetown-blue: #6ecde5;
-$huetown-gray: #76787b;
-
-$five-percent-gray: #f2f2f2;
-$six-percent-gray: #f0f0f0;
-$ten-percent-gray: #e5e5e5;
-$thirty-percent-gray: #b3b3b3;
-$fifty-percent-gray: #7f7f7f;
-$sixty-percent-gray: #666;
-$sixty-five-percent-gray: #595959;
-$sixty-seven-percent-gray: #555;
-$seventy-percent-gray: #4d4d4d;
-$seventy-five-percent-gray: #404040;
-$eighty-percent-gray: #333;
-$eighty-five-percent-gray: #262626;
-$ninety-percent-gray: #191919;
-$davys-grey: #555;
-$dark-charcoal: #333;
-$html-gray: #808080;
-
-$rgba-border-gray: rgba(36, 41, 46, 0.4);
-$border-gray: $sixty-percent-gray;
-$light-gray: #ccc;
-
 $black: #000;
 $white: #fff;
-$white-film: rgba(255,255,255,0.9);
-$dark-film: rgba(30,30,30,0.9);
+$dark-film: rgb(30 30 30 / 0.9);
+
+$twenty-percent-gray: #ccc;
+$fifty-percent-gray: #7f7f7f;
+$sixty-percent-gray: #666;
+$sixty-seven-percent-gray: #555;
+$eighty-percent-gray: #333;
+
+$html-gray: #808080;
+$border-gray: $sixty-percent-gray;
+
+$huetown-red: #e78460;
+$huetown-yellow: #edde95;
+$huetown-green: #6abbb6;
+$huetown-blue: #6ecde5;
+$huetown-purple: #c651e5;
 
 $red: #f00;
-$green: #0f0;
-$blue: #00f;
-$orange: #ffa500;
-$violet: #673ab7;
 $dark-green: #2b792e;
-$html-green: #008000;
-
-$red-muted: #f64154;
-$green-muted: #77d283;
-$blue-muted: #7073ff;
-$yellow-muted: #ffe664;
 $orange-muted: #ff9600;
-$calendar-coral: #fc5d58;
-
-$cyan: #0ff;
-$magenta: #f0f;
-$yellow: #ff0;
-
-$rainbow-red: #f27089;
-$rainbow-orange: #fca778;
 $rainbow-yellow: #fbde84;
-$rainbow-green: #9ac479;
-$rainbow-blue: #74a6cf;
-$grass-green: #b8d77d;
-$sky-blue: #a7c5df;
-$cloud-white: #f7f0e3;
-$lines-brown: #3a2328;
-$stem-green: #358d65;
 
-$red-amped: rgb(255, 38, 61);
-$green-amped: rgb(36, 214, 60);
-$blue-amped: rgb(38, 41, 255);
-$yellow-amped: #fff200;
-$pale-blue: rgb(219, 255, 254);
-
-$nav-accent-purple: #c651e5;
-$text-link-orange: #e98d00;
-$text-link-green: #1d8a50;
-$text-link-purple: #731aa5;
 $twenty-three-blue: #008eb2;
 $twenty-three-dark-blue: #005f88;
 
-$application-font-color: $dark-charcoal;
+$application-font-color: $eighty-percent-gray;
 
 /* Border */
 
