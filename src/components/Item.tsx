@@ -201,6 +201,11 @@ function Item(props: ItemProps): JSX.Element {
           : null}
         </div>
       : null}
+      {props.description ?
+        <div>
+          <span className="ital">{props.title}</span> <span>{props.description}</span>
+        </div>
+      : null}
     </div>
   );
 }

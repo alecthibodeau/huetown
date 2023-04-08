@@ -16,134 +16,6 @@ const postcardItemInfo: string[] = [
 ];
 
 const items = {
-  printAbundance: {
-    id: 'B6SBUBH8JRKV6',
-    category: text.print,
-    title: 'Abundance',
-    subtitle: text.byAlecThibodeau,
-    featureImage: images.prints.printAbundanceFeature,
-    info: [
-      text.dimensionsFiveAndAHalfInches,
-      text.letterpressPrint,
-      '', // To be rendered dynamically
-      text.shipsFlat
-    ],
-    price: 25,
-    printEdition: 250,
-    detailImages: [
-      images.prints.printAbundanceDetail01,
-      images.prints.printAbundanceDetail02
-    ]
-  },
-  printStentorian: {
-    id: 'AUN3U4NQ52J2W',
-    category: text.print,
-    title: 'Stentorian',
-    subtitle: text.byAlecThibodeau,
-    featureImage: images.prints.printStentorianFeature,
-    info: [
-      text.dimensionsFiveAndAHalfInches,
-      text.letterpressPrint,
-      '', // To be rendered dynamically
-      text.shipsFlat
-    ],
-    price: 15,
-    printEdition: 250,
-    detailImages: [
-      images.prints.printStentorianDetail01,
-      images.prints.printStentorianDetail02,
-      images.prints.printStentorianDetail03,
-      images.prints.printStentorianDetail04
-    ]
-  },
-  printFunktionslust: {
-    id: 'VARZ4F5RHAP9Y',
-    category: text.print,
-    title: 'Funktionslust',
-    subtitle: text.byAlecThibodeau,
-    featureImage: images.prints.printFunktionslustFeature,
-    info: [
-      text.dimensionsFiveAndThreeQuartersInches,
-      text.screenPrint,
-      text.numberedAndSigned,
-      text.shipsFlat
-    ],
-    price: 15,
-    printEdition: 50
-  },
-  printProtonSwan: {
-    id: '4SFG8LHK26JZ4',
-    category: text.print,
-    title: 'Proton Swan',
-    subtitle: text.byAlecThibodeau,
-    featureImage: images.prints.printProtonSwanFeature,
-    info: [
-      text.dimensionsTwoAndAHalfInches,
-      text.letterpressPrint,
-      text.initialedByTheArtist,
-      text.shipsFlat
-    ],
-    price: 10
-  },
-  printOrcaLumina: {
-    id: '8BY2MK6Y89ZTA',
-    category: text.print,
-    title: 'Orca Lumina',
-    subtitle: text.byAlecThibodeau,
-    featureImage: images.prints.printOrcaLuminaFeature,
-    info: [
-      text.dimensionsTwoAndAHalfInches,
-      text.screenPrint,
-      text.initialedByTheArtist,
-      text.shipsFlat
-    ],
-    price: 10
-  },
-  postcardAssets: {
-    id: '4CL74PH4FSSQ6',
-    category: text.postcard,
-    title: 'Assets',
-    subtitle: text.postcard,
-    featureImage: images.postcards.postcardAssetsFeature,
-    info: postcardItemInfo.concat(text.postcardCaptionAssets),
-    price: text.postcardPrice
-  },
-  postcardCachalot: {
-    id: '7H7ZNZJMAM5S4',
-    category: text.postcard,
-    title: 'Cachalot',
-    subtitle: text.postcard,
-    featureImage: images.postcards.postcardCachalotFeature,
-    info: postcardItemInfo.concat(text.postcardCaptionCachalot),
-    price: text.postcardPrice
-  },
-  postcardGreatWhiteShark: {
-    id: 'UP6L2CNKJLSL2',
-    category: text.postcard,
-    title: 'Great White Shark',
-    subtitle: text.postcard,
-    featureImage: images.postcards.postcardGreatWhiteSharkFeature,
-    info: postcardItemInfo.concat(text.postcardCaptionGreatWhiteShark),
-    price: text.postcardPrice
-  },
-  postcardHippopotamus: {
-    id: 'T5XS8HXHARZG4',
-    category: text.postcard,
-    title: 'Hippopotamus',
-    subtitle: text.postcard,
-    featureImage: images.postcards.postcardHippopotamusFeature,
-    info: postcardItemInfo.concat(text.postcardCaptionHippopotamus),
-    price: text.postcardPrice
-  },
-  postcardRhodeIslandWhale: {
-    id: 'WZXP99EBYSU5A',
-    category: text.postcard,
-    title: 'Rhode Island Whale',
-    subtitle: text.postcard,
-    featureImage: images.postcards.postcardRhodeIslandWhaleFeature,
-    info: postcardItemInfo.concat(text.postcardCaptionRhodeIslandWhale),
-    price: text.postcardPrice
-  },
   lunarCalendar2023: {
     id: '5QXP4DDGN7P2J',
     category: text.lunarCalendar,
@@ -241,6 +113,135 @@ const items = {
     lunarCalendarPaper: text.lunarCalendarPaper2017,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
     detailImages: []
+  },
+  printAbundance: {
+    id: 'B6SBUBH8JRKV6',
+    category: text.print,
+    title: 'Abundance',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.prints.printAbundanceFeature,
+    info: [
+      text.dimensionsFiveAndAHalfInches,
+      text.letterpressPrint,
+      '', // To be rendered dynamically
+      text.shipsFlat
+    ],
+    price: 25,
+    printEdition: 250,
+    detailImages: [
+      images.prints.printAbundanceDetail01,
+      images.prints.printAbundanceDetail02
+    ]
+  },
+  printFunktionslust: {
+    id: 'VARZ4F5RHAP9Y',
+    category: text.print,
+    title: 'Funktionslust',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.prints.printFunktionslustFeature,
+    info: [
+      text.dimensionsFiveAndThreeQuartersInches,
+      text.screenPrint,
+      text.numberedAndSigned,
+      text.shipsFlat
+    ],
+    price: 15,
+    printEdition: 50
+  },
+  printOrcaLumina: {
+    id: '8BY2MK6Y89ZTA',
+    category: text.print,
+    title: 'Orca Lumina',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.prints.printOrcaLuminaFeature,
+    info: [
+      text.dimensionsTwoAndAHalfInches,
+      text.screenPrint,
+      text.initialedByTheArtist,
+      text.shipsFlat
+    ],
+    price: 10
+  },
+  printProtonSwan: {
+    id: '4SFG8LHK26JZ4',
+    category: text.print,
+    title: 'Proton Swan',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.prints.printProtonSwanFeature,
+    info: [
+      text.dimensionsTwoAndAHalfInches,
+      text.letterpressPrint,
+      text.initialedByTheArtist,
+      text.shipsFlat
+    ],
+    price: 10
+  },
+  printStentorian: {
+    id: 'AUN3U4NQ52J2W',
+    category: text.print,
+    title: 'Stentorian',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.prints.printStentorianFeature,
+    info: [
+      text.dimensionsFiveAndAHalfInches,
+      text.letterpressPrint,
+      '', // To be rendered dynamically
+      text.shipsFlat
+    ],
+    price: 15,
+    printEdition: 250,
+    detailImages: [
+      images.prints.printStentorianDetail01,
+      images.prints.printStentorianDetail02,
+      images.prints.printStentorianDetail03,
+      images.prints.printStentorianDetail04
+    ],
+    description: text.printDescriptionStentorian
+  },
+  postcardAssets: {
+    id: '4CL74PH4FSSQ6',
+    category: text.postcard,
+    title: 'Assets',
+    subtitle: text.postcard,
+    featureImage: images.postcards.postcardAssetsFeature,
+    info: postcardItemInfo.concat(text.postcardCaptionAssets),
+    price: text.postcardPrice
+  },
+  postcardCachalot: {
+    id: '7H7ZNZJMAM5S4',
+    category: text.postcard,
+    title: 'Cachalot',
+    subtitle: text.postcard,
+    featureImage: images.postcards.postcardCachalotFeature,
+    info: postcardItemInfo.concat(text.postcardCaptionCachalot),
+    price: text.postcardPrice
+  },
+  postcardGreatWhiteShark: {
+    id: 'UP6L2CNKJLSL2',
+    category: text.postcard,
+    title: 'Great White Shark',
+    subtitle: text.postcard,
+    featureImage: images.postcards.postcardGreatWhiteSharkFeature,
+    info: postcardItemInfo.concat(text.postcardCaptionGreatWhiteShark),
+    price: text.postcardPrice
+  },
+  postcardHippopotamus: {
+    id: 'T5XS8HXHARZG4',
+    category: text.postcard,
+    title: 'Hippopotamus',
+    subtitle: text.postcard,
+    featureImage: images.postcards.postcardHippopotamusFeature,
+    info: postcardItemInfo.concat(text.postcardCaptionHippopotamus),
+    price: text.postcardPrice
+  },
+  postcardRhodeIslandWhale: {
+    id: 'WZXP99EBYSU5A',
+    category: text.postcard,
+    title: 'Rhode Island Whale',
+    subtitle: text.postcard,
+    featureImage: images.postcards.postcardRhodeIslandWhaleFeature,
+    info: postcardItemInfo.concat(text.postcardCaptionRhodeIslandWhale),
+    price: text.postcardPrice
   }
 };
 

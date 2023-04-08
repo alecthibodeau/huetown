@@ -52,6 +52,7 @@ function App(): JSX.Element {
             price={item.price}
             printEdition={item.printEdition}
             detailImages={item.detailImages}
+            description={item.description}
             lunarCalendarYear={item.lunarCalendarYear}
             lunarCalendarPaper={item.lunarCalendarPaper}
             lunarCalendarLocation={item.lunarCalendarLocation}

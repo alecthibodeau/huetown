@@ -31,6 +31,7 @@ const text = {
   postcardCaptionHippopotamus: `${postcardTextPrefix} "The hippopotamus has a name which means 'horse of the river' in Ancient Greek."`,
   postcardCaptionRhodeIslandWhale: `${postcardTextPrefix} "The North Atlantic humpback whale swims in waters off Rhode Island and can grow to 50 feet in length."`,
   print: 'print',
+  printDescriptionStentorian: 'is a letterpress print measuring 5.5" x 5.5" overall, with an image dimension of 3.5" x 3.5" in two ink colors. The edition is exquisitely printed from Alec\'s original drawings by Dan Wood and his team at DWRI Letterpress on Legion Paper acid-free 350gsm Colorplan Mist 130# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',
   letterpressPrint: 'Letterpress print',
   screenPrint: 'Screen print, printed by the artist',
   numberedAndSigned: 'Numbered and signed',

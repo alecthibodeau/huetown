@@ -8,6 +8,7 @@ interface ItemProps {
   price: number;
   printEdition?: number;
   detailImages?: string[];
+  description?: string;
   lunarCalendarYear?: number;
   lunarCalendarPaper?: string;
   lunarCalendarLocation?: string;
