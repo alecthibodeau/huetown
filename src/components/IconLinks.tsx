@@ -19,17 +19,17 @@ function IconLinks(props: IconLinksProps): JSX.Element {
     {
       title: 'Instagram',
       url: 'https://www.instagram.com/huetown',
-      src: props.isForNavDrawer ? instagramWhite : instagramGray
+      src: props.isForMobileNav ? instagramWhite : instagramGray
     },
     {
       title: 'Twitter',
       url: 'https://www.twitter.com/huetown',
-      src: props.isForNavDrawer ? twitterWhite : twitterGray
+      src: props.isForMobileNav ? twitterWhite : twitterGray
     },
     {
       title: 'Email',
       url: 'mailto:info@huetown.com',
-      src: props.isForNavDrawer ? emailWhite : emailGray
+      src: props.isForMobileNav ? emailWhite : emailGray
     }
   ];
 

@@ -1,5 +1,5 @@
 interface IconLinksProps {
-  isForNavDrawer: boolean;
+  isForMobileNav: boolean;
 }
 
 export default IconLinksProps;

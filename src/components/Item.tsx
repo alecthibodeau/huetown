@@ -27,7 +27,7 @@ function Item(props: ItemProps): JSX.Element {
   const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
   const detailImageAltTextPrefix: string = `${props.category} detail`;
-  const detailImageClassName: string = `${categoryClass} ${titleClass} ${isRecentLunarCalendar ? 'recent-lunar-calendar' : ''}`
+  const detailImageClassName: string = `${categoryClass} ${titleClass}${isRecentLunarCalendar ? ' recent-lunar-calendar' : ''}`
 
   useEffect(() => {
     const keydown = 'keydown';

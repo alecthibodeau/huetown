@@ -7,7 +7,7 @@ header {
   z-index: 100;
 }
 
-.nav-top {
+.huetown-logo-and-burger-button {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -23,33 +23,33 @@ header {
   width: 175px;
 }
 
-button.burger-button {
+.burger-button {
   position: relative;
   cursor: pointer;
   padding: 5px;
   border: none;
   background-color: transparent;
 
-  &.closing-x {
+  &.closing-x-button {
     padding: 5px 2px;
   }
 }
 
-button.burger-button div.burger-bars-container {
+.burger-button .burger-bars-container {
   height: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-button.burger-button div.burger-bars-container div.bar {
+.burger-button .burger-bars-container .bar {
   position: relative;
   width: 25px;
   height: 4px;
   background-color: $white;
   transition: transform .125s;
 
-  &.closing-x {
+  &.closing-x-bar {
     width: 30px;
 
     &:nth-child(1) {
@@ -68,13 +68,16 @@ button.burger-button div.burger-bars-container div.bar {
   }
 }
 
-.nav {
-  display: none; // mobile-first (nav drawer is closed on component mount)
+nav {
   flex-direction: column;
   background-color: $dark-film;
   backdrop-filter: blur(5px);
 
-  &.nav-drawer-is-open {
+  &.mobile-nav-is-closed {
+    display: none;
+  }
+
+  &.mobile-nav-is-open {
     display: flex;
   }
 
@@ -138,20 +141,23 @@ button.burger-button div.burger-bars-container div.bar {
     padding-bottom: 1.25rem;
     background-color: $white;
 
-    .nav-top {
+    .huetown-logo-and-burger-button {
       justify-content: center;
       background-color: $white;
     }
   }
 
-  .nav {
-    display: flex;
+  nav {
     flex-direction: row;
     justify-content: space-around;
     max-width: 600px;
     margin: auto;
     background-color: $white;
     backdrop-filter: initial;
+
+    &.mobile-nav-is-closed {
+      display: flex;
+    }
 
     .nav-link-wrapper:nth-of-type(1),
     .nav-link-wrapper:nth-of-type(2),

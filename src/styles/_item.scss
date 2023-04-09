@@ -8,24 +8,24 @@
   image-rendering: crisp-edges;
 }
 
+.item .item-press {
+  max-width: 650px;
+  margin: auto auto .75rem;
+
+  span:last-of-type {
+    white-space: nowrap;
+
+    a img {
+      position: relative;
+      top: .375rem;
+      max-height: 1.5rem;
+    }
+  }
+}
+
 .item {
   width: $page-width;
   margin-bottom: 1rem;
-
-  .item-press {
-    max-width: 650px;
-    margin: auto auto .75rem;
-
-    span:last-of-type {
-      white-space: nowrap;
-
-      a img {
-        position: relative;
-        top: .375rem;
-        max-height: 1.5rem;
-      }
-    }
-  }
 
   .feature-image {
     @include crisp-scaled-down;
@@ -43,8 +43,7 @@
       }
     }
 
-    &.print.proton-swan,
-    &.print.orca-lumina {
+    &.print {
       max-width: 450px;
     }
     // &.postcard {
