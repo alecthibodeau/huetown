@@ -12,7 +12,7 @@ header {
   justify-content: space-between;
   flex-direction: row;
   padding: 14px 18px;
-  background: $eighty-percent-gray;
+  background-color: $eighty-percent-gray;
 }
 
 .huetown-logo-gray {
@@ -46,7 +46,7 @@ button.burger-button div.burger-bars-container div.bar {
   position: relative;
   width: 25px;
   height: 4px;
-  background: $white;
+  background-color: $white;
   transition: transform .125s;
 
   &.closing-x {
@@ -71,7 +71,7 @@ button.burger-button div.burger-bars-container div.bar {
 .nav {
   display: none; // mobile-first (nav drawer is closed on component mount)
   flex-direction: column;
-  background: $dark-film;
+  background-color: $dark-film;
   backdrop-filter: blur(5px);
 
   &.nav-drawer-is-open {
@@ -150,7 +150,7 @@ button.burger-button div.burger-bars-container div.bar {
     justify-content: space-around;
     max-width: 600px;
     margin: auto;
-    background: $white;
+    background-color: $white;
     backdrop-filter: initial;
 
     .nav-link-wrapper:nth-of-type(1),

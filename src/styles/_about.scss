@@ -76,14 +76,14 @@
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  background: $sixty-seven-percent-gray;
+  background-color: $sixty-seven-percent-gray;
   color: $white;
   letter-spacing: 0.3125rem;
   text-transform: capitalize;
 
   &:hover {
     border-color: $sixty-seven-percent-gray;
-    background: $rainbow-yellow;
+    background-color: $rainbow-yellow;
     color: $black;
   }
 }

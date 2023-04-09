@@ -30,13 +30,13 @@ footer {
         bottom: calc(#{$footer-icon-size} - 3.5%);
         left: 3.5%;
         border-radius: $border-radius-standard;
-        background: transparent;
+        background-color: transparent;
       }
 
       // Show background div on parent anchor's hover or focus
       &:hover div,
       &:focus div {
-        background: $rainbow-yellow;
+        background-color: $rainbow-yellow;
       }
     }
 

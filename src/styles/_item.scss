@@ -136,7 +136,7 @@
       width: 160px;
       border: none;
       border-radius: 6px;
-      background: $sixty-seven-percent-gray;
+      background-color: $sixty-seven-percent-gray;
       color: $white;
       font-family: "Raleway", sans-serif;
       font-size: .875rem;
@@ -147,7 +147,7 @@
       &:hover {
         border: 2px solid $sixty-seven-percent-gray;
         color: $black;
-        background: $rainbow-yellow;
+        background-color: $rainbow-yellow;
       }
     }
   }
@@ -207,10 +207,7 @@
 
 @media (min-width: $breakpoint-md) {
 
-  .item .feature-image {
-    width: initial;
-  }
-
+  .item .feature-image,
   .item .detail-images .detail-image-pair img {
     width: initial;
   }

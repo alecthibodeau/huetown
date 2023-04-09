@@ -117,8 +117,8 @@ function Item(props: ItemProps): JSX.Element {
       <div className={`feature-info ${categoryClass}`}>
         <div className="feature-image-block">
           {
-            props.category === text.lunarCalendar
-            ? <Link to="#itemDetails">{renderFeatureImage()}</Link>
+            props.lunarCalendarYear || props.description
+            ? <a href="#itemDetails">{renderFeatureImage()}</a>
             : <div>{renderFeatureImage()}</div>
           }
         </div>
