@@ -67,13 +67,14 @@ main {
   }
 
   .home-content {
-    display: flex;
-    flex-direction: column;
-    margin: auto 2rem;
 
-    * {
+    a img,
+    div {
       width: 80vw;
       max-width: 900px;
+    }
+
+    a img {
       vertical-align: top;
     }
 
