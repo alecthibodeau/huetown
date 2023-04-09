@@ -2,40 +2,36 @@
 
 /* Sub-mixins need to be outside the primary mixin */
 @mixin nav-text {
-  padding: 0; // Overrides default value in form
+  display: block;
+  width: 100%;
+  padding: 1.5rem 0;
   border: none;
   font-family: 'Raleway', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.25rem;
-  text-align: center;
   text-decoration: none;
   text-transform: capitalize;
-  transition: all 0.25s linear;
+  background-color: transparent;
   color: $white;
   cursor: pointer;
 
-  /* Only show the underside bar effect at larger viewport widths */
   @media (min-width: $breakpoint-sm) {
     font-weight: 500;
     color: $application-font-color;
+  }
+}
 
-    &::after {
-      // The bar underneath when it's hidden
-      width: 100%;
-      display: block;
-      position: relative;
-      top: 0.5rem;
-      border-bottom: 3px solid transparent;
-      content: "";
-      transition: 0.25s;
-    }
+@mixin nav-effect {
+  padding-bottom: 3px;
+  border-top: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.125s linear;
 
-    &:hover::after {
-      // The bar underneath when it's shown
-      top: 0.25rem;
-      border-bottom: 3px solid $twenty-three-blue;
-    }
+  &:hover {
+    padding-bottom: initial;
+    border-bottom: 3px solid $twenty-three-blue;
+    margin-bottom: 3px;
   }
 }
 
@@ -108,7 +104,7 @@ button.burger-button div.burger-bars-container div.bar {
 }
 
 .nav {
-  display: none; // moble-first: nav drawer is closed on component mount
+  display: none; // mobile-first (nav drawer is closed on component mount)
   flex-direction: column;
   background: $dark-film;
   backdrop-filter: blur(5px);
@@ -117,47 +113,28 @@ button.burger-button div.burger-bars-container div.bar {
     display: flex;
   }
 
-  .nav-link {
-    @include nav-text;
-
-    width: 100%;
-    padding: 1.5rem 0;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+  .nav-link-wrapper {
+    text-align: center;
 
     &:nth-of-type(1) {
-      border-top-width: 1px;
-      border-top-style: solid;
-      border-top-color: $huetown-green;
-      border-bottom-color: $huetown-yellow;
+      border-top: 1px solid $huetown-green;
+      border-bottom: 1px solid $huetown-yellow;
     }
 
     &:nth-of-type(2) {
-      border-bottom-color: $huetown-purple;
-    }
-
-    &:nth-of-type(3) {
-      border-bottom-color: $huetown-blue;
+      border-bottom: 1px solid $huetown-purple;
     }
   }
 
-  /* Styling is needed on both the form and the form's input for the underline effect to work */
-  form {
-
+  .nav-link {
     @include nav-text;
+  }
+
+  form {
+    border-bottom: 1px solid $orange-muted;
 
     input[value="view cart"] {
       @include nav-text;
-
-      background-color: transparent;
-      width: 100%;
-      padding: 1.5rem 0;
-
-      &.paypal-link {
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: $orange-muted;
-      }
     }
   }
 }
@@ -202,24 +179,18 @@ button.burger-button div.burger-bars-container div.bar {
     background: $white;
     backdrop-filter: initial;
 
+    .nav-link-wrapper:nth-of-type(1),
+    .nav-link-wrapper:nth-of-type(2) {
+      @include nav-effect;
+    }
+
+    form {
+      @include nav-effect;
+    }
+
     .nav-link,
     form input[value="view cart"] {
-      width: initial;
       padding: initial;
     }
-  }
-
-  .nav .nav-link {
-
-    &:nth-of-type(1),
-    &:nth-of-type(2),
-    &:nth-of-type(3),
-    &:nth-of-type(4) {
-      border: none;
-    }
-  }
-
-  .nav form input[value="view cart"].paypal-link {
-    border: none;
   }
 }
