@@ -1,40 +1,5 @@
 @use './_variables' as *;
 
-/* Sub-mixins need to be outside the primary mixin */
-@mixin nav-text {
-  display: block;
-  width: 100%;
-  padding: 1.5rem 0;
-  border: none;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.25rem;
-  text-decoration: none;
-  text-transform: capitalize;
-  background-color: transparent;
-  color: $white;
-  cursor: pointer;
-
-  @media (min-width: $breakpoint-sm) {
-    font-weight: 500;
-    color: $application-font-color;
-  }
-}
-
-@mixin nav-effect {
-  padding-bottom: 3px;
-  border-top: none;
-  border-bottom: 3px solid transparent;
-  transition: all 0.125s linear;
-
-  &:hover {
-    padding-bottom: initial;
-    border-bottom: 3px solid $twenty-three-blue;
-    margin-bottom: 3px;
-  }
-}
-
 header {
   position: fixed;
   width: 100%;
@@ -126,16 +91,25 @@ button.burger-button div.burger-bars-container div.bar {
     }
   }
 
-  .nav-link {
-    @include nav-text;
-  }
-
   form {
     border-bottom: 1px solid $orange-muted;
+  }
 
-    input[value="view cart"] {
-      @include nav-text;
-    }
+  .nav-link,
+  form input[value="view cart"] {
+    display: block;
+    width: 100%;
+    padding: 1.5rem 0;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.25rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: transparent;
+    color: $white;
+    cursor: pointer;
   }
 }
 
@@ -180,17 +154,25 @@ button.burger-button div.burger-bars-container div.bar {
     backdrop-filter: initial;
 
     .nav-link-wrapper:nth-of-type(1),
-    .nav-link-wrapper:nth-of-type(2) {
-      @include nav-effect;
-    }
-
+    .nav-link-wrapper:nth-of-type(2),
     form {
-      @include nav-effect;
+      padding-bottom: 3px;
+      border: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.125s linear;
+
+      &:hover {
+        padding-bottom: initial;
+        border-bottom: 3px solid $twenty-three-blue;
+        margin-bottom: 3px;
+      }
     }
 
     .nav-link,
     form input[value="view cart"] {
       padding: initial;
+      font-weight: 500;
+      color: $application-font-color;
     }
   }
 }
