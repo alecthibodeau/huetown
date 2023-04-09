@@ -87,7 +87,7 @@ function ItemsCollection(): JSX.Element {
           onChange={handleSearchInputChange}
           onKeyDown={handleKeyDown}
         />
-        <span>
+        <span className="items-search-count">
           {`${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'}`}
         </span>
       </div>

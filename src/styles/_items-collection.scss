@@ -90,5 +90,10 @@
     flex-direction: row;
     align-items: center;
     max-width: initial;
+
+    .items-search-count {
+      width: 4.5rem;
+      text-align: right;
+    }
   }
 }
