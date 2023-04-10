@@ -21,7 +21,9 @@ const itemsCollection: ItemProps[] = [
   items.printFunktionslust,
   items.printStentorian,
   items.printOrcaLumina,
-  items.printProtonSwan
+  items.printProtonSwan,
+  items.printSpacePony,
+  items.printTigerMoontain
 ];
 
 export default itemsCollection;

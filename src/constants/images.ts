@@ -54,6 +54,7 @@ import lunarCalendar2019Detail07 from '../assets/images/items/thibodeau-lunar-ca
 import lunarCalendar2019Detail08 from '../assets/images/items/thibodeau-lunar-calendar-2019-08-450px.jpg';
 
 import lunarCalendar2018Feature from '../assets/images/items/thibodeau-lunar-calendar-2018-feature-700px.jpg';
+
 import lunarCalendar2017Feature from '../assets/images/items/thibodeau-lunar-calendar-2017-feature-700px.jpg';
 
 import lunarCalendar2011Previous from '../assets/images/items/thibodeau-lunar-calendar-2011-previous-200px.jpg';
@@ -75,14 +76,17 @@ import printFunktionslustFeature from '../assets/images/items/print-funktionslus
 import printFunktionslustDetail01 from '../assets/images/items/print-funktionslust-01-450px.jpg';
 import printFunktionslustDetail02 from '../assets/images/items/print-funktionslust-02-450px.jpg';
 
+import printOrcaLuminaFeature from '../assets/images/items/print-orca-lumina-feature-450px.jpg';
+import printProtonSwanFeature from '../assets/images/items/print-proton-swan-feature-450px.jpg';
+import printSpacePonyFeature from '../assets/images/items/print-space-pony-feature-450px.jpg';
+
 import printStentorianFeature from '../assets/images/items/print-stentorian-feature-450px.jpg';
 import printStentorianDetail01 from '../assets/images/items/print-stentorian-01-450px.jpg';
 import printStentorianDetail02 from '../assets/images/items/print-stentorian-02-450px.jpg';
 import printStentorianDetail03 from '../assets/images/items/print-stentorian-03-450px.jpg';
 import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-450px.jpg';
 
-import printProtonSwanFeature from '../assets/images/items/print-proton-swan-feature-450px.jpg';
-import printOrcaLuminaFeature from '../assets/images/items/print-orca-lumina-feature-450px.jpg';
+import printTigerMoontainFeature from '../assets/images/items/print-tiger-moontain-feature-450px.jpg';
 
 const header = {
   huetownLogoGray,
@@ -171,11 +175,13 @@ const prints = {
   printFunktionslustDetail02,
   printOrcaLuminaFeature,
   printProtonSwanFeature,
+  printSpacePonyFeature,
   printStentorianFeature,
   printStentorianDetail01,
   printStentorianDetail02,
   printStentorianDetail03,
-  printStentorianDetail04
+  printStentorianDetail04,
+  printTigerMoontainFeature
 };
 
 const postcards = {

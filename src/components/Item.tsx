@@ -26,6 +26,7 @@ function Item(props: ItemProps): JSX.Element {
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
   const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
+  const isMiniPrint: boolean = props.price === 10;
   const detailImageAltTextPrefix: string = `${props.category} detail`;
   const detailImageClassName: string = `${categoryClass} ${titleClass}${isRecentLunarCalendar ? ' recent-lunar-calendar' : ''}`
 
@@ -202,10 +203,12 @@ function Item(props: ItemProps): JSX.Element {
         </div>
       : null}
       {props.description ?
-        <div className="item-description">
+        <div className={`item-description${isMiniPrint ? ' mini-print ': ''}`}>
           <span className="ital">{props.title} </span>
           <span>{props.description} </span>
-          <a className="text-link" href="#featureImage">Order now.</a>
+          { !isMiniPrint ?
+            <a className="text-link" href="#featureImage">Order now.</a>
+          : null}
         </div>
       : null}
     </div>

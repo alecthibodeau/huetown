@@ -182,6 +182,20 @@ const items = {
     ],
     price: 10
   },
+  printSpacePony: {
+    id: '5PAQR2C3JY66N',
+    category: text.print,
+    title: 'Space Pony',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.prints.printSpacePonyFeature,
+    info: [
+      text.dimensionsTwoAndAHalfInches,
+      text.letterpressPrint,
+      text.initialedByTheArtist,
+      text.shipsFlat
+    ],
+    price: 10
+  },
   printStentorian: {
     id: 'AUN3U4NQ52J2W',
     category: text.print,
@@ -203,6 +217,21 @@ const items = {
       images.prints.printStentorianDetail04
     ],
     description: text.printDescriptionStentorian
+  },
+  printTigerMoontain: {
+    id: 'MAEW4JA69BM5U',
+    category: text.print,
+    title: 'Tiger Moontain',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.prints.printTigerMoontainFeature,
+    info: [
+      text.dimensionsTwoAndAHalfInches,
+      text.letterpressPrint,
+      text.initialedByTheArtist,
+      text.shipsFlat
+    ],
+    price: 10,
+    description: text.printDescriptionTigerMoontain
   },
   postcardAssets: {
     id: '4CL74PH4FSSQ6',
