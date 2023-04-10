@@ -1,7 +1,15 @@
+const miniprintDescription = 'print measuring 2.5 x 2.5 inches overall, with an image dimension of 1.75 x 1.75 inches in a single pass of ink';
+const miniprintLetterpressDescription = `is a letterpress ${miniprintDescription}`;
+const miniprintScreenDescription = `is a screen ${miniprintDescription}`;
+const miniprintLetterpressPrinting = 'This unlimited edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on light gray 100# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.';
+const miniprintScreenPrinting = 'This unlimited edition is lovingly screen printed by Alec from his original drawing work on light gray cover stock. Each print is hand numbered and signed on the front in pencil by Alec.';
+const miniprintLetterpressFull = `${miniprintLetterpressDescription} ${miniprintLetterpressPrinting}`;
+
 const postcardTextPrefix = 'Caption on the back:';
 
 const text = {
   addToCart: 'Add to cart',
+  viewCart: 'view cart',
   shipsFlat: 'Ships flat',
   colossalBlurb: 'Ornate renderings of natural life frame the elegant letterpress print, which expertly melds artful illustration with timely information.',
   byAlecThibodeau: 'by Alec Thibodeau',
@@ -31,10 +39,13 @@ const text = {
   postcardCaptionHippopotamus: `${postcardTextPrefix} "The hippopotamus has a name which means 'horse of the river' in Ancient Greek."`,
   postcardCaptionRhodeIslandWhale: `${postcardTextPrefix} "The North Atlantic humpback whale swims in waters off Rhode Island and can grow to 50 feet in length."`,
   print: 'print',
-  printDescriptionStentorian: 'is a letterpress print measuring 5.5" x 5.5" overall, with an image dimension of 3.5" x 3.5" in two ink colors. The edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on Legion Paper acid-free 350gsm Colorplan Mist 130# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',
-  printDescriptionFunktionslust: 'is a screen print measuring 5.75" x 5.75" overall, with an image dimension of 4.75" x 4.75" in two ink colors. The edition is lovingly printed by Alec from his original drawing work. Each print is hand numbered and signed on the front in pencil.',
-  printDescriptionAbundance: 'is a letterpress print measuring 5.5" x 5.5" overall, with an image dimension of 4" x 4" in three ink colors and a layer of stamped blue foil. The edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on Legion Paper acid-free 350gsm Colorplan Mist 130# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',
-  printDescriptionTigerMoontain: 'is a letterpress print measuring 5.5" x 5.5" overall, with an image dimension of 1.75" x 1.75" in a single pass of ink. This unlimited edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on light gray 100# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',
+  printDescriptionAbundance: 'is a letterpress print measuring 5.5 x 5.5 inches overall, with an image dimension of 4 x 4 inches in three ink colors and a layer of stamped blue foil. The edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on Legion Paper acid-free 350gsm Colorplan Mist 130# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',
+  printDescriptionFunktionslust: 'is a screen print measuring 5.75 x 5.75 inches overall, with an image dimension of 4.75 x 4.75 inches in two ink colors. The edition is lovingly screen printed by Alec from his original drawing work. Each print is hand numbered and signed on the front in pencil.',
+  printDescriptionOrcaLumina: `${miniprintScreenDescription} ${miniprintScreenPrinting}`,
+  printDescriptionProtonSwan: miniprintLetterpressFull,
+  printDescriptionSpacePony: miniprintLetterpressFull,
+  printDescriptionStentorian: 'is a letterpress print measuring 5.5 x 5.5 inches overall, with an image dimension of 3.5 x 3.5 inches in two ink colors. The edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on Legion Paper acid-free 350gsm Colorplan Mist 130# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',
+  printDescriptionTigerMoontain: miniprintLetterpressFull,
   letterpressPrint: 'Letterpress print',
   screenPrint: 'Screen print, printed by the artist',
   numberedAndSigned: 'Numbered and signed',

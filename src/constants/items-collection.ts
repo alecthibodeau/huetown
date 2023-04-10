@@ -1,8 +1,8 @@
-/* Constants */
-import items from './items';
-
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
+
+/* Constants */
+import items from './items';
 
 const itemsCollection: ItemProps[] = [
   items.lunarCalendar2023,
@@ -12,18 +12,18 @@ const itemsCollection: ItemProps[] = [
   items.lunarCalendar2019,
   items.lunarCalendar2018,
   items.lunarCalendar2017,
+  items.printAbundance,
+  items.printFunktionslust,
+  items.printOrcaLumina,
+  items.printProtonSwan,
+  items.printSpacePony,
+  items.printStentorian,
+  items.printTigerMoontain,
   items.postcardAssets,
   items.postcardCachalot,
   items.postcardGreatWhiteShark,
   items.postcardHippopotamus,
-  items.postcardRhodeIslandWhale,
-  items.printAbundance,
-  items.printFunktionslust,
-  items.printStentorian,
-  items.printOrcaLumina,
-  items.printProtonSwan,
-  items.printSpacePony,
-  items.printTigerMoontain
+  items.postcardRhodeIslandWhale
 ];
 
 export default itemsCollection;

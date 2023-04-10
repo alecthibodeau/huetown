@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 /* Components */
 import LunarCalendarInfo from './LunarCalendarInfo';
 
+/* Interfaces */
+import ItemProps from '../interfaces/ItemProps';
+
 /* Constants */
 import images from '../constants/images';
 import text from '../constants/text';
-
-/* Interfaces */
-import ItemProps from '../interfaces/ItemProps';
 
 /* Helpers */
 import helpers from '../helpers/helpers';
@@ -24,9 +23,9 @@ function Item(props: ItemProps): JSX.Element {
   const categoryClass: string = helpers.formatDashes(props.category);
   const titleClass: string = helpers.formatDashes(props.title);
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
-  const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
-  const isMiniPrint: boolean = props.price === 10;
+  const isMiniprint: boolean = props.price === 10;
+  const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
   const detailImageAltTextPrefix: string = `${props.category} detail`;
   const detailImageClassName: string = `${categoryClass} ${titleClass}${isRecentLunarCalendar ? ' recent-lunar-calendar' : ''}`
 
@@ -203,10 +202,10 @@ function Item(props: ItemProps): JSX.Element {
         </div>
       : null}
       {props.description ?
-        <div className={`item-description${isMiniPrint ? ' mini-print ': ''}`}>
+        <div className={`item-description${isMiniprint ? ' miniprint ': ''}`}>
           <span className="ital">{props.title} </span>
           <span>{props.description} </span>
-          { !isMiniPrint ?
+          { !isMiniprint ?
             <a className="text-link" href="#featureImage">Order now.</a>
           : null}
         </div>

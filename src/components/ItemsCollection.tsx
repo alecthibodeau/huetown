@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+/* Interfaces */
+import ItemProps from '../interfaces/ItemProps';
+
 /* Constants */
 import itemsCollection from '../constants/items-collection';
 import text from '../constants/text';
-
-/* Interfaces */
-import ItemProps from '../interfaces/ItemProps';
 
 /* Helpers */
 import helpers from '../helpers/helpers';

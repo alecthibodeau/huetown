@@ -1,13 +1,13 @@
-/* Constants */
-import images from './images';
-import items from './items';
-import text from './text';
-
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
 import LunarPhase from '../interfaces/LunarPhase';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
+
+/* Constants */
+import images from './images';
+import items from './items';
+import text from './text';
 
 /* Helpers */
 import helpers from '../helpers/helpers';

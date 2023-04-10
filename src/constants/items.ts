@@ -166,7 +166,8 @@ const items = {
       text.initialedByTheArtist,
       text.shipsFlat
     ],
-    price: 10
+    price: 10,
+    description: text.printDescriptionOrcaLumina
   },
   printProtonSwan: {
     id: '4SFG8LHK26JZ4',
@@ -180,7 +181,8 @@ const items = {
       text.initialedByTheArtist,
       text.shipsFlat
     ],
-    price: 10
+    price: 10,
+    description: text.printDescriptionProtonSwan
   },
   printSpacePony: {
     id: '5PAQR2C3JY66N',
@@ -194,7 +196,8 @@ const items = {
       text.initialedByTheArtist,
       text.shipsFlat
     ],
-    price: 10
+    price: 10,
+    description: text.printDescriptionSpacePony
   },
   printStentorian: {
     id: 'AUN3U4NQ52J2W',
