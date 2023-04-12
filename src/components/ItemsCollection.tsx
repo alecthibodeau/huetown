@@ -59,7 +59,10 @@ function ItemsCollection(): JSX.Element {
       >
         <img
           className={`items-collection-image ${formatDashes(item.category)} ${formatDashes(item.title)}`}
-          src={item.featureImage}
+          src={item.lunarCalendarYear && item.detailImages
+                ? item.detailImages[2]
+                : item.featureImage
+              }
           alt={`${item.title} preview`}
         />
         <div className="items-collection-info">
