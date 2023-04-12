@@ -13,6 +13,7 @@ import helpers from '../helpers/helpers';
 
 function LunarCalendarInfo(props: ItemProps): JSX.Element {
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
+  const linkSpacePony: string = '/items/prints/space-pony';
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
@@ -82,11 +83,13 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
               And join the <a className="text-link" href="about.html">email list</a> to learn when other works are available.
             </p>
             <p>
-              Each lunar calendar preordered by November 25th, 2022 included a <span className="ital">Space Pony</span> letterpress print:
+              Each lunar calendar preordered by November 25th, 2022 included a <Link to={linkSpacePony}><span className="ital">Space Pony</span></Link> letterpress print:
             </p>
           </div>
           <div className="lunar-calendar-accompanying-item">
-            <img src={images.lunarCalendars.spacePonyPreorder} alt="Space Pony print" />
+            <Link to={linkSpacePony}>
+              <img src={images.lunarCalendars.spacePonyPreorder} alt="Space Pony print" />
+            </Link>
           </div>
         </div>
       : null}

@@ -40,8 +40,22 @@ import lunarCalendar2022Detail07 from '../assets/images/items/thibodeau-lunar-ca
 import lunarCalendar2022Detail08 from '../assets/images/items/thibodeau-lunar-calendar-2022-08-700px.jpg';
 
 import lunarCalendar2021Feature from '../assets/images/items/thibodeau-lunar-calendar-2021-feature-1000px.jpg';
+import lunarCalendar2021Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2021-01-700px.jpg';
+import lunarCalendar2021Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2021-02-700px.jpg';
+import lunarCalendar2021Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2021-03-700px.jpg';
+import lunarCalendar2021Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2021-04-700px.jpg';
+import lunarCalendar2021Detail05 from '../assets/images/items/thibodeau-lunar-calendar-2021-05-700px.jpg';
+import lunarCalendar2021Detail06 from '../assets/images/items/thibodeau-lunar-calendar-2021-06-700px.jpg';
 
 import lunarCalendar2020Feature from '../assets/images/items/thibodeau-lunar-calendar-2020-feature-700px.jpg';
+import lunarCalendar2020Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2020-01-450px.jpg';
+import lunarCalendar2020Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2020-02-450px.jpg';
+import lunarCalendar2020Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2020-03-450px.jpg';
+import lunarCalendar2020Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2020-04-450px.jpg';
+import lunarCalendar2020Detail05 from '../assets/images/items/thibodeau-lunar-calendar-2020-05-450px.jpg';
+import lunarCalendar2020Detail06 from '../assets/images/items/thibodeau-lunar-calendar-2020-06-450px.jpg';
+import lunarCalendar2020Detail07 from '../assets/images/items/thibodeau-lunar-calendar-2020-07-450px.jpg';
+import lunarCalendar2020Detail08 from '../assets/images/items/thibodeau-lunar-calendar-2020-08-450px.jpg';
 
 import lunarCalendar2019Feature from '../assets/images/items/thibodeau-lunar-calendar-2019-feature-700px.jpg';
 import lunarCalendar2019Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2019-01-450px.jpg';
@@ -54,8 +68,22 @@ import lunarCalendar2019Detail07 from '../assets/images/items/thibodeau-lunar-ca
 import lunarCalendar2019Detail08 from '../assets/images/items/thibodeau-lunar-calendar-2019-08-450px.jpg';
 
 import lunarCalendar2018Feature from '../assets/images/items/thibodeau-lunar-calendar-2018-feature-700px.jpg';
+import lunarCalendar2018Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2018-01-450px.jpg';
+import lunarCalendar2018Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2018-02-450px.jpg';
+import lunarCalendar2018Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2018-03-450px.jpg';
+import lunarCalendar2018Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2018-04-450px.jpg';
+import lunarCalendar2018Detail05 from '../assets/images/items/thibodeau-lunar-calendar-2018-05-450px.jpg';
+import lunarCalendar2018Detail06 from '../assets/images/items/thibodeau-lunar-calendar-2018-06-450px.jpg';
+import lunarCalendar2018Detail07 from '../assets/images/items/thibodeau-lunar-calendar-2018-07-450px.jpg';
+import lunarCalendar2018Detail08 from '../assets/images/items/thibodeau-lunar-calendar-2018-08-450px.jpg';
 
 import lunarCalendar2017Feature from '../assets/images/items/thibodeau-lunar-calendar-2017-feature-700px.jpg';
+import lunarCalendar2017Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2017-01-450px.jpg';
+import lunarCalendar2017Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2017-02-450px.jpg';
+import lunarCalendar2017Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2017-03-450px.jpg';
+import lunarCalendar2017Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2017-04-450px.jpg';
+import lunarCalendar2017Detail05 from '../assets/images/items/thibodeau-lunar-calendar-2017-05-450px.jpg';
+import lunarCalendar2017Detail06 from '../assets/images/items/thibodeau-lunar-calendar-2017-06-450px.jpg';
 
 import lunarCalendar2011Previous from '../assets/images/items/thibodeau-lunar-calendar-2011-previous-200px.jpg';
 import lunarCalendar2010Previous from '../assets/images/items/thibodeau-lunar-calendar-2010-previous-200px.jpg';
@@ -136,6 +164,26 @@ const lunarCalendar2022DetailImages = [
   lunarCalendar2022Detail08
 ];
 
+const lunarCalendar2021DetailImages = [
+  lunarCalendar2021Detail01,
+  lunarCalendar2021Detail02,
+  lunarCalendar2021Detail03,
+  lunarCalendar2021Detail04,
+  lunarCalendar2021Detail05,
+  lunarCalendar2021Detail06
+];
+
+const lunarCalendar2020DetailImages = [
+  lunarCalendar2020Detail01,
+  lunarCalendar2020Detail02,
+  lunarCalendar2020Detail03,
+  lunarCalendar2020Detail04,
+  lunarCalendar2020Detail05,
+  lunarCalendar2020Detail06,
+  lunarCalendar2020Detail07,
+  lunarCalendar2020Detail08
+];
+
 const lunarCalendar2019DetailImages = [
   lunarCalendar2019Detail01,
   lunarCalendar2019Detail02,
@@ -147,6 +195,26 @@ const lunarCalendar2019DetailImages = [
   lunarCalendar2019Detail08
 ];
 
+const lunarCalendar2018DetailImages = [
+  lunarCalendar2018Detail01,
+  lunarCalendar2018Detail02,
+  lunarCalendar2018Detail03,
+  lunarCalendar2018Detail04,
+  lunarCalendar2018Detail05,
+  lunarCalendar2018Detail06,
+  lunarCalendar2018Detail07,
+  lunarCalendar2018Detail08
+];
+
+const lunarCalendar2017DetailImages = [
+  lunarCalendar2017Detail01,
+  lunarCalendar2017Detail02,
+  lunarCalendar2017Detail03,
+  lunarCalendar2017Detail04,
+  lunarCalendar2017Detail05,
+  lunarCalendar2017Detail06
+];
+
 const lunarCalendars = {
   colossalLogo,
   spacePonyPreorder,
@@ -155,11 +223,15 @@ const lunarCalendars = {
   lunarCalendar2022Feature,
   lunarCalendar2022DetailImages,
   lunarCalendar2021Feature,
+  lunarCalendar2021DetailImages,
   lunarCalendar2020Feature,
-  lunarCalendar2019DetailImages,
+  lunarCalendar2020DetailImages,
   lunarCalendar2019Feature,
+  lunarCalendar2019DetailImages,
   lunarCalendar2018Feature,
+  lunarCalendar2018DetailImages,
   lunarCalendar2017Feature,
+  lunarCalendar2017DetailImages,
   lunarCalendar2008Previous,
   lunarCalendar2009Previous,
   lunarCalendar2010Previous,

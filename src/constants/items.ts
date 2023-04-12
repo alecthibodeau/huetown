@@ -56,7 +56,7 @@ const items = {
     lunarCalendarYear: 2021,
     lunarCalendarPaper: text.lunarCalendarPaper2021,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
-    detailImages: []
+    detailImages: images.lunarCalendars.lunarCalendar2021DetailImages
   },
   lunarCalendar2020: {
     id: 'TGVEUGQD58AX2',
@@ -70,7 +70,7 @@ const items = {
     lunarCalendarYear: 2020,
     lunarCalendarPaper: text.lunarCalendarPaper2020,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
-    detailImages: []
+    detailImages: images.lunarCalendars.lunarCalendar2020DetailImages
   },
   lunarCalendar2019: {
     id: 'T45GH9BL83VQ4',
@@ -98,7 +98,7 @@ const items = {
     lunarCalendarYear: 2018,
     lunarCalendarPaper: text.lunarCalendarPaper2018,
     lunarCalendarLocation: text.lunarCalendarLocationNewYork,
-    detailImages: []
+    detailImages: images.lunarCalendars.lunarCalendar2018DetailImages
   },
   lunarCalendar2017: {
     id: 'C4RW9LGDQ8NYL',
@@ -112,7 +112,7 @@ const items = {
     lunarCalendarYear: 2017,
     lunarCalendarPaper: text.lunarCalendarPaper2017,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
-    detailImages: []
+    detailImages: images.lunarCalendars.lunarCalendar2017DetailImages
   },
   printAbundance: {
     id: 'B6SBUBH8JRKV6',
