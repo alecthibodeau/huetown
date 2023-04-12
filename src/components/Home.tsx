@@ -24,19 +24,20 @@ function Home(): JSX.Element {
           price={featured.price}
           printEdition={featured.printEdition}
           detailImages={featured.detailImages}
+          description={featured.description}
           lunarCalendarYear={featured.lunarCalendarYear}
           lunarCalendarPaper={featured.lunarCalendarPaper}
           lunarCalendarLocation={featured.lunarCalendarLocation}
         />
       : <div className="home-content">
-          <a href="https://unbound.risd.edu">
+          <a href="https://newurbanarts.org/event/26">
             <img
-              src="https://s33518.pcdn.co/wp-content/uploads/2020/04/risd-unbound-library-2019-1920x1440.jpg"
-              alt="Unbound at RISD Library"
+              src="https://newurbanarts.org/wp-content/uploads/2017/03/NUA_header-12.jpg"
+              alt="New Urban Arts Birthday Bash"
             />
           </a>
           <div>
-            <span className="bold">Event:</span> <span>Join Huetown at the <a className="text-link" href="https://unbound.risd.edu">2023 Unbound RISD Art Book Fair</a> on Saturday, April 15, from 11am-5pm in Providence, Rhode Island.</span>
+            <span className="bold">Event:</span> <span>Bid on an original ink drawing by Alec Thibodeau at the 26th Annual Birthday Bash and Silent Art Auction for <a className="text-link" href="https://newurbanarts.org/event/26/">New Urban Arts</a> on Friday, April 14, from 7-10pm in Providence, Rhode Island.</span>
           </div>
         </div>}
     </>
