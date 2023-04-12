@@ -24,7 +24,6 @@ function Item(props: ItemProps): JSX.Element {
   const titleClass: string = helpers.formatDashes(props.title);
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
-  const isMiniprint: boolean = props.price === 10;
   const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
   const detailImageAltTextPrefix: string = `${props.category} detail`;
   const detailImageClassName: string = `${categoryClass} ${titleClass}${isRecentLunarCalendar ? ' recent-lunar-calendar' : ''}`
@@ -70,7 +69,7 @@ function Item(props: ItemProps): JSX.Element {
   function renderListItem(listItem: string, index: number): JSX.Element {
     return (
       <li key={`${helpers.formatLettersAndNumbers(listItem.slice(0, 8))}-${index}`}>
-        {listItem === '' ?
+        {listItem === 'more-info' ?
           <span>
             {text.numberedAndSigned} <a className="text-link" href="#itemDetails">(more info)</a>
           </span>
@@ -117,7 +116,7 @@ function Item(props: ItemProps): JSX.Element {
       <div className={`feature-info ${categoryClass}`}>
         <div className="feature-image-block">
           {
-            props.lunarCalendarYear || props.description
+            props.detailImages
             ? <a href="#itemDetails">{renderFeatureImage()}</a>
             : <div>{renderFeatureImage()}</div>
           }
@@ -202,12 +201,8 @@ function Item(props: ItemProps): JSX.Element {
         </div>
       : null}
       {props.description ?
-        <div className={`item-description${isMiniprint ? ' miniprint ': ''}`}>
-          <span className="ital">{props.title} </span>
-          <span>{props.description} </span>
-          { !isMiniprint ?
-            <a className="text-link" href="#featureImage">Order now.</a>
-          : null}
+        <div className="item-description">
+          <span className="ital">{props.title}</span> <span>{props.description}</span>
         </div>
       : null}
     </div>

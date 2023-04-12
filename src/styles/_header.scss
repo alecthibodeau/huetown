@@ -162,7 +162,7 @@ nav {
     .nav-link-wrapper:nth-of-type(1),
     .nav-link-wrapper:nth-of-type(2),
     form {
-      padding-bottom: 3px;
+      padding-bottom: 4px;
       border: none;
       border-bottom: 3px solid transparent;
       transition: all 0.125s linear;
@@ -170,7 +170,7 @@ nav {
       &:hover {
         padding-bottom: initial;
         border-bottom: 3px solid $twenty-three-blue;
-        margin-bottom: 3px;
+        margin-bottom: 4px;
       }
     }
 

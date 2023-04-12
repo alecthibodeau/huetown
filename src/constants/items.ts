@@ -5,7 +5,7 @@ import text from './text';
 const lunarCalendarItemInfo: string[] = [
   text.dimensionsLunarCalendar,
   text.letterpressPrint,
-  '', // To be rendered dynamically
+  'more-info', // elements will be rendered dynamically
   `${text.shipsFlat} in a sturdy box`
 ];
 
@@ -123,7 +123,7 @@ const items = {
     info: [
       text.dimensionsFiveAndAHalfInches,
       text.letterpressPrint,
-      '', // To be rendered dynamically
+      text.numberedAndSigned,
       text.shipsFlat
     ],
     price: 25,
@@ -208,7 +208,7 @@ const items = {
     info: [
       text.dimensionsFiveAndAHalfInches,
       text.letterpressPrint,
-      '', // To be rendered dynamically
+      text.numberedAndSigned,
       text.shipsFlat
     ],
     price: 15,

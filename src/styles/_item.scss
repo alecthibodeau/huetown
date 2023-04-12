@@ -156,6 +156,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid $twenty-percent-gray;
+    padding-bottom: 1.25rem;
 
     // &.print,
     // &.postcard {
@@ -163,27 +165,22 @@
     // }
   }
 
-  .detail-images {
-    border-top: 1px solid $twenty-percent-gray;
-    margin-top: 1.25rem;
+  .detail-images .detail-image-pair {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    .detail-image-pair {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    img {
+      margin: 1rem .5rem auto;
+      max-width: 450px;
+      width: 90vw;
+      max-height: 450px;
+      height: 90vw;
 
-      img {
-        margin: 1rem .5rem auto;
-        max-width: 450px;
-        width: 90vw;
-        max-height: 450px;
-        height: 90vw;
-
-        &.lunar-calendar.recent-lunar-calendar {
-          max-width: 700px;
-          max-height: 700px;
-        }
+      &.lunar-calendar.recent-lunar-calendar {
+        max-width: 700px;
+        max-height: 700px;
       }
     }
   }
@@ -192,11 +189,6 @@
     max-width: $character-width;
     padding-top: 1rem;
     margin: auto;
-
-    &.miniprint {
-      border-top: 1px solid $twenty-percent-gray;
-      margin-top: 1rem;
-    }
   }
 }
 
