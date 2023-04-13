@@ -31,35 +31,35 @@
 .lunar-calendar-thumbnails {
   display: flex;
   flex-direction: column;
+}
 
-  .thumbnails-group {
+.thumbnails-group {
 
-    .thumbnails-title {
-      margin: 1rem auto .5rem;
-      text-transform: capitalize;
-      color: $sixty-seven-percent-gray;
-      font-weight: 700;
-      text-align: center;
-    }
+  .thumbnails-title {
+    margin: 1rem auto .5rem;
+    text-transform: capitalize;
+    color: $sixty-seven-percent-gray;
+    font-weight: 700;
+    text-align: center;
+  }
 
-    .thumbnails {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      text-align: center;
+  .thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
 
-      .thumbnail {
-        margin: .5rem .75rem;
+.thumbnail {
+  margin: .5rem .75rem;
 
-        a img {
-          width: 200px;
-          vertical-align: top;
+  a img {
+    width: 200px;
+    vertical-align: top;
 
-          &:hover {
-            box-shadow: 5px 5px 15px $html-gray;
-          }
-        }
-      }
+    &:hover {
+      box-shadow: 5px 5px 15px $html-gray;
     }
   }
 }
