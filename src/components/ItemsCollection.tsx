@@ -14,15 +14,23 @@ import helpers from '../helpers/helpers';
 function ItemsCollection(): JSX.Element {
   const [userSearchInput, setUserSearchInput] = useState('');
   const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = helpers;
+  const lunarCalendarAngledViewIndex: number = 2;
 
-  function formatLunarCalendarCatergory(item: ItemProps): string {
+  function formatLunarCalendarCategory(item: ItemProps): string {
     return `${item.lunarCalendarYear} ${item.category} ${text.print}`;
   }
 
-  function getItemCategory(item: ItemProps): string {
-    const isLunarCalendar: boolean = item.category === text.lunarCalendar;
-    return isLunarCalendar ? formatLunarCalendarCatergory(item) : item.category;
+  function formatPrintCategory(item: ItemProps): string {
+    const descriptionIndex: number = 1;
+    return item.info[descriptionIndex].replace(/,/g, '').split(' ').slice(0, 2).join(' ').toLowerCase();
   }
+
+  function getItemCategory(item: ItemProps): string {
+    let category = item.category;
+    if (item.category === text.lunarCalendar) category = formatLunarCalendarCategory(item);
+    if (item.category === text.print) category = formatPrintCategory(item);
+    return category;
+   }
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>): void {
     if (event.key === 'Enter') event.currentTarget.blur();
@@ -59,10 +67,9 @@ function ItemsCollection(): JSX.Element {
       >
         <img
           className={`items-collection-image ${formatDashes(item.category)} ${formatDashes(item.title)}`}
-          src={item.lunarCalendarYear && item.detailImages
-                ? item.detailImages[2]
-                : item.featureImage
-              }
+          src={item.category === text.lunarCalendar && item.detailImages
+                ? item.detailImages[lunarCalendarAngledViewIndex]
+                : item.featureImage}
           alt={`${item.title} preview`}
         />
         <div className="items-collection-info">
