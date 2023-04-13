@@ -17,6 +17,7 @@ import newMoon from '../assets/images/items/lunar-phase-new.png';
 import thirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarter.png';
 
 import colossalLogo from '../assets/images/colossal-logo-small.jpg';
+import framedPiece from '../assets/images/thibodeau-framed-piece-700px.jpg';
 import spacePonyPreorder from '../assets/images/items/space-pony-300px.jpg';
 
 import lunarCalendar2023Feature from '../assets/images/items/thibodeau-lunar-calendar-2023-feature-1000px.jpg';
@@ -265,6 +266,7 @@ const postcards = {
 };
 
 const images = {
+  framedPiece,
   header,
   icons,
   about,

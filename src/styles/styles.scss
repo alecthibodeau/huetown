@@ -80,6 +80,15 @@ main {
     div {
       margin-top: 1rem;
     }
+
+    .framed-piece {
+      text-align: center;
+
+      img {
+        width: 80vw;
+        max-width: 400px;
+      }
+    }
   }
 }
 

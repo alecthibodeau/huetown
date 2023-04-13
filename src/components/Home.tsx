@@ -5,6 +5,7 @@ import Item from './Item';
 import ItemProps from '../interfaces/ItemProps';
 
 /* Constants */
+import images from '../constants/images';
 import items from '../constants/items';
 
 function Home(): JSX.Element {
@@ -38,6 +39,9 @@ function Home(): JSX.Element {
           </a>
           <div>
             <span className="bold">Event:</span> <span>Bid on an original ink drawing by Alec Thibodeau at the 26th Annual Birthday Bash and Silent Art Auction for <a className="text-link" href="https://newurbanarts.org/event/26/">New Urban Arts</a> on Friday, April 14, from 7-10pm in Providence, Rhode Island.</span>
+          </div>
+          <div className="framed-piece">
+            <img src={images.framedPiece} alt="Alec Thibodeau ink drawing, framed"/>
           </div>
         </div>}
     </>
