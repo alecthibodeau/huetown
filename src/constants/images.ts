@@ -96,7 +96,7 @@ import postcardGreatWhiteSharkFeature from '../assets/images/items/postcard-grea
 import postcardHippopotamusFeature from '../assets/images/items/postcard-hippopotamus-feature-600px.png';
 import postcardRhodeIslandWhaleFeature from '../assets/images/items/postcard-rhode-island-whale-feature-600px.png';
 
-import printAbundanceFeature from '../assets/images/items/print-abundance-feature-700px.jpg';
+import printAbundanceFeature from '../assets/images/items/print-abundance-feature-450px.jpg';
 import printAbundanceDetail01 from '../assets/images/items/print-abundance-01-450px.jpg';
 import printAbundanceDetail02 from '../assets/images/items/print-abundance-02-450px.jpg';
 
