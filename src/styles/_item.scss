@@ -42,24 +42,6 @@
         border-radius: 16px;
       }
     }
-
-    // &.postcard {
-    //   border: 1px solid $sixty-percent-gray;
-
-    //   @media only screen and (max-width: 650px) {
-    //     width: 550px;
-    //   }
-
-    //   @media only screen and (max-width: 600px) {
-    //     width: 90vw;
-    //   }
-    // }
-
-    // &.print {
-    //   @media only screen and (max-width: 500px) {
-    //     width: 80vw;
-    //   }
-    // }
   }
 
   .item-info-block {
@@ -67,16 +49,6 @@
     flex-direction: column;
     justify-content: space-around;
     max-width: 600px;
-
-    // &.postcard {
-    //   @media only screen and (max-width: 650px) {
-    //     width: 550px;
-    //   }
-
-    //   @media only screen and (max-width: 600px) {
-    //     width: 90vw;
-    //   }
-    // }
   }
 
   .item-title {
@@ -155,11 +127,6 @@
     justify-content: center;
     border-bottom: 1px solid $twenty-percent-gray;
     padding-bottom: 1.25rem;
-
-    // &.print,
-    // &.postcard {
-    //   justify-content: center;
-    // }
   }
 
   .detail-images .detail-image-pair {
