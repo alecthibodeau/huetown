@@ -137,7 +137,7 @@ const items = {
   printFunktionslust: {
     id: 'VARZ4F5RHAP9Y',
     category: text.print,
-    title: 'Funktionslust',
+    title: 'Funktionslust for All of Us',
     subtitle: text.byAlecThibodeau,
     featureImage: images.prints.printFunktionslustFeature,
     info: [
