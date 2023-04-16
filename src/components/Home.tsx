@@ -31,17 +31,13 @@ function Home(): JSX.Element {
           lunarCalendarLocation={featured.lunarCalendarLocation}
         />
       : <div className="home-content">
-          <a href="https://newurbanarts.org/event/26">
-            <img
-              src="https://newurbanarts.org/wp-content/uploads/2017/03/NUA_header-12.jpg"
-              alt="New Urban Arts Birthday Bash"
-            />
-          </a>
           <div>
-            <span className="bold">Event:</span> <span>Bid on an original ink drawing by Alec Thibodeau at the 26th Annual Birthday Bash and Silent Art Auction for <a className="text-link" href="https://newurbanarts.org/event/26/">New Urban Arts</a> on Friday, April 14, from 7-10pm in Providence, Rhode Island.</span>
+            <a href="https://www.instagram.com/p/Cq-889Wrfbt">
+              <img src={images.framedPiece} alt="framed ink drawing by Alec Thibodeau"/>
+            </a>
           </div>
-          <div className="framed-piece">
-            <img src={images.framedPiece} alt="Alec Thibodeau ink drawing, framed"/>
+          <div>
+            <span className="bold">Recently:</span> <span>Alec donated this original ink drawing to <a className="text-link" href="https://newurbanarts.org/event/26">New Urban Arts</a> for the organization's 26th Annual Birthday Bash and Silent Art Auction.</span>
           </div>
         </div>}
     </>

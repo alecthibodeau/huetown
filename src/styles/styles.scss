@@ -67,27 +67,15 @@ main {
 
   .home-content {
 
-    a img,
-    div {
+    div,
+    div img {
       width: 80vw;
-      max-width: 900px;
-    }
-
-    a img {
+      max-width: 400px;
       vertical-align: top;
     }
 
-    div {
+    div:last-of-type {
       margin-top: 1rem;
-    }
-
-    .framed-piece {
-      text-align: center;
-
-      img {
-        width: 80vw;
-        max-width: 400px;
-      }
     }
   }
 }
