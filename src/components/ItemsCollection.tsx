@@ -12,12 +12,13 @@ import text from '../constants/text';
 import helpers from '../helpers/helpers';
 
 function ItemsCollection(): JSX.Element {
+  const [itemsCategory, setItemsCategory] = useState('');
   const [userSearchInput, setUserSearchInput] = useState('');
   const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = helpers;
   const lunarCalendarAngledViewIndex: number = 2;
 
   function formatLunarCalendarCategory(item: ItemProps): string {
-    return `${item.lunarCalendarYear} ${item.category} ${text.print}`;
+    return `${item.lunarCalendarYear} ${item.category}`;
   }
 
   function formatPrintCategory(item: ItemProps): string {
@@ -37,17 +38,23 @@ function ItemsCollection(): JSX.Element {
   }
 
   function handleSearchInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    if (itemsCategory) setItemsCategory('');
     setUserSearchInput(event.target.value);
   }
 
+  function handleCategoryChange(category: string): void {
+    if (userSearchInput) setUserSearchInput('');
+    setItemsCategory(category);
+  }
+
   const filteredItems: ItemProps[] = itemsCollection.filter((item) => {
-    const priceWithDollarSign: string = `$${ item.price}`;
+    const priceWithDollarSign: string = `$${item.price}`;
     const searchInput: string = userSearchInput.toLowerCase();
-    return (
-      item.title.toLowerCase().includes(searchInput) ||
-      getItemCategory(item).toLowerCase().includes(searchInput) ||
-      priceWithDollarSign.includes(searchInput)
-    );
+    return itemsCategory
+      ? item.category === itemsCategory
+      : item.title.toLowerCase().includes(searchInput)
+        || getItemCategory(item).toLowerCase().includes(searchInput)
+        || priceWithDollarSign.includes(searchInput);
   });
 
   function renderItem(item: ItemProps, index: number): JSX.Element {
@@ -60,8 +67,8 @@ function ItemsCollection(): JSX.Element {
         <img
           className={`items-collection-image ${formatDashes(item.category)} ${formatDashes(item.title)}`}
           src={item.category === text.lunarCalendar && item.detailImages
-                ? item.detailImages[lunarCalendarAngledViewIndex]
-                : item.featureImage}
+            ? item.detailImages[lunarCalendarAngledViewIndex]
+            : item.featureImage}
           alt={`${item.title} preview`}
         />
         <div className="items-collection-info">
@@ -82,7 +89,7 @@ function ItemsCollection(): JSX.Element {
   return (
     <div>
       <div className="items-search">
-        <span>Search items by title, category or price: </span>
+        <span>Search all items by title, category or price:</span>
         <input
           type="text"
           value={userSearchInput}
@@ -92,6 +99,11 @@ function ItemsCollection(): JSX.Element {
         <span className="items-search-count">
           {`${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'}`}
         </span>
+      </div>
+      <div>
+        <button onClick={() => handleCategoryChange(text.lunarCalendar)}>{`${text.lunarCalendar}s`}</button>
+        <button onClick={() => handleCategoryChange(text.print)}>{`${text.print}s`}</button>
+        <button onClick={() => handleCategoryChange(text.postcard)}>{`${text.postcard}s`}</button>
       </div>
       <div className="items-collection">
         {filteredItems.map(renderItem)}
