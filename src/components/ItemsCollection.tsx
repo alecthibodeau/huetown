@@ -15,7 +15,9 @@ function ItemsCollection(): JSX.Element {
   const [itemsCategory, setItemsCategory] = useState('');
   const [userSearchInput, setUserSearchInput] = useState('');
   const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = helpers;
+  const { lunarCalendar, print, postcard } = text;
   const lunarCalendarAngledViewIndex: number = 2;
+  const itemsCategories: string[] = [lunarCalendar, print, postcard];
 
   function formatLunarCalendarCategory(item: ItemProps): string {
     return `${item.lunarCalendarYear} ${item.category}`;
@@ -56,6 +58,17 @@ function ItemsCollection(): JSX.Element {
         || getItemCategory(item).toLowerCase().includes(searchInput)
         || priceWithDollarSign.includes(searchInput);
   });
+
+  function renderCategoryButton(category: string, index: number): JSX.Element {
+    return (
+      <button
+        key={`${category}-${index}`}
+        onClick={() => handleCategoryChange(category)}
+      >
+        {`${category}s`}
+      </button>
+    )
+  }
 
   function renderItem(item: ItemProps, index: number): JSX.Element {
     return (
@@ -101,9 +114,7 @@ function ItemsCollection(): JSX.Element {
         </span>
       </div>
       <div>
-        <button onClick={() => handleCategoryChange(text.lunarCalendar)}>{`${text.lunarCalendar}s`}</button>
-        <button onClick={() => handleCategoryChange(text.print)}>{`${text.print}s`}</button>
-        <button onClick={() => handleCategoryChange(text.postcard)}>{`${text.postcard}s`}</button>
+        {itemsCategories.map(renderCategoryButton)}
       </div>
       <div className="items-collection">
         {filteredItems.map(renderItem)}
