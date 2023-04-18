@@ -12,6 +12,7 @@ const text = {
   addToCart: 'Add to cart',
   viewCart: 'view cart',
   shipsFlat: 'Ships flat',
+  all: 'all',
   colossalBlurb: 'Ornate renderings of natural life frame the elegant letterpress print, which expertly melds artful illustration with timely information.',
   byAlecThibodeau: 'by Alec Thibodeau',
   dimensionsTwoAndAHalfInches: '2.5 x 2.5 inches',

@@ -15,9 +15,9 @@ function ItemsCollection(): JSX.Element {
   const [itemsCategory, setItemsCategory] = useState('');
   const [userSearchInput, setUserSearchInput] = useState('');
   const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = helpers;
-  const { lunarCalendar, print, postcard } = text;
+  const { lunarCalendar, print, postcard, all } = text;
   const lunarCalendarAngledViewIndex: number = 2;
-  const itemsCategories: string[] = [lunarCalendar, print, postcard];
+  const itemsCategories: string[] = [lunarCalendar, print, postcard, all];
 
   function formatLunarCalendarCategory(item: ItemProps): string {
     return `${item.lunarCalendarYear} ${item.category}`;
@@ -46,7 +46,7 @@ function ItemsCollection(): JSX.Element {
 
   function handleCategoryChange(category: string): void {
     if (userSearchInput) setUserSearchInput('');
-    setItemsCategory(category);
+    setItemsCategory(category === all ? '' : category);
   }
 
   const filteredItems: ItemProps[] = itemsCollection.filter((item) => {
@@ -65,7 +65,7 @@ function ItemsCollection(): JSX.Element {
         key={`${category}-${index}`}
         onClick={() => handleCategoryChange(category)}
       >
-        {`${category}s`}
+        {`${category}${category === all ? '' : 's'}`}
       </button>
     )
   }
@@ -113,7 +113,7 @@ function ItemsCollection(): JSX.Element {
           {`${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'}`}
         </span>
       </div>
-      <div>
+      <div className="category-buttons">
         {itemsCategories.map(renderCategoryButton)}
       </div>
       <div className="items-collection">
