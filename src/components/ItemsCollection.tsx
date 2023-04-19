@@ -102,16 +102,19 @@ function ItemsCollection(): JSX.Element {
   return (
     <div>
       <div className="items-search">
-        <span>Search all items by title, category or price:</span>
+        <span>
+          {`${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'}`}
+        </span>
+        <span className="items-search-dash">
+          &nbsp;&mdash;&nbsp;
+        </span>
+        <span>search all by title, category or price:</span>
         <input
           type="text"
           value={userSearchInput}
           onChange={handleSearchInputChange}
           onKeyDown={handleKeyDown}
         />
-        <span className="items-search-count">
-          {`${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'}`}
-        </span>
       </div>
       <div className="category-buttons">
         {itemsCategories.map(renderCategoryButton)}

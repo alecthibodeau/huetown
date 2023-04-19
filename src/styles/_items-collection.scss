@@ -9,6 +9,10 @@
 
   span {
     text-align: center;
+
+    &.items-search-dash {
+      display: none;
+    }
   }
 
   input {
@@ -110,9 +114,8 @@
     align-items: center;
     max-width: initial;
 
-    .items-search-count {
-      width: 4.5rem;
-      text-align: right;
+    span.items-search-dash {
+      display: inline;
     }
   }
 }
