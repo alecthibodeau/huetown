@@ -83,7 +83,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
               And join the <a className="text-link" href="about.html">email list</a> to learn when other works are available.
             </p>
             <p>
-              Each lunar calendar preordered by November 25th, 2022 included a <Link to={linkSpacePony}><span className="ital">Space Pony</span></Link> letterpress print:
+              Each lunar calendar preordered by November 25th, 2022 included a <Link className="text-link" to={linkSpacePony}><span className="ital">Space Pony</span></Link> letterpress print:
             </p>
           </div>
           <div className="lunar-calendar-accompanying-item">
