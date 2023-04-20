@@ -12,10 +12,11 @@ import text from '../constants/text';
 import helpers from '../helpers/helpers';
 
 function ItemsCollection(): JSX.Element {
-  const [itemsCategory, setItemsCategory] = useState('');
-  const [userSearchInput, setUserSearchInput] = useState('');
   const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = helpers;
   const { lunarCalendar, print, postcard, all } = text;
+  const [itemsCategory, setItemsCategory] = useState(all);
+  const [userSearchInput, setUserSearchInput] = useState('');
+  const allItems: boolean = itemsCategory === all;
   const lunarCalendarAngledViewIndex: number = 2;
   const itemsCategories: string[] = [lunarCalendar, print, postcard, all];
 
@@ -46,7 +47,7 @@ function ItemsCollection(): JSX.Element {
 
   function handleCategoryChange(category: string): void {
     if (userSearchInput) setUserSearchInput('');
-    setItemsCategory(category === all ? '' : category);
+    setItemsCategory(category);
   }
 
   const filteredItems: ItemProps[] = itemsCollection.filter((item) => {
@@ -63,6 +64,7 @@ function ItemsCollection(): JSX.Element {
     return (
       <button
         key={`${category}-${index}`}
+        className={`category-button ${category === itemsCategory ? 'selected' : ''}`}
         onClick={() => handleCategoryChange(category)}
       >
         {`${category}${category === all ? '' : 's'}`}
@@ -103,7 +105,7 @@ function ItemsCollection(): JSX.Element {
     <div>
       <div className="items-search">
         <span>
-          {`${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'}`}
+          {`${allItems ? itemsCollection.length : filteredItems.length} item${filteredItems.length === 1 ? '' : 's'}`}
         </span>
         <span className="items-search-dash">
           &nbsp;&mdash;&nbsp;
@@ -116,11 +118,11 @@ function ItemsCollection(): JSX.Element {
           onKeyDown={handleKeyDown}
         />
       </div>
-      <div className="category-buttons">
+      <div className="category-buttons-container">
         {itemsCategories.map(renderCategoryButton)}
       </div>
       <div className="items-collection">
-        {filteredItems.map(renderItem)}
+        {allItems ? itemsCollection.map(renderItem) : filteredItems.map(renderItem)}
       </div>
     </div>
   );
