@@ -30,16 +30,18 @@ function Home(): JSX.Element {
           lunarCalendarPaper={featured.lunarCalendarPaper}
           lunarCalendarLocation={featured.lunarCalendarLocation}
         />
-      : <div className="home-content">
+      :
+        <div className="home-content">
           <div>
             <a href="https://www.instagram.com/p/Cq-889Wrfbt">
               <img src={images.framedPiece} alt="framed ink drawing by Alec Thibodeau"/>
             </a>
           </div>
           <div>
-            <span className="bold">Recently:</span> <span>Alec donated this original ink drawing to <a className="text-link" href="https://newurbanarts.org/event/26">New Urban Arts</a> for the organization's 26th Annual Birthday Bash and Silent Art Auction.</span>
+            <span className="bold">Recently:</span> <span>Alec donated this <a className="text-link" href="https://www.instagram.com/p/Cq-889Wrfbt">original ink drawing</a> to <a className="text-link" href="https://newurbanarts.org">New Urban Arts</a> for the organization's 26th Annual Birthday Bash and Silent Art Auction.</span>
           </div>
-        </div>}
+        </div>
+      }
     </>
   );
 }
