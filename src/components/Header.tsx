@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 /* Interfaces */
 import HeaderProps from '../interfaces/HeaderProps';
@@ -12,13 +12,12 @@ import text from '../constants/text';
 
 function Header(props: HeaderProps): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
-
   const { huetownLogoGray, huetownLogoWhite } = images.header;
 
   useEffect(() => {
-    const click = 'click';
-    const mainElement = document.getElementById('main');
+    const mainElement: HTMLElement | null = document.getElementById('main');
     if (mainElement) {
+      const click: string = 'click';
       mainElement.addEventListener(click, closeMobileNav);
       return function cleanupEventListener() {
         mainElement.removeEventListener(click, closeMobileNav);
@@ -65,9 +64,12 @@ function Header(props: HeaderProps): JSX.Element {
       </div>
       <nav className={`mobile-nav-is-${isMobileNavOpen ? 'open' : 'closed'}`}>
         <div className="nav-link-wrapper">
-          <Link to="/items" className="nav-link" onClick={closeMobileNav}>
+          <NavLink
+            to="/items"
+            className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
+            onClick={closeMobileNav}>
             items
-          </Link>
+          </NavLink>
         </div>
         <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
           <input type="hidden" name="cmd" value="_s-xclick" />
@@ -75,9 +77,12 @@ function Header(props: HeaderProps): JSX.Element {
           <input className="paypal-link" type="submit" value={text.viewCart} alt={text.viewCart} onClick={closeMobileNav} />
         </form>
         <div className="nav-link-wrapper">
-          <Link to="/about" className="nav-link" onClick={closeMobileNav}>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
+            onClick={closeMobileNav}>
             about
-          </Link>
+          </NavLink>
         </div>
         {props.isBreakpointXs ? <div className="nav-menu-icons">
           <IconLinks isForMobileNav />
