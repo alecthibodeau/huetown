@@ -32,7 +32,7 @@ main {
       color: $twenty-three-dark-blue;
     }
 
-    &.items-collection-link {
+    &.item-card-link {
       color: $application-font-color;
       &:link,
       &:visited,
@@ -41,7 +41,7 @@ main {
       }
     }
 
-    &:hover:not(.items-collection-link) {
+    &:hover:not(.item-card-link) {
       color: $dark-green;
       text-decoration: underline;
       cursor: pointer;

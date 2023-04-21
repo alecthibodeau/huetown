@@ -1,11 +1,13 @@
 @use './variables' as *;
 
+.items-collection-info {
+  max-width: 300px;
+  margin: auto;
+}
+
 .items-search {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin: auto;
-  max-width: 310px;
 
   span {
     text-align: center;
@@ -17,21 +19,20 @@
 
   input {
     padding: .5rem;
-    margin: auto .5rem;
   }
 }
 
 .category-buttons-container {
   display: flex;
-  justify-content: center;
-  padding: 1rem .5rem .5rem;
+  justify-content: space-between;
+  margin: 1rem auto auto;
 
   .category-button {
     padding: .25rem .5rem;
     border: $border-standard;
-    margin: auto .3125rem;
-    background-color: transparent;
     border-radius: 6px;
+    background-color: transparent;
+    color: $eighty-percent-gray;
 
     &:hover,
     &.selected {
@@ -41,16 +42,16 @@
   }
 }
 
-.items-collection {
+.items-collection-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.items-collection-link {
+.item-card-link {
   display: flex;
   flex-direction: column;
-  width: $items-collection-dimension;
+  width: $items-card-image-dimension;
   border-radius: $border-radius-standard;
   margin: 1rem;
 
@@ -59,8 +60,8 @@
   }
 }
 
-.items-collection-image {
-  height: $items-collection-dimension;
+.item-card-image {
+  height: $items-card-image-dimension;
   border: $border-standard;
   border-top-left-radius: $border-radius-standard;
   border-top-right-radius: $border-radius-standard;
@@ -80,7 +81,7 @@
   }
 }
 
-.items-collection-info {
+.item-card-info {
   padding: 1rem;
   border: $border-standard;
   border-bottom-left-radius: $border-radius-standard;
@@ -89,35 +90,42 @@
   text-align: center;
 }
 
-.items-collection-title {
+.item-card-title {
   font-weight: 700;
 }
 
-.items-collection-category {
+.item-card-category {
   margin-bottom: .5rem;
 }
 
-.items-collection-description {
-  margin-bottom: .5rem;
-}
-
-.items-collection-price {
+.item-card-price {
   font-size: 1.5rem;
 }
-
 
 /* Media Queries */
 
 @media (min-width: $breakpoint-sm) {
 
+  .items-collection-info {
+    max-width: initial;
+    width: 530px;
+  }
+
   .items-search {
     flex-direction: row;
     align-items: center;
-    max-width: initial;
-    width: 536px;
+    justify-content: flex-end;
 
     span.items-search-dash {
       display: inline;
     }
+
+    input {
+      margin-left: .5rem;
+    }
+  }
+
+  .category-buttons-container {
+    width: $items-card-image-dimension;
   }
 }

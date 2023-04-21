@@ -72,28 +72,28 @@ function ItemsCollection(): JSX.Element {
     )
   }
 
-  function renderItem(item: ItemProps, index: number): JSX.Element {
+  function renderItemCard(item: ItemProps, index: number): JSX.Element {
     return (
       <Link
         key={`${formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
-        className="items-collection-link text-link"
+        className="item-card-link text-link"
         to={formatItemRoutePath(item.category, item.title)}
       >
         <img
-          className={`items-collection-image ${formatDashes(item.category)} ${formatDashes(item.title)}`}
+          className={`item-card-image ${formatDashes(item.category)} ${formatDashes(item.title)}`}
           src={item.category === text.lunarCalendar && item.detailImages
             ? item.detailImages[lunarCalendarAngledViewIndex]
             : item.featureImage}
           alt={`${item.title} preview`}
         />
-        <div className="items-collection-info">
-          <div className="items-collection-title">
+        <div className="item-card-info">
+          <div className="item-card-title">
             {item.title}
           </div>
-          <div className="items-collection-category">
+          <div className="item-card-category">
             {getItemCategory(item)}
           </div>
-          <div className="items-collection-price">
+          <div className="item-card-price">
             {`$${item.price}`}
           </div>
         </div>
@@ -103,26 +103,29 @@ function ItemsCollection(): JSX.Element {
 
   return (
     <div>
-      <div className="items-search">
-        <span>
-          {`${allItems ? itemsCollection.length : filteredItems.length} item${filteredItems.length === 1 ? '' : 's'}`}
-        </span>
-        <span className="items-search-dash">
-          &nbsp;&mdash;&nbsp;
-        </span>
-        <span>search all by title, category or price:</span>
-        <input
-          type="text"
-          value={userSearchInput}
-          onChange={handleSearchInputChange}
-          onKeyDown={handleKeyDown}
-        />
+      <div className="items-collection-info">
+        <div className="items-search">
+          <span>
+            {`${allItems ? itemsCollection.length : filteredItems.length}
+            item${filteredItems.length === 1 ? '' : 's'}`}
+          </span>
+          <span className="items-search-dash">
+            &nbsp;&mdash;&nbsp;
+          </span>
+          <span>search all by title, category or price:</span>
+          <input
+            type="text"
+            value={userSearchInput}
+            onChange={handleSearchInputChange}
+            onKeyDown={handleKeyDown}
+          />
+        </div>
+        <div className="category-buttons-container">
+          {itemsCategories.map(renderCategoryButton)}
+        </div>
       </div>
-      <div className="category-buttons-container">
-        {itemsCategories.map(renderCategoryButton)}
-      </div>
-      <div className="items-collection">
-        {allItems ? itemsCollection.map(renderItem) : filteredItems.map(renderItem)}
+      <div className="items-collection-cards">
+        {allItems ? itemsCollection.map(renderItemCard) : filteredItems.map(renderItemCard)}
       </div>
     </div>
   );
