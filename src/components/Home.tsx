@@ -38,7 +38,7 @@ function Home(): JSX.Element {
             </a>
           </div>
           <div>
-            <span className="bold">Recently:</span> <span>Alec donated this <a className="text-link" href="https://www.instagram.com/p/Cq-889Wrfbt">original ink drawing</a> to <a className="text-link" href="https://newurbanarts.org">New Urban Arts</a> for the organization's 26th Annual Birthday Bash and Silent Art Auction.</span>
+            <span className="bold">Recently:</span> <span>Alec donated this <a className="text-link" href="https://www.instagram.com/p/Cq-889Wrfbt">original ink drawing</a> to <a className="text-link" href="https://newurbanarts.org/about">New Urban Arts</a> for the organization's 26th Annual Birthday Bash and Silent Art Auction.</span>
           </div>
         </div>
       }
