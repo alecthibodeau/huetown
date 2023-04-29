@@ -8,7 +8,7 @@ import ItemProps from '../interfaces/ItemProps';
 import images from '../constants/images';
 import items from '../constants/items';
 
-function Home(): JSX.Element {
+function Home(props: { dateAndTime: string }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
   const isFeatured: boolean = false;
 
@@ -39,6 +39,9 @@ function Home(): JSX.Element {
           </div>
           <div>
             <span className="bold">Recently:</span> <span>Alec donated this <a className="text-link" href="https://www.instagram.com/p/Cq-889Wrfbt">original ink drawing</a> to <a className="text-link" href="https://newurbanarts.org/about">New Urban Arts</a> for the organization's 26th Annual Birthday Bash and Silent Art Auction.</span>
+          </div>
+          <div>
+            {`Current date and time is ${props.dateAndTime}`}
           </div>
         </div>
       }

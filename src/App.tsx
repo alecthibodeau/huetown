@@ -17,19 +17,25 @@ import ItemProps from './interfaces/ItemProps';
 import itemsCollection from './constants/items-collection';
 
 /* Helpers */
+import getCurrentDateAndTime from './helpers/date-and-time';
 import textFormatting from './helpers/text-formatting';
 
-const resize: string = 'resize';
-const breakpointSm: number = 576;
-
 function App(): JSX.Element {
-  const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
+  const [dateAndTime, setDateAndTime] = useState<string>(getCurrentDateAndTime());
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
+  const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
 
   useEffect(() => {
+    const interval = setInterval(() => setDateAndTime(getCurrentDateAndTime()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const breakpointSm: number = 576;
+    const resize: string = 'resize';
     window.addEventListener(resize, getViewportWidth);
     setIsBreakpointXs(viewportWidth < breakpointSm ? true : false);
-    return(() => window.removeEventListener(resize, getViewportWidth));
+    return () => window.removeEventListener(resize, getViewportWidth);
   }, [viewportWidth]);
 
   function getViewportWidth(): void {
@@ -67,7 +73,7 @@ function App(): JSX.Element {
       <Header isBreakpointXs={isBreakpointXs} />
       <main id="main">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home dateAndTime={dateAndTime} />} />
           <Route path="/about" element={<About />} />
           <Route path="/items" element={<ItemsCollection />} />
           {itemsCollection.map(renderItemRoute)}
