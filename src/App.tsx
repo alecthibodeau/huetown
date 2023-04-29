@@ -17,7 +17,7 @@ import ItemProps from './interfaces/ItemProps';
 import itemsCollection from './constants/items-collection';
 
 /* Helpers */
-import helpers from './helpers/helpers';
+import textFormatting from './helpers/text-formatting';
 
 const resize: string = 'resize';
 const breakpointSm: number = 576;
@@ -39,8 +39,8 @@ function App(): JSX.Element {
   function renderItemRoute(item: ItemProps, index: number): JSX.Element {
     return (
       <Route
-        key={`${helpers.formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
-        path={helpers.formatItemRoutePath(item.category, item.title)}
+        key={`${textFormatting.formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
+        path={textFormatting.formatItemRoutePath(item.category, item.title)}
         element={
           <Item
             id={item.id}

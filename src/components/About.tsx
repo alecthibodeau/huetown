@@ -11,7 +11,7 @@ import images from '../constants/images';
 import shops from '../constants/shops';
 
 /* Helpers */
-import helpers from '../helpers/helpers';
+import textFormatting from '../helpers/text-formatting';
 
 function About(): JSX.Element {
   const { hLogo, selfPortrait } = images.about;
@@ -24,7 +24,7 @@ function About(): JSX.Element {
 
   function renderShopLink(shop: Shop, index: number): JSX.Element {
     return (
-      <li key={`${helpers.formatLettersAndNumbers(shop.name)}-${index}`}>
+      <li key={`${textFormatting.formatLettersAndNumbers(shop.name)}-${index}`}>
         <a className="text-link" href={shop.url}>{shop.name}</a>
       </li>
     )

@@ -14,11 +14,11 @@ function formatItemRoutePath(category: string, title: string): string {
   return `/items/${formatDashes(category)}s/${formatDashes(title)}`;
 }
 
-const helpers = {
+const textFormatting = {
   allSpaces,
   formatDashes,
   formatLettersAndNumbers,
   formatItemRoutePath
 };
 
-export default helpers;
+export default textFormatting;

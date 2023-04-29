@@ -11,7 +11,7 @@ import images from '../constants/images';
 import text from '../constants/text';
 
 /* Helpers */
-import helpers from '../helpers/helpers';
+import textFormatting from '../helpers/text-formatting';
 
 function Item(props: ItemProps): JSX.Element {
   const [quantity, setQuantity] = useState<string>('1');
@@ -20,8 +20,8 @@ function Item(props: ItemProps): JSX.Element {
   const [validationdMessage, setValidationdMessage] = useState<string>('');
 
   const digitsValidation: RegExp = new RegExp(/^\d+$/);
-  const categoryClass: string = helpers.formatDashes(props.category);
-  const titleClass: string = helpers.formatDashes(props.title);
+  const categoryClass: string = textFormatting.formatDashes(props.category);
+  const titleClass: string = textFormatting.formatDashes(props.title);
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
   const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
@@ -68,7 +68,7 @@ function Item(props: ItemProps): JSX.Element {
 
   function renderListItem(listItem: string, index: number): JSX.Element {
     return (
-      <li key={`${helpers.formatLettersAndNumbers(listItem.slice(0, 8))}-${index}`}>
+      <li key={`${textFormatting.formatLettersAndNumbers(listItem.slice(0, 8))}-${index}`}>
         {listItem === 'more-info' ?
           <span>
             {text.numberedAndSigned} <a className="text-link" href="#itemDetails">(more info)</a>

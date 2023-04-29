@@ -10,7 +10,7 @@ import items from './items';
 import text from './text';
 
 /* Helpers */
-import helpers from '../helpers/helpers';
+import textFormatting from '../helpers/text-formatting';
 
 const {
   newMoon,
@@ -82,7 +82,7 @@ function formatThumbnail(item: ItemProps): Thumbnail {
   return {
     label: `${item.lunarCalendarYear} ${item.category}`,
     image: item.featureImage,
-    link: helpers.formatItemRoutePath(item.category, item.title)
+    link: textFormatting.formatItemRoutePath(item.category, item.title)
   }
 }
 

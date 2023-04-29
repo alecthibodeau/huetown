@@ -9,10 +9,10 @@ import itemsCollection from '../constants/items-collection';
 import text from '../constants/text';
 
 /* Helpers */
-import helpers from '../helpers/helpers';
+import textFormatting from '../helpers/text-formatting';
 
 function ItemsCollection(): JSX.Element {
-  const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = helpers;
+  const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = textFormatting;
   const { lunarCalendar, print, postcard, all } = text;
   const [itemsCategory, setItemsCategory] = useState(all);
   const [userSearchInput, setUserSearchInput] = useState('');
