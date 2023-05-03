@@ -1,11 +1,21 @@
 interface LunarPhasesTable {
-  [key: number]: { [key: number]: string }
+  [year: number]: {
+    backgroundColor: string;
+    ornaments: string[];
+    dates: {
+      [date: number]: string;
+    };
+  };
 }
 
 const lunarPhasesTable: LunarPhasesTable = {
   2023: {
-    101: 'banana',
-    503: 'cherry'
+    backgroundColor: 'blue',
+    ornaments: ['bunny', 'birdy'],
+    dates: {
+      101: 'banana',
+      503: 'pineapple'
+    }
   }
 };
 

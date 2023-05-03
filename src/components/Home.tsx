@@ -8,7 +8,11 @@ import ItemProps from '../interfaces/ItemProps';
 import images from '../constants/images';
 import items from '../constants/items';
 
-function Home(props: { dateAndTime: string, lunarPhase: string }): JSX.Element {
+/* Helpers */
+import dateAndTime from '../helpers/date-and-time';
+import lunarPhasesTable from '../constants/lunar-phases-table';
+
+function Home(props: { date: Date, year: number }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
   const isFeatured: boolean = false;
 
@@ -41,10 +45,21 @@ function Home(props: { dateAndTime: string, lunarPhase: string }): JSX.Element {
             <span className="bold">Recently:</span> <span>Alec donated this <a className="text-link" href="https://www.instagram.com/p/Cq-889Wrfbt">original ink drawing</a> to <a className="text-link" href="https://newurbanarts.org/about">New Urban Arts</a> for the organization's 26th Annual Birthday Bash and Silent Art Auction.</span>
           </div>
           <div>
-            {`Current date and time is ${props.dateAndTime}`}
-          </div>
-          <div>
-            {`Current phase is ${props.lunarPhase}`}
+            <div>
+              {`Current date and time is ${dateAndTime.formatDateAndTime(props.date)}`}
+            </div>
+            <div>
+              {`Current phase is ${dateAndTime.getCurrentLunarPhase(props.date)}`}
+            </div>
+            <div>
+              {`Current color is ${dateAndTime.getCurrentColor(props.date)}`}
+            </div>
+            <div>
+              {`Random ornament updating live is: ${dateAndTime.getRandomOrnamentLiveChange(props.date)}`}
+            </div>
+            <div>
+              {`Random ornament fixed is: ${lunarPhasesTable[props.year].ornaments[dateAndTime.oneRandomNumber]}`}
+            </div>
           </div>
         </div>
       }

@@ -17,21 +17,19 @@ import ItemProps from './interfaces/ItemProps';
 import itemsCollection from './constants/items-collection';
 
 /* Helpers */
-import dateAndTime from './helpers/date-and-time';
 import textFormatting from './helpers/text-formatting';
 
 function App(): JSX.Element {
-  const { getCurrentDateAndTime, getCurrentLunarPhase } = dateAndTime;
-  const [lunarPhase, setLunarPhase] = useState<string>(getCurrentLunarPhase());
-  const [timeStamp, setTimestamp] = useState<string>(getCurrentDateAndTime());
+  const [date, setDate] = useState<Date>(new Date());
+  const [year, setYear] = useState<number>(new Date().getFullYear());
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
   const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
 
   useEffect(() => {
     const interval = setInterval(
       () => {
-        setTimestamp(getCurrentDateAndTime());
-        setLunarPhase(getCurrentLunarPhase());
+        setDate(new Date());
+        if (new Date().getFullYear() !== year) setYear(new Date().getFullYear());
       }
     , 1000);
     return () => clearInterval(interval);
@@ -80,7 +78,7 @@ function App(): JSX.Element {
       <Header isBreakpointXs={isBreakpointXs} />
       <main id="main">
         <Routes>
-          <Route path="/" element={<Home dateAndTime={timeStamp} lunarPhase={lunarPhase} />} />
+          <Route path="/" element={<Home date={date} year={year} />} />
           <Route path="/about" element={<About />} />
           <Route path="/items" element={<ItemsCollection />} />
           {itemsCollection.map(renderItemRoute)}
