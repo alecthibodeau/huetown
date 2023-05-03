@@ -8,7 +8,7 @@ import ItemProps from '../interfaces/ItemProps';
 import images from '../constants/images';
 import items from '../constants/items';
 
-function Home(props: { dateAndTime: string }): JSX.Element {
+function Home(props: { dateAndTime: string, lunarPhase: string }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
   const isFeatured: boolean = false;
 
@@ -42,6 +42,9 @@ function Home(props: { dateAndTime: string }): JSX.Element {
           </div>
           <div>
             {`Current date and time is ${props.dateAndTime}`}
+          </div>
+          <div>
+            {`Current phase is ${props.lunarPhase}`}
           </div>
         </div>
       }
