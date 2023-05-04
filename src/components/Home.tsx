@@ -12,7 +12,7 @@ import items from '../constants/items';
 import dateAndTime from '../helpers/date-and-time';
 import lunarPhasesTable from '../constants/lunar-phases-table';
 
-function Home(props: { date: Date, year: number }): JSX.Element {
+function Home(props: { date: Date }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
   const isFeatured: boolean = false;
 
@@ -58,7 +58,7 @@ function Home(props: { date: Date, year: number }): JSX.Element {
               {`Random ornament updating live is: ${dateAndTime.getRandomOrnamentLiveChange(props.date)}`}
             </div>
             <div>
-              {`Random ornament fixed is: ${lunarPhasesTable[props.year].ornaments[dateAndTime.oneRandomNumber]}`}
+              {`Random ornament fixed is: ${lunarPhasesTable[props.date.getFullYear()].ornaments[dateAndTime.oneRandomNumber]}`}
             </div>
           </div>
         </div>

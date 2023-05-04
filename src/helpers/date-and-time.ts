@@ -1,4 +1,4 @@
-import phasesTable from "../constants/lunar-phases-table";
+import phasesTable from '../constants/lunar-phases-table';
 
 const oneRandomNumber = Math.floor(Math.random() * 2);
 
