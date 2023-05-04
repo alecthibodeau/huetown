@@ -7,10 +7,18 @@ import ItemProps from '../interfaces/ItemProps';
 /* Constants */
 import images from '../constants/images';
 import items from '../constants/items';
+import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
 
 /* Helpers */
 import dateAndTime from '../helpers/date-and-time';
-import lunarPhasesTable from '../constants/lunar-phases-table';
+import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
+
+const {
+  oneRandomNumber,
+  getCurrentLunarPhase,
+  getCurrentColor,
+  getRandomOrnamentLiveChange
+} = digitalLunarCalendar;
 
 function Home(props: { date: Date }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
@@ -46,19 +54,19 @@ function Home(props: { date: Date }): JSX.Element {
           </div>
           <div>
             <div>
-              {`Current date and time is ${dateAndTime.formatDateAndTime(props.date)}`}
+              {`Today is ${dateAndTime.formatDateAndTime(props.date)}`}
             </div>
             <div>
-              {`Current phase is ${dateAndTime.getCurrentLunarPhase(props.date)}`}
+              {`Current phase is ${getCurrentLunarPhase(props.date)}`}
             </div>
             <div>
-              {`Current color is ${dateAndTime.getCurrentColor(props.date)}`}
+              {`Current color is ${getCurrentColor(props.date)}`}
             </div>
             <div>
-              {`Random ornament updating live is: ${dateAndTime.getRandomOrnamentLiveChange(props.date)}`}
+              {`Random ornament updating live is: ${getRandomOrnamentLiveChange(props.date)}`}
             </div>
             <div>
-              {`Random ornament fixed is: ${lunarPhasesTable[props.date.getFullYear()].ornaments[dateAndTime.oneRandomNumber]}`}
+              {`Random ornament fixed is: ${lunarCalendarsInformation[props.date.getFullYear()].ornaments[oneRandomNumber]}`}
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
 /* Constants */
 import images from '../constants/images';
-import lunarCalendars from '../constants/lunar-calendars';
+import itemsLunarCalendars from '../constants/items-lunar-calendars';
 import textFormatting from '../helpers/text-formatting';
 
 function LunarCalendarInfo(props: ItemProps): JSX.Element {
@@ -72,7 +72,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
           Custom moon illustrations portray all principal lunar phases (New Moon, First Quarter Moon, Full Moon and Third Quarter Moon) plus all intermediate crescent and gibbous phases. For months with less than 31 days, drawings of clouds occupy the extra spaces. <a className="text-link" href="#featureImage">Order now.</a>
         </div>
         <div className="lunar-phases" id="lunarPhases">
-          {lunarCalendars.phases.map(renderlunarPhase)}
+          {itemsLunarCalendars.phases.map(renderlunarPhase)}
         </div>
       </div>
       {isCurrentLunarCalendar ?
@@ -94,7 +94,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
         </div>
       : null}
       <div className="lunar-calendar-thumbnails">
-        {lunarCalendars.thumbnails.map(
+        {itemsLunarCalendars.thumbnails.map(
           (group: ThumbnailsGroup, index: number) => {
             return (
               <div key={`${group.status}-${index}`} className="thumbnails-group">

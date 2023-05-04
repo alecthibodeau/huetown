@@ -97,9 +97,9 @@ const thumbnails: ThumbnailsGroup[] = [
   }
 ];
 
-const lunarCalendars = {
+const itemsLunarCalendars = {
   phases,
   thumbnails
 };
 
-export default lunarCalendars;
+export default itemsLunarCalendars;
