@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import LunarPhase from '../interfaces/LunarPhase';
+import LunarPhase from '../interfaces/LunarPhaseKey';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 

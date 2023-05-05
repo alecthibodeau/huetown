@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 /* Components */
 import LunarCalendarInfo from './LunarCalendarInfo';
@@ -209,4 +209,4 @@ function Item(props: ItemProps): JSX.Element {
   );
 }
 
-export default Item;
+export default React.memo(Item);

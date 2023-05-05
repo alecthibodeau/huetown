@@ -1,6 +1,6 @@
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import LunarPhase from '../interfaces/LunarPhase';
+import LunarPhaseKey from '../interfaces/LunarPhaseKey';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
@@ -13,10 +13,10 @@ import text from './text';
 import textFormatting from '../helpers/text-formatting';
 
 const {
-  newMoon,
-  firstQuarterMoon,
-  fullMoon,
-  thirdQuarterMoon
+  keyNewMoon,
+  keyFirstQuarterMoon,
+  keyFullMoon,
+  keyThirdQuarterMoon
 } = images.lunarPhases;
 
 const {
@@ -26,22 +26,22 @@ const {
   lunarCalendar2008Previous
 } = images.lunarCalendars;
 
-const phases: LunarPhase[] = [
+const phases: LunarPhaseKey[] = [
   {
     name: 'new',
-    image: newMoon
+    image: keyNewMoon
   },
   {
     name: 'first quarter',
-    image: firstQuarterMoon
+    image: keyFirstQuarterMoon
   },
   {
     name: 'full',
-    image: fullMoon
+    image: keyFullMoon
   },
   {
     name: 'third quarter',
-    image: thirdQuarterMoon
+    image: keyThirdQuarterMoon
   }
 ];
 

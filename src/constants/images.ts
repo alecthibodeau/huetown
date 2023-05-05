@@ -18,10 +18,10 @@ import hLogo from '../assets/images/about/huetown-h-logo.jpg';
 import selfPortrait from '../assets/images/about/thibodeau-self-portrait.jpg';
 
 /* Items */
-import firstQuarterMoon from '../assets/images/items/lunar-phase-first-quarter.png';
-import fullMoon from '../assets/images/items/lunar-phase-full.png';
-import newMoon from '../assets/images/items/lunar-phase-new.png';
-import thirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarter.png';
+import keyFirstQuarterMoon from '../assets/images/items/lunar-phase-first-quarter.png';
+import keyFullMoon from '../assets/images/items/lunar-phase-full.png';
+import keyNewMoon from '../assets/images/items/lunar-phase-new.png';
+import keyThirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarter.png';
 
 import colossalLogo from '../assets/images/items/colossal-logo-small.jpg';
 import spacePonyPreorder from '../assets/images/items/space-pony-300px.jpg';
@@ -143,10 +143,10 @@ const about = {
 };
 
 const lunarPhases = {
-  firstQuarterMoon,
-  fullMoon,
-  thirdQuarterMoon,
-  newMoon
+  keyFirstQuarterMoon,
+  keyFullMoon,
+  keyThirdQuarterMoon,
+  keyNewMoon
 };
 
 const lunarCalendar2023DetailImages = [
