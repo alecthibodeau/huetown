@@ -23,6 +23,7 @@ const {
 function Home(props: { date: Date }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
   const isFeatured: boolean = false;
+  const colorWhite: string = '#fff';
 
   return (
     <>
@@ -53,6 +54,21 @@ function Home(props: { date: Date }): JSX.Element {
             <span className="bold">Recently:</span> <span>Alec donated this <a className="text-link" href="https://www.instagram.com/p/Cq-889Wrfbt">original ink drawing</a> to <a className="text-link" href="https://newurbanarts.org/about">New Urban Arts</a> for the organization's 26th Annual Birthday Bash and Silent Art Auction.</span>
           </div>
           <div>
+            <div className="phase-container">
+              <svg
+                viewBox="0 2 116 116"
+                width="116"
+                height="116"
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+              >
+                <path
+                  d="m60 8a48 52 0 0 0 0 105l0-105z"
+                  fill={colorWhite}
+                  fill-opacity="70%"
+                 />
+              </svg>
+            </div>
             <div>
               {`Today is ${dateAndTime.formatDateAndTime(props.date)}`}
             </div>
