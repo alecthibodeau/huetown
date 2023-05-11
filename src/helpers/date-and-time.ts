@@ -1,17 +1,26 @@
+/* Interfaces */
+import DateLookupTable from '../interfaces/DateLookupTable';
+
 /* Helpers */
 import textFormatting from './text-formatting';
 
 const { formatPadStart } = textFormatting;
 
-const amPeriod = 'am';
-const pmPeriod = 'pm';
-const twelveHours = 12;
+const amPeriod: string = 'am';
+const pmPeriod: string = 'pm';
+const twelveHours: number = 12;
 
-interface Months {
-  [key: number]: string;
-}
+const days: DateLookupTable = {
+  1: 'sun',
+  2: 'mon',
+  3: 'tue',
+  4: 'wed',
+  5: 'thu',
+  6: 'fri',
+  7: 'sat'
+};
 
-const months: Months = {
+const months: DateLookupTable = {
   1: 'jan',
   2: 'feb',
   3: 'mar',
@@ -24,18 +33,21 @@ const months: Months = {
   10: 'oct',
   11: 'nov',
   12: 'dec'
-}
+};
 
 function formatMonth (text: string): string {
   return text.charAt(0).toUpperCase() + text.substring(1);
 }
 
 function formatDateAndTime(date: Date): string {
-  const hoursTwentyFourHourClock = date.getHours();
-  const timePeriod = hoursTwentyFourHourClock <= twelveHours ? amPeriod : pmPeriod;
-  const hours = timePeriod === amPeriod ? hoursTwentyFourHourClock : hoursTwentyFourHourClock - twelveHours;
-  const time = `${hours}:${formatPadStart(date.getMinutes())}:${formatPadStart(date.getSeconds())}`;
-  return `${formatMonth(months[date.getMonth() + 1])} ${date.getDate()}, ${date.getFullYear()} at ${time} ${timePeriod}`;
+  const dayOfTheWeek: string = days[date.getDay() + 1].toUpperCase();
+  const month: string = formatMonth(months[date.getMonth() + 1]);
+  const year: number = date.getFullYear();
+  const hoursTwentyFourHourClock: number = date.getHours();
+  const timePeriod: string = hoursTwentyFourHourClock <= twelveHours ? amPeriod : pmPeriod;
+  const hours: number = timePeriod === amPeriod ? hoursTwentyFourHourClock : hoursTwentyFourHourClock - twelveHours;
+  const time: string = `${hours}:${formatPadStart(date.getMinutes())}:${formatPadStart(date.getSeconds())}`;
+  return `${dayOfTheWeek} ${month} ${date.getDate()}, ${year} at ${time} ${timePeriod}`;
 }
 
 const dateAndTime = {
