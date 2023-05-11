@@ -65,7 +65,7 @@ function Home(props: { date: Date }): JSX.Element {
                 <path
                   d="m60 8a48 52 0 0 0 0 105l0-105z"
                   fill={colorWhite}
-                  fill-opacity="70%"
+                  fillOpacity="70%"
                  />
               </svg>
             </div>
