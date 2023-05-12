@@ -10,8 +10,8 @@ import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
 
 /* Helpers */
-import dateAndTime from '../helpers/date-and-time';
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
+import formatDateAndTime from '../helpers/format-date-and-time';
 
 const {
   oneRandomNumber,
@@ -70,7 +70,7 @@ function Home(props: { date: Date }): JSX.Element {
               </svg>
             </div>
             <div>
-              {`Today is ${dateAndTime.formatDateAndTime(props.date)}`}
+              {`Today is ${formatDateAndTime(props.date)}`}
             </div>
             <div>
               {`Current phase is ${getCurrentLunarPhase(props.date)}`}

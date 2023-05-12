@@ -35,6 +35,11 @@ const months: DateLookupTable = {
   12: 'dec'
 };
 
+function formatHours (hoursTwentyFour: number): number {
+  if (hoursTwentyFour === 0) return twelveHours;
+  return hoursTwentyFour > twelveHours ? hoursTwentyFour - twelveHours : hoursTwentyFour;
+}
+
 function formatMonth (text: string): string {
   return text.charAt(0).toUpperCase() + text.substring(1);
 }
@@ -44,14 +49,13 @@ function formatDateAndTime(date: Date): string {
   const month: string = formatMonth(months[date.getMonth() + 1]);
   const year: number = date.getFullYear();
   const hoursTwentyFourHourClock: number = date.getHours();
-  const timePeriod: string = hoursTwentyFourHourClock <= twelveHours ? amPeriod : pmPeriod;
-  const hours: number = timePeriod === amPeriod ? hoursTwentyFourHourClock : hoursTwentyFourHourClock - twelveHours;
-  const time: string = `${hours}:${formatPadStart(date.getMinutes())}:${formatPadStart(date.getSeconds())}`;
+  const isAm: boolean = hoursTwentyFourHourClock < twelveHours;
+  const timePeriod: string = isAm ? amPeriod : pmPeriod;
+  const hours: number = formatHours(hoursTwentyFourHourClock);
+  const minutes: string = formatPadStart(date.getMinutes());
+  const seconds: string = formatPadStart(date.getSeconds());
+  const time: string = `${hours}:${minutes}:${seconds}`;
   return `${dayOfTheWeek} ${month} ${date.getDate()}, ${year} at ${time} ${timePeriod}`;
 }
 
-const dateAndTime = {
-  formatDateAndTime,
-}
-
-export default dateAndTime;
+export default formatDateAndTime;
