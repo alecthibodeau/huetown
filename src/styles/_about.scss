@@ -15,12 +15,16 @@
 }
 
 .self-portrait {
+  width: $about-image-dimensions;
+  height: $about-image-dimensions;
   margin-right: 1rem;
   float: left;
 }
 
 .huetown-h-logo {
   display: none;
+  width: $about-image-dimensions;
+  height: $about-image-dimensions;
 }
 
 .about-lower div {
