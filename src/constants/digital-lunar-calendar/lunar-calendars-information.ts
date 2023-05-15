@@ -13,12 +13,12 @@ interface LunarCalendarsInformation {
 const lunarCalendarsInformation: LunarCalendarsInformation = {
   2023: {
     backgroundColor: 'cyan',
-    ornaments: ['bunny', 'birdy'],
+    ornaments: ['bunny', 'birdy', 'skunky'],
     days: days2023
   },
   2024: {
     backgroundColor: 'brown',
-    ornaments: ['froggy', 'doggy'],
+    ornaments: ['froggy', 'doggy', 'kitty'],
     days: { 101: '' }
   },
 };
