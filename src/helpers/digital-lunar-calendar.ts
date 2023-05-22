@@ -10,7 +10,7 @@ const numberMax: number = 3;
 const oneRandomNumber: number = Math.floor(Math.random() * numberMax);
 
 function getCurrentLunarPhase(date: Date): string {
-  return phasesTable[date.getFullYear()].days[+((date.getMonth() + 1) + formatPadStart(date.getDate()))];
+  return phasesTable[date.getFullYear()].phaseDates[+((date.getMonth() + 1) + formatPadStart(date.getDate()))];
 }
 
 function getCurrentColor(date: Date): string {

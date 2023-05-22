@@ -111,7 +111,7 @@ const {
   nc55
 } = lunarPhasesCodes;
 
-const days2024 = {
+const phases2024 = {
   // Previous year:
   101: '',
   102: '',
@@ -492,4 +492,4 @@ const days2024 = {
   // Following year:
 };
 
-export default days2024;
+export default phases2024;
