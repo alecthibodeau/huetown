@@ -374,7 +374,7 @@ const annualDates = [
   1228,
   1229,
   1230,
-  1231,
+  1231
 ];
 
 export default annualDates;

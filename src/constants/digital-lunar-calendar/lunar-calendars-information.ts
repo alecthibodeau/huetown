@@ -13,13 +13,17 @@ interface LunarCalendarsInformation {
   };
 }
 
+function checkForLeapYear(year: number): boolean {
+  return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
+}
+
 function addIntermediatePhases(phaseDates: PhaseDates, year: number): PhaseDates {
-  // Add check for leap year
+  if (checkForLeapYear(year)) phaseDates[229] = '';
   annualDates.forEach(
     date => {
-      if (!phaseDates[date]) phaseDates[date] = 'foobar';
+      if (!phaseDates[date]) phaseDates[date] = '';
     }
-  )
+  );
   console.log(phaseDates);
   return phaseDates;
 }
