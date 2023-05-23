@@ -1,8 +1,13 @@
+/* Constants */
 import annualDates from './annual-dates';
 import phases2023 from './phases/phases-2023';
 
 interface PhaseDates {
   [phaseDate: number]: string;
+}
+
+interface PrincipalPhasesNext {
+  [phaseName: string]: string;
 }
 
 interface LunarCalendarsInformation {
@@ -13,15 +18,41 @@ interface LunarCalendarsInformation {
   };
 }
 
-function checkForLeapYear(year: number): boolean {
+const principalPhasesNext: PrincipalPhasesNext = {
+  newMoon: 'xc',
+  firstQuarterMoon: 'xg',
+  fullMoon: 'ng',
+  thirdQuarterMoon: 'nc'
+}
+
+function isLeapYear(year: number): boolean {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 }
 
 function addIntermediatePhases(phaseDates: PhaseDates, year: number): PhaseDates {
-  if (checkForLeapYear(year)) phaseDates[229] = '';
+  if (isLeapYear(year)) phaseDates[229] = '';
+
+  let intermediatePhasePrefix: string = '';
+  let intermediatePhasesCluster: number[] = [];
+
   annualDates.forEach(
     date => {
-      if (!phaseDates[date]) phaseDates[date] = '';
+      if (principalPhasesNext[phaseDates[date]]) {
+        const clusterLength = intermediatePhasesCluster.length;
+        if (clusterLength) {
+          intermediatePhasesCluster.forEach(
+            (intermediateDate, index) => {
+              const phaseCode = `${intermediatePhasePrefix}${clusterLength}${index + 1}`;
+              phaseDates[intermediateDate] = phaseCode;
+            }
+          );
+        }
+        intermediatePhasePrefix = principalPhasesNext[phaseDates[date]];
+        intermediatePhasesCluster = [];
+      }
+      if (!phaseDates[date]) {
+        intermediatePhasesCluster.push(date);
+      }
     }
   );
   console.log(phaseDates);

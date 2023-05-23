@@ -5,7 +5,7 @@ import Item from './Item';
 import ItemProps from '../interfaces/ItemProps';
 
 /* Constants */
-import images from '../constants/images';
+// import images from '../constants/images';
 import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
 

@@ -1,9 +1,9 @@
 const lunarPhasesCodes = {
   // Note: The values here could be replaced with variables for image imports
-  newMoon: 'n',
-  firstQuarterMoon: 'fq',
-  fullMoon: 'f',
-  thirdQuarterMoon: 'tq',
+  newMoon: 'newMoon',
+  firstQuarterMoon: 'firstQuarterMoon',
+  fullMoon: 'fullMoon',
+  thirdQuarterMoon: 'thirdQuarterMoon',
   xc81: 'xc81',
   xc82: 'xc82',
   xc83: 'xc83',

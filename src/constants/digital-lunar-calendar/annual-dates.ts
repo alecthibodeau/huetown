@@ -1,4 +1,6 @@
+/* 229 is added dynamically for leap years */
 const annualDates = [
+  // January
   101,
   102,
   103,
@@ -31,6 +33,7 @@ const annualDates = [
   130,
   131,
 
+  // February
   201,
   202,
   203,
@@ -60,6 +63,7 @@ const annualDates = [
   227,
   228,
 
+  // March
   301,
   302,
   303,
@@ -92,6 +96,7 @@ const annualDates = [
   330,
   331,
 
+  // April
   401,
   402,
   403,
@@ -123,6 +128,7 @@ const annualDates = [
   429,
   430,
 
+  // May
   501,
   502,
   503,
@@ -155,6 +161,7 @@ const annualDates = [
   530,
   531,
 
+  // June
   601,
   602,
   603,
@@ -186,6 +193,7 @@ const annualDates = [
   629,
   630,
 
+  // July
   701,
   702,
   703,
@@ -218,6 +226,7 @@ const annualDates = [
   730,
   731,
 
+  // August
   801,
   802,
   803,
@@ -250,6 +259,7 @@ const annualDates = [
   830,
   831,
 
+  // September
   901,
   902,
   903,
@@ -281,6 +291,7 @@ const annualDates = [
   929,
   930,
 
+  // October
   1001,
   1002,
   1003,
@@ -313,6 +324,7 @@ const annualDates = [
   1030,
   1031,
 
+  // November
   1101,
   1102,
   1103,
@@ -344,6 +356,7 @@ const annualDates = [
   1129,
   1130,
 
+  // December
   1201,
   1202,
   1203,
