@@ -85,9 +85,9 @@ function Home(props: { date: Date }): JSX.Element {
             <div>
               {`Current color is ${getCurrentColor(props.date)}`}
             </div>
-            <div>
+            {/* <div>
               {`Random ornament updating live is: ${getRandomOrnamentLiveChange(props.date)}`}
-            </div>
+            </div> */}
             <div>
               {`Random ornament fixed is: ${lunarCalendarsInformation[props.date.getFullYear()].ornaments[oneRandomNumber]}`}
             </div>

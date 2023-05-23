@@ -18,7 +18,7 @@ const {
 } = lunarPhasesCodes;
 
 const phases2023 = {
-  // Previous year, 2022: first quarter moon is on 12/29/2022
+  // Previous year, 2022: first quarter moon was on 12/29/2022
   101: xg73,
   102: xg74,
   103: xg75,
