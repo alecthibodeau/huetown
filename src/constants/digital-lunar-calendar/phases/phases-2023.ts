@@ -1,4 +1,4 @@
-import lunarPhasesCodes from '../lunar-phases-codes';
+import lunarPhasesInformation from '../lunar-phases-information';
 
 const {
   xg73,
@@ -15,7 +15,7 @@ const {
   ng73,
   ng74,
   ng75
-} = lunarPhasesCodes;
+} = lunarPhasesInformation.lunarPhases;
 
 const phases2023 = {
   // Previous year, 2022: first quarter moon was on 12/29/2022

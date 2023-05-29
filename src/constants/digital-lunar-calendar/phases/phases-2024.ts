@@ -1,5 +1,3 @@
-import lunarPhasesCodes from '../lunar-phases-codes';
-
 const phases2024 = {
   // Previous year:
   101: '',

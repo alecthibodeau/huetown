@@ -5,13 +5,13 @@ import LunarCalendarsInformation from '../../interfaces/digital-lunar-calendar-i
 import phases2023 from './phases/phases-2023';
 
 /* Helpers */
-import setIntermediatePhases from '../../helpers/set-intermediate-phases';
+import setIntermediatePhasesDates from '../../helpers/set-intermediate-phases-dates';
 
 const lunarCalendarsInformation: LunarCalendarsInformation = {
   2023: {
     backgroundColor: 'cyan',
     ornaments: ['apey', 'horsey', 'doggy'],
-    phaseDates: setIntermediatePhases(phases2023, 2023)
+    phaseDates: setIntermediatePhasesDates(phases2023, 2023)
   },
   2024: {
     backgroundColor: 'brown',

@@ -1,16 +1,13 @@
 /* Interfaces */
 import PhaseDates from '../interfaces/digital-lunar-calendar-interfaces/PhaseDates';
-import PrincipalPhasesNextCluster from '../interfaces/digital-lunar-calendar-interfaces/PrincipalPhasesNextCluster';
+
+/* Coinstants */
+import lunarPhasesInformation from '../constants/digital-lunar-calendar/lunar-phases-information';
 
 /* Helpers */
 import textFormatting from './text-formatting';
 
-const principalPhasesNextCluster: PrincipalPhasesNextCluster = {
-  newMoon: 'xc',
-  firstQuarterMoon: 'xg',
-  fullMoon: 'ng',
-  thirdQuarterMoon: 'nc'
-}
+const { principalPhasesNextCluster } = lunarPhasesInformation;
 
 function isLeapYear(year: number): boolean {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
@@ -45,7 +42,7 @@ function setDaysOfTheYear(year: number): number[] {
   return days;
 }
 
-function setIntermediatePhases(phaseDates: PhaseDates, year: number): PhaseDates {
+function setIntermediatePhasesDates(phaseDates: PhaseDates, year: number): PhaseDates {
   const intermediatePhasesDaysCluster: number[] = [];
   let intermediatePhasePrefix: string = '';
   setDaysOfTheYear(year).forEach(
@@ -73,4 +70,4 @@ function setIntermediatePhases(phaseDates: PhaseDates, year: number): PhaseDates
   return phaseDates;
 }
 
-export default setIntermediatePhases;
+export default setIntermediatePhasesDates;
