@@ -1,7 +1,7 @@
 /* Interfaces */
 import PhaseDates from '../interfaces/digital-lunar-calendar-interfaces/PhaseDates';
 
-/* Coinstants */
+/* Constants */
 import lunarPhasesInformation from '../constants/digital-lunar-calendar/lunar-phases-information';
 
 /* Helpers */

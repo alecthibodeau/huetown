@@ -12,8 +12,7 @@ const intermediatePhasesPrefixes = [
   waningCrescentPrefix
 ];
 
-const principalPhases = {
-  // Note: The values here could be replaced with variables for image imports
+const principalPhases = { // The values here could be replaced with image variables
   newMoon: 'newMoon',
   firstQuarterMoon: 'firstQuarterMoon',
   fullMoon: 'fullMoon',
@@ -32,14 +31,16 @@ const phaseClusterLengths: number[] = [8, 7, 6, 5];
 function setIntermediateLunarPhases(lunarPhases: LunarPhases): LunarPhases {
   intermediatePhasesPrefixes.forEach(
     (prefix) => {
-      for (const clusterLength of phaseClusterLengths) {
-        for (let i = 1; i <= clusterLength; i++) {
-          const phaseCodeKey = prefix + clusterLength + i;
-          // Note: The values here could be replaced with variables for image imports
-          const phaseCodeValue = prefix + clusterLength + i;
-          lunarPhases[phaseCodeKey] = phaseCodeValue;
+      phaseClusterLengths.forEach(
+        (clusterLength) => {
+          for (let i = 1; i <= clusterLength; i++) {
+            const phaseCode = prefix + clusterLength + i;
+            const phaseCodeKey = phaseCode;
+            const phaseCodeValue = phaseCode; // The value here could be replaced with an image variable
+            lunarPhases[phaseCodeKey] = phaseCodeValue;
+          }
         }
-      }
+      );
     }
   );
   console.log('lunarPhases: ', lunarPhases);
