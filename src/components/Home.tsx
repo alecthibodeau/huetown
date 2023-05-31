@@ -65,7 +65,7 @@ function Home(props: { date: Date }): JSX.Element {
                 version="1.1"
               > */}
                 <svg
-                  viewBox="-4 0 25 23"
+                  viewBox="0 0 24 24"
                   width="120px"
                   height="120px"
                   xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +77,7 @@ function Home(props: { date: Date }): JSX.Element {
                     fill={colorWhite}
                     fillOpacity="70%"
                   />
+                  <circle fill="transparent" className="cls-1" cx="12" cy="12" r="12"/>
                 </svg>
               </div>
               <div className="moon-disc"></div>
