@@ -71,16 +71,23 @@ function Home(props: { date: Date }): JSX.Element {
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
                 >
+                  <circle
+                    // fill="#008eb2"
+                    fill="#f00" // to be set dynamicaally
+                    className="cls-1"
+                    cx="12"
+                    cy="12"
+                    r="12"
+                  />
                   <path
                     // d="M 50 8 A 1 1 0 0 0 50 92" // semi-circle d
                     d={phasesSVGPaths[getCurrentLunarPhase(props.date)]}
                     fill={colorWhite}
                     fillOpacity="70%"
                   />
-                  <circle fill="transparent" className="cls-1" cx="12" cy="12" r="12"/>
                 </svg>
               </div>
-              <div className="moon-disc"></div>
+              {/* <div className="moon-disc"></div> */}
             </div>
             {/* <div>
               {`Raw Date is ${props.date}`}

@@ -9,7 +9,7 @@ import setIntermediatePhasesDates from '../../helpers/set-intermediate-phases-da
 
 const lunarCalendarsInformation: LunarCalendarsInformation = {
   2023: {
-    backgroundColor: 'cyan',
+    backgroundColor: '#008eb2',
     ornaments: ['apey', 'horsey', 'doggy'],
     phaseDates: setIntermediatePhasesDates(phases2023, 2023)
   },
