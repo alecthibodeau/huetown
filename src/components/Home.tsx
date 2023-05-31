@@ -12,6 +12,7 @@ import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar
 /* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
 import formatDateAndTime from '../helpers/format-date-and-time';
+import phasesSVGPaths from '../constants/digital-lunar-calendar/phases-svg-paths';
 
 const {
   oneRandomNumber,
@@ -56,19 +57,23 @@ function Home(props: { date: Date }): JSX.Element {
           <div>
             <div className="date-container">
               <div className="phase-container">
+              {/* <svg // semi-circle svg
+                viewBox="0 0 100 100"
+                width="120"
+                height="120"
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+              > */}
                 <svg
-                  viewBox="0 0 100 100"
-                  width="120"
-                  height="120"
+                  viewBox="-4 0 25 23"
+                  width="120px"
+                  height="120px"
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
                 >
                   <path
-                    // d="m60 8a48 52 0 0 0 0 105l0-105z"
-
-                    d="M 50 8 A 1 1 0 0 0 50 92"
-                    // d="M 50 8 A 1 1 0 0 1 50 92"
-
+                    // d="M 50 8 A 1 1 0 0 0 50 92" // semi-circle d
+                    d={phasesSVGPaths[getCurrentLunarPhase(props.date)]}
                     fill={colorWhite}
                     fillOpacity="70%"
                   />
@@ -76,6 +81,9 @@ function Home(props: { date: Date }): JSX.Element {
               </div>
               <div className="moon-disc"></div>
             </div>
+            {/* <div>
+              {`Raw Date is ${props.date}`}
+            </div> */}
             <div>
               {`Today is ${formatDateAndTime(props.date)}`}
             </div>
