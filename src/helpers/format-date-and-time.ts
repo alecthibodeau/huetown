@@ -35,27 +35,41 @@ const months: DateLookupTable = {
   12: 'dec'
 };
 
-function formatHours (hoursTwentyFour: number): number {
-  if (hoursTwentyFour === 0) return twelveHours;
-  return hoursTwentyFour > twelveHours ? hoursTwentyFour - twelveHours : hoursTwentyFour;
-}
-
-function formatMonth (text: string): string {
+function formatMonth(text: string): string {
   return text.charAt(0).toUpperCase() + text.substring(1);
 }
 
-function formatDateAndTime(date: Date): string {
-  const dayOfTheWeek: string = days[date.getDay() + 1].toUpperCase();
-  const month: string = formatMonth(months[date.getMonth() + 1]);
-  const year: number = date.getFullYear();
+function formatTwentyFourHourTime(date: Date): string {
   const hoursTwentyFourHourClock: number = date.getHours();
-  const isAm: boolean = hoursTwentyFourHourClock < twelveHours;
-  const timePeriod: string = isAm ? amPeriod : pmPeriod;
-  const hours: number = formatHours(hoursTwentyFourHourClock);
   const minutes: string = formatPadStart(date.getMinutes());
   const seconds: string = formatPadStart(date.getSeconds());
-  const time: string = `${hours}:${minutes}:${seconds}`;
-  return `${dayOfTheWeek} ${month} ${date.getDate()}, ${year} at ${time} ${timePeriod}`;
+  const twentyFourHourTime: string = `${hoursTwentyFourHourClock}:${minutes}:${seconds}`;
+  return twentyFourHourTime;
 }
 
-export default formatDateAndTime;
+function formatTwelveHourTime(twentyFourHourTime: string): string {
+  const hoursTwentyFourHourClock: number = +twentyFourHourTime.slice(0, 2);
+  const minutesAndSeconds: string = twentyFourHourTime.slice(2);
+  const hoursTwelveHourClock: number
+    = (hoursTwentyFourHourClock > twelveHours) || (hoursTwentyFourHourClock === 0)
+    ? Math.abs(hoursTwentyFourHourClock - twelveHours)
+    : hoursTwentyFourHourClock;
+  const isAm: boolean = hoursTwentyFourHourClock < twelveHours;
+  const timePeriod: string = isAm ? amPeriod : pmPeriod;
+  return `${hoursTwelveHourClock}${minutesAndSeconds} ${timePeriod}`;
+}
+
+function formatFullDateAndTime(date: Date): string {
+  const dayOfTheWeek: string = days[date.getDay() + 1].toUpperCase();
+  const month: string = formatMonth(months[date.getMonth() + 1]);
+  const dateNumber: number = date.getDate();
+  const year: number = date.getFullYear();
+  const twentyFourHourTime: string = formatTwentyFourHourTime(date);
+  const hoursTwelveHourClock: string = formatTwelveHourTime(twentyFourHourTime);
+  return `${dayOfTheWeek} ${month} ${dateNumber}, ${year} at ${hoursTwelveHourClock}`;
+}
+
+export default {
+  formatFullDateAndTime,
+  formatTwentyFourHourTime
+};

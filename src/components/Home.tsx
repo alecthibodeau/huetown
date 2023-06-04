@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 /* Components */
 import Item from './Item';
 
@@ -25,6 +27,15 @@ function Home(props: { date: Date }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
   const isFeatured: boolean = false;
   const colorWhite: string = '#fff';
+
+  const { formatFullDateAndTime, formatTwentyFourHourTime } = formatDateAndTime;
+
+  useEffect(() => {
+    const midnight: string = '00:00:00'
+    if (formatTwentyFourHourTime(props.date).slice(-1) === '5') {
+      console.log(`%c${formatTwentyFourHourTime(props.date)}`, 'font-size: 20px; background: #0000ff; color: #fff');
+    }
+  }, [props.date]);
 
   return (
     <>
@@ -89,11 +100,11 @@ function Home(props: { date: Date }): JSX.Element {
               </div>
               {/* <div className="moon-disc"></div> */}
             </div>
-            {/* <div>
-              {`Raw Date is ${props.date}`}
-            </div> */}
             <div>
-              {`Today is ${formatDateAndTime(props.date)}`}
+              {`Raw Date is ${props.date}`}
+            </div>
+            <div>
+              {`Today is ${formatFullDateAndTime(props.date)}`}
             </div>
             <div>
               {`Current phase is ${getCurrentLunarPhase(props.date)}`}
