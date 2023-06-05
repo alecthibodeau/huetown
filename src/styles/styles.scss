@@ -95,6 +95,12 @@ main {
       z-index: 1;
     }
 
+    .date-picker {
+      display: flex;
+      width: 300px;
+      justify-content: space-between;
+    }
+
     // .moon-disc {
     //   position: relative;
     //   bottom: 210px;

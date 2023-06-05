@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 /* Components */
 import Item from './Item';
@@ -24,16 +24,25 @@ const {
 } = digitalLunarCalendar;
 
 function Home(props: { date: Date }): JSX.Element {
+  const { formatDayMonthAndDate, formatFullDateAndTime, formatTwentyFourHourTime } = formatDateAndTime;
+
+  const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(props.date);
+
   const featured: ItemProps = items.lunarCalendar2023;
   const isFeatured: boolean = false;
   const colorWhite: string = '#fff';
 
-  const { formatFullDateAndTime, formatTwentyFourHourTime } = formatDateAndTime;
+  function incrementDate(next?: boolean) {
+    const incrementor: number = next ? 1 : -1;
+    selectedPhaseDate.setDate(selectedPhaseDate.getDate() + incrementor);
+    setSelectedPhaseDate(selectedPhaseDate);
+  }
 
   useEffect(() => {
     const midnight: string = '00:00:00'
     if (formatTwentyFourHourTime(props.date).slice(-1) === '5') {
-      console.log(`%c${formatTwentyFourHourTime(props.date)}`, 'font-size: 20px; background: #0000ff; color: #fff');
+      console.log(`%c${formatTwentyFourHourTime(props.date)}`, 'font-size: 20px; background: #0ff; color: #fff');
+      console.log(`%c${props.date}`, 'font-size: 20px; background: #00f; color: #fff');
     }
   }, [props.date]);
 
@@ -92,7 +101,7 @@ function Home(props: { date: Date }): JSX.Element {
                   />
                   <path
                     // d="M 50 8 A 1 1 0 0 0 50 92" // semi-circle d
-                    d={phasesSVGPaths[getCurrentLunarPhase(props.date)]}
+                    d={phasesSVGPaths[getCurrentLunarPhase(selectedPhaseDate)]}
                     fill={colorWhite}
                     fillOpacity="70%"
                   />
@@ -100,9 +109,14 @@ function Home(props: { date: Date }): JSX.Element {
               </div>
               {/* <div className="moon-disc"></div> */}
             </div>
-            <div>
-              {`Raw Date is ${props.date}`}
+            <div className="date-picker">
+              <button onClick={() => incrementDate()}>&lt;</button>
+              <span>{formatDayMonthAndDate(selectedPhaseDate)}</span>
+              <button onClick={() => incrementDate(true)}>&gt;</button>
             </div>
+            {/* <div>
+              {`Raw Date is ${props.date}`}
+            </div> */}
             <div>
               {`Today is ${formatFullDateAndTime(props.date)}`}
             </div>

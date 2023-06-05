@@ -35,8 +35,13 @@ const months: DateLookupTable = {
   12: 'dec'
 };
 
-function formatMonth(text: string): string {
-  return text.charAt(0).toUpperCase() + text.substring(1);
+function formatDayOfTheWeek(date: Date): string {
+  return days[date.getDay() + 1].toUpperCase();
+}
+
+function formatMonth(date: Date): string {
+  const month = months[date.getMonth() + 1]
+  return month.charAt(0).toUpperCase() + month.substring(1);
 }
 
 function formatTwentyFourHourTime(date: Date): string {
@@ -48,8 +53,8 @@ function formatTwentyFourHourTime(date: Date): string {
 }
 
 function formatTwelveHourTime(twentyFourHourTime: string): string {
-  const hoursTwentyFourHourClock: number = +twentyFourHourTime.slice(0, 2);
-  const minutesAndSeconds: string = twentyFourHourTime.slice(2);
+  const hoursTwentyFourHourClock: number = +twentyFourHourTime.substring(0, twentyFourHourTime.indexOf(':'));
+  const minutesAndSeconds: string = twentyFourHourTime.slice(-6);
   const hoursTwelveHourClock: number
     = (hoursTwentyFourHourClock > twelveHours) || (hoursTwentyFourHourClock === 0)
     ? Math.abs(hoursTwentyFourHourClock - twelveHours)
@@ -59,17 +64,23 @@ function formatTwelveHourTime(twentyFourHourTime: string): string {
   return `${hoursTwelveHourClock}${minutesAndSeconds} ${timePeriod}`;
 }
 
-function formatFullDateAndTime(date: Date): string {
-  const dayOfTheWeek: string = days[date.getDay() + 1].toUpperCase();
-  const month: string = formatMonth(months[date.getMonth() + 1]);
+function formatDayMonthAndDate(date: Date): string {
+  const dayOfTheWeek: string = formatDayOfTheWeek(date);
+  const month: string = formatMonth(date);
   const dateNumber: number = date.getDate();
+  return `${dayOfTheWeek} ${month} ${dateNumber}`;
+}
+
+function formatFullDateAndTime(date: Date): string {
+  const dayMonthAndDate: string = formatDayMonthAndDate(date);
   const year: number = date.getFullYear();
   const twentyFourHourTime: string = formatTwentyFourHourTime(date);
-  const hoursTwelveHourClock: string = formatTwelveHourTime(twentyFourHourTime);
-  return `${dayOfTheWeek} ${month} ${dateNumber}, ${year} at ${hoursTwelveHourClock}`;
+  const twelveHourTime: string = formatTwelveHourTime(twentyFourHourTime);
+  return `${dayMonthAndDate}, ${year} at ${twelveHourTime}`;
 }
 
 export default {
+  formatDayMonthAndDate,
   formatFullDateAndTime,
   formatTwentyFourHourTime
 };
