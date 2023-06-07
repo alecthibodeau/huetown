@@ -42,6 +42,10 @@
         border-radius: 16px;
       }
     }
+
+    &.print {
+      max-width: 450px;
+    }
   }
 
   .item-info-block {
