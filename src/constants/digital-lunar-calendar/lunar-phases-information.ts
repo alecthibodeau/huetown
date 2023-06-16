@@ -12,7 +12,7 @@ const intermediatePhasesPrefixes = [
   waningCrescentPrefix
 ];
 
-const principalPhases = { // The values here could be replaced with image variables
+const principalPhases: LunarPhases = { // The values here could be replaced with image variables
   newMoon: 'newMoon',
   firstQuarterMoon: 'firstQuarterMoon',
   fullMoon: 'fullMoon',
@@ -50,6 +50,10 @@ function setIntermediateLunarPhases(lunarPhases: LunarPhases): LunarPhases {
 const lunarPhases: LunarPhases = setIntermediateLunarPhases(principalPhases);
 
 export default {
+  waxingCrescentPrefix,
+  waxingGibbousPrefix,
+  waningGibbousPrefix,
+  waningCrescentPrefix,
   principalPhasesNextCluster,
   lunarPhases
 };
