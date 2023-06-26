@@ -1,3 +1,4 @@
+/* Interfaces */
 import LunarPhases from '../../interfaces/digital-lunar-calendar-interfaces/LunarPhases';
 
 const waxingCrescentPrefix: string = 'xc';
