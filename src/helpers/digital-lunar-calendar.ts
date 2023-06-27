@@ -9,11 +9,15 @@ const { formatPadStart } = textFormatting;
 const numberMax: number = 3;
 const oneRandomNumber: number = Math.floor(Math.random() * numberMax);
 
-function getLunarPhase(date: Date): string {
+function getNumericalDate(date: Date): number {
   const monthFormatted: number = date.getMonth() + 1;
   const dayFormatted: string = formatPadStart(date.getDate());
-  const numericMonthAndDay: number = +(monthFormatted + dayFormatted);
-  return lunarCalendarsInformation[date.getFullYear()].phaseDates[numericMonthAndDay];
+  return +(monthFormatted + dayFormatted);
+}
+
+function getLunarPhase(date: Date): string {
+  console.log(`%cdate is ${date}`, 'font-size: 20px; background: #0ff; color: #fff');
+  return lunarCalendarsInformation[date.getFullYear()].phaseDates[getNumericalDate(date)];
 }
 
 function getBackgroundColor(date: Date): string {

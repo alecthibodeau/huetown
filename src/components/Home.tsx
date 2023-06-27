@@ -9,7 +9,7 @@ import ItemProps from '../interfaces/ItemProps';
 /* Constants */
 import items from '../constants/items';
 
-function Home(props: { date: Date }): JSX.Element {
+function Home(): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
   const isFeatured: boolean = false;
   const isNews: boolean = false;
@@ -33,7 +33,7 @@ function Home(props: { date: Date }): JSX.Element {
           lunarCalendarLocation={featured.lunarCalendarLocation}
         /> :
         <div className="home-content">
-          {isNews ? <News /> : <MoonSpace date={props.date} />}
+          {isNews ? <News /> : <MoonSpace />}
         </div>
       }
     </>

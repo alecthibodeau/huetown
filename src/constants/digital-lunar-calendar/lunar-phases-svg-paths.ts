@@ -149,7 +149,7 @@ const phasesSVGPaths: LunarPhases = {
   xg54: waxingGibbousFiveSteps.xg54,
   xg55: waxingGibbousFiveSteps.xg55,
 
-  // waning gibbous phase paths
+  // waning gibbous phase paths (these are waxing paths to be flipped horizontally on render)
   ng81: waxingGibbousEightSteps.xg88,
   ng82: waxingGibbousEightSteps.xg87,
   ng83: waxingGibbousEightSteps.xg86,
@@ -180,7 +180,7 @@ const phasesSVGPaths: LunarPhases = {
   ng54: waxingGibbousFiveSteps.xg52,
   ng55: waxingGibbousFiveSteps.xg51,
 
-  // waning crescent phase paths
+  // waning crescent phase paths (these are waxing paths to be flipped horizontally on render)
   nc81: waxingCrescentEightSteps.xc88,
   nc82: waxingCrescentEightSteps.xc87,
   nc83: waxingCrescentEightSteps.xc86,

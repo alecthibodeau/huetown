@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 /* Constants */
 import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
 import lunarPhasesInformation from '../constants/digital-lunar-calendar/lunar-phases-information';
+import phasesSVGPaths from '../constants/digital-lunar-calendar/lunar-phases-svg-paths';
 
 /* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
 import formatDateAndTime from '../helpers/format-date-and-time';
-import phasesSVGPaths from '../constants/digital-lunar-calendar/lunar-phases-svg-paths';
 
-function MoonSpace(props: { date: Date }): JSX.Element {
+function MoonSpace(): JSX.Element {
 
   const {
     waningCrescentPrefix,
@@ -25,25 +25,37 @@ function MoonSpace(props: { date: Date }): JSX.Element {
     getRandomOrnamentLiveChange
   } = digitalLunarCalendar;
 
-  const { formatDayMonthAndDate, formatFullDateAndTime, formatTwentyFourHourTime } = formatDateAndTime;
+  const {
+    formatDayMonthAndDate,
+    formatFullDateAndTime,
+    formatTwentyFourHourTime
+  } = formatDateAndTime;
 
-  const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(props.date);
+  const [todayDate, setTodayDate] = useState<Date>(new Date());
+  const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(new Date());
+  const [incrementClicks, setIncrementClicks] = useState<number>(0);
 
   const colorWhite: string = '#fff';
 
-  // useEffect(() => {
-  //   const midnight: string = '00:00:00'
-  //   if (formatTwentyFourHourTime(props.date).slice(-1) === '5') {
-  //     console.log(`%c${formatTwentyFourHourTime(props.date)}`, 'font-size: 20px; background: #0ff; color: #fff');
-  //     console.log(`%c${props.date}`, 'font-size: 20px; background: #00f; color: #fff');
-  //   }
-  // }, [props.date]);
+  useEffect(() => {
+    const interval = setInterval(() => setTodayDate(new Date()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    // const midnight: string = '00:00:00'
+    if (formatTwentyFourHourTime(todayDate).slice(-1) === '5') {
+      console.log(`%c${formatTwentyFourHourTime(todayDate)}`, 'font-size: 20px; background: #0ff; color: #fff');
+      console.log(`%c${todayDate}`, 'font-size: 20px; background: #00f; color: #fff');
+    }
+  }, [todayDate]);
 
   function incrementDate(next?: boolean): void {
     const incrementor: number = next ? 1 : -1;
     selectedPhaseDate.setDate(selectedPhaseDate.getDate() + incrementor);
     setSelectedPhaseDate(selectedPhaseDate);
-    console.log('selectedPhaseDate: ', selectedPhaseDate)
+    setIncrementClicks(incrementClicks + 1);
+    console.log(incrementClicks);
   }
 
   function getPhaseCategory(phase: string): string {
@@ -93,22 +105,22 @@ function MoonSpace(props: { date: Date }): JSX.Element {
         {`Raw Date is ${props.date}`}
       </div> */}
       <div>
-        {`Today is ${formatFullDateAndTime(props.date)}`}
+        {`Today is ${formatFullDateAndTime(todayDate)}`}
       </div>
       <div>
-        {`Current phase is ${getLunarPhase(props.date)}`}
+        {`Today's phase is ${getLunarPhase(todayDate)}`}
       </div>
       <div>
         {`Selected phase is ${getLunarPhase(selectedPhaseDate)}`}
       </div>
       <div>
-        {`Current color is ${getBackgroundColor(props.date)}`}
+        {`Selected color is ${getBackgroundColor(selectedPhaseDate)}`}
       </div>
       {/* <div>
-        {`Random ornament updating live is: ${getRandomOrnamentLiveChange(props.date)}`}
+        {`Random ornament updating live is: ${getRandomOrnamentLiveChange(selectedPhaseDate)}`}
       </div> */}
       <div>
-        {`Random ornament fixed is: ${lunarCalendarsInformation[props.date.getFullYear()].ornaments[oneRandomNumber]}`}
+        {`Random ornament fixed is: ${lunarCalendarsInformation[selectedPhaseDate.getFullYear()].ornaments[oneRandomNumber]}`}
       </div>
     </div>
   );
