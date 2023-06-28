@@ -1,0 +1,60 @@
+@use './variables' as *;
+
+.moon-space {
+  max-height: 440px;
+}
+
+.moon-image-container {
+  width: 300px;
+  height: 300px;
+  background-color: $twenty-three-blue; // to be set dynamically
+}
+
+.sky-lines {
+  position: relative;
+  bottom: 300px;
+  width: 300px;
+  height: 300px;
+
+  div {
+    height: 2px;
+    background-color: #145b6e; // to be set dynamically
+    margin-bottom: 2px;
+  }
+}
+
+.phase-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+
+  svg.waning {
+    transform: scaleX(-1);
+  }
+}
+
+.moon-info {
+  position: relative;
+  bottom: 300px;
+  margin-top: 8px;
+}
+
+.date-picker {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+
+// .moon-disc {
+//   position: relative;
+//   bottom: 210px;
+//   width: 120px;
+//   height: 120px;
+//   border-radius: 50%;
+//   margin: auto;
+//   background-color: pink;
+// }

@@ -69,9 +69,15 @@ function MoonSpace(): JSX.Element {
     return phaseCategory;
   }
 
+  function renderSkyLines(skyLine: string, index: number): JSX.Element {
+    return (
+      <div key={`${skyLine}-${index}`}></div>
+    )
+  }
+
   return (
-    <div>
-      <div className="date-container">
+    <div className="moon-space">
+      <div className="moon-image-container">
         <div className="phase-container">
           <svg
             viewBox="0 0 24 24"
@@ -82,7 +88,7 @@ function MoonSpace(): JSX.Element {
             version="1.1"
           >
             <circle
-              fill="#f00" // to be set dynamically
+              fill="#008eb2" // to be set dynamically
               cx="12"
               cy="12"
               r="12"
@@ -90,37 +96,42 @@ function MoonSpace(): JSX.Element {
             <path
               d={phasesSVGPaths[getLunarPhase(selectedPhaseDate)]}
               fill={colorWhite}
-              fillOpacity="70%"
+              fillOpacity="80%"
             />
           </svg>
         </div>
         {/* <div className="moon-disc"></div> */}
       </div>
-      <div className="date-picker">
-        <button onClick={() => incrementDate()}>&lt;</button>
-        <span>{formatDayMonthAndDate(selectedPhaseDate)}</span>
-        <button onClick={() => incrementDate(true)}>&gt;</button>
+      <div className="sky-lines">
+        {Array(76).fill('sky-line').map(renderSkyLines)}
       </div>
-      {/* <div>
-        {`Raw Date is ${props.date}`}
-      </div> */}
-      <div>
-        {`Today is ${formatFullDateAndTime(todayDate)}`}
-      </div>
-      <div>
-        {`Today's phase is ${getLunarPhase(todayDate)}`}
-      </div>
-      <div>
-        {`Selected phase is ${getLunarPhase(selectedPhaseDate)}`}
-      </div>
-      <div>
-        {`Selected color is ${getBackgroundColor(selectedPhaseDate)}`}
-      </div>
-      {/* <div>
-        {`Random ornament updating live is: ${getRandomOrnamentLiveChange(selectedPhaseDate)}`}
-      </div> */}
-      <div>
-        {`Random ornament fixed is: ${lunarCalendarsInformation[selectedPhaseDate.getFullYear()].ornaments[oneRandomNumber]}`}
+      <div className="moon-info">
+        <div className="date-picker">
+          <button onClick={() => incrementDate()}>&lt;</button>
+          <span>{formatDayMonthAndDate(selectedPhaseDate)}</span>
+          <button onClick={() => incrementDate(true)}>&gt;</button>
+        </div>
+        {/* <div>
+          {`Raw Date is ${props.date}`}
+        </div> */}
+        <div>
+          {`Today is ${formatFullDateAndTime(todayDate)}`}
+        </div>
+        <div>
+          {`Today's phase is ${getLunarPhase(todayDate)}`}
+        </div>
+        <div>
+          {`Selected phase is ${getLunarPhase(selectedPhaseDate)}`}
+        </div>
+        <div>
+          {`Selected color is ${getBackgroundColor(selectedPhaseDate)}`}
+        </div>
+        {/* <div>
+          {`Random ornament updating live is: ${getRandomOrnamentLiveChange(selectedPhaseDate)}`}
+        </div> */}
+        <div>
+          {`Random ornament fixed is: ${lunarCalendarsInformation[selectedPhaseDate.getFullYear()].ornaments[oneRandomNumber]}`}
+        </div>
       </div>
     </div>
   );
