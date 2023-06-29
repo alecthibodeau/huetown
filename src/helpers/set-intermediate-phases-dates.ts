@@ -1,17 +1,25 @@
 /* Interfaces */
 import PhaseDates from '../interfaces/digital-lunar-calendar-interfaces/PhaseDates';
-
-/* Constants */
-import lunarPhasesInformation from '../constants/digital-lunar-calendar/lunar-phases-information';
+import LunarPhases from '../interfaces/digital-lunar-calendar-interfaces/LunarPhases';
 
 /* Helpers */
 import textFormatting from './text-formatting';
+import digitalLunarCalendar from './digital-lunar-calendar';
 
-const { principalPhasesNextCluster } = lunarPhasesInformation;
+const {
+  isLeapYear,
+  waxingCrescentPrefix,
+  waxingGibbousPrefix,
+  waningGibbousPrefix,
+  waningCrescentPrefix
+} = digitalLunarCalendar;
 
-function isLeapYear(year: number): boolean {
-  return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
-}
+const principalPhasesNextCluster: LunarPhases = {
+  newMoon: waxingCrescentPrefix,
+  firstQuarterMoon: waxingGibbousPrefix,
+  fullMoon: waningGibbousPrefix,
+  thirdQuarterMoon: waningCrescentPrefix
+};
 
 function getMonthsLengths(year: number): number[] {
   return [

@@ -66,7 +66,7 @@ function formatTwelveHourTime(twentyFourHourTime: string): string {
 
 function formatDayMonthAndDate(date: Date): string {
   const dayOfTheWeek: string = formatDayOfTheWeek(date);
-  const month: string = formatMonth(date);
+  const month: string = formatMonth(date).toUpperCase();
   const dateNumber: number = date.getDate();
   return `${dayOfTheWeek} ${month} ${dateNumber}`;
 }

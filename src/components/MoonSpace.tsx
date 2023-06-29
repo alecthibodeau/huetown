@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 /* Constants */
 import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
-import lunarPhasesInformation from '../constants/digital-lunar-calendar/lunar-phases-information';
 import phasesSVGPaths from '../constants/digital-lunar-calendar/lunar-phases-svg-paths';
 
 /* Helpers */
@@ -12,15 +11,10 @@ import formatDateAndTime from '../helpers/format-date-and-time';
 function MoonSpace(): JSX.Element {
 
   const {
-    waningCrescentPrefix,
-    waningGibbousPrefix,
-    waxingGibbousPrefix,
-    waxingCrescentPrefix
-  } = lunarPhasesInformation;
-
-  const {
     oneRandomNumber,
+    isLeapYear,
     getLunarPhase,
+    getLunarPhaseCategory,
     getBackgroundColor,
     getRandomOrnamentLiveChange
   } = digitalLunarCalendar;
@@ -34,45 +28,72 @@ function MoonSpace(): JSX.Element {
   const [todayDate, setTodayDate] = useState<Date>(new Date());
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(new Date());
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [currentYear, setCurrentYear] = useState<number>(selectedPhaseDate.getFullYear());
+  const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(todayDate === (new Date(currentYear, 0, 1)));
 
+  const commonYearLength: number = 365;
+  const leapYearLength: number = 364;
+  const milliseconds: number = 10;
   const colorWhite: string = '#fff';
+  const randomOrnamentFixed = lunarCalendarsInformation[selectedPhaseDate.getFullYear()].ornaments[oneRandomNumber];
 
   useEffect(() => {
-    const interval = setInterval(() => setTodayDate(new Date()), 1000);
+    const interval = setInterval(() => setTodayDate(new Date()), milliseconds);
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    // const midnight: string = '00:00:00'
-    if (formatTwentyFourHourTime(todayDate).slice(-1) === '5') {
-      console.log(`%c${formatTwentyFourHourTime(todayDate)}`, 'font-size: 20px; background: #0ff; color: #fff');
-      console.log(`%c${todayDate}`, 'font-size: 20px; background: #00f; color: #fff');
-    }
-  }, [todayDate]);
+  // useEffect(() => {
+  //   // const midnight: string = '00:00:00'
+  //   if (formatTwentyFourHourTime(todayDate).slice(-1) === '5') {
+  //     console.log(`%c${formatTwentyFourHourTime(todayDate)}`, 'font-size: 20px; background: #0ff; color: #fff');
+  //     console.log(`%c${todayDate}`, 'font-size: 20px; background: #00f; color: #fff');
+  //   }
+  // }, [todayDate]);
 
   function incrementDate(next?: boolean): void {
     const incrementor: number = next ? 1 : -1;
     selectedPhaseDate.setDate(selectedPhaseDate.getDate() + incrementor);
     setSelectedPhaseDate(selectedPhaseDate);
     setIncrementClicks(incrementClicks + 1);
-    console.log(incrementClicks);
+    console.log('selectedPhaseDate: ', selectedPhaseDate);
   }
 
-  function getPhaseCategory(phase: string): string {
-    const phasePrefix: string = phase.slice(0, 2);
-    const intermediate: string = 'intermediate'
-    const isWaning: boolean = phasePrefix === waningCrescentPrefix || phasePrefix === waningGibbousPrefix;
-    const isWaxing: boolean = phasePrefix === waxingCrescentPrefix || phasePrefix === waxingGibbousPrefix;
-    let phaseCategory: string = 'principal';
-    if (isWaning) phaseCategory = `${intermediate} waning`;
-    if (isWaxing) phaseCategory = `${intermediate} waxing`;
-    return phaseCategory;
+  function setDateToNewYearsDay(): void {
+    const newYearsDay = new Date(`January 1, ${currentYear} 00:00:00`);
+    setIsNewYearsDay(true);
+    setSelectedPhaseDate(newYearsDay);
   }
 
-  function renderSkyLines(skyLine: string, index: number): JSX.Element {
+  function renderSkyLine(skyLine: string, index: number): JSX.Element {
     return (
       <div key={`${skyLine}-${index}`}></div>
     )
+  }
+
+  function delayTime(millisecondsDelay: number): Promise<number> {
+    return new Promise((resolve) => setTimeout(resolve, millisecondsDelay));
+  }
+
+  async function animateAnnualPhases(daysInTheYear: number) {
+    for (let i = 0; i < daysInTheYear - 1; i++) {
+      await delayTime(milliseconds);
+      // if (!isPlaying) break;
+      incrementDate(true);
+    }
+    setIsPlaying(false);
+    setIsNewYearsDay(false);
+  }
+
+  function onClickPlayButton(): void {
+    const daysInTheYear = isLeapYear(currentYear) ? leapYearLength : commonYearLength;
+    setIsPlaying(isPlaying ? false : true);
+    animateAnnualPhases(daysInTheYear);
+  }
+
+  function onClickToday(): void {
+    setSelectedPhaseDate(todayDate);
+    setIsNewYearsDay(todayDate === (new Date(currentYear, 0, 1)) ? true : false);
   }
 
   return (
@@ -83,7 +104,7 @@ function MoonSpace(): JSX.Element {
             viewBox="0 0 24 24"
             width="120px"
             height="120px"
-            className={getPhaseCategory(getLunarPhase(selectedPhaseDate))}
+            className={getLunarPhaseCategory(getLunarPhase(selectedPhaseDate))}
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
           >
@@ -103,34 +124,56 @@ function MoonSpace(): JSX.Element {
         {/* <div className="moon-disc"></div> */}
       </div>
       <div className="sky-lines">
-        {Array(76).fill('sky-line').map(renderSkyLines)}
+        {Array(76).fill('sky-line').map(renderSkyLine)}
       </div>
       <div className="moon-info">
+
         <div className="date-picker">
-          <button onClick={() => incrementDate()}>&lt;</button>
+          <button
+            className={`increment-button ${isPlaying ? 'is-not-visible' : ''}`}
+            onClick={() => incrementDate()}>
+            &lt;
+          </button>
           <span>{formatDayMonthAndDate(selectedPhaseDate)}</span>
-          <button onClick={() => incrementDate(true)}>&gt;</button>
+          <button
+            className={`increment-button ${isPlaying ? 'is-not-visible' : ''}`}
+            onClick={() => incrementDate(true)}>
+            &gt;
+          </button>
         </div>
-        {/* <div>
-          {`Raw Date is ${props.date}`}
-        </div> */}
+
+        {!isPlaying ?
+          <div className="play-button-container">
+            <button onClick={() => (isNewYearsDay && !isPlaying ? onClickPlayButton() : setDateToNewYearsDay())}>
+              {isNewYearsDay && !isPlaying ? 'PLAY' : 'JAN 1'}
+            </button>
+            {formatDayMonthAndDate(selectedPhaseDate) !== formatDayMonthAndDate(todayDate) ?
+              <button onClick={() => onClickToday()}>
+                TODAY
+              </button>
+            : null}
+          </div>
+        : null}
+
         <div>
-          {`Today is ${formatFullDateAndTime(todayDate)}`}
-        </div>
-        <div>
-          {`Today's phase is ${getLunarPhase(todayDate)}`}
-        </div>
-        <div>
-          {`Selected phase is ${getLunarPhase(selectedPhaseDate)}`}
-        </div>
-        <div>
-          {`Selected color is ${getBackgroundColor(selectedPhaseDate)}`}
-        </div>
-        {/* <div>
-          {`Random ornament updating live is: ${getRandomOrnamentLiveChange(selectedPhaseDate)}`}
-        </div> */}
-        <div>
-          {`Random ornament fixed is: ${lunarCalendarsInformation[selectedPhaseDate.getFullYear()].ornaments[oneRandomNumber]}`}
+          {/* <div>
+            {`Today is ${formatFullDateAndTime(todayDate)}`}
+          </div>
+          <div>
+            {`Today's phase is ${getLunarPhase(todayDate)}`}
+          </div>
+          <div>
+            {`Selected phase is ${getLunarPhase(selectedPhaseDate)}`}
+          </div>
+          <div>
+            {`Selected color is ${getBackgroundColor(selectedPhaseDate)}`}
+          </div> */}
+          {/* <div>
+            {`Random ornament updating live is: ${getRandomOrnamentLiveChange(selectedPhaseDate)}`}
+          </div> */}
+          {/* <div>
+            {`Random ornament fixed is: ${randomOrnamentFixed}`}
+          </div> */}
         </div>
       </div>
     </div>

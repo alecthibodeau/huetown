@@ -1,7 +1,7 @@
 @use './variables' as *;
 
 .moon-space {
-  max-height: 440px;
+  max-height: 500px;
 }
 
 .moon-image-container {
@@ -47,6 +47,22 @@
   display: flex;
   width: 300px;
   justify-content: space-between;
+}
+
+.increment-button {
+  &.is-not-visible {
+    visibility: hidden;
+  }
+}
+
+.play-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: .5rem;
+
+  button {
+    margin: auto .5rem;
+  }
 }
 
 // .moon-disc {
