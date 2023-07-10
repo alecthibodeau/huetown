@@ -7,7 +7,7 @@
 .moon-image-container {
   width: 300px;
   height: 300px;
-  background-color: $twenty-three-blue; // to be set dynamically
+  background-color: $twenty-three-blue-paper; // to be set dynamically
 }
 
 .sky-lines {
@@ -18,7 +18,7 @@
 
   div {
     height: 2px;
-    background-color: #145b6e; // to be set dynamically
+    background-color: $twenty-three-blue-ink; // to be set dynamically
     margin-bottom: 2px;
   }
 }
@@ -47,21 +47,36 @@
   display: flex;
   width: 300px;
   justify-content: space-between;
+  align-items: center;
 }
 
 .increment-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background-color: $sixty-percent-gray;
+  color: $white;
+
   &.is-not-visible {
     visibility: hidden;
   }
 }
 
-.play-button-container {
+.buttons-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: .5rem;
 
   button {
-    margin: auto .5rem;
+    max-width: 200px;
+    padding: .5rem .75rem;
+    border-radius: $border-radius-standard;
+    margin: .25rem;
   }
 }
 

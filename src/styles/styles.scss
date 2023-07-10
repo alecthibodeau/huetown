@@ -24,13 +24,13 @@ main {
 
   .text-link {
     text-decoration: none;
-    color: $twenty-three-dark-blue;
+    color: $twenty-three-blue-ink;
     font-weight: 600;
 
     &:link,
     &:visited,
     &:active {
-      color: $twenty-three-dark-blue;
+      color: $twenty-three-blue-ink;
     }
 
     &.item-card-link {

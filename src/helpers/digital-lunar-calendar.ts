@@ -7,6 +7,9 @@ import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar
 /* Helpers */
 import textFormatting from './text-formatting';
 
+const commonYearLength: number = 365;
+const leapYearLength: number = 364;
+
 const waxingCrescentPrefix: string = 'xc';
 const waxingGibbousPrefix: string = 'xg';
 const waningGibbousPrefix: string = 'ng';
@@ -81,6 +84,8 @@ function getRandomOrnamentLiveChange(date: Date): string {
 }
 
 const digitalLunarCalendar = {
+  commonYearLength,
+  leapYearLength,
   oneRandomNumber,
   waxingCrescentPrefix,
   waxingGibbousPrefix,
