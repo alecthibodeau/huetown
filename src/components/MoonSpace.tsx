@@ -10,6 +10,10 @@ import formatDateAndTime from '../helpers/format-date-and-time';
 
 function MoonSpace(): JSX.Element {
   const {
+    monthJanuary,
+    monthDecember,
+    dateFirst,
+    dateThirtyFirst,
     commonYearLength,
     leapYearLength,
     oneRandomNumber,
@@ -28,14 +32,14 @@ function MoonSpace(): JSX.Element {
 
   const [todayDate, setTodayDate] = useState<Date>(new Date());
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(new Date());
+  const [selectedYear, setSelectedYear] = useState<number>(selectedPhaseDate.getFullYear());
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
+  const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(todayDate === (new Date(selectedYear, monthJanuary, dateFirst)));
+  const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(todayDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [currentYear, setCurrentYear] = useState<number>(selectedPhaseDate.getFullYear());
-  const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(todayDate === (new Date(currentYear, 0, 1)));
-  const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(todayDate === (new Date(currentYear, 12, 31)));
 
-  const newYearsDay = new Date(currentYear, 0, 1);
-  const newYearsEve = new Date(currentYear, 12, 31);
+  const newYearsDay = new Date(selectedYear, monthJanuary, dateFirst);
+  const newYearsEve = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
   const colorWhite: string = '#fff';
   const milliseconds: number = 10;
@@ -74,13 +78,17 @@ function MoonSpace(): JSX.Element {
     )
   }
 
-  function incrementDate(isForward?: boolean): void {
-    const incrementor: number = isForward ? 1 : -1;
+  function isSameDate(dateOne: Date, dateTwo: Date): boolean {
+    return formatDayMonthAndDate(dateOne) === formatDayMonthAndDate(dateTwo);
+  }
+
+  function incrementDate(isForwardDirection?: boolean): void {
+    const incrementor: number = isForwardDirection ? 1 : -1;
     selectedPhaseDate.setDate(selectedPhaseDate.getDate() + incrementor);
     setSelectedPhaseDate(selectedPhaseDate);
     setIncrementClicks(incrementClicks + 1);
-    setIsNewYearsDay(selectedPhaseDate === newYearsDay);
-    setIsNewYearsEve(selectedPhaseDate === newYearsEve);
+    setIsNewYearsDay(isSameDate(selectedPhaseDate, newYearsDay));
+    setIsNewYearsEve(isSameDate(selectedPhaseDate, newYearsEve));
   }
 
   function onClickNewYearsDay(): void {
@@ -89,15 +97,16 @@ function MoonSpace(): JSX.Element {
     setSelectedPhaseDate(newYearsDay);
   }
 
-  function onClickPlayButton(): void {
-    const daysInTheYear = isLeapYear(currentYear) ? leapYearLength : commonYearLength;
+  function onClickPlay(): void {
+    const daysInTheYear = isLeapYear(selectedYear) ? leapYearLength : commonYearLength;
     setIsPlaying(!isPlaying);
     animateAnnualPhases(daysInTheYear);
   }
 
   function onClickToday(): void {
     setSelectedPhaseDate(todayDate);
-    setIsNewYearsDay(todayDate === (new Date(currentYear, 0, 1)));
+    setIsNewYearsDay(isSameDate(selectedPhaseDate, newYearsDay));
+    setIsNewYearsEve(isSameDate(selectedPhaseDate, newYearsEve));
   }
 
   function delayTime(millisecondsDelay: number): Promise<number> {
@@ -160,8 +169,8 @@ function MoonSpace(): JSX.Element {
             <button onClick={() => (isNewYearsDay && !isPlaying ? onClickToday() : onClickNewYearsDay())}>
               {`Choose ${isNewYearsDay && !isPlaying ? 'Today' : 'New Year\'s Day'}`}
             </button>
-            {formatDayMonthAndDate(selectedPhaseDate) === formatDayMonthAndDate(newYearsDay) ?
-              <button onClick={() => onClickPlayButton()}>
+            {isSameDate(selectedPhaseDate, newYearsDay) ?
+              <button onClick={() => onClickPlay()}>
                 Play Year
               </button>
             : null}

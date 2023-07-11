@@ -27,7 +27,7 @@ function App(): JSX.Element {
     const breakpointSm: number = 576;
     const resize: string = 'resize';
     window.addEventListener(resize, getViewportWidth);
-    setIsBreakpointXs(viewportWidth < breakpointSm ? true : false);
+    setIsBreakpointXs(viewportWidth < breakpointSm);
     return () => window.removeEventListener(resize, getViewportWidth);
   }, [viewportWidth]);
 

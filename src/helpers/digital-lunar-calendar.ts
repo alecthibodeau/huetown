@@ -7,6 +7,11 @@ import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar
 /* Helpers */
 import textFormatting from './text-formatting';
 
+const monthJanuary: number = 0;
+const monthDecember: number = 11;
+const dateFirst: number = 1;
+const dateThirtyFirst: number = 31;
+
 const commonYearLength: number = 365;
 const leapYearLength: number = 364;
 
@@ -84,6 +89,10 @@ function getRandomOrnamentLiveChange(date: Date): string {
 }
 
 const digitalLunarCalendar = {
+  monthJanuary,
+  monthDecember,
+  dateFirst,
+  dateThirtyFirst,
   commonYearLength,
   leapYearLength,
   oneRandomNumber,
