@@ -9,7 +9,6 @@ import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
 import formatDateAndTime from '../helpers/format-date-and-time';
 
 function MoonSpace(): JSX.Element {
-
   const {
     commonYearLength,
     leapYearLength,
@@ -40,6 +39,8 @@ function MoonSpace(): JSX.Element {
 
   const colorWhite: string = '#fff';
   const milliseconds: number = 10;
+  const backDirection: string = 'back';
+  const forwardDirection: string = 'forward';
   const randomOrnamentFixed = lunarCalendarsInformation[selectedPhaseDate.getFullYear()].ornaments[oneRandomNumber];
 
   useEffect(() => {
@@ -55,26 +56,48 @@ function MoonSpace(): JSX.Element {
   //   }
   // }, [todayDate]);
 
-  function incrementDate(next?: boolean): void {
-    const incrementor: number = next ? 1 : -1;
+  function renderSkyLine(skyLine: string, index: number): JSX.Element {
+    return (
+      <div key={`${skyLine}-${index}`}></div>
+    )
+  }
+
+  function renderIncrementButton(isTerminalDate: boolean, direction: string): JSX.Element {
+    return (
+      <button
+        className={`increment-button ${isPlaying || isTerminalDate ? 'is-not-visible' : ''}`}
+        onClick={() => incrementDate(direction === forwardDirection)}>
+        <span className={`material-symbols-outlined ${direction}-arrow`}>
+          {`arrow_${direction}_ios`}
+        </span>
+      </button>
+    )
+  }
+
+  function incrementDate(isForward?: boolean): void {
+    const incrementor: number = isForward ? 1 : -1;
     selectedPhaseDate.setDate(selectedPhaseDate.getDate() + incrementor);
     setSelectedPhaseDate(selectedPhaseDate);
     setIncrementClicks(incrementClicks + 1);
-    setIsNewYearsDay(selectedPhaseDate === newYearsDay ? true : false);
-    setIsNewYearsEve(selectedPhaseDate === newYearsEve ? true : false);
-    console.log('selectedPhaseDate: ', selectedPhaseDate);
+    setIsNewYearsDay(selectedPhaseDate === newYearsDay);
+    setIsNewYearsEve(selectedPhaseDate === newYearsEve);
   }
 
-  function setDateToNewYearsDay(): void {
+  function onClickNewYearsDay(): void {
     setIsNewYearsDay(true);
     setIsNewYearsEve(false);
     setSelectedPhaseDate(newYearsDay);
   }
 
-  function renderSkyLine(skyLine: string, index: number): JSX.Element {
-    return (
-      <div key={`${skyLine}-${index}`}></div>
-    )
+  function onClickPlayButton(): void {
+    const daysInTheYear = isLeapYear(currentYear) ? leapYearLength : commonYearLength;
+    setIsPlaying(!isPlaying);
+    animateAnnualPhases(daysInTheYear);
+  }
+
+  function onClickToday(): void {
+    setSelectedPhaseDate(todayDate);
+    setIsNewYearsDay(todayDate === (new Date(currentYear, 0, 1)));
   }
 
   function delayTime(millisecondsDelay: number): Promise<number> {
@@ -90,17 +113,6 @@ function MoonSpace(): JSX.Element {
     setIsPlaying(false);
     setIsNewYearsDay(false);
     setIsNewYearsEve(true);
-  }
-
-  function onClickPlayButton(): void {
-    const daysInTheYear = isLeapYear(currentYear) ? leapYearLength : commonYearLength;
-    setIsPlaying(isPlaying ? false : true);
-    animateAnnualPhases(daysInTheYear);
-  }
-
-  function onClickToday(): void {
-    setSelectedPhaseDate(todayDate);
-    setIsNewYearsDay(todayDate === (new Date(currentYear, 0, 1)) ? true : false);
   }
 
   return (
@@ -136,22 +148,16 @@ function MoonSpace(): JSX.Element {
       <div className="moon-info">
 
         <div className="date-picker">
-          <button
-            className={`increment-button ${isPlaying || isNewYearsDay ? 'is-not-visible' : ''}`}
-            onClick={() => incrementDate()}>
-            &lt;
-          </button>
-          <span>{formatDayMonthAndDate(selectedPhaseDate)}</span>
-          <button
-            className={`increment-button ${isPlaying || isNewYearsEve ? 'is-not-visible' : ''}`}
-            onClick={() => incrementDate(true)}>
-            &gt;
-          </button>
+          {renderIncrementButton(isNewYearsDay, backDirection)}
+          <span className="selected-phase-date">
+            {formatDayMonthAndDate(selectedPhaseDate)}
+          </span>
+          {renderIncrementButton(isNewYearsEve, forwardDirection)}
         </div>
 
         {!isPlaying ?
           <div className="buttons-container">
-            <button onClick={() => (isNewYearsDay && !isPlaying ? onClickToday() : setDateToNewYearsDay())}>
+            <button onClick={() => (isNewYearsDay && !isPlaying ? onClickToday() : onClickNewYearsDay())}>
               {`Choose ${isNewYearsDay && !isPlaying ? 'Today' : 'New Year\'s Day'}`}
             </button>
             {formatDayMonthAndDate(selectedPhaseDate) === formatDayMonthAndDate(newYearsDay) ?

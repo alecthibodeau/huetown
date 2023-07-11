@@ -5,16 +5,16 @@
 }
 
 .moon-image-container {
-  width: 300px;
-  height: 300px;
+  width: $moon-space-dimension;
+  height: $moon-space-dimension;
   background-color: $twenty-three-blue-paper; // to be set dynamically
 }
 
 .sky-lines {
   position: relative;
-  bottom: 300px;
-  width: 300px;
-  height: 300px;
+  bottom: $moon-space-dimension;
+  width: $moon-space-dimension;
+  height: $moon-space-dimension;
 
   div {
     height: 2px;
@@ -28,8 +28,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 300px;
+  width: $moon-space-dimension;
+  height: $moon-space-dimension;
   z-index: 1;
 
   svg.waning {
@@ -39,29 +39,43 @@
 
 .moon-info {
   position: relative;
-  bottom: 300px;
+  bottom: $moon-space-dimension;
   margin-top: 8px;
 }
 
 .date-picker {
   display: flex;
-  width: 300px;
+  width: $moon-space-dimension;
   justify-content: space-between;
   align-items: center;
 }
 
+.selected-phase-date {
+  width: $moon-space-dimension / 2;
+  text-align: center;
+}
+
 .increment-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   width: 40px;
   height: 40px;
   border: none;
   border-radius: 50%;
-  font-weight: 700;
-  font-size: 1.5rem;
   background-color: $sixty-percent-gray;
   color: $white;
 
   &.is-not-visible {
     visibility: hidden;
+  }
+
+  span {
+    position: relative;
+
+    &.back-arrow {
+      left: 2px;
+    }
   }
 }
 
