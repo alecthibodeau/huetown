@@ -27,6 +27,17 @@ const intermediatePhasesPrefixes = [
   waningCrescentPrefix
 ];
 
+const phasesInfoForUser: LunarPhases = {
+  ne: 'new',
+  fi: 'first quarter',
+  fu: 'full',
+  th: 'third quarter',
+  xc: 'waxing crescent',
+  xg: 'waxing gibbous',
+  ng: 'waning gibbous',
+  nc: 'waning crescent'
+};
+
 const principalPhases: LunarPhases = {
   newMoon: 'newMoon',
   firstQuarterMoon: 'firstQuarterMoon',
@@ -96,6 +107,7 @@ const digitalLunarCalendar = {
   commonYearLength,
   leapYearLength,
   oneRandomNumber,
+  phasesInfoForUser,
   waxingCrescentPrefix,
   waxingGibbousPrefix,
   waningGibbousPrefix,

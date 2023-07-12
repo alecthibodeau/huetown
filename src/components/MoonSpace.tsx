@@ -20,6 +20,7 @@ function MoonSpace(): JSX.Element {
     commonYearLength,
     leapYearLength,
     oneRandomNumber,
+    phasesInfoForUser,
     isLeapYear,
     getLunarPhase,
     getLunarPhaseCategory,
@@ -214,11 +215,14 @@ function MoonSpace(): JSX.Element {
         <div>
           {/* <div>
             {`Today is ${formatFullDateAndTime(todayDate)}`}
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             {`Today's phase is ${getLunarPhase(todayDate)}`}
-          </div>
+          </div> */}
           <div>
+            {`This is a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon`}
+          </div>
+          {/* <div>
             {`Selected phase is ${getLunarPhase(selectedPhaseDate)}`}
           </div>
           <div>
