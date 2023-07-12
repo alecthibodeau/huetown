@@ -53,11 +53,14 @@
 .selected-phase-date {
   width: $moon-space-dimension / 2;
   text-align: center;
+  font-size: 1.25rem;
 }
 
-.increment-button {
+.increment-button,
+.lunar-feature-button,
+.lunar-feature-link {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
@@ -65,6 +68,7 @@
   border-radius: 50%;
   background-color: $sixty-percent-gray;
   color: $white;
+  text-decoration: none;
 
   &.is-not-visible {
     visibility: hidden;
@@ -74,23 +78,40 @@
     position: relative;
 
     &.back-arrow {
-      left: 2px;
+      left: 4px;
+    }
+
+    &.forward-arrow {
+      left: 1px;
     }
   }
 }
 
-.buttons-container {
+.lunar-feature-buttons-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: .5rem;
 
-  button {
-    max-width: 200px;
-    padding: .5rem .75rem;
-    border-radius: $border-radius-standard;
+  .lunar-feature-button,
+  .lunar-feature-link {
     margin: .25rem;
+  }
+}
+
+.play-year-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: .5rem;
+
+  button {
+    padding: .625rem .875rem;
+    border: none;
+    border-radius: $border-radius-standard;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    background-color: $sixty-percent-gray;
+    color: $white;
   }
 }
 

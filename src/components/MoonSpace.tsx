@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 /* Constants */
 import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
 import phasesSVGPaths from '../constants/digital-lunar-calendar/lunar-phases-svg-paths';
+import text from '../constants/text';
 
 /* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
 import formatDateAndTime from '../helpers/format-date-and-time';
+import textFormatting from '../helpers/text-formatting';
 
 function MoonSpace(): JSX.Element {
   const {
@@ -38,8 +41,8 @@ function MoonSpace(): JSX.Element {
   const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(todayDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
-  const newYearsDay = new Date(selectedYear, monthJanuary, dateFirst);
-  const newYearsEve = new Date(selectedYear, monthDecember, dateThirtyFirst);
+  const dateNewYearsDay = new Date(selectedYear, monthJanuary, dateFirst);
+  const dateNewYearsEve = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
   const colorWhite: string = '#fff';
   const milliseconds: number = 10;
@@ -69,6 +72,8 @@ function MoonSpace(): JSX.Element {
   function renderIncrementButton(isTerminalDate: boolean, direction: string): JSX.Element {
     return (
       <button
+        title={`Select ${direction}`}
+        aria-label={`Select ${direction}`}
         className={`increment-button ${isPlaying || isTerminalDate ? 'is-not-visible' : ''}`}
         onClick={() => incrementDate(direction === forwardDirection)}>
         <span className={`material-symbols-outlined ${direction}-arrow`}>
@@ -87,14 +92,14 @@ function MoonSpace(): JSX.Element {
     selectedPhaseDate.setDate(selectedPhaseDate.getDate() + incrementor);
     setSelectedPhaseDate(selectedPhaseDate);
     setIncrementClicks(incrementClicks + 1);
-    setIsNewYearsDay(isSameDate(selectedPhaseDate, newYearsDay));
-    setIsNewYearsEve(isSameDate(selectedPhaseDate, newYearsEve));
+    setIsNewYearsDay(isSameDate(selectedPhaseDate, dateNewYearsDay));
+    setIsNewYearsEve(isSameDate(selectedPhaseDate, dateNewYearsEve));
   }
 
   function onClickNewYearsDay(): void {
     setIsNewYearsDay(true);
     setIsNewYearsEve(false);
-    setSelectedPhaseDate(newYearsDay);
+    setSelectedPhaseDate(dateNewYearsDay);
   }
 
   function onClickPlay(): void {
@@ -105,8 +110,8 @@ function MoonSpace(): JSX.Element {
 
   function onClickToday(): void {
     setSelectedPhaseDate(todayDate);
-    setIsNewYearsDay(isSameDate(selectedPhaseDate, newYearsDay));
-    setIsNewYearsEve(isSameDate(selectedPhaseDate, newYearsEve));
+    setIsNewYearsDay(isSameDate(todayDate, dateNewYearsDay));
+    setIsNewYearsEve(isSameDate(todayDate, dateNewYearsEve));
   }
 
   function delayTime(millisecondsDelay: number): Promise<number> {
@@ -165,15 +170,44 @@ function MoonSpace(): JSX.Element {
         </div>
 
         {!isPlaying ?
-          <div className="buttons-container">
-            <button onClick={() => (isNewYearsDay && !isPlaying ? onClickToday() : onClickNewYearsDay())}>
-              {`Choose ${isNewYearsDay && !isPlaying ? 'Today' : 'New Year\'s Day'}`}
+          <div className="lunar-feature-buttons-container">
+            <button
+              title="Select New Year's Day"
+              aria-label="Select New Year's Day"
+              className="lunar-feature-button"
+              onClick={() => onClickNewYearsDay()}>
+              <span className="material-symbols-outlined">
+                sentiment_satisfied
+              </span>
             </button>
-            {isSameDate(selectedPhaseDate, newYearsDay) ?
-              <button onClick={() => onClickPlay()}>
-                Play Year
-              </button>
-            : null}
+            <button
+              title="Select today's date"
+              aria-label="Select today's date"
+              className="lunar-feature-button"
+              onClick={() => onClickToday()}>
+              <span className="material-symbols-outlined">
+                sunny
+              </span>
+            </button>
+            <NavLink
+              title="Buy the print item"
+              aria-label="Buy the print item"
+              to={textFormatting.formatItemRoutePath(text.lunarCalendar, 'Thoughts Operator')}
+              className="lunar-feature-link"
+            >
+              <span className="material-symbols-outlined">
+                deployed_code
+              </span>
+            </NavLink>
+          </div>
+        : null}
+
+        {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
+          <div className="play-year-button-container">
+            <button
+              onClick={() => onClickPlay()}>
+              {`Play ${selectedYear}`}
+            </button>
           </div>
         : null}
 
