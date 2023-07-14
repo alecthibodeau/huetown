@@ -1,5 +1,6 @@
 /* Interfaces */
-import DateLookupTable from '../interfaces/DateLookupTable';
+import DaysOfTheWeek from '../interfaces/digital-lunar-calendar-interfaces/DaysOfTheWeek';
+import MonthsOfTheYear from '../interfaces/digital-lunar-calendar-interfaces/MonthsOfTheYear';
 
 /* Helpers */
 import textFormatting from './text-formatting';
@@ -10,7 +11,7 @@ const amPeriod: string = 'am';
 const pmPeriod: string = 'pm';
 const twelveHours: number = 12;
 
-const days: DateLookupTable = {
+const days: DaysOfTheWeek = {
   1: 'sun',
   2: 'mon',
   3: 'tue',
@@ -20,7 +21,7 @@ const days: DateLookupTable = {
   7: 'sat'
 };
 
-const months: DateLookupTable = {
+const months: MonthsOfTheYear = {
   1: 'jan',
   2: 'feb',
   3: 'mar',

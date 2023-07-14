@@ -1,5 +1,6 @@
 /* Interfaces */
 import LunarPhases from '../interfaces/digital-lunar-calendar-interfaces/LunarPhases';
+import PhasesInfoForUser from '../interfaces/digital-lunar-calendar-interfaces/PhasesInfoForUsers';
 
 /* Constants */
 import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
@@ -27,7 +28,7 @@ const intermediatePhasesPrefixes = [
   waningCrescentPrefix
 ];
 
-const phasesInfoForUser: LunarPhases = {
+const phasesInfoForUser: PhasesInfoForUser = {
   ne: 'new',
   fi: 'first quarter',
   fu: 'full',

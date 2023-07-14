@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 /* Constants */
+import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
 import phasesSVGPaths from '../constants/digital-lunar-calendar/lunar-phases-svg-paths';
-import text from '../constants/text';
 
 /* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
@@ -33,6 +33,8 @@ function MoonSpace(): JSX.Element {
     formatFullDateAndTime,
     formatTwentyFourHourTime
   } = formatDateAndTime;
+
+  const { formatItemRoutePath } = textFormatting;
 
   const [todayDate, setTodayDate] = useState<Date>(new Date());
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(new Date());
@@ -193,7 +195,7 @@ function MoonSpace(): JSX.Element {
             <NavLink
               title="Buy the print item"
               aria-label="Buy the print item"
-              to={textFormatting.formatItemRoutePath(text.lunarCalendar, 'Thoughts Operator')}
+              to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
               className="lunar-feature-link"
             >
               <span className="material-symbols-outlined">
