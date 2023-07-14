@@ -18,7 +18,7 @@ function formatItemRoutePath(category: string, title: string): string {
   return `/items/${formatDashes(category)}s/${formatDashes(title)}`;
 }
 
-const textFormatting = {
+const formatText = {
   allSpaces,
   formatPadStart,
   formatDashes,
@@ -26,4 +26,4 @@ const textFormatting = {
   formatItemRoutePath
 };
 
-export default textFormatting;
+export default formatText;

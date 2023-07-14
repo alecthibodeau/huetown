@@ -4,9 +4,10 @@ import PhasesInfoForUser from '../interfaces/digital-lunar-calendar-interfaces/P
 
 /* Constants */
 import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
+import text from '../constants/text';
 
 /* Helpers */
-import textFormatting from './text-formatting';
+import formatText from './format-text';
 
 const monthJanuary: number = 0;
 const monthDecember: number = 11;
@@ -21,6 +22,9 @@ const waxingGibbousPrefix: string = 'xg';
 const waningGibbousPrefix: string = 'ng';
 const waningCrescentPrefix: string = 'nc';
 
+const numberMax: number = 3;
+const oneRandomNumber: number = Math.floor(Math.random() * numberMax);
+
 const intermediatePhasesPrefixes = [
   waxingCrescentPrefix,
   waxingGibbousPrefix,
@@ -29,14 +33,14 @@ const intermediatePhasesPrefixes = [
 ];
 
 const phasesInfoForUser: PhasesInfoForUser = {
-  ne: 'new',
-  fi: 'first quarter',
-  fu: 'full',
-  th: 'third quarter',
-  xc: 'waxing crescent',
-  xg: 'waxing gibbous',
-  ng: 'waning gibbous',
-  nc: 'waning crescent'
+  ne: text.lunarPhaseNew,
+  fi: text.lunarPhaseFirstQuarter,
+  fu: text.lunarPhaseFull,
+  th: text.lunarPhaseThirdQuarter,
+  xc: `${text.lunarPhaseWaxing} ${text.lunarPhaseCrescent}`,
+  xg: `${text.lunarPhaseWaxing} ${text.lunarPhaseGibbous}`,
+  ng: `${text.lunarPhaseWaning} ${text.lunarPhaseGibbous}`,
+  nc: `${text.lunarPhaseWaning} ${text.lunarPhaseCrescent}`,
 };
 
 const principalPhases: LunarPhases = {
@@ -46,8 +50,6 @@ const principalPhases: LunarPhases = {
   thirdQuarterMoon: 'thirdQuarterMoon'
 };
 
-const numberMax: number = 3;
-const oneRandomNumber: number = Math.floor(Math.random() * numberMax);
 const lunarPhases: LunarPhases = addIntermediatePhasesToPrincipalPhases(principalPhases);
 
 function isLeapYear(year: number): boolean {
@@ -73,22 +75,19 @@ function addIntermediatePhasesToPrincipalPhases(lunarPhases: LunarPhases): Lunar
 }
 
 function getLunarPhase(date: Date): string {
-  // console.log(`%cdate is ${date}`, 'font-size: 20px; background: #0ff; color: #fff');
   const monthFormatted: number = date.getMonth() + 1;
-  const dayFormatted: string = textFormatting.formatPadStart(date.getDate());
+  const dayFormatted: string = formatText.formatPadStart(date.getDate());
   const numericalDate = +(monthFormatted + dayFormatted);
   return lunarCalendarsInformation[date.getFullYear()].phaseDates[numericalDate];
 }
 
 function getLunarPhaseCategory(phase: string): string {
-  const intermediatePhase: string = 'intermediate';
-  const principalPhase: string = 'principal';
   const phasePrefix: string = phase.slice(0, 2);
   const isWaning: boolean = phasePrefix === waningCrescentPrefix || phasePrefix === waningGibbousPrefix;
   const isWaxing: boolean = phasePrefix === waxingCrescentPrefix || phasePrefix === waxingGibbousPrefix;
-  let lunarPhaseCategory: string = principalPhase;
-  if (isWaning) lunarPhaseCategory = `${intermediatePhase} waning`;
-  if (isWaxing) lunarPhaseCategory = `${intermediatePhase} waxing`;
+  let lunarPhaseCategory: string = text.lunarPhasePrincipal;
+  if (isWaning) lunarPhaseCategory = `${text.lunarPhaseIntermediate} ${text.lunarPhaseWaning}`;
+  if (isWaxing) lunarPhaseCategory = `${text.lunarPhaseIntermediate} ${text.lunarPhaseWaxing}`;
   return lunarPhaseCategory;
 }
 

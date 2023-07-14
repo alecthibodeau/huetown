@@ -3,8 +3,8 @@ import PhaseDates from '../interfaces/digital-lunar-calendar-interfaces/PhaseDat
 import PrincipalPhasesNextCluster from '../interfaces/digital-lunar-calendar-interfaces/PrincipalPhasesNextCluster';
 
 /* Helpers */
-import textFormatting from './text-formatting';
 import digitalLunarCalendar from './digital-lunar-calendar';
+import formatText from './format-text';
 
 const {
   isLeapYear,
@@ -43,7 +43,7 @@ function setDaysOfTheYear(year: number): number[] {
   getMonthsLengths(year).forEach(
     (monthLength, monthIndex) => {
       for (let i = 1; i <= monthLength; i++) {
-        days.push(+(`${monthIndex + 1}${textFormatting.formatPadStart(i)}`));
+        days.push(+(`${monthIndex + 1}${formatText.formatPadStart(i)}`));
       }
     }
   );

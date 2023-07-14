@@ -17,7 +17,7 @@ import ItemProps from './interfaces/ItemProps';
 import itemsCollection from './constants/items-collection';
 
 /* Helpers */
-import textFormatting from './helpers/text-formatting';
+import formatText from './helpers/format-text';
 
 function App(): JSX.Element {
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
@@ -38,8 +38,8 @@ function App(): JSX.Element {
   function renderItemRoute(item: ItemProps, index: number): JSX.Element {
     return (
       <Route
-        key={`${textFormatting.formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
-        path={textFormatting.formatItemRoutePath(item.category, item.title)}
+        key={`${formatText.formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
+        path={formatText.formatItemRoutePath(item.category, item.title)}
         element={
           <Item
             id={item.id}

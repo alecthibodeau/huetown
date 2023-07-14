@@ -3,15 +3,15 @@ import DaysOfTheWeek from '../interfaces/digital-lunar-calendar-interfaces/DaysO
 import MonthsOfTheYear from '../interfaces/digital-lunar-calendar-interfaces/MonthsOfTheYear';
 
 /* Helpers */
-import textFormatting from './text-formatting';
+import formatText from './format-text';
 
-const { formatPadStart } = textFormatting;
+const { formatPadStart } = formatText;
 
 const amPeriod: string = 'am';
 const pmPeriod: string = 'pm';
 const twelveHours: number = 12;
 
-const days: DaysOfTheWeek = {
+const daysOfTheWeek: DaysOfTheWeek = {
   1: 'sun',
   2: 'mon',
   3: 'tue',
@@ -21,7 +21,7 @@ const days: DaysOfTheWeek = {
   7: 'sat'
 };
 
-const months: MonthsOfTheYear = {
+const monthsOfTheYear: MonthsOfTheYear = {
   1: 'jan',
   2: 'feb',
   3: 'mar',
@@ -37,11 +37,11 @@ const months: MonthsOfTheYear = {
 };
 
 function formatDayOfTheWeek(date: Date): string {
-  return days[date.getDay() + 1].toUpperCase();
+  return daysOfTheWeek[date.getDay() + 1].toUpperCase();
 }
 
 function formatMonth(date: Date): string {
-  const month = months[date.getMonth() + 1]
+  const month: string = monthsOfTheYear[date.getMonth() + 1];
   return month.charAt(0).toUpperCase() + month.substring(1);
 }
 
@@ -80,8 +80,10 @@ function formatFullDateAndTime(date: Date): string {
   return `${dayMonthAndDate}, ${year} at ${twelveHourTime}`;
 }
 
-export default {
+const formatDateAndTime = {
   formatDayMonthAndDate,
   formatFullDateAndTime,
   formatTwentyFourHourTime
 };
+
+export default formatDateAndTime;

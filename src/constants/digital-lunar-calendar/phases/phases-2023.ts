@@ -78,7 +78,7 @@ const phases2023 = {
   1229: ng73,
   1230: ng74,
   1231: ng75
-  // Following year, 2024: third quarter moon is on 1/3/2024
+  // Following year, 2024: third quarter moon will be on 1/3/2024
 };
 
 export default phases2023;

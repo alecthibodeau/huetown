@@ -7,9 +7,9 @@ import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
 /* Constants */
+import formatText from '../helpers/format-text';
 import images from '../constants/images';
 import itemsLunarCalendars from '../constants/items-lunar-calendars';
-import textFormatting from '../helpers/text-formatting';
 
 function LunarCalendarInfo(props: ItemProps): JSX.Element {
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
@@ -19,7 +19,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
     return (
       <div
-        key={`${textFormatting.formatLettersAndNumbers(phase.name)}-moon-${index}`}
+        key={`${formatText.formatLettersAndNumbers(phase.name)}-moon-${index}`}
         className="phase-info"
       >
         <img src={phase.image} alt={moonTextFormatted}/>
@@ -37,7 +37,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
   function renderThumbnail(thumbnail: Thumbnail, index: number): JSX.Element {
     return (
       <div
-        key={`thumbnail${thumbnail.label.replace(textFormatting.allSpaces, '')}-${index}`}
+        key={`thumbnail${thumbnail.label.replace(formatText.allSpaces, '')}-${index}`}
         className="thumbnail"
       >
         {

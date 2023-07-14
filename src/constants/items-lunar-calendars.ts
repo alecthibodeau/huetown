@@ -10,7 +10,7 @@ import items from './items';
 import text from './text';
 
 /* Helpers */
-import textFormatting from '../helpers/text-formatting';
+import formatText from '../helpers/format-text';
 
 const {
   keyNewMoon,
@@ -28,19 +28,19 @@ const {
 
 const phases: LunarPhaseKey[] = [
   {
-    name: 'new',
+    name: text.lunarPhaseNew,
     image: keyNewMoon
   },
   {
-    name: 'first quarter',
+    name: text.lunarPhaseFirstQuarter,
     image: keyFirstQuarterMoon
   },
   {
-    name: 'full',
+    name: text.lunarPhaseFull,
     image: keyFullMoon
   },
   {
-    name: 'third quarter',
+    name: text.lunarPhaseThirdQuarter,
     image: keyThirdQuarterMoon
   }
 ];
@@ -82,7 +82,7 @@ function formatThumbnail(item: ItemProps): Thumbnail {
   return {
     label: `${item.lunarCalendarYear} ${item.category}`,
     image: item.featureImage,
-    link: textFormatting.formatItemRoutePath(item.category, item.title)
+    link: formatText.formatItemRoutePath(item.category, item.title)
   }
 }
 

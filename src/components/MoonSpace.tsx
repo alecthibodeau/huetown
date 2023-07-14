@@ -9,7 +9,7 @@ import phasesSVGPaths from '../constants/digital-lunar-calendar/lunar-phases-svg
 /* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
 import formatDateAndTime from '../helpers/format-date-and-time';
-import textFormatting from '../helpers/text-formatting';
+import formatText from '../helpers/format-text';
 
 function MoonSpace(): JSX.Element {
   const {
@@ -34,7 +34,7 @@ function MoonSpace(): JSX.Element {
     formatTwentyFourHourTime
   } = formatDateAndTime;
 
-  const { formatItemRoutePath } = textFormatting;
+  const { formatItemRoutePath } = formatText;
 
   const [todayDate, setTodayDate] = useState<Date>(new Date());
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(new Date());
