@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+/* Interfaces */
+import LunarCalendar from '../interfaces/digital-lunar-calendar-interfaces/LunarCalendar';
+
 /* Constants */
 import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
@@ -19,26 +22,19 @@ function MoonSpace(): JSX.Element {
     dateThirtyFirst,
     commonYearLength,
     leapYearLength,
-    oneRandomNumber,
     phasesInfoForUser,
     isLeapYear,
     getLunarPhase,
     getLunarPhaseCategory,
-    getBackgroundColor,
-    getRandomOrnamentLiveChange
   } = digitalLunarCalendar;
 
-  const {
-    formatDayMonthAndDate,
-    formatFullDateAndTime,
-    formatTwentyFourHourTime
-  } = formatDateAndTime;
-
+  const { formatDayMonthAndDate, isSameDate } = formatDateAndTime;
   const { formatItemRoutePath } = formatText;
 
   const [todayDate, setTodayDate] = useState<Date>(new Date());
+  const [selectedCalendar, setSelectedCalendar] = useState<LunarCalendar>(lunarCalendarsInformation[todayDate.getFullYear()]);
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(new Date());
-  const [selectedYear, setSelectedYear] = useState<number>(selectedPhaseDate.getFullYear());
+  const [selectedYear, setSelectedYear] = useState<number>(0);
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
   const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(todayDate === (new Date(selectedYear, monthJanuary, dateFirst)));
   const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(todayDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
@@ -51,20 +47,16 @@ function MoonSpace(): JSX.Element {
   const milliseconds: number = 10;
   const backDirection: string = 'back';
   const forwardDirection: string = 'forward';
-  const randomOrnamentFixed = lunarCalendarsInformation[selectedPhaseDate.getFullYear()].ornaments[oneRandomNumber];
 
   useEffect(() => {
     const interval = setInterval(() => setTodayDate(new Date()), milliseconds);
     return () => clearInterval(interval);
   }, []);
 
-  // useEffect(() => {
-  //   // const midnight: string = '00:00:00'
-  //   if (formatTwentyFourHourTime(todayDate).slice(-1) === '5') {
-  //     console.log(`%c${formatTwentyFourHourTime(todayDate)}`, 'font-size: 20px; background: #0ff; color: #fff');
-  //     console.log(`%c${todayDate}`, 'font-size: 20px; background: #00f; color: #fff');
-  //   }
-  // }, [todayDate]);
+  useEffect(() => {
+    setSelectedYear(selectedPhaseDate.getFullYear());
+    setSelectedCalendar(lunarCalendarsInformation[selectedYear]);
+  }, [selectedPhaseDate, selectedYear]);
 
   function renderSkyLine(skyLine: string, index: number): JSX.Element {
     return (
@@ -84,10 +76,6 @@ function MoonSpace(): JSX.Element {
         </span>
       </button>
     )
-  }
-
-  function isSameDate(dateOne: Date, dateTwo: Date): boolean {
-    return formatDayMonthAndDate(dateOne) === formatDayMonthAndDate(dateTwo);
   }
 
   function incrementDate(isForwardDirection?: boolean): void {
@@ -124,7 +112,6 @@ function MoonSpace(): JSX.Element {
   async function animateAnnualPhases(daysInTheYear: number) {
     for (let i = 0; i < daysInTheYear - 1; i++) {
       await delayTime(milliseconds);
-      // if (!isPlaying) break;
       incrementDate(true);
     }
     setIsPlaying(false);
@@ -145,7 +132,7 @@ function MoonSpace(): JSX.Element {
             version="1.1"
           >
             <circle
-              fill="#008eb2" // to be set dynamically
+              fill={selectedCalendar?.backgroundColor}
               cx="12"
               cy="12"
               r="12"
@@ -157,7 +144,6 @@ function MoonSpace(): JSX.Element {
             />
           </svg>
         </div>
-        {/* <div className="moon-disc"></div> */}
       </div>
       <div className="sky-lines">
         {Array(76).fill('sky-line').map(renderSkyLine)}
@@ -172,6 +158,10 @@ function MoonSpace(): JSX.Element {
           {renderIncrementButton(isNewYearsEve, forwardDirection)}
         </div>
 
+        <div className="info-for-user">
+          {`${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon`}
+        </div>
+
         {!isPlaying ?
           <div className="lunar-feature-buttons-container">
             <button
@@ -179,18 +169,14 @@ function MoonSpace(): JSX.Element {
               aria-label="Select New Year's Day"
               className="lunar-feature-button"
               onClick={() => onClickNewYearsDay()}>
-              <span className="material-symbols-outlined">
-                sentiment_satisfied
-              </span>
+              <span className="material-symbols-outlined">sentiment_satisfied</span>
             </button>
             <button
               title="Select today's date"
               aria-label="Select today's date"
               className="lunar-feature-button"
               onClick={() => onClickToday()}>
-              <span className="material-symbols-outlined">
-                sunny
-              </span>
+              <span className="material-symbols-outlined">sunny</span>
             </button>
             <NavLink
               title="Buy the print item"
@@ -198,9 +184,7 @@ function MoonSpace(): JSX.Element {
               to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
               className="lunar-feature-link"
             >
-              <span className="material-symbols-outlined">
-                deployed_code
-              </span>
+              <span className="material-symbols-outlined">deployed_code</span>
             </NavLink>
           </div>
         : null}
@@ -213,30 +197,6 @@ function MoonSpace(): JSX.Element {
             </button>
           </div>
         : null}
-
-        <div>
-          {/* <div>
-            {`Today is ${formatFullDateAndTime(todayDate)}`}
-          </div> */}
-          {/* <div>
-            {`Today's phase is ${getLunarPhase(todayDate)}`}
-          </div> */}
-          <div>
-            {`This is a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon`}
-          </div>
-          {/* <div>
-            {`Selected phase is ${getLunarPhase(selectedPhaseDate)}`}
-          </div>
-          <div>
-            {`Selected color is ${getBackgroundColor(selectedPhaseDate)}`}
-          </div> */}
-          {/* <div>
-            {`Random ornament updating live is: ${getRandomOrnamentLiveChange(selectedPhaseDate)}`}
-          </div> */}
-          {/* <div>
-            {`Random ornament fixed is: ${randomOrnamentFixed}`}
-          </div> */}
-        </div>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Item from './components/Item';
 import ItemsCollection from './components/ItemsCollection';
+import MoonSpace from './components/MoonSpace';
 import NotFound from './components/NotFound';
 
 /* Interfaces */
@@ -70,6 +71,7 @@ function App(): JSX.Element {
           <Route path="/about" element={<About />} />
           <Route path="/items" element={<ItemsCollection />} />
           {itemsCollection.map(renderItemRoute)}
+          <Route path="/moon-space" element={<MoonSpace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

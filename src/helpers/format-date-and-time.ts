@@ -1,7 +1,3 @@
-/* Interfaces */
-import DaysOfTheWeek from '../interfaces/digital-lunar-calendar-interfaces/DaysOfTheWeek';
-import MonthsOfTheYear from '../interfaces/digital-lunar-calendar-interfaces/MonthsOfTheYear';
-
 /* Helpers */
 import formatText from './format-text';
 
@@ -11,7 +7,7 @@ const amPeriod: string = 'am';
 const pmPeriod: string = 'pm';
 const twelveHours: number = 12;
 
-const daysOfTheWeek: DaysOfTheWeek = {
+const daysOfTheWeek: {[day: number]: string} = {
   1: 'sun',
   2: 'mon',
   3: 'tue',
@@ -21,7 +17,7 @@ const daysOfTheWeek: DaysOfTheWeek = {
   7: 'sat'
 };
 
-const monthsOfTheYear: MonthsOfTheYear = {
+const monthsOfTheYear: {[month: number]: string} = {
   1: 'jan',
   2: 'feb',
   3: 'mar',
@@ -80,10 +76,15 @@ function formatFullDateAndTime(date: Date): string {
   return `${dayMonthAndDate}, ${year} at ${twelveHourTime}`;
 }
 
+function isSameDate(dateOne: Date, dateTwo: Date): boolean {
+  return formatDayMonthAndDate(dateOne) === formatDayMonthAndDate(dateTwo);
+}
+
 const formatDateAndTime = {
   formatDayMonthAndDate,
   formatFullDateAndTime,
-  formatTwentyFourHourTime
+  formatTwentyFourHourTime,
+  isSameDate
 };
 
 export default formatDateAndTime;

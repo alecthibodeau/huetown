@@ -8,7 +8,7 @@ footer {
   margin: 1rem auto;
 
   section {
-    margin: 1rem $footer-icon-size;
+    margin: 1rem $footer-icon-size/2;
 
     a {
 
@@ -38,11 +38,6 @@ footer {
       &:focus div {
         background-color: $rainbow-yellow;
       }
-    }
-
-    // Make the second anchor's background div a circle
-    &:nth-of-type(2) div {
-      border-radius: 50%;
     }
   }
 }

@@ -1,6 +1,5 @@
 /* Interfaces */
 import PhaseDates from '../interfaces/digital-lunar-calendar-interfaces/PhaseDates';
-import PrincipalPhasesNextCluster from '../interfaces/digital-lunar-calendar-interfaces/PrincipalPhasesNextCluster';
 
 /* Helpers */
 import digitalLunarCalendar from './digital-lunar-calendar';
@@ -14,7 +13,7 @@ const {
   waningCrescentPrefix
 } = digitalLunarCalendar;
 
-const principalPhasesNextCluster: PrincipalPhasesNextCluster = {
+const principalPhasesNextCluster: {[phase: string]: string} = {
   newMoon: waxingCrescentPrefix,
   firstQuarterMoon: waxingGibbousPrefix,
   fullMoon: waningGibbousPrefix,

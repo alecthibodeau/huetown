@@ -10,8 +10,6 @@ import emailGray from '../assets/images/icons/icon-email-fifty-percent-gray.svg'
 import emailWhite from '../assets/images/icons/icon-email-white.svg';
 import instagramGray from '../assets/images/icons/icon-instagram-fifty-percent-gray.svg';
 import instagramWhite from '../assets/images/icons/icon-instagram-white.svg';
-import twitterGray from '../assets/images/icons/icon-twitter-fifty-percent-gray.svg';
-import twitterWhite from '../assets/images/icons/icon-twitter-white.svg';
 
 /* About */
 import hLogo from '../assets/images/about/huetown-h-logo.jpg';
@@ -132,9 +130,7 @@ const icons = {
   emailGray,
   emailWhite,
   instagramGray,
-  instagramWhite,
-  twitterGray,
-  twitterWhite
+  instagramWhite
 };
 
 const about = {

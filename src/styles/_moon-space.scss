@@ -99,6 +99,11 @@
   }
 }
 
+.info-for-user {
+  margin-top: .25rem;
+  text-align: center;
+}
+
 .play-year-button-container {
   display: flex;
   justify-content: center;
@@ -114,13 +119,3 @@
     color: $white;
   }
 }
-
-// .moon-disc {
-//   position: relative;
-//   bottom: 210px;
-//   width: 120px;
-//   height: 120px;
-//   border-radius: 50%;
-//   margin: auto;
-//   background-color: pink;
-// }

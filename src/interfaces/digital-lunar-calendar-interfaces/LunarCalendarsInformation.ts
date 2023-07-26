@@ -1,11 +1,7 @@
-import PhaseDates from './PhaseDates';
+import LunarCalendar from './LunarCalendar';
 
 interface LunarCalendarsInformation {
-  [year: number]: {
-    backgroundColor: string;
-    ornaments: string[];
-    phaseDates: PhaseDates;
-  };
+  [year: number]: LunarCalendar;
 }
 
 export default LunarCalendarsInformation;
