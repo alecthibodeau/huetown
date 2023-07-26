@@ -1,16 +1,18 @@
 /* Components */
 import Item from './Item';
+import MoonSpace from './MoonSpace';
+import News from './News';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
 
 /* Constants */
-import images from '../constants/images';
 import items from '../constants/items';
 
 function Home(): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2023;
   const isFeatured: boolean = false;
+  const isNews: boolean = true;
 
   return (
     <>
@@ -29,17 +31,9 @@ function Home(): JSX.Element {
           lunarCalendarYear={featured.lunarCalendarYear}
           lunarCalendarPaper={featured.lunarCalendarPaper}
           lunarCalendarLocation={featured.lunarCalendarLocation}
-        />
-      :
+        /> :
         <div className="home-content">
-          <div>
-            <a href="https://www.instagram.com/p/Cq-889Wrfbt">
-              <img src={images.framedPiece} alt="framed ink drawing by Alec Thibodeau"/>
-            </a>
-          </div>
-          <div>
-            <span className="bold">Recently:</span> <span>Alec donated this <a className="text-link" href="https://www.instagram.com/p/Cq-889Wrfbt">original ink drawing</a> to <a className="text-link" href="https://newurbanarts.org/about">New Urban Arts</a> for the organization's 26th Annual Birthday Bash and Silent Art Auction.</span>
-          </div>
+          {isNews ? <News /> : <MoonSpace />}
         </div>
       }
     </>

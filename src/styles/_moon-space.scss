@@ -1,0 +1,121 @@
+@use './variables' as *;
+
+.moon-space {
+  max-height: 500px;
+}
+
+.moon-image-container {
+  width: $moon-space-dimension;
+  height: $moon-space-dimension;
+  background-color: $twenty-three-blue-paper; // to be set dynamically
+}
+
+.sky-lines {
+  position: relative;
+  bottom: $moon-space-dimension;
+  width: $moon-space-dimension;
+  height: $moon-space-dimension;
+
+  div {
+    height: 2px;
+    background-color: $twenty-three-blue-ink; // to be set dynamically
+    margin-bottom: 2px;
+  }
+}
+
+.phase-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $moon-space-dimension;
+  height: $moon-space-dimension;
+  z-index: 1;
+
+  svg.waning {
+    transform: scaleX(-1);
+  }
+}
+
+.moon-info {
+  position: relative;
+  bottom: $moon-space-dimension;
+  margin-top: 8px;
+}
+
+.date-picker {
+  display: flex;
+  width: $moon-space-dimension;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-phase-date {
+  width: $moon-space-dimension / 2;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.increment-button,
+.lunar-feature-button,
+.lunar-feature-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: $sixty-percent-gray;
+  color: $white;
+  text-decoration: none;
+
+  &.is-not-visible {
+    visibility: hidden;
+  }
+
+  span {
+    position: relative;
+
+    &.back-arrow {
+      left: 4px;
+    }
+
+    &.forward-arrow {
+      left: 1px;
+    }
+  }
+}
+
+.lunar-feature-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: .5rem;
+
+  .lunar-feature-button,
+  .lunar-feature-link {
+    margin: .25rem;
+  }
+}
+
+.info-for-user {
+  margin-top: .25rem;
+  text-align: center;
+}
+
+.play-year-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: .5rem;
+
+  button {
+    padding: .625rem .875rem;
+    border: none;
+    border-radius: $border-radius-standard;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    background-color: $sixty-percent-gray;
+    color: $white;
+  }
+}

@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Item from './components/Item';
 import ItemsCollection from './components/ItemsCollection';
+import MoonSpace from './components/MoonSpace';
 import NotFound from './components/NotFound';
 
 /* Interfaces */
@@ -17,19 +18,18 @@ import ItemProps from './interfaces/ItemProps';
 import itemsCollection from './constants/items-collection';
 
 /* Helpers */
-import textFormatting from './helpers/text-formatting';
-
-const resize: string = 'resize';
-const breakpointSm: number = 576;
+import formatText from './helpers/format-text';
 
 function App(): JSX.Element {
-  const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
+  const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
 
   useEffect(() => {
+    const breakpointSm: number = 576;
+    const resize: string = 'resize';
     window.addEventListener(resize, getViewportWidth);
-    setIsBreakpointXs(viewportWidth < breakpointSm ? true : false);
-    return(() => window.removeEventListener(resize, getViewportWidth));
+    setIsBreakpointXs(viewportWidth < breakpointSm);
+    return () => window.removeEventListener(resize, getViewportWidth);
   }, [viewportWidth]);
 
   function getViewportWidth(): void {
@@ -39,8 +39,8 @@ function App(): JSX.Element {
   function renderItemRoute(item: ItemProps, index: number): JSX.Element {
     return (
       <Route
-        key={`${textFormatting.formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
-        path={textFormatting.formatItemRoutePath(item.category, item.title)}
+        key={`${formatText.formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
+        path={formatText.formatItemRoutePath(item.category, item.title)}
         element={
           <Item
             id={item.id}
@@ -71,6 +71,7 @@ function App(): JSX.Element {
           <Route path="/about" element={<About />} />
           <Route path="/items" element={<ItemsCollection />} />
           {itemsCollection.map(renderItemRoute)}
+          <Route path="/moon-space" element={<MoonSpace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

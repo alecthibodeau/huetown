@@ -10,9 +10,7 @@ function IconLinks(props: IconLinksProps): JSX.Element {
     emailGray,
     emailWhite,
     instagramGray,
-    instagramWhite,
-    twitterGray,
-    twitterWhite
+    instagramWhite
   } = images.icons;
 
   const iconLinks: IconLink[] = [
@@ -20,11 +18,6 @@ function IconLinks(props: IconLinksProps): JSX.Element {
       title: 'Instagram',
       url: 'https://www.instagram.com/huetown',
       src: props.isForMobileNav ? instagramWhite : instagramGray
-    },
-    {
-      title: 'Twitter',
-      url: 'https://www.twitter.com/huetown',
-      src: props.isForMobileNav ? twitterWhite : twitterGray
     },
     {
       title: 'Email',

@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import LunarPhase from '../interfaces/LunarPhase';
+import LunarPhase from '../interfaces/LunarPhaseKey';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
 /* Constants */
+import formatText from '../helpers/format-text';
 import images from '../constants/images';
-import lunarCalendars from '../constants/lunar-calendars';
-import textFormatting from '../helpers/text-formatting';
+import itemsLunarCalendars from '../constants/items-lunar-calendars';
 
 function LunarCalendarInfo(props: ItemProps): JSX.Element {
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
@@ -19,7 +19,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
     return (
       <div
-        key={`${textFormatting.formatLettersAndNumbers(phase.name)}-moon-${index}`}
+        key={`${formatText.formatLettersAndNumbers(phase.name)}-moon-${index}`}
         className="phase-info"
       >
         <img src={phase.image} alt={moonTextFormatted}/>
@@ -37,7 +37,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
   function renderThumbnail(thumbnail: Thumbnail, index: number): JSX.Element {
     return (
       <div
-        key={`thumbnail${thumbnail.label.replace(textFormatting.allSpaces, '')}-${index}`}
+        key={`thumbnail${thumbnail.label.replace(formatText.allSpaces, '')}-${index}`}
         className="thumbnail"
       >
         {
@@ -72,7 +72,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
           Custom moon illustrations portray all principal lunar phases (New Moon, First Quarter Moon, Full Moon and Third Quarter Moon) plus all intermediate crescent and gibbous phases. For months with less than 31 days, drawings of clouds occupy the extra spaces. <a className="text-link" href="#featureImage">Order now.</a>
         </div>
         <div className="lunar-phases" id="lunarPhases">
-          {lunarCalendars.phases.map(renderlunarPhase)}
+          {itemsLunarCalendars.phases.map(renderlunarPhase)}
         </div>
       </div>
       {isCurrentLunarCalendar ?
@@ -94,7 +94,7 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
         </div>
       : null}
       <div className="lunar-calendar-thumbnails">
-        {lunarCalendars.thumbnails.map(
+        {itemsLunarCalendars.thumbnails.map(
           (group: ThumbnailsGroup, index: number) => {
             return (
               <div key={`${group.status}-${index}`} className="thumbnails-group">

@@ -1,23 +1,27 @@
-import huetownLogoGray from '../assets/images/huetown-script-logo-fifty-percent-gray.svg';
-import huetownLogoWhite from '../assets/images/huetown-script-logo-white.svg';
+/* Home */
+import framedPiece from '../assets/images/home/thibodeau-framed-piece-700px.jpg';
 
-import emailGray from '../assets/images/icon-email-fifty-percent-gray.svg';
-import emailWhite from '../assets/images/icon-email-white.svg';
-import instagramGray from '../assets/images/icon-instagram-fifty-percent-gray.svg';
-import instagramWhite from '../assets/images/icon-instagram-white.svg';
-import twitterGray from '../assets/images/icon-twitter-fifty-percent-gray.svg';
-import twitterWhite from '../assets/images/icon-twitter-white.svg';
+/* Header */
+import huetownLogoGray from '../assets/images/header/huetown-script-logo-fifty-percent-gray.svg';
+import huetownLogoWhite from '../assets/images/header/huetown-script-logo-white.svg';
 
-import hLogo from '../assets/images/huetown-h-logo.jpg';
-import selfPortrait from '../assets/images/thibodeau-self-portrait.jpg';
+/* Icons */
+import emailGray from '../assets/images/icons/icon-email-fifty-percent-gray.svg';
+import emailWhite from '../assets/images/icons/icon-email-white.svg';
+import instagramGray from '../assets/images/icons/icon-instagram-fifty-percent-gray.svg';
+import instagramWhite from '../assets/images/icons/icon-instagram-white.svg';
 
-import firstQuarterMoon from '../assets/images/items/lunar-phase-first-quarter.png';
-import fullMoon from '../assets/images/items/lunar-phase-full.png';
-import newMoon from '../assets/images/items/lunar-phase-new.png';
-import thirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarter.png';
+/* About */
+import hLogo from '../assets/images/about/huetown-h-logo.jpg';
+import selfPortrait from '../assets/images/about/thibodeau-self-portrait.jpg';
 
-import colossalLogo from '../assets/images/colossal-logo-small.jpg';
-import framedPiece from '../assets/images/thibodeau-framed-piece-700px.jpg';
+/* Items */
+import keyFirstQuarterMoon from '../assets/images/items/lunar-phase-first-quarter.png';
+import keyFullMoon from '../assets/images/items/lunar-phase-full.png';
+import keyNewMoon from '../assets/images/items/lunar-phase-new.png';
+import keyThirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarter.png';
+
+import colossalLogo from '../assets/images/items/colossal-logo-small.jpg';
 import spacePonyPreorder from '../assets/images/items/space-pony-300px.jpg';
 
 import lunarCalendar2023Feature from '../assets/images/items/thibodeau-lunar-calendar-2023-feature-1000px.jpg';
@@ -126,9 +130,7 @@ const icons = {
   emailGray,
   emailWhite,
   instagramGray,
-  instagramWhite,
-  twitterGray,
-  twitterWhite
+  instagramWhite
 };
 
 const about = {
@@ -137,10 +139,10 @@ const about = {
 };
 
 const lunarPhases = {
-  firstQuarterMoon,
-  fullMoon,
-  thirdQuarterMoon,
-  newMoon
+  keyFirstQuarterMoon,
+  keyFullMoon,
+  keyThirdQuarterMoon,
+  keyNewMoon
 };
 
 const lunarCalendar2023DetailImages = [

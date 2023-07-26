@@ -1,6 +1,6 @@
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import LunarPhase from '../interfaces/LunarPhase';
+import LunarPhaseKey from '../interfaces/LunarPhaseKey';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
@@ -10,13 +10,13 @@ import items from './items';
 import text from './text';
 
 /* Helpers */
-import textFormatting from '../helpers/text-formatting';
+import formatText from '../helpers/format-text';
 
 const {
-  newMoon,
-  firstQuarterMoon,
-  fullMoon,
-  thirdQuarterMoon
+  keyNewMoon,
+  keyFirstQuarterMoon,
+  keyFullMoon,
+  keyThirdQuarterMoon
 } = images.lunarPhases;
 
 const {
@@ -26,22 +26,22 @@ const {
   lunarCalendar2008Previous
 } = images.lunarCalendars;
 
-const phases: LunarPhase[] = [
+const phases: LunarPhaseKey[] = [
   {
-    name: 'new',
-    image: newMoon
+    name: text.lunarPhaseNew,
+    image: keyNewMoon
   },
   {
-    name: 'first quarter',
-    image: firstQuarterMoon
+    name: text.lunarPhaseFirstQuarter,
+    image: keyFirstQuarterMoon
   },
   {
-    name: 'full',
-    image: fullMoon
+    name: text.lunarPhaseFull,
+    image: keyFullMoon
   },
   {
-    name: 'third quarter',
-    image: thirdQuarterMoon
+    name: text.lunarPhaseThirdQuarter,
+    image: keyThirdQuarterMoon
   }
 ];
 
@@ -82,7 +82,7 @@ function formatThumbnail(item: ItemProps): Thumbnail {
   return {
     label: `${item.lunarCalendarYear} ${item.category}`,
     image: item.featureImage,
-    link: textFormatting.formatItemRoutePath(item.category, item.title)
+    link: formatText.formatItemRoutePath(item.category, item.title)
   }
 }
 
@@ -97,9 +97,9 @@ const thumbnails: ThumbnailsGroup[] = [
   }
 ];
 
-const lunarCalendars = {
+const itemsLunarCalendars = {
   phases,
   thumbnails
 };
 
-export default lunarCalendars;
+export default itemsLunarCalendars;
