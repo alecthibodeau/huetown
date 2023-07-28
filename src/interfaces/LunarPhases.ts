@@ -3,7 +3,7 @@ interface LunarPhases {
   firstQuarterMoon: string;
   fullMoon: string;
   thirdQuarterMoon: string;
-  [phaseName: string]: string;
+  [lunarPhaseName: string]: string;
 }
 
 export default LunarPhases;

@@ -1,5 +1,5 @@
 /* Interfaces */
-import LunarPhases from '../../interfaces/digital-lunar-calendar-interfaces/LunarPhases';
+import LunarPhases from '../interfaces/LunarPhases';
 
 /* Waxing Crescent Phase Paths */
 const waxingCrescentEightSteps = {
@@ -79,7 +79,7 @@ const waxingGibbousFiveSteps = {
   xg55: waxingGibbousEightSteps.xg88
 };
 
-const phasesSVGPaths: LunarPhases = {
+const lunarPhasesSVGPaths: LunarPhases = {
 
   // principal phase paths
   newMoon: 'm12,.3C5.54.3.3,5.54.3,12s5.24,11.7,11.7,11.7,11.7-5.24,11.7-11.7S18.46.3,12,.3Zm0,23.12C5.69,23.42.58,18.31.58,12S5.69.58,12,.58s11.42,5.11,11.42,11.42-5.11,11.42-11.42,11.42Z',
@@ -212,4 +212,4 @@ const phasesSVGPaths: LunarPhases = {
   nc55: waxingCrescentFiveSteps.xc51
 };
 
-export default phasesSVGPaths;
+export default lunarPhasesSVGPaths;

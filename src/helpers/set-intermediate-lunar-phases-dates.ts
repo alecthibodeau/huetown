@@ -1,5 +1,5 @@
 /* Interfaces */
-import PhaseDates from '../interfaces/digital-lunar-calendar-interfaces/PhaseDates';
+import LunarPhaseDates from '../interfaces/LunarPhaseDates';
 
 /* Helpers */
 import digitalLunarCalendar from './digital-lunar-calendar';
@@ -49,32 +49,32 @@ function setDaysOfTheYear(year: number): number[] {
   return days;
 }
 
-function setIntermediatePhasesDates(phaseDates: PhaseDates, year: number): PhaseDates {
+function setIntermediateLunarPhasesDates(lunarPhaseDates: LunarPhaseDates, year: number): LunarPhaseDates {
   const intermediatePhasesDaysCluster: number[] = [];
   let intermediatePhasePrefix: string = '';
   setDaysOfTheYear(year).forEach(
     (day: number) => {
-      const isPrincipalPhaseDay = principalPhasesNextCluster[phaseDates[day]];
+      const isPrincipalPhaseDay = principalPhasesNextCluster[lunarPhaseDates[day]];
       if (isPrincipalPhaseDay) {
         const clusterLength = intermediatePhasesDaysCluster.length;
         if (clusterLength) {
           intermediatePhasesDaysCluster.forEach(
             (intermediateDate, index) => {
               const phaseCode = `${intermediatePhasePrefix}${clusterLength}${index + 1}`;
-              phaseDates[intermediateDate] = phaseCode;
+              lunarPhaseDates[intermediateDate] = phaseCode;
             }
           );
         }
-        intermediatePhasePrefix = principalPhasesNextCluster[phaseDates[day]];
+        intermediatePhasePrefix = principalPhasesNextCluster[lunarPhaseDates[day]];
         intermediatePhasesDaysCluster.length = 0;
       }
-      if (!isPrincipalPhaseDay && !phaseDates[day]) {
+      if (!isPrincipalPhaseDay && !lunarPhaseDates[day]) {
         intermediatePhasesDaysCluster.push(day);
       }
     }
   );
-  console.log('phaseDates: ', phaseDates);
-  return phaseDates;
+  console.log('lunarPhaseDates: ', lunarPhaseDates);
+  return lunarPhaseDates;
 }
 
-export default setIntermediatePhasesDates;
+export default setIntermediateLunarPhasesDates;

@@ -1,8 +1,8 @@
 /* Interfaces */
-import LunarPhases from '../interfaces/digital-lunar-calendar-interfaces/LunarPhases';
+import LunarPhases from '../interfaces/LunarPhases';
 
 /* Constants */
-import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
+import lunarCalendarsInformation from '../constants/lunar-calendars-information';
 import text from '../constants/text';
 
 /* Helpers */
@@ -77,7 +77,7 @@ function getLunarPhase(date: Date): string {
   const monthFormatted: number = date.getMonth() + 1;
   const dayFormatted: string = formatText.formatPadStart(date.getDate());
   const numericalDate = +(monthFormatted + dayFormatted);
-  return lunarCalendarsInformation[date.getFullYear()].phaseDates[numericalDate];
+  return lunarCalendarsInformation[date.getFullYear()].lunarPhaseDates[numericalDate];
 }
 
 function getLunarPhaseCategory(phase: string): string {
