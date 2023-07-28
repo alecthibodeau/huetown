@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import LunarPhase from '../interfaces/LunarPhaseKey';
+import LunarPhase from '../interfaces/ItemLunarPhaseKey';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
@@ -11,7 +11,7 @@ import formatText from '../helpers/format-text';
 import images from '../constants/images';
 import itemsLunarCalendars from '../constants/items-lunar-calendars';
 
-function LunarCalendarInfo(props: ItemProps): JSX.Element {
+function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
   const linkSpacePony: string = '/items/prints/space-pony';
 
@@ -113,4 +113,4 @@ function LunarCalendarInfo(props: ItemProps): JSX.Element {
   );
 }
 
-export default LunarCalendarInfo;
+export default ItemLunarCalendarInfo;

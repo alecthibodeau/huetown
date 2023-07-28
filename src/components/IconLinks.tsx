@@ -7,8 +7,6 @@ import images from '../constants/images';
 
 function IconLinks(props: IconLinksProps): JSX.Element {
   const {
-    emailGray,
-    emailWhite,
     instagramGray,
     instagramWhite
   } = images.icons;
@@ -18,11 +16,6 @@ function IconLinks(props: IconLinksProps): JSX.Element {
       title: 'Instagram',
       url: 'https://www.instagram.com/huetown',
       src: props.isForMobileNav ? instagramWhite : instagramGray
-    },
-    {
-      title: 'Email',
-      url: 'mailto:info@huetown.com',
-      src: props.isForMobileNav ? emailWhite : emailGray
     }
   ];
 

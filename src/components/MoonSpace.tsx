@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 /* Interfaces */
-import LunarCalendar from '../interfaces/digital-lunar-calendar-interfaces/LunarCalendar';
+import LunarCalendar from '../interfaces/LunarCalendar';
 
 /* Constants */
 import items from '../constants/items';
-import lunarCalendarsInformation from '../constants/digital-lunar-calendar/lunar-calendars-information';
-import phasesSVGPaths from '../constants/digital-lunar-calendar/lunar-phases-svg-paths';
+import lunarCalendarsInformation from '../constants/lunar-calendars-information';
+import lunarPhasesSVGPaths from '../constants/lunar-phases-svg-paths';
 
 /* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
@@ -138,7 +138,7 @@ function MoonSpace(): JSX.Element {
               r="12"
             />
             <path
-              d={phasesSVGPaths[getLunarPhase(selectedPhaseDate)]}
+              d={lunarPhasesSVGPaths[getLunarPhase(selectedPhaseDate)]}
               fill={colorWhite}
               fillOpacity="80%"
             />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 /* Components */
-import LunarCalendarInfo from './LunarCalendarInfo';
+import ItemLunarCalendarInfo from './ItemLunarCalendarInfo';
 
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
@@ -183,7 +183,7 @@ function Item(props: ItemProps): JSX.Element {
         <div className="detail-images">
           {props.detailImages.map(renderDetailImagePair)}
           {isLunarCalendar ?
-            <LunarCalendarInfo
+            <ItemLunarCalendarInfo
               id={props.id}
               category={props.category}
               title={props.title}

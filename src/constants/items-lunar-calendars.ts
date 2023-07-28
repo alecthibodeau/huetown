@@ -1,6 +1,6 @@
 /* Interfaces */
 import ItemProps from '../interfaces/ItemProps';
-import LunarPhaseKey from '../interfaces/LunarPhaseKey';
+import ItemLunarPhaseKey from '../interfaces/ItemLunarPhaseKey';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
@@ -26,7 +26,7 @@ const {
   lunarCalendar2008Previous
 } = images.lunarCalendars;
 
-const phases: LunarPhaseKey[] = [
+const phases: ItemLunarPhaseKey[] = [
   {
     name: text.lunarPhaseNew,
     image: keyNewMoon
