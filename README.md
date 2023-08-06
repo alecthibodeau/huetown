@@ -15,3 +15,5 @@ Huetown is built with [React](https://reactjs.org/) and [TypeScript](https://www
 - [Sass](https://sass-lang.com)
 - [Google Fonts](https://fonts.google.com)
 - Custom SVG illustrations
+
+Software and content Copyright (C) Alec Thibodeau. Copyright year is by commit date.
