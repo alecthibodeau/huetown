@@ -1,3 +1,7 @@
+/* Interfaces */
+import LunarPhaseDates from '../interfaces/LunarPhaseDates';
+
+/* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
 
 const {
@@ -17,7 +21,7 @@ const {
   ng75
 } = digitalLunarCalendar.lunarPhases;
 
-const lunarPhases2023 = {
+const lunarPhaseDates2023: LunarPhaseDates = {
   // Previous year, 2022: first quarter moon was on 12/29/2022
   101: xg73,
   102: xg74,
@@ -81,4 +85,4 @@ const lunarPhases2023 = {
   // Following year, 2024: third quarter moon will be on 1/3/2024
 };
 
-export default lunarPhases2023;
+export default lunarPhaseDates2023;
