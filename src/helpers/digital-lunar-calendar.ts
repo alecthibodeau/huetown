@@ -31,7 +31,7 @@ const intermediatePhasesPrefixes = [
   waningCrescentPrefix
 ];
 
-const phasesInfoForUser: {[phase: string]: string} = {
+const phasesInfoForUser: { [phase: string]: string } = {
   ne: text.lunarPhaseNew,
   fi: text.lunarPhaseFirstQuarter,
   fu: text.lunarPhaseFull,
@@ -39,7 +39,7 @@ const phasesInfoForUser: {[phase: string]: string} = {
   xc: `${text.lunarPhaseWaxing} ${text.lunarPhaseCrescent}`,
   xg: `${text.lunarPhaseWaxing} ${text.lunarPhaseGibbous}`,
   ng: `${text.lunarPhaseWaning} ${text.lunarPhaseGibbous}`,
-  nc: `${text.lunarPhaseWaning} ${text.lunarPhaseCrescent}`,
+  nc: `${text.lunarPhaseWaning} ${text.lunarPhaseCrescent}`
 };
 
 const principalPhases: LunarPhases = {
@@ -62,7 +62,7 @@ function addIntermediatePhasesToPrincipalPhases(lunarPhases: LunarPhases): Lunar
       phaseClusterLengths.forEach(
         (clusterLength) => {
           for (let i = 1; i <= clusterLength; i++) {
-            const phaseCode = prefix + clusterLength + i;
+            const phaseCode: string = prefix + clusterLength + i;
             lunarPhases[phaseCode] = phaseCode;
           }
         }
@@ -76,7 +76,7 @@ function addIntermediatePhasesToPrincipalPhases(lunarPhases: LunarPhases): Lunar
 function getLunarPhase(date: Date): string {
   const monthFormatted: number = date.getMonth() + 1;
   const dayFormatted: string = formatText.formatPadStart(date.getDate());
-  const numericalDate = +(monthFormatted + dayFormatted);
+  const numericalDate: number = +(monthFormatted + dayFormatted);
   return lunarCalendarsInformation[date.getFullYear()].lunarPhaseDates[numericalDate];
 }
 
