@@ -13,7 +13,7 @@ const {
   waningCrescentPrefix
 } = digitalLunarCalendar;
 
-const principalPhasesNextCluster: {[phase: string]: string} = {
+const principalPhasesNextCluster: { [phase: string]: string } = {
   newMoon: waxingCrescentPrefix,
   firstQuarterMoon: waxingGibbousPrefix,
   fullMoon: waningGibbousPrefix,
@@ -54,13 +54,13 @@ function setIntermediateLunarPhasesDates(lunarPhaseDates: LunarPhaseDates, year:
   let intermediatePhasePrefix: string = '';
   setDaysOfTheYear(year).forEach(
     (day: number) => {
-      const isPrincipalPhaseDay = principalPhasesNextCluster[lunarPhaseDates[day]];
+      const isPrincipalPhaseDay: boolean = principalPhasesNextCluster[lunarPhaseDates[day]] !== undefined;
       if (isPrincipalPhaseDay) {
-        const clusterLength = intermediatePhasesDaysCluster.length;
+        const clusterLength: number = intermediatePhasesDaysCluster.length;
         if (clusterLength) {
           intermediatePhasesDaysCluster.forEach(
             (intermediateDate, index) => {
-              const phaseCode = `${intermediatePhasePrefix}${clusterLength}${index + 1}`;
+              const phaseCode: string = `${intermediatePhasePrefix}${clusterLength}${index + 1}`;
               lunarPhaseDates[intermediateDate] = phaseCode;
             }
           );

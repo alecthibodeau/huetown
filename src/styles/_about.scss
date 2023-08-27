@@ -2,12 +2,12 @@
 
 .about-content {
   width: $page-width;
+  margin-top: .5rem;
 }
 
 .about-upper div {
   position: relative;
-  bottom: 5px;
-  min-height: 75px;
+  bottom: .25rem;
 
   span.bold {
     font-weight: 600;
@@ -15,16 +15,14 @@
 }
 
 .self-portrait {
-  width: $about-image-dimensions;
-  height: $about-image-dimensions;
+  width: $about-image-dimension;
   margin-right: 1rem;
   float: left;
 }
 
 .huetown-h-logo {
   display: none;
-  width: $about-image-dimensions;
-  height: $about-image-dimensions;
+  width: $about-image-dimension;
 }
 
 .about-lower div {
@@ -55,7 +53,7 @@
 
 .form-input {
   width: 95%;
-  max-width: 400px;
+  max-width: 25rem;
   padding: .5rem;
   margin-bottom: 1rem;
 }
@@ -74,8 +72,8 @@
 }
 
 .subscribe-button {
-  border: 2px solid transparent;
-  border-radius: 6px;
+  border: $border-width-large solid transparent;
+  border-radius: $border-radius-small;
   padding: .5rem 1rem;
   margin-top: .5rem;
   font-family: "Raleway", sans-serif;
@@ -83,7 +81,7 @@
   font-weight: 600;
   background-color: $sixty-seven-percent-gray;
   color: $white;
-  letter-spacing: 0.3125rem;
+  letter-spacing: .3125rem;
   text-transform: capitalize;
 
   &:hover {

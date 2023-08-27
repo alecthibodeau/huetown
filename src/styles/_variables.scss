@@ -6,15 +6,6 @@ $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1400px;
 
-/* Dimensions */
-
-$page-width: 90%;
-$page-gutter: 5%;
-$character-width: 80ch;
-$about-image-dimensions: 80px;
-$items-card-image-dimension: 300px;
-$moon-space-dimension: 300px;
-
 /* Colors */
 
 $black: #000;
@@ -47,7 +38,32 @@ $twenty-three-blue-dark: #005f88;
 
 $application-font-color: $eighty-percent-gray;
 
+/* Dimensions */
+
+$page-width: 90%;
+$page-gutter: 5%;
+$character-width: 80ch;
+$viewport-width-ninety-percent: 90vw;
+$about-image-dimension: 80px;
+$image-dimension-xtra-small: 175px;
+$image-dimension-small: 300px;
+$image-dimension-medium: 450px;
+$image-dimension-large: 600px;
+$image-dimension-xtra-large: 700px;
+
+$moon-space-dimension: 300px;
+
 /* Border */
 
-$border-standard: 1px solid $border-gray;
-$border-radius-standard: 10px;
+$border-width-small: 1px;
+$border-width-medium: 1.5px;
+$border-width-large: 2px;
+$border-width-xtra-large: 3px;
+$border-standard: $border-width-small solid $border-gray;
+$border-radius-small: .375rem;
+$border-radius-medium: .5625rem;
+$border-radius-large: .625rem;
+$border-radius-xtra-large: 1rem;
+
+/* Effects */
+$hover-shadow: .25rem .25rem 1rem $html-gray;

@@ -1,6 +1,6 @@
-const allButLettersAndNumbers = /[^a-zA-Z0-9]/g;
-const allButLettersNumbersAndSpaces = /[^a-zA-Z0-9\s]/g;
-const allSpaces = /\s+/g;
+const allButLettersAndNumbers: RegExp = /[^a-zA-Z0-9]/g;
+const allButLettersNumbersAndSpaces: RegExp = /[^a-zA-Z0-9\s]/g;
+const allSpaces: RegExp = /\s+/g;
 
 function formatPadStart(unit: number): string {
   return unit.toString().padStart(2, '0');

@@ -7,7 +7,7 @@ const amPeriod: string = 'am';
 const pmPeriod: string = 'pm';
 const twelveHours: number = 12;
 
-const daysOfTheWeek: {[day: number]: string} = {
+const daysOfTheWeek: { [day: number]: string } = {
   1: 'sun',
   2: 'mon',
   3: 'tue',
@@ -17,7 +17,7 @@ const daysOfTheWeek: {[day: number]: string} = {
   7: 'sat'
 };
 
-const monthsOfTheYear: {[month: number]: string} = {
+const monthsOfTheYear: { [month: number]: string } = {
   1: 'jan',
   2: 'feb',
   3: 'mar',
