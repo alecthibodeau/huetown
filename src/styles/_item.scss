@@ -9,7 +9,7 @@
 }
 
 .item .item-press {
-  max-width: 650px;
+  max-width: 40.625rem;
   margin: auto auto .75rem;
 
   span:last-of-type {
@@ -30,16 +30,16 @@
   .feature-image {
     @include crisp-scaled-down;
 
-    width: 90vw;
-    max-width: 700px;
+    width: $viewport-width-ninety-percent;
+    max-width: $image-dimension-xtra-large;
     vertical-align: top;
 
     &.postcard {
       border: $border-standard;
-      max-width: 600px;
+      max-width: $image-dimension-large;
 
       &.cachalot {
-        border-radius: 16px;
+        border-radius: $border-radius-xtra-large;
       }
     }
   }
@@ -48,7 +48,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    max-width: 600px;
+    max-width: $image-dimension-large;
   }
 
   .item-title {
@@ -92,18 +92,18 @@
 
     input[name="quantity"] {
       width: 2.5rem;
-      height: 2.25rem;
+      min-height: 2.25rem;
       padding: 0;
-      border: 0.1rem solid $fifty-percent-gray;
+      border: $border-width-small solid $fifty-percent-gray;
       margin-right: .5rem;
       font-size: .75rem;
       text-align: center;
     }
 
     input[value="Add to cart"] {
-      width: 160px;
+      width: 10rem;
       border: none;
-      border-radius: 6px;
+      border-radius: $border-radius-small;
       background-color: $sixty-seven-percent-gray;
       color: $white;
       font-family: "Raleway", sans-serif;
@@ -113,7 +113,7 @@
       cursor: pointer;
 
       &:hover {
-        border: 2px solid $sixty-seven-percent-gray;
+        border: $border-width-large solid $sixty-seven-percent-gray;
         color: $black;
         background-color: $rainbow-yellow;
       }
@@ -125,7 +125,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid $twenty-percent-gray;
+    border-bottom: $border-width-small solid $twenty-percent-gray;
     padding-bottom: 1.25rem;
   }
 
@@ -137,14 +137,14 @@
 
     img {
       margin: 1rem .5rem auto;
-      max-width: 450px;
-      width: 90vw;
-      max-height: 450px;
-      height: 90vw;
+      max-width: $image-dimension-medium;
+      width: $viewport-width-ninety-percent;
+      max-height: $image-dimension-medium;
+      height: $viewport-width-ninety-percent;
 
       &.lunar-calendar.recent-lunar-calendar {
-        max-width: 700px;
-        max-height: 700px;
+        max-width: $image-dimension-xtra-large;
+        max-height: $image-dimension-xtra-large;
       }
     }
   }
@@ -202,8 +202,8 @@
       flex-direction: row;
 
       img {
-        width: 450px;
-        height: 450px;
+        width: $image-dimension-medium;
+        height: $image-dimension-medium;
       }
     }
   }

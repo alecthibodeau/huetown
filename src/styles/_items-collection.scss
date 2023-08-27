@@ -1,23 +1,22 @@
 @use './variables' as *;
 
 .items-collection-info {
-  max-width: 300px;
+  max-width: 18.75rem;
+  padding: 0 1rem;
   margin: auto;
 }
 
 .items-search {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   span {
     text-align: center;
-
-    &.items-search-dash {
-      display: none;
-    }
   }
 
   input {
+    width: 94%;
     padding: .5rem;
   }
 }
@@ -30,7 +29,7 @@
   .category-button {
     padding: .25rem .5rem;
     border: $border-standard;
-    border-radius: 6px;
+    border-radius: $border-radius-small;
     background-color: transparent;
     color: $eighty-percent-gray;
 
@@ -51,24 +50,27 @@
 .item-card-link {
   display: flex;
   flex-direction: column;
-  width: $items-card-image-dimension;
-  border-radius: $border-radius-standard;
+  width: $image-dimension-small;
+  border: $border-standard;
+  border-radius: $border-radius-large;
   margin: 1rem;
 
   &:hover {
-    box-shadow: 5px 5px 15px $html-gray;
+    box-shadow: $hover-shadow;
   }
 }
 
 .item-card-image {
-  height: $items-card-image-dimension;
-  border: $border-standard;
-  border-top-left-radius: $border-radius-standard;
-  border-top-right-radius: $border-radius-standard;
+  min-height: $image-dimension-small;
   object-fit: cover;
+  border-top-left-radius: $border-radius-medium;
+  border-top-right-radius: $border-radius-medium;
+  border-bottom-width: $border-width-small;
+  border-bottom-style: solid;
+  border-bottom-color: $border-gray;
 
   &.postcard.cachalot {
-    object-position: -10px;
+    object-position: -.625rem;
   }
 
   &.postcard.hippopotamus,
@@ -83,10 +85,6 @@
 
 .item-card-info {
   padding: 1rem;
-  border: $border-standard;
-  border-bottom-left-radius: $border-radius-standard;
-  border-bottom-right-radius: $border-radius-standard;
-  border-top-color: transparent;
   text-align: center;
 }
 
@@ -108,24 +106,14 @@
 
   .items-collection-info {
     max-width: initial;
-    width: 530px;
+    width: 33.125rem;
   }
 
-  .items-search {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-
-    span.items-search-dash {
-      display: inline;
-    }
-
-    input {
-      margin-left: .5rem;
-    }
+  .items-search input {
+    width: 17.5rem;
   }
 
   .category-buttons-container {
-    width: $items-card-image-dimension;
+    width: 18.75rem;
   }
 }

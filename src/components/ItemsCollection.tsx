@@ -109,10 +109,7 @@ function ItemsCollection(): JSX.Element {
             {`${allItems ? itemsCollection.length : filteredItems.length}
             item${filteredItems.length === 1 ? '' : 's'}`}
           </span>
-          <span className="items-search-dash">
-            &nbsp;&mdash;&nbsp;
-          </span>
-          <span>search all by title, category or price:</span>
+          <span>search by title, category or price:</span>
           <input
             type="text"
             value={userSearchInput}
