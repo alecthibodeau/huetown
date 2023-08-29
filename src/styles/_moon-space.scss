@@ -51,14 +51,10 @@
 }
 
 .selected-phase-date {
-  width: $moon-space-dimension / 2;
-  text-align: center;
   font-size: 1.25rem;
 }
 
-.increment-button,
-.lunar-feature-button,
-.lunar-feature-link {
+.increment-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,9 +62,10 @@
   height: 40px;
   border: none;
   border-radius: 50%;
+  text-decoration: none;
   background-color: $sixty-percent-gray;
   color: $white;
-  text-decoration: none;
+  user-select: none;
 
   &.is-not-visible {
     visibility: hidden;
@@ -76,14 +73,27 @@
 
   span {
     position: relative;
+    bottom: 2px;
+    font-size: 26px;
+  }
+}
 
-    &.back-arrow {
-      left: 4px;
-    }
+.lunar-feature-button,
+.lunar-feature-link {
+  padding: .25rem .75rem;
+  border: none;
+  border-radius: $border-radius-medium;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: .75rem;
+  text-decoration: none;
+  line-height: normal;
+  background-color: $sixty-percent-gray;
+  color: $white;
+  user-select: none;
 
-    &.forward-arrow {
-      left: 1px;
-    }
+  &.is-not-visible {
+    visibility: hidden;
   }
 }
 
@@ -99,23 +109,8 @@
   }
 }
 
-.info-for-user {
-  margin-top: .25rem;
-  text-align: center;
-}
-
 .play-year-button-container {
   display: flex;
   justify-content: center;
   margin-top: .5rem;
-
-  button {
-    padding: .625rem .875rem;
-    border: none;
-    border-radius: $border-radius-large;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    background-color: $sixty-percent-gray;
-    color: $white;
-  }
 }

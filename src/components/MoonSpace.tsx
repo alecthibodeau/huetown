@@ -71,9 +71,7 @@ function MoonSpace(): JSX.Element {
         aria-label={`Select ${direction}`}
         className={`increment-button ${isPlaying || isTerminalDate ? 'is-not-visible' : ''}`}
         onClick={() => incrementDate(direction === forwardDirection)}>
-        <span className={`material-symbols-outlined ${direction}-arrow`}>
-          {`arrow_${direction}_ios`}
-        </span>
+        {direction === backDirection ? <span>&#8592;</span> : <span>&#8594;</span>}
       </button>
     )
   }
@@ -158,10 +156,6 @@ function MoonSpace(): JSX.Element {
           {renderIncrementButton(isNewYearsEve, forwardDirection)}
         </div>
 
-        <div className="info-for-user">
-          {`${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon`}
-        </div>
-
         {!isPlaying ?
           <div className="lunar-feature-buttons-container">
             <button
@@ -169,29 +163,29 @@ function MoonSpace(): JSX.Element {
               aria-label="Select New Year's Day"
               className="lunar-feature-button"
               onClick={() => onClickNewYearsDay()}>
-              <span className="material-symbols-outlined">sentiment_satisfied</span>
+              New Year's Day
             </button>
             <button
-              title="Select today's date"
-              aria-label="Select today's date"
+              title="Select today"
+              aria-label="Select today"
               className="lunar-feature-button"
               onClick={() => onClickToday()}>
-              <span className="material-symbols-outlined">sunny</span>
+              Today
             </button>
             <NavLink
-              title="Buy the print item"
-              aria-label="Buy the print item"
+              title="Go to the print edition"
+              aria-label="Go to the print edition"
               to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
               className="lunar-feature-link"
             >
-              <span className="material-symbols-outlined">deployed_code</span>
+              Edition
             </NavLink>
           </div>
         : null}
 
         {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
           <div className="play-year-button-container">
-            <button
+            <button className="lunar-feature-button"
               onClick={() => onClickPlay()}>
               {`Play ${selectedYear}`}
             </button>
