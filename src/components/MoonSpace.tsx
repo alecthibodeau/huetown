@@ -64,7 +64,7 @@ function MoonSpace(): JSX.Element {
     )
   }
 
-  function renderIncrementButton(isTerminalDate: boolean, direction: string): JSX.Element {
+  function renderIncrementorButton(isTerminalDate: boolean, direction: string): JSX.Element {
     return (
       <button
         title={`Select ${direction}`}
@@ -85,13 +85,13 @@ function MoonSpace(): JSX.Element {
     setIsNewYearsEve(isSameDate(selectedPhaseDate, dateNewYearsEve));
   }
 
-  function onClickNewYearsDay(): void {
+  function onClickStart(): void {
     setIsNewYearsDay(true);
     setIsNewYearsEve(false);
     setSelectedPhaseDate(dateNewYearsDay);
   }
 
-  function onClickPlay(): void {
+  function onClickPlayYear(): void {
     const daysInTheYear = isLeapYear(selectedYear) ? leapYearLength : commonYearLength;
     setIsPlaying(!isPlaying);
     animateAnnualPhases(daysInTheYear);
@@ -122,9 +122,9 @@ function MoonSpace(): JSX.Element {
       <div className="moon-image-container">
         <div className="phase-container">
           <svg
-            viewBox="0 0 24 24"
-            width="120px"
-            height="120px"
+            viewBox="-13 -13 50 50"
+            width="280px"
+            height="280px"
             className={getLunarPhaseCategory(getLunarPhase(selectedPhaseDate))}
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -133,7 +133,7 @@ function MoonSpace(): JSX.Element {
               fill={selectedCalendar?.backgroundColor}
               cx="12"
               cy="12"
-              r="12"
+              r="12.25"
             />
             <path
               d={lunarPhasesSVGPaths[getLunarPhase(selectedPhaseDate)]}
@@ -142,28 +142,30 @@ function MoonSpace(): JSX.Element {
             />
           </svg>
         </div>
+        <div className="cloud"></div>
+        <div className="border-ornament"></div>
       </div>
       <div className="sky-lines">
         {Array(76).fill('sky-line').map(renderSkyLine)}
       </div>
       <div className="moon-info">
 
-        <div className="date-picker">
-          {renderIncrementButton(isNewYearsDay, backDirection)}
+        <div className="date-incrementor">
+          {renderIncrementorButton(isNewYearsDay, backDirection)}
           <span className="selected-phase-date">
             {formatDayMonthAndDate(selectedPhaseDate)}
           </span>
-          {renderIncrementButton(isNewYearsEve, forwardDirection)}
+          {renderIncrementorButton(isNewYearsEve, forwardDirection)}
         </div>
 
         {!isPlaying ?
           <div className="lunar-feature-buttons-container">
             <button
-              title="Select New Year's Day"
-              aria-label="Select New Year's Day"
+              title="Select start of year"
+              aria-label="Select start of year"
               className="lunar-feature-button"
-              onClick={() => onClickNewYearsDay()}>
-              New Year's Day
+              onClick={() => onClickStart()}>
+              Start
             </button>
             <button
               title="Select today"
@@ -178,7 +180,7 @@ function MoonSpace(): JSX.Element {
               to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
               className="lunar-feature-link"
             >
-              Edition
+              Print
             </NavLink>
           </div>
         : null}
@@ -186,7 +188,7 @@ function MoonSpace(): JSX.Element {
         {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
           <div className="play-year-button-container">
             <button className="lunar-feature-button"
-              onClick={() => onClickPlay()}>
+              onClick={() => onClickPlayYear()}>
               {`Play ${selectedYear}`}
             </button>
           </div>

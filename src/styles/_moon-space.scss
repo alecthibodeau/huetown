@@ -5,16 +5,74 @@
 }
 
 .moon-image-container {
+  overflow: hidden;
   width: $moon-space-dimension;
   height: $moon-space-dimension;
+  // height: 500px;
+  margin: auto;
   background-color: $twenty-three-blue-paper; // to be set dynamically
+}
+
+.border-ornament {
+  z-index: 2;
+  position: relative;
+  bottom: 318px;
+  width: $moon-space-dimension;
+  height: $moon-space-dimension;
+  border: 1px solid pink;
+  background-color: aqua;
+  opacity: .5;
+}
+
+.cloud {
+  z-index: 1;
+  position: relative;
+  bottom: 120px;
+  width: 40px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $twenty-three-blue-paper;
+  animation: drift 3s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes drift {
+  from { transform: translateX(-20px); }
+  to { transform: translateX(300px); }
+}
+
+@keyframes example {
+  0%,
+  100% {
+    left: 0;
+  }
+
+  50% {
+    left: 200px;
+  }
+}
+
+.phase-container {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $moon-space-dimension;
+  height: $moon-space-dimension;
+
+  svg.waning {
+    transform: scaleX(-1);
+  }
 }
 
 .sky-lines {
   position: relative;
+  // bottom: 500px;
   bottom: $moon-space-dimension;
   width: $moon-space-dimension;
   height: $moon-space-dimension;
+  margin: auto;
 
   div {
     height: 2px;
@@ -23,31 +81,19 @@
   }
 }
 
-.phase-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: $moon-space-dimension;
-  height: $moon-space-dimension;
-  z-index: 1;
-
-  svg.waning {
-    transform: scaleX(-1);
-  }
-}
-
 .moon-info {
   position: relative;
   bottom: $moon-space-dimension;
   margin-top: 8px;
+  user-select: none;
 }
 
-.date-picker {
+.date-incrementor {
   display: flex;
   width: $moon-space-dimension;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
 }
 
 .selected-phase-date {
@@ -65,7 +111,6 @@
   text-decoration: none;
   background-color: $sixty-percent-gray;
   color: $white;
-  user-select: none;
 
   &.is-not-visible {
     visibility: hidden;
@@ -90,7 +135,6 @@
   line-height: normal;
   background-color: $sixty-percent-gray;
   color: $white;
-  user-select: none;
 
   &.is-not-visible {
     visibility: hidden;
@@ -99,6 +143,7 @@
 
 .lunar-feature-buttons-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: .5rem;
