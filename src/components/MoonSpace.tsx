@@ -29,17 +29,18 @@ function MoonSpace(): JSX.Element {
     getLunarPhaseCategory,
   } = digitalLunarCalendar;
 
-  const { formatDayMonthAndDate, isSameDate } = formatDateAndTime;
+  const { formatDayMonthAndDate, isSameDate, getEasternTimeZoneDate } = formatDateAndTime;
   const { formatItemRoutePath } = formatText;
 
-  const [todayDate, setTodayDate] = useState<Date>(new Date());
-  const [selectedCalendar, setSelectedCalendar] = useState<LunarCalendar>(lunarCalendarsInformation[todayDate.getFullYear()]);
-  const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(new Date());
+  const [localDate, setLocalDate] = useState<Date>(new Date());
+  const [easternTimeZoneDate, setEasternTimeZoneDate] = useState<Date>(getEasternTimeZoneDate(localDate));
+  const [selectedCalendar, setSelectedCalendar] = useState<LunarCalendar>(lunarCalendarsInformation[easternTimeZoneDate.getFullYear()]);
+  const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(getEasternTimeZoneDate(localDate));
   const [selectedYear, setSelectedYear] = useState<number>(0);
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
   const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
-  const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(todayDate === (new Date(selectedYear, monthJanuary, dateFirst)));
-  const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(todayDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
+  const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthJanuary, dateFirst)));
+  const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const dateNewYearsDay = new Date(selectedYear, monthJanuary, dateFirst);
@@ -52,7 +53,7 @@ function MoonSpace(): JSX.Element {
   const lunarFeatureButton: string = 'lunar-feature-button';
 
   useEffect(() => {
-    const interval = setInterval(() => setTodayDate(new Date()), milliseconds);
+    const interval = setInterval(() => updateDates(), milliseconds);
     return () => clearInterval(interval);
   }, []);
 
@@ -60,6 +61,11 @@ function MoonSpace(): JSX.Element {
     setSelectedYear(selectedPhaseDate.getFullYear());
     setSelectedCalendar(lunarCalendarsInformation[selectedYear]);
   }, [selectedPhaseDate, selectedYear]);
+
+  function updateDates(): void {
+    setLocalDate(new Date());
+    setEasternTimeZoneDate(getEasternTimeZoneDate(localDate));
+  }
 
   function renderSkyLine(skyLine: string, index: number): JSX.Element {
     return (
@@ -101,9 +107,9 @@ function MoonSpace(): JSX.Element {
   }
 
   function onClickToday(): void {
-    setSelectedPhaseDate(todayDate);
-    setIsNewYearsDay(isSameDate(todayDate, dateNewYearsDay));
-    setIsNewYearsEve(isSameDate(todayDate, dateNewYearsEve));
+    setSelectedPhaseDate(easternTimeZoneDate);
+    setIsNewYearsDay(isSameDate(easternTimeZoneDate, dateNewYearsDay));
+    setIsNewYearsEve(isSameDate(easternTimeZoneDate, dateNewYearsEve));
   }
 
   function delayTime(millisecondsDelay: number): Promise<number> {
@@ -167,7 +173,6 @@ function MoonSpace(): JSX.Element {
         >
           <path fill={selectedCalendar?.backgroundColor} d={clouds.three}/>
         </svg>
-        {/* <div className="border-ornament"></div> */}
       </div>
       <div className="sky-lines">
         {Array(76).fill('sky-line').map(renderSkyLine)}

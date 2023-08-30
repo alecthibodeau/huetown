@@ -69,7 +69,6 @@ function addIntermediatePhasesToPrincipalPhases(lunarPhases: LunarPhases): Lunar
       );
     }
   );
-  console.log('lunarPhases: ', lunarPhases);
   return lunarPhases;
 }
 

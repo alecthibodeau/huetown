@@ -1,27 +1,15 @@
 @use './variables' as *;
 
 .moon-space {
-  max-height: 500px;
+  max-height: 420px;
 }
 
 .moon-image-container {
   overflow: hidden;
   width: $moon-space-dimension;
   height: $moon-space-dimension;
-  // height: 500px;
   margin: auto;
   background-color: $twenty-three-blue-paper; // to be set dynamically
-}
-
-.border-ornament {
-  z-index: 2;
-  position: relative;
-  bottom: 318px;
-  width: $moon-space-dimension;
-  height: $moon-space-dimension;
-  border: 1px solid pink;
-  background-color: aqua;
-  opacity: .5;
 }
 
 .cloud {
@@ -85,7 +73,6 @@
 
 .sky-lines {
   position: relative;
-  // bottom: 500px;
   bottom: $moon-space-dimension;
   width: $moon-space-dimension;
   height: $moon-space-dimension;
@@ -123,7 +110,7 @@
   align-items: center;
   width: 40px;
   height: 40px;
-  border: none;
+  border: $border-width-medium solid $seventy-percent-gray;
   border-radius: 50%;
   text-decoration: none;
   background-color: $seventy-percent-gray;
@@ -131,6 +118,11 @@
 
   &.is-not-visible {
     visibility: hidden;
+  }
+
+  &:hover {
+    color: $seventy-percent-gray;
+    background-color: $white;
   }
 
   span {
@@ -154,7 +146,7 @@
 
 .lunar-feature-button {
   padding: .25rem .75rem;
-  border: $border-width-small solid $seventy-percent-gray;
+  border: $border-width-medium solid $seventy-percent-gray;
   border-radius: $border-radius-medium;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
@@ -168,7 +160,8 @@
     visibility: hidden;
   }
 
-  &.selected {
+  &.selected,
+  &:hover {
     color: $seventy-percent-gray;
     background-color: $white;
   }

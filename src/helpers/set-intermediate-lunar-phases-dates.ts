@@ -73,7 +73,6 @@ function setIntermediateLunarPhasesDates(lunarPhaseDates: LunarPhaseDates, year:
       }
     }
   );
-  console.log('lunarPhaseDates: ', lunarPhaseDates);
   return lunarPhaseDates;
 }
 

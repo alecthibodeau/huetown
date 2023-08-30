@@ -80,11 +80,17 @@ function isSameDate(dateOne: Date, dateTwo: Date): boolean {
   return formatDayMonthAndDate(dateOne) === formatDayMonthAndDate(dateTwo);
 }
 
+function getEasternTimeZoneDate(date: Date): Date {
+  const newYorkDateTimeString = date.toLocaleString('en-US', { timeZone: 'America/New_York' });
+  return new Date(newYorkDateTimeString);
+}
+
 const formatDateAndTime = {
   formatDayMonthAndDate,
   formatFullDateAndTime,
   formatTwentyFourHourTime,
-  isSameDate
+  isSameDate,
+  getEasternTimeZoneDate
 };
 
 export default formatDateAndTime;
