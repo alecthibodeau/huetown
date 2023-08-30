@@ -99,7 +99,7 @@ nav {
   }
 
   .nav-link,
-  form input[value="view cart"] {
+  form input.paypal-link {
     display: block;
     width: 100%;
     padding: 1.5rem 0;
@@ -120,7 +120,7 @@ nav {
   display: flex;
   justify-content: center;
   padding: .25rem;
-  border-bottom: $border-width-medium solid $fifty-percent-gray;
+  border-bottom: $border-width-small solid $fifty-percent-gray;
 
   section {
     margin: 1rem 2rem;
@@ -150,7 +150,7 @@ nav {
   nav {
     flex-direction: row;
     justify-content: space-around;
-    max-width: 37.5rem;
+    max-width: 20rem;
     margin: auto;
     background-color: $white;
     backdrop-filter: initial;
@@ -166,9 +166,9 @@ nav {
     }
 
     .nav-link,
-    form input[value="view cart"] {
+    form input.paypal-link {
       padding: 0 0 .25rem;
-      border-bottom: $border-width-xtra-large solid transparent;
+      border-bottom: $border-width-large solid transparent;
       transition: all 0.125s linear;
       font-weight: 500;
       color: $application-font-color;
@@ -176,7 +176,7 @@ nav {
       &:hover,
       &.nav-link-active {
         padding: initial;
-        border-bottom: $border-width-xtra-large solid $fifty-percent-gray;
+        border-bottom: $border-width-large solid $fifty-percent-gray;
         margin-bottom: .25rem;
       }
     }

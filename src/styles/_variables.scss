@@ -16,6 +16,7 @@ $twenty-percent-gray: #ccc;
 $fifty-percent-gray: #7f7f7f;
 $sixty-percent-gray: #666;
 $sixty-seven-percent-gray: #555;
+$seventy-percent-gray: #4d4d4d;
 $eighty-percent-gray: #333;
 
 $html-gray: #808080;
@@ -50,15 +51,13 @@ $image-dimension-small: 300px;
 $image-dimension-medium: 450px;
 $image-dimension-large: 600px;
 $image-dimension-xtra-large: 700px;
-
 $moon-space-dimension: 300px;
 
 /* Border */
 
 $border-width-small: 1px;
-$border-width-medium: 1.5px;
-$border-width-large: 2px;
-$border-width-xtra-large: 3px;
+$border-width-medium: 2px;
+$border-width-large: 3px;
 $border-standard: $border-width-small solid $border-gray;
 $border-radius-small: .375rem;
 $border-radius-medium: .5625rem;
@@ -66,4 +65,5 @@ $border-radius-large: .625rem;
 $border-radius-xtra-large: 1rem;
 
 /* Effects */
+
 $hover-shadow: .25rem .25rem 1rem $html-gray;

@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import LunarCalendar from '../interfaces/LunarCalendar';
 
 /* Constants */
+import clouds from '../constants/clouds-svg-paths';
 import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/lunar-calendars-information';
 import lunarPhasesSVGPaths from '../constants/lunar-phases-svg-paths';
@@ -28,16 +29,18 @@ function MoonSpace(): JSX.Element {
     getLunarPhaseCategory,
   } = digitalLunarCalendar;
 
-  const { formatDayMonthAndDate, isSameDate } = formatDateAndTime;
+  const { formatDayMonthAndDate, isSameDate, getEasternTimeZoneDate } = formatDateAndTime;
   const { formatItemRoutePath } = formatText;
 
-  const [todayDate, setTodayDate] = useState<Date>(new Date());
-  const [selectedCalendar, setSelectedCalendar] = useState<LunarCalendar>(lunarCalendarsInformation[todayDate.getFullYear()]);
-  const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(new Date());
+  const [localDate, setLocalDate] = useState<Date>(new Date());
+  const [easternTimeZoneDate, setEasternTimeZoneDate] = useState<Date>(getEasternTimeZoneDate(localDate));
+  const [selectedCalendar, setSelectedCalendar] = useState<LunarCalendar>(lunarCalendarsInformation[easternTimeZoneDate.getFullYear()]);
+  const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(getEasternTimeZoneDate(localDate));
   const [selectedYear, setSelectedYear] = useState<number>(0);
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
-  const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(todayDate === (new Date(selectedYear, monthJanuary, dateFirst)));
-  const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(todayDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
+  const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
+  const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthJanuary, dateFirst)));
+  const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const dateNewYearsDay = new Date(selectedYear, monthJanuary, dateFirst);
@@ -47,9 +50,10 @@ function MoonSpace(): JSX.Element {
   const milliseconds: number = 10;
   const backDirection: string = 'back';
   const forwardDirection: string = 'forward';
+  const lunarFeatureButton: string = 'lunar-feature-button';
 
   useEffect(() => {
-    const interval = setInterval(() => setTodayDate(new Date()), milliseconds);
+    const interval = setInterval(() => updateDates(), milliseconds);
     return () => clearInterval(interval);
   }, []);
 
@@ -58,22 +62,25 @@ function MoonSpace(): JSX.Element {
     setSelectedCalendar(lunarCalendarsInformation[selectedYear]);
   }, [selectedPhaseDate, selectedYear]);
 
+  function updateDates(): void {
+    setLocalDate(new Date());
+    setEasternTimeZoneDate(getEasternTimeZoneDate(localDate));
+  }
+
   function renderSkyLine(skyLine: string, index: number): JSX.Element {
     return (
       <div key={`${skyLine}-${index}`}></div>
     )
   }
 
-  function renderIncrementButton(isTerminalDate: boolean, direction: string): JSX.Element {
+  function renderIncrementorButton(isTerminalDate: boolean, direction: string): JSX.Element {
     return (
       <button
         title={`Select ${direction}`}
         aria-label={`Select ${direction}`}
         className={`increment-button ${isPlaying || isTerminalDate ? 'is-not-visible' : ''}`}
         onClick={() => incrementDate(direction === forwardDirection)}>
-        <span className={`material-symbols-outlined ${direction}-arrow`}>
-          {`arrow_${direction}_ios`}
-        </span>
+        {direction === backDirection ? <span>&#8592;</span> : <span>&#8594;</span>}
       </button>
     )
   }
@@ -87,22 +94,22 @@ function MoonSpace(): JSX.Element {
     setIsNewYearsEve(isSameDate(selectedPhaseDate, dateNewYearsEve));
   }
 
-  function onClickNewYearsDay(): void {
+  function onClickStart(): void {
     setIsNewYearsDay(true);
     setIsNewYearsEve(false);
     setSelectedPhaseDate(dateNewYearsDay);
   }
 
-  function onClickPlay(): void {
+  function onClickPlayYear(): void {
     const daysInTheYear = isLeapYear(selectedYear) ? leapYearLength : commonYearLength;
     setIsPlaying(!isPlaying);
     animateAnnualPhases(daysInTheYear);
   }
 
   function onClickToday(): void {
-    setSelectedPhaseDate(todayDate);
-    setIsNewYearsDay(isSameDate(todayDate, dateNewYearsDay));
-    setIsNewYearsEve(isSameDate(todayDate, dateNewYearsEve));
+    setSelectedPhaseDate(easternTimeZoneDate);
+    setIsNewYearsDay(isSameDate(easternTimeZoneDate, dateNewYearsDay));
+    setIsNewYearsEve(isSameDate(easternTimeZoneDate, dateNewYearsEve));
   }
 
   function delayTime(millisecondsDelay: number): Promise<number> {
@@ -124,9 +131,9 @@ function MoonSpace(): JSX.Element {
       <div className="moon-image-container">
         <div className="phase-container">
           <svg
-            viewBox="0 0 24 24"
-            width="120px"
-            height="120px"
+            viewBox="-13 -13 50 50"
+            width="280px"
+            height="280px"
             className={getLunarPhaseCategory(getLunarPhase(selectedPhaseDate))}
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -135,7 +142,7 @@ function MoonSpace(): JSX.Element {
               fill={selectedCalendar?.backgroundColor}
               cx="12"
               cy="12"
-              r="12"
+              r="12.25"
             />
             <path
               d={lunarPhasesSVGPaths[getLunarPhase(selectedPhaseDate)]}
@@ -144,55 +151,80 @@ function MoonSpace(): JSX.Element {
             />
           </svg>
         </div>
+        <div className="cloud"></div>
+        <svg
+          className={`cloud cloud-one ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 64.36 23.07"
+        >
+          <path fill={selectedCalendar?.backgroundColor} d={clouds.one}/>
+        </svg>
+        <svg
+          className={`cloud cloud-two ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 69.47 26.19"
+        >
+          <path fill={selectedCalendar?.backgroundColor} d={clouds.two}/>
+        </svg>
+        <svg
+          className={`cloud cloud-three ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 79.76 40.49"
+        >
+          <path fill={selectedCalendar?.backgroundColor} d={clouds.three}/>
+        </svg>
       </div>
       <div className="sky-lines">
         {Array(76).fill('sky-line').map(renderSkyLine)}
       </div>
       <div className="moon-info">
 
-        <div className="date-picker">
-          {renderIncrementButton(isNewYearsDay, backDirection)}
+        <div className="date-incrementor">
+          {renderIncrementorButton(isNewYearsDay, backDirection)}
           <span className="selected-phase-date">
             {formatDayMonthAndDate(selectedPhaseDate)}
           </span>
-          {renderIncrementButton(isNewYearsEve, forwardDirection)}
-        </div>
-
-        <div className="info-for-user">
-          {`${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon`}
+          {renderIncrementorButton(isNewYearsEve, forwardDirection)}
         </div>
 
         {!isPlaying ?
           <div className="lunar-feature-buttons-container">
             <button
-              title="Select New Year's Day"
-              aria-label="Select New Year's Day"
-              className="lunar-feature-button"
-              onClick={() => onClickNewYearsDay()}>
-              <span className="material-symbols-outlined">sentiment_satisfied</span>
+              title="Select start of year"
+              aria-label="Select start of year"
+              className={lunarFeatureButton}
+              onClick={() => onClickStart()}>
+              Start
             </button>
             <button
-              title="Select today's date"
-              aria-label="Select today's date"
-              className="lunar-feature-button"
+              title="Select today"
+              aria-label="Select today"
+              className={lunarFeatureButton}
               onClick={() => onClickToday()}>
-              <span className="material-symbols-outlined">sunny</span>
+              Today
+            </button>
+            <button
+              title="Select clouds animation"
+              aria-label="Select clouds animation"
+              className={`${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected' : ''}`}
+              onClick={() => setIsCloudsAnimationVisible(!isCloudsAnimationVisible)}>
+              Clouds
             </button>
             <NavLink
-              title="Buy the print item"
-              aria-label="Buy the print item"
+              title="Go to the print edition"
+              aria-label="Go to the print edition"
               to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
-              className="lunar-feature-link"
+              className={lunarFeatureButton}
             >
-              <span className="material-symbols-outlined">deployed_code</span>
+              Print
             </NavLink>
           </div>
         : null}
 
         {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
           <div className="play-year-button-container">
-            <button
-              onClick={() => onClickPlay()}>
+            <button className="lunar-feature-button"
+              onClick={() => onClickPlayYear()}>
               {`Play ${selectedYear}`}
             </button>
           </div>

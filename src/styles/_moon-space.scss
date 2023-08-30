@@ -1,13 +1,74 @@
 @use './variables' as *;
 
 .moon-space {
-  max-height: 500px;
+  max-height: 420px;
 }
 
 .moon-image-container {
+  overflow: hidden;
   width: $moon-space-dimension;
   height: $moon-space-dimension;
+  margin: auto;
   background-color: $twenty-three-blue-paper; // to be set dynamically
+}
+
+.cloud {
+  z-index: 1;
+  opacity: 1;
+  position: relative;
+  transition: opacity 1.5s;
+
+  &.is-not-visible {
+    opacity: 0;
+  }
+}
+
+.cloud-one {
+  bottom: 200px;
+  width: 140px;
+  animation: 10s linear infinite cloud-one-frames;
+}
+
+@keyframes cloud-one-frames {
+  from { transform: translateX(-140px); }
+  to { transform: translateX(300px); }
+}
+
+.cloud-two {
+  bottom: 286px;
+  width: 160px;
+  animation: 20s linear infinite cloud-two-frames;
+}
+
+@keyframes cloud-two-frames {
+  from { transform: translateX(-300px); }
+  to { transform: translateX(300px); }
+}
+
+.cloud-three {
+  bottom: 175px;
+  width: 180px;
+  animation: 6s linear infinite cloud-three-frames;
+  transform: rotate(45deg);
+}
+
+@keyframes cloud-three-frames {
+  from { transform: translateX(-180px); }
+  to { transform: translateX(300px); }
+}
+
+.phase-container {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $moon-space-dimension;
+  height: $moon-space-dimension;
+
+  svg.waning {
+    transform: scaleX(-1);
+  }
 }
 
 .sky-lines {
@@ -15,6 +76,7 @@
   bottom: $moon-space-dimension;
   width: $moon-space-dimension;
   height: $moon-space-dimension;
+  margin: auto;
 
   div {
     height: 2px;
@@ -23,99 +85,90 @@
   }
 }
 
-.phase-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: $moon-space-dimension;
-  height: $moon-space-dimension;
-  z-index: 1;
-
-  svg.waning {
-    transform: scaleX(-1);
-  }
-}
-
 .moon-info {
   position: relative;
   bottom: $moon-space-dimension;
   margin-top: 8px;
+  user-select: none;
 }
 
-.date-picker {
+.date-incrementor {
   display: flex;
   width: $moon-space-dimension;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
 }
 
 .selected-phase-date {
-  width: $moon-space-dimension / 2;
-  text-align: center;
   font-size: 1.25rem;
 }
 
-.increment-button,
-.lunar-feature-button,
-.lunar-feature-link {
+.increment-button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
-  border: none;
+  border: $border-width-medium solid $seventy-percent-gray;
   border-radius: 50%;
-  background-color: $sixty-percent-gray;
-  color: $white;
   text-decoration: none;
+  background-color: $seventy-percent-gray;
+  color: $white;
 
   &.is-not-visible {
     visibility: hidden;
   }
 
+  &:hover {
+    color: $seventy-percent-gray;
+    background-color: $white;
+  }
+
   span {
     position: relative;
-
-    &.back-arrow {
-      left: 4px;
-    }
-
-    &.forward-arrow {
-      left: 1px;
-    }
+    bottom: 2px;
+    font-size: 26px;
   }
 }
 
 .lunar-feature-buttons-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: .5rem;
 
-  .lunar-feature-button,
-  .lunar-feature-link {
+  .lunar-feature-button {
     margin: .25rem;
   }
 }
 
-.info-for-user {
-  margin-top: .25rem;
-  text-align: center;
+.lunar-feature-button {
+  padding: .25rem .75rem;
+  border: $border-width-medium solid $seventy-percent-gray;
+  border-radius: $border-radius-medium;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: .75rem;
+  text-decoration: none;
+  line-height: normal;
+  background-color: $seventy-percent-gray;
+  color: $white;
+
+  &.is-not-visible {
+    visibility: hidden;
+  }
+
+  &.selected,
+  &:hover {
+    color: $seventy-percent-gray;
+    background-color: $white;
+  }
 }
 
 .play-year-button-container {
   display: flex;
   justify-content: center;
   margin-top: .5rem;
-
-  button {
-    padding: .625rem .875rem;
-    border: none;
-    border-radius: $border-radius-large;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    background-color: $sixty-percent-gray;
-    color: $white;
-  }
 }
