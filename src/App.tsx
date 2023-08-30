@@ -8,7 +8,6 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Item from './components/Item';
 import ItemsCollection from './components/ItemsCollection';
-import MoonSpace from './components/MoonSpace';
 import NotFound from './components/NotFound';
 
 /* Interfaces */
