@@ -147,11 +147,25 @@ function MoonSpace(): JSX.Element {
         </div>
         <div className="cloud"></div>
         <svg
-          className={`cloud-one ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
+          className={`cloud cloud-one ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 64.36 23.07"
         >
           <path fill={selectedCalendar?.backgroundColor} d={clouds.one}/>
+        </svg>
+        <svg
+          className={`cloud cloud-two ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 69.47 26.19"
+        >
+          <path fill={selectedCalendar?.backgroundColor} d={clouds.two}/>
+        </svg>
+        <svg
+          className={`cloud cloud-three ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 79.76 40.49"
+        >
+          <path fill={selectedCalendar?.backgroundColor} d={clouds.three}/>
         </svg>
         {/* <div className="border-ornament"></div> */}
       </div>

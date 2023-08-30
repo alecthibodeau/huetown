@@ -24,14 +24,10 @@
   opacity: .5;
 }
 
-.cloud-one {
+.cloud {
   z-index: 1;
-  position: relative;
-  bottom: 120px;
-  width: 160px;
   opacity: 1;
-  animation: cloud-one-frames 6s infinite;
-  animation-timing-function: linear;
+  position: relative;
   transition: opacity 1.5s;
 
   &.is-not-visible {
@@ -39,8 +35,37 @@
   }
 }
 
+.cloud-one {
+  bottom: 200px;
+  width: 140px;
+  animation: 10s linear infinite cloud-one-frames;
+}
+
 @keyframes cloud-one-frames {
-  from { transform: translateX(-160px); }
+  from { transform: translateX(-140px); }
+  to { transform: translateX(300px); }
+}
+
+.cloud-two {
+  bottom: 286px;
+  width: 160px;
+  animation: 20s linear infinite cloud-two-frames;
+}
+
+@keyframes cloud-two-frames {
+  from { transform: translateX(-300px); }
+  to { transform: translateX(300px); }
+}
+
+.cloud-three {
+  bottom: 175px;
+  width: 180px;
+  animation: 6s linear infinite cloud-three-frames;
+  transform: rotate(45deg);
+}
+
+@keyframes cloud-three-frames {
+  from { transform: translateX(-180px); }
   to { transform: translateX(300px); }
 }
 
