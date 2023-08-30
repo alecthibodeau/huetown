@@ -55,7 +55,7 @@ function MoonSpace(): JSX.Element {
   useEffect(() => {
     const interval = setInterval(() => updateDates(), milliseconds);
     return () => clearInterval(interval);
-  }, []);
+  }, [updateDates]);
 
   useEffect(() => {
     setSelectedYear(selectedPhaseDate.getFullYear());

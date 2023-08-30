@@ -2,7 +2,6 @@
 import framedPiece from '../assets/images/home/thibodeau-framed-piece-700px.jpg';
 
 /* Header */
-import huetownLogoGray from '../assets/images/header/huetown-script-logo-fifty-percent-gray.svg';
 import huetownLogoGrayDark from '../assets/images/header/huetown-script-logo-sixty-seven-percent-gray.svg';
 import huetownLogoWhite from '../assets/images/header/huetown-script-logo-white.svg';
 
