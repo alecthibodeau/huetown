@@ -3,6 +3,7 @@ import framedPiece from '../assets/images/home/thibodeau-framed-piece-700px.jpg'
 
 /* Header */
 import huetownLogoGray from '../assets/images/header/huetown-script-logo-fifty-percent-gray.svg';
+import huetownLogoGrayDark from '../assets/images/header/huetown-script-logo-sixty-seven-percent-gray.svg';
 import huetownLogoWhite from '../assets/images/header/huetown-script-logo-white.svg';
 
 /* Icons */
@@ -122,7 +123,7 @@ import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-
 import printTigerMoontainFeature from '../assets/images/items/print-tiger-moontain-feature-450px.jpg';
 
 const header = {
-  huetownLogoGray,
+  huetownLogoGrayDark,
   huetownLogoWhite
 };
 

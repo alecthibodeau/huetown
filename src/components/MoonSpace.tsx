@@ -187,6 +187,11 @@ function MoonSpace(): JSX.Element {
           {renderIncrementorButton(isNewYearsEve, forwardDirection)}
         </div>
 
+        <div className="info-for-display">
+          <div>{`It's a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon`}</div>
+          <div>(Eastern Time Zone)</div>
+        </div>
+
         {!isPlaying ?
           <div className="lunar-feature-buttons-container">
             <button
@@ -206,7 +211,7 @@ function MoonSpace(): JSX.Element {
             <button
               title="Select clouds animation"
               aria-label="Select clouds animation"
-              className={`${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected' : ''}`}
+              className={`${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected active' : ''}`}
               onClick={() => setIsCloudsAnimationVisible(!isCloudsAnimationVisible)}>
               Clouds
             </button>

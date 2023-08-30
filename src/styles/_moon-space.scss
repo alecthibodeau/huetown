@@ -110,10 +110,10 @@
   align-items: center;
   width: 40px;
   height: 40px;
-  border: $border-width-medium solid $seventy-percent-gray;
+  border: $border-width-medium solid $sixty-seven-percent-gray;
   border-radius: 50%;
   text-decoration: none;
-  background-color: $seventy-percent-gray;
+  background-color: $sixty-seven-percent-gray;
   color: $white;
 
   &.is-not-visible {
@@ -121,7 +121,7 @@
   }
 
   &:hover {
-    color: $seventy-percent-gray;
+    color: $sixty-seven-percent-gray;
     background-color: $white;
   }
 
@@ -130,6 +130,11 @@
     bottom: 2px;
     font-size: 26px;
   }
+}
+
+.info-for-display {
+  margin-top: .25rem;
+  text-align: center;
 }
 
 .lunar-feature-buttons-container {
@@ -146,14 +151,14 @@
 
 .lunar-feature-button {
   padding: .25rem .75rem;
-  border: $border-width-medium solid $seventy-percent-gray;
+  border: $border-width-medium solid $sixty-seven-percent-gray;
   border-radius: $border-radius-medium;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: .75rem;
   text-decoration: none;
   line-height: normal;
-  background-color: $seventy-percent-gray;
+  background-color: $sixty-seven-percent-gray;
   color: $white;
 
   &.is-not-visible {
@@ -162,8 +167,16 @@
 
   &.selected,
   &:hover {
-    color: $seventy-percent-gray;
+    color: $sixty-seven-percent-gray;
     background-color: $white;
+  }
+
+  &.is-being-clicked {
+    background-color: $twenty-three-blue-paper;
+  }
+
+  &.active {
+    border-color: $twenty-three-blue-paper; // to be set dynamically;
   }
 }
 

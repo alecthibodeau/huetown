@@ -11,7 +11,7 @@ import text from '../constants/text';
 
 function Header(props: HeaderProps): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
-  const { huetownLogoGray, huetownLogoWhite } = images.header;
+  const { huetownLogoGrayDark, huetownLogoWhite } = images.header;
 
   useEffect(() => {
     const mainElement: HTMLElement | null = document.getElementById('main');
@@ -47,7 +47,7 @@ function Header(props: HeaderProps): JSX.Element {
         <Link to="/" onClick={closeMobileNav}>
           <img
             className={`huetown-logo-${props.isBreakpointXs ? 'white' : 'gray'}`}
-            src={props.isBreakpointXs ? huetownLogoWhite : huetownLogoGray}
+            src={props.isBreakpointXs ? huetownLogoWhite : huetownLogoGrayDark}
             alt="Huetown logo" />
         </Link>
         {props.isBreakpointXs ?
