@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import LunarCalendar from '../interfaces/LunarCalendar';
 
 /* Constants */
+import clouds from '../constants/clouds-svg-paths';
 import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/lunar-calendars-information';
 import lunarPhasesSVGPaths from '../constants/lunar-phases-svg-paths';
@@ -36,6 +37,7 @@ function MoonSpace(): JSX.Element {
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(new Date());
   const [selectedYear, setSelectedYear] = useState<number>(0);
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
+  const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
   const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(todayDate === (new Date(selectedYear, monthJanuary, dateFirst)));
   const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(todayDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -47,6 +49,7 @@ function MoonSpace(): JSX.Element {
   const milliseconds: number = 10;
   const backDirection: string = 'back';
   const forwardDirection: string = 'forward';
+  const lunarFeatureButton: string = 'lunar-feature-button';
 
   useEffect(() => {
     const interval = setInterval(() => setTodayDate(new Date()), milliseconds);
@@ -143,7 +146,14 @@ function MoonSpace(): JSX.Element {
           </svg>
         </div>
         <div className="cloud"></div>
-        <div className="border-ornament"></div>
+        <svg
+          className={`cloud-one ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 64.36 23.07"
+        >
+          <path fill={selectedCalendar?.backgroundColor} d={clouds.one}/>
+        </svg>
+        {/* <div className="border-ornament"></div> */}
       </div>
       <div className="sky-lines">
         {Array(76).fill('sky-line').map(renderSkyLine)}
@@ -163,22 +173,29 @@ function MoonSpace(): JSX.Element {
             <button
               title="Select start of year"
               aria-label="Select start of year"
-              className="lunar-feature-button"
+              className={lunarFeatureButton}
               onClick={() => onClickStart()}>
               Start
             </button>
             <button
               title="Select today"
               aria-label="Select today"
-              className="lunar-feature-button"
+              className={lunarFeatureButton}
               onClick={() => onClickToday()}>
               Today
+            </button>
+            <button
+              title="Select clouds animation"
+              aria-label="Select clouds animation"
+              className={`${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected' : ''}`}
+              onClick={() => setIsCloudsAnimationVisible(!isCloudsAnimationVisible)}>
+              Clouds
             </button>
             <NavLink
               title="Go to the print edition"
               aria-label="Go to the print edition"
               to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
-              className="lunar-feature-link"
+              className={lunarFeatureButton}
             >
               Print
             </NavLink>

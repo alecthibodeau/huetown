@@ -24,32 +24,24 @@
   opacity: .5;
 }
 
-.cloud {
+.cloud-one {
   z-index: 1;
   position: relative;
   bottom: 120px;
-  width: 40px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: $twenty-three-blue-paper;
-  animation: drift 3s infinite;
+  width: 160px;
+  opacity: 1;
+  animation: cloud-one-frames 6s infinite;
   animation-timing-function: linear;
+  transition: opacity 1.5s;
+
+  &.is-not-visible {
+    opacity: 0;
+  }
 }
 
-@keyframes drift {
-  from { transform: translateX(-20px); }
+@keyframes cloud-one-frames {
+  from { transform: translateX(-160px); }
   to { transform: translateX(300px); }
-}
-
-@keyframes example {
-  0%,
-  100% {
-    left: 0;
-  }
-
-  50% {
-    left: 200px;
-  }
 }
 
 .phase-container {
@@ -109,7 +101,7 @@
   border: none;
   border-radius: 50%;
   text-decoration: none;
-  background-color: $sixty-percent-gray;
+  background-color: $seventy-percent-gray;
   color: $white;
 
   &.is-not-visible {
@@ -123,24 +115,6 @@
   }
 }
 
-.lunar-feature-button,
-.lunar-feature-link {
-  padding: .25rem .75rem;
-  border: none;
-  border-radius: $border-radius-medium;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: .75rem;
-  text-decoration: none;
-  line-height: normal;
-  background-color: $sixty-percent-gray;
-  color: $white;
-
-  &.is-not-visible {
-    visibility: hidden;
-  }
-}
-
 .lunar-feature-buttons-container {
   display: flex;
   flex-wrap: wrap;
@@ -148,9 +122,30 @@
   align-items: center;
   margin-top: .5rem;
 
-  .lunar-feature-button,
-  .lunar-feature-link {
+  .lunar-feature-button {
     margin: .25rem;
+  }
+}
+
+.lunar-feature-button {
+  padding: .25rem .75rem;
+  border: $border-width-small solid $seventy-percent-gray;
+  border-radius: $border-radius-medium;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: .75rem;
+  text-decoration: none;
+  line-height: normal;
+  background-color: $seventy-percent-gray;
+  color: $white;
+
+  &.is-not-visible {
+    visibility: hidden;
+  }
+
+  &.selected {
+    color: $seventy-percent-gray;
+    background-color: $white;
   }
 }
 

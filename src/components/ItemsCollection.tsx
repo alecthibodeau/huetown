@@ -64,7 +64,7 @@ function ItemsCollection(): JSX.Element {
     return (
       <button
         key={`${category}-${index}`}
-        className={`category-button ${category === itemsCategory ? 'selected' : ''}`}
+        className={`category-button${category === itemsCategory ? ' selected' : ''}`}
         onClick={() => handleCategoryChange(category)}
       >
         {`${category}${category === all ? '' : 's'}`}
