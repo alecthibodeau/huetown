@@ -71,7 +71,6 @@ function App(): JSX.Element {
           <Route path="/about" element={<About />} />
           <Route path="/items" element={<ItemsCollection />} />
           {itemsCollection.map(renderItemRoute)}
-          <Route path="/moon-space" element={<MoonSpace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
