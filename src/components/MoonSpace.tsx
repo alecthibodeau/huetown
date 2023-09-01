@@ -56,7 +56,7 @@ function MoonSpace(): JSX.Element {
   useEffect(() => {
     const interval = setInterval(() => updateDates(), milliseconds);
     return () => clearInterval(interval);
-  }, [updateDates]);
+  }, []);
 
   useEffect(() => {
     setSelectedYear(selectedPhaseDate.getFullYear());
@@ -77,8 +77,8 @@ function MoonSpace(): JSX.Element {
   function renderIncrementorButton(isTerminalDate: boolean, direction: string): JSX.Element {
     return (
       <button
-        title={`Select ${direction}`}
-        aria-label={`Select ${direction}`}
+        title={`Select ${direction} direction`}
+        aria-label={`Select ${direction} direction`}
         className={`increment-button ${isPlaying || isTerminalDate ? 'is-not-visible' : ''}`}
         onClick={() => incrementDate(direction === forwardDirection)}>
         <svg
