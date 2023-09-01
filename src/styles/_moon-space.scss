@@ -118,15 +118,6 @@
     visibility: hidden;
   }
 
-  &:hover {
-    color: $sixty-seven-percent-gray;
-    background-color: $white;
-  }
-
-  &:not(:hover) svg polygon {
-    filter: $whiteFilter;
-  }
-
   svg.back {
     transform: rotate(180deg);
   }
