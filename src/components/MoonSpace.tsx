@@ -5,10 +5,9 @@ import { NavLink } from 'react-router-dom';
 import LunarCalendar from '../interfaces/LunarCalendar';
 
 /* Constants */
-import clouds from '../constants/clouds-svg-paths';
 import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/lunar-calendars-information';
-import lunarPhasesSVGPaths from '../constants/lunar-phases-svg-paths';
+import svgPaths from '../constants/svg-paths';
 
 /* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
@@ -31,6 +30,7 @@ function MoonSpace(): JSX.Element {
 
   const { formatDayMonthAndDate, isSameDate, getEasternTimeZoneDate } = formatDateAndTime;
   const { formatItemRoutePath } = formatText;
+  const { arrowDirectional, lunarPhasesSVGPaths, clouds } = svgPaths;
 
   const [localDate, setLocalDate] = useState<Date>(new Date());
   const [easternTimeZoneDate, setEasternTimeZoneDate] = useState<Date>(getEasternTimeZoneDate(localDate));
@@ -47,6 +47,7 @@ function MoonSpace(): JSX.Element {
   const dateNewYearsEve = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
   const colorWhite: string = '#fff';
+  const colorSeventyPercentGray: string = '#4d4d4d';
   const milliseconds: number = 10;
   const backDirection: string = 'back';
   const forwardDirection: string = 'forward';
@@ -80,7 +81,13 @@ function MoonSpace(): JSX.Element {
         aria-label={`Select ${direction}`}
         className={`increment-button ${isPlaying || isTerminalDate ? 'is-not-visible' : ''}`}
         onClick={() => incrementDate(direction === forwardDirection)}>
-        {direction === backDirection ? <span>&#8592;</span> : <span>&#8594;</span>}
+        <svg
+          viewBox="0 0 80 80"
+          xmlns="http://www.w3.org/2000/svg"
+          className={direction}
+        >
+          <polygon fill={colorSeventyPercentGray} points={arrowDirectional}/>
+        </svg>
       </button>
     )
   }

@@ -107,14 +107,12 @@
 .increment-button {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   border: $border-width-medium solid $sixty-seven-percent-gray;
   border-radius: 50%;
-  text-decoration: none;
   background-color: $sixty-seven-percent-gray;
-  color: $white;
 
   &.is-not-visible {
     visibility: hidden;
@@ -125,8 +123,12 @@
     background-color: $white;
   }
 
-  span {
-    font-size: 26px;
+  &:not(:hover) svg polygon {
+    filter: $whiteFilter;
+  }
+
+  svg.back {
+    transform: rotate(180deg);
   }
 }
 
