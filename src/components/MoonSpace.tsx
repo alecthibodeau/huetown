@@ -86,7 +86,7 @@ function MoonSpace(): JSX.Element {
           xmlns="http://www.w3.org/2000/svg"
           className={direction}
         >
-          <polygon fill={colorWhite} points={arrowDirectional}/>
+          <polygon fill={colorSeventyPercentGray} points={arrowDirectional}/>
         </svg>
       </button>
     )
