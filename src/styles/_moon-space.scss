@@ -88,7 +88,7 @@
 .moon-info {
   position: relative;
   bottom: $moon-space-dimension;
-  margin-top: 8px;
+  margin-top: .75rem;
   user-select: none;
 }
 
@@ -101,9 +101,17 @@
 }
 
 .selected-phase-date {
-  width: $moon-space-dimension / 2;
+  width: $moon-space-dimension * .66;
   text-align: center;
-  font-size: 1.25rem;
+  line-height: normal;
+
+  .day-month-date {
+    font-size: 1.25rem;
+  }
+
+  .time-zone {
+    font-size: .875rem;
+  }
 }
 
 .increment-button {
@@ -130,7 +138,7 @@
 }
 
 .info-for-display {
-  margin-top: .25rem;
+  margin-top: .5rem;
   text-align: center;
 }
 
@@ -166,10 +174,6 @@
   &:hover {
     color: $sixty-seven-percent-gray;
     background-color: $white;
-  }
-
-  &.is-being-clicked {
-    background-color: $twenty-three-blue-paper;
   }
 
   &.active {
