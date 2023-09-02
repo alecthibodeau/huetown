@@ -188,15 +188,19 @@ function MoonSpace(): JSX.Element {
 
         <div className="date-incrementor">
           {renderIncrementorButton(isNewYearsDay, backDirection)}
-          <span className="selected-phase-date">
-            {formatDayMonthAndDate(selectedPhaseDate)}
-          </span>
+          <div className="selected-phase-date">
+            <div className="day-month-date">
+              {formatDayMonthAndDate(selectedPhaseDate)}
+            </div>
+            <div className="time-zone">
+              (Eastern Time Zone)
+            </div>
+          </div>
           {renderIncrementorButton(isNewYearsEve, forwardDirection)}
         </div>
 
         <div className="info-for-display">
           <div>{`It's a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon`}</div>
-          <div>(Eastern Time Zone)</div>
         </div>
 
         {!isPlaying ?
