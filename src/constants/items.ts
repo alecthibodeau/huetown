@@ -162,7 +162,7 @@ const items = {
     featureImage: images.prints.printOrcaLuminaFeature,
     info: [
       text.dimensionsTwoAndAHalfInches,
-      text.screenPrint,
+      text.letterpressPrint,
       text.initialedByTheArtist,
       text.shipsFlat
     ],
