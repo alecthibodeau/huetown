@@ -22,8 +22,9 @@ function Item(props: ItemProps): JSX.Element {
   const digitsValidation: RegExp = new RegExp(/^\d+$/);
   const categoryClass: string = formatText.formatDashes(props.category);
   const titleClass: string = formatText.formatDashes(props.title);
-  const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
+  const islunarCalendar2023: boolean = props.lunarCalendarYear === 2023;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
+  const isPreorder: boolean = props.id === 'tbd';
   const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
   const detailImageAltTextPrefix: string = `${props.category} detail`;
   const detailImageClassName: string = `${categoryClass} ${titleClass}${isRecentLunarCalendar ? ' recent-lunar-calendar' : ''}`
@@ -98,7 +99,7 @@ function Item(props: ItemProps): JSX.Element {
 
   return (
     <div className="item">
-      {isCurrentLunarCalendar ?
+      {islunarCalendar2023 ?
         <div className="item-press">
           <span className="ital">
             {text.colossalBlurb}
@@ -165,7 +166,14 @@ function Item(props: ItemProps): JSX.Element {
                 {!isLunarCalendar ? <div>{props.title}</div> :
                   <div>
                     <span>{props.title}</span><br />
-                    <span className="normal">{props.lunarCalendarYear} {props.category}</span>
+                    <span className="normal">
+                      {
+                        isPreorder
+                          ? <span className="item-preorder-text">PREORDER&nbsp;</span>
+                          : null
+                      }
+                      <span>{props.lunarCalendarYear} {props.category}</span>
+                    </span>
                   </div>
                 }
               </div>

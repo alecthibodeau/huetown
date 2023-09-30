@@ -1,3 +1,6 @@
+/* Interfaces */
+import Items from '../interfaces/Items';
+
 /* Constants */
 import images from './images';
 import text from './text';
@@ -15,7 +18,7 @@ const postcardItemInfo: string[] = [
   text.postcardColor
 ];
 
-const items = {
+const items: Items = {
   lunarCalendar2023: {
     id: '5QXP4DDGN7P2J',
     category: text.lunarCalendar,
