@@ -269,13 +269,14 @@ function MoonSpace(): JSX.Element {
               </button>
             </div>
             <div className="info-modal-body">
-              <span>This is a</span> <span>{selectedYear}</span> <span>lunar calendar. Select New Year's Day for the option to run all of 2023's phases.</span>
+              <span>
+                This is a year</span> <span>{selectedYear}</span> <span>lunar calendar.
+                Select New Year's Day for the option to run all moon phases in 2023.
+              </span>
               <div className="info-modal-button-container">
                 {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
                   <button className={lunarFeatureButton} onClick={() => onClickPlayYear()}>
-                    <span>
-                      Run</span> <span>{selectedYear}</span><span>!
-                    </span>
+                      {`Run ${selectedYear}`}
                   </button> :
                   <button
                     className={lunarFeatureButton}

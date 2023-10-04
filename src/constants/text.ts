@@ -1,11 +1,8 @@
 const miniprintDescription = 'print measuring 2.5 x 2.5 inches overall, with an image dimension of 1.75 x 1.75 inches in a single pass of ink.';
 const miniprintLetterpressDescription = `is a letterpress ${miniprintDescription}`;
-const miniprintScreenDescription = `is a screen ${miniprintDescription}`;
 const miniPrintInitialed = 'Each print is initialed on the front in pencil by Alec.';
 const miniprintLetterpressPrinting = `This unlimited edition is exquisitely printed from Alec's original drawing work by Dan Wood and his team at DWRI Letterpress on light gray 100# cover stock. ${miniPrintInitialed}`;
-const miniprintScreenPrinting = `This unlimited edition is lovingly screen printed by Alec from his original drawing work on light gray cover stock. ${miniPrintInitialed}`;
 const miniprintLetterpressFull = `${miniprintLetterpressDescription} ${miniprintLetterpressPrinting}`;
-const miniprintScreenFull = `${miniprintScreenDescription} ${miniprintScreenPrinting}`;
 
 const postcardTextPrefix = 'Caption on the back:';
 
