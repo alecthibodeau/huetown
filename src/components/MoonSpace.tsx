@@ -39,6 +39,7 @@ function MoonSpace(): JSX.Element {
   const [selectedYear, setSelectedYear] = useState<number>(0);
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
   const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthJanuary, dateFirst)));
   const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -62,6 +63,20 @@ function MoonSpace(): JSX.Element {
     setSelectedYear(selectedPhaseDate.getFullYear());
     setSelectedCalendar(lunarCalendarsInformation[selectedYear]);
   }, [selectedPhaseDate, selectedYear]);
+
+  useEffect(() => {
+    const keydown = 'keydown';
+    window.addEventListener(keydown, keyDownHandler);
+    return function cleanupEventListener() {
+      window.removeEventListener(keydown, keyDownHandler);
+    };
+  }, [isModalVisible]);
+
+  function keyDownHandler({ key }: KeyboardEvent): void {
+    if (key === 'Escape' && isModalVisible) {
+      setIsModalVisible(false);
+    }
+  }
 
   function updateDates(): void {
     setLocalDate(new Date());
@@ -109,6 +124,7 @@ function MoonSpace(): JSX.Element {
 
   function onClickPlayYear(): void {
     const daysInTheYear = isLeapYear(selectedYear) ? leapYearLength : commonYearLength;
+    setIsModalVisible(false);
     setIsPlaying(!isPlaying);
     animateAnnualPhases(daysInTheYear);
   }
@@ -206,11 +222,11 @@ function MoonSpace(): JSX.Element {
         {!isPlaying ?
           <div className="lunar-feature-buttons-container">
             <button
-              title="Select start of year"
-              aria-label="Select start of year"
+              title="Select info"
+              aria-label="Select info"
               className={lunarFeatureButton}
-              onClick={() => onClickStart()}>
-              Start
+              onClick={() => setIsModalVisible(!isModalVisible)}>
+              Info
             </button>
             <button
               title="Select today"
@@ -227,25 +243,40 @@ function MoonSpace(): JSX.Element {
               Clouds
             </button>
             <NavLink
-              title="Go to the print edition"
-              aria-label="Go to the print edition"
+              title="Go to the print edition of the lunar calendar chart"
+              aria-label="Go to the print edition of the lunar calendar chart"
               to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
               className={lunarFeatureButton}
             >
-              Print
+              Chart
             </NavLink>
           </div>
         : null}
-
-        {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
-          <div className="play-year-button-container">
-            <button className="lunar-feature-button"
-              onClick={() => onClickPlayYear()}>
-              {`Play ${selectedYear}`}
-            </button>
-          </div>
-        : null}
       </div>
+
+      {isModalVisible ?
+        <div className="year-modal-container">
+          <div className="year-modal">
+            <div className="modal-info">
+              {`This is a ${selectedYear} lunar calendar. Select New Year's Day for the option to run the year's phases.`}
+            </div>
+          <div className="play-year-button-container">
+            {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
+              <button className="lunar-feature-button"
+                onClick={() => onClickPlayYear()}>
+                {`Play ${selectedYear}`}
+              </button> :
+              <button
+                title="Select start of year"
+                aria-label="Select start of year"
+                className={lunarFeatureButton}
+                onClick={() => onClickStart()}>
+                Select New Year's Day
+              </button>}
+            </div>
+          </div>
+        </div>
+        : null}
     </div>
   );
 }

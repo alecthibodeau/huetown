@@ -186,3 +186,23 @@
   justify-content: center;
   margin-top: .5rem;
 }
+
+.year-modal-container {
+  position: relative;
+  bottom: 42.75rem;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.year-modal {
+  height: 12.5rem;
+  width: 12.5rem;
+  border-radius: $border-radius-medium;
+  background-color: $white;
+  opacity: .9;
+}
+
+.modal-info {
+  padding: .75rem 1rem .25rem;
+}
