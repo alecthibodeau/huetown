@@ -27,7 +27,6 @@ function MoonSpace(): JSX.Element {
     getLunarPhase,
     getLunarPhaseCategory,
   } = digitalLunarCalendar;
-
   const { formatDayMonthAndDate, isSameDate, getEasternTimeZoneDate } = formatDateAndTime;
   const { formatItemRoutePath } = formatText;
   const { arrowDirectional, lunarPhasesSVGPaths, clouds } = svgPaths;
@@ -114,6 +113,10 @@ function MoonSpace(): JSX.Element {
     setIncrementClicks(incrementClicks + 1);
     setIsNewYearsDay(isSameDate(selectedPhaseDate, dateNewYearsDay));
     setIsNewYearsEve(isSameDate(selectedPhaseDate, dateNewYearsEve));
+  }
+
+  function onClickInfo(): void {
+    setIsModalVisible(!isModalVisible);
   }
 
   function onClickStart(): void {
@@ -225,7 +228,7 @@ function MoonSpace(): JSX.Element {
               title="Select info"
               aria-label="Select info"
               className={lunarFeatureButton}
-              onClick={() => setIsModalVisible(!isModalVisible)}>
+              onClick={() => onClickInfo()}>
               Info
             </button>
             <button
@@ -255,24 +258,34 @@ function MoonSpace(): JSX.Element {
       </div>
 
       {isModalVisible ?
-        <div className="year-modal-container">
-          <div className="year-modal">
-            <div className="modal-info">
-              {`This is a ${selectedYear} lunar calendar. Select New Year's Day for the option to run the year's phases.`}
-            </div>
-          <div className="play-year-button-container">
-            {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
-              <button className="lunar-feature-button"
-                onClick={() => onClickPlayYear()}>
-                {`Play ${selectedYear}`}
-              </button> :
+        <div className="info-modal-container">
+          <div className="info-modal">
+            <div className="info-modal-header">
               <button
-                title="Select start of year"
-                aria-label="Select start of year"
-                className={lunarFeatureButton}
-                onClick={() => onClickStart()}>
-                Select New Year's Day
-              </button>}
+                name="close"
+                className="material-symbols-outlined info-modal-close"
+                onClick={() => setIsModalVisible(false)}>
+                close
+              </button>
+            </div>
+            <div className="info-modal-body">
+              <span>This is a</span> <span>{selectedYear}</span> <span>lunar calendar. </span>
+              <span>
+                <a
+                  href="#"
+                  className="text-link"
+                  onClick={() => onClickStart()}>
+                  Select New Year's Day
+                </a>
+                <span> for the option to run all <span>{selectedYear}</span> phases. </span>
+              </span>
+              {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
+                <a href="#" className="text-link" onClick={() => onClickPlayYear()}>
+                  <span>
+                    Run</span> <span>{selectedYear}</span><span>!
+                  </span>
+                </a>
+              : null}
             </div>
           </div>
         </div>

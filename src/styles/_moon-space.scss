@@ -187,7 +187,7 @@
   margin-top: .5rem;
 }
 
-.year-modal-container {
+.info-modal-container {
   position: relative;
   bottom: 42.75rem;
   display: flex;
@@ -195,14 +195,27 @@
   z-index: 2;
 }
 
-.year-modal {
+.info-modal {
   height: 12.5rem;
   width: 12.5rem;
   border-radius: $border-radius-medium;
   background-color: $white;
-  opacity: .9;
+  opacity: .95;
 }
 
-.modal-info {
-  padding: .75rem 1rem .25rem;
+.info-modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.info-modal-close {
+  padding: 0;
+  border: none;
+  margin: .25rem;
+  background-color: transparent;
+  cursor: default;
+}
+
+.info-modal-body {
+  padding: .5rem 1rem .25rem;
 }
