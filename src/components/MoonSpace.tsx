@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+/* Components */
+import MoonCloud from './MoonCloud';
+
 /* Interfaces */
 import LunarCalendar from '../interfaces/LunarCalendar';
+import MoonCloudSVG from '../interfaces/MoonCloudSVG';
 
 /* Constants */
 import items from '../constants/items';
@@ -25,11 +29,11 @@ function MoonSpace(): JSX.Element {
     phasesInfoForUser,
     isLeapYear,
     getLunarPhase,
-    getLunarPhaseCategory,
+    getLunarPhaseCategory
   } = digitalLunarCalendar;
   const { formatDayMonthAndDate, isSameDate, getEasternTimeZoneDate } = formatDateAndTime;
   const { formatItemRoutePath } = formatText;
-  const { arrowDirectional, lunarPhasesSVGPaths, clouds } = svgPaths;
+  const { arrowDirectional, lunarPhasesSVGPaths, moonClouds } = svgPaths;
 
   const [localDate, setLocalDate] = useState<Date>(new Date());
   const [easternTimeZoneDate, setEasternTimeZoneDate] = useState<Date>(getEasternTimeZoneDate(localDate));
@@ -87,7 +91,18 @@ function MoonSpace(): JSX.Element {
   function renderSkyLine(skyLine: string, index: number): JSX.Element {
     return (
       <div key={`${skyLine}-${index}`}></div>
-    )
+    );
+  }
+
+  function renderMoonCloud(moonCloudSVG: MoonCloudSVG, index: number): JSX.Element {
+    return (
+      <MoonCloud
+        key={`moon-cloud-${index}`}
+        calendar={selectedCalendar}
+        isVisible={isCloudsAnimationVisible}
+        svg={moonCloudSVG}
+      />
+    );
   }
 
   function renderIncrementorButton(isTerminalDate: boolean, direction: string): JSX.Element {
@@ -105,7 +120,7 @@ function MoonSpace(): JSX.Element {
           <polygon fill={colorSeventyPercentGray} points={arrowDirectional}/>
         </svg>
       </button>
-    )
+    );
   }
 
   function incrementDate(isForwardDirection?: boolean): void {
@@ -117,7 +132,7 @@ function MoonSpace(): JSX.Element {
     setIsNewYearsEve(isSameDate(selectedPhaseDate, dateNewYearsEve));
   }
 
-  function setButtonRef(element: HTMLButtonElement) {
+  function setButtonRef(element: HTMLButtonElement): void {
     if (element) {
       buttonRef.current = element;
       buttonRef.current.focus();
@@ -186,28 +201,7 @@ function MoonSpace(): JSX.Element {
             />
           </svg>
         </div>
-        <div className="cloud"></div>
-        <svg
-          className={`cloud cloud-one ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 64.36 23.07"
-        >
-          <path fill={selectedCalendar?.backgroundColor} d={clouds.one}/>
-        </svg>
-        <svg
-          className={`cloud cloud-two ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 69.47 26.19"
-        >
-          <path fill={selectedCalendar?.backgroundColor} d={clouds.two}/>
-        </svg>
-        <svg
-          className={`cloud cloud-three ${isCloudsAnimationVisible ? '' : 'is-not-visible'}`}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 79.76 40.49"
-        >
-          <path fill={selectedCalendar?.backgroundColor} d={clouds.three}/>
-        </svg>
+        {moonClouds.map(renderMoonCloud)}
       </div>
       <div className="sky-lines">
         {Array(76).fill('sky-line').map(renderSkyLine)}

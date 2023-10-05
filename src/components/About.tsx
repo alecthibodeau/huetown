@@ -27,7 +27,7 @@ function About(): JSX.Element {
       <li key={`${formatText.formatLettersAndNumbers(shop.name)}-${index}`}>
         <a className="text-link" href={shop.url}>{shop.name}</a>
       </li>
-    )
+    );
   }
 
   return (
