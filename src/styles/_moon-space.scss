@@ -212,8 +212,9 @@
   padding: 0;
   border: none;
   margin: .25rem;
-  background-color: transparent;
   cursor: default;
+  background-color: transparent;
+  color: $eighty-percent-gray;
 }
 
 .info-modal-body {
