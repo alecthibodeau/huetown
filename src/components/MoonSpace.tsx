@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 /* Interfaces */
@@ -42,6 +42,8 @@ function MoonSpace(): JSX.Element {
   const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthJanuary, dateFirst)));
   const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   const dateNewYearsDay = new Date(selectedYear, monthJanuary, dateFirst);
   const dateNewYearsEve = new Date(selectedYear, monthDecember, dateThirtyFirst);
@@ -115,11 +117,18 @@ function MoonSpace(): JSX.Element {
     setIsNewYearsEve(isSameDate(selectedPhaseDate, dateNewYearsEve));
   }
 
+  function setButtonRef(element: HTMLButtonElement) {
+    if (element) {
+      buttonRef.current = element;
+      buttonRef.current.focus();
+    }
+  };
+
   function onClickInfo(): void {
     setIsModalVisible(!isModalVisible);
   }
 
-  function onClickStart(): void {
+  function onClickSelectNewYearsDay(): void {
     setIsNewYearsDay(true);
     setIsNewYearsEve(false);
     setSelectedPhaseDate(dateNewYearsDay);
@@ -219,7 +228,7 @@ function MoonSpace(): JSX.Element {
         </div>
 
         <div className="info-for-display">
-          <div>{`It's a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon`}</div>
+          {`It's a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon today.`}
         </div>
 
         {!isPlaying ?
@@ -269,25 +278,32 @@ function MoonSpace(): JSX.Element {
               </button>
             </div>
             <div className="info-modal-body">
-              <span>
-                This is a year</span> <span>{selectedYear}</span> <span>lunar calendar.
-                Select New Year's Day for the option to run all moon phases in 2023.
-              </span>
+              {isNewYearsDay ?
+                <div className="info-modal-play-year-text">
+                  Play all the moon phases for 2023 as an animated sequence.
+                </div> :
+                <div>
+                  This is a year <span>{selectedYear}</span> lunar calendar.
+                  Select New Year's Day for the option to play all moon phases for 2023.
+                </div>
+              }
               <div className="info-modal-button-container">
-                {!isPlaying && isSameDate(selectedPhaseDate, dateNewYearsDay) ?
+                {isNewYearsDay ?
                   <button className={lunarFeatureButton} onClick={() => onClickPlayYear()}>
-                      {`Run ${selectedYear}`}
+                    {`Play ${selectedYear}'s phases`}
                   </button> :
                   <button
+                    ref={setButtonRef}
                     className={lunarFeatureButton}
-                    onClick={() => onClickStart()}>
+                    onClick={() => onClickSelectNewYearsDay()}>
                     Select New Year's Day
-                </button>}
+                  </button>
+                }
               </div>
             </div>
           </div>
         </div>
-        : null}
+      : null}
     </div>
   );
 }
