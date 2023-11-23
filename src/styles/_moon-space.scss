@@ -4,6 +4,12 @@
   max-height: 420px;
 }
 
+.pending-availability-message {
+  max-width: 300px;
+  padding-bottom: 1rem;
+  font-weight: 700;
+}
+
 .moon-image-container {
   overflow: hidden;
   width: $moon-space-dimension;

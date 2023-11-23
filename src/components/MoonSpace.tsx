@@ -178,6 +178,11 @@ function MoonSpace(): JSX.Element {
 
   return (
     <div className="moon-space">
+
+      <div className="pending-availability-message">
+        The 2024 lunar calendar will be available soon. Meanwhile, here's a digital version for the current year:
+      </div>
+
       <div className="moon-image-container">
         <div className="phase-container">
           <svg
@@ -222,7 +227,7 @@ function MoonSpace(): JSX.Element {
         </div>
 
         <div className="info-for-display">
-          {`It's a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon today.`}
+          {`It's a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon.`}
         </div>
 
         {!isPlaying ?

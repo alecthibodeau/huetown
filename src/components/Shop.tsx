@@ -11,7 +11,7 @@ import text from '../constants/text';
 /* Helpers */
 import formatText from '../helpers/format-text';
 
-function ItemsCollection(): JSX.Element {
+function Shop(): JSX.Element {
   const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = formatText;
   const { lunarCalendar, print, postcard, all } = text;
   const [itemsCategory, setItemsCategory] = useState(all);
@@ -128,4 +128,4 @@ function ItemsCollection(): JSX.Element {
   );
 }
 
-export default ItemsCollection;
+export default Shop;

@@ -64,10 +64,10 @@ function Header(props: HeaderProps): JSX.Element {
       <nav className={`mobile-nav-is-${isMobileNavOpen ? 'open' : 'closed'}`}>
         <div className="nav-link-wrapper">
           <NavLink
-            to="/items"
+            to="/shop"
             className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
             onClick={closeMobileNav}>
-            items
+            shop
           </NavLink>
         </div>
         <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
