@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
 import Item from './components/Item';
+import MoonSpace from './components/MoonSpace';
 import Shop from './components/Shop';
 import NotFound from './components/NotFound';
 
@@ -69,6 +70,7 @@ function App(): JSX.Element {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/moon-space" element={<MoonSpace />} />
           {itemsCollection.map(renderItemRoute)}
           <Route path="*" element={<NotFound />} />
         </Routes>

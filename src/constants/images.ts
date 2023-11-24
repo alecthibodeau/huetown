@@ -24,6 +24,8 @@ import keyThirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarte
 import colossalLogo from '../assets/images/items/colossal-logo-small.jpg';
 import spacePonyPreorder from '../assets/images/items/space-pony-300px.jpg';
 
+import lunarCalendar2024Preorder from '../assets/images/items/thibodeau-lunar-calendar-2024-preorder-1000px.jpg';
+
 import lunarCalendar2023Feature from '../assets/images/items/thibodeau-lunar-calendar-2023-feature-1000px.jpg';
 import lunarCalendar2023Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2023-01-700px.jpg';
 import lunarCalendar2023Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2023-02-700px.jpg';
@@ -221,6 +223,7 @@ const lunarCalendar2017DetailImages = [
 const lunarCalendars = {
   colossalLogo,
   spacePonyPreorder,
+  lunarCalendar2024Preorder,
   lunarCalendar2023Feature,
   lunarCalendar2023DetailImages,
   lunarCalendar2022Feature,

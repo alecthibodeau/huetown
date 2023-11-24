@@ -2,7 +2,8 @@
 import ItemProps from './ItemProps';
 
 interface Items {
-  lunarCalendar2023: ItemProps
+  lunarCalendar2024Preorder: ItemProps;
+  lunarCalendar2023: ItemProps;
   lunarCalendar2022: ItemProps;
   lunarCalendar2021: ItemProps;
   lunarCalendar2020: ItemProps;

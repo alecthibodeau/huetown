@@ -9,11 +9,13 @@ import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 /* Constants */
 import formatText from '../helpers/format-text';
 import images from '../constants/images';
+import items from '../constants/items';
 import itemsLunarCalendars from '../constants/items-lunar-calendars';
 
 function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
-  const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
   const linkSpacePony: string = '/items/prints/space-pony';
+  const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
+  const isPreorder: boolean = props.id === items.lunarCalendar2024Preorder.id;
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
@@ -53,6 +55,56 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   return (
     <>
       <div className="lunar-calendar-description">
+
+        {isPreorder ?
+          <div>
+            <p>
+              <span className="bold">Preorder 2024 Lunar Calendar</span>: Okay,
+              my lunar calendar for 2024 is currently in production at the print
+              shop &mdash; with Dan making the letterpress magic happen for another edition.
+              Preorders placed now will ship by early December 2023.
+              Huetown's domestic shipping charge in the USA is a flat $8 rate to any address,
+              regardless of item quantity, via USPS Priority.
+            </p>
+            <p>
+              <span className="bold">Note</span>: The 2024 lunar calendar ships flat
+              in a sturdy box. (Previous lunar calendar orders shipped rolled
+              in a tube.)
+            </p>
+            <p>
+              <span className="bold">Important</span>: The above lunar calendar
+              image is a digital-color simulation of what the final piece's inks
+              and paper will look like. There may be some slight variations
+              between the colors here and in the print.
+            </p>
+            <div className="lunar-calendar-timely-info">
+              <div>
+                <p>
+                  Each lunar calendar preordered by December 2nd, 2023 will include
+                  a <span className="ital">Bask</span> letterpress print:
+                </p>
+              </div>
+              <div className="lunar-calendar-accompanying-item">
+                <img src="" alt="Bask print" />
+              </div>
+            </div>
+            <p>
+              Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on
+              Instagram for updates on this print's letterpress production.
+              And join the <a className="text-link" href="about.html">email list</a> to
+              learn when other works are available.
+            </p>
+            <div>
+              <span className="bold">Event</span>: Catch Huetown
+              at <a className="text-link" href="https://www.theveganmarketma.com">The
+              Vegan Market</a> in Somerville, Massachusetts on Sunday December 10th, 2023.
+            </div>
+            <p>
+              Here's more info on the ultimate piece&hellip;
+            </p>
+          </div>
+        : null}
+
         <div className="lunar-calendar-paragraph">
           <span className="lunar-calendar-title ital">{props.title}</span> is a letterpress-printed lunar calendar designed and drawn by Alec Thibodeau (me!),
           chronicling all phases of the moon for <span className="lunar-calendar-year">{props.lunarCalendarYear}</span>.
@@ -75,15 +127,18 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           {itemsLunarCalendars.phases.map(renderlunarPhase)}
         </div>
       </div>
+
       {isCurrentLunarCalendar ?
         <div className="lunar-calendar-timely-info">
           <div>
             <p>
-              Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on Instagram to see this print's letterpress production in action.
-              And join the <a className="text-link" href="about.html">email list</a> to learn when other works are available.
+              See <Link className="text-link" to="/moon-space">moon space</Link> in action &mdash;
+              the digital version of this lunar calendar.
             </p>
             <p>
-              Each lunar calendar preordered by November 25th, 2022 included a <Link className="text-link" to={linkSpacePony}><span className="ital">Space Pony</span></Link> letterpress print:
+              Each lunar calendar preordered by November 25th, 2022 included
+              a <Link className="text-link" to={linkSpacePony}><span className="ital">Space
+              Pony</span></Link> letterpress print:
             </p>
           </div>
           <div className="lunar-calendar-accompanying-item">
@@ -93,6 +148,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           </div>
         </div>
       : null}
+
       <div className="lunar-calendar-thumbnails">
         {itemsLunarCalendars.thumbnails.map(
           (group: ThumbnailsGroup, index: number) => {

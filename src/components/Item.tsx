@@ -8,6 +8,7 @@ import ItemProps from '../interfaces/ItemProps';
 
 /* Constants */
 import images from '../constants/images';
+import items from '../constants/items';
 import text from '../constants/text';
 
 /* Helpers */
@@ -24,7 +25,7 @@ function Item(props: ItemProps): JSX.Element {
   const titleClass: string = formatText.formatDashes(props.title);
   const islunarCalendar2023: boolean = props.lunarCalendarYear === 2023;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
-  const isPreorder: boolean = props.id === 'tbd';
+  const isPreorder: boolean = props.id === items.lunarCalendar2024Preorder.id;
   const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
   const detailImageAltTextPrefix: string = `${props.category} detail`;
   const detailImageClassName: string = `${categoryClass} ${titleClass}${isRecentLunarCalendar ? ' recent-lunar-calendar' : ''}`
@@ -72,7 +73,10 @@ function Item(props: ItemProps): JSX.Element {
       <li key={`${formatText.formatLettersAndNumbers(listItem.slice(0, 8))}-${index}`}>
         {listItem === 'more-info' ?
           <span>
-            {text.numberedAndSigned} <a className="text-link" href="#itemDetails">(more info)</a>
+            {text.numberedAndSigned} {props.detailImages  
+              ? <a className="text-link" href="#itemDetails">(more info)</a>
+              : null
+            }
           </span>
         : listItem}
       </li>
@@ -187,9 +191,9 @@ function Item(props: ItemProps): JSX.Element {
           </div>
         </div>
       </div>
-      {props.detailImages ?
+      {props.detailImages || isPreorder ?
         <div className="detail-images">
-          {props.detailImages.map(renderDetailImagePair)}
+          {props.detailImages ? props.detailImages.map(renderDetailImagePair) : null}
           {isLunarCalendar ?
             <ItemLunarCalendarInfo
               id={props.id}
