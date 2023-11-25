@@ -47,7 +47,13 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           ? <Link to={thumbnail.link}>{renderThumbnailImage(thumbnail)}</Link>
           : <a href={thumbnail.link}>{renderThumbnailImage(thumbnail)}</a>
         }
-        <div className="label">{thumbnail.label}</div>
+        <div className={
+          `label ${+thumbnail.label.slice(0, 4) === 2024
+            ? 'item-preorder-text'
+            : null}`
+          }>
+          {thumbnail.label}
+        </div>
       </div>
     )
   }
@@ -59,7 +65,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
         {isPreorder ?
           <div>
             <p>
-              <span className="bold">Preorder 2024 Lunar Calendar</span>: Okay,
+              <span className="bold">Preorder 2024 Lunar Calendar</span>: Alright,
               my lunar calendar for 2024 is currently in production at the print
               shop &mdash; with Dan making the letterpress magic happen for another edition.
               Preorders placed now will ship by early December 2023.
@@ -67,9 +73,9 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               regardless of item quantity, via USPS Priority.
             </p>
             <p>
-              <span className="bold">Note</span>: The 2024 lunar calendar ships flat
-              in a sturdy box. (Previous lunar calendar orders shipped rolled
-              in a tube.)
+              <span className="bold">Note</span>: The 2024 lunar calendar <span className="ital">ships
+              flat</span> in a sturdy box. Previous lunar calendar orders shipped rolled
+              in a tube.
             </p>
             <p>
               <span className="bold">Important</span>: The above lunar calendar
@@ -81,14 +87,14 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               <div>
                 <p>
                   Each lunar calendar preordered by December 2nd, 2023 will include
-                  a <span className="ital">Bask</span> letterpress print:
+                  a <span className="ital">Pan Terra</span> letterpress print:
                 </p>
               </div>
               <div className="lunar-calendar-accompanying-item">
-                <img src="" alt="Bask print" />
+                <img src={images.lunarCalendars.panTerraPreorder} alt="Pan Terra print" />
               </div>
             </div>
-            <p>
+            <p id="itemDetails">
               Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on
               Instagram for updates on this print's letterpress production.
               And join the <a className="text-link" href="about.html">email list</a> to
@@ -99,7 +105,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               at <a className="text-link" href="https://www.theveganmarketma.com">The
               Vegan Market</a> in Somerville, Massachusetts on Sunday December 10th, 2023.
             </div>
-            <p>
+            <p className="bold">
               Here's more info on the ultimate piece&hellip;
             </p>
           </div>

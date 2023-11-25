@@ -73,10 +73,7 @@ function Item(props: ItemProps): JSX.Element {
       <li key={`${formatText.formatLettersAndNumbers(listItem.slice(0, 8))}-${index}`}>
         {listItem === 'more-info' ?
           <span>
-            {text.numberedAndSigned} {props.detailImages  
-              ? <a className="text-link" href="#itemDetails">(more info)</a>
-              : null
-            }
+            {text.numberedAndSigned} <a className="text-link" href="#itemDetails">(more info)</a>
           </span>
         : listItem}
       </li>

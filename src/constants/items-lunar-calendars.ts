@@ -46,6 +46,7 @@ const phases: ItemLunarPhaseKey[] = [
 ];
 
 const lunarCalendarsAvailable: ItemProps[] = [
+  items.lunarCalendar2024Preorder,
   items.lunarCalendar2023,
   items.lunarCalendar2022,
   items.lunarCalendar2021,
@@ -80,7 +81,7 @@ const lunarCalendarsPrevious: Thumbnail[] = [
 
 function formatThumbnail(item: ItemProps): Thumbnail {
   return {
-    label: `${item.lunarCalendarYear} ${item.category}`,
+    label: `${item.lunarCalendarYear} ${item.id === items.lunarCalendar2024Preorder.id ? "PREORDER" : item.category}`,
     image: item.featureImage,
     link: formatText.formatItemRoutePath(item.category, item.title)
   }
