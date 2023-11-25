@@ -170,7 +170,7 @@ function Item(props: ItemProps): JSX.Element {
                     <span className="normal">
                       {
                         isPreorder
-                          ? <span className="item-preorder-text">PREORDER&nbsp;</span>
+                          ? <span className="item-preorder-text">{text.preorderAllCaps}&nbsp;</span>
                           : null
                       }
                       <span>{props.lunarCalendarYear} {props.category}</span>

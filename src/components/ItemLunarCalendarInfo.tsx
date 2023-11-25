@@ -36,22 +36,23 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
     return <img src={thumbnail.image} alt={`${thumbnail.label} thumbnail`} />;
   }
 
+  function renderThumbnailLink(thumbnail: Thumbnail, isAvailable: boolean): JSX.Element {
+    return (
+      isAvailable
+      ? <Link to={isPreorder ? '/' : thumbnail.link}>{renderThumbnailImage(thumbnail)}</Link>
+      : <a href={thumbnail.link}>{renderThumbnailImage(thumbnail)}</a>
+    )
+  }
+
   function renderThumbnail(thumbnail: Thumbnail, index: number): JSX.Element {
+    const isPreorder: boolean = +thumbnail.label.slice(0, 4) === 2024;
     return (
       <div
         key={`thumbnail${thumbnail.label.replace(formatText.allSpaces, '')}-${index}`}
         className="thumbnail"
       >
-        {
-          +thumbnail.label.slice(0, 4) > 2016
-          ? <Link to={thumbnail.link}>{renderThumbnailImage(thumbnail)}</Link>
-          : <a href={thumbnail.link}>{renderThumbnailImage(thumbnail)}</a>
-        }
-        <div className={
-          `label ${+thumbnail.label.slice(0, 4) === 2024
-            ? 'item-preorder-text'
-            : null}`
-          }>
+        {renderThumbnailLink(thumbnail, +thumbnail.label.slice(0, 4) > 2016)}
+        <div className={`label${isPreorder ? ' item-preorder-text' : ''}`}>
           {thumbnail.label}
         </div>
       </div>
@@ -74,8 +75,8 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             </p>
             <p>
               <span className="bold">Note</span>: The 2024 lunar calendar <span className="ital">ships
-              flat</span> in a sturdy box. Previous lunar calendar orders shipped rolled
-              in a tube.
+              flat</span> in one sturdy box, regardless of quantity. (Previous lunar calendar orders shipped rolled
+              in individual tubes.)
             </p>
             <p>
               <span className="bold">Important</span>: The above lunar calendar

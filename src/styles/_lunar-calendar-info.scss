@@ -54,12 +54,16 @@
 .thumbnail {
   margin: .5rem .75rem;
 
-  a img {
-    width: 12.5rem;
-    vertical-align: top;
+  a {
+    display: block;
 
-    &:hover {
-      box-shadow: $hover-shadow;
+    img {
+      width: 12.5rem;
+      vertical-align: top;
+
+      &:hover {
+        box-shadow: $hover-shadow;
+      }
     }
   }
 }

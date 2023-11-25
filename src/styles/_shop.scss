@@ -1,6 +1,6 @@
 @use './variables' as *;
 
-.items-collection-info {
+.shop-info {
   max-width: 18.75rem;
   padding: 0 1rem;
   margin: auto;
@@ -41,13 +41,13 @@
   }
 }
 
-.items-collection-cards {
+.shop-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.item-card-link {
+.shop-link {
   display: flex;
   flex-direction: column;
   width: $image-dimension-small;
@@ -104,7 +104,7 @@
 
 @media (min-width: $breakpoint-sm) {
 
-  .items-collection-info {
+  .shop-info {
     max-width: initial;
     width: 33.125rem;
   }

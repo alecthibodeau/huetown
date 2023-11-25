@@ -79,9 +79,10 @@ const lunarCalendarsPrevious: Thumbnail[] = [
   }
 ];
 
-function formatThumbnail(item: ItemProps): Thumbnail {
+function formatThumbnailForAvailable(item: ItemProps): Thumbnail {
+  const isPreorder: boolean = item.id === items.lunarCalendar2024Preorder.id;
   return {
-    label: `${item.lunarCalendarYear} ${item.id === items.lunarCalendar2024Preorder.id ? "PREORDER" : item.category}`,
+    label: `${item.lunarCalendarYear} ${isPreorder ? text.preorderAllCaps : item.category}`,
     image: item.featureImage,
     link: formatText.formatItemRoutePath(item.category, item.title)
   }
@@ -90,7 +91,7 @@ function formatThumbnail(item: ItemProps): Thumbnail {
 const thumbnails: ThumbnailsGroup[] = [
   {
     status: 'available',
-    thumbnails: lunarCalendarsAvailable.map(formatThumbnail)
+    thumbnails: lunarCalendarsAvailable.map(formatThumbnailForAvailable)
   },
   {
     status: 'previous',
