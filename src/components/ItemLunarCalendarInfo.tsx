@@ -87,7 +87,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             <div className="lunar-calendar-timely-info">
               <div>
                 <p>
-                  Each lunar calendar preordered by December 2nd, 2023 will include
+                  Each lunar calendar preordered by December 2, 2023 will include
                   a <span className="ital">Pan Terra</span> letterpress print:
                 </p>
               </div>
