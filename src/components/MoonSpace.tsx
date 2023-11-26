@@ -231,14 +231,14 @@ function MoonSpace(): JSX.Element {
               title="Select info"
               aria-label="Select info"
               className={lunarFeatureButton}
-              onClick={() => onClickInfo()}>
+              onClick={onClickInfo}>
               Info
             </button>
             <button
               title="Select today"
               aria-label="Select today"
               className={lunarFeatureButton}
-              onClick={() => onClickToday()}>
+              onClick={onClickToday}>
               Today
             </button>
             <button
@@ -283,13 +283,13 @@ function MoonSpace(): JSX.Element {
               }
               <div className="info-modal-button-container">
                 {isNewYearsDay ?
-                  <button className={lunarFeatureButton} onClick={() => onClickPlayYear()}>
+                  <button className={lunarFeatureButton} onClick={onClickPlayYear}>
                     {`Play ${selectedYear}'s phases`}
                   </button> :
                   <button
                     ref={setButtonRef}
                     className={lunarFeatureButton}
-                    onClick={() => onClickSelectNewYearsDay()}>
+                    onClick={onClickSelectNewYearsDay}>
                     Select New Year's Day
                   </button>
                 }
