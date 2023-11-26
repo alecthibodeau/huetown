@@ -178,11 +178,6 @@ function MoonSpace(): JSX.Element {
 
   return (
     <div className="moon-space">
-
-      <div className="pending-availability-message">
-        The 2024 lunar calendar will be available soon. Meanwhile, here's a digital version for the current year:
-      </div>
-
       <div className="moon-image-container">
         <div className="phase-container">
           <svg
@@ -253,14 +248,14 @@ function MoonSpace(): JSX.Element {
               onClick={() => setIsCloudsAnimationVisible(!isCloudsAnimationVisible)}>
               Clouds
             </button>
-            <NavLink
+            {/* <NavLink
               title="Go to the print edition of the lunar calendar chart"
               aria-label="Go to the print edition of the lunar calendar chart"
               to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
               className={lunarFeatureButton}
             >
               Chart
-            </NavLink>
+            </NavLink> */}
           </div>
         : null}
       </div>

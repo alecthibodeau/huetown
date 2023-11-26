@@ -13,8 +13,6 @@ import items from '../constants/items';
 import itemsLunarCalendars from '../constants/items-lunar-calendars';
 
 function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
-  const linkSpacePony: string = '/items/prints/space-pony';
-  const isCurrentLunarCalendar: boolean = props.lunarCalendarYear === 2023;
   const isPreorder: boolean = props.id === items.lunarCalendar2024Preorder.id;
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
@@ -36,23 +34,23 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
     return <img src={thumbnail.image} alt={`${thumbnail.label} thumbnail`} />;
   }
 
-  function renderThumbnailLink(thumbnail: Thumbnail, isAvailable: boolean): JSX.Element {
+  function renderThumbnailLink(thumbnail: Thumbnail, isAvailable: boolean, isPreorderThumbnail: boolean): JSX.Element {
     return (
       isAvailable
-      ? <Link to={isPreorder ? '/' : thumbnail.link}>{renderThumbnailImage(thumbnail)}</Link>
+      ? <Link to={isPreorderThumbnail ? '/' : thumbnail.link}>{renderThumbnailImage(thumbnail)}</Link>
       : <a href={thumbnail.link}>{renderThumbnailImage(thumbnail)}</a>
     )
   }
 
   function renderThumbnail(thumbnail: Thumbnail, index: number): JSX.Element {
-    const isPreorder: boolean = +thumbnail.label.slice(0, 4) === 2024;
+    const isPreorderThumbnail: boolean = +thumbnail.label.slice(0, 4) === 2024;
     return (
       <div
         key={`thumbnail${thumbnail.label.replace(formatText.allSpaces, '')}-${index}`}
         className="thumbnail"
       >
-        {renderThumbnailLink(thumbnail, +thumbnail.label.slice(0, 4) > 2016)}
-        <div className={`label${isPreorder ? ' item-preorder-text' : ''}`}>
+        {renderThumbnailLink(thumbnail, +thumbnail.label.slice(0, 4) > 2016, isPreorderThumbnail)}
+        <div className={`label${isPreorderThumbnail ? ' item-preorder-text' : ''}`}>
           {thumbnail.label}
         </div>
       </div>
@@ -133,28 +131,10 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
         <div className="lunar-phases" id="lunarPhases">
           {itemsLunarCalendars.phases.map(renderlunarPhase)}
         </div>
-      </div>
-
-      {isCurrentLunarCalendar ?
-        <div className="lunar-calendar-timely-info">
-          <div>
-            <p>
-              See <Link className="text-link" to="/moon-space">moon space</Link> in action &mdash;
-              the digital version of this lunar calendar.
-            </p>
-            <p>
-              Each lunar calendar preordered by November 25th, 2022 included
-              a <Link className="text-link" to={linkSpacePony}><span className="ital">Space
-              Pony</span></Link> letterpress print:
-            </p>
-          </div>
-          <div className="lunar-calendar-accompanying-item">
-            <Link to={linkSpacePony}>
-              <img src={images.lunarCalendars.spacePonyPreorder} alt="Space Pony print" />
-            </Link>
-          </div>
+        <div>
+          Interact with the <span className="ital">current</span> year's lunar calendar as a <Link className="text-link" to="/moon-space">digital version</Link>.
         </div>
-      : null}
+      </div>
 
       <div className="lunar-calendar-thumbnails">
         {itemsLunarCalendars.thumbnails.map(
