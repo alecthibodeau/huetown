@@ -30,6 +30,10 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
     )
   }
 
+  function scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
+
   function renderThumbnailImage(thumbnail: Thumbnail): JSX.Element {
     return <img src={thumbnail.image} alt={`${thumbnail.label} thumbnail`} />;
   }
@@ -37,7 +41,12 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   function renderThumbnailLink(thumbnail: Thumbnail, isAvailable: boolean, isPreorderThumbnail: boolean): JSX.Element {
     return (
       isAvailable
-      ? <Link to={isPreorderThumbnail ? '/' : thumbnail.link}>{renderThumbnailImage(thumbnail)}</Link>
+      ? <Link
+          to={isPreorderThumbnail ? '/' : thumbnail.link}
+          onClick={isPreorder && isPreorderThumbnail ? scrollToTop : () => {}}
+        >
+          {renderThumbnailImage(thumbnail)}
+        </Link>
       : <a href={thumbnail.link}>{renderThumbnailImage(thumbnail)}</a>
     )
   }
