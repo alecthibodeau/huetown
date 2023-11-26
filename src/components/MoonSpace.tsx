@@ -52,15 +52,17 @@ function MoonSpace(): JSX.Element {
   const dateNewYearsDay = new Date(selectedYear, monthJanuary, dateFirst);
   const dateNewYearsEve = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
+  const isLatestReleaseCurrentYear: boolean = false;
+
   const colorWhite: string = '#fff';
   const colorSeventyPercentGray: string = '#4d4d4d';
-  const milliseconds: number = 10;
+  const millisecondsCount: number = 10;
   const backDirection: string = 'back';
   const forwardDirection: string = 'forward';
   const lunarFeatureButton: string = 'lunar-feature-button';
 
   useEffect(() => {
-    const interval = setInterval(() => updateDates(), milliseconds);
+    const interval = setInterval(() => updateDates(), millisecondsCount);
     return () => clearInterval(interval);
   }, []);
 
@@ -168,7 +170,7 @@ function MoonSpace(): JSX.Element {
 
   async function animateAnnualPhases(daysInTheYear: number) {
     for (let i = 0; i < daysInTheYear - 1; i++) {
-      await delayTime(milliseconds);
+      await delayTime(millisecondsCount);
       incrementDate(true);
     }
     setIsPlaying(false);
@@ -248,14 +250,16 @@ function MoonSpace(): JSX.Element {
               onClick={() => setIsCloudsAnimationVisible(!isCloudsAnimationVisible)}>
               Clouds
             </button>
-            {/* <NavLink
-              title="Go to the print edition of the lunar calendar chart"
-              aria-label="Go to the print edition of the lunar calendar chart"
-              to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
-              className={lunarFeatureButton}
-            >
-              Chart
-            </NavLink> */}
+            {isLatestReleaseCurrentYear ?
+              <NavLink
+                title="Go to the print edition of the lunar calendar chart"
+                aria-label="Go to the print edition of the lunar calendar chart"
+                to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
+                className={lunarFeatureButton}
+              >
+                Chart
+              </NavLink>
+            : null}
           </div>
         : null}
       </div>

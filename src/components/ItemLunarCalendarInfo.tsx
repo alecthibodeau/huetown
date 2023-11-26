@@ -111,7 +111,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             <div>
               <span className="bold">Event</span>: Catch Huetown
               at <a className="text-link" href="https://www.theveganmarketma.com">The
-              Vegan Market</a> in Somerville, Massachusetts on Sunday December 10th, 2023.
+              Vegan Market</a> in Somerville, Massachusetts on Sunday December 10, 2023.
             </div>
             <p className="bold">
               Here's more info on the ultimate piece&hellip;

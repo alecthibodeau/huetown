@@ -24,13 +24,13 @@ main {
 
   .text-link {
     text-decoration: none;
-    color: $twenty-four-plum-dark;
+    color: $dark-green;
     font-weight: 600;
 
     &:link,
     &:visited,
     &:active {
-      color: $twenty-four-plum-dark;
+      color: $dark-green;
     }
 
     &.shop-link {
@@ -43,7 +43,7 @@ main {
     }
 
     &:hover:not(.shop-link) {
-      color: $dark-green;
+      color: $twenty-four-plum-dark;
       text-decoration: underline;
       cursor: pointer;
     }

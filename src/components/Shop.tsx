@@ -17,9 +17,9 @@ function Shop(): JSX.Element {
   const { lunarCalendar, print, postcard, all } = text;
   const [itemsCategory, setItemsCategory] = useState(all);
   const [userSearchInput, setUserSearchInput] = useState('');
-  const allItems: boolean = itemsCategory === all;
-  const lunarCalendarAngledViewIndex: number = 2;
+  const isAllItems: boolean = itemsCategory === all;
   const itemsCategories: string[] = [lunarCalendar, print, postcard, all];
+  const lunarCalendarAngledViewIndex: number = 2;
 
   function formatLunarCalendarCategory(item: ItemProps, isPreorder?: boolean): string {
     return `${isPreorder ? `${text.preorderAllCaps} ` : ''}${item.lunarCalendarYear} ${item.category}`;
@@ -108,7 +108,7 @@ function Shop(): JSX.Element {
       <div className="shop-info">
         <div className="items-search">
           <span>
-            {`${allItems ? itemsCollection.length : filteredItems.length}
+            {`${isAllItems ? itemsCollection.length : filteredItems.length}
             item${filteredItems.length === 1 ? '' : 's'}`}
           </span>
           <span>search by title, category or price:</span>
@@ -124,7 +124,7 @@ function Shop(): JSX.Element {
         </div>
       </div>
       <div className="shop-cards">
-        {allItems ? itemsCollection.map(renderItemCard) : filteredItems.map(renderItemCard)}
+        {isAllItems ? itemsCollection.map(renderItemCard) : filteredItems.map(renderItemCard)}
       </div>
     </div>
   );
