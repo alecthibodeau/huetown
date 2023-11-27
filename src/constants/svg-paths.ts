@@ -3,6 +3,7 @@ import LunarPhases from '../interfaces/LunarPhases';
 import MoonCloudSVG from '../interfaces/MoonCloudSVG';
 
 const arrowDirectional = '41.07 .35 36.12 5.3 68.75 37.93 0 37.93 0 44.93 68.75 44.93 36.12 77.55 41.07 82.5 82.15 41.43 41.07 .35';
+const closingX = '125.66 76.67 90.42 41.43 125.66 6.19 120.71 1.24 85.47 36.48 50.23 1.24 45.28 6.19 80.52 41.43 45.28 76.66 50.23 81.61 85.47 46.38 120.71 81.62 125.66 76.67';
 
 const moonClouds: MoonCloudSVG[] = [
   {
@@ -235,6 +236,7 @@ const lunarPhasesSVGPaths: LunarPhases = {
 
 const svgPaths = {
   arrowDirectional,
+  closingX,
   moonClouds,
   lunarPhasesSVGPaths
 }

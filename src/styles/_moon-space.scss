@@ -215,22 +215,23 @@
 }
 
 .info-modal-close {
+  width: 20px;
+  height: 20px;
   padding: 0;
   border: none;
-  margin: .25rem;
-  cursor: default;
-  background-color: transparent;
+  margin: .625rem .625rem .125rem;
+  background-color: $white;
   color: $eighty-percent-gray;
 }
 
 .info-modal-body {
-  padding: 0 1rem .25rem;
+  padding: 0 1.125rem .25rem;
 }
 
 .info-modal-button-container {
   display: flex;
   justify-content: center;
-  padding: .5rem .125rem;
+  padding: .75rem .125rem .5rem;
 }
 
 .info-modal-play-year-text {

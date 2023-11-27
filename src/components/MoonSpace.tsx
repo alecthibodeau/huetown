@@ -33,7 +33,7 @@ function MoonSpace(): JSX.Element {
   } = digitalLunarCalendar;
   const { formatDayMonthAndDate, isSameDate, getEasternTimeZoneDate } = formatDateAndTime;
   const { formatItemRoutePath } = formatText;
-  const { arrowDirectional, lunarPhasesSVGPaths, moonClouds } = svgPaths;
+  const { arrowDirectional, closingX, lunarPhasesSVGPaths, moonClouds } = svgPaths;
 
   const [localDate, setLocalDate] = useState<Date>(new Date());
   const [easternTimeZoneDate, setEasternTimeZoneDate] = useState<Date>(getEasternTimeZoneDate(localDate));
@@ -270,9 +270,14 @@ function MoonSpace(): JSX.Element {
             <div className="info-modal-header">
               <button
                 name="close"
-                className="material-symbols-outlined info-modal-close"
+                className="info-modal-close"
                 onClick={() => setIsModalVisible(false)}>
-                close
+                <svg
+                  viewBox="30 0 96 96"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon fill={colorSeventyPercentGray} points={closingX}/>
+                </svg>
               </button>
             </div>
             <div className="info-modal-body">
