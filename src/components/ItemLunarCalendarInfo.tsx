@@ -105,7 +105,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             <p id="itemDetails">
               Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on
               Instagram for updates on this print's letterpress production.
-              And join the <a className="text-link" href="about.html">email list</a> to
+              And join the <Link className="text-link" to="/about">email list</Link> to
               learn when other works are available.
             </p>
             <div>
