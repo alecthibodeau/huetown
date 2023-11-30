@@ -7,6 +7,7 @@ import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 /* Constants */
 import images from './images';
 import items from './items';
+import preorderId from './preorder';
 import text from './text';
 
 /* Helpers */
@@ -80,11 +81,12 @@ const lunarCalendarsPrevious: Thumbnail[] = [
 ];
 
 function formatThumbnailForAvailable(item: ItemProps): Thumbnail {
-  const isPreorder: boolean = item.id === items.lunarCalendar2024Preorder.id;
+  const isPreorderThumbnail: boolean = item.id === preorderId;
   return {
-    label: `${item.lunarCalendarYear} ${isPreorder ? text.preorderAllCaps : item.category}`,
+    label: `${item.lunarCalendarYear} ${isPreorderThumbnail ? text.preorderAllCaps : item.category}`,
     image: item.featureImage,
-    link: formatText.formatItemRoutePath(item.category, item.title)
+    link: formatText.formatItemRoutePath(item.category, item.title),
+    isPreorder: isPreorderThumbnail
   }
 }
 

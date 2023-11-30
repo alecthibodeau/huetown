@@ -9,11 +9,11 @@ import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 /* Constants */
 import formatText from '../helpers/format-text';
 import images from '../constants/images';
-import items from '../constants/items';
 import itemsLunarCalendars from '../constants/items-lunar-calendars';
+import preorderId from '../constants/preorder';
 
 function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
-  const isPreorder: boolean = props.id === items.lunarCalendar2024Preorder.id;
+  const isPreorder: boolean = props.id === preorderId;
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
@@ -38,7 +38,11 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
     return <img src={thumbnail.image} alt={`${thumbnail.label} thumbnail`} />;
   }
 
-  function renderThumbnailLink(thumbnail: Thumbnail, isAvailable: boolean, isPreorderThumbnail: boolean): JSX.Element {
+  function renderThumbnailLink(
+    thumbnail: Thumbnail,
+    isAvailable: boolean,
+    isPreorderThumbnail: boolean
+  ): JSX.Element {
     return (
       isAvailable
       ? <Link
@@ -52,7 +56,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   }
 
   function renderThumbnail(thumbnail: Thumbnail, index: number): JSX.Element {
-    const isPreorderThumbnail: boolean = +thumbnail.label.slice(0, 4) === 2024;
+    const isPreorderThumbnail: boolean = !!thumbnail.isPreorder;
     return (
       <div
         key={`thumbnail${thumbnail.label.replace(formatText.allSpaces, '')}-${index}`}

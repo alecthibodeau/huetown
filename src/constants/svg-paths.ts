@@ -2,8 +2,8 @@
 import LunarPhases from '../interfaces/LunarPhases';
 import MoonCloudSVG from '../interfaces/MoonCloudSVG';
 
-const arrowDirectional = '41.07 .35 36.12 5.3 68.75 37.93 0 37.93 0 44.93 68.75 44.93 36.12 77.55 41.07 82.5 82.15 41.43 41.07 .35';
-const closingX = '125.66 76.67 90.42 41.43 125.66 6.19 120.71 1.24 85.47 36.48 50.23 1.24 45.28 6.19 80.52 41.43 45.28 76.66 50.23 81.61 85.47 46.38 120.71 81.62 125.66 76.67';
+const arrowDirectional: string = '41.07 .35 36.12 5.3 68.75 37.93 0 37.93 0 44.93 68.75 44.93 36.12 77.55 41.07 82.5 82.15 41.43 41.07 .35';
+const closingX: string = '125.66 76.67 90.42 41.43 125.66 6.19 120.71 1.24 85.47 36.48 50.23 1.24 45.28 6.19 80.52 41.43 45.28 76.66 50.23 81.61 85.47 46.38 120.71 81.62 125.66 76.67';
 
 const moonClouds: MoonCloudSVG[] = [
   {
@@ -24,7 +24,7 @@ const moonClouds: MoonCloudSVG[] = [
 ];
 
 /* Waxing Crescent Phase Paths */
-const waxingCrescentEightSteps = {
+const waxingCrescentEightSteps: { [key: string]: string } = {
   xc81: 'm20.7,4.19c1.86,2.07,2.99,4.81,2.99,7.81s-1.13,5.74-2.99,7.81c1.43-2.26,2.26-4.94,2.26-7.81s-.83-5.55-2.26-7.81Z',
   xc82: 'm18.86,2.52c2.93,2.13,4.84,5.58,4.84,9.48s-1.91,7.35-4.84,9.48c2.11-2.58,3.38-5.88,3.38-9.48s-1.27-6.89-3.38-9.48Z',
   xc83: 'm17.52,1.69c3.67,1.97,6.17,5.85,6.17,10.31s-2.5,8.34-6.17,10.31c2.47-2.73,3.98-6.34,3.98-10.31s-1.51-7.59-3.98-10.31Z',
@@ -35,7 +35,7 @@ const waxingCrescentEightSteps = {
   xc88: 'm12.19.3c6.37.11,11.5,5.3,11.5,11.7,0,6.4-5.13,11.59-11.5,11.7,1.29-3.66,2-7.6,2-11.7s-.7-8.04-2-11.7Z'
 };
 
-const waxingCrescentSevenSteps = {
+const waxingCrescentSevenSteps: { [key: string]: string } = {
   xc71: waxingCrescentEightSteps.xc81,
   xc72: 'm18.42,2.22c3.18,2.09,5.27,5.69,5.27,9.78s-2.1,7.69-5.27,9.78c2.26-2.62,3.63-6.04,3.63-9.78s-1.37-7.15-3.63-9.78Z',
   xc73: 'm17.07,1.46c3.92,1.89,6.62,5.9,6.62,10.54s-2.7,8.65-6.62,10.54c2.42-2.82,3.88-6.51,3.88-10.54s-1.46-7.72-3.88-10.54Z',
@@ -45,7 +45,7 @@ const waxingCrescentSevenSteps = {
   xc77: waxingCrescentEightSteps.xc88
 };
 
-const waxingCrescentSixSteps = {
+const waxingCrescentSixSteps: { [key: string]: string } = {
   xc61: waxingCrescentEightSteps.xc81,
   xc62: 'm18.14,2.04c3.33,2.06,5.56,5.75,5.56,9.96s-2.22,7.9-5.56,9.96c2.33-2.65,3.73-6.14,3.73-9.96s-1.4-7.31-3.73-9.96Z',
   xc63: 'm16.18,1.07c4.39,1.68,7.51,5.94,7.51,10.93s-3.12,9.24-7.51,10.93c2.63-2.87,4.22-6.71,4.22-10.93s-1.59-8.06-4.22-10.93Z',
@@ -54,7 +54,7 @@ const waxingCrescentSixSteps = {
   xc66: 'm12.56.31c6.2.3,11.13,5.41,11.13,11.69,0,6.27-4.94,11.39-11.13,11.69,1.29-3.66,1.99-7.59,1.99-11.69s-.7-8.03-1.99-11.69Z'
 };
 
-const waxingCrescentFiveSteps = {
+const waxingCrescentFiveSteps: { [key: string]: string } = {
   xc51: waxingCrescentEightSteps.xc81,
   xc52: waxingCrescentEightSteps.xc83,
   xc53: waxingCrescentSevenSteps.xc74,
@@ -63,7 +63,7 @@ const waxingCrescentFiveSteps = {
 };
 
 /* Waxing Gibbous Phase Paths */
-const waxingGibbousEightSteps = {
+const waxingGibbousEightSteps: { [key: string]: string } = {
   xg81: 'm23.7,12C23.7,5.54,18.46.3,12,.3c-.07,0-.13,0-.2,0-1.29,3.66-2,7.6-2,11.7s.7,8.04,2,11.7c.07,0,.13,0,.2,0,6.46,0,11.7-5.24,11.7-11.7Z',
   xg82: 'm23.7,12C23.7,5.54,18.46.3,12,.3c-.37,0-.74.02-1.1.05-1.97,3.43-3.1,7.41-3.1,11.65s1.13,8.22,3.1,11.65c.36.03.73.05,1.1.05,6.46,0,11.7-5.24,11.7-11.7Z',
   xg83: 'm23.7,12C23.7,5.54,18.46.3,12,.3c-.74,0-1.46.07-2.16.2-2.43,3.19-3.87,7.18-3.87,11.5s1.44,8.31,3.87,11.5c.7.13,1.42.2,2.16.2,6.46,0,11.7-5.24,11.7-11.7Z',
@@ -74,7 +74,7 @@ const waxingGibbousEightSteps = {
   xg88: 'm12,23.7c6.46,0,11.7-5.24,11.7-11.7S18.46.3,12,.3c-3.46,0-6.57,1.5-8.71,3.89-1.43,2.26-2.26,4.94-2.26,7.81s.83,5.55,2.26,7.81c2.14,2.39,5.25,3.89,8.71,3.89Z'
 };
 
-const waxingGibbousSevenSteps = {
+const waxingGibbousSevenSteps: { [key: string]: string } = {
   xg71: waxingGibbousEightSteps.xg81,
   xg72: waxingGibbousEightSteps.xg82,
   xg73: waxingGibbousEightSteps.xg83,
@@ -84,7 +84,7 @@ const waxingGibbousSevenSteps = {
   xg77: waxingGibbousEightSteps.xg88
 };
 
-const waxingGibbousSixSteps = {
+const waxingGibbousSixSteps: { [key: string]: string } = {
   xg61: 'm23.7,12C23.7,5.54,18.46.3,12,.3c-.19,0-.38,0-.57.01-1.29,3.66-1.99,7.59-1.99,11.69s.7,8.03,1.99,11.69c.19,0,.38.01.57.01,6.46,0,11.7-5.24,11.7-11.7Z',
   xg62: 'm23.7,12C23.7,5.54,18.46.3,12,.3c-.44,0-.88.03-1.32.07-2.28,3.3-3.62,7.31-3.62,11.63s1.34,8.32,3.62,11.63c.43.05.87.07,1.32.07,6.46,0,11.7-5.24,11.7-11.7Z',
   xg63: 'm23.7,12C23.7,5.54,18.46.3,12,.3c-.87,0-1.72.1-2.54.28-2.63,3.07-4.23,7.06-4.23,11.42s1.59,8.35,4.23,11.42c.82.18,1.67.28,2.54.28,6.46,0,11.7-5.24,11.7-11.7Z',
@@ -93,7 +93,7 @@ const waxingGibbousSixSteps = {
   xg66: waxingGibbousEightSteps.xg88
 };
 
-const waxingGibbousFiveSteps = {
+const waxingGibbousFiveSteps: { [key: string]: string } = {
   xg51: 'm23.7,12C23.7,5.54,18.46.3,12,.3c-.21,0-.42,0-.62.02-1.48,3.6-2.3,7.55-2.3,11.68s.82,8.08,2.3,11.68c.21.01.41.02.62.02,6.46,0,11.7-5.24,11.7-11.7Z',
   xg52: 'm23.7,12C23.7,5.54,18.46.3,12,.3c-.65,0-1.3.05-1.92.16-2.25,3.29-3.56,7.26-3.56,11.54s1.32,8.26,3.56,11.54c.63.1,1.27.16,1.92.16,6.46,0,11.7-5.24,11.7-11.7Z',
   xg53: waxingGibbousSevenSteps.xg74,
@@ -239,6 +239,6 @@ const svgPaths = {
   closingX,
   moonClouds,
   lunarPhasesSVGPaths
-}
+};
 
 export default svgPaths;

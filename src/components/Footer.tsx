@@ -1,6 +1,11 @@
+/* Components */
+import IconLinks from './IconLinks';
+
 function Footer(): JSX.Element {
   return (
-    <footer id="footer"></footer>
+    <footer id="footer">
+      <IconLinks isForMobileNav={false} />
+    </footer>
   );
 }
 

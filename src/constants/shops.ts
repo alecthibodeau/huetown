@@ -1,4 +1,6 @@
-const shops = [
+import Shop from '../interfaces/Shop';
+
+const shops: Shop[] = [
   {
     name: 'Craftland',
     url: 'https://shop.craftlandshop.com'

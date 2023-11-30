@@ -1,10 +1,10 @@
-const miniprintDescription = 'print measuring 2.5 x 2.5 inches overall, with an image dimension of 1.75 x 1.75 inches in a single pass of ink.';
-const miniprintLetterpressDescription = `is a letterpress ${miniprintDescription}`;
-const miniPrintInitialed = 'Each print is initialed on the front in pencil by Alec.';
-const miniprintLetterpressPrinting = `This unlimited edition is exquisitely printed from Alec's original drawing work by Dan Wood and his team at DWRI Letterpress on light gray 100# cover stock. ${miniPrintInitialed}`;
-const miniprintLetterpressFull = `${miniprintLetterpressDescription} ${miniprintLetterpressPrinting}`;
+const miniprintDescription: string = 'print measuring 2.5 x 2.5 inches overall, with an image dimension of 1.75 x 1.75 inches in a single pass of ink.';
+const miniprintLetterpressDescription: string = `is a letterpress ${miniprintDescription}`;
+const miniPrintInitialed: string = 'Each print is initialed on the front in pencil by Alec.';
+const miniprintLetterpressPrinting: string = `This unlimited edition is exquisitely printed from Alec's original drawing work by Dan Wood and his team at DWRI Letterpress on light gray 100# cover stock. ${miniPrintInitialed}`;
+const miniprintLetterpressFull: string = `${miniprintLetterpressDescription} ${miniprintLetterpressPrinting}`;
 
-const postcardTextPrefix = 'Caption on the back:';
+const postcardTextPrefix: string = 'Caption on the back:';
 
 const text = {
   addToCart: 'Add to cart',
@@ -43,7 +43,7 @@ const text = {
   postcard: 'postcard',
   postcardFinish: 'Mellow, satin finish',
   postcardColor: 'Full-color front / single-color back',
-  postcardPrice: 1,
+  postcardPrice: '1',
   postcardCaptionAssets: `${postcardTextPrefix} "Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches"`,
   postcardCaptionCachalot: `${postcardTextPrefix} "The cachalot, or sperm whale, swims in the open ocean and has the largest brain of any animal."`,
   postcardCaptionGreatWhiteShark: `${postcardTextPrefix} "The great white shark inhabits most of the world's oceans and wants to be your friend."`,

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import ItemProps from '../interfaces/ItemProps';
 
 /* Constants */
-import items from '../constants/items';
 import itemsCollection from '../constants/items-collection';
+import preorderId from '../constants/preorder';
 import text from '../constants/text';
 
 /* Helpers */
@@ -74,7 +74,7 @@ function Shop(): JSX.Element {
   }
 
   function renderItemCard(item: ItemProps, index: number): JSX.Element {
-    const isPreorder: boolean = item.id === items.lunarCalendar2024Preorder.id;
+    const isPreorder: boolean = item.id === preorderId;
     return (
       <Link
         key={`${formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}

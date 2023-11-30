@@ -22,7 +22,6 @@ import keyNewMoon from '../assets/images/items/lunar-phase-new.png';
 import keyThirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarter.png';
 
 import colossalLogo from '../assets/images/items/colossal-logo-small.jpg';
-import spacePonyPreorder from '../assets/images/items/space-pony-300px.jpg';
 
 import lunarCalendar2024Preorder from '../assets/images/items/thibodeau-lunar-calendar-2024-preorder-700px.jpg';
 import panTerraPreorder from '../assets/images/items/pan-terra-preorder-300px.jpg';
@@ -124,31 +123,31 @@ import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-
 
 import printTigerMoontainFeature from '../assets/images/items/print-tiger-moontain-feature-450px.jpg';
 
-const header = {
+const header: { [key: string]: string } = {
   huetownLogoGrayDark,
   huetownLogoWhite
 };
 
-const icons = {
+const icons: { [key: string]: string } = {
   emailGray,
   emailWhite,
   instagramGray,
   instagramWhite
 };
 
-const about = {
+const about: { [key: string]: string } = {
   hLogo,
   selfPortrait
 };
 
-const lunarPhases = {
+const lunarPhases: { [key: string]: string } = {
   keyFirstQuarterMoon,
   keyFullMoon,
   keyThirdQuarterMoon,
   keyNewMoon
 };
 
-const lunarCalendar2023DetailImages = [
+const lunarCalendar2023DetailImages: string[] = [
   lunarCalendar2023Detail01,
   lunarCalendar2023Detail02,
   lunarCalendar2023Detail03,
@@ -159,7 +158,7 @@ const lunarCalendar2023DetailImages = [
   lunarCalendar2023Detail08
 ];
 
-const lunarCalendar2022DetailImages = [
+const lunarCalendar2022DetailImages: string[] = [
   lunarCalendar2022Detail01,
   lunarCalendar2022Detail02,
   lunarCalendar2022Detail03,
@@ -170,7 +169,7 @@ const lunarCalendar2022DetailImages = [
   lunarCalendar2022Detail08
 ];
 
-const lunarCalendar2021DetailImages = [
+const lunarCalendar2021DetailImages: string[] = [
   lunarCalendar2021Detail01,
   lunarCalendar2021Detail02,
   lunarCalendar2021Detail03,
@@ -179,7 +178,7 @@ const lunarCalendar2021DetailImages = [
   lunarCalendar2021Detail06
 ];
 
-const lunarCalendar2020DetailImages = [
+const lunarCalendar2020DetailImages: string[] = [
   lunarCalendar2020Detail01,
   lunarCalendar2020Detail02,
   lunarCalendar2020Detail03,
@@ -190,7 +189,7 @@ const lunarCalendar2020DetailImages = [
   lunarCalendar2020Detail08
 ];
 
-const lunarCalendar2019DetailImages = [
+const lunarCalendar2019DetailImages: string[] = [
   lunarCalendar2019Detail01,
   lunarCalendar2019Detail02,
   lunarCalendar2019Detail03,
@@ -201,7 +200,7 @@ const lunarCalendar2019DetailImages = [
   lunarCalendar2019Detail08
 ];
 
-const lunarCalendar2018DetailImages = [
+const lunarCalendar2018DetailImages: string[] = [
   lunarCalendar2018Detail01,
   lunarCalendar2018Detail02,
   lunarCalendar2018Detail03,
@@ -212,7 +211,7 @@ const lunarCalendar2018DetailImages = [
   lunarCalendar2018Detail08
 ];
 
-const lunarCalendar2017DetailImages = [
+const lunarCalendar2017DetailImages: string[] = [
   lunarCalendar2017Detail01,
   lunarCalendar2017Detail02,
   lunarCalendar2017Detail03,
@@ -224,7 +223,6 @@ const lunarCalendar2017DetailImages = [
 const lunarCalendars = {
   colossalLogo,
   panTerraPreorder,
-  spacePonyPreorder,
   lunarCalendar2024Preorder,
   lunarCalendar2023Feature,
   lunarCalendar2023DetailImages,
@@ -246,7 +244,7 @@ const lunarCalendars = {
   lunarCalendar2011Previous
 };
 
-const prints = {
+const prints: { [key: string]: string } = {
   printAbundanceFeature,
   printAbundanceDetail01,
   printAbundanceDetail02,
@@ -264,7 +262,7 @@ const prints = {
   printTigerMoontainFeature
 };
 
-const postcards = {
+const postcards: { [key: string]: string } = {
   postcardAssetsFeature,
   postcardCachalotFeature,
   postcardGreatWhiteSharkFeature,
