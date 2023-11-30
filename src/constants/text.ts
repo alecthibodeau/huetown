@@ -6,7 +6,7 @@ const miniprintLetterpressFull: string = `${miniprintLetterpressDescription} ${m
 
 const postcardTextPrefix: string = 'Caption on the back:';
 
-const text = {
+const text: { [key: string]: string }  = {
   addToCart: 'Add to cart',
   viewCart: 'cart',
   shipsFlat: 'Ships flat',
@@ -19,7 +19,6 @@ const text = {
   dimensionsSixByFourInches: '6 x 4 inches',
   dimensionsLunarCalendar: '19 x 11.75 inches',
   lunarCalendar: 'lunar calendar',
-  lunarCalendarPrice: 45,
   lunarCalendarLocationProvidence: 'The calendar is printed in Providence, Rhode Island, which is identified as a representative location within the artwork.',
   lunarCalendarLocationNewYork: 'New York City is identified as a representative location within the artwork.',
   lunarCalendarPaper2024: 'French Paper Company Plum Punch 80# cover paper',
@@ -43,7 +42,6 @@ const text = {
   postcard: 'postcard',
   postcardFinish: 'Mellow, satin finish',
   postcardColor: 'Full-color front / single-color back',
-  postcardPrice: '1',
   postcardCaptionAssets: `${postcardTextPrefix} "Assets (detail) by Alec Thibodeau, 2012, screen print on paper, 24 x 18 inches"`,
   postcardCaptionCachalot: `${postcardTextPrefix} "The cachalot, or sperm whale, swims in the open ocean and has the largest brain of any animal."`,
   postcardCaptionGreatWhiteShark: `${postcardTextPrefix} "The great white shark inhabits most of the world's oceans and wants to be your friend."`,

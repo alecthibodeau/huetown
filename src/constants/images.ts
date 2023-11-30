@@ -147,6 +147,41 @@ const lunarPhases: { [key: string]: string } = {
   keyNewMoon
 };
 
+const lunarCalendars: { [key: string]: string } = {
+  colossalLogo,
+  panTerraPreorder,
+  lunarCalendar2024Preorder,
+  lunarCalendar2023Feature,
+  lunarCalendar2022Feature,
+  lunarCalendar2021Feature,
+  lunarCalendar2020Feature,
+  lunarCalendar2019Feature,
+  lunarCalendar2018Feature,
+  lunarCalendar2017Feature,
+  lunarCalendar2008Previous,
+  lunarCalendar2009Previous,
+  lunarCalendar2010Previous,
+  lunarCalendar2011Previous
+};
+
+const prints: { [key: string]: string } = {
+  printAbundanceFeature,
+  printFunktionslustFeature,
+  printOrcaLuminaFeature,
+  printProtonSwanFeature,
+  printSpacePonyFeature,
+  printStentorianFeature,
+  printTigerMoontainFeature
+};
+
+const postcards: { [key: string]: string } = {
+  postcardAssetsFeature,
+  postcardCachalotFeature,
+  postcardGreatWhiteSharkFeature,
+  postcardHippopotamusFeature,
+  postcardRhodeIslandWhaleFeature
+};
+
 const lunarCalendar2023DetailImages: string[] = [
   lunarCalendar2023Detail01,
   lunarCalendar2023Detail02,
@@ -220,54 +255,34 @@ const lunarCalendar2017DetailImages: string[] = [
   lunarCalendar2017Detail06
 ];
 
-const lunarCalendars = {
-  colossalLogo,
-  panTerraPreorder,
-  lunarCalendar2024Preorder,
-  lunarCalendar2023Feature,
-  lunarCalendar2023DetailImages,
-  lunarCalendar2022Feature,
-  lunarCalendar2022DetailImages,
-  lunarCalendar2021Feature,
-  lunarCalendar2021DetailImages,
-  lunarCalendar2020Feature,
-  lunarCalendar2020DetailImages,
-  lunarCalendar2019Feature,
-  lunarCalendar2019DetailImages,
-  lunarCalendar2018Feature,
-  lunarCalendar2018DetailImages,
-  lunarCalendar2017Feature,
-  lunarCalendar2017DetailImages,
-  lunarCalendar2008Previous,
-  lunarCalendar2009Previous,
-  lunarCalendar2010Previous,
-  lunarCalendar2011Previous
-};
-
-const prints: { [key: string]: string } = {
-  printAbundanceFeature,
+const printAbundanceDetailImages: string[] = [
   printAbundanceDetail01,
-  printAbundanceDetail02,
-  printFunktionslustFeature,
+  printAbundanceDetail02
+];
+
+const printFunktionslustDetailImages: string[] = [
   printFunktionslustDetail01,
   printFunktionslustDetail02,
-  printOrcaLuminaFeature,
-  printProtonSwanFeature,
-  printSpacePonyFeature,
-  printStentorianFeature,
+];
+
+const printStentorianDetailImages: string[] = [
   printStentorianDetail01,
   printStentorianDetail02,
   printStentorianDetail03,
-  printStentorianDetail04,
-  printTigerMoontainFeature
-};
+  printStentorianDetail04
+];
 
-const postcards: { [key: string]: string } = {
-  postcardAssetsFeature,
-  postcardCachalotFeature,
-  postcardGreatWhiteSharkFeature,
-  postcardHippopotamusFeature,
-  postcardRhodeIslandWhaleFeature
+const itemsDetailImages: { [key: string]: string[] } = {
+  lunarCalendar2023DetailImages,
+  lunarCalendar2022DetailImages,
+  lunarCalendar2021DetailImages,
+  lunarCalendar2020DetailImages,
+  lunarCalendar2019DetailImages,
+  lunarCalendar2018DetailImages,
+  lunarCalendar2017DetailImages,
+  printAbundanceDetailImages,
+  printFunktionslustDetailImages,
+  printStentorianDetailImages
 };
 
 const images = {
@@ -278,7 +293,8 @@ const images = {
   lunarPhases,
   lunarCalendars,
   postcards,
-  prints
+  prints,
+  itemsDetailImages
 };
 
 export default images;

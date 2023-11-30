@@ -3,12 +3,13 @@ import Items from '../interfaces/Items';
 
 /* Constants */
 import images from './images';
+import prices from './prices';
 import text from './text';
 
 const lunarCalendarItemInfo: string[] = [
   text.dimensionsLunarCalendar,
   text.letterpressPrint,
-  'more-info', // elements will be rendered dynamically
+  text.numberedAndSigned,
   `${text.shipsFlat} in a sturdy box`
 ];
 
@@ -26,7 +27,7 @@ const items: Items = {
     subtitle: text.byAlecThibodeau,
     featureImage: images.lunarCalendars.lunarCalendar2024Preorder,
     info: lunarCalendarItemInfo,
-    price: text.lunarCalendarPrice,
+    price: prices.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2024,
     lunarCalendarPaper: text.lunarCalendarPaper2024,
@@ -39,12 +40,12 @@ const items: Items = {
     subtitle: text.byAlecThibodeau,
     featureImage: images.lunarCalendars.lunarCalendar2023Feature,
     info: lunarCalendarItemInfo,
-    price: text.lunarCalendarPrice,
+    price: prices.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2023,
     lunarCalendarPaper: text.lunarCalendarPaper2023,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
-    detailImages: images.lunarCalendars.lunarCalendar2023DetailImages
+    detailImages: images.itemsDetailImages.lunarCalendar2023DetailImages
   },
   lunarCalendar2022: {
     id: '5VWNHRMJQCE7A',
@@ -53,12 +54,12 @@ const items: Items = {
     subtitle: text.byAlecThibodeau,
     featureImage: images.lunarCalendars.lunarCalendar2022Feature,
     info: lunarCalendarItemInfo,
-    price: text.lunarCalendarPrice,
+    price: prices.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2022,
     lunarCalendarPaper: text.lunarCalendarPaper2022,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
-    detailImages: images.lunarCalendars.lunarCalendar2022DetailImages
+    detailImages: images.itemsDetailImages.lunarCalendar2022DetailImages
   },
   lunarCalendar2021: {
     id: 'XA698W9J6TGEL',
@@ -67,12 +68,12 @@ const items: Items = {
     subtitle: text.byAlecThibodeau,
     featureImage: images.lunarCalendars.lunarCalendar2021Feature,
     info: lunarCalendarItemInfo,
-    price: text.lunarCalendarPrice,
+    price: prices.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2021,
     lunarCalendarPaper: text.lunarCalendarPaper2021,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
-    detailImages: images.lunarCalendars.lunarCalendar2021DetailImages
+    detailImages: images.itemsDetailImages.lunarCalendar2021DetailImages
   },
   lunarCalendar2020: {
     id: 'TGVEUGQD58AX2',
@@ -81,12 +82,12 @@ const items: Items = {
     subtitle: text.byAlecThibodeau,
     featureImage: images.lunarCalendars.lunarCalendar2020Feature,
     info: lunarCalendarItemInfo,
-    price: text.lunarCalendarPrice,
+    price: prices.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2020,
     lunarCalendarPaper: text.lunarCalendarPaper2020,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
-    detailImages: images.lunarCalendars.lunarCalendar2020DetailImages
+    detailImages: images.itemsDetailImages.lunarCalendar2020DetailImages
   },
   lunarCalendar2019: {
     id: 'T45GH9BL83VQ4',
@@ -95,12 +96,12 @@ const items: Items = {
     subtitle: text.byAlecThibodeau,
     featureImage: images.lunarCalendars.lunarCalendar2019Feature,
     info: lunarCalendarItemInfo,
-    price: text.lunarCalendarPrice,
+    price: prices.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2019,
     lunarCalendarPaper: text.lunarCalendarPaper2019,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
-    detailImages: images.lunarCalendars.lunarCalendar2019DetailImages
+    detailImages: images.itemsDetailImages.lunarCalendar2019DetailImages
   },
   lunarCalendar2018: {
     id: '4LN49ZLYQLY88',
@@ -109,12 +110,12 @@ const items: Items = {
     subtitle: text.byAlecThibodeau,
     featureImage: images.lunarCalendars.lunarCalendar2018Feature,
     info: lunarCalendarItemInfo,
-    price: text.lunarCalendarPrice,
+    price: prices.lunarCalendarPrice,
     printEdition: 1000,
     lunarCalendarYear: 2018,
     lunarCalendarPaper: text.lunarCalendarPaper2018,
     lunarCalendarLocation: text.lunarCalendarLocationNewYork,
-    detailImages: images.lunarCalendars.lunarCalendar2018DetailImages
+    detailImages: images.itemsDetailImages.lunarCalendar2018DetailImages
   },
   lunarCalendar2017: {
     id: 'C4RW9LGDQ8NYL',
@@ -123,12 +124,12 @@ const items: Items = {
     subtitle: text.byAlecThibodeau,
     featureImage: images.lunarCalendars.lunarCalendar2017Feature,
     info: lunarCalendarItemInfo,
-    price: text.lunarCalendarPrice,
+    price: prices.lunarCalendarPrice,
     printEdition: 1000,
     lunarCalendarYear: 2017,
     lunarCalendarPaper: text.lunarCalendarPaper2017,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
-    detailImages: images.lunarCalendars.lunarCalendar2017DetailImages
+    detailImages: images.itemsDetailImages.lunarCalendar2017DetailImages
   },
   printAbundance: {
     id: 'B6SBUBH8JRKV6',
@@ -144,10 +145,7 @@ const items: Items = {
     ],
     price: 25,
     printEdition: 250,
-    detailImages: [
-      images.prints.printAbundanceDetail01,
-      images.prints.printAbundanceDetail02
-    ],
+    detailImages: images.itemsDetailImages.printAbundanceDetailImages,
     description: text.printDescriptionAbundance
   },
   printFunktionslust: {
@@ -164,10 +162,7 @@ const items: Items = {
     ],
     price: 15,
     printEdition: 50,
-    detailImages: [
-      images.prints.printFunktionslustDetail01,
-      images.prints.printFunktionslustDetail02
-    ],
+    detailImages: images.itemsDetailImages.printFunktionslustDetailImages,
     description: text.printDescriptionFunktionslust
   },
   printOrcaLumina: {
@@ -182,7 +177,7 @@ const items: Items = {
       text.initialedByTheArtist,
       text.shipsFlat
     ],
-    price: 10,
+    price: prices.miniprintPrice,
     description: text.printDescriptionOrcaLumina
   },
   printProtonSwan: {
@@ -197,7 +192,7 @@ const items: Items = {
       text.initialedByTheArtist,
       text.shipsFlat
     ],
-    price: 10,
+    price: prices.miniprintPrice,
     description: text.printDescriptionProtonSwan
   },
   printSpacePony: {
@@ -212,7 +207,7 @@ const items: Items = {
       text.initialedByTheArtist,
       text.shipsFlat
     ],
-    price: 10,
+    price: prices.miniprintPrice,
     description: text.printDescriptionSpacePony
   },
   printStentorian: {
@@ -229,12 +224,7 @@ const items: Items = {
     ],
     price: 15,
     printEdition: 250,
-    detailImages: [
-      images.prints.printStentorianDetail01,
-      images.prints.printStentorianDetail02,
-      images.prints.printStentorianDetail03,
-      images.prints.printStentorianDetail04
-    ],
+    detailImages: images.itemsDetailImages.printStentorianDetailImages,
     description: text.printDescriptionStentorian
   },
   printTigerMoontain: {
@@ -249,7 +239,7 @@ const items: Items = {
       text.initialedByTheArtist,
       text.shipsFlat
     ],
-    price: 10,
+    price: prices.miniprintPrice,
     description: text.printDescriptionTigerMoontain
   },
   postcardAssets: {
@@ -259,7 +249,7 @@ const items: Items = {
     subtitle: text.postcard,
     featureImage: images.postcards.postcardAssetsFeature,
     info: postcardItemInfo.concat(text.postcardCaptionAssets),
-    price: text.postcardPrice
+    price: prices.postcardPrice
   },
   postcardCachalot: {
     id: '7H7ZNZJMAM5S4',
@@ -268,7 +258,7 @@ const items: Items = {
     subtitle: text.postcard,
     featureImage: images.postcards.postcardCachalotFeature,
     info: postcardItemInfo.concat(text.postcardCaptionCachalot),
-    price: text.postcardPrice
+    price: prices.postcardPrice
   },
   postcardGreatWhiteShark: {
     id: 'UP6L2CNKJLSL2',
@@ -277,7 +267,7 @@ const items: Items = {
     subtitle: text.postcard,
     featureImage: images.postcards.postcardGreatWhiteSharkFeature,
     info: postcardItemInfo.concat(text.postcardCaptionGreatWhiteShark),
-    price: text.postcardPrice
+    price: prices.postcardPrice
   },
   postcardHippopotamus: {
     id: 'T5XS8HXHARZG4',
@@ -286,7 +276,7 @@ const items: Items = {
     subtitle: text.postcard,
     featureImage: images.postcards.postcardHippopotamusFeature,
     info: postcardItemInfo.concat(text.postcardCaptionHippopotamus),
-    price: text.postcardPrice
+    price: prices.postcardPrice
   },
   postcardRhodeIslandWhale: {
     id: 'WZXP99EBYSU5A',
@@ -295,7 +285,7 @@ const items: Items = {
     subtitle: text.postcard,
     featureImage: images.postcards.postcardRhodeIslandWhaleFeature,
     info: postcardItemInfo.concat(text.postcardCaptionRhodeIslandWhale),
-    price: text.postcardPrice
+    price: prices.postcardPrice
   }
 };
 

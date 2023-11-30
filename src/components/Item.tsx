@@ -71,7 +71,7 @@ function Item(props: ItemProps): JSX.Element {
   function renderListItem(listItem: string, index: number): JSX.Element {
     return (
       <li key={`${formatText.formatLettersAndNumbers(listItem.slice(0, 8))}-${index}`}>
-        {listItem === 'more-info' ?
+        {listItem === text.numberedAndSigned ?
           <span>
             {text.numberedAndSigned} <a className="text-link" href="#itemDetails">(more info)</a>
           </span>
