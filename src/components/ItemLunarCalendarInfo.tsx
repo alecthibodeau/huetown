@@ -95,17 +95,6 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               and paper will look like. There may be some slight variations
               between the colors here and in the print.
             </p>
-            <div className="lunar-calendar-timely-info">
-              <div>
-                <p>
-                  Each lunar calendar preordered by December 2, 2023 will include
-                  a <span className="ital">Pan Terra</span> letterpress print:
-                </p>
-              </div>
-              <div className="lunar-calendar-accompanying-item">
-                <img src={images.lunarCalendars.panTerraPreorder} alt="Pan Terra print" />
-              </div>
-            </div>
             <p id="itemDetails">
               Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on
               Instagram for updates on this print's letterpress production.
@@ -141,11 +130,24 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
         <div className="lunar-calendar-paragraph">
           Custom moon illustrations portray all principal lunar phases (New Moon, First Quarter Moon, Full Moon and Third Quarter Moon) plus all intermediate crescent and gibbous phases. For months with less than 31 days, drawings of clouds occupy the extra spaces. <a className="text-link" href="#featureImage">Order now.</a>
         </div>
-        <div className="lunar-phases" id="lunarPhases">
+        <div className="lunar-phases">
           {itemsLunarCalendars.phases.map(renderlunarPhase)}
         </div>
+        {isPreorder ?
+          <div className="lunar-calendar-timely-info">
+            <div>
+              <p>
+                Each lunar calendar preordered by December 2, 2023 included
+                a <span className="ital">Pan Terra</span> letterpress print:
+              </p>
+            </div>
+            <div className="lunar-calendar-accompanying-item">
+              <img src={images.lunarCalendars.panTerraPreorder} alt="Pan Terra print" />
+            </div>
+          </div>
+        : null}
         <div>
-          Interact with the <span className="ital">current</span> year's lunar calendar as a <Link className="text-link" to="/moon-space">digital version</Link>.
+          Interact with the <span className="ital">current</span> year's lunar calendar through its <Link className="text-link" to="/moon-space">digital version</Link>.
         </div>
       </div>
 
