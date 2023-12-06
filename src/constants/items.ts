@@ -180,6 +180,21 @@ const items: Items = {
     price: prices.miniprintPrice,
     description: text.printDescriptionOrcaLumina
   },
+  printPanTerra: {
+    id: 'LN9FXB39LSAKY',
+    category: text.print,
+    title: 'Pan Terra',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.prints.printPanTerraFeature,
+    info: [
+      text.dimensionsTwoAndAHalfInches,
+      text.letterpressPrint,
+      text.initialedByTheArtist,
+      text.shipsFlat
+    ],
+    price: prices.miniprintPrice,
+    description: text.printDescriptionPanTerra
+  },
   printProtonSwan: {
     id: '4SFG8LHK26JZ4',
     category: text.print,

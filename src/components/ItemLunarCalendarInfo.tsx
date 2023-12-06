@@ -14,6 +14,7 @@ import preorderId from '../constants/preorder';
 
 function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   const isPreorder: boolean = props.id === preorderId;
+  const linkPanTerra: string = '/items/prints/pan-terra';
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
@@ -138,11 +139,12 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             <div>
               <p>
                 Each lunar calendar preordered by December 2, 2023 included
-                a <span className="ital">Pan Terra</span> letterpress print:
+                a <Link className="text-link" to={linkPanTerra}><span className="ital">Pan Terra</span></Link> letterpress print:
               </p>
             </div>
             <div className="lunar-calendar-accompanying-item">
-              <img src={images.lunarCalendars.panTerraPreorder} alt="Pan Terra print" />
+              <Link to={linkPanTerra}>
+              </Link>
             </div>
           </div>
         : null}

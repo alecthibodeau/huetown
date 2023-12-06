@@ -13,6 +13,7 @@ interface Items {
   printAbundance: ItemProps;
   printFunktionslust: ItemProps;
   printOrcaLumina: ItemProps;
+  printPanTerra: ItemProps;
   printProtonSwan: ItemProps;
   printSpacePony: ItemProps;
   printStentorian: ItemProps;

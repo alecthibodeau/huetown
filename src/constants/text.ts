@@ -52,6 +52,7 @@ const text: { [key: string]: string }  = {
   printDescriptionAbundance: 'is a letterpress print measuring 5.5 x 5.5 inches overall, with an image dimension of 4 x 4 inches in three ink colors and a layer of stamped blue foil. The edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on Legion Paper acid-free 350gsm Colorplan Mist 130# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',
   printDescriptionFunktionslust: 'is a screen print measuring 5.75 x 5.75 inches overall, with an image dimension of 4.75 x 4.75 inches in two ink colors. The edition is lovingly screen printed by Alec from his original drawing work. Each print is hand numbered and signed on the front in pencil.',
   printDescriptionOrcaLumina: miniprintLetterpressFull,
+  printDescriptionPanTerra: miniprintLetterpressFull,
   printDescriptionProtonSwan: miniprintLetterpressFull,
   printDescriptionSpacePony: miniprintLetterpressFull,
   printDescriptionStentorian: 'is a letterpress print measuring 5.5 x 5.5 inches overall, with an image dimension of 3.5 x 3.5 inches in two ink colors. The edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on Legion Paper acid-free 350gsm Colorplan Mist 130# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',

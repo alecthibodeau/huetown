@@ -112,6 +112,7 @@ import printFunktionslustDetail01 from '../assets/images/items/print-funktionslu
 import printFunktionslustDetail02 from '../assets/images/items/print-funktionslust-02-450px.jpg';
 
 import printOrcaLuminaFeature from '../assets/images/items/print-orca-lumina-feature-450px.jpg';
+import printPanTerraFeature from '../assets/images/items/print-pan-terra-feature-450px.jpg';
 import printProtonSwanFeature from '../assets/images/items/print-proton-swan-feature-450px.jpg';
 import printSpacePonyFeature from '../assets/images/items/print-space-pony-feature-450px.jpg';
 
@@ -168,6 +169,7 @@ const prints: { [key: string]: string } = {
   printAbundanceFeature,
   printFunktionslustFeature,
   printOrcaLuminaFeature,
+  printPanTerraFeature,
   printProtonSwanFeature,
   printSpacePonyFeature,
   printStentorianFeature,
