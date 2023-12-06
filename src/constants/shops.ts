@@ -7,7 +7,7 @@ const shops: Shop[] = [
   },
   {
     name: 'Frog & Toad',
-    url: 'https://https://www.frogandtoadstore.com'
+    url: 'https://www.frogandtoadstore.com'
   },
   {
     name: 'Like No Udder',
