@@ -144,6 +144,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             </div>
             <div className="lunar-calendar-accompanying-item">
               <Link to={linkPanTerra}>
+                <img src={images.prints.printPanTerraAccompanying} alt="Pan Terra print" />
               </Link>
             </div>
           </div>

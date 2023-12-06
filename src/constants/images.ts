@@ -124,6 +124,8 @@ import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-
 
 import printTigerMoontainFeature from '../assets/images/items/print-tiger-moontain-feature-450px.jpg';
 
+import printPanTerraAccompanying from '../assets/images/items/pan-terra-300px.jpg';
+
 const header: { [key: string]: string } = {
   huetownLogoGrayDark,
   huetownLogoWhite
@@ -170,6 +172,7 @@ const prints: { [key: string]: string } = {
   printFunktionslustFeature,
   printOrcaLuminaFeature,
   printPanTerraFeature,
+  printPanTerraAccompanying,
   printProtonSwanFeature,
   printSpacePonyFeature,
   printStentorianFeature,

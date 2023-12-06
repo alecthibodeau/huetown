@@ -1,8 +1,11 @@
 const miniprintDescription: string = 'print measuring 2.5 x 2.5 inches overall, with an image dimension of 1.75 x 1.75 inches in a single pass of ink.';
 const miniprintLetterpressDescription: string = `is a letterpress ${miniprintDescription}`;
-const miniPrintInitialed: string = 'Each print is initialed on the front in pencil by Alec.';
-const miniprintLetterpressPrinting: string = `This unlimited edition is exquisitely printed from Alec's original drawing work by Dan Wood and his team at DWRI Letterpress on light gray 100# cover stock. ${miniPrintInitialed}`;
-const miniprintLetterpressFull: string = `${miniprintLetterpressDescription} ${miniprintLetterpressPrinting}`;
+const miniprintInitialed: string = 'Each print is initialed on the front in pencil by Alec.';
+const miniprintDWRI: string = 'This edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress';
+const miniprintLetterpressPrintingLightGray: string = `${miniprintDWRI} on light gray 100# cover stock. ${miniprintInitialed}`;
+const miniprintLetterpressPrintingOffWhite: string = `${miniprintDWRI} on warm off-white 100# cover stock. ${miniprintInitialed}`;
+const miniprintLetterpressFullLightGray: string = `${miniprintLetterpressDescription} ${miniprintLetterpressPrintingLightGray}`;
+const miniprintLetterpressFullOffWhite: string = `${miniprintLetterpressDescription} ${miniprintLetterpressPrintingOffWhite}`;
 
 const postcardTextPrefix: string = 'Caption on the back:';
 
@@ -51,12 +54,12 @@ const text: { [key: string]: string }  = {
   print: 'print',
   printDescriptionAbundance: 'is a letterpress print measuring 5.5 x 5.5 inches overall, with an image dimension of 4 x 4 inches in three ink colors and a layer of stamped blue foil. The edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on Legion Paper acid-free 350gsm Colorplan Mist 130# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',
   printDescriptionFunktionslust: 'is a screen print measuring 5.75 x 5.75 inches overall, with an image dimension of 4.75 x 4.75 inches in two ink colors. The edition is lovingly screen printed by Alec from his original drawing work. Each print is hand numbered and signed on the front in pencil.',
-  printDescriptionOrcaLumina: miniprintLetterpressFull,
-  printDescriptionPanTerra: miniprintLetterpressFull,
-  printDescriptionProtonSwan: miniprintLetterpressFull,
-  printDescriptionSpacePony: miniprintLetterpressFull,
+  printDescriptionOrcaLumina: miniprintLetterpressFullLightGray,
+  printDescriptionPanTerra: miniprintLetterpressFullOffWhite,
+  printDescriptionProtonSwan: miniprintLetterpressFullLightGray,
+  printDescriptionSpacePony: miniprintLetterpressFullLightGray,
   printDescriptionStentorian: 'is a letterpress print measuring 5.5 x 5.5 inches overall, with an image dimension of 3.5 x 3.5 inches in two ink colors. The edition is exquisitely printed from Alec\'s original drawing work by Dan Wood and his team at DWRI Letterpress on Legion Paper acid-free 350gsm Colorplan Mist 130# cover stock. Each print is hand numbered and signed on the front in pencil by Alec.',
-  printDescriptionTigerMoontain: miniprintLetterpressFull,
+  printDescriptionTigerMoontain: miniprintLetterpressFullLightGray,
   letterpressPrint: 'Letterpress print',
   screenPrint: 'Screen print, printed by the artist',
   numberedAndSigned: 'Numbered and signed',
