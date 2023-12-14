@@ -23,8 +23,12 @@
 
 .category-buttons-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 1rem auto auto;
+
+  &.buttons-length-4 {
+    justify-content: space-between;
+  }
 
   .category-button {
     padding: .25rem .5rem;

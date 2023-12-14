@@ -102,11 +102,6 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               And join the <Link className="text-link" to="/about">email list</Link> to
               learn when other works are available.
             </p>
-            <div>
-              <span className="bold">Event</span>: Catch Huetown
-              at <a className="text-link" href="https://www.theveganmarketma.com">The
-              Vegan Market</a> in Somerville, Massachusetts on Sunday December 10, 2023.
-            </div>
             <p className="bold">
               Here's more info on the ultimate piece&hellip;
             </p>
@@ -129,7 +124,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           The calendar's lunar phase chart is calibrated for any location in the Eastern Time Zone and is accurate to within a day for anywhere in the Northern Hemisphere. The chart also matches lunar cycles in the Southern Hemisphere: but with inverted shapes. <span className="lunar-calendar-location">{props.lunarCalendarLocation}</span>
         </div>
         <div className="lunar-calendar-paragraph">
-          Custom moon illustrations portray all principal lunar phases (New Moon, First Quarter Moon, Full Moon and Third Quarter Moon) plus all intermediate crescent and gibbous phases. For months with less than 31 days, drawings of clouds occupy the extra spaces. <a className="text-link" href="#featureImage">Order now.</a>
+          Custom moon illustrations portray all principal lunar phases (New Moon, First Quarter Moon, Full Moon and Third Quarter Moon) plus all intermediate crescent and gibbous phases. For months with less than 31 days, drawings of clouds occupy the extra spaces. <a className="text-link" href="#featureImage">Order now</a>.
         </div>
         <div className="lunar-phases">
           {itemsLunarCalendars.phases.map(renderlunarPhase)}

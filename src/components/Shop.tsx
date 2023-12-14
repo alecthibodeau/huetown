@@ -14,12 +14,20 @@ import formatText from '../helpers/format-text';
 
 function Shop(): JSX.Element {
   const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = formatText;
-  const { lunarCalendar, print, postcard, all } = text;
-  const [itemsCategory, setItemsCategory] = useState(all);
-  const [userSearchInput, setUserSearchInput] = useState('');
-  const isAllItems: boolean = itemsCategory === all;
-  const itemsCategories: string[] = [lunarCalendar, print, postcard, all];
+  const [itemsCategory, setItemsCategory] = useState<string>(text.all);
+  const [userSearchInput, setUserSearchInput] = useState<string>('');
+  const isAllItems: boolean = itemsCategory === text.all;
+  const itemsCategoriesForButtons: string[] = getItemsCategories(itemsCollection);
   const lunarCalendarAngledViewIndex: number = 2;
+
+  function getItemsCategories(items: ItemProps[]): string[] {
+    const categories: string[] = [];
+    for (const item of items) {
+      if (!categories.includes(item.category)) categories.push(item.category);
+    }
+    categories.push(text.all);
+    return categories;
+  }
 
   function formatLunarCalendarCategory(item: ItemProps, isPreorder?: boolean): string {
     return `${isPreorder ? `${text.preorderAllCaps} ` : ''}${item.lunarCalendarYear} ${item.category}`;
@@ -68,7 +76,7 @@ function Shop(): JSX.Element {
         className={`category-button${category === itemsCategory ? ' selected' : ''}`}
         onClick={() => handleCategoryChange(category)}
       >
-        {`${category}${category === all ? '' : 's'}`}
+        {`${category}${category === text.all ? '' : 's'}`}
       </button>
     )
   }
@@ -119,8 +127,8 @@ function Shop(): JSX.Element {
             onKeyDown={handleKeyDown}
           />
         </div>
-        <div className="category-buttons-container">
-          {itemsCategories.map(renderCategoryButton)}
+        <div className={`category-buttons-container buttons-length-${itemsCategoriesForButtons.length}`}>
+          {itemsCategoriesForButtons.map(renderCategoryButton)}
         </div>
       </div>
       <div className="shop-cards">
