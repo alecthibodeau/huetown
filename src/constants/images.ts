@@ -23,8 +23,11 @@ import keyThirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarte
 
 import colossalLogo from '../assets/images/items/colossal-logo-small.jpg';
 
-import lunarCalendar2024Preorder from '../assets/images/items/thibodeau-lunar-calendar-2024-preorder-700px.jpg';
-import panTerraPreorder from '../assets/images/items/pan-terra-preorder-300px.jpg';
+import lunarCalendar2024Feature from '../assets/images/items/thibodeau-lunar-calendar-2024-feature-1000px.jpg';
+import lunarCalendar2024Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2024-01-700px.jpg';
+import lunarCalendar2024Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2024-02-700px.jpg';
+import lunarCalendar2024Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2024-03-700px.jpg';
+import lunarCalendar2024Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2024-04-700px.jpg';
 
 import lunarCalendar2023Feature from '../assets/images/items/thibodeau-lunar-calendar-2023-feature-1000px.jpg';
 import lunarCalendar2023Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2023-01-700px.jpg';
@@ -112,6 +115,7 @@ import printFunktionslustDetail01 from '../assets/images/items/print-funktionslu
 import printFunktionslustDetail02 from '../assets/images/items/print-funktionslust-02-450px.jpg';
 
 import printOrcaLuminaFeature from '../assets/images/items/print-orca-lumina-feature-450px.jpg';
+import printPanTerraAccompanying from '../assets/images/items/pan-terra-300px.jpg';
 import printPanTerraFeature from '../assets/images/items/print-pan-terra-feature-450px.jpg';
 import printProtonSwanFeature from '../assets/images/items/print-proton-swan-feature-450px.jpg';
 import printSpacePonyFeature from '../assets/images/items/print-space-pony-feature-450px.jpg';
@@ -124,7 +128,6 @@ import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-
 
 import printTigerMoontainFeature from '../assets/images/items/print-tiger-moontain-feature-450px.jpg';
 
-import printPanTerraAccompanying from '../assets/images/items/pan-terra-300px.jpg';
 
 const header: { [key: string]: string } = {
   huetownLogoGrayDark,
@@ -152,8 +155,7 @@ const lunarPhases: { [key: string]: string } = {
 
 const lunarCalendars: { [key: string]: string } = {
   colossalLogo,
-  panTerraPreorder,
-  lunarCalendar2024Preorder,
+  lunarCalendar2024Feature,
   lunarCalendar2023Feature,
   lunarCalendar2022Feature,
   lunarCalendar2021Feature,
@@ -186,6 +188,13 @@ const postcards: { [key: string]: string } = {
   postcardHippopotamusFeature,
   postcardRhodeIslandWhaleFeature
 };
+
+const lunarCalendar2024DetailImages: string[] = [
+  lunarCalendar2024Detail01,
+  lunarCalendar2024Detail02,
+  lunarCalendar2024Detail03,
+  lunarCalendar2024Detail04
+];
 
 const lunarCalendar2023DetailImages: string[] = [
   lunarCalendar2023Detail01,
@@ -278,6 +287,7 @@ const printStentorianDetailImages: string[] = [
 ];
 
 const itemsDetailImages: { [key: string]: string[] } = {
+  lunarCalendar2024DetailImages,
   lunarCalendar2023DetailImages,
   lunarCalendar2022DetailImages,
   lunarCalendar2021DetailImages,

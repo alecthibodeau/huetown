@@ -8,7 +8,7 @@ import ItemProps from '../interfaces/ItemProps';
 
 /* Constants */
 import images from '../constants/images';
-import preorderId from '../constants/preorder';
+import itemsSpecificInfo from '../constants/items-specific-info';
 import text from '../constants/text';
 
 /* Helpers */
@@ -25,7 +25,7 @@ function Item(props: ItemProps): JSX.Element {
   const titleClass: string = formatText.formatDashes(props.title);
   const islunarCalendar2023: boolean = props.lunarCalendarYear === 2023;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
-  const isPreorder: boolean = props.id === preorderId;
+  const isPreorder: boolean = props.id === itemsSpecificInfo.preorderId;
   const isRecentLunarCalendar: boolean = props.lunarCalendarYear ? props.lunarCalendarYear > 2020 : false;
   const detailImageAltTextPrefix: string = `${props.category} detail`;
   const detailImageClassName: string = `${categoryClass} ${titleClass}${isRecentLunarCalendar ? ' recent-lunar-calendar' : ''}`

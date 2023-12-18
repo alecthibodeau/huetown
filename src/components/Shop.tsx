@@ -6,7 +6,7 @@ import ItemProps from '../interfaces/ItemProps';
 
 /* Constants */
 import itemsCollection from '../constants/items-collection';
-import preorderId from '../constants/preorder';
+import itemsSpecificInfo from '../constants/items-specific-info';
 import text from '../constants/text';
 
 /* Helpers */
@@ -82,7 +82,7 @@ function Shop(): JSX.Element {
   }
 
   function renderItemCard(item: ItemProps, index: number): JSX.Element {
-    const isPreorder: boolean = item.id === preorderId;
+    const isPreorder: boolean = item.id === itemsSpecificInfo.preorderId;
     return (
       <Link
         key={`${formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}

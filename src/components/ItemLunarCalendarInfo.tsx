@@ -10,10 +10,10 @@ import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 import formatText from '../helpers/format-text';
 import images from '../constants/images';
 import itemsLunarCalendars from '../constants/items-lunar-calendars';
-import preorderId from '../constants/preorder';
+import itemsSpecificInfo from '../constants/items-specific-info';
 
 function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
-  const isPreorder: boolean = props.id === preorderId;
+  const isPreorder: boolean = props.id === itemsSpecificInfo.preorderId;
   const linkPanTerra: string = '/items/prints/pan-terra';
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
@@ -129,24 +129,33 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
         <div className="lunar-phases">
           {itemsLunarCalendars.phases.map(renderlunarPhase)}
         </div>
-        {isPreorder ?
-          <div className="lunar-calendar-timely-info">
-            <div>
-              <p>
-                Each lunar calendar preordered by December 2, 2023 included
-                a <Link className="text-link" to={linkPanTerra}><span className="ital">Pan Terra</span></Link> letterpress print:
-              </p>
-            </div>
-            <div className="lunar-calendar-accompanying-item">
-              <Link to={linkPanTerra}>
-                <img src={images.prints.printPanTerraAccompanying} alt="Pan Terra print" />
-              </Link>
-            </div>
+        <ul>
+          <li>
+            <span className="bold">Note</span>: Lunar calendar orders ship flat in one sturdy box, regardless of quantity
+          </li>
+          <li>
+            <span className="bold">Play</span>: Interact with the current year's accompanying <Link className="text-link" to="/moon-space">digital lunar calendar</Link>
+          </li>
+          <li>
+            <span className="bold">Event</span>: Catch Huetown
+            at <a className="text-link" href="https://www.rivegfest.com">RI
+            VegFest</a> on February 3rd and 4th, 2024
+          </li>
+          {props.id === itemsSpecificInfo.latestLunarCalendarId ?
+            <li>
+              <span className="bold">Extra</span>: Each lunar calendar preordered early included
+              a <Link className="text-link" to={linkPanTerra}><span className="ital">Pan Terra</span> </Link> letterpress print&hellip;
+            </li>
+          : null}
+        </ul>
+
+        {props.id === itemsSpecificInfo.latestLunarCalendarId ?
+          <div className="lunar-calendar-accompanying-item">
+            <Link to={linkPanTerra}>
+              <img src={images.prints.printPanTerraAccompanying} alt="Pan Terra print" />
+            </Link>
           </div>
         : null}
-        <div>
-          Interact with the <span className="ital">current</span> year's lunar calendar through its <Link className="text-link" to="/moon-space">digital version</Link>.
-        </div>
       </div>
 
       <div className="lunar-calendar-thumbnails">

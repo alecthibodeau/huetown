@@ -20,18 +20,19 @@ const postcardItemInfo: string[] = [
 ];
 
 const items: Items = {
-  lunarCalendar2024Preorder: {
-    id: 'ZWHCPE4UFLL9A',
+  lunarCalendar2024: {
+    id: 'UVUN5NCMML8SQ',
     category: text.lunarCalendar,
     title: 'Wondrous Beings',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.lunarCalendars.lunarCalendar2024Preorder,
+    featureImage: images.lunarCalendars.lunarCalendar2024Feature,
     info: lunarCalendarItemInfo,
     price: prices.lunarCalendarPrice,
     printEdition: 500,
     lunarCalendarYear: 2024,
     lunarCalendarPaper: text.lunarCalendarPaper2024,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
+    detailImages: images.itemsDetailImages.lunarCalendar2024DetailImages
   },
   lunarCalendar2023: {
     id: '5QXP4DDGN7P2J',
