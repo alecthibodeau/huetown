@@ -52,11 +52,16 @@ function About(): JSX.Element {
         </div>
         <div>
           {renderSectionTitle('shipping')}
-          Regardless of item quantity all orders ship for a flat rate in sturdy packaging via USPS Priority Mail from Providence, Rhode Island, USA.
-          Flat rates are $8 for domestic shipments within the USA or $29 for international delivery to any other country.
-          Packages generally ship within a couple business days of an order being placed, with domestic deliveries usually arriving a few days after that.
-          Once shipping is underway you'll receive confirmation directly from PayPal with tracking information.
-          Please allow approximately one week for domestic delivery and 2-3 weeks for international delivery.
+          Regardless of item quantity all orders ship for a flat rate in sturdy
+          packaging from Providence, Rhode Island in the USA via United States Postal
+          Service (USPS) Priority Mail, or &mdash; in special cases &mdash; an equivalent United Parcel
+          Service (UPS) option. Flat rates are $8 for domestic shipments within
+          the USA or $29 for international delivery to any other country. Packages
+          generally ship within a couple business days of an order being placed,
+          with domestic deliveries usually arriving a few days after that. Once
+          shipping is underway you'll receive confirmation directly from PayPal
+          with tracking information. Please allow approximately one week for
+          domestic delivery and 2-3 weeks for international delivery.
         </div>
         <div>
           {renderSectionTitle('follow')}
