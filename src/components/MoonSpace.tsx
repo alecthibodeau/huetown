@@ -52,7 +52,7 @@ function MoonSpace(): JSX.Element {
   const dateNewYearsDay = new Date(selectedYear, monthJanuary, dateFirst);
   const dateNewYearsEve = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
-  const isLatestReleaseCurrentYear: boolean = false;
+  const isLatestReleaseCurrentYear: boolean = selectedYear === 2024;
 
   const colorWhite: string = '#fff';
   const colorSeventyPercentGray: string = '#4d4d4d';
@@ -254,7 +254,7 @@ function MoonSpace(): JSX.Element {
               <NavLink
                 title="Go to the print edition of the lunar calendar chart"
                 aria-label="Go to the print edition of the lunar calendar chart"
-                to={formatItemRoutePath(items.lunarCalendar2023.category, items.lunarCalendar2023.title)}
+                to={formatItemRoutePath(items.lunarCalendar2024.category, items.lunarCalendar2024.title)}
                 className={lunarFeatureButton}
               >
                 Chart
@@ -283,11 +283,11 @@ function MoonSpace(): JSX.Element {
             <div className="info-modal-body">
               {isNewYearsDay ?
                 <div className="info-modal-play-year-text">
-                  Play all the moon phases for 2023 as an animated sequence.
+                  Play all the moon phases for <span>{selectedYear}</span> as an animated sequence.
                 </div> :
                 <div>
                   This is a year <span>{selectedYear}</span> lunar calendar.
-                  Select New Year's Day for the option to play all moon phases for 2023.
+                  Select New Year's Day for the option to play all moon phases for <span>{selectedYear}</span>.
                 </div>
               }
               <div className="info-modal-button-container">

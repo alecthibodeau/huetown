@@ -28,6 +28,8 @@ import lunarCalendar2024Detail01 from '../assets/images/items/thibodeau-lunar-ca
 import lunarCalendar2024Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2024-02-700px.jpg';
 import lunarCalendar2024Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2024-03-700px.jpg';
 import lunarCalendar2024Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2024-04-700px.jpg';
+import lunarCalendar2024Detail05 from '../assets/images/items/thibodeau-lunar-calendar-2024-05-700px.jpg';
+import lunarCalendar2024Detail06 from '../assets/images/items/thibodeau-lunar-calendar-2024-06-700px.jpg';
 
 import lunarCalendar2023Feature from '../assets/images/items/thibodeau-lunar-calendar-2023-feature-1000px.jpg';
 import lunarCalendar2023Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2023-01-700px.jpg';
@@ -193,7 +195,9 @@ const lunarCalendar2024DetailImages: string[] = [
   lunarCalendar2024Detail01,
   lunarCalendar2024Detail02,
   lunarCalendar2024Detail03,
-  lunarCalendar2024Detail04
+  lunarCalendar2024Detail04,
+  lunarCalendar2024Detail05,
+  lunarCalendar2024Detail06
 ];
 
 const lunarCalendar2023DetailImages: string[] = [
