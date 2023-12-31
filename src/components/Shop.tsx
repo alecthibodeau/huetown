@@ -20,6 +20,20 @@ function Shop(): JSX.Element {
   const itemsCategoriesForButtons: string[] = getItemsCategories(itemsCollection);
   const lunarCalendarAngledViewIndex: number = 2;
 
+  const filteredItems: ItemProps[] = itemsCollection.filter((item) => {
+    return itemsCategory ? item.category === itemsCategory : isTextMatching(item);
+  });
+
+  function isTextMatching(item: ItemProps): boolean {
+    const searchInput: string = userSearchInput.toLowerCase();
+    const itemTitle: string = item.title.toLowerCase();
+    const itemCategory: string = getItemCategory(item).toLowerCase();
+    const priceWithDollarSign: string = `$${item.price}`;
+    return itemTitle.includes(searchInput)
+      || itemCategory.includes(searchInput)
+      || priceWithDollarSign.includes(searchInput);
+  }
+
   function getItemsCategories(items: ItemProps[]): string[] {
     const categories: string[] = [];
     for (const item of items) {
@@ -58,16 +72,6 @@ function Shop(): JSX.Element {
     if (userSearchInput) setUserSearchInput('');
     setItemsCategory(category);
   }
-
-  const filteredItems: ItemProps[] = itemsCollection.filter((item) => {
-    const priceWithDollarSign: string = `$${item.price}`;
-    const searchInput: string = userSearchInput.toLowerCase();
-    return itemsCategory
-      ? item.category === itemsCategory
-      : item.title.toLowerCase().includes(searchInput)
-        || getItemCategory(item).toLowerCase().includes(searchInput)
-        || priceWithDollarSign.includes(searchInput);
-  });
 
   function renderCategoryButton(category: string, index: number): JSX.Element {
     return (
