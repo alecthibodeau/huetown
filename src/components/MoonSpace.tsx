@@ -39,12 +39,12 @@ function MoonSpace(): JSX.Element {
   const [easternTimeZoneDate, setEasternTimeZoneDate] = useState<Date>(getEasternTimeZoneDate(localDate));
   const [selectedCalendar, setSelectedCalendar] = useState<LunarCalendar>(lunarCalendarsInformation[easternTimeZoneDate.getFullYear()]);
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(getEasternTimeZoneDate(localDate));
-  const [selectedYear, setSelectedYear] = useState<number>(0);
+  const [selectedYear, setSelectedYear] = useState<number>(selectedPhaseDate.getFullYear());
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
   const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
-  const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthJanuary, dateFirst)));
-  const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(easternTimeZoneDate === (new Date(selectedYear, monthDecember, dateThirtyFirst)));
+  const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(isSameDate(easternTimeZoneDate, new Date(selectedYear, monthJanuary, dateFirst)));
+  const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(isSameDate(easternTimeZoneDate, new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -283,11 +283,11 @@ function MoonSpace(): JSX.Element {
             <div className="info-modal-body">
               {isNewYearsDay ?
                 <div className="info-modal-play-year-text">
-                  Play all the moon phases for <span>{selectedYear}</span> as an animated sequence.
+                  Play all the moon phases for {selectedYear} as an animated sequence.
                 </div> :
                 <div>
-                  This is a year <span>{selectedYear}</span> lunar calendar.
-                  Select New Year's Day for the option to play all moon phases for <span>{selectedYear}</span>.
+                  This is a year {selectedYear} lunar calendar.
+                  Select New Year's Day for the option to play all moon phases for {selectedYear}.
                 </div>
               }
               <div className="info-modal-button-container">

@@ -68,6 +68,13 @@ function formatDayMonthAndDate(date: Date): string {
   return `${dayOfTheWeek} ${month} ${dateNumber}`;
 }
 
+function formatMonthDateAndYear(date: Date): string {
+  const month: string = formatMonth(date).toUpperCase();
+  const dateNumber: number = date.getDate();
+  const year: number = date.getFullYear();
+  return `${month} ${dateNumber} ${year}`;
+}
+
 function formatFullDateAndTime(date: Date): string {
   const dayMonthAndDate: string = formatDayMonthAndDate(date);
   const year: number = date.getFullYear();
@@ -77,7 +84,7 @@ function formatFullDateAndTime(date: Date): string {
 }
 
 function isSameDate(dateOne: Date, dateTwo: Date): boolean {
-  return formatDayMonthAndDate(dateOne) === formatDayMonthAndDate(dateTwo);
+  return formatMonthDateAndYear(dateOne) === formatMonthDateAndYear(dateTwo);
 }
 
 function getEasternTimeZoneDate(date: Date): Date {
