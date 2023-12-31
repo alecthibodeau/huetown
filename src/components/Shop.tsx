@@ -28,10 +28,9 @@ function Shop(): JSX.Element {
     const searchInput: string = userSearchInput.toLowerCase();
     const itemTitle: string = item.title.toLowerCase();
     const itemCategory: string = getItemCategory(item).toLowerCase();
-    const priceWithDollarSign: string = `$${item.price}`;
-    return itemTitle.includes(searchInput)
-      || itemCategory.includes(searchInput)
-      || priceWithDollarSign.includes(searchInput);
+    const itemPriceWithDollarSign: string = `$${item.price}`;
+    const textsToCheck: string[] = [itemTitle, itemCategory, itemPriceWithDollarSign];
+    return textsToCheck.some(item => item.includes(searchInput));
   }
 
   function getItemsCategories(items: ItemProps[]): string[] {
