@@ -126,40 +126,44 @@ function Item(props: ItemProps): JSX.Element {
         <div className={`item-info-block ${categoryClass}`}>
           <div className={`payment-info ${categoryClass}`}>
             <div className={`item-price-container ${categoryClass}`}>
-              $<span className="item-price">{props.price}</span>
+              {props.isSoldOut
+                ? <span className="item-sold-out">{text.itemSoldOut}</span>
+                : `$${props.price}`}
             </div>
-            <div className="form-container">
-              <div className="quantity-label">
-                <span>
-                  Qty.
-                </span>
+            {!props.isSoldOut ?
+              <div className="form-container">
+                <div className="quantity-label">
+                  <span>
+                    Qty.
+                  </span>
+                </div>
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                  <input
+                    name="cmd"
+                    type="hidden"
+                    value="_s-xclick"
+                  />
+                  <input
+                    name="hosted_button_id"
+                    type="hidden"
+                    value={props.id}
+                  />
+                  <input
+                    name="quantity"
+                    type="text"
+                    value={quantity}
+                    maxLength={3}
+                    onChange={(event) => onQuantityChange(event)}
+                  />
+                  <input
+                    type="submit"
+                    value={text.addToCart}
+                    alt={text.addToCart}
+                  />
+                </form>
+                {!isInputValid ? <div className="validation-message">{validationdMessage}</div> : null}
               </div>
-              <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input
-                  name="cmd"
-                  type="hidden"
-                  value="_s-xclick"
-                />
-                <input
-                  name="hosted_button_id"
-                  type="hidden"
-                  value={props.id}
-                />
-                <input
-                  name="quantity"
-                  type="text"
-                  value={quantity}
-                  maxLength={3}
-                  onChange={(event) => onQuantityChange(event)}
-                />
-                <input
-                  type="submit"
-                  value={text.addToCart}
-                  alt={text.addToCart}
-                />
-              </form>
-              {!isInputValid ? <div className="validation-message">{validationdMessage}</div> : null}
-            </div>
+            : null}
           </div>
           <div className="item-info-text" id="orderItem">
             <div>

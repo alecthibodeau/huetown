@@ -88,7 +88,7 @@ function isSameDate(dateOne: Date, dateTwo: Date): boolean {
 }
 
 function getEasternTimeZoneDate(date: Date): Date {
-  const newYorkDateTimeString = date.toLocaleString('en-US', { timeZone: 'America/New_York' });
+  const newYorkDateTimeString: string = date.toLocaleString('en-US', { timeZone: 'America/New_York' });
   return new Date(newYorkDateTimeString);
 }
 

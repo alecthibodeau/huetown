@@ -54,7 +54,7 @@ function About(): JSX.Element {
           {renderSectionTitle('shipping')}
           Regardless of item quantity all orders ship for a flat rate in sturdy
           packaging from Providence, Rhode Island in the USA via United States Postal
-          Service (USPS) Priority Mail, or &mdash; in special cases &mdash; an equivalent United Parcel
+          Service (USPS) Priority Mail or &mdash; less frequently &mdash; via an equivalent United Parcel
           Service (UPS) option. Flat rates are $8 for domestic shipments within
           the USA or $29 for international delivery to any other country. Packages
           generally ship within a couple business days of an order being placed,

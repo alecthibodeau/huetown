@@ -164,7 +164,8 @@ const items: Items = {
     price: 15,
     printEdition: 50,
     detailImages: images.itemsDetailImages.printFunktionslustDetailImages,
-    description: text.printDescriptionFunktionslust
+    description: text.printDescriptionFunktionslust,
+    isSoldOut: true
   },
   printOrcaLumina: {
     id: '8BY2MK6Y89ZTA',

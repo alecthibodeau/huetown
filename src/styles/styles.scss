@@ -54,6 +54,13 @@ main {
     color: $twenty-four-plum-preorder;
   }
 
+  .item-sold-out {
+    color: $dark-red;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
   .ital {
     font-style: italic;
   }

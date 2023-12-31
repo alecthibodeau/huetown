@@ -104,7 +104,9 @@ function Shop(): JSX.Element {
             {getItemCategory(item, isPreorder)}
           </div>
           <div className="item-card-price">
-            {`$${item.price}`}
+            {item.isSoldOut
+              ? <span className="item-sold-out">{text.itemSoldOut}</span>
+              : `$${item.price}`}
           </div>
         </div>
       </Link>
@@ -119,7 +121,7 @@ function Shop(): JSX.Element {
             {`${isAllItems ? itemsCollection.length : filteredItems.length}
             item${filteredItems.length === 1 ? '' : 's'}`}
           </span>
-          <span>search by title, category or price:</span>
+          <span>filter by title, category or price:</span>
           <input
             type="text"
             value={userSearchInput}

@@ -12,6 +12,7 @@ interface ItemProps {
   lunarCalendarYear?: number;
   lunarCalendarPaper?: string;
   lunarCalendarLocation?: string;
+  isSoldOut?: boolean;
 }
 
 export default ItemProps;

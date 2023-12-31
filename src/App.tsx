@@ -56,6 +56,7 @@ function App(): JSX.Element {
             lunarCalendarYear={item.lunarCalendarYear}
             lunarCalendarPaper={item.lunarCalendarPaper}
             lunarCalendarLocation={item.lunarCalendarLocation}
+            isSoldOut={item.isSoldOut}
           />
         }
       />
