@@ -14,7 +14,7 @@ const dateFirst: number = 1;
 const dateThirtyFirst: number = 31;
 
 const commonYearLength: number = 365;
-const leapYearLength: number = 364;
+const leapYearLength: number = 366;
 
 const waxingCrescentPrefix: string = 'xc';
 const waxingGibbousPrefix: string = 'xg';
