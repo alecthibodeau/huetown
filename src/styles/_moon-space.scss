@@ -16,7 +16,7 @@
   width: $moon-space-dimension;
   height: $moon-space-dimension;
   margin: auto;
-  background-color: $twenty-three-blue-paper; // to be set dynamically
+  background-color: $twenty-four-plum-paper; // to be set dynamically
 }
 
 .cloud {
@@ -87,7 +87,7 @@
 
   div {
     height: 2px;
-    background-color: $twenty-three-blue-ink; // to be set dynamically
+    background-color: $twenty-four-plum-ink; // to be set dynamically
     margin-bottom: 2px;
   }
 }
@@ -184,7 +184,7 @@
   }
 
   &.active {
-    border-color: $twenty-three-blue-paper; // to be set dynamically;
+    border-color: $twenty-four-plum-paper; // to be set dynamically;
   }
 }
 
