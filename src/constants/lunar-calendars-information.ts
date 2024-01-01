@@ -15,7 +15,7 @@ const lunarCalendarsInformation: LunarCalendarsInformation = {
     lunarPhaseDates: setIntermediateLunarPhasesDates(lunarPhaseDates2023, 2023)
   },
   2024: {
-    backgroundColor: '#7a408e',
+    backgroundColor: '#a6439e',
     ornaments: ['bunny', 'birdy', 'skunky'],
     lunarPhaseDates: setIntermediateLunarPhasesDates(lunarPhaseDates2024, 2024)
   }
