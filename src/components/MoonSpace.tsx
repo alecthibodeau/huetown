@@ -47,10 +47,10 @@ function MoonSpace(): JSX.Element {
   const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(isSameDate(easternTimeZoneDate, new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const buttonRef: React.MutableRefObject<HTMLButtonElement | null> = useRef<HTMLButtonElement | null>(null);
 
-  const dateNewYearsDay = new Date(selectedYear, monthJanuary, dateFirst);
-  const dateNewYearsEve = new Date(selectedYear, monthDecember, dateThirtyFirst);
+  const dateNewYearsDay: Date = new Date(selectedYear, monthJanuary, dateFirst);
+  const dateNewYearsEve: Date = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
   const isLatestReleaseCurrentYear: boolean = selectedYear === 2024;
 
@@ -292,8 +292,11 @@ function MoonSpace(): JSX.Element {
               }
               <div className="info-modal-button-container">
                 {isNewYearsDay ?
-                  <button className={lunarFeatureButton} onClick={onClickPlayYear}>
-                    {`Play ${selectedYear}'s phases`}
+                  <button
+                    ref={setButtonRef}
+                    className={lunarFeatureButton}
+                    onClick={onClickPlayYear}>
+                    Play {selectedYear}'s phases
                   </button> :
                   <button
                     ref={setButtonRef}
