@@ -286,7 +286,7 @@ function MoonSpace(): JSX.Element {
                   Play all the moon phases for {selectedYear} as an animated sequence.
                 </div> :
                 <div>
-                  This is a year {selectedYear} lunar calendar.
+                  This is a {selectedYear} digital lunar calendar.
                   Select New Year's Day for the option to play all moon phases for {selectedYear}.
                 </div>
               }

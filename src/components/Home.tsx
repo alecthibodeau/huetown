@@ -11,7 +11,7 @@ import items from '../constants/items';
 
 function Home(): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2024;
-  const isFeatured: boolean = true;
+  const isFeatured: boolean = false;
   const isNews: boolean = false;
 
   return (
