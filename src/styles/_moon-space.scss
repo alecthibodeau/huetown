@@ -28,36 +28,36 @@
   }
 }
 
-.cloud-one {
+.cloud-top {
   bottom: 200px;
   width: 140px;
-  animation: 10s linear infinite cloud-one-frames;
+  animation: 10s linear infinite cloud-top-frames;
 }
 
-@keyframes cloud-one-frames {
+@keyframes cloud-top-frames {
   from { transform: translateX(-140px); }
   to { transform: translateX($moon-space-dimension); }
 }
 
-.cloud-two {
+.cloud-middle {
   bottom: 286px;
   width: 160px;
-  animation: 20s linear infinite cloud-two-frames;
+  animation: 20s linear infinite cloud-middle-frames;
 }
 
-@keyframes cloud-two-frames {
+@keyframes cloud-middle-frames {
   from { transform: translateX(-$moon-space-dimension); }
   to { transform: translateX($moon-space-dimension); }
 }
 
-.cloud-three {
+.cloud-bottom {
   bottom: 175px;
   width: 180px;
-  animation: 6s linear infinite cloud-three-frames;
+  animation: 6s linear infinite cloud-bottom-frames;
   transform: rotate(45deg);
 }
 
-@keyframes cloud-three-frames {
+@keyframes cloud-bottom-frames {
   from { transform: translateX(-180px); }
   to { transform: translateX($moon-space-dimension); }
 }
