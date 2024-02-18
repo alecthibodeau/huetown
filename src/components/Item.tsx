@@ -116,13 +116,11 @@ function Item(props: ItemProps): JSX.Element {
         </div>
       : null}
       <div className={`feature-info ${categoryClass}`}>
-        <div className="feature-image-block">
-          {
-            props.detailImages
-            ? <a href="#itemDetails">{renderFeatureImage()}</a>
-            : <div>{renderFeatureImage()}</div>
-          }
-        </div>
+        {
+          props.detailImages
+          ? <a href="#itemDetails">{renderFeatureImage()}</a>
+          : renderFeatureImage()
+        }
         <div className={`item-info-block ${categoryClass}`}>
           <div className={`payment-info ${categoryClass}`}>
             <div className={`item-price-container ${categoryClass}`}>
@@ -131,7 +129,7 @@ function Item(props: ItemProps): JSX.Element {
                 : `$${props.price}`}
             </div>
             {!props.isSoldOut ?
-              <div className="form-container">
+              <div id="itemFormContainer">
                 <div className="quantity-label">
                   <span>
                     Qty.
@@ -165,7 +163,7 @@ function Item(props: ItemProps): JSX.Element {
               </div>
             : null}
           </div>
-          <div className="item-info-text" id="orderItem">
+          <div id="itemInfoText">
             <div>
               <div className="item-title">
                 {!isLunarCalendar ? <div>{props.title}</div> :
