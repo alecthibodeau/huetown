@@ -1,19 +1,17 @@
 @use './variables' as *;
 
 .moon-space {
-  max-height: 420px;
+  width: $moon-space-dimension;
+  max-height: 450px;
   padding-bottom: 3rem;
 }
 
-.pending-availability-message {
-  max-width: 300px;
-  padding-bottom: 1rem;
-  font-weight: 700;
+.news-container {
+  margin-bottom: .5rem;
 }
 
 .moon-image-container {
   overflow: hidden;
-  width: $moon-space-dimension;
   height: $moon-space-dimension;
   margin: auto;
   background-color: $twenty-four-plum-paper; // to be set dynamically
@@ -38,7 +36,7 @@
 
 @keyframes cloud-one-frames {
   from { transform: translateX(-140px); }
-  to { transform: translateX(300px); }
+  to { transform: translateX($moon-space-dimension); }
 }
 
 .cloud-two {
@@ -48,8 +46,8 @@
 }
 
 @keyframes cloud-two-frames {
-  from { transform: translateX(-300px); }
-  to { transform: translateX(300px); }
+  from { transform: translateX(-$moon-space-dimension); }
+  to { transform: translateX($moon-space-dimension); }
 }
 
 .cloud-three {
@@ -61,7 +59,7 @@
 
 @keyframes cloud-three-frames {
   from { transform: translateX(-180px); }
-  to { transform: translateX(300px); }
+  to { transform: translateX($moon-space-dimension); }
 }
 
 .phase-container {
@@ -70,7 +68,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $moon-space-dimension;
   height: $moon-space-dimension;
 
   svg.waning {
@@ -81,8 +78,6 @@
 .sky-lines {
   position: relative;
   bottom: $moon-space-dimension;
-  width: $moon-space-dimension;
-  height: $moon-space-dimension;
   margin: auto;
 
   div {
@@ -101,7 +96,6 @@
 
 .date-incrementor {
   display: flex;
-  width: $moon-space-dimension;
   justify-content: space-between;
   align-items: center;
   margin: auto;

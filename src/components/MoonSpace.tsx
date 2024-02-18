@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 /* Components */
 import MoonCloud from './MoonCloud';
+import News from './News';
 
 /* Interfaces */
 import LunarCalendar from '../interfaces/LunarCalendar';
@@ -180,6 +181,9 @@ function MoonSpace(): JSX.Element {
 
   return (
     <div className="moon-space">
+      <div className="news-container">
+        <News />
+      </div>
       <div className="moon-image-container">
         <div className="phase-container">
           <svg

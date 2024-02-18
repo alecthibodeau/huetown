@@ -1,6 +1,7 @@
 @use './about' as *;
 @use './footer' as *;
 @use './header' as *;
+@use './home' as *;
 @use './item' as *;
 @use './lunar-calendar-info' as *;
 @use './moon-space' as *;
@@ -76,22 +77,6 @@ main {
   .validation-message {
     color: $red;
     font-size: .875rem;
-  }
-
-  .home-content {
-    margin-top: .5rem;
-
-    .home-image-container,
-    .home-text-container,
-    .home-image-container img {
-      width: 80vw;
-      max-width: 25rem;
-      vertical-align: top;
-    }
-
-    .home-text-container {
-      margin-top: 1rem;
-    }
   }
 }
 

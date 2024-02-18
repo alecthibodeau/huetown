@@ -6,6 +6,9 @@ import LunarPhase from '../interfaces/ItemLunarPhaseKey';
 import Thumbnail from '../interfaces/Thumbnail';
 import ThumbnailsGroup from '../interfaces/ThumbnailsGroup';
 
+/* Components */
+import News from './News';
+
 /* Constants */
 import formatText from '../helpers/format-text';
 import images from '../constants/images';
@@ -137,9 +140,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             <span className="bold">Play</span>: Interact with the current year's accompanying <Link className="text-link" to="/moon-space">digital lunar calendar</Link>
           </li>
           <li>
-            <span className="bold">Event</span>: Catch Huetown
-            at <a className="text-link" href="https://www.rivegfest.com">RI
-            VegFest</a> on February 3rd and 4th, 2024
+            <News />
           </li>
           {props.id === itemsSpecificInfo.latestLunarCalendarId ?
             <li>
