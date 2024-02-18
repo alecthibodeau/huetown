@@ -6,7 +6,7 @@ function News(): JSX.Element {
       {isAllHomeContentNews ?
         <div>
           <div className="home-image-container">
-            <img alt="home image"/>
+            <img alt="home feature"/>
           </div>
           <div className="home-text-container">
             <span>text</span>
