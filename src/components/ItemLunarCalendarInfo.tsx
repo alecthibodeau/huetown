@@ -134,13 +134,13 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
         </div>
         <ul>
           <li>
+            <News />
+          </li>
+          <li>
             <span className="bold">Note</span>: Lunar calendar orders ship flat in one sturdy box, regardless of quantity
           </li>
           <li>
             <span className="bold">Play</span>: Interact with the current year's accompanying <Link className="text-link" to="/moon-space">digital lunar calendar</Link>
-          </li>
-          <li>
-            <News />
           </li>
           {props.id === itemsSpecificInfo.latestLunarCalendarId ?
             <li>
