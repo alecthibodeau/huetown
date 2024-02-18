@@ -27,8 +27,12 @@
     line-height: 1.125rem;
   }
 
-  ul li {
-    margin-top: .5rem;
+  ul {
+    padding-inline-start: 1.25rem;
+
+    li {
+      margin-top: .5rem;
+    }
   }
 }
 
