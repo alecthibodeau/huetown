@@ -15,7 +15,7 @@ function formatLettersAndNumbers(text: string): string {
 }
 
 function formatItemRoutePath(category: string, title: string): string {
-  return `/items/${formatDashes(category)}s/${formatDashes(title)}`;
+  return `/shop/${formatDashes(category)}s/${formatDashes(title)}`;
 }
 
 const formatText = {
