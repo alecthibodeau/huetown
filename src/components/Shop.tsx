@@ -33,6 +33,10 @@ function Shop(): JSX.Element {
     return textsToCheck.some(item => item.includes(searchInput));
   }
 
+  function formatItemPrice(itemCategory: string, itemPrice: number): string {
+    return itemCategory === text.postcard ? itemPrice.toFixed(2) : itemPrice.toString();
+  }
+
   function getItemsCategories(items: ItemProps[]): string[] {
     const categories: string[] = [];
     for (const item of items) {
@@ -109,7 +113,7 @@ function Shop(): JSX.Element {
           <div className="item-card-price">
             {item.isSoldOut
               ? <span className="item-sold-out">{text.itemSoldOut}</span>
-              : `$${item.price}`}
+              : `$${formatItemPrice(item.category, item.price)}`}
           </div>
         </div>
       </Link>
