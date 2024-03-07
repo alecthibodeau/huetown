@@ -50,15 +50,15 @@ function Shop(): JSX.Element {
     return `${isPreorder ? `${text.preorderAllCaps} ` : ''}${item.lunarCalendarYear} ${item.category}`;
   }
 
-  function formatPrintCategory(item: ItemProps): string {
+  function formatPrintCategory(itemInfo: string[]): string {
     const descriptionIndex: number = 1;
-    return item.info[descriptionIndex].replace(/,/g, '').split(' ').slice(0, 2).join(' ').toLowerCase();
+    return itemInfo[descriptionIndex].replace(/,/g, '').split(' ').slice(0, 2).join(' ').toLowerCase();
   }
 
   function getItemCategory(item: ItemProps, isPreorder?: boolean): string {
     let category = item.category;
     if (item.category === text.lunarCalendar) category = formatLunarCalendarCategory(item, isPreorder);
-    if (item.category === text.print) category = formatPrintCategory(item);
+    if (item.category === text.print) category = formatPrintCategory(item.info);
     return category;
    }
 
