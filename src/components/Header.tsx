@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 /* Interfaces */
-import HeaderProps from '../interfaces/HeaderProps';
 import IconLinks from './IconLinks';
 
 /* Constants */
 import images from '../constants/images';
 import text from '../constants/text';
 
-function Header(props: HeaderProps): JSX.Element {
+function Header(props: { isBreakpointXs: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const { huetownLogoGrayDark, huetownLogoWhite } = images.header;
 
