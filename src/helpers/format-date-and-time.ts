@@ -95,7 +95,6 @@ function getEasternTimeZoneDate(date: Date): Date {
 const formatDateAndTime = {
   formatDayMonthAndDate,
   formatFullDateAndTime,
-  formatTwentyFourHourTime,
   isSameDate,
   getEasternTimeZoneDate
 };
