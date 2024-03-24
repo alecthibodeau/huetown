@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 /* Components */
 import About from './components/About';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -24,6 +25,7 @@ import formatText from './helpers/format-text';
 function App(): JSX.Element {
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
   const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
+  const isShopActive: boolean = false;
 
   useEffect(() => {
     const breakpointSm: number = 576;
@@ -66,15 +68,16 @@ function App(): JSX.Element {
 
   return (
     <BrowserRouter>
-      <Header isBreakpointXs={isBreakpointXs} />
+      <Header isBreakpointXs={isBreakpointXs} isShopActive={isShopActive} />
       <main id="main">
         <Routes>
+          {isShopActive ? <Route path="/about" element={<About />} /> : null}
+          {isShopActive ? <Route path="/shop" element={<Shop />} /> : null}
+          {isShopActive ? itemsCollection.map(renderItemRoute) : null}
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/moon-space" element={<MoonSpace />} />
           <Route path="/veganly" element={<Veganly />} />
-          {itemsCollection.map(renderItemRoute)}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

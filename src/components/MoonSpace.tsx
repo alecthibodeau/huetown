@@ -54,6 +54,7 @@ function MoonSpace(): JSX.Element {
   const dateNewYearsEve: Date = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
   const isLatestReleaseCurrentYear: boolean = selectedYear === 2024;
+  const isNews: boolean = true;
 
   const colorWhite: string = '#fff';
   const colorSeventyPercentGray: string = '#4d4d4d';
@@ -181,9 +182,11 @@ function MoonSpace(): JSX.Element {
 
   return (
     <div className="moon-space">
-      <div className="news-container">
-        <News />
-      </div>
+      {isNews ?
+        <div className="news-container">
+          <News />
+        </div> :
+      null}
       <div className="moon-image-container">
         <div className="phase-container">
           <svg
