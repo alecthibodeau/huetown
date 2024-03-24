@@ -74,9 +74,9 @@ function App(): JSX.Element {
           {isShopActive ? <Route path="/about" element={<About />} /> : null}
           {isShopActive ? <Route path="/shop" element={<Shop />} /> : null}
           {isShopActive ? itemsCollection.map(renderItemRoute) : null}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home isShopActive={isShopActive} />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/moon-space" element={<MoonSpace />} />
+          <Route path="/moon-space" element={<MoonSpace isShopActive={isShopActive} />} />
           <Route path="/veganly" element={<Veganly />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

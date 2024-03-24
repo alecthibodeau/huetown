@@ -19,7 +19,7 @@ import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
 import formatDateAndTime from '../helpers/format-date-and-time';
 import formatText from '../helpers/format-text';
 
-function MoonSpace(): JSX.Element {
+function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const {
     monthJanuary,
     monthDecember,
@@ -54,7 +54,6 @@ function MoonSpace(): JSX.Element {
   const dateNewYearsEve: Date = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
   const isLatestReleaseCurrentYear: boolean = selectedYear === 2024;
-  const isNews: boolean = true;
 
   const colorWhite: string = '#fff';
   const colorSeventyPercentGray: string = '#4d4d4d';
@@ -182,7 +181,7 @@ function MoonSpace(): JSX.Element {
 
   return (
     <div className="moon-space">
-      {isNews ?
+      {props.isShopActive ?
         <div className="news-container">
           <News />
         </div> :
@@ -257,7 +256,7 @@ function MoonSpace(): JSX.Element {
               onClick={() => setIsCloudsAnimationVisible(!isCloudsAnimationVisible)}>
               Clouds
             </button>
-            {isLatestReleaseCurrentYear ?
+            {isLatestReleaseCurrentYear && props.isShopActive ?
               <NavLink
                 title="Go to the print edition of the lunar calendar chart"
                 aria-label="Go to the print edition of the lunar calendar chart"
