@@ -54,6 +54,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const dateNewYearsEve: Date = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
   const isLatestReleaseCurrentYear: boolean = selectedYear === 2024;
+  const isNewsInMoonSpace: boolean = false;
 
   const colorWhite: string = '#fff';
   const colorSeventyPercentGray: string = '#4d4d4d';
@@ -181,7 +182,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
 
   return (
     <div className="moon-space">
-      {props.isShopActive ?
+      {isNewsInMoonSpace ?
         <div className="news-container">
           <News />
         </div> :

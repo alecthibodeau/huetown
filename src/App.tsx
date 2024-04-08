@@ -25,7 +25,7 @@ import formatText from './helpers/format-text';
 function App(): JSX.Element {
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
   const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
-  const isShopActive: boolean = false;
+  const isShopActive: boolean = true;
 
   useEffect(() => {
     const breakpointSm: number = 576;
