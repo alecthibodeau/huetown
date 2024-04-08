@@ -275,7 +275,8 @@ const items: Items = {
     subtitle: text.postcard,
     featureImage: images.postcards.postcardCachalotFeature,
     info: postcardItemInfo.concat(text.postcardCaptionCachalot),
-    price: prices.postcardPrice
+    price: prices.postcardPrice,
+    isSoldOut: true
   },
   postcardGreatWhiteShark: {
     id: 'UP6L2CNKJLSL2',
@@ -302,7 +303,8 @@ const items: Items = {
     subtitle: text.postcard,
     featureImage: images.postcards.postcardRhodeIslandWhaleFeature,
     info: postcardItemInfo.concat(text.postcardCaptionRhodeIslandWhale),
-    price: prices.postcardPrice
+    price: prices.postcardPrice,
+    isSoldOut: true
   }
 };
 
