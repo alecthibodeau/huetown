@@ -55,13 +55,18 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
 
   const isLatestReleaseCurrentYear: boolean = selectedYear === 2024;
   const isNewsInMoonSpace: boolean = false;
+  const millisecondsCount: number = 10;
 
   const colorWhite: string = '#fff';
   const colorSeventyPercentGray: string = '#4d4d4d';
-  const millisecondsCount: number = 10;
+  const keydown = 'keydown';
   const backDirection: string = 'back';
   const forwardDirection: string = 'forward';
   const lunarFeatureButton: string = 'lunar-feature-button';
+  const selectInfo: string = 'Select info';
+  const selectToday: string = 'Select today';
+  const selectCloudsAnimation: string = 'Select clouds animation';
+  const goToPrintEdition: string = 'Go to the print edition of the lunar calendar chart';
 
   useEffect(() => {
     const interval = setInterval(() => updateDates(), millisecondsCount);
@@ -74,7 +79,6 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   }, [selectedPhaseDate, selectedYear]);
 
   useEffect(() => {
-    const keydown = 'keydown';
     window.addEventListener(keydown, keyDownHandler);
     return function cleanupEventListener() {
       window.removeEventListener(keydown, keyDownHandler);
@@ -110,10 +114,11 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   }
 
   function renderIncrementorButton(isTerminalDate: boolean, direction: string): JSX.Element {
+    const selectDirection: string = `Select ${direction} direction`;
     return (
       <button
-        title={`Select ${direction} direction`}
-        aria-label={`Select ${direction} direction`}
+        title={selectDirection}
+        aria-label={selectDirection}
         className={`increment-button ${isPlaying || isTerminalDate ? 'is-not-visible' : ''}`}
         onClick={() => incrementDate(direction === forwardDirection)}>
         <svg
@@ -237,30 +242,30 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
         {!isPlaying ?
           <div className="lunar-feature-buttons-container">
             <button
-              title="Select info"
-              aria-label="Select info"
+              title={selectInfo}
+              aria-label={selectInfo}
               className={lunarFeatureButton}
               onClick={onClickInfo}>
               Info
             </button>
             <button
-              title="Select today"
-              aria-label="Select today"
+              title={selectToday}
+              aria-label={selectToday}
               className={lunarFeatureButton}
               onClick={onClickToday}>
               Today
             </button>
             <button
-              title="Select clouds animation"
-              aria-label="Select clouds animation"
+              title={selectCloudsAnimation}
+              aria-label={selectCloudsAnimation}
               className={`${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected active' : ''}`}
               onClick={() => setIsCloudsAnimationVisible(!isCloudsAnimationVisible)}>
               Clouds
             </button>
             {isLatestReleaseCurrentYear && props.isShopActive ?
               <NavLink
-                title="Go to the print edition of the lunar calendar chart"
-                aria-label="Go to the print edition of the lunar calendar chart"
+                title={goToPrintEdition}
+                aria-label={goToPrintEdition}
                 to={formatItemRoutePath(items.lunarCalendar2024.category, items.lunarCalendar2024.title)}
                 className={lunarFeatureButton}
               >
