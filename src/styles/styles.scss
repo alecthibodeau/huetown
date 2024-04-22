@@ -8,6 +8,10 @@
 @use './shop' as *;
 @use './variables' as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   max-width: 87.5rem;
   margin: auto;
