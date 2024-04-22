@@ -14,8 +14,8 @@ function News(): JSX.Element {
         </div> :
         <div>
           <span className="bold">Event</span>: Join Huetown
-          at <a className="text-link" href="https://unbound.risd.edu">RISD
-          Unbound</a> from 11am–5pm on Saturday April 6, 2024 in Providence, Rhode Island
+          at the <a className="text-link" href="https://www.nevegfest.org">2024
+          New England VegFest</a> from 12-5pm on Sunday June 9, 2024 in Worcester, MA
         </div>
       }
     </>

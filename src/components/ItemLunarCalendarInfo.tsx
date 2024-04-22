@@ -16,6 +16,7 @@ import itemsLunarCalendars from '../constants/items-lunar-calendars';
 import itemsSpecificInfo from '../constants/items-specific-info';
 
 function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
+  const isNewsInInfo: boolean = false;
   const isPreorder: boolean = props.id === itemsSpecificInfo.preorderId;
   const linkPanTerra: string = '/items/prints/pan-terra';
 
@@ -133,9 +134,11 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           {itemsLunarCalendars.phases.map(renderlunarPhase)}
         </div>
         <ul>
-          <li>
-            <News />
-          </li>
+          {isNewsInInfo ?
+            <li>
+              <News />
+            </li>
+          : null}
           <li>
             <span className="bold">Note</span>: Lunar calendar orders ship flat in one sturdy box, regardless of quantity
           </li>
