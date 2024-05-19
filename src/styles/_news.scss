@@ -1,0 +1,8 @@
+@use './_variables' as *;
+
+.news-text-container {
+  padding-bottom: .5rem;
+  width: 80vw;
+  max-width: $moon-space-dimension;
+  vertical-align: top;
+}

@@ -12,7 +12,6 @@ import items from '../constants/items';
 function Home(props: { isShopActive: boolean }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2024;
   const isFeatured: boolean = false;
-  const isHomeJustNews: boolean = true;
 
   return (
     <>
@@ -32,8 +31,9 @@ function Home(props: { isShopActive: boolean }): JSX.Element {
           lunarCalendarPaper={featured.lunarCalendarPaper}
           lunarCalendarLocation={featured.lunarCalendarLocation}
         /> :
-        <div className="home-content">
-          {isHomeJustNews ? <News /> : <MoonSpace isShopActive={props.isShopActive} />}
+        <div>
+          <News />
+          <MoonSpace isShopActive={props.isShopActive} />
         </div>
       }
     </>
