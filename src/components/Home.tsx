@@ -12,7 +12,7 @@ import items from '../constants/items';
 function Home(props: { isShopActive: boolean }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2024;
   const isFeatured: boolean = false;
-  const isHomeJustNews: boolean = false;
+  const isHomeJustNews: boolean = true;
 
   return (
     <>

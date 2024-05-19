@@ -1,14 +1,17 @@
 .home-content {
 
-  .home-image-container,
-  .home-text-container,
-  .home-image-container img {
-    width: 80vw;
-    max-width: 25rem;
-    vertical-align: top;
+  .home-image-container {
+    text-align: center;
+
+    img {
+      opacity: .75;
+    }
   }
 
   .home-text-container {
     margin-top: 1rem;
+    width: 80vw;
+    max-width: 25rem;
+    vertical-align: top;
   }
 }
