@@ -303,8 +303,7 @@ const items: Items = {
     subtitle: text.postcard,
     featureImage: images.postcards.postcardRhodeIslandWhaleFeature,
     info: postcardItemInfo.concat(text.postcardCaptionRhodeIslandWhale),
-    price: prices.postcardPrice,
-    isSoldOut: true
+    price: prices.postcardPrice
   }
 };
 
