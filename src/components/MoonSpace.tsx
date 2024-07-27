@@ -79,17 +79,14 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   }, [selectedPhaseDate, selectedYear]);
 
   useEffect(() => {
+    function keyDownHandler({ key }: KeyboardEvent): void {
+      if (key === 'Escape' && isModalVisible) setIsModalVisible(false);
+    }
     window.addEventListener(keydown, keyDownHandler);
     return function cleanupEventListener() {
       window.removeEventListener(keydown, keyDownHandler);
     };
   }, [isModalVisible]);
-
-  function keyDownHandler({ key }: KeyboardEvent): void {
-    if (key === 'Escape' && isModalVisible) {
-      setIsModalVisible(false);
-    }
-  }
 
   function updateDates(): void {
     setLocalDate(new Date());
