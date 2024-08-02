@@ -24,6 +24,8 @@ function Shop(): JSX.Element {
     return itemsCategory ? item.category === itemsCategory : isTextMatching(item);
   });
 
+  const isOneItem: boolean = filteredItems.length === 1 || itemsCollection.length === 1;
+
   function isTextMatching(item: ItemProps): boolean {
     const searchInput: string = userSearchInput.toLowerCase();
     const itemTitle: string = item.title.toLowerCase();
@@ -42,7 +44,7 @@ function Shop(): JSX.Element {
     for (const item of items) {
       if (!categories.includes(item.category)) categories.push(item.category);
     }
-    categories.push(text.all);
+    if (categories.length > 1) categories.push(text.all);
     return categories;
   }
 
@@ -126,19 +128,25 @@ function Shop(): JSX.Element {
         <div className="items-search">
           <span>
             {`${isAllItems ? itemsCollection.length : filteredItems.length}
-            item${filteredItems.length === 1 ? '' : 's'}`}
+            item${isOneItem ? '' : 's'}`}
           </span>
-          <span>filter by title, category or price:</span>
-          <input
-            type="text"
-            value={userSearchInput}
-            onChange={handleSearchInputChange}
-            onKeyDown={handleKeyDown}
-          />
+          {itemsCollection.length && !isOneItem ?
+            <div className="filter-container">
+              <span>filter by title, category or price:</span>
+              <input
+                type="text"
+                value={userSearchInput}
+                onChange={handleSearchInputChange}
+                onKeyDown={handleKeyDown}
+              />
+            </div>
+          : null}
         </div>
-        <div className={`category-buttons-container buttons-length-${itemsCategoriesForButtons.length}`}>
-          {itemsCategoriesForButtons.map(renderCategoryButton)}
-        </div>
+        {itemsCategoriesForButtons.length > 1 ?
+          <div className={`category-buttons-container buttons-length-${itemsCategoriesForButtons.length}`}>
+            {itemsCategoriesForButtons.map(renderCategoryButton)}
+          </div>
+        : null}
       </div>
       <div className="shop-cards">
         {isAllItems ? itemsCollection.map(renderItemCard) : filteredItems.map(renderItemCard)}
