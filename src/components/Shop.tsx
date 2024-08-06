@@ -24,8 +24,6 @@ function Shop(): JSX.Element {
     return itemsCategory ? item.category === itemsCategory : isTextMatching(item);
   });
 
-  const isOneItem: boolean = filteredItems.length === 1 || itemsCollection.length === 1;
-
   function isTextMatching(item: ItemProps): boolean {
     const searchInput: string = userSearchInput.toLowerCase();
     const itemTitle: string = item.title.toLowerCase();
@@ -128,9 +126,9 @@ function Shop(): JSX.Element {
         <div className="items-search">
           <span>
             {`${isAllItems ? itemsCollection.length : filteredItems.length}
-            item${isOneItem ? '' : 's'}`}
+            item${filteredItems.length === 1 || itemsCollection.length === 1 ? '' : 's'}`}
           </span>
-          {itemsCollection.length && !isOneItem ?
+          {itemsCollection.length && itemsCollection.length !== 1 ?
             <div className="filter-container">
               <span>filter by title, category or price:</span>
               <input
