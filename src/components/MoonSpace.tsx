@@ -69,9 +69,12 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const goToPrintEdition: string = 'Go to the print edition of the lunar calendar chart';
 
   useEffect(() => {
-    const interval = setInterval(() => updateDates(), millisecondsCount);
+    const interval = setInterval(() => {
+      setLocalDate(new Date());
+      setEasternTimeZoneDate(getEasternTimeZoneDate(localDate));
+    }, millisecondsCount);
     return () => clearInterval(interval);
-  }, []);
+  }, [localDate, getEasternTimeZoneDate]);
 
   useEffect(() => {
     setSelectedYear(selectedPhaseDate.getFullYear());
@@ -87,11 +90,6 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
       window.removeEventListener(keydown, keyDownHandler);
     };
   }, [isModalVisible]);
-
-  function updateDates(): void {
-    setLocalDate(new Date());
-    setEasternTimeZoneDate(getEasternTimeZoneDate(localDate));
-  }
 
   function renderSkyLine(skyLine: string, index: number): JSX.Element {
     return (
