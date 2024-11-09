@@ -20,6 +20,19 @@ const postcardItemInfo: string[] = [
 ];
 
 const items: Items = {
+  lunarCalendar2025Preorder: {
+    id: 'PUD8ATGN4PWUU',
+    category: text.lunarCalendar,
+    title: 'Marble Ramble',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.lunarCalendars.lunarCalendar2025Preorder,
+    info: lunarCalendarItemInfo,
+    price: prices.lunarCalendarPrice,
+    printEdition: 500,
+    lunarCalendarYear: 2025,
+    lunarCalendarPaper: text.lunarCalendarPaper2025,
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
+  },
   lunarCalendar2024: {
     id: 'UVUN5NCMML8SQ',
     category: text.lunarCalendar,

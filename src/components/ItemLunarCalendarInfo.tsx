@@ -79,20 +79,19 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
     <>
       <div className="lunar-calendar-description">
 
-        {isPreorder ?
+      {isPreorder ?
           <div>
             <p>
-              <span className="bold">Preorder 2024 Lunar Calendar</span>: Alright,
-              my lunar calendar for 2024 is currently in production at the print
+              <span className="bold">Preorder 2025 Lunar Calendar</span>: Okay,
+              my lunar calendar for 2025 is currently in production at the print
               shop &mdash; with Dan making the letterpress magic happen for another edition.
-              Preorders placed now will ship by early December 2023.
-              Huetown's domestic shipping charge in the USA is a flat $8 rate to any address,
-              regardless of item quantity, via USPS Priority.
+              Preorders placed now will ship by the end of November 2024.
+              Huetown's domestic shipping charge via USPS Priority (or equivalent)
+              is a flat per-order rate of $8 rate to any address in the USA.
             </p>
             <p>
-              <span className="bold">Note</span>: The 2024 lunar calendar <span className="ital">ships
-              flat</span> in one sturdy box, regardless of quantity. (Previous lunar calendar orders shipped rolled
-              in individual tubes.)
+              <span className="bold">Note</span>: The 2025 lunar calendar <span className="ital">ships
+              flat</span> in one sturdy box, regardless of quantity.
             </p>
             <p>
               <span className="bold">Important</span>: The above lunar calendar
@@ -100,12 +99,28 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               and paper will look like. There may be some slight variations
               between the colors here and in the print.
             </p>
+            <div className="lunar-calendar-timely-info">
+              <div>
+                <p>
+                  Each lunar calendar preordered by November 21, 2024 will include
+                  a <span className="ital">Placeholder</span> letterpress print:
+                </p>
+              </div>
+              <div className="lunar-calendar-accompanying-item">
+                <img src={images.lunarCalendars.placeholderPreorder} alt="Placeholder print" />
+              </div>
+            </div>
             <p id="itemDetails">
               Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on
               Instagram for updates on this print's letterpress production.
-              And join the <Link className="text-link" to="/about">email list</Link> to
-              learn when other works are available.
+              And join the <a className="text-link" href="about.html">email list</a> for more news.
             </p>
+            <div>
+              <span className="bold">Event</span>: Catch Huetown
+              at the <a className="text-link" href="https://goodtrademakersmarket.com/pvd2024">Good
+              Trade Makers Market</a> in Providence, Rhode Island on Saturday November 23rd
+              and Sunday November 24th, 2024.
+            </div>
             <p className="bold">
               Here's more info on the ultimate piece&hellip;
             </p>

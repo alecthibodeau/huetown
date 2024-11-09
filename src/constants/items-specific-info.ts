@@ -2,7 +2,7 @@
 import items from './items';
 
 const latestLunarCalendarId: string = items.lunarCalendar2024.id;
-const preorderId: string = 'preorder id goes here';
+const preorderId: string = items.lunarCalendar2025Preorder.id;
 
 const itemsSpecificInfo = {
   latestLunarCalendarId,

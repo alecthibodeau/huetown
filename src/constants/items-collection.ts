@@ -5,6 +5,7 @@ import ItemProps from '../interfaces/ItemProps';
 import items from './items';
 
 const itemsCollection: ItemProps[] = [
+  items.lunarCalendar2025Preorder,
   items.lunarCalendar2024,
   items.lunarCalendar2023,
   items.lunarCalendar2022,
