@@ -25,7 +25,7 @@ const text: { [key: string]: string }  = {
   lunarCalendar: 'lunar calendar',
   lunarCalendarLocationProvidence: 'The calendar is printed in Providence, Rhode Island, which is identified as a representative location within the artwork.',
   lunarCalendarLocationNewYork: 'New York City is identified as a representative location within the artwork.',
-  lunarCalendarPaper2025: 'Lessebo Paper acid-free 225gsm Kelly Green 80# cover paper',
+  lunarCalendarPaper2025: 'Lessebo Paper acid-free 300gsm Kelly Green 100# cover paper',
   lunarCalendarPaper2024: 'French Paper Company acid-free 250gsm Plum Punch 80# cover paper',
   lunarCalendarPaper2023: 'Gmund Papers acid-free 300gsm Cyan 111# cover paper',
   lunarCalendarPaper2022: 'Arjowiggins Creative Papers (distributed by Mohawk) acid-free 300gsm Keaykolour Coral 111# cover paper',
