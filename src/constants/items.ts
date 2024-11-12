@@ -23,7 +23,7 @@ const items: Items = {
   lunarCalendar2025Preorder: {
     id: 'PUD8ATGN4PWUU',
     category: text.lunarCalendar,
-    title: 'Marble Ramble',
+    title: 'Medulla Mangata',
     subtitle: text.byAlecThibodeau,
     featureImage: images.lunarCalendars.lunarCalendar2025Preorder,
     info: lunarCalendarItemInfo,

@@ -90,7 +90,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               is a flat per-order rate of $8 rate to any address in the USA.
             </p>
             <p>
-              <span className="bold">Note</span>: The 2025 lunar calendar <span className="ital">ships
+              <span className="bold">Shipping</span>: The 2025 lunar calendar <span className="ital">ships
               flat</span> in one sturdy box, regardless of quantity.
             </p>
             <p>
@@ -102,12 +102,12 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             <div className="lunar-calendar-timely-info">
               <div>
                 <p>
-                  Each lunar calendar preordered by November 21, 2024 will include
-                  a <span className="ital">Placeholder</span> letterpress print:
+                  Each lunar calendar preordered by November 19th, 2024 will include
+                  a <span className="ital">Tarsier Trail</span> letterpress print:
                 </p>
               </div>
               <div className="lunar-calendar-accompanying-item">
-                <img src={images.lunarCalendars.placeholderPreorder} alt="Placeholder print" />
+                <img src={images.lunarCalendars.tarsierTrailPreorder} alt="Tarsier Trail print" />
               </div>
             </div>
             <p id="itemDetails">
@@ -155,7 +155,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             </li>
           : null}
           <li>
-            <span className="bold">Note</span>: Lunar calendar orders ship flat in one sturdy box, regardless of quantity
+            <span className="bold">Shipping</span>: Lunar calendar orders ship flat in one sturdy box, regardless of quantity
           </li>
           <li>
             <span className="bold">Play</span>: Interact with the current year's accompanying <Link className="text-link" to="/moon-space">digital lunar calendar</Link>
