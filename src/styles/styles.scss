@@ -29,13 +29,13 @@ main {
 
   .text-link {
     text-decoration: none;
-    color: $dark-green;
+    color: $dark-kelly-green;
     font-weight: 600;
 
     &:link,
     &:visited,
     &:active {
-      color: $dark-green;
+      color: $dark-kelly-green;
     }
 
     &.shop-link {
@@ -55,7 +55,7 @@ main {
   }
 
   .item-preorder-text {
-    color: $dark-green;
+    color: $dark-kelly-green;
     font-weight: 700;
   }
 
