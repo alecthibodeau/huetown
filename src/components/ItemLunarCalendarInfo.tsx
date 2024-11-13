@@ -91,7 +91,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             </p>
             <p>
               <span className="bold">Shipping</span>: The 2025 lunar calendar <span className="ital">ships
-              flat</span> in one sturdy box, regardless of quantity.
+              flat</span> in one sturdy box, regardless of quantity in the order.
             </p>
             <p>
               <span className="bold">Important</span>: The above lunar calendar
@@ -113,7 +113,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             <p id="itemDetails">
               Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on
               Instagram for updates on this print's letterpress production.
-              And join the <a className="text-link" href="about.html">email list</a> for more news.
+              And join the <Link className="text-link" to="/about">email list</Link> for more news.
             </p>
             <div>
               <span className="bold">Event</span>: Catch Huetown
@@ -154,9 +154,6 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               <News />
             </li>
           : null}
-          <li>
-            <span className="bold">Shipping</span>: Lunar calendar orders ship flat in one sturdy box, regardless of quantity
-          </li>
           <li>
             <span className="bold">Play</span>: Interact with the current year's accompanying <Link className="text-link" to="/moon-space">digital lunar calendar</Link>
           </li>
