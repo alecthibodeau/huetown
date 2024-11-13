@@ -103,7 +103,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               <div>
                 <p>
                   Each lunar calendar preordered by November 19th, 2024 will include
-                  a <span className="ital">Tarsier Trail</span> letterpress print:
+                  a <span className="ital">Tarsier Trail</span> mini letterpress print (2.5 x 2.5 inches):
                 </p>
               </div>
               <div className="lunar-calendar-accompanying-item">
