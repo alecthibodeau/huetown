@@ -18,7 +18,6 @@ import itemsSpecificInfo from '../constants/items-specific-info';
 function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   const isNewsInInfo: boolean = false;
   const isPreorder: boolean = props.id === itemsSpecificInfo.preorderId;
-  const linkPanTerra: string = '/items/prints/pan-terra';
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
@@ -84,14 +83,11 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             <p>
               <span className="bold">Preorder 2025 Lunar Calendar</span>: Okay,
               my lunar calendar for 2025 is currently in production at the print
-              shop &mdash; with Dan making the letterpress magic happen for another edition.
-              Preorders placed now will ship by the end of November 2024.
-              Huetown's domestic shipping charge via USPS Priority (or equivalent)
-              is a flat per-order rate of $8 rate to any address in the USA.
-            </p>
-            <p>
-              <span className="bold">Shipping</span>: The 2025 lunar calendar <span className="ital">ships
-              flat</span> in one sturdy box, regardless of quantity in the order.
+              shop &mdash; with Dan making the letterpress magic happen for another
+              edition. Preorders placed after November 19th, 2024 will ship the first
+              week of December 2024. Huetown's domestic shipping charge via USPS
+              Priority (or equivalent) is a flat, per-order rate of $8 rate to
+              any address in the USA.
             </p>
             <p>
               <span className="bold">Important</span>: The above lunar calendar
@@ -99,21 +95,16 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               and paper will look like. There may be some slight variations
               between the colors here and in the print.
             </p>
-            <div className="lunar-calendar-timely-info">
-              <div>
-                <p>
-                  Each lunar calendar preordered by November 19th, 2024 will include
-                  a <span className="ital">Tarsier Trail</span> mini letterpress print (2.5 x 2.5 inches):
-                </p>
-              </div>
-              <div className="lunar-calendar-accompanying-item">
-                <img src={images.lunarCalendars.tarsierTrailPreorder} alt="Tarsier Trail print" />
-              </div>
-            </div>
+            <p>
+              <span className="bold">Shipping</span>: The 2025 lunar calendar <span className="ital">ships
+              flat</span> in one sturdy box, regardless of quantity in the order.
+            </p>
             <p id="itemDetails">
-              Follow <a className="text-link" href="https://www.instagram.com/huetown/">@huetown</a> on
-              Instagram for updates on this print's letterpress production.
-              And join the <Link className="text-link" to="/about">email list</Link> for more news.
+              <span className="bold">Updates</span>: Follow <a className="text-link"
+              href="https://www.instagram.com/huetown/">@huetown</a> on
+              Instagram for the latest word on this print's letterpress production.
+              And join the <Link className="text-link" to="/about">email
+              list</Link> for more news.
             </p>
             <div>
               <span className="bold">Event</span>: Catch Huetown
@@ -155,21 +146,22 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             </li>
           : null}
           <li>
-            <span className="bold">Play</span>: Interact with the current year's accompanying <Link className="text-link" to="/moon-space">digital lunar calendar</Link>
+            <span className="bold">Play</span>: Interact with the current year's
+            accompanying <Link className="text-link" to="/moon-space">digital
+            lunar calendar</Link>
           </li>
           {props.id === itemsSpecificInfo.latestLunarCalendarId ?
             <li>
-              <span className="bold">Extra</span>: Each lunar calendar preordered early included
-              a <Link className="text-link" to={linkPanTerra}><span className="ital">Pan Terra</span> </Link> letterpress print&hellip;
+              <span className="bold">Extra</span>: Each lunar calendar preordered
+              by November 19th, 2024 included a <span className="ital">Tarsier
+              Trail</span> letterpress print&hellip;
             </li>
           : null}
         </ul>
 
         {props.id === itemsSpecificInfo.latestLunarCalendarId ?
           <div className="lunar-calendar-accompanying-item">
-            <Link to={linkPanTerra}>
-              <img src={images.prints.printPanTerraAccompanying} alt="Pan Terra print" />
-            </Link>
+            <img src={images.lunarCalendars.tarsierTrailPreorder} alt="Tarsier Trail print" />
           </div>
         : null}
       </div>
