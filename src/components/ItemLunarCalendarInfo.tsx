@@ -106,12 +106,6 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               And join the <Link className="text-link" to="/about">email
               list</Link> for more news.
             </p>
-            <div>
-              <span className="bold">Event</span>: Catch Huetown
-              at the <a className="text-link" href="https://goodtrademakersmarket.com/pvd2024">Good
-              Trade Makers Market</a> in Providence, Rhode Island on Saturday November 23rd
-              and Sunday November 24th, 2024.
-            </div>
             <p className="bold">
               Here's more info on the ultimate piece&hellip;
             </p>
