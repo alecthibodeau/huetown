@@ -20,8 +20,8 @@ const postcardItemInfo: string[] = [
 ];
 
 const items: Items = {
-  lunarCalendar2025Preorder: {
-    id: 'PUD8ATGN4PWUU',
+  lunarCalendar2025: {
+    id: 'LLUBY69U94MPW',
     category: text.lunarCalendar,
     title: 'Medulla Mangata',
     subtitle: text.byAlecThibodeau,
@@ -31,7 +31,7 @@ const items: Items = {
     printEdition: 500,
     lunarCalendarYear: 2025,
     lunarCalendarPaper: text.lunarCalendarPaper2025,
-    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence
   },
   lunarCalendar2024: {
     id: 'UVUN5NCMML8SQ',
