@@ -23,6 +23,10 @@ import colossalLogo from '../assets/images/items/colossal-logo-small.jpg';
 import tarsierTrailPreorder from '../assets/images/items/preorder/tarsier-trail-preorder-300px.jpg';
 
 import lunarCalendar2025Feature from '../assets/images/items/thibodeau-lunar-calendar-2025-feature-1000px.jpg';
+import lunarCalendar2025Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2025-01-700px.jpg';
+import lunarCalendar2025Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2025-02-700px.jpg';
+import lunarCalendar2025Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2025-03-700px.jpg';
+import lunarCalendar2025Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2025-04-700px.jpg';
 
 import lunarCalendar2024Feature from '../assets/images/items/thibodeau-lunar-calendar-2024-feature-1000px.jpg';
 import lunarCalendar2024Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2024-01-700px.jpg';
@@ -193,6 +197,13 @@ const postcards: { [key: string]: string } = {
   postcardRhodeIslandWhaleFeature
 };
 
+const lunarCalendar2025DetailImages: string[] = [
+  lunarCalendar2025Detail01,
+  lunarCalendar2025Detail02,
+  lunarCalendar2025Detail03,
+  lunarCalendar2025Detail04
+];
+
 const lunarCalendar2024DetailImages: string[] = [
   lunarCalendar2024Detail01,
   lunarCalendar2024Detail02,
@@ -293,6 +304,7 @@ const printStentorianDetailImages: string[] = [
 ];
 
 const itemsDetailImages: { [key: string]: string[] } = {
+  lunarCalendar2025DetailImages,
   lunarCalendar2024DetailImages,
   lunarCalendar2023DetailImages,
   lunarCalendar2022DetailImages,

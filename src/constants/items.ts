@@ -31,7 +31,8 @@ const items: Items = {
     printEdition: 500,
     lunarCalendarYear: 2025,
     lunarCalendarPaper: text.lunarCalendarPaper2025,
-    lunarCalendarLocation: text.lunarCalendarLocationProvidence
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
+    detailImages: images.itemsDetailImages.lunarCalendar2025DetailImages
   },
   lunarCalendar2024: {
     id: 'UVUN5NCMML8SQ',
