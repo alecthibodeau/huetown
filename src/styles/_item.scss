@@ -138,7 +138,7 @@
     font-size: .875rem;
   }
 
-  .detail-images .detail-image-pair {
+  .detail-information .detail-image-pair {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -177,7 +177,7 @@
 @media (min-width: $breakpoint-md) {
 
   .item .feature-image,
-  .item .detail-images .detail-image-pair img {
+  .item .detail-information .detail-image-pair img {
     width: initial;
   }
 }
@@ -207,7 +207,7 @@
       align-items: stretch;
     }
 
-    .detail-images .detail-image-pair {
+    .detail-information .detail-image-pair {
       flex-direction: row;
 
       img {
@@ -220,7 +220,7 @@
 
 @media (min-width: $breakpoint-xl) {
 
-  .item .detail-images .detail-image-pair img {
+  .item .detail-information .detail-image-pair img {
     width: 38vw;
     height: 38vw;
   }

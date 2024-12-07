@@ -190,8 +190,8 @@ function Item(props: ItemProps): JSX.Element {
           </div>
         </div>
       </div>
-      {props.detailImages || isPreorder ?
-        <div className="detail-images">
+      {props.detailImages || isLunarCalendar ?
+        <div className="detail-information">
           {props.detailImages ? props.detailImages.map(renderDetailImagePair) : null}
           {isLunarCalendar ?
             <ItemLunarCalendarInfo
