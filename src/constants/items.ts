@@ -25,7 +25,7 @@ const items: Items = {
     category: text.lunarCalendar,
     title: 'Medulla Mangata',
     subtitle: text.byAlecThibodeau,
-    featureImage: images.lunarCalendars.lunarCalendar2025Preorder,
+    featureImage: images.lunarCalendars.lunarCalendar2025Feature,
     info: lunarCalendarItemInfo,
     price: prices.lunarCalendarPrice,
     printEdition: 500,

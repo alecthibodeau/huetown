@@ -20,8 +20,9 @@ import keyThirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarte
 
 import colossalLogo from '../assets/images/items/colossal-logo-small.jpg';
 
-import lunarCalendar2025Preorder from '../assets/images/items/preorder/thibodeau-lunar-calendar-2025-preorder-700px.jpg';
 import tarsierTrailPreorder from '../assets/images/items/preorder/tarsier-trail-preorder-300px.jpg';
+
+import lunarCalendar2025Feature from '../assets/images/items/thibodeau-lunar-calendar-2025-feature-1000px.jpg';
 
 import lunarCalendar2024Feature from '../assets/images/items/thibodeau-lunar-calendar-2024-feature-1000px.jpg';
 import lunarCalendar2024Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2024-01-700px.jpg';
@@ -157,7 +158,7 @@ const lunarPhases: { [key: string]: string } = {
 const lunarCalendars: { [key: string]: string } = {
   colossalLogo,
   tarsierTrailPreorder,
-  lunarCalendar2025Preorder,
+  lunarCalendar2025Feature,
   lunarCalendar2024Feature,
   lunarCalendar2023Feature,
   lunarCalendar2022Feature,
