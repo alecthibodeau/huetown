@@ -101,10 +101,10 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
         <p>
           The {renderSpan(lunarCalendarYear)} lunar calendar comprises new drawings
           and year-specific lunar phase information. Each calendar is printed
-          on {renderSpan(lunarCalendarPaper)}, blind-debossed with Alec's name
-          and the print shop's name &mdash; and hand numbered and signed by
-          Alec. Each calendar ships with an accompanying information sheet inside
-          a flat, sturdy box.
+          on {renderSpan(lunarCalendarPaper)}, blind-debossed with Alec's name and
+          the print shop's name &mdash; and hand numbered and signed by Alec. Each
+          calendar <Link className="text-link" to="/about#shipping">ships</Link> with
+          an accompanying information sheet inside a flat, sturdy box.
         </p>
         <p>
           The calendar's lunar phase chart is calibrated for any location in the
@@ -117,7 +117,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           First Quarter Moon, Full Moon and Third Quarter Moon) plus all
           intermediate crescent and gibbous phases. For months with less than
           31 days, drawings of clouds occupy the extra
-          spaces. <a className="text-link" href="#featureImage">Order now</a>.
+          spaces. <Link className="text-link" to="#featureImage">Order now</Link>.
         </p>
         <div className="lunar-phases">
           {itemsLunarCalendars.phases.map(renderlunarPhase)}

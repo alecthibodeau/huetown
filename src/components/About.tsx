@@ -53,12 +53,12 @@ function About(): JSX.Element {
           Buy with confidence! I securely process all credit card payments made at Huetown
           through <a className="text-link" href="https://www.paypal.com">PayPal</a>.
         </div>
-        <div>
+        <div id="shipping">
           {renderSectionTitle('shipping')}
-          Regardless of item quantity all orders ship for a flat rate in sturdy
-          packaging from Providence, Rhode Island in the USA via United States Postal
-          Service (USPS) Priority Mail or &mdash; less frequently &mdash; via an equivalent United Parcel
-          Service (UPS) option. Flat rates are $8 for domestic shipments within
+          All orders ship in sturdy packaging from Providence, Rhode Island USA.
+          Shipping is via United States Postal Service (USPS) Priority Mail &mdash; or
+          a comparably fast service for the delivery region via USPS or United
+          Parcel Service (UPS). Flat rates are $8 for domestic shipments within
           the USA or $29 for international delivery to any other country. Packages
           generally ship within a couple business days of an order being placed,
           with domestic deliveries usually arriving a few days after that. Once
