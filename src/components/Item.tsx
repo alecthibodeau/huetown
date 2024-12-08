@@ -60,7 +60,7 @@ function Item(props: ItemProps): JSX.Element {
   function renderFeatureImage(): JSX.Element {
     return (
       <img
-        id="featureImage"
+        id="featureImageNavigation"
         className={`feature-image ${categoryClass} ${titleClass}`}
         src={props.featureImage}
         alt={`${props.category} ${props.title}`}

@@ -117,7 +117,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           First Quarter Moon, Full Moon and Third Quarter Moon) plus all
           intermediate crescent and gibbous phases. For months with less than
           31 days, drawings of clouds occupy the extra
-          spaces. <Link className="text-link" to="#featureImage">Order now</Link>.
+          spaces. <a className="text-link" href="#featureImageNavigation">Order now</a>.
         </p>
         <div className="lunar-phases">
           {itemsLunarCalendars.phases.map(renderlunarPhase)}
