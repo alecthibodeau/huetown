@@ -27,6 +27,8 @@ import lunarCalendar2025Detail01 from '../assets/images/items/thibodeau-lunar-ca
 import lunarCalendar2025Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2025-02-700px.jpg';
 import lunarCalendar2025Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2025-03-700px.jpg';
 import lunarCalendar2025Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2025-04-700px.jpg';
+import lunarCalendar2025Detail05 from '../assets/images/items/thibodeau-lunar-calendar-2025-05-700px.jpg';
+import lunarCalendar2025Detail06 from '../assets/images/items/thibodeau-lunar-calendar-2025-06-700px.jpg';
 
 import lunarCalendar2024Feature from '../assets/images/items/thibodeau-lunar-calendar-2024-feature-1000px.jpg';
 import lunarCalendar2024Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2024-01-700px.jpg';
@@ -201,7 +203,9 @@ const lunarCalendar2025DetailImages: string[] = [
   lunarCalendar2025Detail01,
   lunarCalendar2025Detail02,
   lunarCalendar2025Detail03,
-  lunarCalendar2025Detail04
+  lunarCalendar2025Detail04,
+  lunarCalendar2025Detail05,
+  lunarCalendar2025Detail06
 ];
 
 const lunarCalendar2024DetailImages: string[] = [
