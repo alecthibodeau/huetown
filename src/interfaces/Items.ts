@@ -18,6 +18,7 @@ interface Items {
   printProtonSwan: ItemProps;
   printSpacePony: ItemProps;
   printStentorian: ItemProps;
+  printTarsierTrail: ItemProps;
   printTigerMoontain: ItemProps;
   postcardAssets: ItemProps;
   postcardCachalot: ItemProps;

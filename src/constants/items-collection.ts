@@ -12,6 +12,7 @@ const itemsCollection: ItemProps[] = [
   items.printProtonSwan,
   items.printSpacePony,
   items.printStentorian,
+  items.printTarsierTrail,
   items.printTigerMoontain,
   items.postcardAssets,
   items.postcardCachalot,

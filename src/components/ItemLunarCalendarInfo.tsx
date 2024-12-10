@@ -135,15 +135,21 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           </li>
           {isLatestLunarCalendar ?
             <li>
-              <span className="bold">Extra</span>: Each lunar calendar preordered
-              early included a <span className="ital">Tarsier Trail</span> letterpress
-              print&hellip;
+              <span className="bold">Extra</span>: Each lunar calendar preordered early included
+              a <Link className="text-link" to="/shop/prints/tarsier-trail">Tarsier
+              Trail</Link> letterpress print&hellip;
             </li>
           : null}
         </ul>
         {isLatestLunarCalendar ?
           <div className="lunar-calendar-accompanying-item">
-            <img src={images.lunarCalendars.tarsierTrailPreorder} alt="Tarsier Trail print" />
+            <Link to="/shop/prints/tarsier-trail">
+              <img
+                className="lunar-calendar-accompanying-item-image"
+                src={images.prints.printTarsierTrailFeature}
+                alt="Tarsier Trail print"
+              />
+            </Link>
           </div>
         : null}
       </div>

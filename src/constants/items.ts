@@ -258,6 +258,21 @@ const items: Items = {
     detailImages: images.itemsDetailImages.printStentorianDetailImages,
     description: text.printDescriptionStentorian
   },
+  printTarsierTrail: {
+    id: 'C3FNR4KJ4BBQ2',
+    category: text.print,
+    title: 'Tarsier Trail',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.prints.printTarsierTrailFeature,
+    info: [
+      text.dimensionsTwoAndAHalfInches,
+      text.letterpressPrint,
+      text.initialedByTheArtist,
+      text.shipsFlat
+    ],
+    price: prices.miniprintPrice,
+    description: text.printDescriptionTigerMoontain
+  },
   printTigerMoontain: {
     id: 'MAEW4JA69BM5U',
     category: text.print,

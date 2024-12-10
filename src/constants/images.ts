@@ -20,8 +20,6 @@ import keyThirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarte
 
 import colossalLogo from '../assets/images/items/colossal-logo-small.jpg';
 
-import tarsierTrailPreorder from '../assets/images/items/preorder/tarsier-trail-preorder-300px.jpg';
-
 import lunarCalendar2025Feature from '../assets/images/items/thibodeau-lunar-calendar-2025-feature-1000px.jpg';
 import lunarCalendar2025Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2025-01-700px.jpg';
 import lunarCalendar2025Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2025-02-700px.jpg';
@@ -139,6 +137,7 @@ import printStentorianDetail02 from '../assets/images/items/print-stentorian-02-
 import printStentorianDetail03 from '../assets/images/items/print-stentorian-03-450px.jpg';
 import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-450px.jpg';
 
+import printTarsierTrailFeature from '../assets/images/items/print-tarsier-trail-feature-450px.jpg';
 import printTigerMoontainFeature from '../assets/images/items/print-tiger-moontain-feature-450px.jpg';
 
 const header: { [key: string]: string } = {
@@ -167,7 +166,6 @@ const lunarPhases: { [key: string]: string } = {
 
 const lunarCalendars: { [key: string]: string } = {
   colossalLogo,
-  tarsierTrailPreorder,
   lunarCalendar2025Feature,
   lunarCalendar2024Feature,
   lunarCalendar2023Feature,
@@ -192,6 +190,7 @@ const prints: { [key: string]: string } = {
   printProtonSwanFeature,
   printSpacePonyFeature,
   printStentorianFeature,
+  printTarsierTrailFeature,
   printTigerMoontainFeature
 };
 
