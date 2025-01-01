@@ -262,7 +262,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
               <NavLink
                 title={goToPrintEdition}
                 aria-label={goToPrintEdition}
-                to={formatItemRoutePath(items.lunarCalendar2024.category, items.lunarCalendar2024.title)}
+                to={formatItemRoutePath(items.lunarCalendar2025.category, items.lunarCalendar2025.title)}
                 className={lunarFeatureButton}
               >
                 Chart
