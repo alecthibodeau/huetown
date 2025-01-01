@@ -54,7 +54,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const dateNewYearsDay: Date = new Date(selectedYear, monthJanuary, dateFirst);
   const dateNewYearsEve: Date = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
-  const isLatestReleaseCurrentYear: boolean = selectedYear === 2024;
+  const isLatestReleaseCurrentYear: boolean = selectedYear === 2025;
   const isNewsInMoonSpace: boolean = false;
   const millisecondsCount: number = 10;
 
