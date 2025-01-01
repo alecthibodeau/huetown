@@ -13,7 +13,14 @@
   overflow: hidden;
   height: $moon-space-dimension;
   margin: auto;
-  background-color: $twenty-five-kelly-green-paper; // to be set dynamically
+
+  &.twenty-four{
+    background-color: $twenty-four-plum-paper;
+  }
+
+  &.twenty-five {
+    background-color: $twenty-five-kelly-green-paper;
+  }
 }
 
 .cloud {
@@ -81,8 +88,15 @@
 
   div {
     height: 2px;
-    background-color: $twenty-five-kelly-green-ink; // to be set dynamically
     margin-bottom: 2px;
+
+    &.twenty-four{
+      background-color: $twenty-four-plum-ink;
+    }
+
+    &.twenty-five {
+      background-color: $twenty-five-kelly-green-ink;
+    }
   }
 }
 
@@ -177,7 +191,14 @@
   }
 
   &.active {
-    border-color: $twenty-five-kelly-green-paper; // to be set dynamically;
+
+    &.twenty-four {
+      border-color: $twenty-four-plum-paper;
+    }
+
+    &.twenty-five {
+      border-color: $twenty-five-kelly-green-paper;
+    }
   }
 }
 

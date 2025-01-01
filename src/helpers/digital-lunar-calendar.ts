@@ -16,6 +16,11 @@ const dateThirtyFirst: number = 31;
 const commonYearLength: number = 365;
 const leapYearLength: number = 366;
 
+const years: { [key: number]: string } = {
+  2024: 'twenty-four',
+  2025: 'twenty-five'
+};
+
 const waxingCrescentPrefix: string = 'xc';
 const waxingGibbousPrefix: string = 'xg';
 const waningGibbousPrefix: string = 'ng';
@@ -89,10 +94,6 @@ function getLunarPhaseCategory(phase: string): string {
   return lunarPhaseCategory;
 }
 
-function getBackgroundColor(date: Date): string {
-  return lunarCalendarsInformation[date.getFullYear()].backgroundColor;
-}
-
 function getRandomOrnamentLiveChange(date: Date): string {
   return lunarCalendarsInformation[date.getFullYear()].ornaments[Math.floor(Math.random() * numberMax)];
 }
@@ -104,6 +105,7 @@ const digitalLunarCalendar = {
   dateThirtyFirst,
   commonYearLength,
   leapYearLength,
+  years,
   oneRandomNumber,
   phasesInfoForUser,
   waxingCrescentPrefix,
@@ -114,7 +116,6 @@ const digitalLunarCalendar = {
   isLeapYear,
   getLunarPhase,
   getLunarPhaseCategory,
-  getBackgroundColor,
   getRandomOrnamentLiveChange
 }
 

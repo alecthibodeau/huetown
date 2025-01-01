@@ -27,6 +27,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
     dateThirtyFirst,
     commonYearLength,
     leapYearLength,
+    years,
     phasesInfoForUser,
     isLeapYear,
     getLunarPhase,
@@ -93,7 +94,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
 
   function renderSkyLine(skyLine: string, index: number): JSX.Element {
     return (
-      <div key={`${skyLine}-${index}`}></div>
+      <div key={`${skyLine}-${index}`} className={years[selectedYear]}></div>
     );
   }
 
@@ -187,7 +188,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
           <News />
         </div> :
       null}
-      <div className="moon-image-container">
+      <div className={`${years[selectedYear]} moon-image-container`}>
         <div className="phase-container">
           <svg
             viewBox="-13 -13 50 50"
@@ -253,7 +254,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
             <button
               title={selectCloudsAnimation}
               aria-label={selectCloudsAnimation}
-              className={`${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected active' : ''}`}
+              className={`${years[selectedYear]} ${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected active' : ''}`}
               onClick={() => setIsCloudsAnimationVisible(!isCloudsAnimationVisible)}>
               Clouds
             </button>
