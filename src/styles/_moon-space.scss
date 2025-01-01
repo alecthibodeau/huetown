@@ -13,7 +13,7 @@
   overflow: hidden;
   height: $moon-space-dimension;
   margin: auto;
-  background-color: $twenty-four-plum-paper; // to be set dynamically
+  background-color: $twenty-five-kelly-green-paper; // to be set dynamically
 }
 
 .cloud {
@@ -81,7 +81,7 @@
 
   div {
     height: 2px;
-    background-color: $twenty-four-plum-ink; // to be set dynamically
+    background-color: $twenty-five-kelly-green-ink; // to be set dynamically
     margin-bottom: 2px;
   }
 }
@@ -177,7 +177,7 @@
   }
 
   &.active {
-    border-color: $twenty-four-plum-paper; // to be set dynamically;
+    border-color: $twenty-five-kelly-green-paper; // to be set dynamically;
   }
 }
 
