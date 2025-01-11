@@ -1,4 +1,5 @@
 interface Shop {
+  location: string;
   name: string;
   url: string;
 }
