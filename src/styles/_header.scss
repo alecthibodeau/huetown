@@ -85,12 +85,16 @@ nav {
     text-align: center;
 
     &:nth-of-type(1) {
-      border-top: $border-width-small solid $huetown-green;
+      border-top: $border-width-small solid $twenty-five-kelly-green-paper;
       border-bottom: $border-width-small solid $huetown-yellow;
     }
 
     &:nth-of-type(2) {
       border-bottom: $border-width-small solid $huetown-purple;
+    }
+
+    &:nth-of-type(3) {
+      border-bottom: $border-width-small solid $dark-red;
     }
   }
 
@@ -159,8 +163,7 @@ nav {
       display: flex;
     }
 
-    .nav-link-wrapper:nth-of-type(1),
-    .nav-link-wrapper:nth-of-type(2),
+    .nav-link-wrapper:nth-of-type(n+1),
     form {
       border: none;
     }
