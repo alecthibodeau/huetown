@@ -111,7 +111,7 @@ nav {
     font-family: 'Raleway', sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
-    letter-spacing: .25rem;
+    letter-spacing: .125rem;
     text-decoration: none;
     text-transform: capitalize;
     background-color: transparent;
@@ -154,7 +154,7 @@ nav {
   nav {
     flex-direction: row;
     justify-content: space-around;
-    max-width: 40rem;
+    max-width: 36rem;
     margin: auto;
     background-color: $white;
     backdrop-filter: initial;
