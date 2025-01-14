@@ -14,9 +14,7 @@ const itemsCollection: ItemProps[] = [
   items.printStentorian,
   items.printTarsierTrail,
   items.printTigerMoontain,
-  items.printFunktionslust,
   items.postcardAssets,
-  items.postcardCachalot,
   items.postcardGreatWhiteShark,
   items.postcardHippopotamus,
   items.postcardRhodeIslandWhale,
@@ -27,7 +25,9 @@ const itemsCollection: ItemProps[] = [
   items.lunarCalendar2020,
   items.lunarCalendar2019,
   items.lunarCalendar2018,
-  items.lunarCalendar2017
+  items.lunarCalendar2017,
+  items.printFunktionslust,
+  items.postcardCachalot
 ];
 
 export default itemsCollection;
