@@ -25,8 +25,9 @@ function About(): JSX.Element {
   function renderShopLink(shop: Shop, index: number): JSX.Element {
     return (
       <li key={`${formatText.formatLettersAndNumbers(shop.name)}-${index}`}>
-        <span>{shop.location} &mdash; </span>
         <a className="text-link" href={shop.url}>{shop.name}</a>
+        <span> &mdash; </span>
+        <span>{shop.location}</span>
       </li>
     );
   }
@@ -74,7 +75,7 @@ function About(): JSX.Element {
         </div>
         <div>
           {renderSectionTitle('places')}
-          Huetown items are available at these retail spots in Providence:
+          Huetown items are available at these retail spots in Rhode Island:
           <ul>
             {shops.map(renderShopLink)}
           </ul>
