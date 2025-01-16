@@ -10,6 +10,7 @@ import LunarCalendar from '../interfaces/LunarCalendar';
 import MoonCloudSVG from '../interfaces/MoonCloudSVG';
 
 /* Constants */
+import generatedSkySegments from '../constants/generated-sky-segments';
 import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/lunar-calendars-information';
 import svgPaths from '../constants/svg-paths';
@@ -45,6 +46,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const [skyLines, setSkyLines] = useState<JSX.Element[]>([]);
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
   const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
+  const [isStarsAnimationVisible, setIsStarsAnimationVisible] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(isSameDate(easternTimeZoneDate, new Date(selectedYear, monthJanuary, dateFirst)));
   const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(isSameDate(easternTimeZoneDate, new Date(selectedYear, monthDecember, dateThirtyFirst)));
@@ -57,8 +59,8 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
 
   const isLatestReleaseCurrentYear: boolean = selectedYear === 2025;
   const isNewsInMoonSpace: boolean = false;
+  const isStarPatternRandomlyGenerated: boolean = false;
   const millisecondsCount: number = 10;
-  const starsFrequency: number = 60;
 
   const colorWhite: string = '#fff';
   const colorSeventyPercentGray: string = '#4d4d4d';
@@ -69,7 +71,39 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const selectInfo: string = 'Select info';
   const selectToday: string = 'Select today';
   const selectCloudsAnimation: string = 'Select clouds animation';
+  const selectStarsAnimation: string = 'Select stars animation';
   const goToPrintEdition: string = 'Go to the print edition of the lunar calendar chart';
+
+  const renderSkySegment = useCallback((skyLineIndex: number, skySegmentIndex: number): JSX.Element => {
+    const fadeFrequency: number = Math.floor(Math.random() * 5) + 1;
+    const skySegment: string = 'sky-segment';
+    const starClass: string = ` star fade-${fadeFrequency}${isStarsAnimationVisible ? ' twinkle' : ''}`;
+    let skySegmentClass = '';
+    if (isStarPatternRandomlyGenerated) {
+      if (!Math.floor(Math.random() * 60)) skySegmentClass = starClass;
+    } else {
+      if (generatedSkySegments[skyLineIndex][skySegmentIndex]) skySegmentClass = starClass;
+    }
+    return (
+      <div
+        key={`${skySegment}-${skySegmentIndex}`}
+        className={`${skySegment}${skySegmentClass}`}
+      >
+      </div>
+    );
+  }, [isStarsAnimationVisible, isStarPatternRandomlyGenerated]);
+
+  const renderSkyLine = useCallback((skyLine: string, index: number): JSX.Element => {
+    return (
+      <div key={`${skyLine}-${index}`} className={`${skyLine} ${years[selectedYear]}`}>
+        {Array(150).fill(index).map(renderSkySegment)}
+      </div>
+    );
+  }, [renderSkySegment, selectedYear, years]);
+
+  useEffect(() => {
+    setSkyLines(Array(76).fill('sky-line').map(renderSkyLine));
+  }, [renderSkyLine]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -78,18 +112,6 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
     }, millisecondsCount);
     return () => clearInterval(interval);
   }, [localDate, getEasternTimeZoneDate]);
-
-  const renderSkyLine = useCallback((skyLine: string, index: number): JSX.Element => {
-    return (
-      <div key={`${skyLine}-${index}`} className={`${skyLine} ${years[selectedYear]}`}>
-        {Array(150).fill('sky-segment').map(renderSkySegment)}
-      </div>
-    );
-  }, [selectedYear, years]);
-
-  useEffect(() => {
-    setSkyLines(Array(76).fill('sky-line').map(renderSkyLine));
-  }, [renderSkyLine]);
 
   useEffect(() => {
     setSelectedYear(selectedPhaseDate.getFullYear());
@@ -105,17 +127,6 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
       window.removeEventListener(keydown, keyDownHandler);
     };
   }, [isModalVisible]);
-
-  function renderSkySegment(skySegment: string, index: number): JSX.Element {
-    const segmentClass = Math.floor(Math.random() * starsFrequency) ? '' : ' star';
-    return (
-      <div
-        key={`${skySegment}-${index}`}
-        className={`${skySegment}${segmentClass}`}
-      >
-      </div>
-    );
-  }
 
   function renderMoonCloud(moonCloudSVG: MoonCloudSVG, index: number): JSX.Element {
     return (
@@ -190,6 +201,10 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
     setIsCloudsAnimationVisible(!isCloudsAnimationVisible);
   }
 
+  function onClickStars(): void {
+    setIsStarsAnimationVisible(!isStarsAnimationVisible);
+  }
+
   function delayTime(millisecondsDelay: number): Promise<number> {
     return new Promise((resolve) => setTimeout(resolve, millisecondsDelay));
   }
@@ -204,6 +219,60 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
     setIsNewYearsEve(true);
   }
 
+  const infoModal: JSX.Element = (
+    <div className="info-modal-container">
+      <div className="info-modal">
+        <div className="info-modal-header">
+          <button
+            name="close"
+            className="info-modal-close"
+            onClick={() => setIsModalVisible(false)}>
+            <svg
+              viewBox="30 0 96 96"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon fill={colorSeventyPercentGray} points={closingX}/>
+            </svg>
+          </button>
+        </div>
+        <div className="info-modal-body">
+          {isNewYearsDay ?
+            <div className="info-modal-text">
+              Play all the moon phases for {selectedYear} as an animated sequence.
+            </div> :
+            <div className="info-modal-text">
+              This is a {selectedYear} digital lunar calendar.
+              Select New Year's Day for the option to play all moon phases for {selectedYear}.
+            </div>
+          }
+          <div className="info-modal-button-container">
+            {isNewYearsDay ?
+              <button
+                ref={setButtonRef}
+                className={lunarFeatureButton}
+                onClick={onClickPlayYear}>
+                Play {selectedYear}'s phases
+              </button> :
+              <button
+                ref={setButtonRef}
+                className={lunarFeatureButton}
+                onClick={onClickSelectNewYearsDay}>
+                Select New Year's Day
+              </button>
+            }
+            <button
+              title={selectToday}
+              aria-label={selectToday}
+              className={lunarFeatureButton}
+              onClick={onClickToday}>
+              Select Today
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="moon-space">
       {isNewsInMoonSpace ?
@@ -211,7 +280,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
           <News />
         </div> :
       null}
-      <div className={`${years[selectedYear]} moon-image-container`}>
+      <div className="moon-image-container">
         <div className="phase-container">
           <svg
             viewBox="-13 -13 50 50"
@@ -268,18 +337,18 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
               Info
             </button>
             <button
-              title={selectToday}
-              aria-label={selectToday}
-              className={lunarFeatureButton}
-              onClick={onClickToday}>
-              Today
-            </button>
-            <button
               title={selectCloudsAnimation}
               aria-label={selectCloudsAnimation}
               className={`${years[selectedYear]} ${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected active' : ''}`}
               onClick={onClickClouds}>
               Clouds
+            </button>
+            <button
+              title={selectStarsAnimation}
+              aria-label={selectStarsAnimation}
+              className={`${years[selectedYear]} ${lunarFeatureButton}${isStarsAnimationVisible ? ' selected active' : ''}`}
+              onClick={onClickStars}>
+              Stars
             </button>
             {isLatestReleaseCurrentYear && props.isShopActive ?
               <NavLink
@@ -294,53 +363,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
           </div>
         : null}
       </div>
-
-      {isModalVisible ?
-        <div className="info-modal-container">
-          <div className="info-modal">
-            <div className="info-modal-header">
-              <button
-                name="close"
-                className="info-modal-close"
-                onClick={() => setIsModalVisible(false)}>
-                <svg
-                  viewBox="30 0 96 96"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polygon fill={colorSeventyPercentGray} points={closingX}/>
-                </svg>
-              </button>
-            </div>
-            <div className="info-modal-body">
-              {isNewYearsDay ?
-                <div className="info-modal-play-year-text">
-                  Play all the moon phases for {selectedYear} as an animated sequence.
-                </div> :
-                <div>
-                  This is a {selectedYear} digital lunar calendar.
-                  Select New Year's Day for the option to play all moon phases for {selectedYear}.
-                </div>
-              }
-              <div className="info-modal-button-container">
-                {isNewYearsDay ?
-                  <button
-                    ref={setButtonRef}
-                    className={lunarFeatureButton}
-                    onClick={onClickPlayYear}>
-                    Play {selectedYear}'s phases
-                  </button> :
-                  <button
-                    ref={setButtonRef}
-                    className={lunarFeatureButton}
-                    onClick={onClickSelectNewYearsDay}>
-                    Select New Year's Day
-                  </button>
-                }
-              </div>
-            </div>
-          </div>
-        </div>
-      : null}
+      {isModalVisible ? infoModal : null}
     </div>
   );
 }

@@ -13,14 +13,6 @@
   overflow: hidden;
   height: $moon-space-dimension;
   margin: auto;
-
-  &.twenty-four{
-    background-color: $twenty-four-plum-paper;
-  }
-
-  &.twenty-five {
-    background-color: $twenty-five-kelly-green-paper;
-  }
 }
 
 .cloud {
@@ -84,18 +76,15 @@
 .sky-lines {
   position: relative;
   bottom: $moon-space-dimension;
-  height: $moon-space-dimension;
+  height: calc(#{$moon-space-dimension} + 2px);
   margin: auto;
+  background-color: $twenty-five-kelly-green-paper;
 }
 
 .sky-line {
   display: flex;
   height: 2px;
   margin-bottom: 2px;
-
-  &.twenty-four{
-    background-color: $twenty-four-plum-ink;
-  }
 
   &.twenty-five {
 
@@ -104,7 +93,38 @@
       background-color: $twenty-five-kelly-green-ink;
 
       &.star {
-        background-color: $twenty-five-kelly-green-paper;
+        opacity: 0;
+      }
+
+      &.twinkle {
+        animation-name: opacity-cycle;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+
+        @keyframes opacity-cycle {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+
+        &.fade-1 {
+          animation-duration: .5s;
+        }
+
+        &.fade-2 {
+          animation-duration: .75s;
+        }
+
+        &.fade-3 {
+          animation-duration: 1s;
+        }
+
+        &.fade-4 {
+          animation-duration: 1.5s;
+        }
+
+        &.fade-5 {
+          animation-duration: 2s;
+        }
       }
     }
   }
@@ -190,9 +210,9 @@
   background-color: $sixty-seven-percent-gray;
   color: $white;
 
-  &.is-not-visible {
-    visibility: hidden;
-  }
+  // &.is-not-visible {
+  //   visibility: hidden;
+  // }
 
   &.selected,
   &:hover {
@@ -220,14 +240,13 @@
 
 .info-modal-container {
   position: relative;
-  bottom: 42.75rem;
+  bottom: 44.5rem;
   display: flex;
   justify-content: center;
   z-index: 2;
 }
 
 .info-modal {
-  height: 13rem;
   width: 13rem;
   border-radius: $border-radius-medium;
   background-color: $white;
@@ -253,12 +272,17 @@
   padding: 0 1.125rem .25rem;
 }
 
-.info-modal-button-container {
-  display: flex;
-  justify-content: center;
-  padding: .75rem .125rem .5rem;
+.info-modal-text {
+  margin-bottom: .5rem;
 }
 
-.info-modal-play-year-text {
-  margin-bottom: 1rem;
+.info-modal-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: .5rem;
+
+  button {
+    margin: .25rem auto;
+  }
 }
