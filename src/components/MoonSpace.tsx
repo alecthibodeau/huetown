@@ -39,7 +39,6 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
 
   const [localDate, setLocalDate] = useState<Date>(new Date());
   const [easternTimeZoneDate, setEasternTimeZoneDate] = useState<Date>(getEasternTimeZoneDate(localDate));
-
   const [selectedCalendar, setSelectedCalendar] = useState<LunarCalendar>(lunarCalendarsInformation[easternTimeZoneDate.getFullYear()]);
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(getEasternTimeZoneDate(localDate));
   const [selectedYear, setSelectedYear] = useState<number>(selectedPhaseDate.getFullYear());
@@ -59,6 +58,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const isLatestReleaseCurrentYear: boolean = selectedYear === 2025;
   const isNewsInMoonSpace: boolean = false;
   const millisecondsCount: number = 10;
+  const starsFrequency: number = 60;
 
   const colorWhite: string = '#fff';
   const colorSeventyPercentGray: string = '#4d4d4d';
@@ -107,10 +107,11 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   }, [isModalVisible]);
 
   function renderSkySegment(skySegment: string, index: number): JSX.Element {
+    const segmentClass = Math.floor(Math.random() * starsFrequency) ? '' : ' star';
     return (
       <div
         key={`${skySegment}-${index}`}
-        className={`${skySegment} ${skySegment}-${[Math.floor(Math.random() * 40)]}`}
+        className={`${skySegment}${segmentClass}`}
       >
       </div>
     );
@@ -276,7 +277,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
             <button
               title={selectCloudsAnimation}
               aria-label={selectCloudsAnimation}
-              className={`${years[selectedYear]} ${lunarFeatureButton}`}
+              className={`${years[selectedYear]} ${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected active' : ''}`}
               onClick={onClickClouds}>
               Clouds
             </button>
