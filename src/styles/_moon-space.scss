@@ -84,18 +84,28 @@
 .sky-lines {
   position: relative;
   bottom: $moon-space-dimension;
+  height: $moon-space-dimension;
   margin: auto;
+}
 
-  div {
-    height: 2px;
-    margin-bottom: 2px;
+.sky-line {
+  display: flex;
+  height: 2px;
+  margin-bottom: 2px;
 
-    &.twenty-four{
-      background-color: $twenty-four-plum-ink;
-    }
+  &.twenty-four{
+    background-color: $twenty-four-plum-ink;
+  }
 
-    &.twenty-five {
+  &.twenty-five {
+
+    .sky-segment {
+      width: 2px;
       background-color: $twenty-five-kelly-green-ink;
+
+      &.star {
+        background-color: $twenty-five-kelly-green-paper;
+      }
     }
   }
 }

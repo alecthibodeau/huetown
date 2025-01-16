@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 /* Components */
@@ -42,6 +42,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const [selectedCalendar, setSelectedCalendar] = useState<LunarCalendar>(lunarCalendarsInformation[easternTimeZoneDate.getFullYear()]);
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(getEasternTimeZoneDate(localDate));
   const [selectedYear, setSelectedYear] = useState<number>(selectedPhaseDate.getFullYear());
+  const [skyLines, setSkyLines] = useState<JSX.Element[]>([]);
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
   const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
@@ -57,6 +58,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const isLatestReleaseCurrentYear: boolean = selectedYear === 2025;
   const isNewsInMoonSpace: boolean = false;
   const millisecondsCount: number = 10;
+  const starsFrequency: number = 60;
 
   const colorWhite: string = '#fff';
   const colorSeventyPercentGray: string = '#4d4d4d';
@@ -77,6 +79,18 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
     return () => clearInterval(interval);
   }, [localDate, getEasternTimeZoneDate]);
 
+  const renderSkyLine = useCallback((skyLine: string, index: number): JSX.Element => {
+    return (
+      <div key={`${skyLine}-${index}`} className={`${skyLine} ${years[selectedYear]}`}>
+        {Array(150).fill('sky-segment').map(renderSkySegment)}
+      </div>
+    );
+  }, [selectedYear, years]);
+
+  useEffect(() => {
+    setSkyLines(Array(76).fill('sky-line').map(renderSkyLine));
+  }, [renderSkyLine]);
+
   useEffect(() => {
     setSelectedYear(selectedPhaseDate.getFullYear());
     setSelectedCalendar(lunarCalendarsInformation[selectedYear]);
@@ -92,9 +106,14 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
     };
   }, [isModalVisible]);
 
-  function renderSkyLine(skyLine: string, index: number): JSX.Element {
+  function renderSkySegment(skySegment: string, index: number): JSX.Element {
+    const segmentClass = Math.floor(Math.random() * starsFrequency) ? '' : ' star';
     return (
-      <div key={`${skyLine}-${index}`} className={years[selectedYear]}></div>
+      <div
+        key={`${skySegment}-${index}`}
+        className={`${skySegment}${segmentClass}`}
+      >
+      </div>
     );
   }
 
@@ -167,6 +186,10 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
     setIsNewYearsEve(isSameDate(easternTimeZoneDate, dateNewYearsEve));
   }
 
+  function onClickClouds(): void {
+    setIsCloudsAnimationVisible(!isCloudsAnimationVisible);
+  }
+
   function delayTime(millisecondsDelay: number): Promise<number> {
     return new Promise((resolve) => setTimeout(resolve, millisecondsDelay));
   }
@@ -214,7 +237,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
         {moonClouds.map(renderMoonCloud)}
       </div>
       <div className="sky-lines">
-        {Array(76).fill('sky-line').map(renderSkyLine)}
+        {skyLines}
       </div>
       <div className="moon-info">
 
@@ -255,7 +278,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
               title={selectCloudsAnimation}
               aria-label={selectCloudsAnimation}
               className={`${years[selectedYear]} ${lunarFeatureButton}${isCloudsAnimationVisible ? ' selected active' : ''}`}
-              onClick={() => setIsCloudsAnimationVisible(!isCloudsAnimationVisible)}>
+              onClick={onClickClouds}>
               Clouds
             </button>
             {isLatestReleaseCurrentYear && props.isShopActive ?
