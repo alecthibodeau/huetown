@@ -96,10 +96,17 @@
         opacity: 0;
       }
 
-      &.twinkle {
-        animation-name: opacity-cycle;
-        animation-iteration-count: infinite;
-        animation-direction: alternate-reverse;
+      &.star:not(.twinkle) {
+        animation: opacity-reset .5s 1;
+
+        @keyframes opacity-reset {
+          from { opacity: .5; }
+          to { opacity: 0; }
+        }
+      }
+
+      &.star.twinkle {
+        animation: opacity-cycle infinite alternate-reverse;
 
         @keyframes opacity-cycle {
           from { opacity: 1; }
@@ -209,10 +216,6 @@
   line-height: normal;
   background-color: $sixty-seven-percent-gray;
   color: $white;
-
-  // &.is-not-visible {
-  //   visibility: hidden;
-  // }
 
   &.selected,
   &:hover {
