@@ -75,7 +75,7 @@ function About(): JSX.Element {
         </div>
         <div>
           {renderSectionTitle('places')}
-          Huetown items are available at these retail spots in Rhode Island:
+          Huetown items are available at these retail spots in Providence, Rhode Island:
           <ul>
             {shops.map(renderShopLink)}
           </ul>

@@ -19,8 +19,10 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   const { title, lunarCalendarYear, printEdition, lunarCalendarPaper, lunarCalendarLocation } = props;
   const { latestLunarCalendarId, preorderId } = itemsSpecificInfo;
   const isNewsInInfo: boolean = false;
+  const isExtraPrintDisplayed: boolean = false;
   const isPreorder: boolean = props.id === preorderId;
   const isLatestLunarCalendar: boolean = props.id === latestLunarCalendarId;
+  const isThumbnailsGroupDisplayed: boolean = false;
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
@@ -133,7 +135,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             accompanying <Link className="text-link" to="/moon-space">digital
             lunar calendar</Link>
           </li>
-          {isLatestLunarCalendar ?
+          {isLatestLunarCalendar && isExtraPrintDisplayed ?
             <li>
               <span className="bold">Extra</span>: Each lunar calendar preordered early included
               a <Link className="text-link" to="/shop/prints/tarsier-trail">Tarsier
@@ -141,7 +143,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             </li>
           : null}
         </ul>
-        {isLatestLunarCalendar ?
+        {isLatestLunarCalendar && isExtraPrintDisplayed ?
           <div className="lunar-calendar-accompanying-item">
             <Link to="/shop/prints/tarsier-trail">
               <img
@@ -154,22 +156,24 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
         : null}
       </div>
 
-      <div className="lunar-calendar-thumbnails">
-        {itemsLunarCalendars.thumbnails.map(
-          (group: ThumbnailsGroup, index: number) => {
-            return (
-              <div key={`${group.status}-${index}`} className="thumbnails-group">
-                <div className="thumbnails-title">
-                  {group.status} alec thibodeau lunar&nbsp;calendars
+      {isThumbnailsGroupDisplayed ?
+        <div className="lunar-calendar-thumbnails">
+          {itemsLunarCalendars.thumbnails.map(
+            (group: ThumbnailsGroup, index: number) => {
+              return (
+                <div key={`${group.status}-${index}`} className="thumbnails-group">
+                  <div className="thumbnails-title">
+                    {group.status} alec thibodeau lunar&nbsp;calendars
+                  </div>
+                  <div className="thumbnails">
+                    {group.thumbnails.map(renderThumbnail)}
+                  </div>
                 </div>
-                <div className="thumbnails">
-                  {group.thumbnails.map(renderThumbnail)}
-                </div>
-              </div>
-            )
-          }
-        )}
-      </div>
+              )
+            }
+          )}
+        </div>
+      : null}
     </>
   );
 }

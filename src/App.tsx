@@ -18,6 +18,7 @@ import ItemProps from './interfaces/ItemProps';
 
 /* Constants */
 import itemsCollection from './constants/items-collection';
+import routes from './constants/routes';
 
 /* Helpers */
 import formatText from './helpers/format-text';
@@ -71,13 +72,17 @@ function App(): JSX.Element {
       <Header isBreakpointXs={isBreakpointXs} isShopActive={isShopActive} />
       <main id="main">
         <Routes>
-          {isShopActive ? <Route path="/about" element={<About />} /> : null}
-          {isShopActive ? <Route path="/shop" element={<Shop />} /> : null}
-          {isShopActive ? itemsCollection.map(renderItemRoute) : null}
+          {isShopActive ?
+            <>
+              <Route path={`/${routes.about}`} element={<About />} />
+              <Route path={`/${routes.shop}`} element={<Shop />} />
+              {itemsCollection.map(renderItemRoute)}
+            </>
+          : null}
           <Route path="/" element={<Home isShopActive={isShopActive} />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/moon-space" element={<MoonSpace isShopActive={isShopActive} />} />
-          <Route path="/veganly" element={<Veganly />} />
+          <Route path={`/${routes.contact}`} element={<Contact />} />
+          <Route path={`/${routes.moonSpace}`} element={<MoonSpace isShopActive={isShopActive} />} />
+          <Route path={`/${routes.veganly}`} element={<Veganly />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

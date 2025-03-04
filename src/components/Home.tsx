@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 /* Components */
 import Item from './Item';
 import MoonSpace from './MoonSpace';
@@ -8,11 +11,18 @@ import ItemProps from '../interfaces/ItemProps';
 
 /* Constants */
 import items from '../constants/items';
+import routes from '../constants/routes';
 
 function Home(props: { isShopActive: boolean }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2025;
   const isFeatured: boolean = true;
   const isNewsInHome: boolean = false;
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate(`/${routes.moonSpace}`);
+  }, [navigate]);
 
   return (
     <>
