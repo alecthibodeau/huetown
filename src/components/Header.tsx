@@ -9,6 +9,9 @@ import images from '../constants/images';
 import routes from '../constants/routes';
 import text from '../constants/text';
 
+/* Styles */
+import '../styles/header.scss';
+
 function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const { huetownLogoGrayDark, huetownLogoWhite } = images.header;
@@ -32,11 +35,11 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
     setIsMobileNavOpen(false);
   }
 
-  function renderBurgerBar(bar: string, index: number): JSX.Element {
+  function renderBurgerBar(burgerBar: string, index: number): JSX.Element {
     return (
       <div
-        key={`${bar}-${index}`}
-        className={`${bar}${isMobileNavOpen ? ' closing-x-bar' : ''}`}>
+        key={`${burgerBar}-${index}`}
+        className={`${burgerBar}${isMobileNavOpen ? ' closing-x-bar' : ''}`}>
       </div>
     )
   }
@@ -69,7 +72,7 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
             className={`burger-button${isMobileNavOpen ? ' closing-x-button' : ''}`}
             onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
             <div className="burger-bars-container">
-              {Array(3).fill('bar').map(renderBurgerBar)}
+              {Array(3).fill('burger-bar').map(renderBurgerBar)}
             </div>
           </button>
         : null}

@@ -15,6 +15,9 @@ import images from '../constants/images';
 import itemsLunarCalendars from '../constants/items-lunar-calendars';
 import itemsSpecificInfo from '../constants/items-specific-info';
 
+/* Styles */
+import '../styles/lunar-calendar-info.scss';
+
 function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   const { title, lunarCalendarYear, printEdition, lunarCalendarPaper, lunarCalendarLocation } = props;
   const { latestLunarCalendarId, preorderId } = itemsSpecificInfo;

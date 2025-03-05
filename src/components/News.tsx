@@ -1,3 +1,6 @@
+/* Styles */
+import '../styles/news.scss';
+
 function News(): JSX.Element {
   return (
     <div className="news-text-container">

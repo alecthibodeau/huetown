@@ -13,6 +13,9 @@ import shops from '../constants/shops';
 /* Helpers */
 import formatText from '../helpers/format-text';
 
+/* Styles */
+import '../styles/about.scss';
+
 function About(): JSX.Element {
   const { hLogo, selfPortrait } = images.about;
 

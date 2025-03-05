@@ -20,6 +20,9 @@ import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
 import formatDateAndTime from '../helpers/format-date-and-time';
 import formatText from '../helpers/format-text';
 
+/* Styles */
+import '../styles/moon-space.scss';
+
 function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const {
     monthJanuary,

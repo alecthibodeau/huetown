@@ -1,0 +1,43 @@
+@use './_variables' as *;
+
+$footer-icon-size: 2.5rem;
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+
+  .icon-link-container {
+    margin: 1rem $footer-icon-size/2;
+  }
+
+  .icon-link {
+
+    img {
+      width: $footer-icon-size;
+      vertical-align: top;
+      position: relative;
+      z-index: 10;
+    }
+
+    /**
+     * The dimensions are a percentage (of the parent anchor) to keep from bleeding
+     * The positions are (100 - dimension)/2 for centering
+     */
+    div {
+      width: 93%;
+      height: 93%;
+      position: relative;
+      bottom: calc(#{$footer-icon-size} - 3.5%);
+      left: 3.5%;
+      border-radius: $border-radius-large;
+      background-color: transparent;
+    }
+
+    // Show background div on parent anchor's hover or focus
+    &:hover div,
+    &:focus div {
+      background-color: $rainbow-yellow;
+    }
+  }
+}

@@ -1,11 +1,3 @@
-@use './about' as *;
-@use './footer' as *;
-@use './header' as *;
-@use './item' as *;
-@use './lunar-calendar-info' as *;
-@use './news' as *;
-@use './moon-space' as *;
-@use './shop' as *;
 @use './variables' as *;
 
 html {
@@ -26,57 +18,45 @@ main {
   padding: .5rem auto;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5rem;
+}
 
-  .text-link {
-    text-decoration: none;
+.text-link {
+  text-decoration: none;
+  color: $dark-kelly-green;
+  font-weight: 600;
+
+  &:link,
+  &:visited,
+  &:active {
     color: $dark-kelly-green;
-    font-weight: 600;
+  }
 
+  &.shop-link {
+    color: $application-font-color;
     &:link,
     &:visited,
     &:active {
-      color: $dark-kelly-green;
-    }
-
-    &.shop-link {
       color: $application-font-color;
-      &:link,
-      &:visited,
-      &:active {
-        color: $application-font-color;
-      }
-    }
-
-    &:hover:not(.shop-link) {
-      color: $twenty-four-plum-paper;
-      text-decoration: underline;
-      cursor: pointer;
     }
   }
 
-  .item-preorder-text {
-    color: $dark-kelly-green;
-    font-weight: 700;
+  &:hover:not(.shop-link) {
+    color: $twenty-four-plum-paper;
+    text-decoration: underline;
+    cursor: pointer;
   }
+}
 
-  .item-sold-out {
-    color: $dark-red;
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+.ital {
+  font-style: italic;
+}
 
-  .ital {
-    font-style: italic;
-  }
+.bold {
+  font-weight: 700;
+}
 
-  .bold {
-    font-weight: 700;
-  }
-
-  .not-found-error {
-    text-align: center;
-  }
+.not-found-error {
+  text-align: center;
 }
 
 /* Media Queries */

@@ -14,6 +14,9 @@ import text from '../constants/text';
 /* Helpers */
 import formatText from '../helpers/format-text';
 
+/* Styles */
+import '../styles/item.scss';
+
 function Item(props: ItemProps): JSX.Element {
   const [quantity, setQuantity] = useState<string>('1');
   const [isInputValid, setIsInputValid] = useState<boolean>(true);
@@ -135,7 +138,12 @@ function Item(props: ItemProps): JSX.Element {
                     Qty.
                   </span>
                 </div>
-                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <form
+                  target="paypal"
+                  action="https://www.paypal.com/cgi-bin/webscr"
+                  method="post"
+                  className="item-form"
+                >
                   <input
                     name="cmd"
                     type="hidden"

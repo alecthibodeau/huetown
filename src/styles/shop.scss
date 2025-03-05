@@ -109,6 +109,18 @@
   font-size: 1.5rem;
 }
 
+.item-preorder-text {
+  color: $dark-kelly-green;
+  font-weight: 700;
+}
+
+.item-sold-out {
+  color: $dark-red;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 /* Media Queries */
 
 @media (min-width: $breakpoint-sm) {

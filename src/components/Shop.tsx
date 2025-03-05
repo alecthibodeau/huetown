@@ -12,6 +12,9 @@ import text from '../constants/text';
 /* Helpers */
 import formatText from '../helpers/format-text';
 
+/* Styles */
+import '../styles/shop.scss';
+
 function Shop(): JSX.Element {
   const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = formatText;
   const [itemsCategory, setItemsCategory] = useState<string>(text.all);

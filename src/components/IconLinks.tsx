@@ -19,20 +19,20 @@ function IconLinks(props: IconLinksProps): JSX.Element {
     }
   ];
 
-  function renderIconSection(link: IconLink, index: number): JSX.Element {
+  function renderIconLinkContainer(link: IconLink, index: number): JSX.Element {
     return (
-      <section key={`${link.title}-${index}`}>
-        <a data-title={link.title} href={link.url}>
+      <div key={`${link.title}-${index}`} className="icon-link-container">
+        <a data-title={link.title} href={link.url} className="icon-link">
           <img src={link.src} alt={`Huetown ${link.title} icon`} />
           <div></div>
         </a>
-      </section>
+      </div>
     )
   }
 
   return (
     <>
-      {iconLinks.map(renderIconSection)}
+      {iconLinks.map(renderIconLinkContainer)}
     </>
   );
 }

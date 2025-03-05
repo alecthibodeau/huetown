@@ -99,37 +99,37 @@
     font-size: .875rem;
   }
 
-  form {
+  .item-form {
     display: flex;
     align-items: stretch;
+  }
 
-    input[name="quantity"] {
-      width: 2.5rem;
-      min-height: 2.25rem;
-      padding: 0;
-      border: $border-width-small solid $fifty-percent-gray;
-      margin-right: .5rem;
-      font-size: .75rem;
-      text-align: center;
-    }
+  input[name="quantity"] {
+    width: 2.5rem;
+    min-height: 2.25rem;
+    padding: 0;
+    border: $border-width-small solid $fifty-percent-gray;
+    margin-right: .5rem;
+    font-size: .75rem;
+    text-align: center;
+  }
 
-    input[value="Add to cart"] {
-      width: 10rem;
-      border: none;
-      border-radius: $border-radius-small;
-      background-color: $sixty-seven-percent-gray;
-      color: $white;
-      font-family: "Raleway", sans-serif;
-      font-size: .875rem;
-      font-weight: 600;
-      letter-spacing: .125rem;
-      cursor: pointer;
+  input[value="Add to cart"] {
+    width: 10rem;
+    border: none;
+    border-radius: $border-radius-small;
+    background-color: $sixty-seven-percent-gray;
+    color: $white;
+    font-family: "Raleway", sans-serif;
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: .125rem;
+    cursor: pointer;
 
-      &:hover {
-        border: $border-width-medium solid $sixty-seven-percent-gray;
-        color: $black;
-        background-color: $rainbow-yellow;
-      }
+    &:hover {
+      border: $border-width-medium solid $sixty-seven-percent-gray;
+      color: $black;
+      background-color: $rainbow-yellow;
     }
   }
 
