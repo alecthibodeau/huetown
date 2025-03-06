@@ -100,12 +100,12 @@ nav {
   }
 }
 
-form {
+.paypal-cart-form {
   border-bottom: $border-width-small solid $orange-muted;
 }
 
 .nav-link,
-form input.paypal-link {
+.paypal-cart-form input.paypal-link {
   display: block;
   width: 100%;
   padding: 1.5rem 0;
@@ -167,12 +167,12 @@ form input.paypal-link {
   }
 
   .nav-link-wrapper:nth-of-type(n+1),
-  form {
+  .paypal-cart-form {
     border: none;
   }
 
   .nav-link,
-  form input.paypal-link {
+  .paypal-cart-form input.paypal-link {
     padding: 0 0 .25rem;
     border-bottom: $border-width-large solid transparent;
     transition: all 0.125s linear;
