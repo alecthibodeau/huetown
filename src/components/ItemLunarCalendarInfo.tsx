@@ -22,10 +22,10 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   const { title, lunarCalendarYear, printEdition, lunarCalendarPaper, lunarCalendarLocation } = props;
   const { latestLunarCalendarId, preorderId } = itemsSpecificInfo;
   const isNewsInInfo: boolean = false;
-  const isExtraPrintDisplayed: boolean = false;
+  const isExtraPrintDisplayed: boolean = true;
   const isPreorder: boolean = props.id === preorderId;
   const isLatestLunarCalendar: boolean = props.id === latestLunarCalendarId;
-  const isThumbnailsGroupDisplayed: boolean = false;
+  const isThumbnailsGroupDisplayed: boolean = true;
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
