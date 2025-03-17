@@ -6,6 +6,9 @@ import items from './items';
 
 const itemsCollection: ItemProps[] = [
   items.lunarCalendar2025,
+  items.lunarCalendar2024,
+  items.lunarCalendar2023,
+  items.lunarCalendar2022,
   items.printAbundance,
   items.printOrcaLumina,
   items.printPanTerra,
@@ -14,20 +17,7 @@ const itemsCollection: ItemProps[] = [
   items.printStentorian,
   items.printTarsierTrail,
   items.printTigerMoontain,
-  items.postcardAssets,
-  items.postcardGreatWhiteShark,
-  items.postcardHippopotamus,
-  items.postcardRhodeIslandWhale,
-  items.lunarCalendar2024,
-  items.lunarCalendar2023,
-  items.lunarCalendar2022,
-  items.lunarCalendar2021,
-  items.lunarCalendar2020,
-  items.lunarCalendar2019,
-  items.lunarCalendar2018,
-  items.lunarCalendar2017,
-  items.printFunktionslust,
-  items.postcardCachalot
+  items.printFunktionslust
 ];
 
 export default itemsCollection;
