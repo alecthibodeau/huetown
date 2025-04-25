@@ -93,7 +93,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
       <div className="lunar-calendar-description">
         <p>
           {renderSpan(title, true)} is a letterpress-printed lunar calendar
-          designed and drawn by Alec Thibodeau (me!), chronicling all phases of
+          designed and drawn by Alec Thibodeau, chronicling all phases of
           the moon for {renderSpan(lunarCalendarYear)}. From an edition
           of {renderSpan(printEdition)} prints {renderSpan(title, true)} continues
           Alec's ongoing lunar calendar series, which features ornate illustrations
