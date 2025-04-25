@@ -38,13 +38,18 @@ function About(): JSX.Element {
   return (
     <div className="about-content">
       <div className="about-upper">
-        <img className="self-portrait" src={selfPortrait} alt="Self portrait drawing" />
         <div>
-          <span className="bold">Huetown</span> is the web shop for artist Alec Thibodeau (me!).
-          I make drawings, prints and more. Select items are currently available for purchase in
-          the <Link className="text-link" to="/shop">shop</Link>. Past work can be found at my
-          portfolio site: <a className="text-link" href="https://alecthibodeau.com">alecthibodeau.com</a>. I
-          also <a className="text-link" href="https://alect.me">write code</a>.
+          <img className="self-portrait" src={selfPortrait} alt="Self portrait drawing" />
+          <div className="about-description">
+            Hello, I'm Alec. Welcome to Huetown, the place for my recent work in
+            drawing, printmaking and more. Select items are available in
+            the <Link className="text-link" to="/shop">shop</Link>. Interact
+            with <Link className="text-link" to="/moon-space">
+            Moon Space</Link>, which I've built as a digital accompaniment to my
+            letterpress-printed lunar calendar. Past work can
+            be found at my portfolio site: <a className="text-link" href="https://alecthibodeau.com">
+            alecthibodeau.com</a>.
+          </div>
         </div>
         <img className="huetown-h-logo" src={hLogo} alt="Huetown H logo"/>
       </div>
@@ -55,7 +60,7 @@ function About(): JSX.Element {
         </div>
         <div>
           {renderSectionTitle('ordering')}
-          Buy with confidence! I securely process all credit card payments made at Huetown
+          Buy with confidence. I securely process all credit card payments at Huetown
           through <a className="text-link" href="https://www.paypal.com">PayPal</a>.
         </div>
         <div id="shipping">
@@ -73,8 +78,9 @@ function About(): JSX.Element {
         </div>
         <div>
           {renderSectionTitle('follow')}
-          Check out Huetown on <a className="text-link" href="https://www.instagram.com/huetown">Instagram</a>. Or sign up below for Huetown's email list.
-          Your information won't be shared with miscreants.
+          Check out Huetown on <a className="text-link" href="https://www.instagram.com/huetown">
+          Instagram</a>. Or sign up below for Huetown's email list. Your
+          information won't be shared with miscreants.
         </div>
         <div>
           {renderSectionTitle('places')}

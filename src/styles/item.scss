@@ -123,7 +123,7 @@
     font-family: "Raleway", sans-serif;
     font-size: .875rem;
     font-weight: 600;
-    letter-spacing: .125rem;
+    letter-spacing: $button-and-nav-link-letter-spacing;
     cursor: pointer;
 
     &:hover {

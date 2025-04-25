@@ -1,34 +1,31 @@
 /* Responsive Breakpoints */
-
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1400px;
 
-/* Colors */
-
+/* Colors Grayscale */
 $black: #000;
 $white: #fff;
 $whiteFilter: invert(97%) sepia(100%) saturate(0%) hue-rotate(309deg) brightness(104%) contrast(104%);
 $dark-film: rgb(30 30 30 / 0.9);
-
 $twenty-percent-gray: #ccc;
 $fifty-percent-gray: #7f7f7f;
 $sixty-percent-gray: #666;
 $sixty-seven-percent-gray: #555;
 $seventy-percent-gray: #4d4d4d;
 $eighty-percent-gray: #333;
-
 $html-gray: #808080;
 $border-gray: $sixty-percent-gray;
+$application-font-color: $eighty-percent-gray;
 
+/* Colors Hued */
 $huetown-red: #e78460;
 $huetown-yellow: #edde95;
 $huetown-green: #6abbb6;
 $huetown-blue: #6ecde5;
 $huetown-purple: #c651e5;
-
 $red: #f00;
 $dark-green: #2b792e;
 $orange-muted: #ff9600;
@@ -36,7 +33,6 @@ $rainbow-yellow: #fbde84;
 $dark-red: #a80e03;
 $kelly-green: #398360;
 $dark-kelly-green: #2e6049;
-
 $twenty-three-blue-paper: #008eb2;
 $twenty-three-blue-ink: #145b6e;
 $twenty-four-plum-paper: #a3469c;
@@ -44,10 +40,7 @@ $twenty-four-plum-ink: #3b044f;
 $twenty-five-kelly-green-paper: #178d6a;
 $twenty-five-kelly-green-ink: #08332c;
 
-$application-font-color: $eighty-percent-gray;
-
 /* Dimensions */
-
 $page-width: 90%;
 $page-gutter: 5%;
 $character-width: 80ch;
@@ -61,7 +54,6 @@ $image-dimension-xtra-large: 700px;
 $moon-space-dimension: 300px;
 
 /* Border */
-
 $border-width-small: 1px;
 $border-width-medium: 2px;
 $border-width-large: 3px;
@@ -72,5 +64,7 @@ $border-radius-large: .625rem;
 $border-radius-xtra-large: 1rem;
 
 /* Effects */
-
 $hover-shadow: .25rem .25rem 1rem $html-gray;
+
+/* Fonts */
+$button-and-nav-link-letter-spacing: .125rem;

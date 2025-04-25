@@ -5,19 +5,20 @@
   margin-top: .5rem;
 }
 
-.about-upper div {
-  position: relative;
-  bottom: .25rem;
-
-  span.bold {
-    font-weight: 600;
-  }
+.about-upper {
+  display: flex;
+  align-items: flex-start;
 }
 
 .self-portrait {
   width: $about-image-dimension;
   margin-right: 1rem;
   float: left;
+}
+
+.about-description {
+  position: relative;
+  bottom: .25rem;
 }
 
 .huetown-h-logo {
@@ -81,7 +82,7 @@
   font-weight: 600;
   background-color: $sixty-seven-percent-gray;
   color: $white;
-  letter-spacing: .3125rem;
+  letter-spacing: $button-and-nav-link-letter-spacing;
   text-transform: capitalize;
 
   &:hover {
@@ -94,12 +95,6 @@
 /* Media Queries */
 
 @media (min-width: $breakpoint-sm) {
-
-  .about-upper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
 
   .huetown-h-logo {
     display: block;
