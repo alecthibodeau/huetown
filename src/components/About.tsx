@@ -41,13 +41,12 @@ function About(): JSX.Element {
         <div>
           <img className="self-portrait" src={selfPortrait} alt="Self portrait drawing" />
           <div className="about-description">
-            Hello, I'm Alec. Welcome to Huetown, the place for my recent work in
-            drawing, printmaking and more. Select items are available in
-            the <Link className="text-link" to="/shop">shop</Link>. Interact
-            with <Link className="text-link" to="/moon-space">
-            Moon Space</Link>, which I've built as a digital accompaniment to my
-            letterpress-printed lunar calendar. Past work can
-            be found at my portfolio site: <a className="text-link" href="https://alecthibodeau.com">
+            Welcome to Huetown, a site for the recent work of artist Alec
+            Thibodeau. Spend time with <Link className="text-link" to="/moon-space">
+            Moon Space</Link>, an interactive lunar calendar. See
+            the <Link className="text-link" to="/shop">shop</Link> for currently
+            available items. Alec's earlier work can be found at his portfolio
+            site: <a className="text-link" href="https://alecthibodeau.com">
             alecthibodeau.com</a>.
           </div>
         </div>
@@ -60,14 +59,14 @@ function About(): JSX.Element {
         </div>
         <div>
           {renderSectionTitle('ordering')}
-          Buy with confidence. I securely process all credit card payments at Huetown
+          All credit card payments at Huetown are securely processed
           through <a className="text-link" href="https://www.paypal.com">PayPal</a>.
         </div>
         <div id="shipping">
           {renderSectionTitle('shipping')}
           All orders ship in sturdy packaging from Providence, Rhode Island USA.
           Shipping is via United States Postal Service (USPS) Priority Mail &mdash; or
-          a comparably fast service for the delivery region via USPS or United
+          a comparably fast service for the same delivery region via USPS or United
           Parcel Service (UPS). Flat rates are $8 for domestic shipments within
           the USA or $29 for international delivery to any other country. Packages
           generally ship within a couple business days of an order being placed,
