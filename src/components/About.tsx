@@ -41,12 +41,13 @@ function About(): JSX.Element {
         <div>
           <img className="self-portrait" src={selfPortrait} alt="Self portrait drawing" />
           <div className="about-description">
-            Welcome to Huetown, a site for the recent work of artist Alec
+            Welcome to Huetown, featuring the work of artist Alec
             Thibodeau. Spend time with <Link className="text-link" to="/moon-space">
-            Moon Space</Link>, an interactive lunar calendar. See
-            the <Link className="text-link" to="/shop">shop</Link> for currently
-            available items. Alec's earlier work can be found at his portfolio
-            site: <a className="text-link" href="https://alecthibodeau.com">
+            Moon Space</Link>, an interactive calendar that displays
+            date-specific lunar phases (and animated clouds and stars). Visit
+            the <Link className="text-link" to="/shop">shop</Link> to order available
+            items. For Alec's early explorations in drawing, printmaking and related work
+            go to <a className="text-link" href="https://alecthibodeau.com">
             alecthibodeau.com</a>.
           </div>
         </div>
