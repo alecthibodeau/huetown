@@ -12,7 +12,7 @@ const postcardTextPrefix: string = 'Caption on the back:';
 
 const text: { [key: string]: string }  = {
   addToCart: 'Add to cart',
-  viewCart: 'cart',
+  viewCart: 'view cart',
   shipsFlat: 'Ships flat',
   all: 'all',
   colossalBlurb: 'Ornate renderings of natural life frame the elegant letterpress print, which expertly melds artful illustration with timely information.',
