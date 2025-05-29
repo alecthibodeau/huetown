@@ -24,8 +24,8 @@ function Item(props: ItemProps): JSX.Element {
   const [validationdMessage, setValidationdMessage] = useState<string>('');
 
   const digitsValidation: RegExp = new RegExp(/^\d+$/);
-  const categoryClass: string = formatText.formatDashes(props.category);
-  const titleClass: string = formatText.formatDashes(props.title);
+  const categoryClass: string = formatText.formatDashCase(props.category);
+  const titleClass: string = formatText.formatDashCase(props.title);
   const islunarCalendar2023: boolean = props.lunarCalendarYear === 2023;
   const isLunarCalendar: boolean = props.category === text.lunarCalendar;
   const isPreorder: boolean = props.id === itemsSpecificInfo.preorderId;

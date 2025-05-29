@@ -16,7 +16,7 @@ import formatText from '../helpers/format-text';
 import '../styles/shop.scss';
 
 function Shop(): JSX.Element {
-  const { formatDashes, formatLettersAndNumbers, formatItemRoutePath } = formatText;
+  const { formatDashCase, formatLettersAndNumbers, formatItemRoutePath } = formatText;
   const [itemsCategory, setItemsCategory] = useState<string>(text.all);
   const [userSearchInput, setUserSearchInput] = useState<string>('');
   const isAllItems: boolean = itemsCategory === text.all;
@@ -100,7 +100,7 @@ function Shop(): JSX.Element {
         to={isPreorder ? '/' : formatItemRoutePath(item.category, item.title)}
       >
         <img
-          className={`item-card-image ${formatDashes(item.category)} ${formatDashes(item.title)}`}
+          className={`item-card-image ${formatDashCase(item.category)} ${formatDashCase(item.title)}`}
           src={item.category === text.lunarCalendar && item.detailImages
             ? item.detailImages[lunarCalendarAngledViewIndex]
             : item.featureImage}

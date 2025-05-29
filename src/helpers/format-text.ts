@@ -6,7 +6,7 @@ function formatPadStart(unit: number): string {
   return unit.toString().padStart(2, '0');
 }
 
-function formatDashes(text: string): string {
+function formatDashCase(text: string): string {
   return text.toLowerCase().replace(allButLettersNumbersAndSpaces, '').replace(allSpaces, '-');
 }
 
@@ -15,13 +15,13 @@ function formatLettersAndNumbers(text: string): string {
 }
 
 function formatItemRoutePath(category: string, title: string): string {
-  return `/shop/${formatDashes(category)}s/${formatDashes(title)}`;
+  return `/shop/${formatDashCase(category)}s/${formatDashCase(title)}`;
 }
 
 const formatText = {
   allSpaces,
   formatPadStart,
-  formatDashes,
+  formatDashCase,
   formatLettersAndNumbers,
   formatItemRoutePath
 };
