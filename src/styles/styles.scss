@@ -1,5 +1,11 @@
 @use './variables' as *;
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -12,10 +18,10 @@ body {
 
 main {
   position: relative;
-  top: 60px;
   display: flex;
   justify-content: center;
-  padding: .5rem auto;
+  flex: 1;
+  padding-top: 60px;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5rem;
 }
@@ -47,6 +53,21 @@ main {
   }
 }
 
+.text-link-light {
+  text-decoration: none;
+  color: $white;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: $white
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .ital {
   font-style: italic;
 }
@@ -64,6 +85,6 @@ main {
 @media (min-width: $breakpoint-sm) {
 
   main {
-    top: initial;
+    padding-top: initial;
   }
 }

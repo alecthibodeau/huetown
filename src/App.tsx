@@ -86,7 +86,7 @@ function App(): JSX.Element {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      {!isBreakpointXs ? <Footer /> : null}
+      <Footer />
     </BrowserRouter>
   );
 }

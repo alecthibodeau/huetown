@@ -1,43 +1,49 @@
 @use './_variables' as *;
 
-$footer-icon-size: 2.5rem;
-
 footer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: .875rem;
+}
+
+.footer-bar {
+  display: flex;
   justify-content: center;
-  margin: 1rem auto;
+  width: 100%;
+  background-color: $eighty-percent-gray;
+}
 
-  .icon-link-container {
-    margin: 1rem $footer-icon-size/2;
-  }
+.footer-information {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $breakpoint-xl;
+  color: $white;
+}
 
-  .icon-link {
+.footer-left {
+  padding: 1rem;
+}
 
-    img {
-      width: $footer-icon-size;
-      vertical-align: top;
-      position: relative;
-      z-index: 10;
-    }
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  padding: 1rem;
+}
 
-    /**
-     * The dimensions are a percentage (of the parent anchor) to keep from bleeding
-     * The positions are (100 - dimension)/2 for centering
-     */
-    div {
-      width: 93%;
-      height: 93%;
-      position: relative;
-      bottom: calc(#{$footer-icon-size} - 3.5%);
-      left: 3.5%;
-      border-radius: $border-radius-large;
-      background-color: transparent;
-    }
+.footer-copyright-text {
+  font-size: .75rem;
+}
 
-    // Show background div on parent anchor's hover or focus
-    &:hover div,
-    &:focus div {
-      background-color: $rainbow-yellow;
-    }
+/* Media Queries */
+
+@media (min-width: $breakpoint-sm) {
+
+  .footer-left,
+  .footer-right {
+    padding-inline: 2rem;
   }
 }
