@@ -17,8 +17,6 @@ $sixty-seven-percent-gray: #555;
 $seventy-percent-gray: #4d4d4d;
 $eighty-percent-gray: #333;
 $html-gray: #808080;
-$border-gray: $sixty-percent-gray;
-$application-font-color: $eighty-percent-gray;
 
 /* Colors Hued */
 $huetown-red: #e78460;
@@ -39,6 +37,11 @@ $twenty-four-plum-paper: #a3469c;
 $twenty-four-plum-ink: #3b044f;
 $twenty-five-kelly-green-paper: #178d6a;
 $twenty-five-kelly-green-ink: #08332c;
+
+/* Colors Assigned */
+$border-gray: $sixty-percent-gray;
+$color-dark-background: $eighty-percent-gray;
+$color-application-font: $color-dark-background;
 
 /* Dimensions */
 $page-width: 90%;

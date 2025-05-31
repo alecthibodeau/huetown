@@ -40,11 +40,11 @@
     border: $border-standard;
     border-radius: $border-radius-small;
     background-color: transparent;
-    color: $eighty-percent-gray;
+    color: $color-application-font;
 
     &:hover,
     &.selected {
-      background-color: $eighty-percent-gray;
+      background-color: $color-dark-background;
       color: $white;
     }
   }

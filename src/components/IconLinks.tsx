@@ -1,38 +1,37 @@
 /* Interfaces */
 import IconLink from '../interfaces/IconLink';
-import IconLinksProps from '../interfaces/IconLinksProps';
 
 /* Constants */
 import images from '../constants/images';
 
-function IconLinks(props: IconLinksProps): JSX.Element {
-  const {
-    instagramGray,
-    instagramWhite
-  } = images.icons;
+function IconLinks(): JSX.Element {
+  const { instagramWhite } = images.icons;
 
   const iconLinks: IconLink[] = [
     {
       title: 'Instagram',
       url: 'https://www.instagram.com/huetown',
-      src: props.isForMobileNav ? instagramWhite : instagramGray
+      src: instagramWhite
     }
   ];
 
-  function renderIconLinkContainer(link: IconLink, index: number): JSX.Element {
+  function renderIconLinkWrapper(link: IconLink, index: number): JSX.Element {
     return (
-      <div key={`${link.title}-${index}`} className="icon-link-container">
-        <a data-title={link.title} href={link.url} className="icon-link">
-          <img src={link.src} alt={`Huetown ${link.title} icon`} />
-          <div></div>
-        </a>
-      </div>
+      <a
+        key={`${link.title}-${index}`}
+        data-title={link.title} href={link.url}
+        className="icon-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={link.src} alt={`Huetown ${link.title} icon`} />
+      </a>
     )
   }
 
   return (
     <>
-      {iconLinks.map(renderIconLinkContainer)}
+      {iconLinks.map(renderIconLinkWrapper)}
     </>
   );
 }

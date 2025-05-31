@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-/* Interfaces */
-import IconLinks from './IconLinks';
-
 /* Constants */
 import images from '../constants/images';
 import routes from '../constants/routes';
@@ -112,9 +109,6 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
             {renderNavLinkWrapper(contact)}
           </>
         }
-        {props.isBreakpointXs ? <div className="nav-menu-icons">
-          <IconLinks isForMobileNav />
-        </div>: null}
       </nav>
     </header>
   );

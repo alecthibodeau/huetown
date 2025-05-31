@@ -128,8 +128,10 @@ function Shop(): JSX.Element {
       <div className="shop-info">
         <div className="items-search">
           <span>
-            {`${isAllItems ? itemsCollection.length : filteredItems.length}
-            item${filteredItems.length === 1 || itemsCollection.length === 1 ? '' : 's'}`}
+            {`
+              ${isAllItems ? itemsCollection.length : filteredItems.length}
+              item${filteredItems.length === 1 || itemsCollection.length === 1 ? '' : 's'}
+            `}
           </span>
           {itemsCollection.length && itemsCollection.length !== 1 ?
             <div className="filter-container">

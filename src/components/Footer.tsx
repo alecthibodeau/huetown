@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 
+/* Conmponents */
+import IconLinks from './IconLinks';
+
 /* Helpers */
 import scrollToTop from '../helpers/scroll-to-top';
 
@@ -12,11 +15,10 @@ function Footer(): JSX.Element {
       <div className="footer-bar">
         <div className="footer-information">
           <div className="footer-left">
-            <div className="footer-copyright-text">
-              &copy;{` Huetown ${new Date().getFullYear()}`}
-            </div>
+            &copy;{` Huetown ${new Date().getFullYear()}`}
           </div>
           <div className="footer-right">
+            <IconLinks />
             <Link
               className="text-link-light"
               to="/"

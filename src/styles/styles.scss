@@ -13,7 +13,8 @@ html {
 body {
   max-width: 87.5rem;
   margin: auto;
-  color: $application-font-color;
+  color: $color-application-font;
+  font-family: 'Open Sans', sans-serif;
 }
 
 main {
@@ -22,7 +23,7 @@ main {
   justify-content: center;
   flex: 1;
   padding-top: 60px;
-  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1rem;
   line-height: 1.5rem;
 }
 
@@ -38,11 +39,11 @@ main {
   }
 
   &.shop-link {
-    color: $application-font-color;
+    color: $color-application-font;
     &:link,
     &:visited,
     &:active {
-      color: $application-font-color;
+      color: $color-application-font;
     }
   }
 
@@ -64,6 +65,7 @@ main {
   }
 
   &:hover {
+    color: $rainbow-yellow;
     text-decoration: underline;
   }
 }

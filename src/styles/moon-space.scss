@@ -207,19 +207,19 @@
 
 .lunar-feature-button {
   padding: .25rem .75rem;
-  border: $border-width-medium solid $sixty-seven-percent-gray;
+  border: $border-width-medium solid $color-dark-background;
   border-radius: $border-radius-medium;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: .75rem;
   text-decoration: none;
   line-height: normal;
-  background-color: $sixty-seven-percent-gray;
+  background-color: $color-dark-background;
   color: $white;
 
   &.selected,
   &:hover {
-    color: $sixty-seven-percent-gray;
+    color: $color-application-font;
     background-color: $white;
   }
 
@@ -268,7 +268,7 @@
   border: none;
   margin: .625rem .625rem .125rem;
   background-color: $white;
-  color: $eighty-percent-gray;
+  color: $color-application-font;
 }
 
 .info-modal-body {
