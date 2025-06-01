@@ -8,6 +8,7 @@ import Shop from '../interfaces/Shop';
 
 /* Constants */
 import images from '../constants/images';
+import routes from '../constants/routes';
 import shops from '../constants/shops';
 
 /* Helpers */
@@ -80,7 +81,7 @@ function About(): JSX.Element {
           {renderSectionTitle('follow')}
           Check out Huetown on <a className="text-link" href="https://www.instagram.com/huetown">
           Instagram</a>. Or sign up below for Huetown's email list. Your
-          information won't be shared with miscreants.
+          information won't be shared with miscreants: view Huetown's <Link className="text-link" to={`/${routes.privacyPolicy}`}>Privacy Policy</Link>.
         </div>
         <div>
           {renderSectionTitle('places')}

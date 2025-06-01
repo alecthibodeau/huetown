@@ -80,13 +80,13 @@
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  background-color: $sixty-seven-percent-gray;
+  background-color: $color-dark-background;
   color: $white;
   letter-spacing: $button-and-nav-link-letter-spacing;
   text-transform: capitalize;
 
   &:hover {
-    border-color: $sixty-seven-percent-gray;
+    border-color: $color-application-font;
     background-color: $rainbow-yellow;
     color: $black;
   }

@@ -118,7 +118,7 @@
     width: 10rem;
     border: none;
     border-radius: $border-radius-small;
-    background-color: $sixty-seven-percent-gray;
+    background-color: $color-dark-background;
     color: $white;
     font-family: "Raleway", sans-serif;
     font-size: .875rem;
@@ -127,7 +127,7 @@
     cursor: pointer;
 
     &:hover {
-      border: $border-width-medium solid $sixty-seven-percent-gray;
+      border: $border-width-medium solid $color-dark-background;
       color: $black;
       background-color: $rainbow-yellow;
     }
