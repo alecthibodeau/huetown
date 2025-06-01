@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Item from './components/Item';
 import MoonSpace from './components/MoonSpace';
 import NotFound from './components/NotFound';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import Shop from './components/Shop';
 import Veganly from './components/Veganly';
 
@@ -83,6 +84,7 @@ function App(): JSX.Element {
           <Route path={`/${routes.contact}`} element={<Contact />} />
           <Route path={`/${routes.moonSpace}`} element={<MoonSpace isShopActive={isShopActive} />} />
           <Route path={`/${routes.veganly}`} element={<Veganly />} />
+          <Route path={`/${routes.privacyPolicy}`} element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

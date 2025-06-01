@@ -3,6 +3,7 @@ const routes: { [key: string]: string } = {
   contact: 'contact',
   moonSpace: 'moon-space',
   shop: 'shop',
+  privacyPolicy: 'privacy-policy',
   veganly: 'veganly'
 };
 

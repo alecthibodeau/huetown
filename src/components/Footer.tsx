@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 /* Conmponents */
 import IconLinks from './IconLinks';
 
+/* Constants */
+import routes from '../constants/routes';
+
 /* Helpers */
 import scrollToTop from '../helpers/scroll-to-top';
 
@@ -21,7 +24,7 @@ function Footer(): JSX.Element {
             <IconLinks />
             <Link
               className="text-link-light"
-              to="/"
+              to={`/${routes.privacyPolicy}`}
               onClick={scrollToTop}
             >
               Privacy Policy
