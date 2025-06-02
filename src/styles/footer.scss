@@ -36,9 +36,12 @@ footer {
   padding: 1rem;
 }
 
-.icon-link img {
-  width: 1.5rem;
-  vertical-align: top;
+.footer-right a {
+  display: flex;
+
+  svg {
+    width: 2rem;
+  }
 }
 
 /* Media Queries */

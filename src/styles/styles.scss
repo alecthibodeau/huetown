@@ -46,7 +46,8 @@ main {
     }
   }
 
-  &:hover:not(.shop-link) {
+  &:hover:not(.shop-link),
+  &:focus:not(.shop-link) {
     color: $twenty-four-plum-paper;
     text-decoration: underline;
     cursor: pointer;
@@ -63,7 +64,8 @@ main {
     color: $white
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $rainbow-yellow;
     text-decoration: underline;
   }
