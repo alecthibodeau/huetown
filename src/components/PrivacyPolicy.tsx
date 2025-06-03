@@ -7,7 +7,7 @@ function PrivacyPolicy(): JSX.Element {
       <h1>Privacy Policy</h1>
       <p>Effective Date: May 31st, 2025</p>
 
-      <p>We the administrators of this website value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use and protect the information you provide.</p>
+      <p>We the administrators of the Huetown website value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use and protect the information you provide.</p>
 
       <p className="bold">1. Information We Collect</p>
 

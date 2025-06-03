@@ -44,8 +44,8 @@ function About(): JSX.Element {
           <div className="about-description">
             Welcome to Huetown, featuring the work of artist Alec
             Thibodeau. Spend time with <Link className="text-link" to="/moon-space">
-            Moon Space</Link>, an interactive calendar that displays
-            date-specific lunar phases (and animated clouds and stars). Visit
+            Moon Space</Link>, an interactive lunar calendar that displays
+            date-specific moon phases (and animated clouds and stars). Visit
             the <Link className="text-link" to="/shop">shop</Link> to order available
             items. For Alec's early explorations in drawing, printmaking and related work
             go to <a className="text-link" href="https://alecthibodeau.com">
@@ -81,7 +81,7 @@ function About(): JSX.Element {
           {renderSectionTitle('follow')}
           Check out Huetown on <a className="text-link" href="https://www.instagram.com/huetown">
           Instagram</a>. Or sign up below for Huetown's email list. Your
-          information won't be shared with miscreants: view Huetown's <Link className="text-link" to={`/${routes.privacyPolicy}`}>Privacy Policy</Link>.
+          information won't be shared with miscreants (view Huetown's <Link className="text-link" to={`/${routes.privacyPolicy}`}>Privacy Policy</Link>).
         </div>
         <div>
           {renderSectionTitle('places')}
