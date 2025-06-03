@@ -113,14 +113,6 @@ nav {
   cursor: pointer;
 }
 
-.nav-menu-icons {
-  display: flex;
-  justify-content: center;
-  padding: .25rem;
-  border-bottom: $border-width-small solid $fifty-percent-gray;
-
-}
-
 /* Media Queries */
 
 @media (min-width: $breakpoint-sm) {

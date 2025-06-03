@@ -1,13 +1,3 @@
-/* Header */
-import huetownLogoGrayDark from '../assets/images/header/huetown-script-logo-sixty-seven-percent-gray-1200px.svg';
-import huetownLogoWhite from '../assets/images/header/huetown-script-logo-white-1200px.svg';
-
-/* Icons */
-import emailGray from '../assets/images/icons/icon-email-fifty-percent-gray.svg';
-import emailWhite from '../assets/images/icons/icon-email-white.svg';
-import instagramGray from '../assets/images/icons/icon-instagram-fifty-percent-gray.svg';
-import instagramWhite from '../assets/images/icons/icon-instagram-white.svg';
-
 /* About */
 import hLogo from '../assets/images/about/huetown-h-logo.jpg';
 import selfPortrait from '../assets/images/about/thibodeau-self-portrait.jpg';
@@ -139,18 +129,6 @@ import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-
 
 import printTarsierTrailFeature from '../assets/images/items/print-tarsier-trail-feature-450px.jpg';
 import printTigerMoontainFeature from '../assets/images/items/print-tiger-moontain-feature-450px.jpg';
-
-const header: { [key: string]: string } = {
-  huetownLogoGrayDark,
-  huetownLogoWhite
-};
-
-const icons: { [key: string]: string } = {
-  emailGray,
-  emailWhite,
-  instagramGray,
-  instagramWhite
-};
 
 const about: { [key: string]: string } = {
   hLogo,
@@ -330,8 +308,6 @@ const itemsDetailImages: { [key: string]: string[] } = {
 };
 
 const images = {
-  header,
-  icons,
   about,
   lunarPhases,
   lunarCalendars,
