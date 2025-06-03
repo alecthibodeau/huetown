@@ -17,20 +17,13 @@ import scrollToTop from '../helpers/scroll-to-top';
 import '../styles/footer.scss';
 
 function Footer(): JSX.Element {
-  const [isInstagramLogoActive, setIsInstagramLogoActive] = useState<boolean>(false);
+  const [isInstagramLogoFocused, setIsInstagramLogoFocused] = useState<boolean>(false);
+  const [isInstagramLogoHovered, setIsInstagramLogoHovered] = useState<boolean>(false);
   const {
     colorRainbowYellow,
     colorWhite,
     dimensionSVGInstagramLogoViewBox
   } = variables;
-
-  function handleInstagramLogoActive(): void {
-    setIsInstagramLogoActive(true);
-  }
-
-  function handleInstagramLogoInactive(): void {
-    setIsInstagramLogoActive(false);
-  }
 
   return (
     <footer id="footer">
@@ -43,16 +36,18 @@ function Footer(): JSX.Element {
             <a
               href="https://www.instagram.com/huetown"
               aria-label="Visit Huetown's Instagram account"
-              onFocus={handleInstagramLogoActive}
-              onBlur={handleInstagramLogoInactive}
-              onMouseEnter={handleInstagramLogoActive}
-              onMouseLeave={handleInstagramLogoInactive}
+              onFocus={() => setIsInstagramLogoFocused(true)}
+              onBlur={() => setIsInstagramLogoFocused(false)}
+              onMouseEnter={() => setIsInstagramLogoHovered(true)}
+              onMouseLeave={() => setIsInstagramLogoHovered(false)}
               target="_blank"
               rel="noopener noreferrer"
             >
               <CustomSVG
                 name="Instagram logo"
-                svgFillColor={isInstagramLogoActive ? colorRainbowYellow : colorWhite}
+                svgFillColor={isInstagramLogoFocused || isInstagramLogoHovered ?
+                  colorRainbowYellow : colorWhite
+                }
                 svgViewBox={dimensionSVGInstagramLogoViewBox}
                 svgPaths={<InstagramLogo />}
               />
