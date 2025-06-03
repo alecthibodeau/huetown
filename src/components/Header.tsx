@@ -1,18 +1,26 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+/* Components */
+import CustomSVG from './CustomSVG';
+import HuetownLogo from './svg-paths/HuetownLogo';
+
 /* Constants */
-import images from '../constants/images';
 import routes from '../constants/routes';
 import text from '../constants/text';
+import variables from '../constants/_variables';
 
 /* Styles */
 import '../styles/header.scss';
 
 function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
-  const { huetownLogoGrayDark, huetownLogoWhite } = images.header;
   const { shop, moonSpace, about, contact } = routes;
+    const {
+    colorSixtySevenPercentGray,
+    colorWhite,
+    dimensionSVGHuetownLogoViewBox
+  } = variables;
 
   useEffect(() => {
     const mainElement: HTMLElement | null = document.getElementById('main');
@@ -80,11 +88,19 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
   return (
     <header>
       <div className="huetown-logo-and-burger-button">
-        <Link to="/" onClick={closeMobileNav}>
-          <img
-            className={`huetown-logo-${props.isBreakpointXs ? 'white' : 'gray'}`}
-            src={props.isBreakpointXs ? huetownLogoWhite : huetownLogoGrayDark}
-            alt="Huetown logo" />
+        <Link
+          to="/"
+          onClick={closeMobileNav}
+          className="huetown-logo-link"
+        >
+          <CustomSVG
+             name="Huetown logo"
+             svgFillColor={props.isBreakpointXs ?
+               colorWhite : colorSixtySevenPercentGray
+             }
+             svgViewBox={dimensionSVGHuetownLogoViewBox}
+             svgPaths={<HuetownLogo />}
+           />
         </Link>
         {props.isBreakpointXs ?
           <button
