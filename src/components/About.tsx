@@ -47,7 +47,7 @@ function About(): JSX.Element {
             Moon Space</Link>, an interactive lunar calendar that displays
             date-specific moon phases (and animated clouds and stars). Visit
             the <Link className="text-link" to="/shop">shop</Link> to order available
-            items. For Alec's early explorations in drawing, printmaking and related work
+            items. For Alec's earlier work in drawing, printmaking and related media
             go to <a className="text-link" href="https://alecthibodeau.com">
             alecthibodeau.com</a>.
           </div>
