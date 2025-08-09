@@ -46,10 +46,10 @@ function About(): JSX.Element {
             Thibodeau. Spend time with <Link className="text-link" to="/moon-space">
             Moon Space</Link>, an interactive lunar calendar that displays
             date-specific moon phases (and animated clouds and stars). Visit
-            the <Link className="text-link" to="/shop">shop</Link> to order available
-            items. For Alec's earlier work in drawing, printmaking and related media
+            the <Link className="text-link" to="/shop">shop</Link> to order items.
+            For Alec's earlier work in drawing, printmaking and related media
             go to <a className="text-link" href="https://alecthibodeau.com">
-            alecthibodeau.com</a>.
+            alecthibodeau.com</a>. See Alec's <a className="text-link" href="https://alect.me">coding projects</a>.
           </div>
         </div>
         <img className="huetown-h-logo" src={hLogo} alt="Huetown H logo"/>
