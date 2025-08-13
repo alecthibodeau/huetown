@@ -108,7 +108,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           and year-specific lunar phase information. Each calendar is printed
           on {renderSpan(lunarCalendarPaper)}, blind-debossed with Alec's name and
           the print shop's name &mdash; and hand numbered and signed by Alec. Each
-          calendar <Link className="text-link" to="/about#shipping">ships</Link> with
+          calendar <Link className="text-link" to="/about#ordering">ships</Link> with
           an accompanying information sheet inside a flat, sturdy box.
         </p>
         <p>
