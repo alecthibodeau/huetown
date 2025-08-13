@@ -20,10 +20,9 @@ import '../styles/lunar-calendar-info.scss';
 
 function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   const { title, lunarCalendarYear, printEdition, lunarCalendarPaper, lunarCalendarLocation } = props;
-  const { latestLunarCalendarId, preorderId } = itemsSpecificInfo;
+  const { latestLunarCalendarId } = itemsSpecificInfo;
   const isNewsInInfo: boolean = false;
   const isExtraPrintDisplayed: boolean = false;
-  const isPreorder: boolean = props.id === preorderId;
   const isLatestLunarCalendar: boolean = props.id === latestLunarCalendarId;
   const isThumbnailsGroupDisplayed: boolean = true;
 
@@ -34,16 +33,12 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
         key={`${formatText.formatLettersAndNumbers(phase.name)}-moon-${index}`}
         className="phase-info"
       >
-        <img src={phase.image} alt={moonTextFormatted}/>
+        <img src={phase.image} alt={moonTextFormatted} />
         <div className="phase-text">
           {moonTextFormatted}
         </div>
       </div>
     )
-  }
-
-  function scrollToTop(): void {
-    window.scrollTo(0, 0);
   }
 
   function renderThumbnailImage(thumbnail: Thumbnail): JSX.Element {
@@ -57,13 +52,10 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   ): JSX.Element {
     return (
       isAvailable
-      ? <Link
-          to={isPreorderThumbnail ? '/' : thumbnail.link}
-          onClick={isPreorder && isPreorderThumbnail ? scrollToTop : () => {}}
-        >
+        ? <Link to={isPreorderThumbnail ? '/' : thumbnail.link}>
           {renderThumbnailImage(thumbnail)}
         </Link>
-      : <a href={thumbnail.link}>{renderThumbnailImage(thumbnail)}</a>
+        : <a href={thumbnail.link}>{renderThumbnailImage(thumbnail)}</a>
     )
   }
 
@@ -101,7 +93,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           lunar calendars this piece measures 19" x 11.75" (a golden rectangle)
           and is expertly printed by Dan Wood and his team
           at <a className="text-link" href="https://www.dwriletterpress.net">
-          DWRI&nbsp;Letterpress</a>.
+            DWRI&nbsp;Letterpress</a>.
         </p>
         <p>
           The {renderSpan(lunarCalendarYear)} lunar calendar comprises new drawings
@@ -132,19 +124,19 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             <li>
               <News />
             </li>
-          : null}
+            : null}
           <li>
             <span className="bold">Play</span>: Interact with the current year's
             accompanying <Link className="text-link" to="/moon-space">digital
-            lunar calendar</Link>
+              lunar calendar</Link>
           </li>
           {isLatestLunarCalendar && isExtraPrintDisplayed ?
             <li>
               <span className="bold">Extra</span>: Each lunar calendar preordered early included
               a <Link className="text-link" to="/shop/prints/tarsier-trail">Tarsier
-              Trail</Link> letterpress print&hellip;
+                Trail</Link> letterpress print&hellip;
             </li>
-          : null}
+            : null}
         </ul>
         {isLatestLunarCalendar && isExtraPrintDisplayed ?
           <div className="lunar-calendar-accompanying-item">
@@ -156,7 +148,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
               />
             </Link>
           </div>
-        : null}
+          : null}
       </div>
 
       {isThumbnailsGroupDisplayed ?
@@ -176,7 +168,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
             }
           )}
         </div>
-      : null}
+        : null}
     </>
   );
 }

@@ -10,9 +10,6 @@ import InstagramLogo from './svg-paths/InstagramLogo';
 import routes from '../constants/routes';
 import variables from '../constants/_variables';
 
-/* Helpers */
-import scrollToTop from '../helpers/scroll-to-top';
-
 /* Styles */
 import '../styles/footer.scss';
 
@@ -52,11 +49,7 @@ function Footer(): JSX.Element {
                 svgPaths={<InstagramLogo />}
               />
             </a>
-            <Link
-              className="text-link-light"
-              to={`/${routes.privacyPolicy}`}
-              onClick={scrollToTop}
-            >
+            <Link className="text-link-light" to={`/${routes.privacyPolicy}`}>
               Privacy Policy
             </Link>
           </div>

@@ -11,6 +11,7 @@ import Item from './components/Item';
 import MoonSpace from './components/MoonSpace';
 import NotFound from './components/NotFound';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import ScrollToTop from './components/ScrollToTop';
 import Shop from './components/Shop';
 import Veganly from './components/Veganly';
 
@@ -70,6 +71,7 @@ function App(): JSX.Element {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header isBreakpointXs={isBreakpointXs} isShopActive={isShopActive} />
       <main id="main">
         <Routes>
