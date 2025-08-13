@@ -5,7 +5,6 @@ function ScrollToTop(): JSX.Element {
   const location: Location = useLocation();
 
   useEffect(() => {
-    console.log(location.pathname);
     window.scrollTo({top: 0, behavior: 'instant'});
   }, [location.pathname]);
 
