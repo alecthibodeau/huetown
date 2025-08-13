@@ -15,6 +15,11 @@ const shops: Shop[] = [
     location: 'Providence (East Side)',
     name: 'Like No Udder',
     url: 'https://www.like-no-udder.com'
+  },
+  {
+    location: 'Wakefield',
+    name: 'Eclectic Energy',
+    url: 'https://www.eclecticenergy.com'
   }
 ];
 
