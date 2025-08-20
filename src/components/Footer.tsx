@@ -13,13 +13,14 @@ import variables from '../constants/_variables';
 /* Styles */
 import '../styles/footer.scss';
 
-function Footer(): JSX.Element {
+function Footer(props: { isFooterBreakpointXS: boolean }): JSX.Element {
   const [isInstagramLogoFocused, setIsInstagramLogoFocused] = useState<boolean>(false);
   const [isInstagramLogoHovered, setIsInstagramLogoHovered] = useState<boolean>(false);
   const {
     colorRainbowYellow,
     colorWhite,
-    dimensionSVGInstagramLogoViewBox
+    dimensionSVGInstagramLogoViewBox,
+    dimensionSVGInstagramLogoViewBoxDesktop
   } = variables;
 
   return (
@@ -27,9 +28,15 @@ function Footer(): JSX.Element {
       <div className="footer-bar">
         <div className="footer-information">
           <div className="footer-left">
-            &copy; {`Huetown ${new Date().getFullYear()}`}
+            &copy; Huetown {new Date().getFullYear()}
           </div>
           <div className="footer-right">
+            <Link className="text-link-light" to={`/${routes.termsOfUse}`}>
+              Terms
+            </Link>
+            <Link className="text-link-light" to={`/${routes.privacyPolicy}`}>
+              Privacy Policy
+            </Link>
             <a
               href="https://www.instagram.com/huetown"
               aria-label="Visit Huetown's Instagram account"
@@ -45,13 +52,14 @@ function Footer(): JSX.Element {
                 svgFillColor={isInstagramLogoFocused || isInstagramLogoHovered ?
                   colorRainbowYellow : colorWhite
                 }
-                svgViewBox={dimensionSVGInstagramLogoViewBox}
+                svgViewBox={
+                  props.isFooterBreakpointXS ?
+                  dimensionSVGInstagramLogoViewBox :
+                  dimensionSVGInstagramLogoViewBoxDesktop
+                }
                 svgPaths={<InstagramLogo />}
               />
             </a>
-            <Link className="text-link-light" to={`/${routes.privacyPolicy}`}>
-              Privacy Policy
-            </Link>
           </div>
         </div>
       </div>

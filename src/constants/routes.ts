@@ -4,6 +4,7 @@ const routes: { [key: string]: string } = {
   moonSpace: 'moon-space',
   shop: 'shop',
   privacyPolicy: 'privacy-policy',
+  termsOfUse: 'terms-of-use',
   veganly: 'veganly'
 };
 

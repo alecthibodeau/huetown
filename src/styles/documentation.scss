@@ -1,9 +1,8 @@
 @use './variables' as *;
 
-.privacy-policy {
+.documentation {
   max-width: $breakpoint-lg;
   padding-inline: 1.5rem;
-  margin-bottom: 2rem;
 }
 
 h1 {

@@ -1,9 +1,9 @@
 /* Styles */
-import '../styles/privacy-policy.scss';
+import '../styles/documentation.scss';
 
 function PrivacyPolicy(): JSX.Element {
   return (
-    <div className="privacy-policy">
+    <div className="documentation">
       <h1>Privacy Policy</h1>
       <p>Effective Date: May 31st, 2025</p>
 

@@ -11,6 +11,7 @@ import Item from './components/Item';
 import MoonSpace from './components/MoonSpace';
 import NotFound from './components/NotFound';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfUse from './components/TermsOfUse';
 import ScrollToTop from './components/ScrollToTop';
 import Shop from './components/Shop';
 import Veganly from './components/Veganly';
@@ -87,10 +88,11 @@ function App(): JSX.Element {
           <Route path={`/${routes.moonSpace}`} element={<MoonSpace isShopActive={isShopActive} />} />
           <Route path={`/${routes.veganly}`} element={<Veganly />} />
           <Route path={`/${routes.privacyPolicy}`} element={<PrivacyPolicy />} />
+          <Route path={`/${routes.termsOfUse}`} element={<TermsOfUse />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <Footer />
+      <Footer isFooterBreakpointXS={isBreakpointXs} />
     </BrowserRouter>
   );
 }
