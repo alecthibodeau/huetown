@@ -3,10 +3,13 @@ import '../styles/news.scss';
 
 function News(): JSX.Element {
   return (
-    <div className="news-text-container">
-      <span className="bold">Event</span>: Join Huetown
-      November 23 and 24 for the <a className="text-link" href="https://goodtrademakersmarket.com">2024
-      Good Trade Makers Market</a> in Providence, Rhode Island.
+    <div className="news-text-wrapper">
+      <div>
+        <span className="bold">Event</span>: Join Huetown
+        November 22nd and 23rd at the <a className="text-link"
+        href="https://goodtrademakersmarket.com" target="_blank">2025
+        Good Trade Makers Market</a> in Providence, Rhode Island.
+      </div>
     </div>
   );
 }

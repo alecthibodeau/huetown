@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 /* Components */
 import Item from './Item';
-import MoonSpace from './MoonSpace';
 import News from './News';
 
 /* Interfaces */
@@ -15,18 +14,19 @@ import routes from '../constants/routes';
 
 function Home(props: { isShopActive: boolean }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2025;
-  const isFeatured: boolean = true;
-  const isNewsInHome: boolean = false;
+  const isFeatured: boolean = false;
+  const isNewsInHome: boolean = true;
+  const isRedirectToMoonSpace: boolean = false;
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate(`/${routes.moonSpace}`);
+    if (isRedirectToMoonSpace) navigate(`/${routes.moonSpace}`);
   }, [navigate]);
 
   return (
     <>
-      {isFeatured ?
+      {isFeatured && props.isShopActive ?
         <Item
           id={featured.id}
           category={featured.category}
@@ -42,10 +42,7 @@ function Home(props: { isShopActive: boolean }): JSX.Element {
           lunarCalendarPaper={featured.lunarCalendarPaper}
           lunarCalendarLocation={featured.lunarCalendarLocation}
         /> :
-        <div>
-          {isNewsInHome ? <News /> : null}
-          <MoonSpace isShopActive={props.isShopActive} />
-        </div>
+        isNewsInHome ? <News /> : null
       }
     </>
   );

@@ -1,8 +1,16 @@
 @use './_variables' as *;
 
-.news-text-container {
-  padding-bottom: .5rem;
-  width: 80vw;
-  max-width: $moon-space-dimension;
-  vertical-align: top;
+.news-text-wrapper {
+  padding: 2rem;
+
+  div {
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+    border: $border-width-large solid $huetown-purple;
+    background-color: $huetown-yellow;
+  }
+
+  a {
+    text-decoration: underline;
+  }
 }
