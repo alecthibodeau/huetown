@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 /* Components */
@@ -55,8 +55,6 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(isSameDate(easternTimeZoneDate, new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
-  const buttonRef: React.MutableRefObject<HTMLButtonElement | null> = useRef<HTMLButtonElement | null>(null);
-
   const dateNewYearsDay: Date = new Date(selectedYear, monthJanuary, dateFirst);
   const dateNewYearsEve: Date = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
@@ -71,7 +69,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const backDirection: string = 'back';
   const forwardDirection: string = 'forward';
   const lunarFeatureButton: string = 'lunar-feature-button';
-  const selectInfo: string = 'Select info';
+  const openInfoModal: string = 'Open info modal';
   const selectToday: string = 'Select today';
   const selectCloudsAnimation: string = 'Select clouds animation';
   const selectStarsAnimation: string = 'Select stars animation';
@@ -170,13 +168,6 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
     setIsNewYearsEve(isSameDate(selectedPhaseDate, dateNewYearsEve));
   }
 
-  function setButtonRef(element: HTMLButtonElement): void {
-    if (element) {
-      buttonRef.current = element;
-      buttonRef.current.focus();
-    }
-  };
-
   function onClickInfo(): void {
     setIsModalVisible(!isModalVisible);
   }
@@ -251,13 +242,11 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
           <div className="info-modal-button-container">
             {isNewYearsDay ?
               <button
-                ref={setButtonRef}
                 className={lunarFeatureButton}
                 onClick={onClickPlayYear}>
                 Play {selectedYear}'s phases
               </button> :
               <button
-                ref={setButtonRef}
                 className={lunarFeatureButton}
                 onClick={onClickSelectNewYearsDay}>
                 Select New Year's Day
@@ -333,8 +322,8 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
         {!isPlaying ?
           <div className="lunar-feature-buttons-container">
             <button
-              title={selectInfo}
-              aria-label={selectInfo}
+              title={openInfoModal}
+              aria-label={openInfoModal}
               className={lunarFeatureButton}
               onClick={onClickInfo}>
               Info

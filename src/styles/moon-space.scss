@@ -250,7 +250,7 @@
 }
 
 .info-modal {
-  width: 13rem;
+  width: 14rem;
   border-radius: $border-radius-medium;
   background-color: $white;
   opacity: .95;
@@ -266,7 +266,7 @@
   height: 20px;
   padding: 0;
   border: none;
-  margin: .625rem .625rem .125rem;
+  margin: .75rem .75rem .125rem;
   background-color: $white;
   color: $color-application-font;
 }
@@ -286,6 +286,7 @@
   padding-bottom: .5rem;
 
   button {
+    width: 100%;
     margin: .25rem auto;
   }
 }
