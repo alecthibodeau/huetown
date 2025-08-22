@@ -39,7 +39,7 @@ function About(): JSX.Element {
   function renderShopLink(shop: Shop, index: number): JSX.Element {
     return (
       <li key={`${formatText.formatLettersAndNumbers(shop.name)}-${index}`}>
-        <a className="text-link" href={shop.url} target="_blank">{shop.name}</a>
+        <a className="text-link no-underline" href={shop.url} target="_blank">{shop.name}</a>
         <span> &mdash; </span>
         <span>{shop.location}</span>
       </li>
@@ -53,13 +53,14 @@ function About(): JSX.Element {
           <img className="self-portrait" src={selfPortrait} alt="Self portrait drawing" />
           <div className="about-description">
             Welcome to Huetown, featuring the work of artist Alec
-            Thibodeau. Spend time with <Link className="text-link" to="/moon-space">
+            Thibodeau. Spend time with <Link className="text-link no-underline" to="/moon-space">
             Moon Space</Link>, an interactive lunar calendar that displays
             date-specific moon phases, accompanied by animated clouds and stars. Visit
-            the <Link className="text-link" to="/shop">shop</Link> to order items.
+            the <Link className="text-link no-underline" to="/shop">shop</Link> to order items.
             For Alec's earlier work in drawing, printmaking and related media
-            go to <a className="text-link" href="https://alecthibodeau.com">
-            alecthibodeau.com</a>. See Alec's coding projects at <a className="text-link" href="https://alect.me">alect.me</a>.
+            go to <a className="text-link no-underline" href="https://alecthibodeau.com">
+            alecthibodeau.com</a>. See Alec's coding projects
+            at <a className="text-link no-underline" href="https://alect.me">alect.me</a>.
           </div>
         </div>
         <img className="huetown-h-logo" src={hLogo} alt="Huetown H logo"/>
@@ -67,17 +68,17 @@ function About(): JSX.Element {
       <div className="about-lower">
         <div>
           {renderSectionTitle('contact')}
-          Huetown's contact email is <a className="text-link" href="mailto:info@huetown.com">info@huetown.com</a>.
+          Huetown's contact email is <a className="text-link no-underline" href="mailto:info@huetown.com">info@huetown.com</a>.
         </div>
         <div id={textOrdering} ref={orderingRef}>
           {renderSectionTitle(`${textOrdering} & shipping`)}
-          See Huetown's <Link className="text-link" to={`/${routes.termsOfUse}`}>Terms of Use</Link>
+          See Huetown's <Link className="text-link no-underline" to={`/${routes.termsOfUse}`}>Terms of Use</Link>
         </div>
         <div>
           {renderSectionTitle('follow')}
-          Check out Huetown on <a className="text-link" href="https://www.instagram.com/huetown">
+          Check out Huetown on <a className="text-link no-underline" href="https://www.instagram.com/huetown">
           Instagram</a>. Or sign up below for Huetown's email list: your
-          information <Link className="text-link" to={`/${routes.privacyPolicy}`}>won't be shared with miscreants</Link>.
+          information <Link className="text-link no-underline" to={`/${routes.privacyPolicy}`}>won't be shared with miscreants</Link>.
         </div>
         <div>
           {renderSectionTitle('places')}

@@ -1,16 +1,12 @@
 @use './_variables' as *;
 
-.news-text-wrapper {
+.news {
   padding: 2rem;
+}
 
-  div {
-    padding: 1rem 1.5rem;
-    border-radius: .5rem;
-    border: $border-width-large solid $huetown-purple;
-    background-color: $huetown-yellow;
-  }
-
-  a {
-    text-decoration: underline;
-  }
+.news-text-wrapper {
+  padding: 1rem 1.5rem;
+  border-radius: .5rem;
+  border: $border-width-large solid $huetown-purple;
+  background-color: $huetown-yellow;
 }

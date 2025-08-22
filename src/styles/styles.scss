@@ -27,9 +27,12 @@ main {
 }
 
 .text-link {
-  text-decoration: none;
   color: $dark-kelly-green;
   font-weight: 600;
+
+  &.no-underline {
+    text-decoration: none;
+  }
 
   &:link,
   &:visited,

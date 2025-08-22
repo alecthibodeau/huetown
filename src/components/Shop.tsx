@@ -96,7 +96,7 @@ function Shop(): JSX.Element {
     return (
       <Link
         key={`${formatLettersAndNumbers(item.title.slice(0, 8))}-${index}`}
-        className="shop-link text-link"
+        className="shop-link text-link no-underline"
         to={isPreorder ? '/' : formatItemRoutePath(item.category, item.title)}
       >
         <img
