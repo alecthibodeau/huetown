@@ -28,11 +28,11 @@ function Footer(props: { isFooterBreakpointXS: boolean }): JSX.Element {
       <div className="footer-bar">
         <div className="footer-information">
           <div className="footer-left">
-            &copy; Huetown {new Date().getFullYear()}
+            &copy; {new Date().getFullYear()} Huetown
           </div>
           <div className="footer-right">
             <Link className="text-link-light" to={`/${routes.termsOfUse}`}>
-              Terms
+              Terms of&nbsp;Use
             </Link>
             <Link className="text-link-light" to={`/${routes.privacyPolicy}`}>
               Privacy Policy

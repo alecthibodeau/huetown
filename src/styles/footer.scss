@@ -18,25 +18,25 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: .75rem;
   width: 100%;
   max-width: $breakpoint-xl;
+  padding: 2rem 1rem;
   color: $white;
-  font-size: .75rem;
-}
-
-.footer-left {
-  padding: .75rem;
+  font-size: .875rem;
+  line-height: 1rem;
+  text-align: center;
 }
 
 .footer-right {
   display: flex;
   align-items: center;
-  gap: .75rem;
-  padding: .75rem;
+  gap: 1rem;
 }
 
 .footer-right a {
   display: flex;
+  width: min-content;
 
   svg {
     width: 2rem;
@@ -48,15 +48,15 @@ footer {
 @media (min-width: $breakpoint-sm) {
 
   .footer-information {
+    padding-inline: 2rem;
     font-size: 1rem;
   }
 
-  .footer-left,
   .footer-right {
-    padding-inline: 2rem;
+    gap: 2rem;
   }
 
-  .footer-right {
-    gap: 1rem;
+  .footer-right a {
+    width: initial;
   }
 }
