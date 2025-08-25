@@ -55,11 +55,11 @@ function About(): JSX.Element {
             Welcome to Huetown, featuring the work of artist Alec
             Thibodeau. Spend time with <Link className="text-link no-underline" to="/moon-space">
             Moon Space</Link>, an interactive lunar calendar that displays
-            date-specific moon phases, accompanied by animated clouds and stars. Visit
+            date-specific moon phases accompanied by animated clouds and stars. Visit
             the <Link className="text-link no-underline" to="/shop">shop</Link> to order items.
-            For Alec's earlier work in drawing, printmaking and related media
+            To see more of Alec's work in drawing, printmaking and related media
             go to <a className="text-link no-underline" href="https://alecthibodeau.com">
-            alecthibodeau.com</a>. See Alec's coding projects
+            alecthibodeau.com</a>. Or find his coding projects
             at <a className="text-link no-underline" href="https://alect.me">alect.me</a>.
           </div>
         </div>
