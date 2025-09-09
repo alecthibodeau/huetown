@@ -52,6 +52,6 @@
     "@types/react": "^18.0.29",
     "@types/react-mailchimp-subscribe": "^2.1.1",
     "@vitejs/plugin-react": "^4.6.0",
-    "vite": "^7.0.4"
+    "vite": "^7.1.5"
   }
 }
