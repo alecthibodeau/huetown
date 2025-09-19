@@ -235,8 +235,8 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
               Play all the moon phases for {selectedYear} as an animated sequence.
             </div> :
             <div className="info-modal-text">
-              This is a {selectedYear} digital lunar calendar.
-              Select New Year's Day for the option to play all moon phases for {selectedYear}.
+              <span className ="ital">Moon Space</span> is a {selectedYear} digital lunar calendar.
+              Select New Year's Day for the option to play all the year's moon phases.
             </div>
           }
           <div className="info-modal-button-container">
