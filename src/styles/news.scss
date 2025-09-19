@@ -1,12 +1,21 @@
 @use './_variables' as *;
 
 .news {
-  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .news-text-wrapper {
+  max-width: 21rem;
   padding: 1rem 1.5rem;
-  border-radius: .5rem;
   border: $border-width-large solid $huetown-purple;
+  border-radius: .5rem;
+  margin: 0 2rem 3rem;
   background-color: $huetown-yellow;
 }
