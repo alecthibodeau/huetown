@@ -7,7 +7,6 @@ import HuetownLogo from './svg-paths/HuetownLogo';
 
 /* Constants */
 import routes from '../constants/routes';
-import text from '../constants/text';
 import variables from '../constants/_variables';
 
 /* Styles */
@@ -16,7 +15,7 @@ import '../styles/header.scss';
 function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const { shop, moonSpace, about, contact } = routes;
-    const {
+  const {
     colorSixtySevenPercentGray,
     colorWhite,
     dimensionSVGHuetownLogoViewBox
@@ -63,24 +62,27 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
     )
   }
 
-  function renderViewCartForm(): JSX.Element {
+  function renderCheckoutForm(): JSX.Element {
     return (
-       <form
-         target="paypal"
-         action="https://www.paypal.com/cgi-bin/webscr"
-         method="post"
-         className="paypal-cart-form"
-       >
-         <input type="hidden" name="cmd" value="_cart" />
-         <input type="hidden" name="business" value="LKTT6RVG75QQN" />
-         <input type="hidden" name="display" value="1" />
-         <input
-           className="paypal-link"
-           type="submit"
-           value={text.viewCart}
-           alt={text.viewCart}
-           onClick={closeMobileNav}
-         />
+      <form
+        target="_blank"
+        action="https://www.paypal.com/cgi-bin/webscr"
+        method="post"
+        className="paypal-cart-form"
+      >
+        <input type="hidden" name="cmd" value="_cart" />
+        <input type="hidden" name="business" value="LKTT6RVG75QQN" />
+        <input type="hidden" name="display" value="1" />
+        <button
+          className="paypal-checkout-button"
+          type="submit"
+          title="Checkout"
+          onClick={closeMobileNav}
+        >
+          <span className="material-symbols-outlined shopping-cart">
+            shopping_cart
+          </span>
+        </button>
        </form>
     );
   }
@@ -116,10 +118,8 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
       <nav className={`mobile-nav-is-${isMobileNavOpen ? 'open' : 'closed'}`}>
         {props.isShopActive ?
           <>
-            {renderNavLinkWrapper(shop)}
-            {renderViewCartForm()}
-            {renderNavLinkWrapper(moonSpace)}
-            {renderNavLinkWrapper(about)}
+            {[shop, moonSpace, about].map(renderNavLinkWrapper)}
+            {renderCheckoutForm()}
           </> :
           <>
             {renderNavLinkWrapper(contact)}

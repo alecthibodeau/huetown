@@ -80,37 +80,43 @@ nav {
 }
 
 .nav-link-wrapper {
+  border-bottom-width: $border-width-small;
+  border-bottom-style: solid;
   text-align: center;
 
   &:nth-of-type(1) {
     border-top: $border-width-small solid $twenty-five-kelly-green-paper;
-    border-bottom: $border-width-small solid $huetown-yellow;
+    border-bottom-color: $huetown-yellow;
   }
 
   &:nth-of-type(2) {
-    border-bottom: $border-width-small solid $huetown-purple;
+    border-bottom-color: $huetown-purple;
+  }
+
+  &:nth-of-type(3) {
+    border-bottom-color: $orange-muted;
   }
 }
 
-.paypal-cart-form {
-  border-bottom: $border-width-small solid $orange-muted;
-}
-
 .nav-link,
-.paypal-cart-form input.paypal-link {
+.paypal-cart-form button.paypal-checkout-button {
   display: block;
   width: 100%;
   padding: 1.5rem 0;
   border: none;
   font-family: 'Raleway', sans-serif;
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: $button-and-nav-link-letter-spacing;
   text-decoration: none;
   text-transform: capitalize;
   background-color: transparent;
   color: $white;
   cursor: pointer;
+
+  .material-symbols-outlined.shopping-cart {
+    font-size: 1.4375rem;
+  }
 }
 
 /* Media Queries */
@@ -152,11 +158,10 @@ nav {
   }
 
   .nav-link,
-  .paypal-cart-form input.paypal-link {
+  .paypal-cart-form button.paypal-checkout-button {
     padding: 0 0 .25rem;
     border-bottom: $border-width-large solid transparent;
     transition: all 0.125s linear;
-    font-weight: 500;
     color: $color-application-font;
 
     &:hover,
@@ -164,6 +169,11 @@ nav {
       padding: initial;
       border-bottom: $border-width-large solid $fifty-percent-gray;
       margin-bottom: .25rem;
+    }
+
+    .material-symbols-outlined.shopping-cart {
+      display: block;
+      margin-bottom: .0875rem;
     }
   }
 }
