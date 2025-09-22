@@ -4,7 +4,7 @@ import '../styles/documentation.scss';
 function Terms(): JSX.Element {
   return (
     <div className="documentation">
-      <h1>Huetown Website Terms of Use</h1>
+      <h1>Terms of Use</h1>
 
       <p>
         The following Terms of Use apply to your activities as a user of Huetown's
@@ -44,7 +44,7 @@ function Terms(): JSX.Element {
       </p>
 
       <p>
-        We strive to get you your order speedily. Packages
+        We strive to deliver your order speedily. Packages
         usually ship via USPS Priority Mail or a comparably fast USPS/UPS service
         for the same delivery address. For example, a package that's estimated to
         arrive within three days using either USPS Priority Mail or USPS First
