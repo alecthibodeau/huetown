@@ -58,6 +58,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const dateNewYearsDay: Date = new Date(selectedYear, monthJanuary, dateFirst);
   const dateNewYearsEve: Date = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
+  const isChartEnabled: boolean = false;
   const isLatestReleaseCurrentYear: boolean = selectedYear === 2025;
   const isNewsInMoonSpace: boolean = false;
   const isStarPatternRandomlyGenerated: boolean = false;
@@ -342,7 +343,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
               onClick={onClickStars}>
               Stars
             </button>
-            {isLatestReleaseCurrentYear && props.isShopActive ?
+            {isChartEnabled && isLatestReleaseCurrentYear && props.isShopActive ?
               <NavLink
                 title={goToPrintEdition}
                 aria-label={goToPrintEdition}

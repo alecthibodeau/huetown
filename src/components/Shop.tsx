@@ -7,6 +7,7 @@ import ItemProps from '../interfaces/ItemProps';
 /* Constants */
 import itemsCollection from '../constants/items-collection';
 import itemsSpecificInfo from '../constants/items-specific-info';
+import routes from '../constants/routes';
 import text from '../constants/text';
 
 /* Helpers */
@@ -22,6 +23,7 @@ function Shop(): JSX.Element {
   const isAllItems: boolean = itemsCategory === text.all;
   const itemsCategoriesForButtons: string[] = getItemsCategories(itemsCollection);
   const lunarCalendarAngledViewIndex: number = 2;
+  const isRestock: boolean = true;
 
   const filteredItems: ItemProps[] = itemsCollection.filter((item) => {
     return itemsCategory ? item.category === itemsCategory : isTextMatching(item);
@@ -123,38 +125,53 @@ function Shop(): JSX.Element {
     );
   }
 
-  return (
-    <div>
-      <div className="shop-info">
-        <div className="items-search">
-          <span>
-            {`
-              ${isAllItems ? itemsCollection.length : filteredItems.length}
-              item${filteredItems.length === 1 || itemsCollection.length === 1 ? '' : 's'}
-            `}
-          </span>
-          {itemsCollection.length && itemsCollection.length !== 1 ?
-            <div className="filter-container">
-              <span>filter by title, category or price:</span>
-              <input
-                type="text"
-                value={userSearchInput}
-                onChange={handleSearchInputChange}
-                onKeyDown={handleKeyDown}
-              />
+  function renderShopContent(): JSX.Element {
+    return (
+      <div>
+        <div className="shop-info">
+          <div className="items-search">
+            <span>
+              {`
+                ${isAllItems ? itemsCollection.length : filteredItems.length}
+                item${filteredItems.length === 1 || itemsCollection.length === 1 ? '' : 's'}
+              `}
+            </span>
+            {itemsCollection.length && itemsCollection.length !== 1 ?
+              <div className="filter-container">
+                <span>filter by title, category or price:</span>
+                <input
+                  type="text"
+                  value={userSearchInput}
+                  onChange={handleSearchInputChange}
+                  onKeyDown={handleKeyDown}
+                />
+              </div>
+            : null}
+          </div>
+          {itemsCategoriesForButtons.length > 1 ?
+            <div className={`category-buttons-container buttons-length-${itemsCategoriesForButtons.length}`}>
+              {itemsCategoriesForButtons.map(renderCategoryButton)}
             </div>
           : null}
         </div>
-        {itemsCategoriesForButtons.length > 1 ?
-          <div className={`category-buttons-container buttons-length-${itemsCategoriesForButtons.length}`}>
-            {itemsCategoriesForButtons.map(renderCategoryButton)}
-          </div>
-        : null}
+        <div className="shop-cards">
+          {isAllItems ? itemsCollection.map(renderItemCard) : filteredItems.map(renderItemCard)}
+        </div>
       </div>
-      <div className="shop-cards">
-        {isAllItems ? itemsCollection.map(renderItemCard) : filteredItems.map(renderItemCard)}
-      </div>
-    </div>
+    );
+  }
+
+  return (
+    <>
+      {
+        isRestock ?
+        <div className="restock">
+          <div></div>The shop is in a restock phase. Check back soon. To learn
+          first about new releases subscribe to Huetown's <Link to={`/${routes.about}`} className="text-link">email list</Link>.
+        </div> :
+        renderShopContent()
+      }
+    </>
   );
 }
 

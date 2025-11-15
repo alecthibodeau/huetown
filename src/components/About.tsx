@@ -77,7 +77,7 @@ function About(): JSX.Element {
         <div>
           {renderSectionTitle('follow')}
           Check out Huetown on <a className="text-link no-underline" href="https://www.instagram.com/huetown">
-          Instagram</a>. Or sign up below for Huetown's email list: your
+          Instagram</a>. Or subscribe below to Huetown's email list: your
           information <Link className="text-link no-underline" to={`/${routes.privacyPolicy}`}>won't be shared with miscreants</Link>.
         </div>
         <div>
