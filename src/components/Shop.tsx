@@ -166,8 +166,9 @@ function Shop(): JSX.Element {
       {
         isRestock ?
         <div className="restock">
-          <div></div>The shop is in a restock phase. Check back soon. To learn
-          first about new releases subscribe to Huetown's <Link to={`/${routes.about}`} className="text-link">email list</Link>.
+          The shop is in a restock phase. Check back soon. To learn
+          first about new releases subscribe to Huetown's <Link
+          to={`/${routes.about}`} className="text-link">email list</Link>.
         </div> :
         renderShopContent()
       }
