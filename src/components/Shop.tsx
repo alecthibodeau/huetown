@@ -23,7 +23,7 @@ function Shop(): JSX.Element {
   const isAllItems: boolean = itemsCategory === text.all;
   const itemsCategoriesForButtons: string[] = getItemsCategories(itemsCollection);
   const lunarCalendarAngledViewIndex: number = 2;
-  const isRestock: boolean = true;
+  const isRestock: boolean = false;
 
   const filteredItems: ItemProps[] = itemsCollection.filter((item) => {
     return itemsCategory ? item.category === itemsCategory : isTextMatching(item);

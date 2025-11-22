@@ -1,5 +1,5 @@
 const prices: { [key: string]: number }  = {
-  lunarCalendarPrice: 45,
+  lunarCalendarPrice: 50,
   miniprintPrice: 10,
   postcardPrice: 2
 };

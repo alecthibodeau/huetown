@@ -10,6 +10,14 @@ import keyThirdQuarterMoon from '../assets/images/items/lunar-phase-third-quarte
 
 import colossalLogo from '../assets/images/items/colossal-logo-small.jpg';
 
+import lunarCalendar2026Feature from '../assets/images/items/thibodeau-lunar-calendar-2026-feature-1000px.jpg';
+import lunarCalendar2026Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2026-01-700px.jpg';
+import lunarCalendar2026Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2026-02-700px.jpg';
+import lunarCalendar2026Detail03 from '../assets/images/items/thibodeau-lunar-calendar-2026-03-700px.jpg';
+import lunarCalendar2026Detail04 from '../assets/images/items/thibodeau-lunar-calendar-2026-04-700px.jpg';
+import lunarCalendar2026Detail05 from '../assets/images/items/thibodeau-lunar-calendar-2026-05-700px.jpg';
+import lunarCalendar2026Detail06 from '../assets/images/items/thibodeau-lunar-calendar-2026-06-700px.jpg';
+
 import lunarCalendar2025Feature from '../assets/images/items/thibodeau-lunar-calendar-2025-feature-1000px.jpg';
 import lunarCalendar2025Detail01 from '../assets/images/items/thibodeau-lunar-calendar-2025-01-700px.jpg';
 import lunarCalendar2025Detail02 from '../assets/images/items/thibodeau-lunar-calendar-2025-02-700px.jpg';
@@ -144,6 +152,7 @@ const lunarPhases: { [key: string]: string } = {
 
 const lunarCalendars: { [key: string]: string } = {
   colossalLogo,
+  lunarCalendar2026Feature,
   lunarCalendar2025Feature,
   lunarCalendar2024Feature,
   lunarCalendar2023Feature,
@@ -179,6 +188,15 @@ const postcards: { [key: string]: string } = {
   postcardHippopotamusFeature,
   postcardRhodeIslandWhaleFeature
 };
+
+const lunarCalendar2026DetailImages: string[] = [
+  lunarCalendar2026Detail01,
+  lunarCalendar2026Detail02,
+  lunarCalendar2026Detail03,
+  lunarCalendar2026Detail04,
+  lunarCalendar2026Detail05,
+  lunarCalendar2026Detail06
+];
 
 const lunarCalendar2025DetailImages: string[] = [
   lunarCalendar2025Detail01,
@@ -293,6 +311,7 @@ const printStentorianDetailImages: string[] = [
 ];
 
 const itemsDetailImages: { [key: string]: string[] } = {
+  lunarCalendar2026DetailImages,
   lunarCalendar2025DetailImages,
   lunarCalendar2024DetailImages,
   lunarCalendar2023DetailImages,

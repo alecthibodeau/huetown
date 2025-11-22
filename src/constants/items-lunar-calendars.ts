@@ -47,6 +47,7 @@ const phases: ItemLunarPhaseKey[] = [
 ];
 
 const lunarCalendarsAvailable: ItemProps[] = [
+  items.lunarCalendar2026,
   items.lunarCalendar2025,
   items.lunarCalendar2024,
   items.lunarCalendar2023,

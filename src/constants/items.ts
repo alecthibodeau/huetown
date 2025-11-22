@@ -20,6 +20,20 @@ const postcardItemInfo: string[] = [
 ];
 
 const items: Items = {
+  lunarCalendar2026: {
+    id: 'KAVPFEHER97QG',
+    category: text.lunarCalendar,
+    title: 'Sigil Routing',
+    subtitle: text.byAlecThibodeau,
+    featureImage: images.lunarCalendars.lunarCalendar2026Feature,
+    info: lunarCalendarItemInfo,
+    price: prices.lunarCalendarPrice,
+    printEdition: 250,
+    lunarCalendarYear: 2026,
+    lunarCalendarPaper: text.lunarCalendarPaper2026,
+    lunarCalendarLocation: text.lunarCalendarLocationProvidence,
+    detailImages: images.itemsDetailImages.lunarCalendar2026DetailImages
+  },
   lunarCalendar2025: {
     id: 'LLUBY69U94MPW',
     category: text.lunarCalendar,
