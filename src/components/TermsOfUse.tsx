@@ -74,7 +74,10 @@ function Terms(): JSX.Element {
       <p>
         <span className="bold">&bull; International shipping</span>: Shipping is a flat
         $29 for international delivery. Huetown is not responsible for additional
-        fees charged by customs. If you decide to refuse any shipments from Huetown
+        fees charged by customs. If import fees or other customs charges are required
+        post-shipment to complete an order's delivery then you agree to cover such charges:
+        either directly or by invoicing from Huetown (if Huetown initially covers the charge).
+        If you decide to refuse any shipments from Huetown
         you are responsible for the original shipping charges to you, any duties,
         taxes and/or customs charges that are incurred on the package (on both
         the original and return shipments) and the cost of returning the package
