@@ -47,8 +47,8 @@ function Terms(): JSX.Element {
         We strive to deliver your order speedily. Packages
         usually ship via USPS Priority Mail or a comparably fast USPS/UPS service
         for the same delivery address. For example, a package that's estimated to
-        arrive within three days using either USPS Priority Mail or USPS First
-        Class Mail may ship through either one of these services at the shipper's
+        arrive within three days using either USPS Priority Mail or USPS Ground
+        Advantage may ship through either one of these services at the shipper's
         discretion.
       </p>
 
