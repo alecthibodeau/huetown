@@ -18,7 +18,8 @@ const leapYearLength: number = 366;
 
 const years: { [key: number]: string } = {
   2024: 'twenty-four',
-  2025: 'twenty-five'
+  2025: 'twenty-five',
+  2026: 'twenty-six'
 };
 
 const waxingCrescentPrefix: string = 'xc';

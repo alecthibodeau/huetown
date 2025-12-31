@@ -78,61 +78,72 @@
   bottom: $moon-space-dimension;
   height: calc(#{$moon-space-dimension} + 2px);
   margin: auto;
-  background-color: $twenty-five-kelly-green-paper;
+
+  &.twenty-five {
+    background-color: $twenty-five-kelly-green-paper;
+  }
+
+  &.twenty-six {
+    background-color: $twenty-six-sunset-paper;
+  }
 }
 
 .sky-line {
   display: flex;
   height: 2px;
   margin-bottom: 2px;
+
+  &.twenty-five .sky-segment {
+    background-color: $twenty-five-kelly-green-ink;
+  }
+
+  &.twenty-six .sky-segment {
+    background-color: $twenty-six-brown-ink;
+  }
 }
 
-.sky-line.twenty-five {
+.sky-line .sky-segment {
+  width: 2px;
 
-  .sky-segment {
-    width: 2px;
-    background-color: $twenty-five-kelly-green-ink;
+  &.star {
+    opacity: 0;
+  }
 
-    &.star {
-      opacity: 0;
+  &.star:not(.twinkle) {
+    animation: opacity-reset .5s 1;
+
+    @keyframes opacity-reset {
+      from { opacity: .5; }
+      to { opacity: 0; }
+    }
+  }
+
+  &.star.twinkle {
+    animation: opacity-cycle infinite alternate-reverse;
+
+    @keyframes opacity-cycle {
+      from { opacity: 1; }
+      to { opacity: 0; }
     }
 
-    &.star:not(.twinkle) {
-      animation: opacity-reset .5s 1;
-
-      @keyframes opacity-reset {
-        from { opacity: .5; }
-        to { opacity: 0; }
-      }
+    &.fade-1 {
+      animation-duration: .5s;
     }
 
-    &.star.twinkle {
-      animation: opacity-cycle infinite alternate-reverse;
+    &.fade-2 {
+      animation-duration: .75s;
+    }
 
-      @keyframes opacity-cycle {
-        from { opacity: 1; }
-        to { opacity: 0; }
-      }
+    &.fade-3 {
+      animation-duration: 1s;
+    }
 
-      &.fade-1 {
-        animation-duration: .5s;
-      }
+    &.fade-4 {
+      animation-duration: 1.5s;
+    }
 
-      &.fade-2 {
-        animation-duration: .75s;
-      }
-
-      &.fade-3 {
-        animation-duration: 1s;
-      }
-
-      &.fade-4 {
-        animation-duration: 1.5s;
-      }
-
-      &.fade-5 {
-        animation-duration: 2s;
-      }
+    &.fade-5 {
+      animation-duration: 2s;
     }
   }
 }
@@ -231,6 +242,10 @@
 
     &.twenty-five {
       border-color: $twenty-five-kelly-green-paper;
+    }
+
+    &.twenty-six {
+      border-color: $twenty-six-sunset-paper;
     }
   }
 }

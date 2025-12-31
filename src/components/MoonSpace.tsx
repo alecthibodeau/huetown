@@ -298,7 +298,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
         </div>
         {moonClouds.map(renderMoonCloud)}
       </div>
-      <div className="sky-lines">
+      <div className={`sky-lines ${years[selectedYear]}`}>
         {skyLines}
       </div>
       <div className="moon-info">

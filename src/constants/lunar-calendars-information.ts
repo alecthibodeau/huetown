@@ -5,6 +5,7 @@ import LunarCalendarsInformation from '../interfaces/LunarCalendarsInformation';
 import lunarPhaseDates2023 from './lunar-phases-2023';
 import lunarPhaseDates2024 from './lunar-phases-2024';
 import lunarPhaseDates2025 from './lunar-phases-2025';
+import lunarPhaseDates2026 from './lunar-phases-2026';
 
 /* Helpers */
 import setIntermediateLunarPhasesDates from '../helpers/set-intermediate-lunar-phases-dates';
@@ -12,6 +13,7 @@ import setIntermediateLunarPhasesDates from '../helpers/set-intermediate-lunar-p
 const twentyThreeBluePaper: string = '#008eb2';
 const twentyFourPlumPaper: string = '#a3469c';
 const twentyFiveKellyGreenPaper: string = '#178d6a';
+const twentySixSunsetPaper: string = '#f29329';
 
 const lunarCalendarsInformation: LunarCalendarsInformation = {
   2023: {
@@ -28,6 +30,11 @@ const lunarCalendarsInformation: LunarCalendarsInformation = {
     backgroundColor: twentyFiveKellyGreenPaper,
     ornaments: ['kitty', 'beasty', 'loony'],
     lunarPhaseDates: setIntermediateLunarPhasesDates(lunarPhaseDates2025, 2025)
+  },
+  2026: {
+    backgroundColor: twentySixSunsetPaper,
+    ornaments: ['potatoey', 'batty', 'hippoey'],
+    lunarPhaseDates: setIntermediateLunarPhasesDates(lunarPhaseDates2026, 2026)
   }
 };
 
