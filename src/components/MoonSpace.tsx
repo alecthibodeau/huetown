@@ -58,8 +58,8 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
   const dateNewYearsDay: Date = new Date(selectedYear, monthJanuary, dateFirst);
   const dateNewYearsEve: Date = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
-  const isChartEnabled: boolean = false;
-  const isLatestReleaseCurrentYear: boolean = selectedYear === 2025;
+  const isChartEnabled: boolean = true;
+  const isLatestReleaseCurrentYear: boolean = selectedYear === 2026;
   const isNewsInMoonSpace: boolean = false;
   const isStarPatternRandomlyGenerated: boolean = false;
   const millisecondsCount: number = 10;
@@ -347,7 +347,7 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
               <NavLink
                 title={goToPrintEdition}
                 aria-label={goToPrintEdition}
-                to={formatItemRoutePath(items.lunarCalendar2025.category, items.lunarCalendar2025.title)}
+                to={formatItemRoutePath(items.lunarCalendar2026.category, items.lunarCalendar2026.title)}
                 className={lunarFeatureButton}
               >
                 Chart
