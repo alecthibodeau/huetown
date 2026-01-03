@@ -6,9 +6,9 @@ function News(): JSX.Element {
     <div className="news">
       <div className="news-text-wrapper">
         <span className="bold">Event</span>: Join Huetown
-        November 22nd &amp; 23rd at the <a className="text-link"
-        href="https://goodtrademakersmarket.com" target="_blank">2025
-        Good Trade Makers Market</a> in Providence, Rhode Island.
+        February 21st &amp; 22nd at the <a className="text-link"
+        href="https://www.rivegfest.com" target="_blank">2026
+        Rhode Island VegFest</a> in Providence, Rhode Island.
       </div>
     </div>
   );

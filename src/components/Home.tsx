@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 /* Components */
 import Item from './Item';
@@ -18,7 +18,7 @@ function Home(props: { isShopActive: boolean }): JSX.Element {
   const isNewsInHome: boolean = true;
   const isRedirectToMoonSpace: boolean = false;
 
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   useEffect(() => {
     if (isRedirectToMoonSpace) navigate(`/${routes.moonSpace}`);
@@ -42,7 +42,7 @@ function Home(props: { isShopActive: boolean }): JSX.Element {
           lunarCalendarPaper={featured.lunarCalendarPaper}
           lunarCalendarLocation={featured.lunarCalendarLocation}
         /> :
-        isNewsInHome ? <News /> : null
+        isNewsInHome ? <News /> : <div>Welcome to Huetown.</div>
       }
     </>
   );
