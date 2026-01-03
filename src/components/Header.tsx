@@ -51,7 +51,7 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
 
   function renderNavLinkWrapper(route: string): JSX.Element {
     return (
-      <div className="nav-link-wrapper">
+      <div key={`${route}-route`} className="nav-link-wrapper">
         <NavLink
           to={`/${route}`}
           className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
