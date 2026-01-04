@@ -74,7 +74,7 @@ function App(): JSX.Element {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Header isBreakpointXs={isBreakpointXs} isShopActive={isShopActive} />
+      <Header isHeaderBreakpointXs={isBreakpointXs} isShopActive={isShopActive} />
       <main id="main">
         <Routes>
           {isShopActive ?

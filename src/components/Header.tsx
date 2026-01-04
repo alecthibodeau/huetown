@@ -12,7 +12,7 @@ import variables from '../constants/_variables';
 /* Styles */
 import '../styles/header.scss';
 
-function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.Element {
+function Header(props: { isHeaderBreakpointXs: boolean, isShopActive: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const { shop, moonSpace, news, about, contact } = routes;
   const {
@@ -33,8 +33,8 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
   }, []);
 
   useEffect(() => {
-    if (!props.isBreakpointXs && isMobileNavOpen) closeMobileNav();
-  }, [props.isBreakpointXs, isMobileNavOpen]);
+    if (!props.isHeaderBreakpointXs && isMobileNavOpen) closeMobileNav();
+  }, [props.isHeaderBreakpointXs, isMobileNavOpen]);
 
   function closeMobileNav(): void {
     setIsMobileNavOpen(false);
@@ -97,14 +97,14 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
         >
           <CustomSVG
              name="Huetown logo"
-             svgFillColor={props.isBreakpointXs ?
+             svgFillColor={props.isHeaderBreakpointXs ?
                colorWhite : colorSixtySevenPercentGray
              }
              svgViewBox={dimensionSVGHuetownLogoViewBox}
              svgPaths={<HuetownLogo />}
            />
         </Link>
-        {props.isBreakpointXs ?
+        {props.isHeaderBreakpointXs ?
           <button
             id="burgerButton"
             className={`burger-button${isMobileNavOpen ? ' closing-x-button' : ''}`}
