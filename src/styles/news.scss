@@ -19,4 +19,21 @@
   outline: $border-width-large solid $huetown-blue;
   margin: 0 2rem 3rem;
   background-color: $huetown-yellow;
+  animation: pulse 2s infinite;
+
+  &:hover {
+    animation: none;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 $huetown-green;
+  }
+  70% {
+    box-shadow: 0 0 .125rem 1rem transparent;
+  }
+  100% {
+    box-shadow: 0 0 transparent;
+  }
 }
