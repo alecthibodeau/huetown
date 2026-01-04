@@ -2,6 +2,7 @@ const routes: { [key: string]: string } = {
   about: 'about',
   contact: 'contact',
   moonSpace: 'moon-space',
+  news: 'news',
   shop: 'shop',
   privacyPolicy: 'privacy-policy',
   termsOfUse: 'terms-of-use',

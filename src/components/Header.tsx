@@ -14,7 +14,7 @@ import '../styles/header.scss';
 
 function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
-  const { shop, moonSpace, about, contact } = routes;
+  const { shop, moonSpace, news, about, contact } = routes;
   const {
     colorSixtySevenPercentGray,
     colorWhite,
@@ -118,7 +118,7 @@ function Header(props: { isBreakpointXs: boolean, isShopActive: boolean }): JSX.
       <nav className={`mobile-nav-is-${isMobileNavOpen ? 'open' : 'closed'}`}>
         {props.isShopActive ?
           <>
-            {[shop, moonSpace, about].map(renderNavLinkWrapper)}
+            {[shop, news, moonSpace, about].map(renderNavLinkWrapper)}
             {renderCheckoutForm()}
           </> :
           <>

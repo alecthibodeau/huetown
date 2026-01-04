@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Item from './components/Item';
 import MoonSpace from './components/MoonSpace';
+import News from './components/News';
 import NotFound from './components/NotFound';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
@@ -86,6 +87,7 @@ function App(): JSX.Element {
           <Route path="/" element={<Home isShopActive={isShopActive} />} />
           <Route path={`/${routes.contact}`} element={<Contact />} />
           <Route path={`/${routes.moonSpace}`} element={<MoonSpace isShopActive={isShopActive} />} />
+          <Route path={`/${routes.news}`} element={<News />} />
           <Route path={`/${routes.veganly}`} element={<Veganly />} />
           <Route path={`/${routes.privacyPolicy}`} element={<PrivacyPolicy />} />
           <Route path={`/${routes.termsOfUse}`} element={<TermsOfUse />} />
