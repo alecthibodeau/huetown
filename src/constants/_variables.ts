@@ -11,17 +11,19 @@ const colorSixtySevenPercentGray: string = '#555';
 const colorEightyPercentGray: string = '#333';
 
 /* Colors Hued */
-const colorRainbowYellow = '#fbde84';
+const colorOrangeMuted: string = '#ff9600';
+const colorRainbowYellow: string = '#fbde84';
 
 /* Colors Assigned SVG */
 const colorSVGDefaultFill: string = colorBlack;
 
 const variables = {
-  colorRainbowYellow,
+  colorWhite,
   colorSixtySevenPercentGray,
   colorEightyPercentGray,
+  colorOrangeMuted,
+  colorRainbowYellow,
   colorSVGDefaultFill,
-  colorWhite,
   dimensionSVGShoppingCartIconViewBox,
   dimensionSVGHuetownLogoViewBox,
   dimensionSVGInstagramLogoViewBox,

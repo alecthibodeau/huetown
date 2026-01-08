@@ -15,14 +15,17 @@ import '../styles/header.scss';
 
 function Header(props: { isHeaderBreakpointXs: boolean, isShopActive: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
+  const [isShoppingCartHovered, setIsShoppingCartHovered] = useState(false);
   const { shop, moonSpace, news, about, contact } = routes;
   const {
+    colorWhite,
     colorSixtySevenPercentGray,
     colorEightyPercentGray,
-    colorWhite,
+    colorOrangeMuted,
     dimensionSVGShoppingCartIconViewBox,
     dimensionSVGHuetownLogoViewBox
   } = variables;
+  const responsiveShoppingCartColor: string = props.isHeaderBreakpointXs ? colorWhite : colorEightyPercentGray;
 
   useEffect(() => {
     const mainElement: HTMLElement | null = document.getElementById('main');
@@ -41,6 +44,14 @@ function Header(props: { isHeaderBreakpointXs: boolean, isShopActive: boolean })
 
   function closeMobileNav(): void {
     setIsMobileNavOpen(false);
+  }
+
+  function handleMouseEnter(): void {
+    setIsShoppingCartHovered(true);
+  };
+
+  function handleMouseLeave(): void {
+    setIsShoppingCartHovered(false);
   }
 
   function renderBurgerBar(burgerBar: string, index: number): JSX.Element {
@@ -80,11 +91,13 @@ function Header(props: { isHeaderBreakpointXs: boolean, isShopActive: boolean })
           className="paypal-checkout-button"
           type="submit"
           title="Checkout"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           onClick={closeMobileNav}
         >
           <CustomSVG
             name="shopping cart"
-            svgFillColor={props.isHeaderBreakpointXs ? colorWhite : colorEightyPercentGray}
+            svgFillColor={isShoppingCartHovered ? colorOrangeMuted : responsiveShoppingCartColor}
             svgViewBox={dimensionSVGShoppingCartIconViewBox}
             svgPaths={<ShoppingCartIcon />}
           />
