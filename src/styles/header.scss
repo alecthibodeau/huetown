@@ -118,8 +118,10 @@ nav {
   color: $white;
   cursor: pointer;
 
-  .material-symbols-outlined.shopping-cart {
-    font-size: 1.4375rem;
+  svg {
+    position: relative;
+    top: .25rem;
+    width: 1.25rem;
   }
 }
 

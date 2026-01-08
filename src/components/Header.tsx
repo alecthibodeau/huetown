@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 /* Components */
 import CustomSVG from './CustomSVG';
 import HuetownLogo from './svg-paths/HuetownLogo';
+import ShoppingCartIcon from './svg-paths/ShoppingCartIcon';
 
 /* Constants */
 import routes from '../constants/routes';
@@ -17,7 +18,9 @@ function Header(props: { isHeaderBreakpointXs: boolean, isShopActive: boolean })
   const { shop, moonSpace, news, about, contact } = routes;
   const {
     colorSixtySevenPercentGray,
+    colorEightyPercentGray,
     colorWhite,
+    dimensionSVGShoppingCartIconViewBox,
     dimensionSVGHuetownLogoViewBox
   } = variables;
 
@@ -79,9 +82,12 @@ function Header(props: { isHeaderBreakpointXs: boolean, isShopActive: boolean })
           title="Checkout"
           onClick={closeMobileNav}
         >
-          <span className="material-symbols-outlined shopping-cart">
-            shopping_cart
-          </span>
+          <CustomSVG
+            name="shopping cart"
+            svgFillColor={props.isHeaderBreakpointXs ? colorWhite : colorEightyPercentGray}
+            svgViewBox={dimensionSVGShoppingCartIconViewBox}
+            svgPaths={<ShoppingCartIcon />}
+          />
         </button>
        </form>
     );
