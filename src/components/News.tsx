@@ -10,9 +10,9 @@ function News(): JSX.Element {
         <span className="bold">Event</span>: Join Huetown
         at the <a className="text-link"
         href="https://www.rivegfest.com" target="_blank">2026
-        Rhode Island VegFest</a> on February 21st &amp; 22nd. Yes, prints of
+        Rhode Island VegFest</a> on February 21st &amp; 22nd. <span className="bold ital">Tickets are going fast, so get yours now!</span> Yes, prints of
         the <Link className="text-link" to="/shop/lunar-calendars/sigil-routing">2026 lunar
-        calendar</Link> will be available there.
+        calendar</Link> will be available. See you there!
       </div>
     </div>
   );
