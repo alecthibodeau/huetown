@@ -14,6 +14,7 @@ import formatText from '../helpers/format-text';
 import images from '../constants/images';
 import itemsLunarCalendars from '../constants/items-lunar-calendars';
 import itemsSpecificInfo from '../constants/items-specific-info';
+import routes from '../constants/routes';
 
 /* Styles */
 import '../styles/lunar-calendar-info.scss';
@@ -100,8 +101,9 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           and year-specific lunar phase information. Each calendar is printed
           on {renderSpan(lunarCalendarPaper)}, blind-debossed with Alec's name and
           the print shop's name &mdash; and hand numbered and signed by Alec. Each
-          calendar <Link className="text-link" to="/about#ordering">ships</Link> with
-          an accompanying information sheet inside a flat, sturdy box.
+          calendar ships with an information sheet inside a flat, sturdy
+          box. Before placing your order please review the ordering and shipping policy information
+          at Huetown's <Link className="text-link" to={`/${routes.termsOfUse}`}>Terms of Use</Link>.
         </p>
         <p>
           The calendar's lunar phase chart is calibrated for any location in the

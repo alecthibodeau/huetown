@@ -25,7 +25,8 @@ function Terms(): JSX.Element {
       <p>
         You are responsible for the accuracy of all information supplied with
         your order. Make sure to double-check your billing and shipping address
-        when placing an order. Huetown is unable to reroute packages.
+        when placing an order, as PayPal may be using an older shipping address
+        as the default one for your account. Huetown is unable to reroute packages.
       </p>
 
       <p className="bold">Shipping Policy</p>
