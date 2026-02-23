@@ -54,7 +54,7 @@ function About(): JSX.Element {
           <div className="about-description">
             Welcome to Huetown, featuring the work of artist Alec
             Thibodeau. Spend time with <Link className="text-link no-underline" to="/moon-space">
-            <span className="ital">Moon Space</span></Link>, an interactive lunar
+            Moon Space</Link>, an interactive lunar
             calendar with animated clouds and stars. Visit
             the <Link className="text-link no-underline" to="/shop">shop</Link> to
             order items. To see more of Alec's work in drawing, printmaking and related media
