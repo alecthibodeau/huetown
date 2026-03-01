@@ -1,11 +1,20 @@
+@import url('./_variables');
+
 .moon-span {
   width: 100vw;
   display: flex;
   justify-content: center;
+  height: 302px;
 }
 
-.moon-span div {
+.moon-span-sky-lines {
   width: 100%;
-  margin: 1rem;
-  background-color: #f29329;
+  margin-inline: 5px;
+  background-color: var(--twenty-six-sunset-paper);
+}
+
+.moon-span-sky-line {
+  height: 2px;
+  margin-bottom: 2px;
+  background-color: var(--twenty-six-brown-ink);
 }
