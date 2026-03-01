@@ -5,18 +5,20 @@ function MoonSpan(): JSX.Element {
   const breakpointXl: number = 1400;
   const maxSkyLineWidth: number = Math.min(window.innerWidth, breakpointXl);
   const skySegmentsCount: number = Math.floor(maxSkyLineWidth/2 - 8);
+  const textMoonSpanSkyLine: string = 'moon-span-sky-line';
+  const textMoonSpanSkySegment: string = 'moon-span-sky-segment';
+  const textSkyStar: string = 'sky-star';
 
   function renderSkySegment(skyLineIndex: number, skySegmentIndex: number): JSX.Element {
-    const skySegment: string = 'moon-span-sky-segment';
     let segmentClass: string = '';
     if (!Math.floor(Math.random() * 60)) {
       const starFadeFrequency: number = Math.floor(Math.random() * 5) + 1;
-      segmentClass = `star-${starFadeFrequency} twinkle `;
+      segmentClass = `${textSkyStar} ${textSkyStar}-${starFadeFrequency} `;
     }
     return (
       <div
-        key={`${skySegment}-${skyLineIndex}-${skySegmentIndex}`}
-        className={`${segmentClass}${skySegment}`}
+        key={`${textMoonSpanSkySegment}-${skyLineIndex}-${skySegmentIndex}`}
+        className={`${segmentClass}${textMoonSpanSkySegment}`}
       >
       </div>
     );
@@ -30,11 +32,19 @@ function MoonSpan(): JSX.Element {
     );
   }
 
+  function onClickStars(): void {
+    const stars: NodeListOf<Element> = document.querySelectorAll(`.${textSkyStar}`);
+    stars.forEach(star => {
+      star.classList.toggle('twinkle');
+    });
+  }
+
   return (
     <div className="moon-span">
-      <div className="moon-span-sky-lines">
-        {Array(76).fill('moon-span-sky-line').map(renderSkyLine)}
+      <div className={`${textMoonSpanSkyLine}s`}>
+        {Array(76).fill(textMoonSpanSkyLine).map(renderSkyLine)}
       </div>
+      <button onClick={onClickStars}>Stars</button>
     </div>
   );
 }

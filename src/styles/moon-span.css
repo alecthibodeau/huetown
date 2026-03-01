@@ -1,11 +1,5 @@
 @import url('./_variables');
 
-.moon-span {
-  display: flex;
-  justify-content: center;
-  height: 302px;
-}
-
 .moon-span-sky-lines {
   background-color: var(--twenty-six-sunset-paper);
 }
@@ -20,11 +14,11 @@
   height: 2px;
   background-color: var(--twenty-six-brown-ink);
 
-  &[class^="star"] {
+  &.sky-star {
     opacity: 0;
   }
 
-  &[class^="star"]:not(.twinkle) {
+  &.sky-star:not(.twinkle) {
     animation: opacity-reset .5s 1;
 
     @keyframes opacity-reset {
@@ -33,7 +27,7 @@
     }
   }
 
-  &[class^="star"].twinkle {
+  &.sky-star.twinkle {
     animation: opacity-cycle infinite alternate-reverse;
 
     @keyframes opacity-cycle {
@@ -41,23 +35,23 @@
       to { opacity: 0; }
     }
 
-    &.star-1 {
+    &.sky-star-1 {
       animation-duration: .5s;
     }
 
-    &.star-2 {
+    &.sky-star-2 {
       animation-duration: .75s;
     }
 
-    &.star-3 {
+    &.sky-star-3 {
       animation-duration: 1s;
     }
 
-    &.star-4 {
+    &.sky-star-4 {
       animation-duration: 1.5s;
     }
 
-    &.star-5 {
+    &.sky-star-5 {
       animation-duration: 2s;
     }
   }
