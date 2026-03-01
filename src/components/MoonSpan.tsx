@@ -45,6 +45,17 @@ function MoonSpan(): JSX.Element {
         {Array(76).fill(textMoonSpanSkyLine).map(renderSkyLine)}
       </div>
       <button onClick={onClickStars}>Stars</button>
+      <button
+        {...({ popovertarget: 'infoPopup' } as React.HTMLAttributes<HTMLButtonElement>)}
+      >
+        Info
+      </button>
+      <div
+        id="infoPopup"
+        {...({ popover: 'auto' } as React.HTMLAttributes<HTMLDivElement>)}
+      >
+        INFO POPOVER
+      </div>
     </div>
   );
 }
