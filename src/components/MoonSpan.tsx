@@ -11,7 +11,7 @@ function MoonSpan(): JSX.Element {
     let segmentClass: string = '';
     if (!Math.floor(Math.random() * 60)) {
       const starFadeFrequency: number = Math.floor(Math.random() * 5) + 1;
-      segmentClass = `star-${starFadeFrequency} `;
+      segmentClass = `star-${starFadeFrequency} twinkle `;
     }
     return (
       <div

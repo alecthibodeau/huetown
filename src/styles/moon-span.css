@@ -23,4 +23,42 @@
   &[class^="star"] {
     opacity: 0;
   }
+
+  &[class^="star"]:not(.twinkle) {
+    animation: opacity-reset .5s 1;
+
+    @keyframes opacity-reset {
+      from { opacity: .5; }
+      to { opacity: 0; }
+    }
+  }
+
+  &[class^="star"].twinkle {
+    animation: opacity-cycle infinite alternate-reverse;
+
+    @keyframes opacity-cycle {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+
+    &.star-1 {
+      animation-duration: .5s;
+    }
+
+    &.star-2 {
+      animation-duration: .75s;
+    }
+
+    &.star-3 {
+      animation-duration: 1s;
+    }
+
+    &.star-4 {
+      animation-duration: 1.5s;
+    }
+
+    &.star-5 {
+      animation-duration: 2s;
+    }
+  }
 }
