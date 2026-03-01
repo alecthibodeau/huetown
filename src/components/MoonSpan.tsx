@@ -2,15 +2,21 @@
 import '../styles/moon-span.css';
 
 function MoonSpan(): JSX.Element {
-  const skySegmentsCount: number = Math.floor(window.innerWidth/2 - 5);
+  const breakpointXl: number = 1400;
+  const maxSkyLineWidth: number = Math.min(window.innerWidth, breakpointXl);
+  const skySegmentsCount: number = Math.floor(maxSkyLineWidth/2 - 8);
 
   function renderSkySegment(skyLineIndex: number, skySegmentIndex: number): JSX.Element {
     const skySegment: string = 'moon-span-sky-segment';
-    let skySegmentClass = '';
+    let segmentClass: string = '';
+    if (!Math.floor(Math.random() * 60)) {
+      const starFadeFrequency: number = Math.floor(Math.random() * 5) + 1;
+      segmentClass = `star-${starFadeFrequency} `;
+    }
     return (
       <div
         key={`${skySegment}-${skyLineIndex}-${skySegmentIndex}`}
-        className={`${skySegment}${skySegmentClass} ${skySegmentIndex}`}
+        className={`${segmentClass}${skySegment}`}
       >
       </div>
     );

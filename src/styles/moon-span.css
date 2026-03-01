@@ -7,7 +7,6 @@
 }
 
 .moon-span-sky-lines {
-  margin-inline: 5px;
   background-color: var(--twenty-six-sunset-paper);
 }
 
@@ -20,4 +19,8 @@
   width: 2px;
   height: 2px;
   background-color: var(--twenty-six-brown-ink);
+
+  &[class^="star"] {
+    opacity: 0;
+  }
 }
