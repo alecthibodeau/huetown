@@ -4,13 +4,12 @@ import MoonCloudSVG from '../interfaces/MoonCloudSVG';
 
 function MoonSpanCloud(props: {
   index: number,
-  isVisible: boolean,
   calendar: LunarCalendar,
   svg: MoonCloudSVG
 }): JSX.Element {
   return (
     <svg
-      className={`moon-cloud-${props.index}${props.isVisible ? '' : ' is-moon-cloud-not-visible'}`}
+      className={`moon-cloud moon-cloud-${props.index} is-moon-cloud-not-visible`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox={props.svg.viewBox}
     >
