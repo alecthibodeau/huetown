@@ -1,0 +1,45 @@
+.moon-clouds {
+  position: relative;
+  bottom: 304px;
+  height: 302px;
+  width: 100%;
+  overflow: hidden;
+}
+
+[class^="moon-cloud-"] {
+  position: absolute;
+  top: 20%;
+  width: 140px;
+  animation: drift-wobble 40s linear infinite;
+  transition: opacity 1.5s;
+
+  &.is-moon-cloud-not-visible {
+    opacity: 0;
+  }
+
+  &.moon-cloud-1 {
+    top: 50%;
+    width: 160px;
+    animation-duration: 20s;
+  }
+
+  &.moon-cloud-2 {
+    top: 80%;
+    width: 180px;
+    animation-duration: 10s;
+  }
+}
+
+@keyframes drift-wobble {
+  0% {
+    left: -160px;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-70%) rotate(5deg);
+  }
+  100% {
+    left: 100%;
+    transform: translateY(-10%) rotate(0deg);
+  }
+}
