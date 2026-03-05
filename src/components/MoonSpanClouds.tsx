@@ -11,14 +11,18 @@ import svgPaths from '../constants/svg-paths';
 /* Styles */
 import '../styles/moon-span-clouds.css';
 
-function MoonSpanClouds( props: { calendar: LunarCalendar }): JSX.Element {
+function MoonSpanClouds( props: {
+  calendar: LunarCalendar,
+  isVisible: boolean
+}): JSX.Element {
 
   function renderMoonCloud(moonCloudSVG: MoonCloudSVG, index: number): JSX.Element {
     return (
       <MoonSpanCloud
-        index={index}
         key={`moon-cloud-${index}`}
         calendar={props.calendar}
+        index={index}
+        isVisible={props.isVisible}
         svg={moonCloudSVG}
       />
     );

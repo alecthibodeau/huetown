@@ -1,5 +1,8 @@
+import { useState } from 'react';
+
 /* Components */
 import MoonSpanClouds from './MoonSpanClouds';
+import MoonSpanSkyLines from './MoonSpanSkyLines';
 
 /* Interfaces */
 import LunarCalendar from '../interfaces/LunarCalendar'
@@ -12,19 +15,16 @@ import formatDateAndTime from '../helpers/format-date-and-time';
 
 /* Styles */
 import '../styles/moon-span.css';
-import MoonSpanSkyLines from './MoonSpanSkyLines';
 
 function MoonSpan(): JSX.Element {
+  const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
   const textSkyStar: string = 'sky-star';
   const localDate: Date = new Date();
   const easternTimeZoneDate: Date = formatDateAndTime.getEasternTimeZoneDate(localDate);
   const selectedCalendar: LunarCalendar = lunarCalendarsInformation[easternTimeZoneDate.getFullYear()];
 
   function onClickClouds(): void {
-    const stars: NodeListOf<Element> = document.querySelectorAll('.moon-cloud');
-    stars.forEach(star => {
-      star.classList.toggle('is-moon-cloud-not-visible');
-    });
+    setIsCloudsAnimationVisible(!isCloudsAnimationVisible);
   }
 
   function onClickStars(): void {
@@ -38,7 +38,7 @@ function MoonSpan(): JSX.Element {
     <div className="moon-span">
       <div className="moon-span-scene">
         <MoonSpanSkyLines />
-        <MoonSpanClouds calendar={selectedCalendar} />
+        <MoonSpanClouds calendar={selectedCalendar} isVisible={isCloudsAnimationVisible} />
       </div>
       <button
         {...({ popovertarget: 'infoPopup' } as React.HTMLAttributes<HTMLButtonElement>)}

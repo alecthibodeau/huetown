@@ -1,4 +1,6 @@
-function MoonSpanSkyLines(): JSX.Element {
+import React from 'react';
+
+const MoonSpanSkyLines = React.memo(() => {
   const breakpointXl: number = 1400;
   const maxSkyLineWidth: number = Math.min(window.innerWidth, breakpointXl);
   const skySegmentsCount: number = Math.floor(maxSkyLineWidth/2 - 8);
@@ -33,6 +35,6 @@ function MoonSpanSkyLines(): JSX.Element {
       {Array(76).fill('moon-span-sky-line').map(renderSkyLine)}
     </div>
   );
-}
+});
 
 export default MoonSpanSkyLines;
