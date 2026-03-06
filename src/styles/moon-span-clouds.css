@@ -8,7 +8,7 @@
 
 .moon-cloud {
   position: absolute;
-  top: 20%;
+  top: 5%;
   width: 140px;
   animation: drift-wobble 40s linear infinite;
   transition: opacity 1.5s;
@@ -18,25 +18,34 @@
   }
 
   &.moon-cloud-1 {
-    top: 50%;
+    top: 30%;
     width: 160px;
     animation-duration: 20s;
   }
 
   &.moon-cloud-2 {
-    top: 80%;
+    top: 60%;
     width: 180px;
     animation-duration: 10s;
+  }
+}
+
+@keyframes drift {
+  0% {
+    left: -160px;
+  }
+  100% {
+    left: 100%;
   }
 }
 
 @keyframes drift-wobble {
   0% {
     left: -160px;
-    transform: translateY(-50%) rotate(0deg);
+    transform: translateY(5%) rotate(0deg);
   }
   50% {
-    transform: translateY(-70%) rotate(5deg);
+    transform: translateY(15%) rotate(5deg);
   }
   100% {
     left: 100%;
