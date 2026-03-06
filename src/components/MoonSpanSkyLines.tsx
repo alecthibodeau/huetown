@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 
+/* Constants */
+import text from '../constants/text-moon-span';
+
 /* Styles */
 import '../styles/moon-span-sky-lines.css';
 
@@ -41,13 +44,11 @@ const MoonSpanSkyLines = React.memo(() => {
   }
 
   function getSkySegmentClass(): string {
-    const textSkyStar: string = 'sky-star';
-    const textTwinkle: string = 'twinkle';
     let segmentClass: string = '';
     if (!Math.floor(Math.random() * 60)) {
-      const isStarsAnimationVisible: boolean = !!document.querySelector(`.${textTwinkle}`);
+      const isStarsAnimationVisible: boolean = !!document.querySelector(`.${text.twinkle}`);
       const starFadeFrequency: number = Math.floor(Math.random() * 5) + 1;
-      segmentClass = `${textSkyStar} ${textSkyStar}-${starFadeFrequency}${isStarsAnimationVisible ? ` ${textTwinkle}` : ''}`;
+      segmentClass = `${text.skyStar} ${text.skyStar}-${starFadeFrequency}${isStarsAnimationVisible ? ` ${text.twinkle}` : ''}`;
     }
     return `${segmentClass} ${textMoonSpanSkySegment}`;
   }

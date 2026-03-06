@@ -1,6 +1,22 @@
 :root {
+  /* Colors Grayscale */
+  --color-white: #fff;
+  --color-twenty-percent-gray: #ccc;
+  --color-sixty-seven-percent-gray: #555;
+  --color-eighty-percent-gray: #333;
 
   /* Colors Hued */
- --twenty-six-sunset-paper: #f29329;
- --twenty-six-brown-ink: #6c2205;
+  --color-twenty-six-sunset-paper: #f29329;
+  --color-twenty-six-brown-ink: #6c2205;
+
+  /* Colors Assigned */
+  --color-dark-background: var(--color-eighty-percent-gray);
+  --color-application-font: var(--color-dark-background);
+
+  /* Dimensions */
+  --dimension-moon-space: 300px;
+
+  /* Border */
+  --border-width-medium: 2px;
+  --border-radius-medium: .5625rem;
 }

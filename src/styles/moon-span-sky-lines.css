@@ -1,5 +1,5 @@
 .moon-span-sky-lines {
-  background-color: var(--twenty-six-sunset-paper);
+  background-color: var(--color-twenty-six-sunset-paper);
 }
 
 .moon-span-sky-line {
@@ -10,7 +10,7 @@
 .moon-span-sky-segment {
   width: 2px;
   height: 2px;
-  background-color: var(--twenty-six-brown-ink);
+  background-color: var(--color-twenty-six-brown-ink);
 
   &.sky-star {
     opacity: 0;

@@ -4,7 +4,7 @@
   height: 302px;
 }
 
-.moon-span-phase-container {
+.moon-span-phase-wrapper {
   position: relative;
   bottom: 304px;
   display: flex;
@@ -14,5 +14,95 @@
 
   svg.waning {
     transform: scaleX(-1);
+  }
+}
+
+.moon-span-info {
+  margin: .75rem auto 0;
+  max-width: 300px;
+  user-select: none;
+}
+
+.moon-span-date-incrementor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.moon-span-selected-phase-date {
+  width: var(--dimension-moon-space) * .66;
+  text-align: center;
+  line-height: normal;
+
+  .moon-span-day-month-date {
+    font-size: 1.25rem;
+  }
+
+  .moon-span-time-zone {
+    font-size: .875rem;
+  }
+}
+
+.moon-span-increment-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: var(--border-width-medium) solid var(--color-sixty-seven-percent-gray);
+  border-radius: 50%;
+  background-color: var(--color-white);
+
+  &.is-not-visible {
+    visibility: hidden;
+  }
+
+  &:hover {
+    background-color: var(--color-twenty-percent-gray);
+  }
+
+  svg.back {
+    transform: rotate(180deg);
+  }
+}
+
+.moon-span-info-for-display {
+  margin-top: .5rem;
+  text-align: center;
+}
+
+.moon-span-lunar-feature-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: .5rem;
+
+  button {
+    margin: .25rem;
+  }
+}
+
+.moon-span-lunar-feature-button {
+  padding: .25rem .75rem;
+  border: var(--border-width-medium) solid var(--color-dark-background);
+  border-radius: var(--border-radius-medium);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: .75rem;
+  text-decoration: none;
+  line-height: normal;
+  background-color: var(--color-dark-background);
+  color: var(--color-white);
+
+  &.selected,
+  &:hover {
+    color: var(--color-application-font);
+    background-color: var(--color-white);
+  }
+
+  &.active.twenty-six {
+    border-color: var(--color-twenty-six-sunset-paper);
   }
 }
