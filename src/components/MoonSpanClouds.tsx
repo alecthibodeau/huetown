@@ -29,7 +29,7 @@ function MoonSpanClouds( props: {
   }
 
   return (
-    <div className="moon-clouds">
+    <div className="moon-span-clouds">
       {svgPaths.moonClouds.map(renderMoonCloud)}
     </div>
   );

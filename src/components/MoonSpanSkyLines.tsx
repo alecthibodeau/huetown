@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 
+/* Styles */
+import '../styles/moon-span-sky-lines.css';
+
 const MoonSpanSkyLines = React.memo(() => {
   const textMoonSpanSkyLine: string = 'moon-span-sky-line';
   const textMoonSpanSkySegment: string = 'moon-span-sky-segment';

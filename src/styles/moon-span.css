@@ -4,59 +4,15 @@
   height: 302px;
 }
 
-.moon-span-sky-lines {
-  background-color: var(--twenty-six-sunset-paper);
-}
-
-.moon-span-sky-line {
+.moon-span-phase-container {
+  position: relative;
+  bottom: 304px;
   display: flex;
-  margin-bottom: 2px;
-}
+  justify-content: center;
+  align-items: center;
+  height: 302px;
 
-.moon-span-sky-segment {
-  width: 2px;
-  height: 2px;
-  background-color: var(--twenty-six-brown-ink);
-
-  &.sky-star {
-    opacity: 0;
-  }
-
-  &.sky-star:not(.twinkle) {
-    animation: opacity-reset .5s 1;
-
-    @keyframes opacity-reset {
-      from { opacity: .5; }
-      to { opacity: 0; }
-    }
-  }
-
-  &.sky-star.twinkle {
-    animation: opacity-cycle infinite alternate-reverse;
-
-    @keyframes opacity-cycle {
-      from { opacity: 1; }
-      to { opacity: 0; }
-    }
-
-    &.sky-star-1 {
-      animation-duration: .5s;
-    }
-
-    &.sky-star-2 {
-      animation-duration: .75s;
-    }
-
-    &.sky-star-3 {
-      animation-duration: 1s;
-    }
-
-    &.sky-star-4 {
-      animation-duration: 1.5s;
-    }
-
-    &.sky-star-5 {
-      animation-duration: 2s;
-    }
+  svg.waning {
+    transform: scaleX(-1);
   }
 }
