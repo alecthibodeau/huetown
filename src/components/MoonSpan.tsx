@@ -14,6 +14,7 @@ import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/lunar-calendars-information';
 import svgPaths from '../constants/svg-paths';
 import text from '../constants/text-moon-span';
+import images from '../constants/images';
 
 /* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
@@ -48,6 +49,8 @@ function MoonSpan(): JSX.Element {
   const selectedYear: number = selectedPhaseDate.getFullYear();
 
   const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
+  const [isCrittersAnimationVisible, setIsCrittersAnimationVisible] = useState<boolean>(false);
+  const [isRisenOnce, setIsRisenOnce] = useState<boolean>(false);
   const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(isSameDate(easternTimeZoneDate, new Date(selectedYear, monthJanuary, dateFirst)));
   const [isNewYearsEve, setIsNewYearsEve] = useState<boolean>(isSameDate(easternTimeZoneDate, new Date(selectedYear, monthDecember, dateThirtyFirst)));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -90,6 +93,13 @@ function MoonSpan(): JSX.Element {
 
   function onClickClouds(): void {
     setIsCloudsAnimationVisible(!isCloudsAnimationVisible);
+  }
+
+  function onClickCritters(): void {
+    setIsCrittersAnimationVisible(!isCrittersAnimationVisible);
+    if (!isRisenOnce) {
+      setIsRisenOnce(true);
+    }
   }
 
   function onClickStars(): void {
@@ -158,6 +168,13 @@ function MoonSpan(): JSX.Element {
         <MoonSpanSkyLines />
         <MoonSpanPhaseWrapper selectedPhaseDate={selectedPhaseDate} selectedCalendar={selectedCalendar} />
         <MoonSpanClouds calendar={selectedCalendar} isVisible={isCloudsAnimationVisible} />
+        <div className="critter-wrapper">
+          <img
+            src={images.moonSpace.hippo2026}
+            alt="hippopotamus illustration"
+            className={`hippo-2026${isCrittersAnimationVisible ? ' is-rising' : ''}${isRisenOnce ? ' is-risen-once' : ''}`}
+          />
+        </div>
       </div>
 
       <div className="moon-span-info">
@@ -199,6 +216,13 @@ function MoonSpan(): JSX.Element {
               className={`${years[selectedYear]} ${text.lunarFeatureButton}${isStarsAnimationVisible ? ` ${text.selectedActive}` : ''}`}
               onClick={onClickStars}>
               Stars
+            </button>
+            <button
+              title={text.selectCrittersAnimation}
+              aria-label={text.selectCrittersAnimation}
+              className={`${years[selectedYear]} ${text.lunarFeatureButton}${isCrittersAnimationVisible ? ` ${text.selectedActive}` : ''}`}
+              onClick={onClickCritters}>
+              Critter
             </button>
             <NavLink
               title={text.goToPrintEdition}

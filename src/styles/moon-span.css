@@ -148,3 +148,38 @@
     margin: .25rem auto;
   }
 }
+
+.critter-wrapper {
+  position: relative;
+  bottom: 908px;
+  height: 302px;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    transform: translateY(300px);
+
+    &.is-rising {
+      animation: rise 1s ease-out forwards;
+    }
+
+    &.is-risen-once:not(.is-rising) {
+      animation: rise-reset 1s ease-out forwards;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(300px);
+  }
+  to {
+    transform: translateY(115px);
+  }
+}
+
+ @keyframes rise-reset {
+   from { transform: translateY(115px); }
+   to { transform: translateY(300px); }
+ }

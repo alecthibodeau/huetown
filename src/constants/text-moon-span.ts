@@ -8,6 +8,7 @@ const textMoonSpan: { [key: string]: string }  = {
   openInfoModal: 'Open info modal',
   selectCloudsAnimation: 'Select clouds animation',
   selectStarsAnimation: 'Select stars animation',
+  selectCrittersAnimation: 'Select critters animation',
   selectToday: 'Select today',
   selectedActive: 'selected active',
   skyStar: 'sky-star',

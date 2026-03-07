@@ -138,6 +138,9 @@ import printStentorianDetail04 from '../assets/images/items/print-stentorian-04-
 import printTarsierTrailFeature from '../assets/images/items/print-tarsier-trail-feature-450px.jpg';
 import printTigerMoontainFeature from '../assets/images/items/print-tiger-moontain-feature-450px.jpg';
 
+/* Moon Space */
+import hippo2026 from '../assets/images/moon-space/hippo-2026-400px.png';
+
 const about: { [key: string]: string } = {
   hLogo,
   selfPortrait
@@ -326,13 +329,18 @@ const itemsDetailImages: { [key: string]: string[] } = {
   printStentorianDetailImages
 };
 
+const moonSpace: { [key: string]: string } = {
+  hippo2026
+};
+
 const images = {
   about,
   lunarPhases,
   lunarCalendars,
   postcards,
   prints,
-  itemsDetailImages
+  itemsDetailImages,
+  moonSpace
 };
 
 export default images;
