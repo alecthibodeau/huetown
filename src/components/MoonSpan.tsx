@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 /* Components */
@@ -31,7 +31,6 @@ function MoonSpan(): JSX.Element {
     dateThirtyFirst,
     years,
     phasesInfoForUser,
-    isLeapYear,
     getLunarPhase
   } = digitalLunarCalendar;
   const { formatDayMonthAndDate, isSameDate, getEasternTimeZoneDate } = formatDateAndTime;
@@ -39,10 +38,14 @@ function MoonSpan(): JSX.Element {
   const localDate: Date = new Date();
   const easternTimeZoneDate: Date = getEasternTimeZoneDate(localDate);
   const selectedCalendar: LunarCalendar = lunarCalendarsInformation[easternTimeZoneDate.getFullYear()];
+  const millisecondsCount: number = 10;
+
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
-  const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(getEasternTimeZoneDate(localDate));
-  const [selectedYear, setSelectedYear] = useState<number>(selectedPhaseDate.getFullYear());
+  const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(easternTimeZoneDate);
+
+  const selectedYear: number = selectedPhaseDate.getFullYear();
 
   const [isCloudsAnimationVisible, setIsCloudsAnimationVisible] = useState<boolean>(false);
   const [isNewYearsDay, setIsNewYearsDay] = useState<boolean>(isSameDate(easternTimeZoneDate, new Date(selectedYear, monthJanuary, dateFirst)));
@@ -53,8 +56,12 @@ function MoonSpan(): JSX.Element {
   const dateNewYearsDay: Date = new Date(selectedYear, monthJanuary, dateFirst);
   const dateNewYearsEve: Date = new Date(selectedYear, monthDecember, dateThirtyFirst);
 
-  function renderIncrementorButton(isTerminalDate: boolean, direction: string): JSX.Element {
+  function renderIncrementorButton(direction: string): JSX.Element {
     const selectDirection: string = `Select ${direction} direction`;
+    const isTerminalDate: boolean = (
+      direction === text.backDirection && isNewYearsDay ||
+      direction === text.forwardDirection && isNewYearsEve
+    );
     return (
       <button
         title={selectDirection}
@@ -93,6 +100,57 @@ function MoonSpan(): JSX.Element {
     });
   }
 
+  function onClickSelectNewYearsDay(): void {
+    setIsNewYearsDay(true);
+    setIsNewYearsEve(false);
+    setSelectedPhaseDate(dateNewYearsDay);
+  }
+
+  function onClickPlayYear(): void {
+    setIsPlaying(!isPlaying);
+    startAnnualPhasesAnimation();
+    closePopover();
+  }
+
+  function onClickToday(): void {
+    setSelectedPhaseDate(easternTimeZoneDate);
+    setIsNewYearsDay(isSameDate(easternTimeZoneDate, dateNewYearsDay));
+    setIsNewYearsEve(isSameDate(easternTimeZoneDate, dateNewYearsEve));
+  }
+
+  function closePopover(): void {
+    const popover = document.getElementById('infoPopup');
+    popover?.hidePopover();
+  }
+
+  const startAnnualPhasesAnimation = () => {
+    if (timerRef.current) return;
+    timerRef.current = setInterval(() => {
+      setSelectedPhaseDate((previousDate: Date) => {
+        const nextDay = new Date(previousDate);
+        nextDay.setDate(nextDay.getDate() + 1);
+        if (nextDay.getFullYear() > previousDate.getFullYear()) {
+          if (timerRef.current) {
+            clearInterval(timerRef.current);
+            timerRef.current = null;
+          }
+          setIsPlaying(false);
+          setIsNewYearsDay(false);
+          setIsNewYearsEve(true);
+          return previousDate;
+        }
+        return nextDay;
+      });
+    }, millisecondsCount);
+  };
+
+  const stopAnnualPhasesAnimation = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  };
+
   return (
     <div className="moon-span">
 
@@ -104,7 +162,7 @@ function MoonSpan(): JSX.Element {
 
       <div className="moon-span-info">
         <div className="moon-span-date-incrementor">
-          {renderIncrementorButton(isNewYearsDay, text.backDirection)}
+          {renderIncrementorButton(text.backDirection)}
           <div className="moon-span-selected-phase-date">
             <div className="moon-span-day-month-date">
               {formatDayMonthAndDate(selectedPhaseDate)}
@@ -113,7 +171,7 @@ function MoonSpan(): JSX.Element {
               (Eastern Time Zone)
             </div>
           </div>
-          {renderIncrementorButton(isNewYearsEve, text.forwardDirection)}
+          {renderIncrementorButton(text.forwardDirection)}
         </div>
         <div className="moon-span-info-for-display">
           {`It's a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon.`}
@@ -156,9 +214,57 @@ function MoonSpan(): JSX.Element {
 
       <div
         id="infoPopup"
+        className="info-popover"
         {...({ popover: 'auto' } as React.HTMLAttributes<HTMLDivElement>)}
       >
-        INFO POPOVER
+        <div className="info-popover-header">
+          <button
+            name="close"
+            className="info-popover-close"
+            onClick={closePopover}>
+            <svg
+              viewBox="30 0 96 96"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon fill={text.colorSeventyPercentGray} points={svgPaths.closingX}/>
+            </svg>
+          </button>
+        </div>
+        <div className="info-popover-body">
+          {isNewYearsDay ?
+            <div className="info-popover-text">
+              Play all the moon phases for {selectedYear} as an animated sequence.
+            </div> :
+            <div className="info-popover-text">
+              <span className ="ital">Moon Space</span> is a {selectedYear} digital lunar calendar.
+              Select New Year's Day for the option to play all the year's moon phases.
+            </div>
+          }
+          <div className="info-popover-button-container">
+            {isNewYearsDay ?
+              <button
+                className={text.lunarFeatureButton}
+                onClick={onClickPlayYear}
+              >
+                Play {selectedYear}'s phases
+              </button> :
+              <button
+                className={text.lunarFeatureButton}
+                onClick={onClickSelectNewYearsDay}
+              >
+                Select New Year's Day
+              </button>
+            }
+            <button
+              title={text.selectToday}
+              aria-label={text.selectToday}
+              className={text.lunarFeatureButton}
+              onClick={onClickToday}
+            >
+              Select Today
+            </button>
+          </div>
+        </div>
       </div>
 
     </div>

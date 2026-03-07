@@ -106,3 +106,45 @@
     border-color: var(--color-twenty-six-sunset-paper);
   }
 }
+
+.info-popover {
+  width: 14rem;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  background-color: rgba(120, 210, 200, .95);
+}
+
+.info-popover-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.info-popover-close {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  margin: .75rem .75rem .125rem;
+  background-color: transparent;
+  color: var(--color-application-font);
+}
+
+.info-popover-body {
+  padding: 0 1.125rem .25rem;
+}
+
+.info-popover-text {
+  margin-bottom: .5rem;
+}
+
+.info-popover-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: .5rem;
+
+  button {
+    width: 100%;
+    margin: .25rem auto;
+  }
+}
