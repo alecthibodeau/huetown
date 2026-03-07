@@ -14,7 +14,7 @@ import routes from '../constants/routes';
 
 function Home(props: { isShopActive: boolean }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2026;
-  const isFeatured: boolean = false;
+  const isFeatured: boolean = true;
   const isNewsInHome: boolean = true;
   const isRedirectToMoonSpace: boolean = false;
 

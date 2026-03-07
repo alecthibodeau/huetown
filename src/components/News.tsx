@@ -7,12 +7,12 @@ function News(): JSX.Element {
   return (
     <div className="news">
       <div className="news-text-wrapper">
-        <span className="bold">Event</span>: Join Alec
+        <span className="bold">Event</span>: Alec recently spoke
         at <a className="text-link" href="https://providence.worldiaday.org/events/providence-2026" target="_blank">World
-        Information Architecture Day Providence</a> on March 7th, 2026. He'll be
+        Information Architecture Day Providence</a>,
         discussing <Link className="text-link" to="/moon-space">Moon
-        Space</Link>, specifically how he converted his <Link className="text-link" to="/shop/lunar-calendars/sigil-routing">printed
-        lunar calendar</Link> into a digital version.
+        Space</Link>: specifically how he converted his <Link className="text-link" to="/shop/lunar-calendars/sigil-routing">printed
+        lunar calendar</Link> into this digital version.
       </div>
     </div>
   );
