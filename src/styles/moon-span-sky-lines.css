@@ -18,20 +18,10 @@
 
   &.sky-star:not(.twinkle) {
     animation: opacity-reset .5s 1;
-
-    @keyframes opacity-reset {
-      from { opacity: .5; }
-      to { opacity: 0; }
-    }
   }
 
   &.sky-star.twinkle {
     animation: opacity-cycle infinite alternate-reverse;
-
-    @keyframes opacity-cycle {
-      from { opacity: 1; }
-      to { opacity: 0; }
-    }
 
     &.sky-star-1 {
       animation-duration: .5s;
@@ -53,4 +43,14 @@
       animation-duration: 2s;
     }
   }
+}
+
+@keyframes opacity-cycle {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes opacity-reset {
+  from { opacity: .5; }
+  to { opacity: 0; }
 }

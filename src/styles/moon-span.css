@@ -20,7 +20,6 @@
 .moon-span-info {
   margin: .75rem auto 0;
   max-width: 300px;
-  user-select: none;
 }
 
 .moon-span-date-incrementor {
@@ -153,7 +152,6 @@
   position: relative;
   bottom: 908px;
   height: 302px;
-  width: 100%;
   overflow: hidden;
 
   img {
@@ -171,12 +169,8 @@
 }
 
 @keyframes rise {
-  from {
-    transform: translateY(300px);
-  }
-  to {
-    transform: translateY(115px);
-  }
+  from { transform: translateY(300px); }
+  to { transform: translateY(115px); }
 }
 
  @keyframes rise-reset {
