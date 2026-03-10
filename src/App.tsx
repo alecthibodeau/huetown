@@ -87,8 +87,8 @@ function App(): JSX.Element {
           : null}
           <Route path="/" element={<Home isShopActive={isShopActive} />} />
           <Route path={`/${routes.contact}`} element={<Contact />} />
-          <Route path={`/${routes.moonSpace}`} element={<MoonSpace isShopActive={isShopActive} />} />
-          <Route path={`/${routes.moonSpan}`} element={<MoonSpan />} />
+          {/* <Route path={`/${routes.moonSpace}`} element={<MoonSpace isShopActive={isShopActive} />} /> */}
+          <Route path={`/${routes.moonSpace}`} element={<MoonSpan />} />
           <Route path={`/${routes.news}`} element={<News />} />
           <Route path={`/${routes.veganly}`} element={<Veganly />} />
           <Route path={`/${routes.privacyPolicy}`} element={<PrivacyPolicy />} />

@@ -2,23 +2,18 @@
 import LunarPhaseDates from '../interfaces/LunarPhaseDates';
 
 /* Helpers */
-import digitalLunarCalendar from './digital-lunar-calendar';
 import formatText from './format-text';
 
-const {
-  isLeapYear,
-  waxingCrescentPrefix,
-  waxingGibbousPrefix,
-  waningGibbousPrefix,
-  waningCrescentPrefix
-} = digitalLunarCalendar;
-
 const principalPhasesNextCluster: { [phase: string]: string } = {
-  newMoon: waxingCrescentPrefix,
-  firstQuarterMoon: waxingGibbousPrefix,
-  fullMoon: waningGibbousPrefix,
-  thirdQuarterMoon: waningCrescentPrefix
+  newMoon: 'xc',
+  firstQuarterMoon: 'xg',
+  fullMoon: 'ng',
+  thirdQuarterMoon: 'nc'
 };
+
+function isLeapYear(year: number): boolean {
+  return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
+}
 
 function getMonthsLengths(year: number): number[] {
   return [
