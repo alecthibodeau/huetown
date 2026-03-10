@@ -1,12 +1,17 @@
-/* Interfaces */
-import LunarPhases from '../interfaces/LunarPhases';
-
 /* Constants */
 import lunarCalendarsInformation from '../constants/lunar-calendars-information';
+import lunarPhaseNamesLibrary from '../constants/lunar-phase-names-library';
 import text from '../constants/text';
 
 /* Helpers */
 import formatText from './format-text';
+
+const {
+  waningCrescentPrefix,
+  waningGibbousPrefix,
+  waxingCrescentPrefix,
+  waxingGibbousPrefix
+} = lunarPhaseNamesLibrary;
 
 const monthJanuary: number = 0;
 const monthDecember: number = 11;
@@ -22,20 +27,8 @@ const years: { [key: number]: string } = {
   2026: 'twenty-six'
 };
 
-const waxingCrescentPrefix: string = 'xc';
-const waxingGibbousPrefix: string = 'xg';
-const waningGibbousPrefix: string = 'ng';
-const waningCrescentPrefix: string = 'nc';
-
 const numberMax: number = 3;
 const oneRandomNumber: number = Math.floor(Math.random() * numberMax);
-
-const intermediatePhasesPrefixes = [
-  waxingCrescentPrefix,
-  waxingGibbousPrefix,
-  waningGibbousPrefix,
-  waningCrescentPrefix
-];
 
 const phasesInfoForUser: { [phase: string]: string } = {
   ne: text.lunarPhaseNew,
@@ -47,36 +40,6 @@ const phasesInfoForUser: { [phase: string]: string } = {
   ng: `${text.lunarPhaseWaning} ${text.lunarPhaseGibbous}`,
   nc: `${text.lunarPhaseWaning} ${text.lunarPhaseCrescent}`
 };
-
-const principalPhases: LunarPhases = {
-  newMoon: 'newMoon',
-  firstQuarterMoon: 'firstQuarterMoon',
-  fullMoon: 'fullMoon',
-  thirdQuarterMoon: 'thirdQuarterMoon'
-};
-
-const lunarPhases: LunarPhases = addIntermediatePhasesToPrincipalPhases(principalPhases);
-
-function isLeapYear(year: number): boolean {
-  return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
-}
-
-function addIntermediatePhasesToPrincipalPhases(lunarPhases: LunarPhases): LunarPhases {
-  const phaseClusterLengths: number[] = [8, 7, 6, 5];
-  intermediatePhasesPrefixes.forEach(
-    (prefix) => {
-      phaseClusterLengths.forEach(
-        (clusterLength) => {
-          for (let i = 1; i <= clusterLength; i++) {
-            const phaseCode: string = prefix + clusterLength + i;
-            lunarPhases[phaseCode] = phaseCode;
-          }
-        }
-      );
-    }
-  );
-  return lunarPhases;
-}
 
 function getLunarPhase(date: Date): string {
   const monthFormatted: number = date.getMonth() + 1;
@@ -109,12 +72,6 @@ const digitalLunarCalendar = {
   years,
   oneRandomNumber,
   phasesInfoForUser,
-  waxingCrescentPrefix,
-  waxingGibbousPrefix,
-  waningGibbousPrefix,
-  waningCrescentPrefix,
-  lunarPhases,
-  isLeapYear,
   getLunarPhase,
   getLunarPhaseCategory,
   getRandomOrnamentLiveChange

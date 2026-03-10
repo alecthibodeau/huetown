@@ -1,10 +1,10 @@
 /* Interfaces */
 import LunarPhaseDates from '../interfaces/LunarPhaseDates';
 
-/* Helpers */
-import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
+/* Constants */
+import lunarPhaseNamesLibrary from './lunar-phase-names-library';
 
-const {} = digitalLunarCalendar.lunarPhases;
+const {} = lunarPhaseNamesLibrary.lunarPhases;
 
 const lunarPhaseDates2022: LunarPhaseDates = {
   // Previous year, 2021: third quarter moon was on 12/26/2021

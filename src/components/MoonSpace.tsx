@@ -33,7 +33,6 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
     leapYearLength,
     years,
     phasesInfoForUser,
-    isLeapYear,
     getLunarPhase,
     getLunarPhaseCategory
   } = digitalLunarCalendar;
@@ -158,6 +157,10 @@ function MoonSpace(props: { isShopActive: boolean }): JSX.Element {
         </svg>
       </button>
     );
+  }
+
+  function isLeapYear(year: number): boolean {
+    return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
   }
 
   function incrementDate(isForwardDirection?: boolean): void {

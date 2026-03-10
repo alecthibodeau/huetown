@@ -8,11 +8,11 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
 import Item from './components/Item';
-import MoonSpace from './components/MoonSpace';
 import MoonSpan from './components/MoonSpan';
 import News from './components/News';
 import NotFound from './components/NotFound';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import RedirectToMoonSpace from './components/RedirectToMoonSpace';
 import TermsOfUse from './components/TermsOfUse';
 import ScrollToTop from './components/ScrollToTop';
 import Shop from './components/Shop';
@@ -87,8 +87,8 @@ function App(): JSX.Element {
           : null}
           <Route path="/" element={<Home isShopActive={isShopActive} />} />
           <Route path={`/${routes.contact}`} element={<Contact />} />
-          {/* <Route path={`/${routes.moonSpace}`} element={<MoonSpace isShopActive={isShopActive} />} /> */}
           <Route path={`/${routes.moonSpace}`} element={<MoonSpan />} />
+          <Route path={`/${routes.moonSpan}`} element={<RedirectToMoonSpace />} />
           <Route path={`/${routes.news}`} element={<News />} />
           <Route path={`/${routes.veganly}`} element={<Veganly />} />
           <Route path={`/${routes.privacyPolicy}`} element={<PrivacyPolicy />} />

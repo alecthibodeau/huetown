@@ -3,12 +3,20 @@ import LunarPhaseDates from '../interfaces/LunarPhaseDates';
 
 /* Helpers */
 import formatText from './format-text';
+import lunarPhaseNamesLibrary from '../constants/lunar-phase-names-library';
+
+const {
+  waningCrescentPrefix,
+  waningGibbousPrefix,
+  waxingCrescentPrefix,
+  waxingGibbousPrefix
+} = lunarPhaseNamesLibrary;
 
 const principalPhasesNextCluster: { [phase: string]: string } = {
-  newMoon: 'xc',
-  firstQuarterMoon: 'xg',
-  fullMoon: 'ng',
-  thirdQuarterMoon: 'nc'
+  newMoon: waxingCrescentPrefix,
+  firstQuarterMoon: waxingGibbousPrefix,
+  fullMoon: waningGibbousPrefix,
+  thirdQuarterMoon: waningCrescentPrefix
 };
 
 function isLeapYear(year: number): boolean {
