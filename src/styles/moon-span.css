@@ -1,16 +1,23 @@
 @import url('./_variables');
 
 .moon-span-scene {
-  height: 302px;
+  display: grid;
+  grid-template-areas: "moon-span-scene-stack";
+
+  & > div {
+    grid-area: moon-span-scene-stack;
+    height: 302px;
+  }
+
+  & > div:nth-child(2) { z-index: 2; }
+  & > div:nth-child(3) { z-index: 3; }
+  & > div:nth-child(4) { z-index: 4; }
 }
 
 .moon-span-phase-wrapper {
-  position: relative;
-  bottom: 304px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 302px;
 
   svg.waning {
     transform: scaleX(-1);
@@ -150,8 +157,6 @@
 
 .critter-wrapper {
   position: relative;
-  bottom: 908px;
-  height: 302px;
   overflow: hidden;
 
   img {
