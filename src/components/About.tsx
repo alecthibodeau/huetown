@@ -4,16 +4,9 @@ import { Link, Location, useLocation } from 'react-router-dom';
 /* Components */
 import MailchimpFormContainer from './MailChimpFormContainer';
 
-/* Interfaces */
-import Shop from '../interfaces/Shop';
-
 /* Constants */
 import images from '../constants/images';
 import routes from '../constants/routes';
-import shops from '../constants/shops';
-
-/* Helpers */
-import formatText from '../helpers/format-text';
 
 /* Styles */
 import '../styles/about.scss';
@@ -36,16 +29,6 @@ function About(): JSX.Element {
     );
   }
 
-  function renderShopLink(shop: Shop, index: number): JSX.Element {
-    return (
-      <li key={`${formatText.formatLettersAndNumbers(shop.name)}-${index}`}>
-        <a className="text-link no-underline" href={shop.url} target="_blank">{shop.name}</a>
-        <span> &mdash; </span>
-        <span>{shop.location}</span>
-      </li>
-    );
-  }
-
   return (
     <div className="about-content">
       <div className="about-upper">
@@ -57,10 +40,9 @@ function About(): JSX.Element {
             Moon Space</Link>, an interactive lunar
             calendar with animated clouds and stars. Visit
             the <Link className="text-link no-underline" to="/shop">shop</Link> to
-            order items. To see more of Alec's work in drawing, printmaking and related media
-            go to <a className="text-link no-underline" href="https://alecthibodeau.com">
-            alecthibodeau.com</a>. Or find his coding projects
-            at <a className="text-link no-underline" href="https://alect.me">alect.me</a>.
+            order items. See more of Alec's work
+            at <a className="text-link no-underline" href="https://alecthibodeau.com">
+            alecthibodeau.com</a>.
           </div>
         </div>
         <img className="huetown-h-logo" src={hLogo} alt="Huetown H logo"/>
@@ -68,7 +50,7 @@ function About(): JSX.Element {
       <div className="about-lower">
         <div>
           {renderSectionTitle('contact')}
-          Huetown's contact email is <a className="text-link no-underline" href="mailto:info@huetown.com">info@huetown.com</a>.
+          Email Huetown at <a className="text-link no-underline" href="mailto:info@huetown.com">info@huetown.com</a>
         </div>
         <div id={textOrdering} ref={orderingRef}>
           {renderSectionTitle(`${textOrdering} & shipping`)}
@@ -76,16 +58,13 @@ function About(): JSX.Element {
         </div>
         <div>
           {renderSectionTitle('follow')}
-          Check out Huetown on <a className="text-link no-underline" href="https://www.instagram.com/huetown">
-          Instagram</a>. Or subscribe below to Huetown's email list: your
-          information <Link className="text-link no-underline" to={`/${routes.privacyPolicy}`}>won't be shared with miscreants</Link>.
+          Find Huetown on <a className="text-link no-underline" href="https://www.instagram.com/huetown">
+          Instagram</a>, or subscribe below to Huetown's email list (your
+          information <Link className="text-link no-underline" to={`/${routes.privacyPolicy}`}>won't be shared with miscreants</Link>)
         </div>
         <div>
           {renderSectionTitle('places')}
-          Huetown items are available at these retail spots in Rhode Island:
-          <ul>
-            {shops.map(renderShopLink)}
-          </ul>
+          Huetown items are regularly available at <a className="text-link no-underline" href="https://shop.craftlandshop.com" target="_blank">Craftland</a> in Providence, Rhode Island
         </div>
       </div>
       <MailchimpFormContainer />
