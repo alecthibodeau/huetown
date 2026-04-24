@@ -1,18 +1,26 @@
 @use './_variables' as *;
 
 .news {
-  position: fixed;
-  top: 0;
-  left: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+
+  &:not(.with-image) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+.news-image {
+  max-width: 90vw;
 }
 
 .news-text-wrapper {
-  max-width: 21rem;
+  max-width: 24rem;
   padding: 1rem 1.5rem;
   border: $border-width-large solid $huetown-purple;
   border-radius: .5rem;

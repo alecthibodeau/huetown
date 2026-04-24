@@ -1,18 +1,22 @@
-import { Link } from 'react-router-dom';
+/* Constants */
+import images from '../constants/images';
 
 /* Styles */
 import '../styles/news.scss';
 
 function News(): JSX.Element {
+  const isWithImage: boolean = true;
+
   return (
-    <div className="news">
+    <div className={`news ${isWithImage ? 'with-image' : ''}`}>
+      {
+        isWithImage
+        ? <img className="news-image" src={images.news.diurnalWatch} alt="Diurnal Watch drawing"/>
+        : null
+      }
       <div className="news-text-wrapper">
-        <span className="bold">Event</span>: Alec recently spoke
-        at <a className="text-link" href="https://providence.worldiaday.org/events/providence-2026" target="_blank">World
-        Information Architecture Day Providence</a>,
-        discussing <Link className="text-link" to="/moon-space">Moon
-        Space</Link>: specifically how he converted his <Link className="text-link" to="/shop/lunar-calendars/sigil-routing">printed
-        lunar calendar</Link> into this digital version.
+        <span className="bold">Event</span>: On May 1st, 2026 bid on this ink drawing
+        by Alec at the <a className="text-link" href="https://newurbanarts.org/event/nuas-29th-birthday-bash-silent-art-auction-jurassic-arts" target="_blank">New Urban Arts 29th Birthday Bash + Silent Art Auction</a>.
       </div>
     </div>
   );

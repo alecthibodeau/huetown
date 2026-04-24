@@ -2,6 +2,9 @@
 import hLogo from '../assets/images/about/huetown-h-logo.jpg';
 import selfPortrait from '../assets/images/about/thibodeau-self-portrait.jpg';
 
+/* News */
+import diurnalWatch from '../assets/images/news/diurnal-watch-600px.jpg';
+
 /* Items */
 import keyFirstQuarterMoon from '../assets/images/items/lunar-phase-first-quarter.png';
 import keyFullMoon from '../assets/images/items/lunar-phase-full.png';
@@ -144,6 +147,10 @@ import hippo2026 from '../assets/images/moon-space/hippo-2026-400px.png';
 const about: { [key: string]: string } = {
   hLogo,
   selfPortrait
+};
+
+const news: { [key: string]: string } = {
+  diurnalWatch
 };
 
 const lunarPhases: { [key: string]: string } = {
@@ -335,6 +342,7 @@ const moonSpace: { [key: string]: string } = {
 
 const images = {
   about,
+  news,
   lunarPhases,
   lunarCalendars,
   postcards,
