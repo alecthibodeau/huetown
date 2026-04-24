@@ -25,7 +25,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
   const isNewsInInfo: boolean = false;
   const isExtraPrintDisplayed: boolean = false;
   const isLatestLunarCalendar: boolean = props.id === latestLunarCalendarId;
-  const isThumbnailsGroupDisplayed: boolean = true;
+  const isThumbnailsGroupDisplayed: boolean = false;
 
   function renderlunarPhase(phase: LunarPhase, index: number): JSX.Element {
     const moonTextFormatted: string = `${phase.name} moon`;
