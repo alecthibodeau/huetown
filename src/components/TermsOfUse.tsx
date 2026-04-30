@@ -6,6 +6,8 @@ function Terms(): JSX.Element {
     <div className="documentation">
       <h1>Terms of Use</h1>
 
+      <p className="text-align-right">Updated April 29, 2026</p>
+
       <p>
         The following Terms of Use apply to your activities as a user of Huetown's
         website. By ordering items at this website you agree to the following
@@ -45,12 +47,10 @@ function Terms(): JSX.Element {
       </p>
 
       <p>
-        We strive to deliver your order speedily. Packages
-        usually ship via USPS Priority Mail or a comparably fast USPS/UPS service
-        for the same delivery address. For example, a package that's estimated to
-        arrive within three days using either USPS Priority Mail or USPS Ground
-        Advantage may ship through either one of these services at the shipper's
-        discretion.
+        Packages ship via a carrier and service of the shipper's choosing, usually
+        USPS Ground Advantage for domestic orders and UPS Worldwide Expedited
+        for international orders. Due to <a className="text-link" href="https://about.usps.com/newsroom/national-releases/2026/0325-usps-announces-transportation-related-time-limited-price-change.htm">recent price changes by USPS</a>, shipping via
+        Priority Mail is no longer a default service for domestic orders.
       </p>
 
       <p>
