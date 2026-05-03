@@ -15,8 +15,11 @@ function News(): JSX.Element {
         : null
       }
       <div className="news-text-wrapper">
-        <span className="bold">Event</span>: On May 1st, 2026 bid on this ink drawing
-        by Alec at the <a className="text-link" href="https://newurbanarts.org/event/nuas-29th-birthday-bash-silent-art-auction-jurassic-arts" target="_blank">New Urban Arts 29th Birthday Bash + Silent Art Auction</a>.
+        <span className="bold">Recently</span>: This ink drawing
+        by Alec was sold at the <a className="text-link"
+        href="https://newurbanarts.org/event/nuas-29th-birthday-bash-silent-art-auction-jurassic-arts"
+        target="_blank">New Urban Arts 29th Birthday Bash + Silent Art Auction</a>. The
+        event raised funds for programming for young people.
       </div>
     </div>
   );
