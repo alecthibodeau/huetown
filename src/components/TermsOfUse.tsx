@@ -6,7 +6,7 @@ function Terms(): JSX.Element {
     <div className="documentation">
       <h1>Terms of Use</h1>
 
-      <p className="text-align-right">Updated April 29, 2026</p>
+      <p className="text-align-right">Updated May 4, 2026</p>
 
       <p>
         The following Terms of Use apply to your activities as a user of Huetown's
