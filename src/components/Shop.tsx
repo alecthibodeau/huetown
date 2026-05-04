@@ -127,7 +127,7 @@ function Shop(): JSX.Element {
 
   function renderShopContent(): JSX.Element {
     return (
-      <div>
+      <div className="shop-content">
         <div className="shop-info">
           <div className="items-search">
             <span>

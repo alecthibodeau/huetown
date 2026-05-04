@@ -1,5 +1,9 @@
 @use './variables' as *;
 
+.shop-content {
+  max-width: 100vw;
+}
+
 .shop-info {
   max-width: 18.75rem;
   padding: 0 1rem;
