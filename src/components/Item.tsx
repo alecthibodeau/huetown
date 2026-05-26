@@ -215,6 +215,7 @@ function Item(props: ItemProps): JSX.Element {
               lunarCalendarYear={props.lunarCalendarYear}
               lunarCalendarPaper={props.lunarCalendarPaper}
               lunarCalendarLocation={props.lunarCalendarLocation}
+              isSoldOut={props.isSoldOut}
             />
           : null}
         </div>

@@ -100,10 +100,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           The {renderSpan(lunarCalendarYear)} lunar calendar comprises new drawings
           and year-specific lunar phase information. Each calendar is printed
           on {renderSpan(lunarCalendarPaper)}, blind-debossed with Alec's name and
-          the print shop's name &mdash; and hand numbered and signed by Alec. Each
-          calendar ships with an information sheet inside a flat, sturdy
-          box. Before placing your order please review the ordering and shipping policy information
-          at Huetown's <Link className="text-link" to={`/${routes.termsOfUse}`}>Terms of Use</Link>.
+          the print shop's name &mdash; and hand numbered and signed by Alec.
         </p>
         <p>
           The calendar's lunar phase chart is calibrated for any location in the
@@ -116,8 +113,19 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
           First Quarter Moon, Full Moon and Third Quarter Moon) plus all
           intermediate crescent and gibbous phases. For months with less than
           31 days, drawings of clouds occupy the extra
-          spaces. <a className="text-link" href="#featureImageNavigation">Order now</a>.
+          spaces.&nbsp;
         </p>
+        {
+          props.isSoldOut ?
+          <p className="item-sold-out">
+            {('item is sold out').toUpperCase()}
+          </p> :
+          <p>
+            Each calendar ships with an information sheet inside a flat, sturdy
+            box. Before placing your order please review Huetown's <Link className="text-link" to={`/${routes.termsOfUse}`}>Terms of Use</Link>, specifically the ordering and
+            shipping policy information. <a className="text-link" href="#featureImageNavigation">Order now</a>.
+          </p>
+        }
         <div className="lunar-phases">
           {itemsLunarCalendars.phases.map(renderlunarPhase)}
         </div>
