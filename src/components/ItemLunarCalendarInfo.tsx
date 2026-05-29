@@ -15,6 +15,7 @@ import images from '../constants/images';
 import itemsLunarCalendars from '../constants/items-lunar-calendars';
 import itemsSpecificInfo from '../constants/items-specific-info';
 import routes from '../constants/routes';
+import text from '../constants/text';
 
 /* Styles */
 import '../styles/lunar-calendar-info.scss';
@@ -117,9 +118,7 @@ function ItemLunarCalendarInfo(props: ItemProps): JSX.Element {
         </p>
         {
           props.isSoldOut ?
-          <p className="item-sold-out">
-            {('item is sold out').toUpperCase()}
-          </p> :
+          <p className="item-sold-out">{text.itemSoldOut}</p> :
           <p>
             Each calendar ships with an information sheet inside a flat, sturdy
             box. Before placing your order please review Huetown's <Link className="text-link" to={`/${routes.termsOfUse}`}>Terms of Use</Link>, specifically the ordering and
