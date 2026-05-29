@@ -15,11 +15,11 @@ function News(): JSX.Element {
         : null
       }
       <div className="news-text-wrapper">
-        <span className="bold">Recently</span>: This ink drawing
-        by Alec was sold at the <a className="text-link"
+        <span className="bold">Recently</span>: Alec donated this new ink drawing
+        to the <a className="text-link"
         href="https://newurbanarts.org/event/nuas-29th-birthday-bash-silent-art-auction-jurassic-arts"
         target="_blank">New Urban Arts 29th Birthday Bash + Silent Art Auction</a>. The
-        event raised funds for programming for young people.
+        piece's sale helped raise funds to provide arts programs for young people.
       </div>
     </div>
   );
