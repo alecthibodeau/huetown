@@ -44,7 +44,7 @@
   },
   "resolutions": {
     "nth-check": "2.0.1",
-    "postcss": "8.4.31",
+    "postcss": "8.5.26",
     "ws": "8.17.1"
   },
   "devDependencies": {
