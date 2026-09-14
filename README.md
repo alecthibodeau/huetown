@@ -20,38 +20,36 @@ Huetown is built with [React](https://reactjs.org/) and [TypeScript](https://www
 
 ### Overview
 
-[Moon Space](https://huetown.com/moon-space) is a lunar calendar interface at Huetown. It's a digital interpretation of the lunar calendar prints on paper that are available at the site. When a user lands at Moon Space they see the current date for the Eastern Time Zone, the name of this date's moon phase and a visualization of the phase: a bright moon against a dark sky.
+[Moon Space](https://huetown.com/moon-space) is a lunar calendar interface at Huetown. It's a digital interpretation of the lunar calendar prints on paper that are available at the site. When a user lands at Moon Space they see the current date for the Eastern Time Zone, the name of this date's moon phase and a visualization of that phase's shape: a bright moon against a hued nighttime sky.
 
-Moon phase data for the entire current year are available. Phases include the four principal ones &mdash; new moon, first quarter moon, full moon and third quarter moon &mdash; as well as variations of intermediate ones &mdash; crescent moon and gibbous moon. Users can click arrow buttons to increment forward or backward in time through hundreds of these phases.
+The user can access moon phase data for the entire current year. Phases include the four principal ones (new moon, first quarter moon, full moon and third quarter moon), as well as variations of intermediate ones (crescent moons and gibbous moons). Users can click arrow buttons to increment forward or backward day-by-day within the current year.
 
-The **Info** button launches a modal that briefly describes the digital lunar calendar. Within the modal users can select New Year's Day and then animate through all 365 phases of the year &mdash; or 366 in the case of a leap year.
+The **Info** button launches a modal that briefly describes the digital lunar calendar. Within the modal users can select New Year's Day and then animate through all 365 phases of the year, or 366 in the case of a leap year. Compared to the functionality of the arrow buttons this animation is a rapid visualization through twelve [synodic months](https://en.wikipedia.org/wiki/Lunar_month#Synodic_month). The animation concludes on December 31st. Clicking the modal's **Select Today** button resets the interface to display the current day.
 
-Compared to the arrow buttons the animation offers an automated, more rapid visualization through time by playing a quick succession of twelve [synodic months](https://en.wikipedia.org/wiki/Lunar_month#Synodic_month). The animation concludes on December 31st. Clicking the **Today** button resets the interface to display the current day.
-
-For context and approximate scale a looped animation of clouds appears when the user clicks the **Clouds** button. This animation is independent from the moon phase animation, meaning each can play individually or concurrently.
+Back outside the modal, when the user clicks the **Clouds** button a looped animation of clouds appears. This animation provides context and approximate scale. It's independent from the moon phase animation: each can play individually or concurrently.
 
 Another visual effect is twinkling stars, visible when the user clicks the **Stars** button. This animation is independent from the other two for moon phases and clouds.
 
-A final feature is the **Chart** button. When clicked it navigates to the corresponding lunar calendar print for the current year. Users can compare the two different approaches to visualizing the same data: a paper chart intended for wall display and an interactive interface that's available in web browsers on mobile devices and desktop machines.
+An additional design element is associated with the **Critter** button. Clicking this toggles the sliding in/out of a hippopotamus drawing. This feature is a work in progress, as ideally more animals would join the scene.
+
+A final feature is the **Chart** button. When clicked it navigates to the corresponding lunar calendar print for the current year. Users can compare the two different approaches to visualizing the same data: a paper chart intended for wall display and a digital interface for mobile and desktop web browsers.
 
 ### Data
 
-I considered different features for how the code would work. Calling an API for the data could be ideal, were it reliable, accurate and affordable. Because I wanted to prioritize the visualization of the data I instead started by transcribing phase dates from [timeanddate.com](https://www.timeanddate.com/calendar/?year=2024&country=1) for the Eastern Time Zone. That source provided the four principal phases for each [synodic month](https://en.wikipedia.org/wiki/Lunar_month#Synodic_month), which totaled about 48 per year. I would have to generate the other hundreds of intermediate phases per year myself.
+I considered different ways of representing the moon phases. Getting the initial data through an API call would be ideal, were it feasible (reliable, accurate and affordable). Because I wanted to prioritize the visualization of the data I instead started by transcribing phase dates for the Eastern Time Zone from [timeanddate.com](https://www.timeanddate.com/calendar/?year=2024&country=1). That source provided the dates of the four principal phases for each [synodic month](https://en.wikipedia.org/wiki/Lunar_month#Synodic_month), totalling about 48 principal phase dates per year. I then used these to programmatically generate the hundreds of intermediate phase dates for the year.
 
-I wrote helper functions in React to fill the gaps between principal phases with intermediate ones. This data would become a JavaScript object of the type `LunarPhaseDates`, a custom TypeScript interface I made. Once I knew which phases to put where I had to find a way to visualize them on screen.
+To accomplish this I wrote helper functions in React to fill the gaps between principal phase dates with intermediate ones. The resulting code aggregated all data into a JavaScript object of the type `LunarPhaseDates`, which was declared in a custom TypeScript interface. With the helper functions handling the sequence of phases, the next task was finding a way to visualize the shapes.
 
 ### Visualization
 
-In addition to the principal phases themselves I needed to make sequences of crescent and gibbous phases that would account for the varying number of days between principal phases, which could be anywhere between five and eight. I briefly thought of reusing the moon shapes from the printed lunar calendar, which existed as bitmaps of scanned drawings. But these didn't provide the desired effect.
-
-From working with SVGs for many years I knew I could produce accurate shapes in Adobe Illustrator. I also knew I could then export them as code rather than image files. Doing this avoided having a large directory of images in the repository. Now the codebase would only require a single constants file to store the moon phases as SVG strings.
+I used Adobe Illustrator to design accurate vector shapes for all principal and intermediate phases. I then exported the shapes as SVG code rather than as image files. This meant the repository required only a constants file to store all phase images as SVG strings, eliminating the need for a large directory of JPG, PNG or SVG files.
 
 ### Future features
 
-While I'm happy with Moon Space as it is now, there are more features I'd like to add when the time is right. These include the following:
-- Allowing the user to regulate animation speed
-- Calling an API for moon phase data
-- Handling different time zones
-- Adding more responsive web design to expand the interface for larger viewport widths
+While I'm happy with Moon Space as it is, there are more features I'd like to incorporate when the time is right. These include the following:
+- Allow the user to regulate animation speed
+- Add more design elements: multiple critters, for example, possibly with additional animations
+- Call an API for moon phase data (if feasible)
+- Handle different time zones (if feasible)
 
 Software and content Copyright (C) Alec Thibodeau. Copyright year is by commit date.
