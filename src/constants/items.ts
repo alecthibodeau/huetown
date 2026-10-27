@@ -33,7 +33,6 @@ const items: Items = {
     lunarCalendarPaper: text.lunarCalendarPaper2026,
     lunarCalendarLocation: text.lunarCalendarLocationProvidence,
     detailImages: images.itemsDetailImages.lunarCalendar2026DetailImages,
-    isSoldOut: true
   },
   lunarCalendar2025: {
     id: 'LLUBY69U94MPW',
