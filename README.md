@@ -30,7 +30,7 @@ Back outside the modal, when the user clicks the **Clouds** button a looped anim
 
 Another visual effect is twinkling stars, visible when the user clicks the **Stars** button. This animation is independent from the other two for moon phases and clouds.
 
-An additional design element is associated with the **Critter** button. Clicking this toggles the sliding in/out of a hippopotamus drawing. This feature is a work in progress, as ideally more animals would join the scene.
+An additional design element is associated with the **Critters** button. Clicking this toggles the sliding in/out of a hippopotamus drawing. This feature is a work in progress, as ideally more animals would join the scene.
 
 A final feature is the **Chart** button. When clicked it navigates to the corresponding lunar calendar print for the current year. Users can compare the two different approaches to visualizing the same data: a paper chart intended for wall display and a digital interface for mobile and desktop web browsers.
 
@@ -48,7 +48,7 @@ I used Adobe Illustrator to design accurate vector shapes for all principal and 
 
 While I'm happy with Moon Space as it is, there are more features I'd like to incorporate when the time is right. These include the following:
 - Allow the user to regulate animation speed
-- Add more design elements: multiple critters, for example, possibly with additional animations
+- Add design elements: more critters, for example, possibly with additional animations
 - Call an API for moon phase data (if feasible)
 - Handle different time zones (if feasible)
 
