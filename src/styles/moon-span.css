@@ -26,7 +26,7 @@
 
 .moon-span-info {
   margin: .75rem auto 0;
-  max-width: 300px;
+  max-width: 320px;
 }
 
 .moon-span-date-incrementor {
@@ -78,12 +78,22 @@
   text-align: center;
 }
 
-.moon-span-lunar-feature-buttons-container {
+.moon-span-animation-controls {
+  padding: .125rem .25rem .25rem .25rem;
+  border: 1px solid var(--color-sixty-seven-percent-gray);
+  border-radius: var(--border-radius-medium);
+  margin-block: .25rem;
+}
+
+.moon-span-animation-controls-title {
+  text-align: center;
+}
+
+.moon-span-lunar-feature-buttons-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: .5rem;
 
   button {
     margin: .25rem;
@@ -111,6 +121,11 @@
   &.active.twenty-six {
     border-color: var(--color-twenty-six-sunset-paper);
   }
+}
+
+.moon-span-print-edition-link {
+  display: block;
+  text-align: center;
 }
 
 .info-popover {
@@ -143,7 +158,7 @@
   margin-bottom: .5rem;
 }
 
-.info-popover-button-container {
+.info-popover-button-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,6 +173,8 @@
 .critter-wrapper {
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
 
   img {
     position: absolute;
@@ -178,7 +195,20 @@
   to { transform: translateY(115px); }
 }
 
- @keyframes rise-reset {
-   from { transform: translateY(115px); }
-   to { transform: translateY(300px); }
- }
+@keyframes rise-reset {
+  from { transform: translateY(115px); }
+  to { transform: translateY(300px); }
+}
+
+/* Media Queries */
+
+@media (min-width: 576px /* --breakpoint-sm */) {
+
+  .moon-span-animation-controls {
+    margin-block: 1rem;
+  }
+
+  .critter-wrapper {
+    justify-content: flex-start;
+  }
+}

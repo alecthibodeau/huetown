@@ -194,7 +194,9 @@ function MoonSpan(): JSX.Element {
           {`It's a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon.`}
         </div>
         {!isPlaying ?
-          <div className="moon-span-lunar-feature-buttons-container">
+        <div className="moon-span-animation-controls">
+          <div className="moon-span-animation-controls-title">animation controls</div>
+          <div className="moon-span-lunar-feature-buttons-wrapper">
             <button
               {...({ popovertarget: 'infoPopup' } as React.HTMLAttributes<HTMLButtonElement>)}
               title={text.openInfoModal}
@@ -224,17 +226,13 @@ function MoonSpan(): JSX.Element {
               onClick={onClickCritters}>
               Critter
             </button>
-            <NavLink
-              title={text.goToPrintEdition}
-              aria-label={text.goToPrintEdition}
-              className={text.lunarFeatureButton}
-              to={formatText.formatItemRoutePath(items.lunarCalendar2026.category, items.lunarCalendar2026.title)}
-            >
-              Chart
-            </NavLink>
           </div>
+
+        </div>
+
         : null}
       </div>
+
 
       <div
         id="infoPopup"
@@ -264,7 +262,7 @@ function MoonSpan(): JSX.Element {
               Select New Year's Day for the option to play all the year's moon phases.
             </div>
           }
-          <div className="info-popover-button-container">
+          <div className="info-popover-button-wrapper">
             {isNewYearsDay ?
               <button
                 className={text.lunarFeatureButton}

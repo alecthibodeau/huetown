@@ -11,11 +11,12 @@ import ItemProps from '../interfaces/ItemProps';
 /* Constants */
 import items from '../constants/items';
 import routes from '../constants/routes';
+import MoonSpan from './MoonSpan';
 
 function Home(props: { isShopActive: boolean }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2026;
   const isFeatured: boolean = false;
-  const isNewsInHome: boolean = true;
+  const isNewsInHome: boolean = false;
   const isRedirectToMoonSpace: boolean = false;
 
   const navigate: NavigateFunction = useNavigate();
@@ -42,7 +43,7 @@ function Home(props: { isShopActive: boolean }): JSX.Element {
           lunarCalendarPaper={featured.lunarCalendarPaper}
           lunarCalendarLocation={featured.lunarCalendarLocation}
         /> :
-        isNewsInHome ? <News /> : <div>Welcome to Huetown.</div>
+        isNewsInHome ? <News /> : <MoonSpan />
       }
     </>
   );
