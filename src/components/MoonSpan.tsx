@@ -168,7 +168,7 @@ function MoonSpan(): JSX.Element {
         <MoonSpanSkyLines />
         <MoonSpanPhaseWrapper selectedPhaseDate={selectedPhaseDate} selectedCalendar={selectedCalendar} />
         <MoonSpanClouds calendar={selectedCalendar} isVisible={isCloudsAnimationVisible} />
-        <div className="critter-wrapper">
+        <div className="critters-wrapper">
           <img
             src={images.moonSpace.hippo2026}
             alt="hippopotamus illustration"
@@ -224,7 +224,7 @@ function MoonSpan(): JSX.Element {
               aria-label={text.selectCrittersAnimation}
               className={`${years[selectedYear]} ${text.lunarFeatureButton}${isCrittersAnimationVisible ? ` ${text.selectedActive}` : ''}`}
               onClick={onClickCritters}>
-              Critter
+              Critters
             </button>
           </div>
 

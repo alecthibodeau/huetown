@@ -78,7 +78,7 @@
   padding: .125rem .25rem .25rem .25rem;
   border: 1px solid var(--color-sixty-seven-percent-gray);
   border-radius: var(--border-radius-medium);
-  margin-block: .25rem;
+  margin-block: .75rem .25rem;
 }
 
 .moon-span-animation-controls-title {
@@ -165,7 +165,7 @@
   }
 }
 
-.critter-wrapper {
+.critters-wrapper {
   position: relative;
   overflow: hidden;
   display: flex;
@@ -213,14 +213,14 @@
 @media (min-width: 576px /* --breakpoint-sm */) {
 
   .moon-span-animation-controls {
-    margin-block: 1rem;
+    margin-block: 1.5rem;
   }
 
   .info-popover {
     max-width: 24rem;
   }
 
-  .critter-wrapper {
+  .critters-wrapper {
     justify-content: flex-start;
     padding-right: initial;
   }
