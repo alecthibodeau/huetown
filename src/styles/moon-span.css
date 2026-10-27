@@ -64,10 +64,6 @@
     visibility: hidden;
   }
 
-  &:hover {
-    background-color: var(--color-twenty-percent-gray);
-  }
-
   svg.back {
     transform: rotate(180deg);
   }
@@ -112,8 +108,7 @@
   background-color: var(--color-dark-background);
   color: var(--color-white);
 
-  &.selected,
-  &:hover {
+  &.selected {
     color: var(--color-application-font);
     background-color: var(--color-white);
   }
@@ -129,10 +124,11 @@
 }
 
 .info-popover {
-  width: 14rem;
+  width: 70vw;
   border: none;
   border-radius: var(--border-radius-medium);
-  background-color: rgba(120, 210, 200, .95);
+  border: 2px solid var(--color-sixty-seven-percent-gray);
+  background-color: var(--color-medium-blue-green);
 }
 
 .info-popover-header {
@@ -151,7 +147,7 @@
 }
 
 .info-popover-body {
-  padding: 0 1.125rem .25rem;
+  padding: .5rem 1.5rem 1.5rem;
 }
 
 .info-popover-text {
@@ -162,7 +158,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: .5rem;
 
   button {
     width: 100%;
@@ -175,6 +170,7 @@
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
+  padding-right: 1rem;
 
   img {
     position: absolute;
@@ -202,13 +198,30 @@
 
 /* Media Queries */
 
+@media (hover: hover) {
+
+  .moon-span-increment-button:hover {
+    background-color: var(--color-twenty-percent-gray);
+  }
+
+  .moon-span-lunar-feature-button:hover {
+    color: var(--color-application-font);
+    background-color: var(--color-white);
+  }
+}
+
 @media (min-width: 576px /* --breakpoint-sm */) {
 
   .moon-span-animation-controls {
     margin-block: 1rem;
   }
 
+  .info-popover {
+    max-width: 24rem;
+  }
+
   .critter-wrapper {
     justify-content: flex-start;
+    padding-right: initial;
   }
 }
