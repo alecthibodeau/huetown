@@ -41,7 +41,7 @@ function MoonSpan(): JSX.Element {
   const selectedCalendar: LunarCalendar = lunarCalendarsInformation[easternTimeZoneDate.getFullYear()];
   const millisecondsCount: number = 10;
 
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [incrementClicks, setIncrementClicks] = useState<number>(0);
   const [selectedPhaseDate, setSelectedPhaseDate] = useState<Date>(easternTimeZoneDate);
