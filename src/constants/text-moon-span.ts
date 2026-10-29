@@ -5,7 +5,7 @@ const textMoonSpan: { [key: string]: string }  = {
   forwardDirection: 'forward',
   goToPrintEdition: 'Go to the print edition of the lunar calendar chart',
   lunarFeatureButton: 'moon-span-lunar-feature-button',
-  openInfoModal: 'Open info modal',
+  openDatesPopover: 'Open dates popover',
   selectCloudsAnimation: 'Select clouds animation',
   selectStarsAnimation: 'Select stars animation',
   selectCrittersAnimation: 'Select critters animation',

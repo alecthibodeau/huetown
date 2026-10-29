@@ -10,7 +10,6 @@ import MoonSpanSkyLines from './MoonSpanSkyLines';
 import LunarCalendar from '../interfaces/LunarCalendar'
 
 /* Constants */
-import items from '../constants/items';
 import lunarCalendarsInformation from '../constants/lunar-calendars-information';
 import svgPaths from '../constants/svg-paths';
 import text from '../constants/text-moon-span';
@@ -19,7 +18,6 @@ import images from '../constants/images';
 /* Helpers */
 import digitalLunarCalendar from '../helpers/digital-lunar-calendar';
 import formatDateAndTime from '../helpers/format-date-and-time';
-import formatText from '../helpers/format-text';
 
 /* Styles */
 import '../styles/moon-span.css';
@@ -110,13 +108,14 @@ function MoonSpan(): JSX.Element {
     });
   }
 
-  function onClickSelectNewYearsDay(): void {
+  function onClickAnimateCurrentYearPhases(): void {
     setIsNewYearsDay(true);
     setIsNewYearsEve(false);
     setSelectedPhaseDate(dateNewYearsDay);
+    playYear();
   }
 
-  function onClickPlayYear(): void {
+  function playYear(): void {
     setIsPlaying(!isPlaying);
     startAnnualPhasesAnimation();
     closePopover();
@@ -129,9 +128,23 @@ function MoonSpan(): JSX.Element {
   }
 
   function closePopover(): void {
-    const popover = document.getElementById('infoPopup');
+    const popover = document.getElementById('datesPopover');
     popover?.hidePopover();
   }
+
+  function handleDateChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    const dateAsHTMLString: string = event.target.value;
+    if (!dateAsHTMLString) return;
+    const [year, month, day]: number[] = dateAsHTMLString.split('-').map(Number);
+    const dateFormattedAsDate: Date = new Date(year, month - 1, day);
+    setSelectedPhaseDate(dateFormattedAsDate);
+  };
+
+  function formatDateAsStringForHTMLInput(date: Date): string {
+    const month: string = String(date.getMonth() + 1).padStart(2, '0');
+    const day: string = String(date.getDate()).padStart(2, '0');
+    return `${selectedYear}-${month}-${day}`;
+  };
 
   const startAnnualPhasesAnimation = () => {
     if (timerRef.current) return;
@@ -181,9 +194,14 @@ function MoonSpan(): JSX.Element {
         <div className="moon-span-date-incrementor">
           {renderIncrementorButton(text.backDirection)}
           <div className="moon-span-selected-phase-date">
-            <div className="moon-span-day-month-date">
+            <button
+              {...({ popovertarget: 'datesPopover' } as React.HTMLAttributes<HTMLButtonElement>)}
+              title={text.openDatesPopover}
+              aria-label={text.openDatesPopover}
+              className={text.lunarFeatureButton}
+            >
               {formatDayMonthAndDate(selectedPhaseDate)}
-            </div>
+            </button>
             <div className="moon-span-time-zone">
               (Eastern Time Zone)
             </div>
@@ -194,55 +212,46 @@ function MoonSpan(): JSX.Element {
           {`It's a ${phasesInfoForUser[getLunarPhase(selectedPhaseDate).slice(0, 2)]} moon.`}
         </div>
         {!isPlaying ?
-        <div className="moon-span-animation-controls">
-          <div className="moon-span-animation-controls-title">animation controls</div>
-          <div className="moon-span-lunar-feature-buttons-wrapper">
-            <button
-              {...({ popovertarget: 'infoPopup' } as React.HTMLAttributes<HTMLButtonElement>)}
-              title={text.openInfoModal}
-              aria-label={text.openInfoModal}
-              className={text.lunarFeatureButton}
-            >
-              Info
-            </button>
-            <button
-              title={text.selectCloudsAnimation}
-              aria-label={text.selectCloudsAnimation}
-              className={`${years[selectedYear]} ${text.lunarFeatureButton}${isCloudsAnimationVisible ? ` ${text.selectedActive}` : ''}`}
-              onClick={onClickClouds}>
-              Clouds
-            </button>
-            <button
-              title={text.selectStarsAnimation}
-              aria-label={text.selectStarsAnimation}
-              className={`${years[selectedYear]} ${text.lunarFeatureButton}${isStarsAnimationVisible ? ` ${text.selectedActive}` : ''}`}
-              onClick={onClickStars}>
-              Stars
-            </button>
-            <button
-              title={text.selectCrittersAnimation}
-              aria-label={text.selectCrittersAnimation}
-              className={`${years[selectedYear]} ${text.lunarFeatureButton}${isCrittersAnimationVisible ? ` ${text.selectedActive}` : ''}`}
-              onClick={onClickCritters}>
-              Critters
-            </button>
+        <div className="moon-span-animation-controls-wrapper">
+          <div className="moon-span-animation-controls">
+            <div className="moon-span-animation-controls-title">animation controls</div>
+            <div className="moon-span-lunar-feature-buttons-wrapper">
+              <button
+                title={text.selectCloudsAnimation}
+                aria-label={text.selectCloudsAnimation}
+                className={`${years[selectedYear]} ${text.lunarFeatureButton}${isCloudsAnimationVisible ? ` ${text.selectedActive}` : ''}`}
+                onClick={onClickClouds}>
+                Clouds
+              </button>
+              <button
+                title={text.selectStarsAnimation}
+                aria-label={text.selectStarsAnimation}
+                className={`${years[selectedYear]} ${text.lunarFeatureButton}${isStarsAnimationVisible ? ` ${text.selectedActive}` : ''}`}
+                onClick={onClickStars}>
+                Stars
+              </button>
+              <button
+                title={text.selectCrittersAnimation}
+                aria-label={text.selectCrittersAnimation}
+                className={`${years[selectedYear]} ${text.lunarFeatureButton}${isCrittersAnimationVisible ? ` ${text.selectedActive}` : ''}`}
+                onClick={onClickCritters}>
+                Critters
+              </button>
+            </div>
           </div>
-
         </div>
-
         : null}
       </div>
 
-
       <div
-        id="infoPopup"
-        className="info-popover"
+        id="datesPopover"
+        className="dates-popover"
         {...({ popover: 'auto' } as React.HTMLAttributes<HTMLDivElement>)}
       >
-        <div className="info-popover-header">
+        <div className="dates-popover-header">
           <button
             name="close"
-            className="info-popover-close"
+            className="dates-popover-close"
             onClick={closePopover}>
             <svg
               viewBox="30 0 96 96"
@@ -252,38 +261,27 @@ function MoonSpan(): JSX.Element {
             </svg>
           </button>
         </div>
-        <div className="info-popover-body">
-          {isNewYearsDay ?
-            <div className="info-popover-text">
-              Play all the moon phases for {selectedYear} as an animated sequence.
-            </div> :
-            <div className="info-popover-text">
-              <span className ="ital">Moon Space</span> is a {selectedYear} digital lunar calendar.
-              Select New Year's Day for the option to play all the year's moon phases.
-            </div>
-          }
-          <div className="info-popover-button-wrapper">
-            {isNewYearsDay ?
-              <button
-                className={text.lunarFeatureButton}
-                onClick={onClickPlayYear}
-              >
-                Play {selectedYear}'s phases
-              </button> :
-              <button
-                className={text.lunarFeatureButton}
-                onClick={onClickSelectNewYearsDay}
-              >
-                Select New Year's Day
-              </button>
-            }
-            <button
-              title={text.selectToday}
-              aria-label={text.selectToday}
-              className={text.lunarFeatureButton}
-              onClick={onClickToday}
-            >
-              Select Today
+        <div className="dates-popover-body">
+          <div className="date-picker-wrapper">
+            <label htmlFor="moon-phase-date-picker" className="bold">Choose a date:</label>
+            <input
+              type="date"
+              id="moon-phase-date-picker"
+              min={`${selectedYear}-01-01`}
+              max={`${selectedYear}-12-31`}
+              value={formatDateAsStringForHTMLInput(selectedPhaseDate)}
+              onChange={handleDateChange}
+            />
+            <button className={text.lunarFeatureButton} onClick={closePopover}>
+              Okay
+            </button>
+          </div>
+          <div className="animate-moons-wrapper">
+            <span className="bold">
+              {selectedYear}'s moons:&nbsp;
+            </span>
+            <button onClick={onClickAnimateCurrentYearPhases}>
+              play now
             </button>
           </div>
         </div>

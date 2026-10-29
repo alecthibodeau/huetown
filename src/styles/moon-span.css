@@ -37,12 +37,13 @@
 }
 
 .moon-span-selected-phase-date {
-  width: var(--dimension-moon-space) * .66;
   text-align: center;
-  line-height: normal;
 
-  .moon-span-day-month-date {
+  > button {
     font-size: 1.25rem;
+    font-weight: initial;
+    background-color: var(--color-white);
+    color: var(--color-dark-background);
   }
 
   .moon-span-time-zone {
@@ -70,15 +71,21 @@
 }
 
 .moon-span-info-for-display {
-  margin-top: .5rem;
+  margin-top: .125rem;
   text-align: center;
 }
 
+.moon-span-animation-controls-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-block: .25rem;
+}
+
 .moon-span-animation-controls {
-  padding: .125rem .25rem .25rem .25rem;
+  width: fit-content;
+  padding: .125rem 1.5rem .25rem;
   border: 1px solid var(--color-sixty-seven-percent-gray);
   border-radius: var(--border-radius-medium);
-  margin-block: .75rem .25rem;
 }
 
 .moon-span-animation-controls-title {
@@ -123,7 +130,7 @@
   text-align: center;
 }
 
-.info-popover {
+.dates-popover {
   width: 70vw;
   border: none;
   border-radius: var(--border-radius-medium);
@@ -131,12 +138,12 @@
   background-color: var(--color-medium-blue-green);
 }
 
-.info-popover-header {
+.dates-popover-header {
   display: flex;
   justify-content: flex-end;
 }
 
-.info-popover-close {
+.dates-popover-close {
   width: 20px;
   height: 20px;
   padding: 0;
@@ -146,22 +153,38 @@
   color: var(--color-application-font);
 }
 
-.info-popover-body {
-  padding: .5rem 1.5rem 1.5rem;
+.dates-popover-body {
+  padding: 0 1.5rem 1rem;
 }
 
-.info-popover-text {
-  margin-bottom: .5rem;
-}
+.date-picker-wrapper {
+  margin-bottom: 1rem;
 
-.info-popover-button-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  button {
+  > input {
+    width: stretch;
+    padding: .25rem;
+    font-family: "Open Sans", sans-serif;
+  }
+  > button {
     width: 100%;
-    margin: .25rem auto;
+    margin: .5rem auto
+  }
+}
+
+.animate-moons-wrapper {
+  > button {
+    width: auto;
+    border: 1px solid var(--color-dark-background);
+    border-radius: var(--border-radius-medium);
+    padding: .125rem 1rem;
+    margin-left: .25rem;
+    background-color: transparent;
+    color: var(--color-dark-background);
+
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-dark-background);
+    }
   }
 }
 
@@ -208,16 +231,20 @@
     color: var(--color-application-font);
     background-color: var(--color-white);
   }
+
+  .moon-span-selected-phase-date > button:hover {
+    background-color: var(--color-twenty-percent-gray);
+  }
 }
 
 @media (min-width: 576px /* --breakpoint-sm */) {
 
-  .moon-span-animation-controls {
+  .moon-span-animation-controls-wrapper {
     margin-block: 1.5rem;
   }
 
-  .info-popover {
-    max-width: 24rem;
+  .dates-popover {
+    max-width: 18rem;
   }
 
   .critters-wrapper {
