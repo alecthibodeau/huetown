@@ -39,7 +39,7 @@
 .moon-span-selected-phase-date {
   text-align: center;
 
-  > button {
+  button {
     font-size: 1.25rem;
     font-weight: initial;
     background-color: var(--color-white);
@@ -159,25 +159,32 @@
 
 .date-picker-wrapper {
   margin-bottom: 1rem;
+  color: var(--color-dark-background);
 
-  > input {
+  input {
     width: stretch;
     padding: .25rem;
     font-family: "Open Sans", sans-serif;
   }
-  > button {
+
+  button {
     width: 100%;
-    margin: .5rem auto
+    margin: .5rem auto;
+    font-size: 1rem;
   }
 }
 
-.animate-moons-wrapper {
-  > button {
+.animate-moons-wrapper,
+.date-picker-wrapper > label {
+  color: var(--color-dark-background);
+
+  button {
     width: auto;
     border: 1px solid var(--color-dark-background);
     border-radius: var(--border-radius-medium);
-    padding: .125rem 1rem;
-    margin-left: .25rem;
+    padding: .125rem .5rem;
+    font-size: .75rem;
+    font-weight: 700;
     background-color: transparent;
     color: var(--color-dark-background);
 
