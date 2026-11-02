@@ -155,11 +155,18 @@
 
 .dates-popover-body {
   padding: 0 1.5rem 1rem;
+  color: var(--color-dark-background);
+}
+
+.dates-popover-title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.25rem;
 }
 
 .date-picker-wrapper {
   margin-bottom: 1rem;
-  color: var(--color-dark-background);
 
   input {
     width: stretch;
@@ -176,7 +183,6 @@
 
 .animate-moons-wrapper,
 .date-picker-wrapper > label {
-  color: var(--color-dark-background);
 
   button {
     width: auto;

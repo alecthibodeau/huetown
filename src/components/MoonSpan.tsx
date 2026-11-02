@@ -263,6 +263,7 @@ function MoonSpan(): JSX.Element {
           </button>
         </div>
         <div className="dates-popover-body">
+          <div className="dates-popover-title">2026 Dates</div>
           <div className="date-picker-wrapper">
             <label htmlFor="moon-phase-date-picker" className="bold date-picker-label">
               Choose <button onClick={onClickToday}>today</button> or other date:
