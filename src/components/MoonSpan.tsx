@@ -135,8 +135,8 @@ function MoonSpan(): JSX.Element {
   function handleDateChange(event: React.ChangeEvent<HTMLInputElement>): void {
     const dateAsHTMLString: string = event.target.value;
     if (!dateAsHTMLString) return;
-    const [year, month, day]: number[] = dateAsHTMLString.split('-').map(Number);
-    const dateFormattedAsDate: Date = new Date(year, month - 1, day);
+    const [, month, day]: number[] = dateAsHTMLString.split('-').map(Number);
+    const dateFormattedAsDate: Date = new Date(selectedYear, month - 1, day);
     setSelectedPhaseDate(dateFormattedAsDate);
   };
 
