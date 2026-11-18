@@ -265,7 +265,7 @@ function MoonSpan(): JSX.Element {
         <div className="dates-popover-body">
           <div className="dates-popover-title">2026 Dates</div>
           <div className="date-picker-wrapper">
-            <label htmlFor="moon-phase-date-picker" className="bold date-picker-label">
+            <label htmlFor="moon-phase-date-picker" className="date-picker-label">
               Choose <button onClick={onClickToday}>today</button> or other date:
             </label>
             <input
@@ -281,11 +281,8 @@ function MoonSpan(): JSX.Element {
             </button>
           </div>
           <div className="animate-moons-wrapper">
-            <span className="bold">
-              All {selectedYear}'s moons:&nbsp;
-            </span>
             <button onClick={onClickAnimateCurrentYearPhases}>
-              play now
+              Play all of {selectedYear}'s moons
             </button>
           </div>
         </div>
