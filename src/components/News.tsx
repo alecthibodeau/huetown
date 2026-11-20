@@ -5,7 +5,7 @@ import images from '../constants/images';
 import '../styles/news.scss';
 
 function News(): JSX.Element {
-  const isWithImage: boolean = true;
+  const isWithImage: boolean = false;
 
   return (
     <div className={`news ${isWithImage ? 'with-image' : ''}`}>
@@ -15,11 +15,7 @@ function News(): JSX.Element {
         : null
       }
       <div className="news-text-wrapper">
-        <span className="bold">Recently</span>: Alec donated this new ink drawing
-        to the <a className="text-link"
-        href="https://newurbanarts.org/event/nuas-29th-birthday-bash-silent-art-auction-jurassic-arts"
-        target="_blank">New Urban Arts 29th Birthday Bash + Silent Art Auction</a>. The
-        piece's sale helped raise funds to provide arts programs for young people.
+        Check back here soon for the 2027 lunar calendar!
       </div>
     </div>
   );

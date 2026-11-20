@@ -16,7 +16,7 @@ import MoonSpan from './MoonSpan';
 function Home(props: { isShopActive: boolean }): JSX.Element {
   const featured: ItemProps = items.lunarCalendar2026;
   const isFeatured: boolean = false;
-  const isNewsInHome: boolean = false;
+  const isNewsInHome: boolean = true;
   const isRedirectToMoonSpace: boolean = false;
 
   const navigate: NavigateFunction = useNavigate();
